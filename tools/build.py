@@ -17,6 +17,8 @@ import pathlib
 import re
 import unicodedata
 
+import learn
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 TPL = ROOT / "templates"
@@ -305,6 +307,8 @@ def main():
     upgrade_data = ROOT / "old-hsk-to-new-hsk" / "words.json"
     if upgrade_data.exists():
         pages.append(("/old-hsk-to-new-hsk/", "Old → New HSK"))
+    if any((DATA / "learn").glob("*.json")):
+        pages.append((learn.LEARN_URL, "Grammar"))
     extra_urls = []
 
     # Level checker
@@ -470,6 +474,9 @@ def main():
             "you have not learned yet. Free, with Anki and Pleco export.",
             SITE + url, base_css + (TPL / "upgrade.css").read_text(encoding="utf-8"), body,
             f'<script type="application/ld+json">{ld}</script>'), encoding="utf-8")
+
+    # Grammar explainers
+    extra_urls += learn.build(pages, nav, render, base_css, TPL, SITE)
 
     # Privacy policy
     today = datetime.date.today().isoformat()

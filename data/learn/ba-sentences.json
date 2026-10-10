@@ -1,0 +1,59 @@
+{
+  "slug": "ba-sentences",
+  "level": 3,
+  "published": "2026-10-10",
+  "title": "把 Sentences in Chinese: HSK 3 Grammar with Examples",
+  "description": "How to use 把 (bǎ) in Chinese: the word order, why the verb needs something after it, negatives with 没有 and 别, and 12 HSK 3 example sentences.",
+  "zh": "把",
+  "h1": "How to Use 把 Sentences",
+  "lede": "把 (bǎ) moves the object in front of the verb, so the sentence can say what happened to it: where it went, what state it ended up in, or whether the action was finished. It is one of the key grammar points of HSK 3.",
+  "sections": [
+    {
+      "h2": "The pattern",
+      "paras": [
+        "Subject + 把 + object + verb + something else.",
+        "In a normal sentence the object comes after the verb. With 把, it comes before the verb, and the end of the sentence tells you the result. Compare 我吃了苹果 (I ate an apple) with 我把苹果吃了 (I ate the apple, and now it is gone)."
+      ],
+      "examples": [
+        {"zh": "我吃了苹果。", "py": "Wǒ chī le píngguǒ.", "en": "I ate an apple."},
+        {"zh": "我把苹果吃了。", "py": "Wǒ bǎ píngguǒ chī le.", "en": "I ate the apple (it's gone now)."},
+        {"zh": "我把门打开了。", "py": "Wǒ bǎ mén dǎkāi le.", "en": "I opened the door."}
+      ]
+    },
+    {
+      "h2": "The verb can't stand alone",
+      "paras": [
+        "The most common mistake with 把 is to end the sentence on a bare verb. 我把作业做 is not a complete sentence. After the verb, add a result such as 完 or 坏, a direction such as 走, a place with 在, a person with 给, or a short 一下.",
+        "The object of 把 is usually something specific that both speakers know about: the door, this book, my computer."
+      ],
+      "examples": [
+        {"zh": "他把作业做完了。", "py": "Tā bǎ zuòyè zuòwán le.", "en": "He finished his homework."},
+        {"zh": "妹妹把我的电脑用坏了。", "py": "Mèimei bǎ wǒ de diànnǎo yònghuài le.", "en": "My little sister broke my computer."},
+        {"zh": "他把车开走了。", "py": "Tā bǎ chē kāizǒu le.", "en": "He drove the car away."},
+        {"zh": "你把衣服洗一下。", "py": "Nǐ bǎ yīfu xǐ yíxià.", "en": "Give the clothes a wash."}
+      ]
+    },
+    {
+      "h2": "Putting things somewhere, giving things to someone",
+      "paras": [
+        "把 is the natural way to say where you put something (verb + 在 + place) or who you give it to (verb + 给 + person). Requests often start with 请."
+      ],
+      "examples": [
+        {"zh": "请把手机放在桌子上。", "py": "Qǐng bǎ shǒujī fàng zài zhuōzi shang.", "en": "Please put your phone on the table."},
+        {"zh": "你把这本书给我吧。", "py": "Nǐ bǎ zhè běn shū gěi wǒ ba.", "en": "Give me this book."},
+        {"zh": "我把这件事告诉妈妈了。", "py": "Wǒ bǎ zhè jiàn shì gàosu māma le.", "en": "I told Mum about this."}
+      ]
+    },
+    {
+      "h2": "Negatives go before 把",
+      "paras": [
+        "To say something didn't happen, put 没有 before 把, not before the verb. To tell someone not to do it, use 别 or 不要, also before 把."
+      ],
+      "examples": [
+        {"zh": "我没有把钱带来。", "py": "Wǒ méiyǒu bǎ qián dàilái.", "en": "I didn't bring the money."},
+        {"zh": "别把东西放在这儿。", "py": "Bié bǎ dōngxi fàng zài zhèr.", "en": "Don't put things here."},
+        {"zh": "你不要把这件事告诉他。", "py": "Nǐ búyào bǎ zhè jiàn shì gàosu tā.", "en": "Don't tell him about this."}
+      ]
+    }
+  ]
+}

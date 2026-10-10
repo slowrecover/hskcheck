@@ -1,0 +1,15 @@
+.learn p { margin: 0; max-width: 68ch; }
+.examples { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; counter-reset: ex; }
+.examples li { display: grid; gap: 2px; padding: 12px 0 12px 34px; border-top: 1px solid var(--rule); position: relative; counter-increment: ex; }
+.examples li:first-child { border-top: 0; padding-top: 4px; }
+.examples li::before { content: counter(ex); position: absolute; left: 0; top: 14px; font: 500 12px var(--f-num); color: var(--muted); }
+.examples li:first-child::before { top: 6px; }
+.ex-zh { font-family: var(--f-zh); font-size: 21px; line-height: 1.5; }
+.ex-py { color: var(--accent); font-size: 14px; }
+.ex-en { color: var(--muted); font-size: 14px; }
+.cta { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.cta a.button { display: inline-block; text-decoration: none; font: 500 14px var(--f-ui); padding: 9px 16px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); }
+.cta a.button.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+.more { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.more .zh-inline { font-weight: 500; margin-right: 4px; }
+.more .lv { font-size: 12px; color: var(--muted); }

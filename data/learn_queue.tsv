@@ -1,0 +1,51 @@
+# Grammar pages still to write, one per line, in order: slug<TAB>level<TAB>topic
+# The daily task writes the first line whose data/learn/<slug>.json does not exist yet.
+le-particle	1	了 (le): completed actions and change of state; 了 after the verb vs at the end
+ma-questions	1	吗 (ma): yes/no questions
+ne-particle	1	呢 (ne): "and you?", "where is...?" and ongoing actions
+bu-vs-meiyou	1	不 vs 没有: which negative to use
+de-possessive	1	的 (de): possession and describing nouns
+zai-location	1	在 (zài): where something is, and where you do something
+zhengzai-progressive	1	正在 / 在: talking about what is happening now
+hui-neng-keyi	1	会, 能 and 可以: three ways to say "can"
+xiang-vs-yao	1	想 vs 要: "want to", "would like to" and "will"
+ye-and-dou	1	也 and 都: word order with "also" and "all"
+ji-vs-duoshao	1	几 vs 多少: asking "how many"
+ba-suggestions	1	吧 (ba): suggestions and guesses
+youdianr-vs-yidianr	1	有点儿 vs 一点儿: "a bit"
+tai-le	1	太……了: "too" and "so"
+zai-again	1	再 (zài): "again" and "then" for future actions
+telling-time	1	Telling the time: 点, 分 and 半
+dates-in-chinese	1	Dates: 年, 月, 号 and days of the week
+zenme-vs-zenmeyang	1	怎么 vs 怎么样: "how" and "how about"
+bi-comparisons	2	比 (bǐ): comparing two things
+guo-experience	2	过 (guo): saying you have done something before
+zhe-particle	2	着 (zhe): ongoing states
+de-degree-complement	2	得 (de): describing how well someone does something
+de-adverb-marker	2	地 (de): turning a phrase into an adverb
+de-de-de	2	的, 得 and 地: which de to use
+suiran-danshi	2	虽然……但是: "although"
+yinwei-suoyi	2	因为……所以: "because" and "so"
+cong-dao	2	从……到: "from... to"
+li-distance	2	离 (lí): saying how far something is
+yijing-le	2	已经……了: "already"
+gen-yiqi	2	跟……一起: "together with"
+rang-causative	2	让 (ràng): making or letting someone do something
+haishi-questions	2	还是: "or" in questions
+zui-superlative	2	最 (zuì): "the most"
+jiu-right-away	2	就 (jiù): "right away", "as soon as" and "then"
+bei-passive	3	被 (bèi): the passive voice
+cai-vs-jiu	3	才 vs 就: "only then" vs "already"
+ruguo-jiu	3	如果……就: "if... then"
+yibian-yibian	3	一边……一边: doing two things at once
+you-vs-zai	3	又 vs 再: two ways to say "again"
+geng-comparisons	3	更 (gèng): "even more"
+yiyang	3	跟……一样: "the same as"
+chule-yiwai	3	除了……以外: "except" and "besides"
+zhiyao-jiu	3	只要……就: "as long as"
+xian-ranhou	3	先……然后: "first... then"
+huozhe-vs-haishi	3	或者 vs 还是: two ways to say "or"
+yue-yue	3	越……越: "the more... the more"
+dei-have-to	3	得 (děi), 必须 and 应该: "must" and "should"
+gang-vs-gangcai	3	刚 vs 刚才: "just"
+yiqian-yihou	3	以前 and 以后: "before" and "after"
