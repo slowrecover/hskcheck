@@ -28,6 +28,22 @@ LEVEL_COPY = {
             "A few entries are easy to miss because the syllabus lists words, not characters. <span class=\"zh-inline\">杯子</span> (cup) is on the list, but the measure word <span class=\"zh-inline\">杯</span> is not, so <span class=\"zh-inline\">一杯茶</span> is above HSK 1.",
         ],
     },
+    2: {
+        "lede": "All 200 new words for HSK 2 in the HSK 3.0 (New HSK) syllabus, with pinyin and English. Together with HSK 1, that makes 500 words. Search by character, pinyin or meaning.",
+        "prose": [
+            "HSK 2 adds 200 words to the 300 of HSK 1. They cover directions, transport, shopping, weather, health and simple feelings, plus the grammar words that link ideas, such as <span class=\"zh-inline\">因为</span>, <span class=\"zh-inline\">所以</span> and <span class=\"zh-inline\">虽然</span>.",
+            "The syllabus lists <span class=\"zh-inline\">过</span> and <span class=\"zh-inline\">花</span> twice, once for each main use. This page shows each of them once with both meanings, so the table has 198 rows.",
+            "Some HSK 1 characters return here in new words or new uses: <span class=\"zh-inline\">点</span> as in ordering food, and the particles <span class=\"zh-inline\">得</span> and <span class=\"zh-inline\">地</span>.",
+        ],
+    },
+    3: {
+        "lede": "All 500 new words for HSK 3 in the HSK 3.0 (New HSK) syllabus, with pinyin and English. Together with HSK 1 and 2, that makes 1,000 words. Search by character, pinyin or meaning.",
+        "prose": [
+            "HSK 3 doubles the vocabulary, adding 500 words to reach 1,000 in total. This is the level where learners start to handle everyday topics in some depth: school and work, travel, health, the weather and seasons, and their own opinions.",
+            "Several familiar characters come back with a new reading or meaning. <span class=\"zh-inline\">还</span> is read huán (to give back), <span class=\"zh-inline\">长</span> is read zhǎng (to grow), and <span class=\"zh-inline\">只</span> is read zhī as a measure word for animals.",
+            "The syllabus lists <span class=\"zh-inline\">得</span> twice, for dé (to get) and děi (to have to). This page shows it once with both readings, so the table has 499 rows.",
+        ],
+    },
 }
 
 
@@ -146,16 +162,18 @@ def main():
             )
         copy = LEVEL_COPY.get(n, {})
         prose = "\n".join(f"    <p>{p}</p>" for p in copy.get("prose", []))
+        official = len(read_words(n))  # syllabus entries, counting repeated words once per use
         body = (wl_body.replace("__NAV__", nav(pages, f"/hsk-{n}-word-list/"))
                 .replace("__ROWS__", "\n".join(rows))
                 .replace("__PROSE__", prose)
                 .replace("__LEDE__", copy.get("lede", ""))
-                .replace("__COUNT__", str(len(entries)))
+                .replace("__ROWCOUNT__", str(len(entries)))
+                .replace("__COUNT__", str(official))
                 .replace("__LEVEL__", str(n)))
         url = f"{SITE}/hsk-{n}-word-list/"
         out = render(
-            f"HSK {n} Word List (HSK 3.0, {len(entries)} words)",
-            f"All {len(entries)} HSK {n} words in the HSK 3.0 (New HSK) syllabus with pinyin and English meanings. Searchable and free.",
+            f"HSK {n} Word List (HSK 3.0, {official} words)",
+            f"All {official} HSK {n} words in the HSK 3.0 (New HSK) syllabus with pinyin and English meanings. Searchable and free.",
             url, wl_css, body,
         )
         target = ROOT / f"hsk-{n}-word-list"

@@ -10,7 +10,7 @@
     <div class="tools-row">
       <label class="visually-hidden" for="word-search">Search HSK __LEVEL__ words</label>
       <input id="word-search" class="search" type="search" placeholder="Search: 学, xue or study" autocomplete="off" spellcheck="false">
-      <span class="count" id="word-count">__COUNT__ words</span>
+      <span class="count" id="word-count">__ROWCOUNT__ entries</span>
     </div>
     <div class="table-wrap">
       <table class="words-table">
@@ -58,7 +58,7 @@ __PROSE__
       r.hidden = !hit;
       if (hit) shown++;
     });
-    countEl.textContent = q ? shown + " of " + total + " words" : total + " words";
+    countEl.textContent = q ? shown + " of " + total + " entries" : total + " entries";
     none.hidden = shown > 0;
   }
   input.addEventListener("input", apply);
