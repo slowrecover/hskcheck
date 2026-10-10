@@ -251,6 +251,11 @@ __PROSE__
   }
 
   (async function start() {
+    // Characters handed over in the link, e.g. from the old-to-new HSK page: #c=<characters>
+    const handed = !PRESET && location.hash.startsWith("#c=");
+    if (handed) {
+      try { charsEl.value = hanzi(decodeURIComponent(location.hash.slice(3))).join(""); } catch (e) { /* keep the default */ }
+    }
     if (PRESET) {
       try { Object.assign(data, await getJSON("/strokes/hsk" + PRESET + ".json")); } catch (e) { /* shards still work */ }
     }

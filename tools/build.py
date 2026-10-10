@@ -5,6 +5,7 @@ Outputs (written at the repository root):
   hsk-N-word-list/index.html      one page per level that has data/hskN.tsv
   chinese-character-worksheets/   the writing worksheet maker
   hsk-N-character-worksheets/     the maker preset to the characters of one level (needs strokes/hskN.json)
+  old-hsk-to-new-hsk/index.html   old HSK -> new HSK word gap (needs old-hsk-to-new-hsk/words.json)
   sitemap.xml                     every page above
 
 Run from anywhere:  python3 tools/build.py
@@ -297,6 +298,9 @@ def main():
             pages.append((f"/hsk-{n}-word-list/", f"HSK {n} Words"))
     pages.append(("/chinese-character-worksheets/", "Writing Sheets"))
     pages.append((MW_URL, "Measure Words"))
+    upgrade_data = ROOT / "old-hsk-to-new-hsk" / "words.json"
+    if upgrade_data.exists():
+        pages.append(("/old-hsk-to-new-hsk/", "Old → New HSK"))
     extra_urls = []
 
     # Level checker
@@ -436,6 +440,32 @@ def main():
         extra_urls.append(url)
 
     build_measure_words(pages, base_css)
+    # Old HSK -> new HSK
+    if upgrade_data.exists():
+        url = "/old-hsk-to-new-hsk/"
+        words = json.loads(upgrade_data.read_text(encoding="utf-8"))
+        oc = words["oc"]
+        old4 = set("".join(oc[1:5]))
+        gap = [x for x in words["w"] if x[3] <= 4 and not (x[4] and x[4] <= 4)]
+        hard = sum(1 for x in gap if any(c not in old4 for c in x[0] if "\u4e00" <= c <= "\u9fff"))
+        total4 = sum(1 for x in words["w"] if x[3] <= 4)
+        example = (f"New HSK 1–4 has {total4:,} words. Someone who studied all of old HSK 1–4 has met "
+                   f"{total4 - len(gap):,} of them, so {len(gap):,} are still to learn. {hard:,} of those use at least one character "
+                   "that never appeared in the old HSK 1–4 words.")
+        ld = json.dumps({
+            "@context": "https://schema.org", "@type": "WebApplication", "name": "Old HSK to New HSK Word Gap",
+            "url": SITE + url, "applicationCategory": "EducationalApplication", "operatingSystem": "Any",
+            "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+            "description": "See which HSK 3.0 words and characters you still need after studying the old HSK 2.0.",
+        }, ensure_ascii=False)
+        body = (TPL / "upgrade_body.html").read_text(encoding="utf-8")
+        body = body.replace("__NAV__", nav(pages, url)).replace("__EXAMPLE__", example)
+        (ROOT / "old-hsk-to-new-hsk" / "index.html").write_text(render(
+            "Old HSK to New HSK: Which HSK 3.0 Words You Still Need",
+            "Studied the old HSK 2.0? Pick your old level and your new HSK 3.0 target to see only the words and characters "
+            "you have not learned yet. Free, with Anki and Pleco export.",
+            SITE + url, base_css + (TPL / "upgrade.css").read_text(encoding="utf-8"), body,
+            f'<script type="application/ld+json">{ld}</script>'), encoding="utf-8")
 
     # Sitemap
     today = datetime.date.today().isoformat()

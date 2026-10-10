@@ -1,0 +1,280 @@
+<div class="wrap">
+  <header>
+    __NAV__
+    <div class="eyebrow"><span>HSK 2.0 → HSK 3.0</span><span class="chip">Free</span><span class="chip">Anki · Pleco export</span></div>
+    <h1><span class="zh">新旧</span>Old HSK to New HSK</h1>
+    <p class="lede">Studied for the old six-level HSK? Pick the level you reached and the new HSK level you are aiming for. You get only the words you have not met yet, the new characters inside them, and a file you can import into Anki or Pleco.</p>
+  </header>
+
+  <section class="sheet" aria-labelledby="pick-title">
+    <h2 id="pick-title" class="visually-hidden">Choose your levels</h2>
+    <div class="pickers">
+      <div class="pick">
+        <label for="old-level">I studied old HSK</label>
+        <select id="old-level">
+          <option value="0">Nothing yet</option>
+          <option value="1">Old HSK 1 (150 words)</option>
+          <option value="2">Old HSK 2 (300 words)</option>
+          <option value="3" selected>Old HSK 3 (600 words)</option>
+          <option value="4">Old HSK 4 (1,200 words)</option>
+          <option value="5">Old HSK 5 (2,500 words)</option>
+          <option value="6">Old HSK 6 (5,000 words)</option>
+        </select>
+      </div>
+      <div class="pick">
+        <label for="new-level">I'm aiming for new HSK</label>
+        <select id="new-level">
+          <option value="1">New HSK 1</option>
+          <option value="2">New HSK 2</option>
+          <option value="3">New HSK 3</option>
+          <option value="4" selected>New HSK 4</option>
+          <option value="5">New HSK 5</option>
+          <option value="6">New HSK 6</option>
+          <option value="7">New HSK 7–9</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <section class="sheet" aria-live="polite" aria-labelledby="sum-title">
+    <h2 id="sum-title">What you still need</h2>
+    <p class="status" id="load-status">Loading word lists…</p>
+    <div class="summary" id="summary" hidden>
+      <div class="stat key"><b id="s-todo">0</b><span>words to learn</span></div>
+      <div class="stat"><b id="s-chars">0</b><span>new characters</span></div>
+      <div class="stat"><b id="s-known">0</b><span>words you already met</span></div>
+    </div>
+    <p class="summary-line" id="summary-line"></p>
+    <div class="table-wrap" id="breakdown-wrap" hidden>
+      <table class="counts">
+        <thead><tr><th scope="col">New level</th><th scope="col" class="num">Words</th><th scope="col" class="num">Already met</th><th scope="col" class="num">To learn</th></tr></thead>
+        <tbody id="breakdown"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="sheet" aria-labelledby="words-title">
+    <h2 id="words-title">Words to learn</h2>
+    <fieldset class="seg" aria-label="Which words to show">
+      <label><input type="radio" name="group" value="hard" checked><span id="g-hard">New characters</span></label>
+      <label><input type="radio" name="group" value="easy"><span id="g-easy">Familiar characters</span></label>
+      <label><input type="radio" name="group" value="all"><span id="g-all">All</span></label>
+    </fieldset>
+    <p class="hint" id="group-hint">Words with at least one character you have not learned yet. New characters are marked in red.</p>
+    <div class="tools-row">
+      <label class="visually-hidden" for="word-search">Search these words</label>
+      <input id="word-search" class="search" type="search" placeholder="Search: 学, xue or study" autocomplete="off" spellcheck="false">
+      <span class="count" id="word-count"></span>
+    </div>
+    <div class="table-wrap">
+      <table class="words-table">
+        <thead><tr><th scope="col">Word</th><th scope="col">Pinyin</th><th scope="col">Meaning</th><th scope="col" class="lv">Level</th></tr></thead>
+        <tbody id="word-rows"></tbody>
+      </table>
+    </div>
+    <p class="empty" id="no-words" hidden>No words here.</p>
+    <div class="actions">
+      <button type="button" class="button ghost" id="more-btn" hidden>Show more</button>
+    </div>
+    <div class="actions">
+      <button type="button" class="button" id="dl-btn">Download for Anki / Pleco</button>
+      <button type="button" class="button ghost" id="copy-words">Copy words</button>
+      <span class="status" id="words-status" role="status" aria-live="polite"></span>
+    </div>
+    <p class="hint">The download is a tab-separated .txt file (word, pinyin, meaning) with the words shown above. Anki: File → Import. Pleco: Flashcards → Import Cards. "Copy words" gives one word per line, which Skritter and most apps accept.</p>
+  </section>
+
+  <section class="sheet" aria-labelledby="chars-title">
+    <h2 id="chars-title">New characters</h2>
+    <p class="hint">Characters in these words that do not appear in any word of the old HSK level you studied, in the order you meet them.</p>
+    <p class="charwall" id="char-wall"></p>
+    <p class="empty" id="no-chars" hidden>No new characters. Every word on your list uses characters you already know.</p>
+    <div class="actions">
+      <a class="button" id="ws-link" href="/chinese-character-worksheets/">Print writing sheets</a>
+      <button type="button" class="button ghost" id="copy-chars">Copy characters</button>
+      <span class="status" id="chars-status" role="status" aria-live="polite"></span>
+    </div>
+    <p class="hint" id="ws-cap" hidden>The worksheet maker takes up to 400 characters at a time, so the link opens the first 400. Copy the rest and paste them in later.</p>
+  </section>
+
+  <section class="prose" aria-labelledby="about-title">
+    <h2 id="about-title">How the old and new HSK lists compare</h2>
+    <div>
+      <h3>Why old HSK words don't carry over one to one</h3>
+      <p>The old HSK had six levels and about 5,000 words. HSK 3.0 has nine levels, and the 2025 syllabus spreads its words differently: many words move to a lower level, many are new, and some old words are gone. A pass at old HSK 4 does not mean you know the words of new HSK 4.</p>
+    </div>
+    <div>
+      <h3>An example</h3>
+      <p>__EXAMPLE__</p>
+    </div>
+    <div>
+      <h3>"New characters" and "familiar characters"</h3>
+      <p>Many words that are new on paper are built from characters you already know. The old list has <span class="zh-inline">这</span> and <span class="zh-inline">个</span>, the new one lists <span class="zh-inline">这个</span> as its own word. These go under "familiar characters" and are usually quick to pick up. Words with a character you have never studied go under "new characters": start there.</p>
+    </div>
+  </section>
+
+  <footer class="notes">
+    <p><b>How it works.</b> Each word of the new HSK levels you pick is looked up in the old HSK lists. If it appears at or below the old level you chose, it counts as met. Words are compared as written, so a word only counts as met if the old list has that exact word. A word ending in <span class="zh-inline">儿</span> also matches the same word without it, and a word that is part of an old entry counts as met (<span class="zh-inline">篮球</span> in <span class="zh-inline">打篮球</span>).</p>
+    <p><b>Sources.</b> New HSK 1–3: the site's own lists from the 2025 syllabus, cross-checked against two published copies. New HSK 4–9 and old HSK 1–6: the open <a href="https://github.com/drkameleon/complete-hsk-vocabulary">complete-hsk-vocabulary</a> data set (MIT licence), with meanings from CC-CEDICT. Levels 4–9 have not been cross-checked yet.</p>
+    <p><b>Privacy.</b> Everything runs in your browser. Nothing you pick is sent anywhere.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  const $ = id => document.getElementById(id);
+  const oldSel = $("old-level"), newSel = $("new-level");
+  const PAGE = 200;
+  let base = null, top = null;   // words.json (HSK 1-6) and words-7-9.json, loaded on demand
+  let result = { hard: [], easy: [], chars: "" }, shown = PAGE;
+
+  const esc = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const isHan = c => c >= "一" && c <= "鿿";
+  const norm = s => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[\s'’-]/g, "");
+  const lvName = n => n === 7 ? "7–9" : String(n);
+  const fmt = n => n.toLocaleString("en-US");
+
+  async function getJSON(url) {
+    const r = await fetch(url);
+    if (!r.ok) throw new Error(r.status);
+    return r.json();
+  }
+
+  function readHash() {
+    const m = location.hash.match(/old=(\d)/), n = location.hash.match(/new=(\d)/);
+    if (m && +m[1] <= 6) oldSel.value = m[1];
+    if (n && +n[1] >= 1 && +n[1] <= 7) newSel.value = n[1];
+  }
+
+  function compute() {
+    const O = +oldSel.value, T = +newSel.value;
+    const known = new Set();
+    for (let i = 1; i <= O; i++) for (const c of base.oc[i]) known.add(c);
+    const words = T === 7 ? base.w.concat(top.w) : base.w.filter(x => x[3] <= T);
+    const hard = [], easy = [], rows = {};
+    const chars = [], seen = new Set();
+    for (const x of words) {
+      const r = rows[x[3]] || (rows[x[3]] = [0, 0]);
+      r[0]++;
+      if (x[4] && x[4] <= O) { r[1]++; continue; }
+      const fresh = Array.from(x[0]).filter(c => isHan(c) && !known.has(c));
+      const item = { x, fresh: new Set(fresh), k: x[0] + "|" + norm(x[1]) + "|" + norm(x[1].normalize("NFD").replace(/ü/g, "v")) + "|" + norm(x[2]) };
+      (fresh.length ? hard : easy).push(item);
+      for (const c of fresh) if (!seen.has(c)) { seen.add(c); chars.push(c); }
+    }
+    result = { hard, easy, chars: chars.join(""), rows, total: words.length, O, T };
+  }
+
+  function renderSummary() {
+    const { hard, easy, chars, rows, total, O, T } = result;
+    const todo = hard.length + easy.length;
+    $("s-todo").textContent = fmt(todo);
+    $("s-chars").textContent = fmt(chars.length);
+    $("s-known").textContent = fmt(total - todo);
+    $("summary-line").textContent = "New HSK " + (T === 1 ? "1" : T === 7 ? "1–9" : "1–" + T) + " has " + fmt(total) + " words. " +
+      (O ? "You met " + fmt(total - todo) + " of them in old HSK 1" + (O > 1 ? "–" + O : "") + ". " : "") +
+      fmt(hard.length) + " of the rest use a character you haven't learned; " + fmt(easy.length) + " use only characters you know.";
+    $("breakdown").innerHTML = Object.keys(rows).map(Number).sort((a, b) => a - b).map(n => {
+      const [all, met] = rows[n];
+      return `<tr><td>HSK ${lvName(n)}</td><td class="num">${fmt(all)}</td><td class="num">${fmt(met)}</td><td class="num">${fmt(all - met)}</td></tr>`;
+    }).join("");
+    $("g-hard").textContent = "New characters (" + fmt(hard.length) + ")";
+    $("g-easy").textContent = "Familiar characters (" + fmt(easy.length) + ")";
+    $("g-all").textContent = "All (" + fmt(todo) + ")";
+    $("char-wall").textContent = chars;
+    $("no-chars").hidden = chars.length > 0;
+    $("char-wall").hidden = chars.length === 0;
+    const ws = $("ws-link");
+    ws.href = "/chinese-character-worksheets/#c=" + encodeURIComponent(Array.from(chars).slice(0, 400).join(""));
+    ws.setAttribute("aria-disabled", chars.length ? "false" : "true");
+    $("copy-chars").disabled = !chars.length;
+    $("ws-cap").hidden = chars.length <= 400;
+    $("summary").hidden = false;
+    $("breakdown-wrap").hidden = false;
+  }
+
+  const group = () => document.querySelector('input[name="group"]:checked').value;
+  const HINTS = {
+    hard: "Words with at least one character you have not learned yet. New characters are marked in red.",
+    easy: "Words made only of characters you already know from the old HSK, like 这个 from 这 and 个. Usually quick to learn.",
+    all: "Every word you still need, both groups together.",
+  };
+
+  function currentList() {
+    const g = group();
+    const list = g === "hard" ? result.hard : g === "easy" ? result.easy : result.hard.concat(result.easy).sort((a, b) => a.x[3] - b.x[3]);
+    const q = norm($("word-search").value);
+    return q ? list.filter(it => it.k.includes(q)) : list;
+  }
+
+  function renderWords() {
+    const list = currentList();
+    $("group-hint").textContent = HINTS[group()];
+    const html = list.slice(0, shown).map(({ x, fresh }) => {
+      const hz = Array.from(x[0]).map(c => fresh.has(c) ? `<mark>${esc(c)}</mark>` : esc(c)).join("");
+      return `<tr><td class="hz">${hz}<span class="py-sm">${esc(x[1])}</span></td><td class="py">${esc(x[1])}</td><td class="en">${esc(x[2])}</td><td class="lv"><span class="lvtag">${lvName(x[3])}</span></td></tr>`;
+    }).join("");
+    $("word-rows").innerHTML = html;
+    $("no-words").hidden = list.length > 0;
+    $("word-count").textContent = list.length > shown ? "Showing " + fmt(shown) + " of " + fmt(list.length) : fmt(list.length) + " words";
+    $("more-btn").hidden = list.length <= shown;
+    $("dl-btn").disabled = !list.length;
+    $("copy-words").disabled = !list.length;
+  }
+
+  async function update() {
+    const T = +newSel.value;
+    history.replaceState(null, "", "#old=" + oldSel.value + "&new=" + newSel.value);
+    try {
+      if (!base) base = await getJSON("/old-hsk-to-new-hsk/words.json");
+      if (T === 7 && !top) { $("load-status").textContent = "Loading HSK 7–9 words…"; $("load-status").hidden = false; top = await getJSON("/old-hsk-to-new-hsk/words-7-9.json"); }
+    } catch (e) {
+      $("load-status").textContent = "Could not load the word lists. Check your connection and reload the page.";
+      $("load-status").hidden = false;
+      return;
+    }
+    $("load-status").hidden = true;
+    compute();
+    shown = PAGE;
+    renderSummary();
+    renderWords();
+  }
+
+  function flash(id, text) {
+    const el = $(id);
+    el.textContent = text;
+    setTimeout(() => { if (el.textContent === text) el.textContent = ""; }, 2500);
+  }
+  async function copy(text, id, what) {
+    try { await navigator.clipboard.writeText(text); flash(id, "Copied " + what + "."); }
+    catch (e) { flash(id, "Couldn't copy. Select the text and copy it by hand."); }
+  }
+
+  function download() {
+    const list = currentList();
+    const lines = list.map(({ x }) => [x[0], x[1], x[2]].map(s => s.replace(/[\t\r\n]+/g, " ")).join("\t"));
+    const blob = new Blob(["﻿" + lines.join("\n") + "\n"], { type: "text/plain;charset=utf-8" });
+    const a = document.createElement("a");
+    const O = +oldSel.value, T = +newSel.value;
+    a.download = `old-hsk${O}-to-new-hsk${T === 7 ? "7-9" : T}-${group()}.txt`;
+    a.href = URL.createObjectURL(blob);
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+    flash("words-status", "Downloaded " + fmt(list.length) + " words.");
+  }
+
+  oldSel.addEventListener("change", update);
+  newSel.addEventListener("change", update);
+  document.querySelectorAll('input[name="group"]').forEach(i => i.addEventListener("change", () => { shown = PAGE; renderWords(); }));
+  $("word-search").addEventListener("input", () => { shown = PAGE; renderWords(); });
+  $("more-btn").addEventListener("click", () => { shown += PAGE * 2; renderWords(); });
+  $("dl-btn").addEventListener("click", download);
+  $("copy-words").addEventListener("click", () => copy(currentList().map(it => it.x[0]).join("\n"), "words-status", "the words"));
+  $("copy-chars").addEventListener("click", () => copy(result.chars, "chars-status", fmt(result.chars.length) + " characters"));
+  window.addEventListener("hashchange", () => { readHash(); update(); });
+
+  readHash();
+  update();
+})();
+</script>
