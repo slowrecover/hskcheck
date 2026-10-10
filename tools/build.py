@@ -13,6 +13,7 @@ import datetime
 import html
 import json
 import pathlib
+import re
 import unicodedata
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -168,6 +169,123 @@ def render(title, description, url, css, body, head_extra=""):
     return page
 
 
+MW_URL = "/chinese-measure-words/"
+HAN_RUN = re.compile(r"[㐀-鿿，。：！？]+")
+FOURTH_TONE = set("àèìòùǜ")
+
+
+def read_classifiers():
+    table = {}
+    for line in (DATA / "classifiers.tsv").read_text(encoding="utf-8").splitlines():
+        if line.strip():
+            mw, pinyin, use = line.split("\t")
+            table[mw] = (pinyin, use)
+    return table
+
+
+def read_measure_words(classifiers):
+    entries = []
+    seen = set()
+    for i, line in enumerate((DATA / "measure_words.tsv").read_text(encoding="utf-8").splitlines(), 1):
+        if not line.strip():
+            continue
+        parts = line.split("\t")
+        if len(parts) == 4:
+            parts.append("")  # note column is optional
+        if len(parts) != 5:
+            raise SystemExit(f"measure_words.tsv line {i}: expected 5 columns, got {len(parts)}")
+        word, pinyin, meaning, mws, note = (p.strip() for p in parts)
+        if word in seen:
+            raise SystemExit(f"measure_words.tsv line {i}: {word} listed twice")
+        seen.add(word)
+        mws = [m for m in mws.split(",") if m]
+        unknown = [m for m in mws if m not in classifiers]
+        if unknown:
+            raise SystemExit(f"measure_words.tsv line {i}: {word} uses {unknown}, not in classifiers.tsv")
+        if not mws and not note:
+            raise SystemExit(f"measure_words.tsv line {i}: {word} has no measure word, so it needs a note")
+        entries.append((word, pinyin, meaning, mws, note))
+    return entries
+
+
+def yi_before(pinyin):
+    """一 is read yí before a fourth tone, yì before the other tones."""
+    return "yí" if any(c in FOURTH_TONE for c in pinyin.split()[0]) else "yì"
+
+
+def zh_spans(text):
+    """Escape a note and wrap its Chinese in zh-inline spans."""
+    return HAN_RUN.sub(lambda m: f'<span class="zh-inline">{m.group(0)}</span>', html.escape(text))
+
+
+def build_measure_words(pages, base_css):
+    classifiers = read_classifiers()
+    entries = read_measure_words(classifiers)
+    levels = level_table()
+    used = {m for e in entries for m in e[3]}
+    unused = [m for m in classifiers if m not in used]
+    if unused:
+        raise SystemExit(f"classifiers.tsv lists measure words no noun uses: {unused}")
+
+    data, rows, by_mw = [], [], {m: [] for m in classifiers}
+    for word, pinyin, meaning, mws, note in entries:
+        items = []
+        for m in mws:
+            mpy = classifiers[m][0]
+            items.append({"c": m, "ex": f"一{m}{word}", "expy": f"{yi_before(mpy)} {mpy} {pinyin}"})
+            by_mw[m].append(word)
+        keys = [_squash(pinyin), _squash(unicodedata.normalize("NFD", pinyin.lower()).replace("ü", "v"))]
+        data.append({"w": word, "p": pinyin, "en": meaning, "lv": levels.get(word), "m": items,
+                     "note": zh_spans(note) if note else "", "keys": keys})
+        if mws:
+            first = classifiers[mws[0]][0]
+            others = "、".join(mws[1:])
+            mw_cell = f"{mws[0]} <small>{html.escape(first)}</small>" + (f" <small>also {others}</small>" if others else "")
+        else:
+            mw_cell = "<small>none needed</small>"
+        key = html.escape(search_key(word, pinyin, meaning) + "|" + "".join(mws), quote=True)
+        rows.append(
+            f'          <tr data-w="{html.escape(word)}" data-k="{key}"><td class="hz"><b>{html.escape(word)}</b>'
+            f'<span>{html.escape(pinyin)}</span></td><td class="en">{html.escape(meaning)}</td><td class="mw">{mw_cell}</td></tr>'
+        )
+
+    mw_json = {m: {"p": p, "e": use} for m, (p, use) in classifiers.items()}
+    index = []
+    for m, (p, use) in classifiers.items():
+        nouns = "、".join(f'<a href="#{html.escape(w)}">{html.escape(w)}</a>' for w in by_mw[m])
+        index.append(
+            f'      <div><dt>{m}<span>{html.escape(p)}</span></dt><dd><span class="use">{html.escape(use)}</span>'
+            f'<span class="nouns">{nouns}</span></dd></div>'
+        )
+
+    body = (TPL / "measure_body.html").read_text(encoding="utf-8")
+    body = (body.replace("__NAV__", nav(pages, MW_URL))
+            .replace("__ROWS__", "\n".join(rows))
+            .replace("__INDEX__", "\n".join(index))
+            .replace("__NOUNCOUNT__", str(len(entries)))
+            .replace("__MWCOUNT__", str(len(classifiers)))
+            .replace("__DATA_JSON__", json.dumps(data, ensure_ascii=False, separators=(",", ":")))
+            .replace("__MW_JSON__", json.dumps(mw_json, ensure_ascii=False, separators=(",", ":"))))
+    ld = json.dumps({
+        "@context": "https://schema.org", "@type": "WebApplication", "name": "Chinese Measure Word Finder",
+        "url": SITE + MW_URL, "applicationCategory": "EducationalApplication", "operatingSystem": "Any",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "description": "Find the right Chinese measure word for a noun, with pinyin, examples and HSK levels.",
+    }, ensure_ascii=False)
+    out = render(
+        "Chinese Measure Word Finder: Which Measure Word for a Noun?",
+        f"Find the right Chinese measure word (量词) for {len(entries)} common nouns. Search in Chinese, pinyin or English, "
+        "with examples and HSK 3.0 levels. Free.",
+        SITE + MW_URL,
+        base_css + (TPL / "measure.css").read_text(encoding="utf-8"),
+        body,
+        f'<script type="application/ld+json">{ld}</script>',
+    )
+    target = ROOT / MW_URL.strip("/")
+    target.mkdir(exist_ok=True)
+    (target / "index.html").write_text(out, encoding="utf-8")
+
+
 def main():
     base_css = (TPL / "base.css").read_text(encoding="utf-8")
     pages = [("/", "Level Checker")]
@@ -178,6 +296,7 @@ def main():
             word_lists[n] = entries
             pages.append((f"/hsk-{n}-word-list/", f"HSK {n} Words"))
     pages.append(("/chinese-character-worksheets/", "Writing Sheets"))
+    pages.append((MW_URL, "Measure Words"))
     extra_urls = []
 
     # Level checker
@@ -315,6 +434,8 @@ def main():
             "with stroke order, pinyin, tracing and tian grid boxes.",
             SITE + url, ws_css, body), encoding="utf-8")
         extra_urls.append(url)
+
+    build_measure_words(pages, base_css)
 
     # Sitemap
     today = datetime.date.today().isoformat()
