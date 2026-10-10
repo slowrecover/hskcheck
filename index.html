@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="canonical" href="https://hskcheck.com/">
+<title>HSK 3.0 Level Checker</title>
+<meta name="description" content="Paste Chinese text and see which words are above your HSK 3.0 level. Free, instant, works in your browser.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@600&display=swap">
+<style>
+/* Layout: one exam-sheet column. Input sheet on top, graded result sheet below, red-pen marks for words above the chosen level. */
+:root {
+  --paper: #F3F5F8;
+  --sheet: #FFFFFF;
+  --ink: #1A2130;
+  --muted: #586274;
+  --rule: #DCE1E9;
+  --accent: #2A4A9A;
+  --accent-ink: #FFFFFF;
+  --l1: #1F7A5C; --l1-bg: #E2F2EB;
+  --l2: #2A68AE; --l2-bg: #E3EDF8;
+  --l3: #7A4CAE; --l3-bg: #EEE6F8;
+  --over: #C0392B; --over-bg: #FCE5E1;
+  --ok: #1F7A5C; --warn: #A15C00; --bad: #C0392B;
+  --f-ui: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --f-num: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --f-zh: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --f-zh-display: "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --radius: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0F131A; --sheet: #171C25; --ink: #E6EAF1; --muted: #9AA4B6; --rule: #2A3242;
+    --accent: #93ACEB; --accent-ink: #0F131A;
+    --l1: #63CDA2; --l1-bg: #15302A; --l2: #82B4EE; --l2-bg: #172A40; --l3: #BB9EEA; --l3-bg: #2A2142;
+    --over: #F28B78; --over-bg: #3D1F1A; --ok: #63CDA2; --warn: #E9B060; --bad: #F28B78;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0F131A; --sheet: #171C25; --ink: #E6EAF1; --muted: #9AA4B6; --rule: #2A3242;
+  --accent: #93ACEB; --accent-ink: #0F131A;
+  --l1: #63CDA2; --l1-bg: #15302A; --l2: #82B4EE; --l2-bg: #172A40; --l3: #BB9EEA; --l3-bg: #2A2142;
+  --over: #F28B78; --over-bg: #3D1F1A; --ok: #63CDA2; --warn: #E9B060; --bad: #F28B78;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: var(--f-ui); font-size: 16px; line-height: 1.55;
+  padding-inline: 16px; padding-block: 28px 48px;
+}
+.wrap { max-width: 760px; margin: 0 auto; display: grid; gap: 22px; }
+header { display: grid; gap: 8px; }
+.eyebrow { display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+  font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+.chip { border: 1px solid var(--rule); border-radius: 999px; padding: 1px 8px; letter-spacing: .04em; }
+h1 { margin: 0; font-size: clamp(28px, 6vw, 40px); line-height: 1.12; font-weight: 600; text-wrap: balance; letter-spacing: -.01em; }
+h1 .zh { font-family: var(--f-zh-display); font-weight: 600; color: var(--accent); margin-right: .25em; }
+.lede { margin: 0; color: var(--muted); max-width: 60ch; }
+
+.sheet { background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--radius); padding: 18px; display: grid; gap: 14px; min-width: 0; }
+label.field { font-weight: 600; font-size: 14px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+label.field span.hint { font-weight: 400; color: var(--muted); font-size: 13px; }
+textarea {
+  width: 100%; min-height: 150px; resize: vertical; padding: 12px 14px;
+  font-family: var(--f-zh); font-size: 18px; line-height: 1.8; color: var(--ink);
+  background: var(--paper); border: 1px solid var(--rule); border-radius: 8px;
+}
+textarea:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.controls { display: flex; gap: 12px 18px; align-items: center; flex-wrap: wrap; justify-content: space-between; }
+.levels { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.levels .lbl { font-size: 14px; font-weight: 600; margin-right: 4px; }
+.lv-btn {
+  font: 500 14px var(--f-ui); padding: 7px 14px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--rule); background: var(--sheet); color: var(--ink);
+}
+.lv-btn[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.ghost { font: 500 14px var(--f-ui); background: none; border: none; color: var(--accent); cursor: pointer; padding: 6px 2px; text-decoration: underline; text-underline-offset: 3px; }
+
+.verdict { display: grid; gap: 10px; }
+.verdict-top { display: flex; gap: 12px 20px; align-items: baseline; flex-wrap: wrap; }
+.big { font-family: var(--f-num); font-size: clamp(34px, 9vw, 46px); font-weight: 500; line-height: 1; font-variant-numeric: tabular-nums; }
+.verdict-text { display: grid; gap: 2px; min-width: 0; }
+.verdict-text strong { font-size: 17px; }
+.verdict-text span { color: var(--muted); font-size: 14px; }
+.state-ok { color: var(--ok); } .state-warn { color: var(--warn); } .state-bad { color: var(--bad); }
+
+.bar { display: flex; height: 12px; border-radius: 6px; overflow: hidden; background: var(--rule); }
+.bar i { display: block; height: 100%; }
+.bar .b1 { background: var(--l1); } .bar .b2 { background: var(--l2); } .bar .b3 { background: var(--l3); } .bar .bx { background: var(--over); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; font-variant-numeric: tabular-nums; }
+.legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+
+h2 { margin: 0; font-size: 15px; font-weight: 600; letter-spacing: .01em; }
+.graded { font-family: var(--f-zh); font-size: 20px; line-height: 2.1; word-break: break-all; }
+.graded .w { border-bottom: 2px solid transparent; padding: 0 1px; border-radius: 2px; }
+.graded .w1 { border-bottom-color: color-mix(in srgb, var(--l1) 45%, transparent); }
+.graded .w2 { border-bottom-color: color-mix(in srgb, var(--l2) 45%, transparent); }
+.graded .w3 { border-bottom-color: color-mix(in srgb, var(--l3) 45%, transparent); }
+.graded .above { background: var(--over-bg); color: var(--over); border-bottom: 2px solid var(--over); font-weight: 500; }
+.empty { color: var(--muted); font-size: 15px; margin: 0; }
+
+.words { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.words li { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 8px 10px; border: 1px solid var(--rule); border-radius: 8px; min-width: 0; }
+.words .zh { font-family: var(--f-zh); font-size: 19px; overflow-wrap: anywhere; }
+.tag { font: 500 12px var(--f-num); padding: 2px 7px; border-radius: 999px; white-space: nowrap; }
+.tag.t2 { background: var(--l2-bg); color: var(--l2); }
+.tag.t3 { background: var(--l3-bg); color: var(--l3); }
+.tag.tx { background: var(--over-bg); color: var(--over); }
+
+.notes { font-size: 13px; color: var(--muted); display: grid; gap: 6px; max-width: 70ch; }
+.notes p { margin: 0; }
+.notes b { color: var(--ink); font-weight: 600; }
+@media (prefers-reduced-motion: no-preference) { .bar i { transition: width .25s ease; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow"><span>New HSK · 2025 syllabus</span><span class="chip">Levels 1–3</span><span class="chip">Free</span></div>
+    <h1><span class="zh">超纲词</span>HSK 3.0 Level Checker</h1>
+    <p class="lede">Paste any Chinese text. Words above your level are marked in red, so you can tell in seconds whether a text fits a learner, a lesson, or an exam practice set.</p>
+  </header>
+
+  <section class="sheet" aria-labelledby="in-label">
+    <label class="field" id="in-label" for="text-input">Chinese text <span class="hint" id="example-hint">Example text loaded. Replace it with your own.</span></label>
+    <textarea id="text-input" spellcheck="false"></textarea>
+    <div class="controls">
+      <div class="levels" role="group" aria-label="Learner level">
+        <span class="lbl">Learner level</span>
+        <button type="button" class="lv-btn" data-level="1" aria-pressed="false">HSK 1</button>
+        <button type="button" class="lv-btn" data-level="2" aria-pressed="true">HSK 2</button>
+        <button type="button" class="lv-btn" data-level="3" aria-pressed="false">HSK 3</button>
+      </div>
+      <button type="button" class="ghost" id="clear-btn">Clear text</button>
+    </div>
+  </section>
+
+  <section class="sheet" aria-live="polite" aria-labelledby="res-title">
+    <h2 id="res-title">Result for <span id="res-level">HSK 2</span></h2>
+    <div class="verdict" id="verdict"></div>
+    <div class="graded" id="graded"></div>
+  </section>
+
+  <section class="sheet" aria-labelledby="list-title">
+    <h2 id="list-title">Words above <span id="list-level">HSK 2</span></h2>
+    <ul class="words" id="above-list"></ul>
+    <p class="empty" id="above-empty" hidden>No words above this level. This text fits.</p>
+  </section>
+
+  <footer class="notes">
+    <p><b>Word lists.</b> New HSK (HSK 3.0) vocabulary, 2025 syllabus: Level 1 (300 words), Level 2 (200 new), Level 3 (500 new). Levels 4–9 will be added.</p>
+    <p><b>How words are split.</b> The checker finds the split with the fewest unknown characters, using only these lists. Names and rare words show as “not in HSK 1–3”.</p>
+    <p><b>Reading guide.</b> Reading research (Hu &amp; Nation, 2000) suggests learners read comfortably when about 98% of running words are known. 95–98% is readable with help; below 95% is hard going.</p>
+  </footer>
+</div>
+
+<script>
+const LEVELS = {"爱":1,"八":1,"爸爸":1,"吧":1,"白天":1,"百":1,"半":1,"包子":1,"杯子":1,"本":1,"边":1,"病":1,"不":1,"不客气":1,"不要":1,"菜":1,"茶":1,"唱":1,"超市":1,"车":1,"吃":1,"出租车":1,"穿":1,"打电话":1,"大":1,"大家":1,"大学":1,"大学生":1,"到":1,"的":1,"第":1,"弟弟":1,"点":1,"店":1,"电话":1,"电脑":1,"电视":1,"电影":1,"电影院":1,"东西":1,"都":1,"读":1,"读书":1,"对":1,"对不起":1,"多":1,"多少":1,"儿子":1,"二":1,"饭":1,"饭店":1,"房间":1,"非常":1,"飞机":1,"分":1,"分钟":1,"高兴":1,"歌":1,"哥哥":1,"个":1,"给":1,"公司":1,"工作":1,"狗":1,"贵":1,"国":1,"还":1,"孩子":1,"汉语":1,"汉字":1,"好":1,"好吃":1,"好看":1,"好听":1,"好玩儿":1,"号":1,"喝":1,"和":1,"很":1,"后":1,"回":1,"会":1,"火车":1,"鸡蛋":1,"几":1,"家":1,"家人":1,"见":1,"件":1,"饺子":1,"叫":1,"姐姐":1,"今年":1,"今天":1,"九":1,"觉得":1,"开":1,"开车":1,"看":1,"看病":1,"看见":1,"可以":1,"课":1,"口":1,"块":1,"来":1,"老师":1,"了":1,"冷":1,"里":1,"两":1,"零":1,"六":1,"妈妈":1,"吗":1,"买":1,"卖":1,"忙":1,"猫":1,"没关系":1,"没事":1,"没有":1,"妹妹":1,"们":1,"米饭":1,"面包":1,"面条儿":1,"明年":1,"明天":1,"名字":1,"哪":1,"哪个":1,"哪里":1,"哪儿":1,"哪些":1,"那":1,"那边":1,"那个":1,"那里":1,"那儿":1,"那些":1,"男":1,"男朋友":1,"呢":1,"能":1,"你":1,"你好":1,"你们":1,"年":1,"您":1,"牛奶":1,"女":1,"女儿":1,"女朋友":1,"女士":1,"朋友":1,"便宜":1,"漂亮":1,"苹果":1,"七":1,"起床":1,"千":1,"前":1,"钱":1,"请":1,"请问":1,"去":1,"去年":1,"热":1,"人":1,"认识":1,"日":1,"三":1,"商店":1,"上":1,"上班":1,"上课":1,"上午":1,"上学":1,"少":1,"谁":1,"什么":1,"生病":1,"十":1,"时候":1,"时间":1,"事":1,"是":1,"手机":1,"书":1,"书店":1,"水":1,"水果":1,"睡":1,"睡觉":1,"说":1,"说话":1,"四":1,"岁":1,"他":1,"它":1,"她":1,"他们":1,"它们":1,"她们":1,"太":1,"天":1,"天气":1,"听":1,"听见":1,"同学":1,"外":1,"外边":1,"玩":1,"晚":1,"晚饭":1,"晚上":1,"喂":1,"问":1,"问题":1,"我":1,"我们":1,"五":1,"午饭":1,"喜欢":1,"下":1,"下雨":1,"下班":1,"下课":1,"下午":1,"先生":1,"现在":1,"想":1,"小":1,"小朋友":1,"小时":1,"小学":1,"小学生":1,"些":1,"写":1,"谢谢":1,"新":1,"星期":1,"星期日":1,"星期天":1,"休息":1,"学":1,"学生":1,"学习":1,"学校":1,"雪":1,"要":1,"也":1,"一":1,"衣服":1,"医生":1,"医院":1,"一半":1,"一下":1,"椅子":1,"一点儿":1,"一些":1,"有":1,"有的":1,"有点儿":1,"有些":1,"雨":1,"元":1,"月":1,"再":1,"在":1,"再见":1,"早":1,"早饭":1,"早上":1,"怎么":1,"怎么样":1,"找":1,"这":1,"这边":1,"这个":1,"这里":1,"这儿":1,"这些":1,"真":1,"正在":1,"只":1,"知道":1,"中国":1,"中文":1,"中午":1,"中学":1,"中学生":1,"住":1,"桌子":1,"字":1,"昨天":1,"坐":1,"做":1,"做饭":1,"啊":2,"爱好":2,"白色":2,"班":2,"帮":2,"帮忙":2,"包":2,"本子":2,"比":2,"笔":2,"别":2,"不错":2,"不好意思":2,"长":2,"车站":2,"出":2,"出国":2,"出来":2,"出门":2,"出去":2,"床":2,"词":2,"次":2,"从":2,"从小":2,"错":2,"打":2,"打车":2,"打开":2,"但":2,"但是":2,"得":2,"地":2,"等":2,"地铁":2,"懂":2,"动":2,"饭馆":2,"飞":2,"高":2,"高中":2,"告诉":2,"个子":2,"跟":2,"公交车":2,"过":2,"过来":2,"过年":2,"过去":2,"还是":2,"黑色":2,"红茶":2,"红色":2,"后面":2,"花":2,"画":2,"坏":2,"回来":2,"回去":2,"机场":2,"机票":2,"记得":2,"间":2,"教":2,"教室":2,"介绍":2,"进":2,"近":2,"进来":2,"进去":2,"经常":2,"酒店":2,"就":2,"咖啡":2,"开始":2,"开学":2,"考":2,"考试":2,"可能":2,"裤子":2,"快":2,"快乐":2,"快要":2,"篮球":2,"累":2,"离":2,"里面":2,"楼":2,"路":2,"路上":2,"旅游":2,"绿茶":2,"绿色":2,"慢":2,"没意思":2,"每":2,"门":2,"门口":2,"门票":2,"面":2,"名":2,"拿":2,"那么":2,"那样":2,"奶茶":2,"奶奶":2,"男孩儿":2,"鸟":2,"女孩儿":2,"旁边":2,"跑":2,"跑步":2,"票":2,"妻子":2,"起来":2,"前面":2,"晴":2,"球":2,"让":2,"肉":2,"商场":2,"上来":2,"上面":2,"上去":2,"上网":2,"身体":2,"生日":2,"时":2,"事情":2,"手":2,"手表":2,"书包":2,"舒服":2,"送":2,"虽然":2,"所以":2,"疼":2,"踢":2,"题":2,"条":2,"跳舞":2,"头":2,"外国":2,"外面":2,"完":2,"万":2,"往":2,"网上":2,"忘":2,"位":2,"为什么":2,"希望":2,"洗":2,"洗手间":2,"下来":2,"下面":2,"下去":2,"小孩儿":2,"小时候":2,"笑":2,"姓":2,"姓名":2,"颜色":2,"眼睛":2,"药":2,"药店":2,"爷爷":2,"一会儿":2,"已经":2,"一起":2,"意思":2,"阴":2,"因为":2,"游":2,"游泳":2,"有意思":2,"有时":2,"右":2,"右边":2,"鱼":2,"远":2,"运动":2,"站":2,"丈夫":2,"这么":2,"这样":2,"着":2,"正":2,"周":2,"准备":2,"自己":2,"走":2,"走路":2,"足球":2,"最":2,"左":2,"左边":2,"阿姨":3,"矮":3,"爱人":3,"安静":3,"安全":3,"把":3,"搬":3,"班级":3,"搬家":3,"办":3,"办法":3,"办公室":3,"半天":3,"帮助":3,"饱":3,"报纸":3,"北":3,"北方":3,"被":3,"笔记":3,"比较":3,"笔记本":3,"比如":3,"比赛":3,"必须":3,"变":3,"遍":3,"变成":3,"变化":3,"表演":3,"别的":3,"别人":3,"宾馆":3,"冰":3,"冰激凌":3,"冰箱":3,"病人":3,"不但":3,"不见":3,"不用":3,"不同":3,"不久":3,"不行":3,"才":3,"菜单":3,"参加":3,"草":3,"草地":3,"层":3,"查":3,"差":3,"差不多":3,"尝":3,"常":3,"常见":3,"常用":3,"常常":3,"衬衫":3,"成绩":3,"城市":3,"迟到":3,"出发":3,"出生":3,"出院":3,"初中":3,"除了":3,"船":3,"春天":3,"词典":3,"聪明":3,"打扫":3,"打算":3,"大概":3,"大人":3,"大小":3,"大熊猫":3,"大衣":3,"带":3,"担心":3,"蛋糕":3,"当然":3,"到处":3,"得到":3,"得分":3,"的话":3,"灯":3,"地点":3,"地方":3,"地图":3,"电":3,"电梯":3,"电子书":3,"丢":3,"东":3,"东北":3,"东方":3,"东南":3,"冬天":3,"懂得":3,"动物":3,"动物园":3,"短":3,"短裤":3,"段":3,"锻炼":3,"对话":3,"饿":3,"而且":3,"耳朵":3,"耳机":3,"发":3,"发烧":3,"发生":3,"发现":3,"发展":3,"方便":3,"方便面":3,"方法":3,"方向":3,"房子":3,"放":3,"放假":3,"放心":3,"放学":3,"分开":3,"风":3,"封":3,"夫妻":3,"服务":3,"附近":3,"复习":3,"该":3,"干净":3,"感兴趣":3,"感到":3,"感冒":3,"干":3,"刚":3,"刚才":3,"刚刚":3,"高铁":3,"根据":3,"更":3,"公斤":3,"公园":3,"工作日":3,"故事":3,"刮":3,"关":3,"关机":3,"关系":3,"关心":3,"关于":3,"关注":3,"国家":3,"过节":3,"海":3,"害怕":3,"好多":3,"好久":3,"好像":3,"号码":3,"河":3,"合适":3,"黑板":3,"红绿灯":3,"后来":3,"后年":3,"后天":3,"护照":3,"花园":3,"画家":3,"欢迎":3,"环境":3,"换":3,"黄色":3,"回答":3,"会议":3,"或":3,"或者":3,"鸡":3,"几乎":3,"机会":3,"极":3,"急":3,"记":3,"季":3,"季节":3,"加":3,"假期":3,"坚持":3,"检查":3,"简单":3,"检票":3,"健康":3,"见面":3,"讲":3,"角":3,"脚":3,"接":3,"街":3,"节":3,"结婚":3,"节目":3,"节日":3,"结束":3,"解决":3,"姐妹":3,"借":3,"斤":3,"经过":3,"经理":3,"久":3,"酒":3,"旧":3,"句":3,"句子":3,"决定":3,"卡":3,"开花":3,"开会":3,"开机":3,"开心":3,"看来":3,"可":3,"渴":3,"可爱":3,"可是":3,"刻":3,"课本":3,"客人":3,"课文":3,"空调":3,"哭":3,"筷子":3,"矿泉水":3,"来自":3,"蓝":3,"老":3,"老人":3,"离开":3,"礼物":3,"历史":3,"脸":3,"练":3,"练习":3,"凉快":3,"辆":3,"聊":3,"聊天儿":3,"了解":3,"邻居":3,"留学":3,"留学生":3,"楼梯":3,"路边":3,"路口":3,"马":3,"马路":3,"马上":3,"满意":3,"毛":3,"米":3,"面前":3,"明白":3,"名单":3,"名人":3,"南":3,"难":3,"南方":3,"难过":3,"难看":3,"男人":3,"男生":3,"难题":3,"难听":3,"年级":3,"年轻":3,"牛":3,"努力":3,"女人":3,"女生":3,"爬":3,"怕":3,"拍照":3,"盘子":3,"胖":3,"啤酒":3,"平时":3,"瓶子":3,"骑":3,"奇怪":3,"其实":3,"其他":3,"起":3,"起飞":3,"汽车":3,"铅笔":3,"前年":3,"前天":3,"清楚":3,"请假":3,"请客":3,"秋天":3,"球场":3,"裙子":3,"然后":3,"热情":3,"认得":3,"认为":3,"认真":3,"容易":3,"如果":3,"伞":3,"扫":3,"沙发":3,"山":3,"上衣":3,"勺子":3,"身边":3,"身高":3,"声":3,"生活":3,"生气":3,"声音":3,"市":3,"试":3,"室":3,"世界":3,"收":3,"收到":3,"受":3,"瘦":3,"受到":3,"叔叔":3,"树":3,"数学":3,"刷":3,"双":3,"水平":3,"司机":3,"四季":3,"太阳":3,"糖":3,"特别":3,"提高":3,"体育":3,"体育馆":3,"甜":3,"跳":3,"听说":3,"挺":3,"同事":3,"同意":3,"头发":3,"突然":3,"图书馆":3,"腿":3,"外地":3,"外卖":3,"外语":3,"完成":3,"碗":3,"晚点":3,"晚会":3,"网球":3,"网站":3,"忘记":3,"为":3,"为了":3,"卫生间":3,"文化":3,"屋子":3,"西":3,"西北":3,"西方":3,"西瓜":3,"西南":3,"习惯":3,"喜爱":3,"洗衣机":3,"洗澡":3,"夏天":3,"先":3,"香蕉":3,"相信":3,"箱子":3,"向":3,"像":3,"相机":3,"小区":3,"小心":3,"校园":3,"校长":3,"鞋":3,"心里":3,"新年":3,"新闻":3,"新鲜":3,"信":3,"信用卡":3,"行":3,"行李":3,"兴趣":3,"休假":3,"需要":3,"选":3,"选择":3,"学期":3,"牙":3,"牙刷":3,"羊":3,"养":3,"要求":3,"页":3,"一定":3,"一共":3,"一块儿":3,"一样":3,"以后":3,"以前":3,"以上":3,"以外":3,"以为":3,"以下":3,"一般":3,"一边":3,"一直":3,"音乐":3,"银行":3,"银行卡":3,"饮料":3,"应该":3,"影响":3,"用":3,"邮件":3,"游客":3,"游戏":3,"邮箱":3,"有关":3,"有名":3,"有用":3,"又":3,"羽毛球":3,"语言":3,"雨衣":3,"遇到":3,"遇见":3,"园":3,"员":3,"愿意":3,"越":3,"月亮":3,"运动会":3,"运动员":3,"咱们":3,"脏":3,"怎么办":3,"怎样":3,"张":3,"着急":3,"照":3,"照顾":3,"照片":3,"照相":3,"直到":3,"纸":3,"只能":3,"只是":3,"只要":3,"只有":3,"中":3,"中间":3,"终于":3,"种":3,"重要":3,"周末":3,"主要":3,"注意":3,"住院":3,"字典":3,"自行车":3,"子":3,"总":3,"总是":3,"嘴":3,"最好":3,"最后":3,"最近":3,"做客":3,"作业":3,"好玩":1,"面条":1,"一点":1,"有点":1,"男孩":2,"女孩":2,"小孩":2,"一会":2,"聊天":3,"一块":3};
+const SAMPLE = "我是大学生，今年二十岁。我很喜欢喝咖啡，也喜欢跑步。周末我常常跟朋友去公园，有时候我们一起去博物馆。我觉得学习汉语很有意思，但是汉字有点儿难。";
+const MAXLEN = Object.keys(LEVELS).reduce((m, w) => Math.max(m, w.length), 1);
+const HAN = /[㐀-鿿豈-﫿]/;
+
+const input = document.getElementById("text-input");
+const hint = document.getElementById("example-hint");
+const verdictEl = document.getElementById("verdict");
+const gradedEl = document.getElementById("graded");
+const listEl = document.getElementById("above-list");
+const emptyEl = document.getElementById("above-empty");
+let target = 2;
+
+function store(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+function load(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+
+/* Split one run of Han characters: fewest unknown characters first, then fewest pieces. */
+function splitRun(run) {
+  const n = run.length;
+  const best = new Array(n + 1).fill(null);
+  best[0] = { unk: 0, cnt: 0, prev: -1, word: null };
+  for (let i = 0; i < n; i++) {
+    if (!best[i]) continue;
+    const base = best[i];
+    for (let len = Math.min(MAXLEN, n - i); len >= 1; len--) {
+      const piece = run.substr(i, len);
+      const known = Object.prototype.hasOwnProperty.call(LEVELS, piece);
+      if (!known && len > 1) continue;
+      const cand = { unk: base.unk + (known ? 0 : 1), cnt: base.cnt + 1, prev: i, word: piece, known };
+      const cur = best[i + len];
+      if (!cur || cand.unk < cur.unk || (cand.unk === cur.unk && cand.cnt < cur.cnt)) best[i + len] = cand;
+    }
+  }
+  const out = [];
+  for (let j = n; j > 0; j = best[j].prev) out.unshift({ text: best[j].word, level: best[j].known ? LEVELS[best[j].word] : 0 });
+  const merged = [];
+  for (const t of out) {
+    const last = merged[merged.length - 1];
+    if (t.level === 0 && last && last.level === 0) last.text += t.text; else merged.push({ ...t });
+  }
+  return merged;
+}
+
+function tokenize(text) {
+  const tokens = [];
+  let i = 0;
+  while (i < text.length) {
+    if (HAN.test(text[i])) {
+      let j = i; while (j < text.length && HAN.test(text[j])) j++;
+      for (const t of splitRun(text.slice(i, j))) tokens.push({ ...t, han: true });
+      i = j;
+    } else {
+      let j = i; while (j < text.length && !HAN.test(text[j])) j++;
+      tokens.push({ text: text.slice(i, j), han: false });
+      i = j;
+    }
+  }
+  return tokens;
+}
+
+function esc(s) { return s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+
+function render() {
+  const text = input.value;
+  const tokens = tokenize(text);
+  const words = tokens.filter(t => t.han);
+  const counts = { 1: 0, 2: 0, 3: 0, 0: 0 };
+  words.forEach(w => counts[w.level]++);
+  const total = words.length;
+  const known = words.filter(w => w.level >= 1 && w.level <= target).length;
+
+  document.getElementById("res-level").textContent = "HSK " + target;
+  document.getElementById("list-level").textContent = "HSK " + target;
+
+  if (!total) {
+    verdictEl.innerHTML = '<p class="empty">Paste some Chinese text above to see the result.</p>';
+    gradedEl.innerHTML = "";
+    listEl.innerHTML = ""; emptyEl.hidden = true;
+    return;
+  }
+
+  const pct = known / total * 100;
+  let state = "bad", head = "Too many unknown words", sub = "Below 95% known. Pick an easier text or teach these words first.";
+  if (pct >= 98) { state = "ok"; head = "Comfortable to read"; sub = "98% or more of the words are known at this level."; }
+  else if (pct >= 95) { state = "warn"; head = "Readable with some help"; sub = "95–98% known. A short word list before reading will help."; }
+  const shown = pct >= 99.95 ? "100" : pct.toFixed(1);
+  const w = n => (n / total * 100).toFixed(2) + "%";
+  verdictEl.innerHTML =
+    '<div class="verdict-top"><div class="big state-' + state + '">' + shown + '%</div>' +
+    '<div class="verdict-text"><strong class="state-' + state + '">' + head + '</strong><span>' + known + ' of ' + total + ' words known at HSK ' + target + '. ' + sub + '</span></div></div>' +
+    '<div class="bar" aria-hidden="true"><i class="b1" style="width:' + w(counts[1]) + '"></i><i class="b2" style="width:' + w(counts[2]) + '"></i><i class="b3" style="width:' + w(counts[3]) + '"></i><i class="bx" style="width:' + w(counts[0]) + '"></i></div>' +
+    '<div class="legend"><span><i style="background:var(--l1)"></i>HSK 1 · ' + counts[1] + '</span><span><i style="background:var(--l2)"></i>HSK 2 · ' + counts[2] + '</span><span><i style="background:var(--l3)"></i>HSK 3 · ' + counts[3] + '</span><span><i style="background:var(--over)"></i>Not in HSK 1–3 · ' + counts[0] + '</span></div>';
+
+  gradedEl.innerHTML = tokens.map(t => {
+    if (!t.han) return esc(t.text).replace(/\n/g, "<br>");
+    const above = t.level === 0 || t.level > target;
+    const lv = t.level ? "HSK " + t.level : "Not in HSK 1–3";
+    return '<span class="w ' + (above ? "above" : "w" + t.level) + '" title="' + lv + '">' + esc(t.text) + "</span>";
+  }).join("");
+
+  const seen = new Map();
+  words.filter(t => t.level === 0 || t.level > target).forEach(t => {
+    const e = seen.get(t.text) || { text: t.text, level: t.level, n: 0 }; e.n++; seen.set(t.text, e);
+  });
+  const items = [...seen.values()].sort((a, b) => (a.level || 99) - (b.level || 99) || b.n - a.n);
+  listEl.innerHTML = items.map(e =>
+    '<li><span class="zh">' + esc(e.text) + '</span><span class="tag ' + (e.level ? "t" + e.level : "tx") + '">' + (e.level ? "HSK " + e.level : "not in 1–3") + (e.n > 1 ? " ×" + e.n : "") + "</span></li>"
+  ).join("");
+  emptyEl.hidden = items.length > 0;
+}
+
+function setLevel(n) {
+  target = n;
+  document.querySelectorAll(".lv-btn").forEach(b => b.setAttribute("aria-pressed", String(+b.dataset.level === n)));
+  store("hsk-level", String(n));
+  render();
+}
+
+let timer;
+input.addEventListener("input", () => {
+  hint.hidden = true;
+  clearTimeout(timer);
+  timer = setTimeout(() => { store("hsk-text", input.value); render(); }, 120);
+});
+document.querySelectorAll(".lv-btn").forEach(b => b.addEventListener("click", () => setLevel(+b.dataset.level)));
+document.getElementById("clear-btn").addEventListener("click", () => { input.value = ""; hint.hidden = true; store("hsk-text", ""); render(); input.focus(); });
+
+const savedText = load("hsk-text");
+const savedLevel = +load("hsk-level");
+if (savedText) { input.value = savedText; hint.hidden = true; } else { input.value = SAMPLE; }
+if (savedLevel >= 1 && savedLevel <= 3) target = savedLevel;
+setLevel(target);
+</script>
+
+</body>
+</html>
