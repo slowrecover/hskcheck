@@ -6,6 +6,11 @@
 <link rel="canonical" href="https://hskcheck.com/">
 <title>HSK 3.0 Level Checker</title>
 <meta name="description" content="Paste Chinese text and see which words are above your HSK 3.0 level. Free, instant, works in your browser.">
+<meta property="og:title" content="HSK 3.0 Level Checker">
+<meta property="og:description" content="Paste Chinese text and see which words are above your HSK 3.0 level. Free and instant.">
+<meta property="og:url" content="https://hskcheck.com/">
+<meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"HSK 3.0 Level Checker","url":"https://hskcheck.com/","applicationCategory":"EducationalApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Paste Chinese text and see which words are above your HSK 3.0 level."}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@600&display=swap">
@@ -113,6 +118,17 @@ h2 { margin: 0; font-size: 15px; font-weight: 600; letter-spacing: .01em; }
 .tag.t3 { background: var(--l3-bg); color: var(--l3); }
 .tag.tx { background: var(--over-bg); color: var(--over); }
 
+.guide { display: grid; gap: 18px; max-width: 68ch; }
+.guide h2 { font-size: 20px; letter-spacing: -.005em; text-wrap: balance; }
+.guide h3 { margin: 0 0 4px; font-size: 16px; font-weight: 600; }
+.guide p { margin: 0; color: var(--ink); }
+.guide .qa { display: grid; gap: 14px; }
+.guide .zh-inline { font-family: var(--f-zh); }
+.table-wrap { overflow-x: auto; }
+table.counts { border-collapse: collapse; font-size: 14px; min-width: 320px; }
+table.counts th, table.counts td { text-align: left; padding: 7px 14px 7px 0; border-bottom: 1px solid var(--rule); }
+table.counts th { font-weight: 600; color: var(--muted); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+table.counts td.num { font-family: var(--f-num); font-variant-numeric: tabular-nums; }
 .notes { font-size: 13px; color: var(--muted); display: grid; gap: 6px; max-width: 70ch; }
 .notes p { margin: 0; }
 .notes b { color: var(--ink); font-weight: 600; }
@@ -151,6 +167,46 @@ h2 { margin: 0; font-size: 15px; font-weight: 600; letter-spacing: .01em; }
     <h2 id="list-title">Words above <span id="list-level">HSK 2</span></h2>
     <ul class="words" id="above-list"></ul>
     <p class="empty" id="above-empty" hidden>No words above this level. This text fits.</p>
+  </section>
+
+  <section class="guide" aria-labelledby="guide-title">
+    <h2 id="guide-title">About HSK 3.0 and this checker</h2>
+    <div class="qa">
+      <div>
+        <h3>What is HSK 3.0?</h3>
+        <p>HSK 3.0, often called the New HSK, is the updated version of the Chinese proficiency test. It has nine levels instead of six, and a new vocabulary syllabus that sets how many words a learner should know at each level.</p>
+      </div>
+      <div>
+        <h3>How many words are in each level?</h3>
+        <p>Word targets in the 2025 syllabus are cumulative: each level includes all the words from the levels below it.</p>
+        <div class="table-wrap">
+          <table class="counts">
+            <thead><tr><th>Level</th><th>Total words</th><th>In this checker</th></tr></thead>
+            <tbody>
+              <tr><td>HSK 1</td><td class="num">300</td><td>Yes</td></tr>
+              <tr><td>HSK 2</td><td class="num">500</td><td>Yes</td></tr>
+              <tr><td>HSK 3</td><td class="num">1,000</td><td>Yes</td></tr>
+              <tr><td>HSK 4</td><td class="num">2,000</td><td>Coming</td></tr>
+              <tr><td>HSK 5</td><td class="num">3,600</td><td>Coming</td></tr>
+              <tr><td>HSK 6</td><td class="num">5,400</td><td>Coming</td></tr>
+              <tr><td>HSK 7–9</td><td class="num">11,000</td><td>Coming</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <h3>Who is it for?</h3>
+        <p>Teachers use it to check that a reading passage, worksheet or exam question stays within their students' level. Learners use it to tell whether an article or graded reader is worth starting now, and which words to learn first.</p>
+      </div>
+      <div>
+        <h3>Why is <span class="zh-inline">杯</span> in <span class="zh-inline">一杯茶</span> marked, when <span class="zh-inline">杯子</span> is Level 1?</h3>
+        <p>The syllabus lists words, not characters. <span class="zh-inline">杯子</span> (cup) is a Level 1 word, but <span class="zh-inline">杯</span> on its own, used as a measure word, is not in the Level 1–3 lists. The checker follows the lists exactly, so it marks it.</p>
+      </div>
+      <div>
+        <h3>Is my text stored anywhere?</h3>
+        <p>No. The check runs entirely in your browser. Your text is never sent to a server.</p>
+      </div>
+    </div>
   </section>
 
   <footer class="notes">
