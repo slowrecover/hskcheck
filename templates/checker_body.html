@@ -1,0 +1,217 @@
+<div class="wrap">
+  <header>
+    __NAV__
+    <div class="eyebrow"><span>New HSK · 2025 syllabus</span><span class="chip">Levels 1–3</span><span class="chip">Free</span></div>
+    <h1><span class="zh">超纲词</span>HSK 3.0 Level Checker</h1>
+    <p class="lede">Paste any Chinese text. Words above your level are marked in red, so you can tell in seconds whether a text fits a learner, a lesson, or an exam practice set.</p>
+  </header>
+
+  <section class="sheet" aria-labelledby="in-label">
+    <label class="field" id="in-label" for="text-input">Chinese text <span class="hint" id="example-hint">Example text loaded. Replace it with your own.</span></label>
+    <textarea id="text-input" spellcheck="false"></textarea>
+    <div class="controls">
+      <div class="levels" role="group" aria-label="Learner level">
+        <span class="lbl">Learner level</span>
+        <button type="button" class="lv-btn" data-level="1" aria-pressed="false">HSK 1</button>
+        <button type="button" class="lv-btn" data-level="2" aria-pressed="true">HSK 2</button>
+        <button type="button" class="lv-btn" data-level="3" aria-pressed="false">HSK 3</button>
+      </div>
+      <button type="button" class="ghost" id="clear-btn">Clear text</button>
+    </div>
+  </section>
+
+  <section class="sheet" aria-live="polite" aria-labelledby="res-title">
+    <h2 id="res-title">Result for <span id="res-level">HSK 2</span></h2>
+    <div class="verdict" id="verdict"></div>
+    <div class="graded" id="graded"></div>
+  </section>
+
+  <section class="sheet" aria-labelledby="list-title">
+    <h2 id="list-title">Words above <span id="list-level">HSK 2</span></h2>
+    <ul class="words" id="above-list"></ul>
+    <p class="empty" id="above-empty" hidden>No words above this level. This text fits.</p>
+  </section>
+
+  <section class="guide" aria-labelledby="guide-title">
+    <h2 id="guide-title">About HSK 3.0 and this checker</h2>
+    <div class="qa">
+      <div>
+        <h3>What is HSK 3.0?</h3>
+        <p>HSK 3.0, often called the New HSK, is the updated version of the Chinese proficiency test. It has nine levels instead of six, and a new vocabulary syllabus that sets how many words a learner should know at each level.</p>
+      </div>
+      <div>
+        <h3>How many words are in each level?</h3>
+        <p>Word targets in the 2025 syllabus are cumulative: each level includes all the words from the levels below it.</p>
+        <div class="table-wrap">
+          <table class="counts">
+            <thead><tr><th>Level</th><th>Total words</th><th>In this checker</th></tr></thead>
+            <tbody>
+              <tr><td>HSK 1</td><td class="num">300</td><td>Yes</td></tr>
+              <tr><td>HSK 2</td><td class="num">500</td><td>Yes</td></tr>
+              <tr><td>HSK 3</td><td class="num">1,000</td><td>Yes</td></tr>
+              <tr><td>HSK 4</td><td class="num">2,000</td><td>Coming</td></tr>
+              <tr><td>HSK 5</td><td class="num">3,600</td><td>Coming</td></tr>
+              <tr><td>HSK 6</td><td class="num">5,400</td><td>Coming</td></tr>
+              <tr><td>HSK 7–9</td><td class="num">11,000</td><td>Coming</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <h3>Who is it for?</h3>
+        <p>Teachers use it to check that a reading passage, worksheet or exam question stays within their students' level. Learners use it to tell whether an article or graded reader is worth starting now, and which words to learn first.</p>
+      </div>
+      <div>
+        <h3>Why is <span class="zh-inline">杯</span> in <span class="zh-inline">一杯茶</span> marked, when <span class="zh-inline">杯子</span> is Level 1?</h3>
+        <p>The syllabus lists words, not characters. <span class="zh-inline">杯子</span> (cup) is a Level 1 word, but <span class="zh-inline">杯</span> on its own, used as a measure word, is not in the Level 1–3 lists. The checker follows the lists exactly, so it marks it.</p>
+      </div>
+      <div>
+        <h3>Is my text stored anywhere?</h3>
+        <p>No. The check runs entirely in your browser. Your text is never sent to a server.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="notes">
+    <p><b>Word lists.</b> New HSK (HSK 3.0) vocabulary, 2025 syllabus: Level 1 (300 words), Level 2 (200 new), Level 3 (500 new). Levels 4–9 will be added.</p>
+    <p><b>How words are split.</b> The checker finds the split with the fewest unknown characters, using only these lists. Names and rare words show as “not in HSK 1–3”.</p>
+    <p><b>Reading guide.</b> Reading research (Hu &amp; Nation, 2000) suggests learners read comfortably when about 98% of running words are known. 95–98% is readable with help; below 95% is hard going.</p>
+  </footer>
+</div>
+
+<script>
+const LEVELS = __LEVELS_JSON__;
+const SAMPLE = "我是大学生，今年二十岁。我很喜欢喝咖啡，也喜欢跑步。周末我常常跟朋友去公园，有时候我们一起去博物馆。我觉得学习汉语很有意思，但是汉字有点儿难。";
+const MAXLEN = Object.keys(LEVELS).reduce((m, w) => Math.max(m, w.length), 1);
+const HAN = /[㐀-鿿豈-﫿]/;
+
+const input = document.getElementById("text-input");
+const hint = document.getElementById("example-hint");
+const verdictEl = document.getElementById("verdict");
+const gradedEl = document.getElementById("graded");
+const listEl = document.getElementById("above-list");
+const emptyEl = document.getElementById("above-empty");
+let target = 2;
+
+function store(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+function load(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+
+/* Split one run of Han characters: fewest unknown characters first, then fewest pieces. */
+function splitRun(run) {
+  const n = run.length;
+  const best = new Array(n + 1).fill(null);
+  best[0] = { unk: 0, cnt: 0, prev: -1, word: null };
+  for (let i = 0; i < n; i++) {
+    if (!best[i]) continue;
+    const base = best[i];
+    for (let len = Math.min(MAXLEN, n - i); len >= 1; len--) {
+      const piece = run.substr(i, len);
+      const known = Object.prototype.hasOwnProperty.call(LEVELS, piece);
+      if (!known && len > 1) continue;
+      const cand = { unk: base.unk + (known ? 0 : 1), cnt: base.cnt + 1, prev: i, word: piece, known };
+      const cur = best[i + len];
+      if (!cur || cand.unk < cur.unk || (cand.unk === cur.unk && cand.cnt < cur.cnt)) best[i + len] = cand;
+    }
+  }
+  const out = [];
+  for (let j = n; j > 0; j = best[j].prev) out.unshift({ text: best[j].word, level: best[j].known ? LEVELS[best[j].word] : 0 });
+  const merged = [];
+  for (const t of out) {
+    const last = merged[merged.length - 1];
+    if (t.level === 0 && last && last.level === 0) last.text += t.text; else merged.push({ ...t });
+  }
+  return merged;
+}
+
+function tokenize(text) {
+  const tokens = [];
+  let i = 0;
+  while (i < text.length) {
+    if (HAN.test(text[i])) {
+      let j = i; while (j < text.length && HAN.test(text[j])) j++;
+      for (const t of splitRun(text.slice(i, j))) tokens.push({ ...t, han: true });
+      i = j;
+    } else {
+      let j = i; while (j < text.length && !HAN.test(text[j])) j++;
+      tokens.push({ text: text.slice(i, j), han: false });
+      i = j;
+    }
+  }
+  return tokens;
+}
+
+function esc(s) { return s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+
+function render() {
+  const text = input.value;
+  const tokens = tokenize(text);
+  const words = tokens.filter(t => t.han);
+  const counts = { 1: 0, 2: 0, 3: 0, 0: 0 };
+  words.forEach(w => counts[w.level]++);
+  const total = words.length;
+  const known = words.filter(w => w.level >= 1 && w.level <= target).length;
+
+  document.getElementById("res-level").textContent = "HSK " + target;
+  document.getElementById("list-level").textContent = "HSK " + target;
+
+  if (!total) {
+    verdictEl.innerHTML = '<p class="empty">Paste some Chinese text above to see the result.</p>';
+    gradedEl.innerHTML = "";
+    listEl.innerHTML = ""; emptyEl.hidden = true;
+    return;
+  }
+
+  const pct = known / total * 100;
+  let state = "bad", head = "Too many unknown words", sub = "Below 95% known. Pick an easier text or teach these words first.";
+  if (pct >= 98) { state = "ok"; head = "Comfortable to read"; sub = "98% or more of the words are known at this level."; }
+  else if (pct >= 95) { state = "warn"; head = "Readable with some help"; sub = "95–98% known. A short word list before reading will help."; }
+  const shown = pct >= 99.95 ? "100" : pct.toFixed(1);
+  const w = n => (n / total * 100).toFixed(2) + "%";
+  verdictEl.innerHTML =
+    '<div class="verdict-top"><div class="big state-' + state + '">' + shown + '%</div>' +
+    '<div class="verdict-text"><strong class="state-' + state + '">' + head + '</strong><span>' + known + ' of ' + total + ' words known at HSK ' + target + '. ' + sub + '</span></div></div>' +
+    '<div class="bar" aria-hidden="true"><i class="b1" style="width:' + w(counts[1]) + '"></i><i class="b2" style="width:' + w(counts[2]) + '"></i><i class="b3" style="width:' + w(counts[3]) + '"></i><i class="bx" style="width:' + w(counts[0]) + '"></i></div>' +
+    '<div class="legend"><span><i style="background:var(--l1)"></i>HSK 1 · ' + counts[1] + '</span><span><i style="background:var(--l2)"></i>HSK 2 · ' + counts[2] + '</span><span><i style="background:var(--l3)"></i>HSK 3 · ' + counts[3] + '</span><span><i style="background:var(--over)"></i>Not in HSK 1–3 · ' + counts[0] + '</span></div>';
+
+  gradedEl.innerHTML = tokens.map(t => {
+    if (!t.han) return esc(t.text).replace(/\n/g, "<br>");
+    const above = t.level === 0 || t.level > target;
+    const lv = t.level ? "HSK " + t.level : "Not in HSK 1–3";
+    return '<span class="w ' + (above ? "above" : "w" + t.level) + '" title="' + lv + '">' + esc(t.text) + "</span>";
+  }).join("");
+
+  const seen = new Map();
+  words.filter(t => t.level === 0 || t.level > target).forEach(t => {
+    const e = seen.get(t.text) || { text: t.text, level: t.level, n: 0 }; e.n++; seen.set(t.text, e);
+  });
+  const items = [...seen.values()].sort((a, b) => (a.level || 99) - (b.level || 99) || b.n - a.n);
+  listEl.innerHTML = items.map(e =>
+    '<li><span class="zh">' + esc(e.text) + '</span><span class="tag ' + (e.level ? "t" + e.level : "tx") + '">' + (e.level ? "HSK " + e.level : "not in 1–3") + (e.n > 1 ? " ×" + e.n : "") + "</span></li>"
+  ).join("");
+  emptyEl.hidden = items.length > 0;
+}
+
+function setLevel(n) {
+  target = n;
+  document.querySelectorAll(".lv-btn").forEach(b => b.setAttribute("aria-pressed", String(+b.dataset.level === n)));
+  store("hsk-level", String(n));
+  render();
+}
+
+let timer;
+input.addEventListener("input", () => {
+  hint.hidden = true;
+  clearTimeout(timer);
+  timer = setTimeout(() => { store("hsk-text", input.value); render(); }, 120);
+});
+document.querySelectorAll(".lv-btn").forEach(b => b.addEventListener("click", () => setLevel(+b.dataset.level)));
+document.getElementById("clear-btn").addEventListener("click", () => { input.value = ""; hint.hidden = true; store("hsk-text", ""); render(); input.focus(); });
+
+const savedText = load("hsk-text");
+const savedLevel = +load("hsk-level");
+if (savedText) { input.value = savedText; hint.hidden = true; } else { input.value = SAMPLE; }
+if (savedLevel >= 1 && savedLevel <= 3) target = savedLevel;
+const hashLevel = (location.hash.match(/^#hsk([1-3])$/) || [])[1];
+if (hashLevel) target = +hashLevel;
+setLevel(target);
+</script>

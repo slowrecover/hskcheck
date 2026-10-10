@@ -1,0 +1,18 @@
+/* Word list page: a searchable vocabulary sheet, one row per word, numbered in syllabus order. */
+.tools-row { display: flex; gap: 10px 16px; align-items: center; flex-wrap: wrap; justify-content: space-between; }
+.search { flex: 1 1 240px; min-width: 0; padding: 10px 12px; font: 400 16px var(--f-ui); color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; }
+.count { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+table.words-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+table.words-table th { text-align: left; font-weight: 600; color: var(--muted); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; padding: 8px 10px 8px 0; border-bottom: 1px solid var(--rule); position: sticky; top: env(safe-area-inset-top, 0px); background: var(--sheet); }
+table.words-table td { padding: 9px 10px 9px 0; border-bottom: 1px solid var(--rule); vertical-align: baseline; }
+table.words-table td.n { font-family: var(--f-num); font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; width: 3.2em; }
+table.words-table td.hz { font-family: var(--f-zh); font-size: 21px; white-space: nowrap; }
+table.words-table td.py { font-size: 15px; color: var(--accent); white-space: nowrap; }
+table.words-table td.en { color: var(--ink); min-width: 0; }
+.cta { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.cta a.button { display: inline-block; text-decoration: none; font: 500 14px var(--f-ui); padding: 9px 16px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); }
+.empty { color: var(--muted); font-size: 15px; margin: 0; }
+.prose { display: grid; gap: 12px; max-width: 68ch; }
+.prose p { margin: 0; }
+.prose .zh-inline { font-family: var(--f-zh); }
+@media (max-width: 480px) { table.words-table td.hz { font-size: 19px; } table.words-table td.py { white-space: normal; } }

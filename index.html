@@ -3,19 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<link rel="canonical" href="https://hskcheck.com/">
 <title>HSK 3.0 Level Checker</title>
 <meta name="description" content="Paste Chinese text and see which words are above your HSK 3.0 level. Free, instant, works in your browser.">
+<link rel="canonical" href="https://hskcheck.com/">
 <meta property="og:title" content="HSK 3.0 Level Checker">
-<meta property="og:description" content="Paste Chinese text and see which words are above your HSK 3.0 level. Free and instant.">
+<meta property="og:description" content="Paste Chinese text and see which words are above your HSK 3.0 level. Free, instant, works in your browser.">
 <meta property="og:url" content="https://hskcheck.com/">
 <meta property="og:type" content="website">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"HSK 3.0 Level Checker","url":"https://hskcheck.com/","applicationCategory":"EducationalApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Paste Chinese text and see which words are above your HSK 3.0 level."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "HSK 3.0 Level Checker", "url": "https://hskcheck.com/", "applicationCategory": "EducationalApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Paste Chinese text and see which words are above your HSK 3.0 level."}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@600&display=swap">
 <style>
-/* Layout: one exam-sheet column. Input sheet on top, graded result sheet below, red-pen marks for words above the chosen level. */
 :root {
   --paper: #F3F5F8;
   --sheet: #FFFFFF;
@@ -67,6 +66,24 @@ h1 .zh { font-family: var(--f-zh-display); font-weight: 600; color: var(--accent
 .lede { margin: 0; color: var(--muted); max-width: 60ch; }
 
 .sheet { background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--radius); padding: 18px; display: grid; gap: 14px; min-width: 0; }
+a { color: var(--accent); text-underline-offset: 3px; }
+.zh-inline { font-family: var(--f-zh); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.site-nav { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; font-weight: 500; }
+.site-nav a { text-decoration: none; color: var(--muted); padding-block: 2px; border-bottom: 2px solid transparent; }
+.site-nav a:hover { color: var(--ink); }
+.site-nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
+h2 { margin: 0; font-size: 15px; font-weight: 600; letter-spacing: .01em; }
+.table-wrap { overflow-x: auto; }
+table.counts { border-collapse: collapse; font-size: 14px; min-width: 320px; }
+table.counts th, table.counts td { text-align: left; padding: 7px 14px 7px 0; border-bottom: 1px solid var(--rule); }
+table.counts th { font-weight: 600; color: var(--muted); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+table.counts td.num { font-family: var(--f-num); font-variant-numeric: tabular-nums; }
+.notes { font-size: 13px; color: var(--muted); display: grid; gap: 6px; max-width: 70ch; }
+.notes p { margin: 0; }
+.notes b { color: var(--ink); font-weight: 600; }
+/* Checker page: input sheet on top, graded result sheet below, red-pen marks for words above the chosen level. */
 label.field { font-weight: 600; font-size: 14px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
 label.field span.hint { font-weight: 400; color: var(--muted); font-size: 13px; }
 textarea {
@@ -74,8 +91,6 @@ textarea {
   font-family: var(--f-zh); font-size: 18px; line-height: 1.8; color: var(--ink);
   background: var(--paper); border: 1px solid var(--rule); border-radius: 8px;
 }
-textarea:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-
 .controls { display: flex; gap: 12px 18px; align-items: center; flex-wrap: wrap; justify-content: space-between; }
 .levels { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
 .levels .lbl { font-size: 14px; font-weight: 600; margin-right: 4px; }
@@ -101,7 +116,6 @@ textarea:focus-visible, button:focus-visible { outline: 2px solid var(--accent);
 .legend span { display: inline-flex; align-items: center; gap: 6px; font-variant-numeric: tabular-nums; }
 .legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
 
-h2 { margin: 0; font-size: 15px; font-weight: 600; letter-spacing: .01em; }
 .graded { font-family: var(--f-zh); font-size: 20px; line-height: 2.1; word-break: break-all; }
 .graded .w { border-bottom: 2px solid transparent; padding: 0 1px; border-radius: 2px; }
 .graded .w1 { border-bottom-color: color-mix(in srgb, var(--l1) 45%, transparent); }
@@ -117,27 +131,20 @@ h2 { margin: 0; font-size: 15px; font-weight: 600; letter-spacing: .01em; }
 .tag.t2 { background: var(--l2-bg); color: var(--l2); }
 .tag.t3 { background: var(--l3-bg); color: var(--l3); }
 .tag.tx { background: var(--over-bg); color: var(--over); }
-
 .guide { display: grid; gap: 18px; max-width: 68ch; }
 .guide h2 { font-size: 20px; letter-spacing: -.005em; text-wrap: balance; }
 .guide h3 { margin: 0 0 4px; font-size: 16px; font-weight: 600; }
 .guide p { margin: 0; color: var(--ink); }
 .guide .qa { display: grid; gap: 14px; }
 .guide .zh-inline { font-family: var(--f-zh); }
-.table-wrap { overflow-x: auto; }
-table.counts { border-collapse: collapse; font-size: 14px; min-width: 320px; }
-table.counts th, table.counts td { text-align: left; padding: 7px 14px 7px 0; border-bottom: 1px solid var(--rule); }
-table.counts th { font-weight: 600; color: var(--muted); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
-table.counts td.num { font-family: var(--f-num); font-variant-numeric: tabular-nums; }
-.notes { font-size: 13px; color: var(--muted); display: grid; gap: 6px; max-width: 70ch; }
-.notes p { margin: 0; }
-.notes b { color: var(--ink); font-weight: 600; }
 @media (prefers-reduced-motion: no-preference) { .bar i { transition: width .25s ease; } }
+
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
+    <nav class="site-nav" aria-label="Site"><a href="/" aria-current="page">Level Checker</a><a href="/hsk-1-word-list/">HSK 1 Words</a></nav>
     <div class="eyebrow"><span>New HSK · 2025 syllabus</span><span class="chip">Levels 1–3</span><span class="chip">Free</span></div>
     <h1><span class="zh">超纲词</span>HSK 3.0 Level Checker</h1>
     <p class="lede">Paste any Chinese text. Words above your level are marked in red, so you can tell in seconds whether a text fits a learner, a lesson, or an exam practice set.</p>
@@ -348,6 +355,8 @@ const savedText = load("hsk-text");
 const savedLevel = +load("hsk-level");
 if (savedText) { input.value = savedText; hint.hidden = true; } else { input.value = SAMPLE; }
 if (savedLevel >= 1 && savedLevel <= 3) target = savedLevel;
+const hashLevel = (location.hash.match(/^#hsk([1-3])$/) || [])[1];
+if (hashLevel) target = +hashLevel;
 setLevel(target);
 </script>
 
