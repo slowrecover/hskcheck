@@ -156,6 +156,10 @@ def nav(pages, current):
     return '<nav class="site-nav" aria-label="Site">' + "".join(links) + "</nav>"
 
 
+PRIVACY_URL = "/privacy/"
+SITE_FOOT = f'\n<footer class="site-foot">hskcheck.com · <a href="{PRIVACY_URL}">Privacy Policy</a></footer>'
+
+
 def render(title, description, url, css, body, head_extra=""):
     page = (TPL / "layout.html").read_text(encoding="utf-8")
     for key, value in (
@@ -164,7 +168,7 @@ def render(title, description, url, css, body, head_extra=""):
         ("__URL__", url),
         ("__HEAD_EXTRA__", head_extra),
         ("__CSS__", css),
-        ("__BODY__", body),
+        ("__BODY__", body + SITE_FOOT),
     ):
         page = page.replace(key, value)
     return page
@@ -467,8 +471,19 @@ def main():
             SITE + url, base_css + (TPL / "upgrade.css").read_text(encoding="utf-8"), body,
             f'<script type="application/ld+json">{ld}</script>'), encoding="utf-8")
 
-    # Sitemap
+    # Privacy policy
     today = datetime.date.today().isoformat()
+    body = (TPL / "privacy_body.html").read_text(encoding="utf-8")
+    body = body.replace("__NAV__", nav(pages, PRIVACY_URL)).replace("__UPDATED__", today)
+    target = ROOT / PRIVACY_URL.strip("/")
+    target.mkdir(exist_ok=True)
+    (target / "index.html").write_text(render(
+        "Privacy Policy | hskcheck.com",
+        "How hskcheck.com handles your data: the tools run in your browser, and the site may show Google ads that use cookies.",
+        SITE + PRIVACY_URL, base_css, body), encoding="utf-8")
+    extra_urls.append(PRIVACY_URL)
+
+    # Sitemap
     urls = "\n".join(
         f"  <url>\n    <loc>{SITE}{u}</loc>\n    <lastmod>{today}</lastmod>\n  </url>"
         for u in [u for u, _ in pages] + extra_urls

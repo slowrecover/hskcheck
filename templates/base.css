@@ -66,3 +66,8 @@ table.counts td.num { font-family: var(--f-num); font-variant-numeric: tabular-n
 .notes { font-size: 13px; color: var(--muted); display: grid; gap: 6px; max-width: 70ch; }
 .notes p { margin: 0; }
 .notes b { color: var(--ink); font-weight: 600; }
+.site-foot { max-width: 760px; margin: 28px auto 0; font-size: 13px; color: var(--muted); }
+.site-foot a { color: var(--muted); }
+.policy { gap: 10px; }
+.policy h2 { margin-top: 8px; }
+.policy p { margin: 0; max-width: 70ch; }

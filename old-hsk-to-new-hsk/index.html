@@ -83,6 +83,11 @@ table.counts td.num { font-family: var(--f-num); font-variant-numeric: tabular-n
 .notes { font-size: 13px; color: var(--muted); display: grid; gap: 6px; max-width: 70ch; }
 .notes p { margin: 0; }
 .notes b { color: var(--ink); font-weight: 600; }
+.site-foot { max-width: 760px; margin: 28px auto 0; font-size: 13px; color: var(--muted); }
+.site-foot a { color: var(--muted); }
+.policy { gap: 10px; }
+.policy h2 { margin-top: 8px; }
+.policy p { margin: 0; max-width: 70ch; }
 /* Old HSK -> New HSK page: two level pickers, a summary, then the words and characters still to learn. */
 .pickers { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; }
 .pick { display: grid; gap: 6px; min-width: 0; }
@@ -423,5 +428,6 @@ table.words-table td.lv { white-space: nowrap; text-align: right; padding-right:
 })();
 </script>
 
+<footer class="site-foot">hskcheck.com · <a href="/privacy/">Privacy Policy</a></footer>
 </body>
 </html>
