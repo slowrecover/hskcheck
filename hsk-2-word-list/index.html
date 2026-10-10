@@ -96,6 +96,7 @@ table.words-table td.py { font-size: 15px; color: var(--accent); white-space: no
 table.words-table td.en { color: var(--ink); min-width: 0; }
 .cta { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
 .cta a.button { display: inline-block; text-decoration: none; font: 500 14px var(--f-ui); padding: 9px 16px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); }
+.cta a.button.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
 .empty { color: var(--muted); font-size: 15px; margin: 0; }
 .prose { display: grid; gap: 12px; max-width: 68ch; }
 .prose p { margin: 0; }
@@ -107,7 +108,7 @@ table.words-table td.en { color: var(--ink); min-width: 0; }
 <body>
 <div class="wrap">
   <header>
-    <nav class="site-nav" aria-label="Site"><a href="/">Level Checker</a><a href="/hsk-1-word-list/">HSK 1 Words</a><a href="/hsk-2-word-list/" aria-current="page">HSK 2 Words</a><a href="/hsk-3-word-list/">HSK 3 Words</a></nav>
+    <nav class="site-nav" aria-label="Site"><a href="/">Level Checker</a><a href="/hsk-1-word-list/">HSK 1 Words</a><a href="/hsk-2-word-list/" aria-current="page">HSK 2 Words</a><a href="/hsk-3-word-list/">HSK 3 Words</a><a href="/chinese-character-worksheets/">Writing Sheets</a></nav>
     <div class="eyebrow"><span>New HSK · 2025 syllabus</span><span class="chip">Level 2</span><span class="chip">200 words</span></div>
     <h1>HSK 2 Word List</h1>
     <p class="lede">All 200 new words for HSK 2 in the HSK 3.0 (New HSK) syllabus, with pinyin and English. Together with HSK 1, that makes 500 words. Search by character, pinyin or meaning.</p>
@@ -330,7 +331,7 @@ table.words-table td.en { color: var(--ink); min-width: 0; }
   <section class="sheet" aria-labelledby="cta-title">
     <h2 id="cta-title">Check a text against HSK 2</h2>
     <p class="lede">Paste any Chinese text into the level checker. Words above HSK 2 are marked in red, so you can see at once whether a text fits.</p>
-    <div class="cta"><a class="button" href="/#hsk2">Open the level checker</a></div>
+    <div class="cta"><a class="button" href="/#hsk2">Open the level checker</a><a class="button ghost" href="/hsk-2-character-worksheets/">Print writing worksheets</a></div>
   </section>
 
   <section class="prose" aria-labelledby="about-title">

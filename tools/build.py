@@ -3,6 +3,8 @@
 Outputs (written at the repository root):
   index.html                      the level checker
   hsk-N-word-list/index.html      one page per level that has data/hskN.tsv
+  chinese-character-worksheets/   the writing worksheet maker
+  hsk-N-character-worksheets/     the maker preset to the characters of one level (needs strokes/hskN.json)
   sitemap.xml                     every page above
 
 Run from anywhere:  python3 tools/build.py
@@ -97,6 +99,53 @@ def search_key(word, pinyin, meaning):
     return "|".join([word, _squash(pinyin), v_form, _squash(meaning)])
 
 
+WS_COPY = {
+    1: "the 248 characters used in the HSK 1 words",
+    2: "the 123 new characters used in the HSK 2 words (characters already used in HSK 1 are not repeated)",
+    3: "the 284 new characters used in the HSK 3 words (characters already used in HSK 1 and 2 are not repeated)",
+}
+
+
+def level_chars(n):
+    path = ROOT / "strokes" / f"hsk{n}.json"
+    if not path.exists():
+        return None
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def level_links(current):
+    links = []
+    for n in LEVELS:
+        url = f"/hsk-{n}-character-worksheets/"
+        cur = ' aria-current="page"' if url == current else ""
+        links.append(f'<a href="{url}"{cur}>HSK {n}</a>')
+    cur = ' aria-current="page"' if current == "/chinese-character-worksheets/" else ""
+    links.append(f'<a href="/chinese-character-worksheets/"{cur}>Any characters</a>')
+    return '<nav class="level-links" aria-label="Character sets"><span>Start from:</span>' + "".join(links) + "</nav>"
+
+
+def worksheet_page(tpl, pages, current, *, eyebrow, chips, h1, lede, chars, preset, range_html,
+                   sheet_title, chartable, about_title, prose):
+    body = tpl
+    for key, value in (
+        ("__NAV__", nav(pages, "/chinese-character-worksheets/")),
+        ("__EYEBROW__", eyebrow),
+        ("__CHIPS__", "".join(f'<span class="chip">{c}</span>' for c in chips)),
+        ("__H1__", h1),
+        ("__LEDE__", lede),
+        ("__LEVEL_LINKS__", level_links(current)),
+        ("__CHARS__", html.escape(chars)),
+        ("__RANGE__", range_html),
+        ("__SHEET_TITLE__", html.escape(sheet_title)),
+        ("__CHARTABLE__", chartable),
+        ("__ABOUT_TITLE__", about_title),
+        ("__PROSE__", "\n".join(f"    <p>{p}</p>" for p in prose)),
+        ("__PRESET__", str(preset)),
+    ):
+        body = body.replace(key, value)
+    return body
+
+
 def nav(pages, current):
     links = []
     for url, label in pages:
@@ -128,6 +177,8 @@ def main():
         if entries:
             word_lists[n] = entries
             pages.append((f"/hsk-{n}-word-list/", f"HSK {n} Words"))
+    pages.append(("/chinese-character-worksheets/", "Writing Sheets"))
+    extra_urls = []
 
     # Level checker
     ld = json.dumps({
@@ -180,17 +231,103 @@ def main():
         target.mkdir(exist_ok=True)
         (target / "index.html").write_text(out, encoding="utf-8")
 
+    # Worksheet maker and one preset page per level
+    ws_tpl = (TPL / "worksheet_body.html").read_text(encoding="utf-8")
+    ws_css = base_css + (TPL / "worksheet.css").read_text(encoding="utf-8")
+    url = "/chinese-character-worksheets/"
+    ld = json.dumps({
+        "@context": "https://schema.org", "@type": "WebApplication", "name": "Chinese Character Worksheet Maker",
+        "url": SITE + url, "applicationCategory": "EducationalApplication", "operatingSystem": "Any",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "description": "Make printable Chinese handwriting worksheets with stroke order, tracing and tian or mi grids.",
+    }, ensure_ascii=False)
+    body = worksheet_page(
+        ws_tpl, pages, url,
+        eyebrow="Free · printable", chips=[],
+        h1='<span class="zh">字帖</span>Chinese Character Worksheet Maker',
+        lede="Make a printable handwriting sheet for any Chinese characters: stroke order, a model character, "
+             "tracing and empty practice boxes on a tian or mi grid. Or start from the characters of an HSK 3.0 level.",
+        chars="你好我爱学中文", preset=0, range_html="", sheet_title="Chinese writing practice", chartable="",
+        about_title="How to use the worksheets",
+        prose=[
+            "Start each character with the stroke order strip: the newest stroke is shown in black and earlier strokes in grey. "
+            "Then write over the grey tracing characters, and fill the empty boxes from memory.",
+            "A tian (<span class=\"zh-inline\">田</span>) grid splits each box into four, and a mi (<span class=\"zh-inline\">米</span>) grid adds the diagonals. "
+            "Both help you place each part of a character, which matters more than speed when you are starting out.",
+            "Writing a character a few times on several days works better than filling a whole page in one sitting. "
+            "Print one or two rows per character, and come back to the same sheet later in the week.",
+        ],
+    )
+    (ROOT / "chinese-character-worksheets").mkdir(exist_ok=True)
+    (ROOT / "chinese-character-worksheets" / "index.html").write_text(render(
+        "Chinese Character Worksheet Maker: Free Printable Tian Zi Ge Sheets",
+        "Make free printable Chinese character worksheets with stroke order, pinyin, tracing and tian or mi grid boxes. "
+        "Type any characters or start from an HSK 3.0 level.",
+        SITE + url, ws_css, body, f'<script type="application/ld+json">{ld}</script>'), encoding="utf-8")
+
+    for n in LEVELS:
+        chars = level_chars(n)
+        if not chars or n not in word_lists:
+            continue
+        url = f"/hsk-{n}-character-worksheets/"
+        total = len(chars)
+        order = list(chars)
+        rows = []
+        for i, c in enumerate(order, 1):
+            first = next((e for e in word_lists[n] if c in e[0]), None)
+            word = (f'<span class="zh-inline">{html.escape(first[0])}</span> {html.escape(first[1])} '
+                    f'<small>{html.escape(first[2])}</small>') if first else ""
+            rows.append(f'<tr><td class="n">{i}</td><td class="hz">{html.escape(c)}</td>'
+                        f'<td class="py">{html.escape(" / ".join(chars[c]["p"]))}</td><td class="w">{word}</td></tr>')
+        chartable = (f'  <section class="sheet char-table no-print" aria-labelledby="chars-title">\n'
+                     f'    <h2 id="chars-title">All {total} characters in the HSK {n} words</h2>\n'
+                     f'    <div class="table-wrap"><table><thead><tr><th scope="col">#</th><th scope="col">Character</th>'
+                     f'<th scope="col">Pinyin</th><th scope="col">First word in the list</th></tr></thead><tbody>\n'
+                     + "\n".join(rows) + "\n    </tbody></table></div>\n  </section>")
+        options = ['<option value="all">All ' + str(total) + " characters</option>"]
+        for a in range(1, total + 1, 30):
+            b = min(a + 29, total)
+            options.append(f'<option value="{a}-{b}">Characters {a}–{b}</option>')
+        range_html = ('<div class="field"><label for="range">Characters to print</label>'
+                      f'<select id="range">{"".join(options)}</select></div>')
+        prose = [
+            f"The HSK 3.0 syllabus lists words, not single characters. This page takes every character that appears in the HSK {n} words "
+            "and lists it once, in the order it first appears in the word list.",
+        ]
+        if n > 1:
+            prose.append("Characters already used at a lower level are left out, so the three levels together cover all 655 characters "
+                         "in the HSK 1–3 words without repeats.")
+        prose.append("The HSK 3.0 standard also includes its own character list, which may differ slightly from this set. "
+                     f'Use these sheets to practise writing the words you are learning, alongside the <a href="/hsk-{n}-word-list/">HSK {n} word list</a>.')
+        body = worksheet_page(
+            ws_tpl, pages, url,
+            eyebrow="New HSK · 2025 syllabus", chips=[f"Level {n}", f"{total} characters"],
+            h1=f"HSK {n} Character Worksheets",
+            lede=f"Printable writing practice for {WS_COPY[n]} of the HSK 3.0 syllabus, with stroke order, pinyin and tracing boxes. "
+                 "Print the whole level, or 30 characters at a time.",
+            chars="".join(order), preset=n, range_html=range_html, sheet_title=f"HSK {n} characters",
+            chartable=chartable, about_title="About these characters", prose=prose,
+        )
+        (ROOT / url.strip("/")).mkdir(exist_ok=True)
+        (ROOT / url.strip("/") / "index.html").write_text(render(
+            f"HSK {n} Character Worksheets: Printable Stroke Order Practice (HSK 3.0)",
+            f"Free printable writing worksheets for {WS_COPY[n].split(' (')[0]} of the HSK 3.0 syllabus, "
+            "with stroke order, pinyin, tracing and tian grid boxes.",
+            SITE + url, ws_css, body), encoding="utf-8")
+        extra_urls.append(url)
+
     # Sitemap
     today = datetime.date.today().isoformat()
     urls = "\n".join(
-        f"  <url>\n    <loc>{SITE}{u}</loc>\n    <lastmod>{today}</lastmod>\n  </url>" for u, _ in pages
+        f"  <url>\n    <loc>{SITE}{u}</loc>\n    <lastmod>{today}</lastmod>\n  </url>"
+        for u in [u for u, _ in pages] + extra_urls
     )
     (ROOT / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls + "\n</urlset>\n",
         encoding="utf-8",
     )
-    print("built:", ", ".join(u for u, _ in pages))
+    print("built:", ", ".join([u for u, _ in pages] + extra_urls))
 
 
 if __name__ == "__main__":

@@ -11,6 +11,7 @@ table.words-table td.py { font-size: 15px; color: var(--accent); white-space: no
 table.words-table td.en { color: var(--ink); min-width: 0; }
 .cta { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
 .cta a.button { display: inline-block; text-decoration: none; font: 500 14px var(--f-ui); padding: 9px 16px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); }
+.cta a.button.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
 .empty { color: var(--muted); font-size: 15px; margin: 0; }
 .prose { display: grid; gap: 12px; max-width: 68ch; }
 .prose p { margin: 0; }

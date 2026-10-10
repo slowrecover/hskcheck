@@ -1,0 +1,260 @@
+<div class="wrap">
+  <header class="no-print">
+    __NAV__
+    <div class="eyebrow"><span>__EYEBROW__</span>__CHIPS__</div>
+    <h1>__H1__</h1>
+    <p class="lede">__LEDE__</p>
+  </header>
+
+  <section class="sheet controls no-print" aria-label="Worksheet settings">
+    __LEVEL_LINKS__
+    <div class="field">
+      <label for="chars">Characters</label>
+      <textarea id="chars" rows="3" spellcheck="false" autocomplete="off">__CHARS__</textarea>
+      <p class="hint" id="chars-hint">Type or paste any Chinese text. Each character is used once, in order.</p>
+    </div>
+    __RANGE__
+    <div class="options">
+      <fieldset class="seg">
+        <legend>Grid</legend>
+        <label><input type="radio" name="grid" value="tian" checked><span>田 Tian</span></label>
+        <label><input type="radio" name="grid" value="mi"><span>米 Mi</span></label>
+        <label><input type="radio" name="grid" value="plain"><span>Plain</span></label>
+      </fieldset>
+      <fieldset class="seg">
+        <legend>Tracing</legend>
+        <label><input type="radio" name="trace" value="0"><span>None</span></label>
+        <label><input type="radio" name="trace" value="3" checked><span>3</span></label>
+        <label><input type="radio" name="trace" value="5"><span>5</span></label>
+        <label><input type="radio" name="trace" value="all"><span>Full row</span></label>
+      </fieldset>
+      <fieldset class="seg">
+        <legend>Rows per character</legend>
+        <label><input type="radio" name="rows" value="1" checked><span>1</span></label>
+        <label><input type="radio" name="rows" value="2"><span>2</span></label>
+        <label><input type="radio" name="rows" value="3"><span>3</span></label>
+      </fieldset>
+      <fieldset class="checks">
+        <legend>Show</legend>
+        <label><input type="checkbox" id="opt-order" checked> Stroke order</label>
+        <label><input type="checkbox" id="opt-pinyin" checked> Pinyin</label>
+      </fieldset>
+    </div>
+    <div class="actions">
+      <button type="button" class="button" id="print-btn">Print or save as PDF</button>
+      <span class="status" id="status" role="status" aria-live="polite"></span>
+    </div>
+  </section>
+
+  <section class="preview" aria-label="Worksheet preview">
+    <div class="paper" id="paper">
+      <div class="paper-head">
+        <div class="paper-title" id="paper-title" data-base="__SHEET_TITLE__">__SHEET_TITLE__</div>
+        <div class="paper-name">Name ______________________ &nbsp; Date ____________</div>
+      </div>
+      <div id="blocks"></div>
+      <div class="paper-foot">Free worksheets and the HSK level checker at hskcheck.com</div>
+    </div>
+  </section>
+
+__CHARTABLE__
+
+  <section class="prose no-print" aria-labelledby="about-title">
+    <h2 id="about-title">__ABOUT_TITLE__</h2>
+__PROSE__
+  </section>
+
+  <footer class="notes no-print">
+    <p><b>Printing.</b> Use your browser's print dialog to print or to save the sheet as a PDF. Choose A4 or US Letter; the grid is sized to fit both.</p>
+    <p><b>Stroke data.</b> Stroke outlines and pinyin come from <a href="https://github.com/skishore/makemeahanzi">Make Me a Hanzi</a> (Arphic Public License and GNU LGPL, see <a href="/strokes/LICENSE.md">licence</a>). Stroke order follows mainland China standards for simplified characters.</p>
+  </footer>
+</div>
+
+<svg id="defs" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute"><defs id="defs-inner"></defs></svg>
+
+<script>
+(function () {
+  const PRESET = __PRESET__;
+  const SHARDS = 128;
+  const CELLS = 11;
+  const data = {};
+  const $ = (id) => document.getElementById(id);
+  const charsEl = $("chars"), blocks = $("blocks"), defs = $("defs-inner"), status = $("status");
+  const NS = "http://www.w3.org/2000/svg";
+
+  function hanzi(text) {
+    const out = [], seen = new Set();
+    for (const c of Array.from(text)) {
+      if (/\p{Script=Han}/u.test(c) && !seen.has(c)) { seen.add(c); out.push(c); }
+    }
+    return out.slice(0, 400);
+  }
+
+  async function getJSON(url) {
+    const r = await fetch(url);
+    if (!r.ok) throw new Error(url + " " + r.status);
+    return r.json();
+  }
+
+  async function ensure(chars) {
+    const shards = new Set(chars.filter(c => !(c in data)).map(c => c.codePointAt(0) % SHARDS));
+    await Promise.all(Array.from(shards).map(async (i) => {
+      const shard = await getJSON("/strokes/x/" + i.toString(16).padStart(2, "0") + ".json");
+      for (const c of chars) if (c in shard) data[c] = shard[c];
+    }));
+  }
+
+  function el(tag, attrs, parent) {
+    const node = document.createElementNS(NS, tag);
+    for (const k in attrs) node.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(node);
+    return node;
+  }
+
+  function idFor(c) { return "h" + c.codePointAt(0).toString(16); }
+
+  function define(c) {
+    const id = idFor(c);
+    if (document.getElementById(id)) return;
+    const sym = el("symbol", { id, viewBox: "0 0 1024 1024" }, defs);
+    const g = el("g", { transform: "scale(1,-1) translate(0,-900)" }, sym);
+    data[c].s.forEach((d, i) => {
+      const sid = el("symbol", { id: id + "s" + i, viewBox: "0 0 1024 1024" }, defs);
+      el("path", { d, transform: "scale(1,-1) translate(0,-900)" }, sid);
+      el("path", { d }, g);
+    });
+  }
+
+  function gridLines(svg, kind) {
+    el("rect", { x: 8, y: 8, width: 1008, height: 1008, class: "frame" }, svg);
+    if (kind === "plain") return;
+    el("line", { x1: 512, y1: 8, x2: 512, y2: 1016, class: "guide" }, svg);
+    el("line", { x1: 8, y1: 512, x2: 1016, y2: 512, class: "guide" }, svg);
+    if (kind === "mi") {
+      el("line", { x1: 8, y1: 8, x2: 1016, y2: 1016, class: "guide" }, svg);
+      el("line", { x1: 1016, y1: 8, x2: 8, y2: 1016, class: "guide" }, svg);
+    }
+  }
+
+  function cell(c, mode, grid) {
+    const svg = el("svg", { viewBox: "0 0 1024 1024", class: "cell", "aria-hidden": "true" });
+    gridLines(svg, grid);
+    if (mode) el("use", { href: "#" + idFor(c), class: mode }, svg);
+    return svg;
+  }
+
+  function opts() {
+    return {
+      grid: document.querySelector("input[name=grid]:checked").value,
+      trace: document.querySelector("input[name=trace]:checked").value,
+      rows: +document.querySelector("input[name=rows]:checked").value,
+      order: $("opt-order").checked,
+      pinyin: $("opt-pinyin").checked,
+    };
+  }
+
+  function block(c, o) {
+    const b = document.createElement("div");
+    b.className = "cb";
+    const meta = document.createElement("div");
+    meta.className = "meta";
+    const label = document.createElement("span");
+    label.className = "label";
+    label.innerHTML = "<b lang=\"zh-Hans\"></b>";
+    label.firstChild.textContent = c;
+    if (o.pinyin && data[c].p.length) {
+      const py = document.createElement("span");
+      py.className = "py";
+      py.textContent = data[c].p.join(" / ");
+      label.appendChild(py);
+    }
+    meta.appendChild(label);
+    if (o.order) {
+      const seq = document.createElement("span");
+      seq.className = "seq";
+      const n = data[c].s.length;
+      for (let k = 0; k < n; k++) {
+        const svg = el("svg", { viewBox: "0 0 1024 1024", class: "step", "aria-hidden": "true" });
+        for (let j = 0; j <= k; j++) el("use", { href: "#" + idFor(c) + "s" + j, class: j === k ? "now" : "done" }, svg);
+        seq.appendChild(svg);
+      }
+      const count = document.createElement("span");
+      count.className = "count";
+      count.textContent = n + (n === 1 ? " stroke" : " strokes");
+      seq.appendChild(count);
+      meta.appendChild(seq);
+    }
+    b.appendChild(meta);
+    const traceN = o.trace === "all" ? CELLS - 1 : +o.trace;
+    for (let r = 0; r < o.rows; r++) {
+      const row = document.createElement("div");
+      row.className = "row";
+      for (let i = 0; i < CELLS; i++) {
+        let mode = null;
+        if (r === 0 && i === 0) mode = "model";
+        else if (o.trace === "all" || (r === 0 && i <= traceN)) mode = "trace";
+        row.appendChild(cell(c, mode, o.grid));
+      }
+      b.appendChild(row);
+    }
+    return b;
+  }
+
+  let token = 0;
+  async function render() {
+    const mine = ++token;
+    const chars = hanzi(charsEl.value);
+    status.textContent = chars.length ? "Loading…" : "";
+    try { await ensure(chars); } catch (e) { status.textContent = "Could not load stroke data. Check your connection and try again."; return; }
+    if (mine !== token) return;
+    const o = opts();
+    const ok = chars.filter(c => c in data);
+    const missing = chars.filter(c => !(c in data));
+    defs.textContent = "";
+    blocks.textContent = "";
+    const frag = document.createDocumentFragment();
+    ok.forEach(c => { define(c); frag.appendChild(block(c, o)); });
+    blocks.appendChild(frag);
+    const parts = [];
+    parts.push(ok.length + (ok.length === 1 ? " character" : " characters"));
+    if (missing.length) parts.push("no stroke data for " + missing.join(" "));
+    status.textContent = ok.length || missing.length ? parts.join(" · ") : "Type some Chinese characters above.";
+  }
+
+  // On narrow screens, shrink the preview to fit instead of scrolling sideways. Printing ignores this.
+  const paper = $("paper"), preview = paper.parentElement;
+  function fit() {
+    paper.style.zoom = "";
+    const room = preview.clientWidth - 32;
+    if (room > 0 && paper.offsetWidth > room) paper.style.zoom = (room / paper.offsetWidth).toFixed(3);
+  }
+  window.addEventListener("resize", fit);
+  fit();
+
+  let timer;
+  function soon() { clearTimeout(timer); timer = setTimeout(render, 250); }
+  charsEl.addEventListener("input", soon);
+  document.querySelectorAll(".options input").forEach(i => i.addEventListener("change", render));
+  $("print-btn").addEventListener("click", () => window.print());
+
+  const range = $("range");
+  if (range) {
+    const all = charsEl.value;
+    range.addEventListener("change", () => {
+      const v = range.value;
+      if (v === "all") charsEl.value = all;
+      else { const [a, b] = v.split("-").map(Number); charsEl.value = Array.from(hanzi(all)).slice(a - 1, b).join(""); }
+      const t = $("paper-title");
+      t.textContent = t.dataset.base + (v === "all" ? "" : " · " + v.replace("-", "–"));
+      render();
+    });
+  }
+
+  (async function start() {
+    if (PRESET) {
+      try { Object.assign(data, await getJSON("/strokes/hsk" + PRESET + ".json")); } catch (e) { /* shards still work */ }
+    }
+    render();
+  })();
+})();
+</script>
