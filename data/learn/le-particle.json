@@ -1,0 +1,72 @@
+{
+  "slug": "le-particle",
+  "level": 1,
+  "published": "2026-10-11",
+  "title": "了 (le) in Chinese: HSK 1 Grammar with Examples",
+  "description": "How to use 了 (le) in Chinese: 了 after the verb for finished actions, 了 at the end for a change, negatives with 没有, questions, and HSK 1 examples.",
+  "zh": "了",
+  "h1": "How to Use 了 (le) in Chinese",
+  "lede": "了 (le) is a small word with two main jobs. After a verb, it shows that an action is finished. At the end of a sentence, it shows that something has changed or is new. It is one of the first grammar points of HSK 1.",
+  "sections": [
+    {
+      "h2": "了 after the verb: a finished action",
+      "paras": [
+        "Subject + verb + 了 + object.",
+        "Put 了 straight after the verb to say the action happened and is complete. This works best when the object has a number or a describing word in front of it, such as 三本书 or 很多东西. A short object on its own, as in 我买了书, often sounds unfinished, as if more is coming."
+      ],
+      "examples": [
+        {"zh": "我买了三本书。", "py": "Wǒ mǎi le sān běn shū.", "en": "I bought three books."},
+        {"zh": "她买了很多东西。", "py": "Tā mǎi le hěn duō dōngxi.", "en": "She bought lots of things."},
+        {"zh": "我们看了一个电影。", "py": "Wǒmen kàn le yí ge diànyǐng.", "en": "We watched a film."}
+      ]
+    },
+    {
+      "h2": "了 at the end: something has changed",
+      "paras": [
+        "When 了 comes at the end of the sentence, it tells the listener that the situation is new: it has started raining, it is now eight o'clock, you have changed your plans. This 了 can also follow an adjective, as in 天冷了, or a negative with 不, as in 我不想去了.",
+        "With a simple verb and object, such as 吃饭 or 睡觉, putting 了 at the end is the natural way to say it has happened."
+      ],
+      "examples": [
+        {"zh": "下雨了。", "py": "Xià yǔ le.", "en": "It's raining now."},
+        {"zh": "天冷了。", "py": "Tiān lěng le.", "en": "It's got cold."},
+        {"zh": "他今年十岁了。", "py": "Tā jīnnián shí suì le.", "en": "He's ten this year."},
+        {"zh": "八点了，我们去学校吧。", "py": "Bā diǎn le, wǒmen qù xuéxiào ba.", "en": "It's eight o'clock, let's go to school."},
+        {"zh": "我不想去了。", "py": "Wǒ bù xiǎng qù le.", "en": "I don't want to go any more."},
+        {"zh": "他睡觉了。", "py": "Tā shuìjiào le.", "en": "He's gone to bed."}
+      ]
+    },
+    {
+      "h2": "Two 了 together: up to now",
+      "paras": [
+        "With a length of time, you can use 了 in both places. The action began in the past and is still going on now."
+      ],
+      "examples": [
+        {"zh": "我学了一年中文了。", "py": "Wǒ xué le yì nián Zhōngwén le.", "en": "I've been learning Chinese for a year."},
+        {"zh": "我在这儿住了三年了。", "py": "Wǒ zài zhèr zhù le sān nián le.", "en": "I've lived here for three years."}
+      ]
+    },
+    {
+      "h2": "Negatives and questions",
+      "paras": [
+        "To say an action did not happen, use 没有 before the verb and drop 了. A very common mistake is to keep 了 and say 他没有来了 instead of 他没有来. Use 还没有 for \"not yet\".",
+        "To ask whether something has happened, add 吗 after 了, or end the question with 了没有. Answer yes with the verb and 了, or no with 还没有."
+      ],
+      "examples": [
+        {"zh": "他没有来。", "py": "Tā méiyǒu lái.", "en": "He didn't come."},
+        {"zh": "我还没有吃饭。", "py": "Wǒ hái méiyǒu chī fàn.", "en": "I haven't eaten yet."},
+        {"zh": "你吃饭了吗？", "py": "Nǐ chī fàn le ma?", "en": "Have you eaten?"},
+        {"zh": "他回家了没有？", "py": "Tā huí jiā le méiyǒu?", "en": "Has he gone home?"}
+      ]
+    },
+    {
+      "h2": "了 is not a past tense",
+      "paras": [
+        "Learners often add 了 to everything that happened in the past. Chinese does not need it there. If you are describing how things were, or something you did regularly, a time word such as 昨天 or 去年 is enough."
+      ],
+      "examples": [
+        {"zh": "我昨天很忙。", "py": "Wǒ zuótiān hěn máng.", "en": "I was busy yesterday."},
+        {"zh": "去年我在中国工作。", "py": "Qùnián wǒ zài Zhōngguó gōngzuò.", "en": "Last year I worked in China."}
+      ]
+    }
+  ]
+}
