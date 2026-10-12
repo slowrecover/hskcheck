@@ -1,0 +1,66 @@
+{
+  "slug": "ma-questions",
+  "level": 1,
+  "published": "2026-10-12",
+  "title": "吗 (ma) in Chinese: HSK 1 Yes/No Questions with Examples",
+  "description": "How to use 吗 (ma) in Chinese: turn any statement into a yes/no question, answer without a word for yes, avoid the common 吗 mistake, with HSK 1 examples.",
+  "zh": "吗",
+  "h1": "How to Ask Yes/No Questions with 吗 (ma)",
+  "lede": "吗 (ma) is the easiest way to ask a question in Chinese. Put it at the end of a statement and the statement becomes a yes/no question. Nothing else in the sentence moves. It is one of the first grammar points of HSK 1.",
+  "sections": [
+    {
+      "h2": "The pattern",
+      "paras": [
+        "Statement + 吗？",
+        "Unlike English, Chinese does not change the word order to ask a question, and there is no word like \"do\" or \"does\". Take a normal sentence such as 你是学生 (you are a student), add 吗 at the end, and it becomes \"Are you a student?\". 吗 is said with a light, neutral tone."
+      ],
+      "examples": [
+        {"zh": "你是学生吗？", "py": "Nǐ shì xuésheng ma?", "en": "Are you a student?"},
+        {"zh": "你喜欢喝茶吗？", "py": "Nǐ xǐhuan hē chá ma?", "en": "Do you like tea?"},
+        {"zh": "他今天来吗？", "py": "Tā jīntiān lái ma?", "en": "Is he coming today?"},
+        {"zh": "这是你的手机吗？", "py": "Zhè shì nǐ de shǒujī ma?", "en": "Is this your phone?"},
+        {"zh": "他回家了吗？", "py": "Tā huí jiā le ma?", "en": "Has he gone home?"}
+      ]
+    },
+    {
+      "h2": "How to answer",
+      "paras": [
+        "Chinese has no single word for \"yes\" or \"no\". To answer, repeat the main verb or adjective from the question: 有 or 没有, 会 or 不会, 想 or 不想. For questions with 是, answer 是 or 不是.",
+        "With adjectives, 很 is usually left out of the question and comes back in the answer: 你忙吗？ is answered with 我很忙. If someone tells you something surprising, 是吗？ on its own means \"Really?\"."
+      ],
+      "examples": [
+        {"zh": "你有中国朋友吗？有，我有两个。", "py": "Nǐ yǒu Zhōngguó péngyou ma? Yǒu, wǒ yǒu liǎng ge.", "en": "Do you have any Chinese friends? Yes, I have two."},
+        {"zh": "你会说中文吗？会，我会说一点儿。", "py": "Nǐ huì shuō Zhōngwén ma? Huì, wǒ huì shuō yìdiǎnr.", "en": "Can you speak Chinese? Yes, I can speak a little."},
+        {"zh": "你认识他吗？不认识。", "py": "Nǐ rènshi tā ma? Bú rènshi.", "en": "Do you know him? No, I don't."},
+        {"zh": "这是你的书吗？不是，是他的。", "py": "Zhè shì nǐ de shū ma? Bú shì, shì tā de.", "en": "Is this your book? No, it's his."},
+        {"zh": "你忙吗？我很忙。", "py": "Nǐ máng ma? Wǒ hěn máng.", "en": "Are you busy? Yes, I am."},
+        {"zh": "今天冷吗？不太冷。", "py": "Jīntiān lěng ma? Bú tài lěng.", "en": "Is it cold today? Not very."}
+      ]
+    },
+    {
+      "h2": "The most common mistake: 吗 with question words",
+      "paras": [
+        "Only use 吗 when the answer is yes or no. If the question already has a question word such as 什么, 谁, 哪儿 or 几, it is already a question, so do not add 吗. 你叫什么名字吗？ is wrong; say 你叫什么名字？.",
+        "The same goes for the \"verb + 不 + verb\" question, such as 去不去. It asks the same thing as 吗, so you use one or the other, never both."
+      ],
+      "examples": [
+        {"zh": "你叫什么名字？", "py": "Nǐ jiào shénme míngzi?", "en": "What's your name?"},
+        {"zh": "他在哪儿？", "py": "Tā zài nǎr?", "en": "Where is he?"},
+        {"zh": "你去不去？", "py": "Nǐ qù bu qù?", "en": "Are you going or not?"},
+        {"zh": "你是不是老师？", "py": "Nǐ shì bu shì lǎoshī?", "en": "Are you a teacher?"}
+      ]
+    },
+    {
+      "h2": "Negative questions",
+      "paras": [
+        "You can also add 吗 to a negative sentence. This often shows a little surprise, like \"Aren't you...?\" in English.",
+        "Be careful when you answer. In Chinese you agree or disagree with what the other person said, so 对 means \"right, I'm not\". English speakers often get this the wrong way round."
+      ],
+      "examples": [
+        {"zh": "你明天不来吗？", "py": "Nǐ míngtiān bù lái ma?", "en": "Aren't you coming tomorrow?"},
+        {"zh": "你不去吗？对，我不去。", "py": "Nǐ bú qù ma? Duì, wǒ bú qù.", "en": "Aren't you going? No, I'm not."},
+        {"zh": "你没有吃饭吗？", "py": "Nǐ méiyǒu chī fàn ma?", "en": "Haven't you eaten?"}
+      ]
+    }
+  ]
+}
