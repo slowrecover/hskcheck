@@ -1,0 +1,72 @@
+{
+  "slug": "ne-particle",
+  "level": 1,
+  "published": "2026-10-13",
+  "title": "呢 (ne) in Chinese: HSK 1 Grammar with Examples",
+  "description": "How to use 呢 (ne) in Chinese: \"and you?\", \"where is...?\", softer questions and actions happening now, plus the common 呢 vs 吗 mistake. HSK 1 examples.",
+  "zh": "呢",
+  "h1": "How to Use 呢 (ne)",
+  "lede": "呢 (ne) is a small word at the end of a sentence with a few everyday jobs: asking \"and you?\", asking where something is, making a question sound softer, and showing that something is happening right now. It is an HSK 1 grammar point, and it is said with a light, neutral tone.",
+  "sections": [
+    {
+      "h2": "\"And you?\": noun + 呢",
+      "paras": [
+        "Say something about yourself, then add a person or thing + 呢 to ask the same question about them. You don't need to repeat the rest of the question, because 呢 means \"what about...?\".",
+        "This is the easiest way to keep a conversation going: 我很好，你呢？ is the classic answer to 你好吗？."
+      ],
+      "examples": [
+        {"zh": "我很好，你呢？", "py": "Wǒ hěn hǎo, nǐ ne?", "en": "I'm fine. And you?"},
+        {"zh": "我是老师，你呢？", "py": "Wǒ shì lǎoshī, nǐ ne?", "en": "I'm a teacher. What about you?"},
+        {"zh": "我想喝茶，你呢？", "py": "Wǒ xiǎng hē chá, nǐ ne?", "en": "I'd like some tea. How about you?"},
+        {"zh": "这个八块，那个呢？", "py": "Zhège bā kuài, nàge ne?", "en": "This one is eight yuan. What about that one?"}
+      ]
+    },
+    {
+      "h2": "\"Where is...?\": 呢 on its own",
+      "paras": [
+        "If you start with just a person or thing + 呢, with nothing said before it, it usually means \"Where is...?\". People say this all the time when something or someone is missing."
+      ],
+      "examples": [
+        {"zh": "我的手机呢？", "py": "Wǒ de shǒujī ne?", "en": "Where's my phone?"},
+        {"zh": "你爸爸呢？", "py": "Nǐ bàba ne?", "en": "Where's your dad?"},
+        {"zh": "我的书呢？在桌子上。", "py": "Wǒ de shū ne? Zài zhuōzi shang.", "en": "Where's my book? On the table."}
+      ]
+    },
+    {
+      "h2": "Softer questions with question words",
+      "paras": [
+        "You can add 呢 to the end of a question that already has a question word, such as 什么, 哪儿 or 怎么. The meaning stays the same, but the question sounds softer and more natural, a bit like \"I wonder\". The question is still correct without 呢."
+      ],
+      "examples": [
+        {"zh": "你在做什么呢？", "py": "Nǐ zài zuò shénme ne?", "en": "What are you doing?"},
+        {"zh": "我们去哪儿吃饭呢？", "py": "Wǒmen qù nǎr chī fàn ne?", "en": "So where shall we go to eat?"},
+        {"zh": "他怎么还没有来呢？", "py": "Tā zěnme hái méiyǒu lái ne?", "en": "Why hasn't he come yet?"}
+      ]
+    },
+    {
+      "h2": "Something happening now: 在 + verb + 呢",
+      "paras": [
+        "呢 at the end of a statement can show that an action is going on right now. It is very often used with 在 or 正在 before the verb: 他在睡觉呢 means \"He's sleeping (at the moment)\".",
+        "To say something is not happening, put 没有 before 在."
+      ],
+      "examples": [
+        {"zh": "他在睡觉呢。", "py": "Tā zài shuìjiào ne.", "en": "He's sleeping."},
+        {"zh": "妈妈在做饭呢。", "py": "Māma zài zuò fàn ne.", "en": "Mum is cooking."},
+        {"zh": "他们正在看电视呢。", "py": "Tāmen zhèngzài kàn diànshì ne.", "en": "They're watching TV right now."},
+        {"zh": "外边下雨呢。", "py": "Wàibian xià yǔ ne.", "en": "It's raining outside."},
+        {"zh": "他没有在睡觉，他在看书呢。", "py": "Tā méiyǒu zài shuìjiào, tā zài kàn shū ne.", "en": "He isn't sleeping, he's reading."}
+      ]
+    },
+    {
+      "h2": "The most common mistake: 呢 instead of 吗",
+      "paras": [
+        "呢 does not turn a statement into a yes/no question. That is the job of 吗. 你是中国人呢？ is wrong; say 你是中国人吗？.",
+        "A simple way to remember: use 吗 when the answer is yes or no, and 呢 for \"and you?\", \"where is...?\", or with a question word."
+      ],
+      "examples": [
+        {"zh": "你是中国人吗？", "py": "Nǐ shì Zhōngguórén ma?", "en": "Are you Chinese?"},
+        {"zh": "我明天去学校，你呢？", "py": "Wǒ míngtiān qù xuéxiào, nǐ ne?", "en": "I'm going to school tomorrow. What about you?"}
+      ]
+    }
+  ]
+}
