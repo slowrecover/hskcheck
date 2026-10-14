@@ -1,0 +1,71 @@
+{
+  "slug": "bu-vs-meiyou",
+  "level": 1,
+  "published": "2026-10-14",
+  "title": "不 vs 没有 in Chinese: HSK 1 Grammar with Examples",
+  "description": "When to use 不 (bù) and when to use 没有 (méiyǒu) in Chinese: habits and plans, the past, \"not yet\", 有, questions, common mistakes and HSK 1 examples.",
+  "zh": "不 / 没有",
+  "h1": "不 vs 没有: Which Negative to Use",
+  "lede": "Chinese has two everyday ways to say \"not\". 不 (bù) is for habits, plans, wishes and how things are. 没有 (méiyǒu) is for things that did not happen or have not happened yet, and it is the only way to say \"don't have\".",
+  "sections": [
+    {
+      "h2": "The basic rule",
+      "paras": [
+        "Use 不 for what you do or don't do in general, and for what you will or won't do. Use 没有 when an action did not happen in the past, or has not happened so far.",
+        "Both go straight before the verb. Compare 我不去学校 (I'm not going to school) with 我没有去学校 (I didn't go to school)."
+      ],
+      "examples": [
+        {"zh": "我不喝茶。", "py": "Wǒ bù hē chá.", "en": "I don't drink tea."},
+        {"zh": "明天我不去学校。", "py": "Míngtiān wǒ bú qù xuéxiào.", "en": "I'm not going to school tomorrow."},
+        {"zh": "我昨天没有去学校。", "py": "Wǒ zuótiān méiyǒu qù xuéxiào.", "en": "I didn't go to school yesterday."}
+      ]
+    },
+    {
+      "h2": "不 with 是, adjectives and \"can\"",
+      "paras": [
+        "不 is always used with 是, and normally with adjectives such as 冷 or 忙 and with words like 会, 想, 认识 and 知道. This is true even when you talk about the past: 昨天不冷 means \"it wasn't cold yesterday\".",
+        "不 is normally said bù, but it changes to bú before a fourth-tone syllable: 不是 bú shì, 不去 bú qù, 不会 bú huì."
+      ],
+      "examples": [
+        {"zh": "他不是老师。", "py": "Tā bú shì lǎoshī.", "en": "He isn't a teacher."},
+        {"zh": "今天不冷。", "py": "Jīntiān bù lěng.", "en": "It isn't cold today."},
+        {"zh": "我不会开车。", "py": "Wǒ bú huì kāichē.", "en": "I can't drive."},
+        {"zh": "昨天不是星期一。", "py": "Zuótiān bú shì xīngqīyī.", "en": "Yesterday wasn't Monday."}
+      ]
+    },
+    {
+      "h2": "没有 for \"didn't\" and \"haven't yet\"",
+      "paras": [
+        "没有 says that something did not happen. With 还 in front, it means \"not yet\". In speech, 没有 before a verb is often shortened to 没.",
+        "The most common mistake is to use 不 for the past: 我昨天不去学校 is wrong for \"I didn't go to school yesterday\"; it sounds as if you had decided not to go. Another mistake is to add 了 to the verb after 没有. 没有 already says the action did not happen, so say 我没有吃饭, not 我没有吃饭了."
+      ],
+      "examples": [
+        {"zh": "他昨天没有来。", "py": "Tā zuótiān méiyǒu lái.", "en": "He didn't come yesterday."},
+        {"zh": "我还没有吃饭。", "py": "Wǒ hái méiyǒu chī fàn.", "en": "I haven't eaten yet."},
+        {"zh": "我昨天很忙，没有看电视。", "py": "Wǒ zuótiān hěn máng, méiyǒu kàn diànshì.", "en": "I was busy yesterday, so I didn't watch TV."}
+      ]
+    },
+    {
+      "h2": "有 only takes 没有",
+      "paras": [
+        "The verb 有 (to have, there is) is never used with 不. \"I don't have\" is always 我没有, never 我不有, and this is true for the past, present and future."
+      ],
+      "examples": [
+        {"zh": "我没有时间。", "py": "Wǒ méiyǒu shíjiān.", "en": "I don't have time."},
+        {"zh": "他没有哥哥。", "py": "Tā méiyǒu gēge.", "en": "He doesn't have an older brother."}
+      ]
+    },
+    {
+      "h2": "Questions and short answers",
+      "paras": [
+        "You can ask a question by putting the positive and negative forms side by side. In this pattern 不 is said lightly, with no tone. To ask whether something has happened, put 没有 at the end after 了.",
+        "To answer \"no\", repeat the negative with the verb: 不去 (no, I'm not going), 没有 (no, I didn't / I don't have), or 还没有 (not yet)."
+      ],
+      "examples": [
+        {"zh": "你明天去不去学校？", "py": "Nǐ míngtiān qù bu qù xuéxiào?", "en": "Are you going to school tomorrow?"},
+        {"zh": "你吃饭了没有？", "py": "Nǐ chī fàn le méiyǒu?", "en": "Have you eaten?"},
+        {"zh": "你有没有中文名字？", "py": "Nǐ yǒu méiyǒu Zhōngwén míngzi?", "en": "Do you have a Chinese name?"}
+      ]
+    }
+  ]
+}
