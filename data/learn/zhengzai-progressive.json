@@ -1,0 +1,73 @@
+{
+  "slug": "zhengzai-progressive",
+  "level": 1,
+  "published": "2026-10-15",
+  "title": "正在 (zhèngzài) and 在 in Chinese: HSK 1 Grammar with Examples",
+  "description": "How to say what is happening now in Chinese with 在 and 正在: word order, adding 呢, negatives with 没有在, questions, and HSK 1 examples.",
+  "zh": "正在 / 在",
+  "h1": "How to Say What Is Happening Now with 在 and 正在",
+  "lede": "Put 在 (zài) or 正在 (zhèngzài) in front of a verb to say that an action is going on, like \"-ing\" in English. Chinese verbs don't change their form, so this little word does the job. It is a core grammar point of HSK 1.",
+  "sections": [
+    {
+      "h2": "The pattern",
+      "paras": [
+        "Subject + 在 + verb (+ object).",
+        "在 goes straight before the verb. In everyday speech, people often add 呢 at the end of the sentence as well. It makes the sentence sound softer and more natural, and does not change the meaning."
+      ],
+      "examples": [
+        {"zh": "你在做什么？", "py": "Nǐ zài zuò shénme?", "en": "What are you doing?"},
+        {"zh": "我在做饭呢。", "py": "Wǒ zài zuò fàn ne.", "en": "I'm cooking."},
+        {"zh": "他们在吃饭呢。", "py": "Tāmen zài chī fàn ne.", "en": "They're eating."},
+        {"zh": "我在看书，他在睡觉。", "py": "Wǒ zài kàn shū, tā zài shuìjiào.", "en": "I'm reading and he's sleeping."}
+      ]
+    },
+    {
+      "h2": "正在: right at this moment",
+      "paras": [
+        "正在 works in the same place as 在, but puts more weight on \"right now, at this very moment\". In most sentences you can use either.",
+        "在 can also describe something you are doing over a longer stretch of time, such as these days or this year. 正在 is used less for that and more for the moment itself."
+      ],
+      "examples": [
+        {"zh": "他正在睡觉。", "py": "Tā zhèngzài shuìjiào.", "en": "He's sleeping right now."},
+        {"zh": "妈妈正在打电话。", "py": "Māma zhèngzài dǎ diànhuà.", "en": "Mum is on the phone."},
+        {"zh": "我正在上课，下课再给你打电话。", "py": "Wǒ zhèngzài shàngkè, xiàkè zài gěi nǐ dǎ diànhuà.", "en": "I'm in class right now. I'll call you after class."},
+        {"zh": "这几天我在学做中国菜。", "py": "Zhè jǐ tiān wǒ zài xué zuò Zhōngguó cài.", "en": "I'm learning to cook Chinese food these days."}
+      ]
+    },
+    {
+      "h2": "Not only for now",
+      "paras": [
+        "在 and 正在 don't mark the present tense. They show that an action was in progress at a certain time, and that time can be in the past. Give the time with a time word, or with ……的时候 (when...)."
+      ],
+      "examples": [
+        {"zh": "昨天晚上八点我在看电视。", "py": "Zuótiān wǎnshang bā diǎn wǒ zài kàn diànshì.", "en": "At eight last night I was watching TV."},
+        {"zh": "你给我打电话的时候，我正在开车。", "py": "Nǐ gěi wǒ dǎ diànhuà de shíhou, wǒ zhèngzài kāichē.", "en": "When you called me, I was driving."}
+      ]
+    },
+    {
+      "h2": "Negatives and questions",
+      "paras": [
+        "To say someone is not doing something, use 没有 before 在: 他没有在睡觉. In speech this is often shortened to 没在. A common mistake is to use 不 here: 我不在看电视 is wrong for \"I'm not watching TV\".",
+        "For a yes/no question, add 吗 at the end. To ask what someone is doing, use 什么 after the verb."
+      ],
+      "examples": [
+        {"zh": "我没有在睡觉。", "py": "Wǒ méiyǒu zài shuìjiào.", "en": "I'm not asleep."},
+        {"zh": "他没有在看电视，他在看书。", "py": "Tā méiyǒu zài kàn diànshì, tā zài kàn shū.", "en": "He isn't watching TV. He's reading."},
+        {"zh": "他在工作吗？", "py": "Tā zài gōngzuò ma?", "en": "Is he working?"},
+        {"zh": "你在看什么书？", "py": "Nǐ zài kàn shénme shū?", "en": "What book are you reading?"}
+      ]
+    },
+    {
+      "h2": "Other mistakes to avoid",
+      "paras": [
+        "Only use 在 with actions that can be going on, such as eating, reading or working. Verbs for states, such as 是, 喜欢, 认识 and 知道, don't take 在. Say 我很喜欢他 (I really like him), not 我正在喜欢他.",
+        "Don't add 了 to a sentence with 在 or 正在. 了 shows that something has happened, while 在 shows that it is still going on.",
+        "Don't mix this up with 在 + place + verb, where 在 means \"at\". In 爸爸在家看书呢, 在家 tells you where Dad is reading, and 呢 shows that he is doing it now."
+      ],
+      "examples": [
+        {"zh": "我现在在开车，不能打电话。", "py": "Wǒ xiànzài zài kāichē, bù néng dǎ diànhuà.", "en": "I'm driving right now, so I can't talk on the phone."},
+        {"zh": "爸爸在家看书呢。", "py": "Bàba zài jiā kàn shū ne.", "en": "Dad is reading at home."}
+      ]
+    }
+  ]
+}
