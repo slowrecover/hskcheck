@@ -1,0 +1,70 @@
+{
+  "slug": "de-possessive",
+  "level": 1,
+  "published": "2026-10-15",
+  "title": "的 (de) in Chinese: HSK 1 Grammar with Examples",
+  "description": "How to use 的 (de) in Chinese: my, your and whose, when to leave 的 out, describing nouns with 的, and \"mine\" or \"the big one\", with HSK 1 examples.",
+  "zh": "的",
+  "h1": "How to Use 的 (de) for Possession and Description",
+  "lede": "的 (de) links a word or phrase to the noun that comes after it. It works like 's in \"the teacher's car\", and it also joins a description to a noun. It is one of the most common characters in Chinese and a core grammar point of HSK 1.",
+  "sections": [
+    {
+      "h2": "Possession: my, your, whose",
+      "paras": [
+        "Owner + 的 + thing.",
+        "Put 的 after a person or pronoun to show that something belongs to them. 我的 is \"my\", 你的 is \"your\", 他的 is \"his\" and 老师的 is \"the teacher's\". To ask \"whose?\", use 谁的. 的 always has a light, neutral tone."
+      ],
+      "examples": [
+        {"zh": "这是我的手机。", "py": "Zhè shì wǒ de shǒujī.", "en": "This is my phone."},
+        {"zh": "这是我哥哥的车。", "py": "Zhè shì wǒ gēge de chē.", "en": "This is my older brother's car."},
+        {"zh": "我朋友的妈妈是老师。", "py": "Wǒ péngyou de māma shì lǎoshī.", "en": "My friend's mum is a teacher."},
+        {"zh": "这是谁的书？", "py": "Zhè shì shéi de shū?", "en": "Whose book is this?"}
+      ]
+    },
+    {
+      "h2": "When you can leave 的 out",
+      "paras": [
+        "After a pronoun such as 我, 你, 他 or 我们, 的 is usually dropped before family members, close relationships and places you belong to, such as your school or company. Chinese speakers say 我妈妈, not 我的妈妈, although 我的妈妈 is not wrong.",
+        "In other cases, keep 的. 我的手机 is correct; 我手机 is heard in casual speech, but as a learner you are safer with 的."
+      ],
+      "examples": [
+        {"zh": "我妈妈是医生。", "py": "Wǒ māma shì yīshēng.", "en": "My mum is a doctor."},
+        {"zh": "他女朋友很漂亮。", "py": "Tā nǚpéngyou hěn piàoliang.", "en": "His girlfriend is very pretty."},
+        {"zh": "我们学校很大。", "py": "Wǒmen xuéxiào hěn dà.", "en": "Our school is big."}
+      ]
+    },
+    {
+      "h2": "Describing a noun",
+      "paras": [
+        "Description + 的 + noun.",
+        "的 also joins a description to a noun. The description always comes before the noun, even when English puts it after: \"the apples I bought\" is 我买的苹果, literally \"I bought 的 apples\".",
+        "A one-syllable adjective usually goes straight onto the noun without 的: 新手机, 好朋友. When the adjective has 很 in front of it, or the description is longer, you need 的."
+      ],
+      "examples": [
+        {"zh": "我想买一个新手机。", "py": "Wǒ xiǎng mǎi yí ge xīn shǒujī.", "en": "I want to buy a new phone."},
+        {"zh": "他是一个很好的老师。", "py": "Tā shì yí ge hěn hǎo de lǎoshī.", "en": "He is a very good teacher."},
+        {"zh": "我买的苹果很好吃。", "py": "Wǒ mǎi de píngguǒ hěn hǎochī.", "en": "The apples I bought are delicious."},
+        {"zh": "你昨天看的电影怎么样？", "py": "Nǐ zuótiān kàn de diànyǐng zěnmeyàng?", "en": "How was the film you saw yesterday?"},
+        {"zh": "我喜欢吃妈妈做的饭。", "py": "Wǒ xǐhuan chī māma zuò de fàn.", "en": "I love eating Mum's cooking."}
+      ]
+    },
+    {
+      "h2": "Leaving out the noun: \"mine\" and \"the big one\"",
+      "paras": [
+        "If everyone already knows which thing you mean, you can drop the noun and end with 的. 我的 then means \"mine\", 谁的 means \"whose\", and 大的 means \"the big one\"."
+      ],
+      "examples": [
+        {"zh": "这本书是我的。", "py": "Zhè běn shū shì wǒ de.", "en": "This book is mine."},
+        {"zh": "这个手机是谁的？", "py": "Zhège shǒujī shì shéi de?", "en": "Whose phone is this?"},
+        {"zh": "我要大的。", "py": "Wǒ yào dà de.", "en": "I'd like the big one."}
+      ]
+    },
+    {
+      "h2": "The most common mistake",
+      "paras": [
+        "Learners often forget 的 after 很 + adjective. 很好老师 is wrong; say 很好的老师. Without 很, 好老师 is fine.",
+        "The other mistake is putting the description after the noun, as in English. In Chinese, whatever describes the noun, whether it is an owner, an adjective or a whole phrase, comes first, then 的, then the noun."
+      ]
+    }
+  ]
+}
