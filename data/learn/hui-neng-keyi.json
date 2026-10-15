@@ -1,0 +1,74 @@
+{
+  "slug": "hui-neng-keyi",
+  "level": 1,
+  "published": "2026-10-15",
+  "title": "会 vs 能 vs 可以 in Chinese: HSK 1 Grammar with Examples",
+  "description": "会, 能 or 可以? How to say \"can\" in Chinese: skills, being able to, permission, negatives, questions, the common mistake, and HSK 1 examples.",
+  "zh": "会 / 能 / 可以",
+  "h1": "会, 能 and 可以: Three Ways to Say \"Can\"",
+  "lede": "English has one word, \"can\", but Chinese has three. 会 (huì) is for skills you have learned, 能 (néng) is for being able to do something in the situation, and 可以 (kěyǐ) is for permission. All three go straight before the verb, and all three are HSK 1 words.",
+  "sections": [
+    {
+      "h2": "会: a skill you have learned",
+      "paras": [
+        "Subject + 会 + verb (+ object).",
+        "Use 会 for things you had to learn: speaking a language, driving, cooking, writing characters. 我会说中文 means you know how to speak Chinese. 不会 means you never learned how."
+      ],
+      "examples": [
+        {"zh": "我会说中文。", "py": "Wǒ huì shuō Zhōngwén.", "en": "I can speak Chinese."},
+        {"zh": "他不会开车。", "py": "Tā bú huì kāichē.", "en": "He can't drive."},
+        {"zh": "你会做饭吗？", "py": "Nǐ huì zuò fàn ma?", "en": "Can you cook?"},
+        {"zh": "你会写这个字吗？", "py": "Nǐ huì xiě zhège zì ma?", "en": "Do you know how to write this character?"}
+      ]
+    },
+    {
+      "h2": "会: \"will\" and \"is likely to\"",
+      "paras": [
+        "会 has a second meaning: it says that something is likely to happen, a bit like \"will\" in English. You will hear it a lot when people talk about the weather or make guesses about the future. 不会 then means \"won't\" or \"isn't going to\"."
+      ],
+      "examples": [
+        {"zh": "明天会下雨吗？", "py": "Míngtiān huì xià yǔ ma?", "en": "Is it going to rain tomorrow?"},
+        {"zh": "晚上会很冷。", "py": "Wǎnshang huì hěn lěng.", "en": "It'll be cold tonight."},
+        {"zh": "他今天不会来了。", "py": "Tā jīntiān bú huì lái le.", "en": "He won't be coming today."}
+      ]
+    },
+    {
+      "h2": "能: able to, in this situation",
+      "paras": [
+        "能 is about whether you are able to do something at a given time: whether you are free, whether something works, or how much you can manage. It is less about learning and more about circumstances.",
+        "So someone who knows how to drive 会开车, but if they are too tired today, they 不能开车."
+      ],
+      "examples": [
+        {"zh": "我明天要工作，不能去。", "py": "Wǒ míngtiān yào gōngzuò, bù néng qù.", "en": "I have to work tomorrow, so I can't go."},
+        {"zh": "你明天能来吗？", "py": "Nǐ míngtiān néng lái ma?", "en": "Can you come tomorrow?"},
+        {"zh": "我的手机不能打电话了。", "py": "Wǒ de shǒujī bù néng dǎ diànhuà le.", "en": "My phone can't make calls any more."},
+        {"zh": "他一天能看两本书。", "py": "Tā yì tiān néng kàn liǎng běn shū.", "en": "He can read two books in a day."}
+      ]
+    },
+    {
+      "h2": "可以: permission",
+      "paras": [
+        "可以 is the usual word for asking for or giving permission: \"may I...?\", \"you can...\". 能 is also often used in questions like 我能……吗.",
+        "To say something is not allowed, 不能 is the most common choice. 不可以 is also correct but sounds firmer, like a rule or a parent talking to a child. When someone asks 可以吗, a short yes is 可以, and a short no is often 不行 (not OK)."
+      ],
+      "examples": [
+        {"zh": "我可以坐这儿吗？", "py": "Wǒ kěyǐ zuò zhèr ma?", "en": "Can I sit here?"},
+        {"zh": "老师，我可以回家吗？", "py": "Lǎoshī, wǒ kěyǐ huí jiā ma?", "en": "Can I go home, teacher?"},
+        {"zh": "我可以看一下你的书吗？", "py": "Wǒ kěyǐ kàn yíxià nǐ de shū ma?", "en": "Could I have a look at your book?"},
+        {"zh": "你可以明天再来。", "py": "Nǐ kěyǐ míngtiān zài lái.", "en": "You can come back tomorrow."},
+        {"zh": "这儿不能吃东西。", "py": "Zhèr bù néng chī dōngxi.", "en": "You can't eat here."}
+      ]
+    },
+    {
+      "h2": "Negatives, questions and the common mistake",
+      "paras": [
+        "Make all three negative with 不 before them: 不会 (bú huì), 不能, 不可以. Ask a yes/no question with 吗 at the end, or with verb-not-verb: 会不会, 能不能. To answer, just repeat the word: 会 or 不会, 能 or 不能.",
+        "The most common learner mistake is to use 可以 or 能 for a skill. For something you have learned, such as a language, 会 is the natural choice. 我可以说中文 sounds like \"I'm allowed to speak Chinese\" or \"I can speak Chinese if you like\", not a statement about what you have learned."
+      ],
+      "examples": [
+        {"zh": "你会不会说中文？", "py": "Nǐ huì bu huì shuō Zhōngwén?", "en": "Can you speak Chinese?"},
+        {"zh": "你能不能来我家？", "py": "Nǐ néng bu néng lái wǒ jiā?", "en": "Can you come to my place?"}
+      ]
+    }
+  ]
+}
