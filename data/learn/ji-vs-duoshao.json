@@ -1,0 +1,66 @@
+{
+  "slug": "ji-vs-duoshao",
+  "level": 1,
+  "published": "2026-10-15",
+  "title": "几 vs 多少 in Chinese: HSK 1 Grammar with Examples",
+  "description": "When to use 几 (jǐ) and when to use 多少 (duōshao) to ask \"how many\" in Chinese: measure words, time, dates, prices and HSK 1 examples.",
+  "zh": "几 / 多少",
+  "h1": "几 vs 多少: Asking \"How Many\"",
+  "lede": "Chinese has two ways to ask \"how many\". 几 (jǐ) is for small numbers and always needs a measure word. 多少 (duōshao) is for any number, large or small, and is also how you ask about prices and phone numbers.",
+  "sections": [
+    {
+      "h2": "几: small numbers",
+      "paras": [
+        "几 + measure word + noun.",
+        "Use 几 when you expect the answer to be a small number, usually under ten: people in a family, children, things you want to buy. 几 must always have a measure word after it, such as 个, 本 or 口. To answer, put the number where 几 was. There is no 吗 at the end, because 几 already makes it a question."
+      ],
+      "examples": [
+        {"zh": "你家有几口人？", "py": "Nǐ jiā yǒu jǐ kǒu rén?", "en": "How many people are there in your family?"},
+        {"zh": "我家有三口人。", "py": "Wǒ jiā yǒu sān kǒu rén.", "en": "There are three people in my family."},
+        {"zh": "你有几个孩子？", "py": "Nǐ yǒu jǐ ge háizi?", "en": "How many children do you have?"},
+        {"zh": "你要几个？", "py": "Nǐ yào jǐ ge?", "en": "How many do you want?"}
+      ]
+    },
+    {
+      "h2": "多少: any number",
+      "paras": [
+        "多少 + (measure word) + noun.",
+        "Use 多少 when the number could be large, or when you have no idea what it will be. With 多少 the measure word is optional: 多少学生 and 多少个学生 are both correct. 多少 is also the word for prices and for numbers such as phone numbers."
+      ],
+      "examples": [
+        {"zh": "你们学校有多少学生？", "py": "Nǐmen xuéxiào yǒu duōshao xuésheng?", "en": "How many students are there at your school?"},
+        {"zh": "你认识多少汉字？", "py": "Nǐ rènshi duōshao Hànzì?", "en": "How many Chinese characters do you know?"},
+        {"zh": "你买了多少个苹果？", "py": "Nǐ mǎi le duōshao ge píngguǒ?", "en": "How many apples did you buy?"},
+        {"zh": "这个多少钱？", "py": "Zhège duōshao qián?", "en": "How much is this?"},
+        {"zh": "你的手机号是多少？", "py": "Nǐ de shǒujī hào shì duōshao?", "en": "What's your mobile number?"}
+      ]
+    },
+    {
+      "h2": "Time, dates and age use 几",
+      "paras": [
+        "Some everyday questions always use 几, because the answer is a small number: the hour (几点), the day of the week (星期几), the month and date (几月几号) and a child's age (几岁).",
+        "几岁 is for children. To ask an adult's age, say 你多大了 instead."
+      ],
+      "examples": [
+        {"zh": "现在几点？", "py": "Xiànzài jǐ diǎn?", "en": "What time is it?"},
+        {"zh": "你几点下班？", "py": "Nǐ jǐ diǎn xiàbān?", "en": "What time do you finish work?"},
+        {"zh": "今天星期几？", "py": "Jīntiān xīngqī jǐ?", "en": "What day is it today?"},
+        {"zh": "今天几月几号？", "py": "Jīntiān jǐ yuè jǐ hào?", "en": "What's the date today?"},
+        {"zh": "你女儿几岁了？", "py": "Nǐ nǚ'ér jǐ suì le?", "en": "How old is your daughter?"},
+        {"zh": "你多大了？", "py": "Nǐ duō dà le?", "en": "How old are you?"}
+      ]
+    },
+    {
+      "h2": "The most common mistake, and 几 meaning \"a few\"",
+      "paras": [
+        "The most common mistake is to leave out the measure word after 几. 你有几书 is wrong; say 你有几本书. If you are not sure which measure word to use, 多少 is the safer choice, because it works without one.",
+        "In a sentence that is not a question, 几 + measure word means \"a few\" or \"several\"."
+      ],
+      "examples": [
+        {"zh": "你有几本书？", "py": "Nǐ yǒu jǐ běn shū?", "en": "How many books do you have?"},
+        {"zh": "我有几个中国朋友。", "py": "Wǒ yǒu jǐ ge Zhōngguó péngyou.", "en": "I have a few Chinese friends."},
+        {"zh": "我昨天买了几本书。", "py": "Wǒ zuótiān mǎi le jǐ běn shū.", "en": "I bought a few books yesterday."}
+      ]
+    }
+  ]
+}
