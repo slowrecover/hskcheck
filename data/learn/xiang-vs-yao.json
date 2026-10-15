@@ -1,0 +1,76 @@
+{
+  "slug": "xiang-vs-yao",
+  "level": 1,
+  "published": "2026-10-15",
+  "title": "想 vs 要 in Chinese: HSK 1 Grammar with Examples",
+  "description": "想 or 要? How to say \"want\" in Chinese: would like to, going to, have to, miss someone, negatives, questions, the common mistake, and HSK 1 examples.",
+  "zh": "想 / 要",
+  "h1": "想 vs 要: \"Want To\", \"Would Like To\" and \"Will\"",
+  "lede": "Both 想 (xiǎng) and 要 (yào) can mean \"want\", and both go straight before the verb. 想 is softer, like \"would like to\" or \"feel like\". 要 is firmer: you have decided, you need to, or it is going to happen.",
+  "sections": [
+    {
+      "h2": "想 + verb: would like to",
+      "paras": [
+        "Subject + 想 + verb (+ object).",
+        "想 is for wishes and plans you are thinking about, like \"would like to\" or \"feel like\" in English. It is a polite, gentle way to say what you want. You can make it stronger with 很: 我很想去 means \"I really want to go\"."
+      ],
+      "examples": [
+        {"zh": "我想喝茶。", "py": "Wǒ xiǎng hē chá.", "en": "I'd like some tea."},
+        {"zh": "你想吃什么？", "py": "Nǐ xiǎng chī shénme?", "en": "What would you like to eat?"},
+        {"zh": "我很想去中国。", "py": "Wǒ hěn xiǎng qù Zhōngguó.", "en": "I'd really like to go to China."},
+        {"zh": "我想休息一下。", "py": "Wǒ xiǎng xiūxi yíxià.", "en": "I'd like to have a short rest."}
+      ]
+    },
+    {
+      "h2": "要 + verb: want to, have to, going to",
+      "paras": [
+        "Subject + 要 + verb (+ object).",
+        "要 sounds more decided than 想. Depending on the context it can mean \"want to\", \"have to\" or \"am going to\". 我要工作 can be \"I have to work\" or \"I'll be working\": either way, it is happening. Unlike 想, 要 does not take 很 in this meaning."
+      ],
+      "examples": [
+        {"zh": "我要买一本书。", "py": "Wǒ yào mǎi yì běn shū.", "en": "I want to buy a book."},
+        {"zh": "我今天要工作。", "py": "Wǒ jīntiān yào gōngzuò.", "en": "I have to work today."},
+        {"zh": "明天我要去医院。", "py": "Míngtiān wǒ yào qù yīyuàn.", "en": "I'm going to the hospital tomorrow."}
+      ]
+    },
+    {
+      "h2": "要……了: about to happen",
+      "paras": [
+        "Put 要 before the verb and 了 at the end to say something is going to happen very soon. This is not about wanting at all, so it works for the weather and for things nobody chooses."
+      ],
+      "examples": [
+        {"zh": "要下雨了。", "py": "Yào xià yǔ le.", "en": "It's going to rain."},
+        {"zh": "我们要上课了。", "py": "Wǒmen yào shàngkè le.", "en": "Our class is about to start."},
+        {"zh": "他要回家了。", "py": "Tā yào huí jiā le.", "en": "He's about to go home."}
+      ]
+    },
+    {
+      "h2": "With a noun: 要 means want, 想 means miss",
+      "paras": [
+        "To ask for a thing, such as food in a restaurant or something in a shop, use 要 + noun, or the softer 想要 + noun.",
+        "This is where the most common learner mistake happens. 想 + a person or place means \"miss\": 我想妈妈了 is \"I miss Mum\". So 我想米饭 does not mean \"I'd like rice\"; say 我要米饭 or 我想要米饭 instead. 想 can also mean \"think\", as in 我想他今天不来了."
+      ],
+      "examples": [
+        {"zh": "我要米饭。", "py": "Wǒ yào mǐfàn.", "en": "I'll have rice."},
+        {"zh": "我想要一个新手机。", "py": "Wǒ xiǎng yào yí ge xīn shǒujī.", "en": "I'd like a new phone."},
+        {"zh": "我想妈妈了。", "py": "Wǒ xiǎng māma le.", "en": "I miss Mum."},
+        {"zh": "我很想你。", "py": "Wǒ hěn xiǎng nǐ.", "en": "I miss you so much."},
+        {"zh": "我想他今天不来了。", "py": "Wǒ xiǎng tā jīntiān bù lái le.", "en": "I don't think he's coming today."}
+      ]
+    },
+    {
+      "h2": "Negatives and questions",
+      "paras": [
+        "To say you don't want to do something, use 不想 + verb: 我不想去. Be careful with 不要 + verb: it usually means \"don't!\", telling someone not to do something. With a noun, 我不要 is fine and simply means \"I don't want it\".",
+        "Ask with 吗 at the end, or with the verb-not-verb pattern: 你想不想……? and 你要不要……? 你要不要 is a very common way to offer something."
+      ],
+      "examples": [
+        {"zh": "我不想去。", "py": "Wǒ bù xiǎng qù.", "en": "I don't want to go."},
+        {"zh": "上课了，不要说话。", "py": "Shàngkè le, búyào shuōhuà.", "en": "Class has started, no talking."},
+        {"zh": "我要这个，不要那个。", "py": "Wǒ yào zhège, búyào nàge.", "en": "I want this one, not that one."},
+        {"zh": "你想不想看电影？", "py": "Nǐ xiǎng bu xiǎng kàn diànyǐng?", "en": "Do you want to see a film?"},
+        {"zh": "你要不要喝水？", "py": "Nǐ yào bu yào hē shuǐ?", "en": "Would you like some water?"}
+      ]
+    }
+  ]
+}
