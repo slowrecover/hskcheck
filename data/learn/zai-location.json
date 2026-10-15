@@ -1,0 +1,75 @@
+{
+  "slug": "zai-location",
+  "level": 1,
+  "published": "2026-10-15",
+  "title": "在 (zài) in Chinese: HSK 1 Grammar with Examples",
+  "description": "How to use 在 (zài) in Chinese: saying where someone is, on, in and under, where you do something, negatives with 不在, and 在 vs 有, with HSK 1 examples.",
+  "zh": "在",
+  "h1": "How to Use 在 (zài) for Places",
+  "lede": "在 (zài) tells you where someone or something is, and where an action takes place. It works like \"at\", \"in\" or \"on\" in English, but the word order is different. It is a core grammar point of HSK 1.",
+  "sections": [
+    {
+      "h2": "Saying where someone is",
+      "paras": [
+        "Person or thing + 在 + place.",
+        "Here 在 is the verb of the sentence and means \"to be at\" or \"to be in\". You don't need 是: say 我在家 (I'm at home), not 我是家. To ask where someone is, use 在哪儿."
+      ],
+      "examples": [
+        {"zh": "我在家。", "py": "Wǒ zài jiā.", "en": "I'm at home."},
+        {"zh": "你在哪儿？", "py": "Nǐ zài nǎr?", "en": "Where are you?"},
+        {"zh": "我爸爸妈妈在中国。", "py": "Wǒ bàba māma zài Zhōngguó.", "en": "My mum and dad are in China."},
+        {"zh": "他在公司。", "py": "Tā zài gōngsī.", "en": "He's at the office."}
+      ]
+    },
+    {
+      "h2": "On, in and under",
+      "paras": [
+        "Apart from 在 itself, Chinese has no words for \"on\", \"in\" or \"under\" in front of the noun. Instead, a position word goes after the noun: 桌子上 (on the table), 房间里 (in the room), 椅子下边 (under the chair). An everyday object such as 桌子 needs one of these words before it can be used as a place.",
+        "Countries and cities are already places, so they don't take 里: say 在中国, not 在中国里. With 家 and 学校, 里 is optional. On its own, a position word with 边 can be the place: 在外边 (outside), 在前边 (in front)."
+      ],
+      "examples": [
+        {"zh": "我的手机在桌子上。", "py": "Wǒ de shǒujī zài zhuōzi shang.", "en": "My phone is on the table."},
+        {"zh": "我的电脑在房间里。", "py": "Wǒ de diànnǎo zài fángjiān li.", "en": "My computer is in the room."},
+        {"zh": "你的书在椅子下边。", "py": "Nǐ de shū zài yǐzi xiàbian.", "en": "Your book is under the chair."},
+        {"zh": "我朋友在外边。", "py": "Wǒ péngyou zài wàibian.", "en": "My friend is outside."}
+      ]
+    },
+    {
+      "h2": "Where you do something",
+      "paras": [
+        "Subject + 在 + place + verb.",
+        "To say where an action happens, put 在 and the place before the verb. This is the most common mistake for English speakers, who put the place at the end: 我工作在医院 is wrong; say 我在医院工作. A time word such as 晚上 or 今天 usually comes before 在.",
+        "When 在 comes straight before a verb with no place after it, it means the action is happening right now. That is a different use of 在."
+      ],
+      "examples": [
+        {"zh": "我在医院工作。", "py": "Wǒ zài yīyuàn gōngzuò.", "en": "I work at a hospital."},
+        {"zh": "我在中国学习汉语。", "py": "Wǒ zài Zhōngguó xuéxí Hànyǔ.", "en": "I'm studying Chinese in China."},
+        {"zh": "我们晚上在家看电视。", "py": "Wǒmen wǎnshang zài jiā kàn diànshì.", "en": "We watch TV at home in the evening."},
+        {"zh": "我们在饭店吃饭吧。", "py": "Wǒmen zài fàndiàn chī fàn ba.", "en": "Let's eat at a restaurant."}
+      ]
+    },
+    {
+      "h2": "Negatives and questions",
+      "paras": [
+        "Put 不 before 在 to make it negative. 不 changes to the second tone here, because 在 is fourth tone: bú zài. This works for both uses: 他不在家 (he isn't at home) and 我不在学校吃饭 (I don't eat at school).",
+        "For a yes/no question, add 吗 at the end, or use 在不在. In 在不在, the 不 is said lightly with a neutral tone."
+      ],
+      "examples": [
+        {"zh": "他不在家。", "py": "Tā bú zài jiā.", "en": "He isn't at home."},
+        {"zh": "我今天不在学校吃饭。", "py": "Wǒ jīntiān bú zài xuéxiào chī fàn.", "en": "I'm not eating at school today."},
+        {"zh": "你妈妈在家吗？", "py": "Nǐ māma zài jiā ma?", "en": "Is your mum at home?"},
+        {"zh": "你爸爸在不在家？", "py": "Nǐ bàba zài bu zài jiā?", "en": "Is your dad at home?"}
+      ]
+    },
+    {
+      "h2": "在 or 有?",
+      "paras": [
+        "Both can talk about things in places, but the word order is opposite. With 在, the thing comes first and you say where it is; the thing is usually something specific that both speakers know about. With 有, the place comes first and you say what is there, often something new with a number: \"there is a book on the table\"."
+      ],
+      "examples": [
+        {"zh": "那本书在桌子上。", "py": "Nà běn shū zài zhuōzi shang.", "en": "That book is on the table."},
+        {"zh": "桌子上有一本书。", "py": "Zhuōzi shang yǒu yì běn shū.", "en": "There's a book on the table."}
+      ]
+    }
+  ]
+}
