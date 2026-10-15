@@ -1,0 +1,65 @@
+{
+  "slug": "ye-and-dou",
+  "level": 1,
+  "published": "2026-10-15",
+  "title": "也 and 都 in Chinese: HSK 1 Grammar with Examples",
+  "description": "Where to put 也 (yě, also) and 都 (dōu, all) in a Chinese sentence: word order, 也都, negatives, questions, the common mistake, and HSK 1 examples.",
+  "zh": "也 / 都",
+  "h1": "也 and 都: Word Order with \"Also\" and \"All\"",
+  "lede": "也 (yě) means \"also\" or \"too\", and 都 (dōu) means \"all\" or \"both\". They follow the same word-order rule: after the subject, before the verb or adjective. They never go at the start or the end of the sentence.",
+  "sections": [
+    {
+      "h2": "也: also, too",
+      "paras": [
+        "Subject + 也 + verb or adjective.",
+        "In English, \"too\" can go at the end of the sentence. In Chinese, 也 always comes after the subject and before the verb or adjective, and also before words like 很, 不 and 想. This is true even when the \"also\" is about the object: \"I like reading, and I also like films\" is 我喜欢看书，也喜欢看电影, with 也 before the second 喜欢."
+      ],
+      "examples": [
+        {"zh": "我也是学生。", "py": "Wǒ yě shì xuésheng.", "en": "I'm a student too."},
+        {"zh": "我也很忙。", "py": "Wǒ yě hěn máng.", "en": "I'm busy too."},
+        {"zh": "他也喜欢吃米饭。", "py": "Tā yě xǐhuan chī mǐfàn.", "en": "He likes rice too."},
+        {"zh": "我喜欢看书，也喜欢看电影。", "py": "Wǒ xǐhuan kàn shū, yě xǐhuan kàn diànyǐng.", "en": "I like reading, and I like watching films too."}
+      ]
+    },
+    {
+      "h2": "都: all, both",
+      "paras": [
+        "Plural subject + 都 + verb or adjective.",
+        "都 looks back at the words in front of it and says that all of them are included: we, these books, Mum and I. With two people or things it means \"both\". It is very common after time words such as 天天 (every day)."
+      ],
+      "examples": [
+        {"zh": "我们都是老师。", "py": "Wǒmen dōu shì lǎoshī.", "en": "We're all teachers."},
+        {"zh": "我和妈妈都喜欢看书。", "py": "Wǒ hé māma dōu xǐhuan kàn shū.", "en": "Mum and I both like reading."},
+        {"zh": "这些书都很好看。", "py": "Zhèxiē shū dōu hěn hǎokàn.", "en": "These books are all really good."},
+        {"zh": "我天天都七点起床。", "py": "Wǒ tiāntiān dōu qī diǎn qǐchuáng.", "en": "I get up at seven every day."}
+      ]
+    },
+    {
+      "h2": "The most common mistake",
+      "paras": [
+        "Learners often put 也 or 都 where the English word goes. 也我是学生 and 我是学生也 are both wrong; say 我也是学生. In the same way, \"all of us are going\" is 我们都去, never 都我们去.",
+        "Because 都 only looks backwards, the things it covers must come before it. To say \"I like both of these\", move 这两个 to the front: 这两个我都喜欢. And when you use 也 and 都 together, 也 comes first: 也都."
+      ],
+      "examples": [
+        {"zh": "这两个我都喜欢。", "py": "Zhè liǎng ge wǒ dōu xǐhuan.", "en": "I like both of these."},
+        {"zh": "他们也都是中国人。", "py": "Tāmen yě dōu shì Zhōngguó rén.", "en": "They're all Chinese too."},
+        {"zh": "我也是。", "py": "Wǒ yě shì.", "en": "Me too."}
+      ]
+    },
+    {
+      "h2": "Negatives and questions",
+      "paras": [
+        "For negatives, 也 and 都 come before 不 or 没有. 也不 and 也没有 mean \"not either\". 都不 means \"none of them\", but 不都 means \"not all of them\", so the order changes the meaning.",
+        "To ask a question, just add 吗 at the end. The word order stays the same."
+      ],
+      "examples": [
+        {"zh": "我也不知道。", "py": "Wǒ yě bù zhīdào.", "en": "I don't know either."},
+        {"zh": "我昨天也没有去。", "py": "Wǒ zuótiān yě méiyǒu qù.", "en": "I didn't go yesterday either."},
+        {"zh": "他们都不去。", "py": "Tāmen dōu bú qù.", "en": "None of them are going."},
+        {"zh": "他们不都是学生。", "py": "Tāmen bù dōu shì xuésheng.", "en": "Not all of them are students."},
+        {"zh": "你们都去吗？", "py": "Nǐmen dōu qù ma?", "en": "Are you all going?"},
+        {"zh": "你也想去吗？", "py": "Nǐ yě xiǎng qù ma?", "en": "Do you want to go too?"}
+      ]
+    }
+  ]
+}

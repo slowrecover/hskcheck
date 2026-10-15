@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>也 and 都 in Chinese: HSK 1 Grammar with Examples</title>
+<meta name="description" content="Where to put 也 (yě, also) and 都 (dōu, all) in a Chinese sentence: word order, 也都, negatives, questions, the common mistake, and HSK 1 examples.">
+<link rel="canonical" href="https://hskcheck.com/learn/ye-and-dou/">
+<meta property="og:title" content="也 and 都 in Chinese: HSK 1 Grammar with Examples">
+<meta property="og:description" content="Where to put 也 (yě, also) and 都 (dōu, all) in a Chinese sentence: word order, 也都, negatives, questions, the common mistake, and HSK 1 examples.">
+<meta property="og:url" content="https://hskcheck.com/learn/ye-and-dou/">
+<meta property="og:type" content="website">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "也 and 都 in Chinese: HSK 1 Grammar with Examples", "description": "Where to put 也 (yě, also) and 都 (dōu, all) in a Chinese sentence: word order, 也都, negatives, questions, the common mistake, and HSK 1 examples.", "datePublished": "2026-10-15", "inLanguage": "en", "about": "Chinese grammar (HSK 3.0)", "url": "https://hskcheck.com/learn/ye-and-dou/", "publisher": {"@type": "Organization", "name": "hskcheck.com", "url": "https://hskcheck.com/"}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@600&display=swap">
+<style>
+:root {
+  --paper: #F3F5F8;
+  --sheet: #FFFFFF;
+  --ink: #1A2130;
+  --muted: #586274;
+  --rule: #DCE1E9;
+  --accent: #2A4A9A;
+  --accent-ink: #FFFFFF;
+  --l1: #1F7A5C; --l1-bg: #E2F2EB;
+  --l2: #2A68AE; --l2-bg: #E3EDF8;
+  --l3: #7A4CAE; --l3-bg: #EEE6F8;
+  --over: #C0392B; --over-bg: #FCE5E1;
+  --ok: #1F7A5C; --warn: #A15C00; --bad: #C0392B;
+  --f-ui: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --f-num: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --f-zh: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --f-zh-display: "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --radius: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0F131A; --sheet: #171C25; --ink: #E6EAF1; --muted: #9AA4B6; --rule: #2A3242;
+    --accent: #93ACEB; --accent-ink: #0F131A;
+    --l1: #63CDA2; --l1-bg: #15302A; --l2: #82B4EE; --l2-bg: #172A40; --l3: #BB9EEA; --l3-bg: #2A2142;
+    --over: #F28B78; --over-bg: #3D1F1A; --ok: #63CDA2; --warn: #E9B060; --bad: #F28B78;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0F131A; --sheet: #171C25; --ink: #E6EAF1; --muted: #9AA4B6; --rule: #2A3242;
+  --accent: #93ACEB; --accent-ink: #0F131A;
+  --l1: #63CDA2; --l1-bg: #15302A; --l2: #82B4EE; --l2-bg: #172A40; --l3: #BB9EEA; --l3-bg: #2A2142;
+  --over: #F28B78; --over-bg: #3D1F1A; --ok: #63CDA2; --warn: #E9B060; --bad: #F28B78;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: var(--f-ui); font-size: 16px; line-height: 1.55;
+  padding-inline: 16px; padding-block: 28px 48px;
+}
+.wrap { max-width: 760px; margin: 0 auto; display: grid; gap: 22px; }
+header { display: grid; gap: 8px; }
+.eyebrow { display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+  font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+.chip { border: 1px solid var(--rule); border-radius: 999px; padding: 1px 8px; letter-spacing: .04em; }
+h1 { margin: 0; font-size: clamp(28px, 6vw, 40px); line-height: 1.12; font-weight: 600; text-wrap: balance; letter-spacing: -.01em; }
+h1 .zh { font-family: var(--f-zh-display); font-weight: 600; color: var(--accent); margin-right: .25em; }
+.lede { margin: 0; color: var(--muted); max-width: 60ch; }
+
+.sheet { background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--radius); padding: 18px; display: grid; gap: 14px; min-width: 0; }
+a { color: var(--accent); text-underline-offset: 3px; }
+.zh-inline { font-family: var(--f-zh); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.site-nav { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; font-weight: 500; }
+.site-nav a { text-decoration: none; color: var(--muted); padding-block: 2px; border-bottom: 2px solid transparent; }
+.site-nav a:hover { color: var(--ink); }
+.site-nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
+h2 { margin: 0; font-size: 15px; font-weight: 600; letter-spacing: .01em; }
+.table-wrap { overflow-x: auto; }
+table.counts { border-collapse: collapse; font-size: 14px; min-width: 320px; }
+table.counts th, table.counts td { text-align: left; padding: 7px 14px 7px 0; border-bottom: 1px solid var(--rule); }
+table.counts th { font-weight: 600; color: var(--muted); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+table.counts td.num { font-family: var(--f-num); font-variant-numeric: tabular-nums; }
+.notes { font-size: 13px; color: var(--muted); display: grid; gap: 6px; max-width: 70ch; }
+.notes p { margin: 0; }
+.notes b { color: var(--ink); font-weight: 600; }
+.site-foot { max-width: 760px; margin: 28px auto 0; font-size: 13px; color: var(--muted); }
+.site-foot a { color: var(--muted); }
+.policy { gap: 10px; }
+.policy h2 { margin-top: 8px; }
+.policy p { margin: 0; max-width: 70ch; }
+.learn p { margin: 0; max-width: 68ch; }
+.examples { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; counter-reset: ex; }
+.examples li { display: grid; gap: 2px; padding: 12px 0 12px 34px; border-top: 1px solid var(--rule); position: relative; counter-increment: ex; }
+.examples li:first-child { border-top: 0; padding-top: 4px; }
+.examples li::before { content: counter(ex); position: absolute; left: 0; top: 14px; font: 500 12px var(--f-num); color: var(--muted); }
+.examples li:first-child::before { top: 6px; }
+.ex-zh { font-family: var(--f-zh); font-size: 21px; line-height: 1.5; }
+.ex-py { color: var(--accent); font-size: 14px; }
+.ex-en { color: var(--muted); font-size: 14px; }
+.cta { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.cta a.button { display: inline-block; text-decoration: none; font: 500 14px var(--f-ui); padding: 9px 16px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); }
+.cta a.button.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+.more { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.more .zh-inline { font-weight: 500; margin-right: 4px; }
+.more .lv { font-size: 12px; color: var(--muted); }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <nav class="site-nav" aria-label="Site"><a href="/">Level Checker</a><a href="/hsk-1-word-list/">HSK 1 Words</a><a href="/hsk-2-word-list/">HSK 2 Words</a><a href="/hsk-3-word-list/">HSK 3 Words</a><a href="/chinese-character-worksheets/">Writing Sheets</a><a href="/chinese-measure-words/">Measure Words</a><a href="/old-hsk-to-new-hsk/">Old → New HSK</a><a href="/learn/" aria-current="page">Grammar</a></nav>
+    <div class="eyebrow"><span>HSK grammar</span><span class="chip">HSK 1</span></div>
+    <h1><span class="zh">也 / 都</span>也 and 都: Word Order with &quot;Also&quot; and &quot;All&quot;</h1>
+    <p class="lede"><span class="zh-inline">也</span> (yě) means &quot;also&quot; or &quot;too&quot;, and <span class="zh-inline">都</span> (dōu) means &quot;all&quot; or &quot;both&quot;. They follow the same word-order rule: after the subject, before the verb or adjective. They never go at the start or the end of the sentence.</p>
+  </header>
+
+  <section class="sheet learn">
+    <h2>也: also, too</h2>
+    <p>Subject + <span class="zh-inline">也</span> + verb or adjective.</p>
+    <p>In English, &quot;too&quot; can go at the end of the sentence. In Chinese, <span class="zh-inline">也</span> always comes after the subject and before the verb or adjective, and also before words like <span class="zh-inline">很</span>, <span class="zh-inline">不</span> and <span class="zh-inline">想</span>. This is true even when the &quot;also&quot; is about the object: &quot;I like reading, and I also like films&quot; is <span class="zh-inline">我喜欢看书，也喜欢看电影</span>, with <span class="zh-inline">也</span> before the second <span class="zh-inline">喜欢</span>.</p>
+    <ol class="examples">
+      <li><span class="ex-zh" lang="zh-Hans">我也是学生。</span><span class="ex-py">Wǒ yě shì xuésheng.</span><span class="ex-en">I&#x27;m a student too.</span></li>
+      <li><span class="ex-zh" lang="zh-Hans">我也很忙。</span><span class="ex-py">Wǒ yě hěn máng.</span><span class="ex-en">I&#x27;m busy too.</span></li>
+      <li><span class="ex-zh" lang="zh-Hans">他也喜欢吃米饭。</span><span class="ex-py">Tā yě xǐhuan chī mǐfàn.</span><span class="ex-en">He likes rice too.</span></li>
+      <li><span class="ex-zh" lang="zh-Hans">我喜欢看书，也喜欢看电影。</span><span class="ex-py">Wǒ xǐhuan kàn shū, yě xǐhuan kàn diànyǐng.</span><span class="ex-en">I like reading, and I like watching films too.</span></li>
+    </ol>
+  </section>
+  <section class="sheet learn">
+    <h2>都: all, both</h2>
+    <p>Plural subject + <span class="zh-inline">都</span> + verb or adjective.</p>
+    <p><span class="zh-inline">都</span> looks back at the words in front of it and says that all of them are included: we, these books, Mum and I. With two people or things it means &quot;both&quot;. It is very common after time words such as <span class="zh-inline">天天</span> (every day).</p>
+    <ol class="examples">
+      <li><span class="ex-zh" lang="zh-Hans">我们都是老师。</span><span class="ex-py">Wǒmen dōu shì lǎoshī.</span><span class="ex-en">We&#x27;re all teachers.</span></li>
+      <li><span class="ex-zh" lang="zh-Hans">我和妈妈都喜欢看书。</span><span class="ex-py">Wǒ hé māma dōu xǐhuan kàn shū.</span><span class="ex-en">Mum and I both like reading.</span></li>
+      <li><span class="ex-zh" lang="zh-Hans">这些书都很好看。</span><span class="ex-py">Zhèxiē shū dōu hěn hǎokàn.</span><span class="ex-en">These books are all really good.</span></li>
+      <li><span class="ex-zh" lang="zh-Hans">我天天都七点起床。</span><span class="ex-py">Wǒ tiāntiān dōu qī diǎn qǐchuáng.</span><span class="ex-en">I get up at seven every day.</span></li>
+    </ol>
+  </section>
+  <section class="sheet learn">
+    <h2>The most common mistake</h2>
+    <p>Learners often put <span class="zh-inline">也</span> or <span class="zh-inline">都</span> where the English word goes. <span class="zh-inline">也我是学生</span> and <span class="zh-inline">我是学生也</span> are both wrong; say <span class="zh-inline">我也是学生</span>. In the same way, &quot;all of us are going&quot; is <span class="zh-inline">我们都去</span>, never <span class="zh-inline">都我们去</span>.</p>
+    <p>Because <span class="zh-inline">都</span> only looks backwards, the things it covers must come before it. To say &quot;I like both of these&quot;, move <span class="zh-inline">这两个</span> to the front: <span class="zh-inline">这两个我都喜欢</span>. And when you use <span class="zh-inline">也</span> and <span class="zh-inline">都</span> together, <span class="zh-inline">也</span> comes first: <span class="zh-inline">也都</span>.</p>
+    <ol class="examples">
+      <li><span class="ex-zh" lang="zh-Hans">这两个我都喜欢。</span><span class="ex-py">Zhè liǎng ge wǒ dōu xǐhuan.</span><span class="ex-en">I like both of these.</span></li>
+      <li><span class="ex-zh" lang="zh-Hans">他们也都是中国人。</span><span class="ex-py">Tāmen yě dōu shì Zhōngguó rén.</span><span class="ex-en">They&#x27;re all Chinese too.</span></li>
+      <li><span class="ex-zh" lang="zh-Hans">我也是。</span><span class="ex-py">Wǒ yě shì.</span><span class="ex-en">Me too.</span></li>
+    </ol>
+  </section>
+  <section class="sheet learn">
+    <h2>Negatives and questions</h2>
+    <p>For negatives, <span class="zh-inline">也</span> and <span class="zh-inline">都</span> come before <span class="zh-inline">不</span> or <span class="zh-inline">没有</span>. <span class="zh-inline">也不</span> and <span class="zh-inline">也没有</span> mean &quot;not either&quot;. <span class="zh-inline">都不</span> means &quot;none of them&quot;, but <span class="zh-inline">不都</span> means &quot;not all of them&quot;, so the order changes the meaning.</p>
+    <p>To ask a question, just add <span class="zh-inline">吗</span> at the end. The word order stays the same.</p>
+    <ol class="examples">
+      <li><span class="ex-zh" lang="zh-Hans">我也不知道。</span><span class="ex-py">Wǒ yě bù zhīdào.</span><span class="ex-en">I don&#x27;t know either.</span></li>
+      <li><span class="ex-zh" lang="zh-Hans">我昨天也没有去。</span><span class="ex-py">Wǒ zuótiān yě méiyǒu qù.</span><span class="ex-en">I didn&#x27;t go yesterday either.</span></li>
+      <li><span class="ex-zh" lang="zh-Hans">他们都不去。</span><span class="ex-py">Tāmen dōu bú qù.</span><span class="ex-en">None of them are going.</span></li>
+      <li><span class="ex-zh" lang="zh-Hans">他们不都是学生。</span><span class="ex-py">Tāmen bù dōu shì xuésheng.</span><span class="ex-en">Not all of them are students.</span></li>
+      <li><span class="ex-zh" lang="zh-Hans">你们都去吗？</span><span class="ex-py">Nǐmen dōu qù ma?</span><span class="ex-en">Are you all going?</span></li>
+      <li><span class="ex-zh" lang="zh-Hans">你也想去吗？</span><span class="ex-py">Nǐ yě xiǎng qù ma?</span><span class="ex-en">Do you want to go too?</span></li>
+    </ol>
+  </section>
+
+  <section class="sheet learn">
+    <h2>Check your own sentences</h2>
+    <p>Every example on this page uses only words up to HSK 1. Paste your own sentences into the level checker to see which words, if any, are above your level.</p>
+    <div class="cta"><a class="button" href="/#hsk1">Open the level checker</a><a class="button ghost" href="/hsk-1-word-list/">HSK 1 word list</a></div>
+  </section>
+
+  <section class="sheet learn">
+    <h2>More HSK grammar</h2>
+    <ul class="more"><li><a href="/learn/bu-vs-meiyou/"><span class="zh-inline">不 / 没有</span> 不 vs 没有: Which Negative to Use</a> <span class="lv">HSK 1</span></li><li><a href="/learn/de-possessive/"><span class="zh-inline">的</span> How to Use 的 (de) for Possession and Description</a> <span class="lv">HSK 1</span></li><li><a href="/learn/hui-neng-keyi/"><span class="zh-inline">会 / 能 / 可以</span> 会, 能 and 可以: Three Ways to Say &quot;Can&quot;</a> <span class="lv">HSK 1</span></li><li><a href="/learn/le-particle/"><span class="zh-inline">了</span> How to Use 了 (le) in Chinese</a> <span class="lv">HSK 1</span></li><li><a href="/learn/ma-questions/"><span class="zh-inline">吗</span> How to Ask Yes/No Questions with 吗 (ma)</a> <span class="lv">HSK 1</span></li><li><a href="/learn/ne-particle/"><span class="zh-inline">呢</span> How to Use 呢 (ne)</a> <span class="lv">HSK 1</span></li></ul>
+    <p><a href="/learn/">All grammar points</a></p>
+  </section>
+</div>
+
+<footer class="site-foot">hskcheck.com · <a href="/privacy/">Privacy Policy</a></footer>
+</body>
+</html>
