@@ -12,12 +12,25 @@ Each JSON file:
     "lede": "...",                     one or two sentences under the heading
     "sections": [
       {"h2": "...", "paras": ["..."], "examples": [{"zh": "...", "py": "...", "en": "..."}]}
-    ]
+    ],
+    "worksheet": {                     optional: a printable worksheet at /learn/<slug>/worksheet/
+      "title": "...", "description": "...",
+      "exercises": [
+        {"type": "choose", "h2": "...", "instructions": "...", "options": ["不", "没有"],
+         "items": [{"zh": "我昨天＿＿去学校。", "en": "...", "answer": "没有"}]},
+        {"type": "order", "h2": "...", "instructions": "...",
+         "items": [{"words": ["钱", "没有", "我"], "en": "...", "answers": ["我没有钱。"]}]},
+        {"type": "fix", "h2": "...", "instructions": "...",
+         "items": [{"zh": "我不有哥哥。", "en": "...", "answers": ["我没有哥哥。"]}]}
+      ]
+    }
   }
 
 Text fields are plain text: Chinese in them is wrapped for the Chinese font, nothing else
 is treated as HTML. The build stops if any example sentence uses a word above the page's
 level, judged with the same splitter as tools/check_vocab.py and the level checker.
+Worksheet sentences (filled-in gaps, answers and the sentences to fix) are checked the same
+way; ＿＿ marks the gap in a "choose" item, and an "order" item's words must make up each answer.
 """
 import datetime
 import html
@@ -73,9 +86,77 @@ def load_pages():
                 n_examples += 1
         if n_examples < 6:
             raise SystemExit(f"data/learn/{name}: needs at least 6 example sentences, has {n_examples}")
+        if p.get("worksheet"):
+            check_worksheet(p["worksheet"], words, max_len, name, p["level"])
         pages.append(p)
     pages.sort(key=lambda p: (p["level"], p["published"], p["slug"]))
     return pages
+
+
+BLANK = "＿＿"
+PUNCT = re.compile(r"[，。：！？、“”\s]")
+
+
+def check_worksheet(w, words, max_len, name, level):
+    def vocab(sentence):
+        tokens, bad = check(sentence, words, max_len)
+        if bad:
+            raise SystemExit(f"data/learn/{name}: worksheet sentence above HSK {level}: {sentence}  "
+                             f"({' / '.join(tokens)})")
+
+    for k in ("title", "description", "exercises"):
+        if not w.get(k):
+            raise SystemExit(f"data/learn/{name}: worksheet needs {k}")
+    for ex in w["exercises"]:
+        kind = ex.get("type")
+        if kind not in ("choose", "order", "fix") or not ex.get("h2") or not ex.get("items"):
+            raise SystemExit(f"data/learn/{name}: worksheet exercises need type (choose/order/fix), h2 and items")
+        for it in ex["items"]:
+            if not it.get("en"):
+                raise SystemExit(f"data/learn/{name}: every worksheet item needs en")
+            if kind == "choose":
+                if it.get("zh", "").count(BLANK) != 1 or it.get("answer") not in ex.get("options", []):
+                    raise SystemExit(f"data/learn/{name}: choose item needs one {BLANK} and an answer from options: {it}")
+                vocab(it["zh"].replace(BLANK, it["answer"]))
+            else:
+                if not it.get("answers"):
+                    raise SystemExit(f"data/learn/{name}: {kind} item needs answers: {it}")
+                for a in it["answers"]:
+                    vocab(a)
+                    if kind == "order" and sorted(PUNCT.sub("", a)) != sorted("".join(it.get("words", []))):
+                        raise SystemExit(f"data/learn/{name}: order item words don't make up the answer {a}")
+                if kind == "fix":
+                    vocab(it.get("zh", ""))
+
+
+def worksheet_html(p):
+    """The paper: exercises, then the answer key on its own page."""
+    w = p["worksheet"]
+    letters = "ABCDEFGH"
+    parts, keys = [], []
+    for i, ex in enumerate(w["exercises"]):
+        head = (f'<div class="ws-ex"><h3><span class="ws-letter">{letters[i]}</span>{zh_spans(ex["h2"])}</h3>'
+                f'<p class="ws-inst">{zh_spans(ex.get("instructions", ""))}</p><ol class="ws-items">')
+        items, ans = [], []
+        for it in ex["items"]:
+            en = f'<span class="ws-en">{html.escape(it["en"])}</span>'
+            if ex["type"] == "choose":
+                before, after = (html.escape(x) for x in it["zh"].split(BLANK))
+                opts = " / ".join(html.escape(o) for o in ex["options"])
+                items.append(f'<li><span class="ws-zh" lang="zh-Hans">{before}<span class="ws-gap"></span>{after}</span>'
+                             f'<span class="ws-opts" lang="zh-Hans">（{opts}）</span>{en}</li>')
+                ans.append(f'<li lang="zh-Hans">{html.escape(it["answer"])}</li>')
+            else:
+                if ex["type"] == "order":
+                    shown = "".join(f'<span class="ws-word">{html.escape(x)}</span>' for x in it["words"])
+                    shown = f'<span class="ws-words" lang="zh-Hans">{shown}</span>'
+                else:
+                    shown = f'<span class="ws-zh" lang="zh-Hans">{html.escape(it["zh"])}</span>'
+                items.append(f'<li>{shown}{en}<span class="ws-line"></span></li>')
+                ans.append(f'<li lang="zh-Hans">{" / ".join(html.escape(a) for a in it["answers"])}</li>')
+        parts.append(head + "".join(items) + "</ol></div>")
+        keys.append(f'<div class="ws-key-ex"><h4>{letters[i]}</h4><ol>{"".join(ans)}</ol></div>')
+    return "\n".join(parts), "\n".join(keys)
 
 
 def section_html(s):
@@ -95,6 +176,45 @@ def section_html(s):
     return "\n".join(out)
 
 
+def worksheet_cta(p, url):
+    if not p.get("worksheet"):
+        return ""
+    n = sum(len(ex["items"]) for ex in p["worksheet"]["exercises"])
+    return ('<section class="sheet learn">\n    <h2>Printable worksheet</h2>\n'
+            f'    <p>Practise this grammar point on paper: {n} exercises using only HSK {p["level"]} words, '
+            'with an answer key on a separate page. Free to print and copy for your class.</p>\n'
+            f'    <div class="cta"><a class="button" href="{url}worksheet/">Open the worksheet</a></div>\n  </section>\n')
+
+
+def write_worksheet(p, url, tpl, css, nav, pages_nav, render, site):
+    w = p["worksheet"]
+    ws_url = f"{url}worksheet/"
+    exercises, key = worksheet_html(p)
+    n = sum(len(ex["items"]) for ex in w["exercises"])
+    body = (tpl.replace("__NAV__", nav(pages_nav, LEARN_URL))
+            .replace("__LEVEL__", str(p["level"]))
+            .replace("__ZH__", html.escape(p["zh"]))
+            .replace("__COUNT__", str(n))
+            .replace("__URL__", url)
+            .replace("__SITE_URL__", (site + url).replace("https://", ""))
+            .replace("__EXERCISES__", exercises)
+            .replace("__KEY__", key))
+    ld = json.dumps({
+        "@context": "https://schema.org", "@type": "LearningResource", "name": w["title"],
+        "description": w["description"], "learningResourceType": "Worksheet",
+        "educationalLevel": f"HSK {p['level']}", "inLanguage": ["en", "zh-Hans"], "isAccessibleForFree": True,
+        "url": site + ws_url, "isPartOf": site + url,
+        "publisher": {"@type": "Organization", "name": "hskcheck.com", "url": site + "/"},
+    }, ensure_ascii=False)
+    target = ROOT / ws_url.strip("/")
+    target.mkdir(parents=True, exist_ok=True)
+    (target / "index.html").write_text(
+        render(w["title"], w["description"], site + ws_url, css, body,
+               f'<script type="application/ld+json">{ld}</script>'),
+        encoding="utf-8")
+    return ws_url
+
+
 def build(pages_nav, nav, render, base_css, tpl_dir, site):
     """Write /learn/ and one page per JSON file. Returns the URLs written."""
     pages = load_pages()
@@ -102,6 +222,8 @@ def build(pages_nav, nav, render, base_css, tpl_dir, site):
         return []
     css = base_css + (tpl_dir / "learn.css").read_text(encoding="utf-8")
     body_tpl = (tpl_dir / "learn_body.html").read_text(encoding="utf-8")
+    ws_css = base_css + (tpl_dir / "learn_worksheet.css").read_text(encoding="utf-8")
+    ws_tpl = (tpl_dir / "learn_worksheet_body.html").read_text(encoding="utf-8")
     urls = []
     for p in pages:
         url = f"{LEARN_URL}{p['slug']}/"
@@ -119,7 +241,8 @@ def build(pages_nav, nav, render, base_css, tpl_dir, site):
                 .replace("__H1__", html.escape(p["h1"]))
                 .replace("__LEDE__", zh_spans(p["lede"]))
                 .replace("__SECTIONS__", "\n".join(section_html(s) for s in p["sections"]))
-                .replace("__MORE__", f'<ul class="more">{more}</ul>' if more else ""))
+                .replace("__MORE__", f'<ul class="more">{more}</ul>' if more else "")
+                .replace("__WORKSHEET__", worksheet_cta(p, url)))
         ld = json.dumps({
             "@context": "https://schema.org", "@type": "Article", "headline": p["title"],
             "description": p["description"], "datePublished": p["published"],
@@ -133,6 +256,8 @@ def build(pages_nav, nav, render, base_css, tpl_dir, site):
                    f'<script type="application/ld+json">{ld}</script>'),
             encoding="utf-8")
         urls.append(url)
+        if p.get("worksheet"):
+            urls.append(write_worksheet(p, url, ws_tpl, ws_css, nav, pages_nav, render, site))
 
     # Index
     groups = []

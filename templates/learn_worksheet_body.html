@@ -1,0 +1,45 @@
+<div class="wrap">
+  <header class="no-print">
+    __NAV__
+    <div class="eyebrow"><span>Grammar worksheet</span><span class="chip">HSK __LEVEL__</span></div>
+    <h1><span class="zh">__ZH__</span>Printable Worksheet</h1>
+    <p class="lede">__COUNT__ exercises that use only HSK __LEVEL__ words, with an answer key on a separate page. Free to print and copy for your class. Need the rules first? Read the <a href="__URL__">explanation with examples</a>.</p>
+  </header>
+
+  <section class="sheet ws-controls no-print" aria-label="Worksheet settings">
+    <div class="ws-checks">
+      <label><input type="checkbox" id="opt-en" checked> English meanings</label>
+      <label><input type="checkbox" id="opt-key" checked> Answer key (prints on page 2)</label>
+    </div>
+    <div><button type="button" class="button" id="print">Print worksheet</button></div>
+  </section>
+
+  <div class="ws-preview">
+    <article class="ws-paper" id="paper">
+      <div class="ws-head">
+        <div class="ws-title"><span lang="zh-Hans">__ZH__</span> · HSK __LEVEL__ grammar</div>
+        <div class="ws-name">Name <span class="ws-fill"></span> Date <span class="ws-fill short"></span></div>
+      </div>
+__EXERCISES__
+      <div class="ws-foot">Free worksheet from __SITE_URL__</div>
+      <div class="ws-key">
+        <div class="ws-head"><div class="ws-title"><span lang="zh-Hans">__ZH__</span> · Answer key</div></div>
+__KEY__
+      </div>
+    </article>
+  </div>
+</div>
+<script>
+(function () {
+  var paper = document.getElementById("paper");
+  function sync(id, cls) {
+    var box = document.getElementById(id);
+    var apply = function () { paper.classList.toggle(cls, !box.checked); };
+    box.addEventListener("change", apply);
+    apply();
+  }
+  sync("opt-en", "no-en");
+  sync("opt-key", "no-key");
+  document.getElementById("print").addEventListener("click", function () { window.print(); });
+})();
+</script>

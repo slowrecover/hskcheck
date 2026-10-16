@@ -67,5 +67,53 @@
         {"zh": "你有没有中文名字？", "py": "Nǐ yǒu méiyǒu Zhōngwén míngzi?", "en": "Do you have a Chinese name?"}
       ]
     }
-  ]
+  ],
+  "worksheet": {
+    "title": "不 vs 没有 Worksheet: HSK 1 Printable with Answers",
+    "description": "A free printable 不 vs 没有 worksheet for HSK 1: 20 exercises (choose the negative, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 不 or 没有",
+        "instructions": "Write 不 or 没有 in each gap. The English tells you what the sentence means.",
+        "options": ["不", "没有"],
+        "items": [
+          {"zh": "我昨天＿＿去学校。", "en": "I didn't go to school yesterday.", "answer": "没有"},
+          {"zh": "他＿＿是中国人。", "en": "He isn't Chinese.", "answer": "不"},
+          {"zh": "我＿＿电脑。", "en": "I don't have a computer.", "answer": "没有"},
+          {"zh": "明天我＿＿去商店。", "en": "I'm not going to the shop tomorrow.", "answer": "不"},
+          {"zh": "我还＿＿吃饭。", "en": "I haven't eaten yet.", "answer": "没有"},
+          {"zh": "今天＿＿冷。", "en": "It isn't cold today.", "answer": "不"},
+          {"zh": "这个字我＿＿认识。", "en": "I don't know this character.", "answer": "不"},
+          {"zh": "上个星期他＿＿来上课。", "en": "He didn't come to class last week.", "answer": "没有"},
+          {"zh": "我＿＿喜欢喝茶。", "en": "I don't like tea.", "answer": "不"},
+          {"zh": "你看了那个电影吗？我还＿＿看。", "en": "Have you seen that film? I haven't seen it yet.", "answer": "没有"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["去", "明天", "不", "医院", "我"], "en": "I'm not going to the hospital tomorrow.", "answers": ["明天我不去医院。", "我明天不去医院。"]},
+          {"words": ["钱", "没有", "我"], "en": "I don't have any money.", "answers": ["我没有钱。"]},
+          {"words": ["起床", "他", "没有", "还"], "en": "He hasn't got up yet.", "answers": ["他还没有起床。"]},
+          {"words": ["忙", "今天", "不", "她"], "en": "She isn't busy today.", "answers": ["她今天不忙。", "今天她不忙。"]},
+          {"words": ["电视", "没有", "昨天", "看", "我们"], "en": "We didn't watch TV yesterday.", "answers": ["我们昨天没有看电视。", "昨天我们没有看电视。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "我不有哥哥。", "en": "I don't have an older brother.", "answers": ["我没有哥哥。"]},
+          {"zh": "他昨天不来。", "en": "He didn't come yesterday.", "answers": ["他昨天没有来。"]},
+          {"zh": "我没有吃饭了。", "en": "I haven't eaten.", "answers": ["我没有吃饭。"]},
+          {"zh": "他没有是学生。", "en": "He isn't a student.", "answers": ["他不是学生。"]},
+          {"zh": "我没有会说汉语。", "en": "I can't speak Chinese.", "answers": ["我不会说汉语。"]}
+        ]
+      }
+    ]
+  }
 }
