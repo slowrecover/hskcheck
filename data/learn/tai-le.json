@@ -1,0 +1,72 @@
+{
+  "slug": "tai-le",
+  "level": 1,
+  "published": "2026-10-16",
+  "title": "太……了 (tài... le) in Chinese: HSK 1 Grammar with Examples",
+  "description": "How to use 太……了 (tài... le) in Chinese: \"too\" and \"so\", why the 了 matters, 不太 for \"not very\", the common mistake and HSK 1 examples.",
+  "zh": "太……了",
+  "h1": "太……了: \"Too\" and \"So\"",
+  "lede": "太 (tài) goes before an adjective, and 了 (le) usually comes at the end of the sentence. Together they say that something is too much, as in \"too expensive\", or that you feel strongly about it, as in \"so good\". The context tells you which.",
+  "sections": [
+    {
+      "h2": "The pattern",
+      "paras": [
+        "太 + adjective + 了. The adjective sits between 太 and 了, and the 了 here does not mean the action is finished; it just adds feeling to the sentence.",
+        "太好了 on its own is one of the most useful phrases in Chinese: \"Great!\" or \"That's wonderful!\""
+      ],
+      "examples": [
+        {"zh": "太贵了！", "py": "Tài guì le!", "en": "That's too expensive!"},
+        {"zh": "太好了！", "py": "Tài hǎo le!", "en": "Great!"},
+        {"zh": "太好了，明天不上课！", "py": "Tài hǎo le, míngtiān bú shàngkè!", "en": "Brilliant, no classes tomorrow!"}
+      ]
+    },
+    {
+      "h2": "\"Too\": more than you want",
+      "paras": [
+        "When something is a problem, 太……了 means \"too\". It is often followed by a second part that says what you will do about it: ask for something else, say no, or put it off."
+      ],
+      "examples": [
+        {"zh": "今天太热了。", "py": "Jīntiān tài rè le.", "en": "It's too hot today."},
+        {"zh": "这件衣服太大了，有小一点儿的吗？", "py": "Zhè jiàn yīfu tài dà le, yǒu xiǎo yìdiǎnr de ma?", "en": "This top is too big. Do you have a smaller one?"},
+        {"zh": "我太忙了，今天不能去。", "py": "Wǒ tài máng le, jīntiān bù néng qù.", "en": "I'm too busy, I can't go today."},
+        {"zh": "现在太晚了，明天再说吧。", "py": "Xiànzài tài wǎn le, míngtiān zài shuō ba.", "en": "It's too late now. Let's talk about it tomorrow."}
+      ]
+    },
+    {
+      "h2": "\"So\": praise and strong feelings",
+      "paras": [
+        "With positive words, 太……了 is not a complaint at all. It means \"so\" or \"really\" and shows that you are pleased or impressed. 太谢谢你了 is a warm way to say \"Thank you so much\"."
+      ],
+      "examples": [
+        {"zh": "这个菜太好吃了！", "py": "Zhège cài tài hǎochī le!", "en": "This dish is so good!"},
+        {"zh": "你的中文太好了！", "py": "Nǐ de Zhōngwén tài hǎo le!", "en": "Your Chinese is really good!"},
+        {"zh": "这个电影太好看了。", "py": "Zhège diànyǐng tài hǎokàn le.", "en": "This film is so good."},
+        {"zh": "太谢谢你了！", "py": "Tài xièxie nǐ le!", "en": "Thank you so much!"}
+      ]
+    },
+    {
+      "h2": "不太: \"not very\"",
+      "paras": [
+        "Put 不 in front of 太 to say \"not very\" or \"not really\". 不太 sounds softer and more polite than a plain 不, so it is a good way to say you don't like something. Normally there is no 了 at the end. Note the tone: 不 becomes bú before the fourth tone of 太.",
+        "To ask whether something is too much, you can use 是不是 before 太: 是不是太贵了?"
+      ],
+      "examples": [
+        {"zh": "我不太喜欢喝茶。", "py": "Wǒ bú tài xǐhuan hē chá.", "en": "I don't really like drinking tea."},
+        {"zh": "这儿的菜不太贵。", "py": "Zhèr de cài bú tài guì.", "en": "The food here isn't very expensive."},
+        {"zh": "今天不太冷。", "py": "Jīntiān bú tài lěng.", "en": "It's not very cold today."},
+        {"zh": "这个是不是太贵了？", "py": "Zhège shì bu shì tài guì le?", "en": "Isn't this a bit too expensive?"}
+      ]
+    },
+    {
+      "h2": "The most common mistake",
+      "paras": [
+        "Learners often use 太 when they just mean \"very\". 太 is not a neutral word: it says something is too much, or that you feel strongly about it. To simply describe something, use 很. 这个苹果很大 just says the apple is big; 这个苹果太大了 says it is too big, or that you are surprised how big it is.",
+        "The other mistake is leaving out 了. When the sentence ends on the adjective, keep the 了: say 这个太贵了, not 这个太贵."
+      ],
+      "examples": [
+        {"zh": "这个苹果很大。", "py": "Zhège píngguǒ hěn dà.", "en": "This apple is big."},
+        {"zh": "这个苹果太大了。", "py": "Zhège píngguǒ tài dà le.", "en": "This apple is too big."}
+      ]
+    }
+  ]
+}
