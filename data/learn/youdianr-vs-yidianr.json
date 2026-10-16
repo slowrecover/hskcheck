@@ -1,0 +1,71 @@
+{
+  "slug": "youdianr-vs-yidianr",
+  "level": 1,
+  "published": "2026-10-16",
+  "title": "有点儿 vs 一点儿 in Chinese: HSK 1 Grammar with Examples",
+  "description": "有点儿 (yǒudiǎnr) vs 一点儿 (yìdiǎnr): both mean \"a bit\", but they go in different places. Word order, 一点儿也不, the common mistake and HSK 1 examples.",
+  "zh": "有点儿 / 一点儿",
+  "h1": "有点儿 vs 一点儿: Two Ways to Say \"a Bit\"",
+  "lede": "有点儿 (yǒudiǎnr) and 一点儿 (yìdiǎnr) both translate as \"a bit\" or \"a little\", but they are not interchangeable. 有点儿 goes before an adjective and describes how things are, usually in a slightly negative way. 一点儿 goes after an adjective or verb and talks about a small change or a small amount.",
+  "sections": [
+    {
+      "h2": "有点儿 + adjective: \"a bit...\"",
+      "paras": [
+        "Put 有点儿 in front of an adjective to say that something is a bit too much of something: a bit cold, a bit expensive, a bit busy. It usually describes something you are not very happy about, so it is common for complaints and polite refusals. It sounds odd with clearly positive words; for \"quite nice\" Chinese speakers use 挺 or 很 instead.",
+        "有点儿 can also go before a feeling verb such as 想, or before 不 + adjective. It is a short form of 有一点儿, which means the same thing."
+      ],
+      "examples": [
+        {"zh": "今天有点儿冷。", "py": "Jīntiān yǒudiǎnr lěng.", "en": "It's a bit cold today."},
+        {"zh": "这件衣服有点儿贵。", "py": "Zhè jiàn yīfu yǒudiǎnr guì.", "en": "This top is a bit expensive."},
+        {"zh": "我有点儿忙，明天再说吧。", "py": "Wǒ yǒudiǎnr máng, míngtiān zài shuō ba.", "en": "I'm a bit busy. Let's talk about it tomorrow."},
+        {"zh": "他今天有点儿不高兴。", "py": "Tā jīntiān yǒudiǎnr bù gāoxìng.", "en": "He's a bit unhappy today."},
+        {"zh": "我有点儿想家。", "py": "Wǒ yǒudiǎnr xiǎng jiā.", "en": "I'm a bit homesick."}
+      ]
+    },
+    {
+      "h2": "Adjective + 一点儿: \"a bit more\"",
+      "paras": [
+        "Put 一点儿 after an adjective to compare or to ask for a change: a bit cheaper, a bit earlier, a bit better than before. This is very useful when shopping and when making requests."
+      ],
+      "examples": [
+        {"zh": "能便宜一点儿吗？", "py": "Néng piányi yìdiǎnr ma?", "en": "Could you make it a bit cheaper?"},
+        {"zh": "明天你早一点儿来吧。", "py": "Míngtiān nǐ zǎo yìdiǎnr lái ba.", "en": "Come a bit earlier tomorrow."},
+        {"zh": "你今天好一点儿了吗？", "py": "Nǐ jīntiān hǎo yìdiǎnr le ma?", "en": "Are you feeling a bit better today?"},
+        {"zh": "你多吃一点儿。", "py": "Nǐ duō chī yìdiǎnr.", "en": "Have a bit more to eat."}
+      ]
+    },
+    {
+      "h2": "Verb + 一点儿 + noun: \"a little, some\"",
+      "paras": [
+        "After a verb, 一点儿 means a small amount of something. The noun comes after 一点儿. In everyday speech the 一 is often dropped, so you will also hear 喝点儿水 or 买点儿东西."
+      ],
+      "examples": [
+        {"zh": "我想喝一点儿水。", "py": "Wǒ xiǎng hē yìdiǎnr shuǐ.", "en": "I'd like a little water."},
+        {"zh": "我会说一点儿汉语。", "py": "Wǒ huì shuō yìdiǎnr Hànyǔ.", "en": "I can speak a little Chinese."},
+        {"zh": "我们去超市买一点儿水果吧。", "py": "Wǒmen qù chāoshì mǎi yìdiǎnr shuǐguǒ ba.", "en": "Let's go to the supermarket and buy some fruit."}
+      ]
+    },
+    {
+      "h2": "一点儿也不: \"not at all\"",
+      "paras": [
+        "To say \"not at all\", use 一点儿 + 也 or 都 + 不 + adjective or verb. This is the main way to use 一点儿 in a negative sentence. Do not use 有点儿 here."
+      ],
+      "examples": [
+        {"zh": "今天一点儿也不冷。", "py": "Jīntiān yìdiǎnr yě bù lěng.", "en": "It's not cold at all today."},
+        {"zh": "这个菜一点儿也不好吃。", "py": "Zhège cài yìdiǎnr yě bù hǎochī.", "en": "This dish isn't nice at all."},
+        {"zh": "我一点儿都不想去。", "py": "Wǒ yìdiǎnr dōu bù xiǎng qù.", "en": "I don't want to go at all."}
+      ]
+    },
+    {
+      "h2": "The most common mistake",
+      "paras": [
+        "Learners often say 今天一点儿冷 for \"It's a bit cold today\". This is wrong: 一点儿 cannot go before an adjective in a positive sentence. Use 有点儿 instead: 今天有点儿冷.",
+        "A simple rule: 有点儿 comes before the adjective and describes the way things are; 一点儿 comes after the adjective and asks for or compares a small difference. In a shop you might use both, one after the other."
+      ],
+      "examples": [
+        {"zh": "这件衣服有点儿大。", "py": "Zhè jiàn yīfu yǒudiǎnr dà.", "en": "This top is a bit big."},
+        {"zh": "有小一点儿的吗？", "py": "Yǒu xiǎo yìdiǎnr de ma?", "en": "Do you have a slightly smaller one?"}
+      ]
+    }
+  ]
+}
