@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Telling the Time in Chinese: 点, 分 and 半 (HSK 1)</title>
+<meta name="description" content="How to tell the time in Chinese: 几点 questions, 点, 分 and 半, why it is 两点 not 二点, where the time goes in a sentence, and HSK 1 examples.">
+<link rel="canonical" href="https://hskcheck.com/learn/telling-time/">
+<meta property="og:title" content="Telling the Time in Chinese: 点, 分 and 半 (HSK 1)">
+<meta property="og:description" content="How to tell the time in Chinese: 几点 questions, 点, 分 and 半, why it is 两点 not 二点, where the time goes in a sentence, and HSK 1 examples.">
+<meta property="og:url" content="https://hskcheck.com/learn/telling-time/">
+<meta property="og:type" content="website">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Telling the Time in Chinese: 点, 分 and 半 (HSK 1)", "description": "How to tell the time in Chinese: 几点 questions, 点, 分 and 半, why it is 两点 not 二点, where the time goes in a sentence, and HSK 1 examples.", "datePublished": "2026-10-16", "inLanguage": "en", "about": "Chinese grammar (HSK 3.0)", "url": "https://hskcheck.com/learn/telling-time/", "publisher": {"@type": "Organization", "name": "hskcheck.com", "url": "https://hskcheck.com/"}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@600&display=swap">
+<style>
+:root {
+  --paper: #F3F5F8;
+  --sheet: #FFFFFF;
+  --ink: #1A2130;
+  --muted: #586274;
+  --rule: #DCE1E9;
+  --accent: #2A4A9A;
+  --accent-ink: #FFFFFF;
+  --l1: #1F7A5C; --l1-bg: #E2F2EB;
+  --l2: #2A68AE; --l2-bg: #E3EDF8;
+  --l3: #7A4CAE; --l3-bg: #EEE6F8;
+  --over: #C0392B; --over-bg: #FCE5E1;
+  --ok: #1F7A5C; --warn: #A15C00; --bad: #C0392B;
+  --f-ui: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --f-num: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --f-zh: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --f-zh-display: "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --radius: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0F131A; --sheet: #171C25; --ink: #E6EAF1; --muted: #9AA4B6; --rule: #2A3242;
+    --accent: #93ACEB; --accent-ink: #0F131A;
+    --l1: #63CDA2; --l1-bg: #15302A; --l2: #82B4EE; --l2-bg: #172A40; --l3: #BB9EEA; --l3-bg: #2A2142;
+    --over: #F28B78; --over-bg: #3D1F1A; --ok: #63CDA2; --warn: #E9B060; --bad: #F28B78;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0F131A; --sheet: #171C25; --ink: #E6EAF1; --muted: #9AA4B6; --rule: #2A3242;
+  --accent: #93ACEB; --accent-ink: #0F131A;
+  --l1: #63CDA2; --l1-bg: #15302A; --l2: #82B4EE; --l2-bg: #172A40; --l3: #BB9EEA; --l3-bg: #2A2142;
+  --over: #F28B78; --over-bg: #3D1F1A; --ok: #63CDA2; --warn: #E9B060; --bad: #F28B78;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: var(--f-ui); font-size: 16px; line-height: 1.55;
+  padding-inline: 16px; padding-block: 28px 48px;
+}
+.wrap { max-width: 760px; margin: 0 auto; display: grid; gap: 22px; }
+header { display: grid; gap: 8px; }
+.eyebrow { display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+  font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+.chip { border: 1px solid var(--rule); border-radius: 999px; padding: 1px 8px; letter-spacing: .04em; }
+h1 { margin: 0; font-size: clamp(28px, 6vw, 40px); line-height: 1.12; font-weight: 600; text-wrap: balance; letter-spacing: -.01em; }
+h1 .zh { font-family: var(--f-zh-display); font-weight: 600; color: var(--accent); margin-right: .25em; }
+.lede { margin: 0; color: var(--muted); max-width: 60ch; }
+
+.sheet { background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--radius); padding: 18px; display: grid; gap: 14px; min-width: 0; }
+a { color: var(--accent); text-underline-offset: 3px; }
+.zh-inline { font-family: var(--f-zh); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.site-nav { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; font-weight: 500; }
+.site-nav a { text-decoration: none; color: var(--muted); padding-block: 2px; border-bottom: 2px solid transparent; }
+.site-nav a:hover { color: var(--ink); }
+.site-nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
+h2 { margin: 0; font-size: 15px; font-weight: 600; letter-spacing: .01em; }
+.table-wrap { overflow-x: auto; }
+table.counts { border-collapse: collapse; font-size: 14px; min-width: 320px; }
+table.counts th, table.counts td { text-align: left; padding: 7px 14px 7px 0; border-bottom: 1px solid var(--rule); }
+table.counts th { font-weight: 600; color: var(--muted); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+table.counts td.num { font-family: var(--f-num); font-variant-numeric: tabular-nums; }
+.notes { font-size: 13px; color: var(--muted); display: grid; gap: 6px; max-width: 70ch; }
+.notes p { margin: 0; }
+.notes b { color: var(--ink); font-weight: 600; }
+.site-foot { max-width: 760px; margin: 28px auto 0; font-size: 13px; color: var(--muted); }
+.site-foot a { color: var(--muted); }
+.policy { gap: 10px; }
+.policy h2 { margin-top: 8px; }
+.policy p { margin: 0; max-width: 70ch; }
+.learn p { margin: 0; max-width: 68ch; }
+.examples { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; counter-reset: ex; }
+.examples li { display: grid; gap: 2px; padding: 12px 0 12px 34px; border-top: 1px solid var(--rule); position: relative; counter-increment: ex; }
+.examples li:first-child { border-top: 0; padding-top: 4px; }
+.examples li::before { content: counter(ex); position: absolute; left: 0; top: 14px; font: 500 12px var(--f-num); color: var(--muted); }
+.examples li:first-child::before { top: 6px; }
+.ex-zh { font-family: var(--f-zh); font-size: 21px; line-height: 1.5; }
+.ex-py { color: var(--accent); font-size: 14px; }
+.ex-en { color: var(--muted); font-size: 14px; }
+.cta { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.cta a.button { display: inline-block; text-decoration: none; font: 500 14px var(--f-ui); padding: 9px 16px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); }
+.cta a.button.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+.more { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.more .zh-inline { font-weight: 500; margin-right: 4px; }
+.more .lv { font-size: 12px; color: var(--muted); }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <nav class="site-nav" aria-label="Site"><a href="/">Level Checker</a><a href="/hsk-1-word-list/">HSK 1 Words</a><a href="/hsk-2-word-list/">HSK 2 Words</a><a href="/hsk-3-word-list/">HSK 3 Words</a><a href="/chinese-character-worksheets/">Writing Sheets</a><a href="/chinese-measure-words/">Measure Words</a><a href="/old-hsk-to-new-hsk/">Old → New HSK</a><a href="/learn/" aria-current="page">Grammar</a></nav>
+    <div class="eyebrow"><span>HSK grammar</span><span class="chip">HSK 1</span></div>
+    <h1><span class="zh">几点</span>Telling the Time: 点, 分 and 半</h1>
+    <p class="lede">Chinese tells the time with a number and <span class="zh-inline">点</span> (diǎn) for the hour, <span class="zh-inline">分</span> (fēn) for the minutes and <span class="zh-inline">半</span> (bàn) for half past. The time always comes before the verb, so &quot;I get up at seven&quot; is <span class="zh-inline">我七点起床</span>.</p>
+  </header>
+
+  <section class="sheet learn">
+    <h2>Asking and saying the hour</h2>
+    <p>To ask the time, use <span class="zh-inline">几点</span> (jǐ diǎn, &quot;what time&quot;). To answer, put the number in front of <span class="zh-inline">点</span>. You don&#x27;t need <span class="zh-inline">是</span> (&quot;to be&quot;): <span class="zh-inline">现在两点</span> simply means &quot;It&#x27;s two o&#x27;clock now.&quot;</p>
+    <p>The most common mistake is <span class="zh-inline">二点</span>. For two o&#x27;clock, always say <span class="zh-inline">两点</span> (liǎng diǎn). For twelve o&#x27;clock, it is still <span class="zh-inline">十二点</span>, because <span class="zh-inline">二</span> is only replaced when it stands alone before <span class="zh-inline">点</span>.</p>
+    <ol class="examples">
+      <li><span class="ex-zh" lang="zh-Hans">现在几点？</span><span class="ex-py">Xiànzài jǐ diǎn?</span><span class="ex-en">What time is it?</span></li>
+      <li><span class="ex-zh" lang="zh-Hans">现在两点。</span><span class="ex-py">Xiànzài liǎng diǎn.</span><span class="ex-en">It&#x27;s two o&#x27;clock.</span></li>
+      <li><span class="ex-zh" lang="zh-Hans">现在两点，不是十二点。</span><span class="ex-py">Xiànzài liǎng diǎn, bú shì shí&#x27;èr diǎn.</span><span class="ex-en">It&#x27;s two o&#x27;clock, not twelve.</span></li>
+    </ol>
+  </section>
+  <section class="sheet learn">
+    <h2>Minutes and half past</h2>
+    <p>Minutes come after the hour: hour + <span class="zh-inline">点</span> + minutes + <span class="zh-inline">分</span>. For half past, add <span class="zh-inline">半</span> after <span class="zh-inline">点</span>: <span class="zh-inline">八点半</span> is half past eight. <span class="zh-inline">半</span> never goes before the hour.</p>
+    <p>For minutes under ten, people often add <span class="zh-inline">零</span> (líng, &quot;zero&quot;): <span class="zh-inline">十点零五分</span>. In everyday speech, <span class="zh-inline">分</span> is often dropped when the minutes are ten or more, so <span class="zh-inline">七点二十</span> means 7:20. You may also hear <span class="zh-inline">一刻</span> (yí kè, &quot;a quarter&quot;), but it is not an HSK 1 word.</p>
+    <ol class="examples">
+      <li><span class="ex-zh" lang="zh-Hans">现在八点半。</span><span class="ex-py">Xiànzài bā diǎn bàn.</span><span class="ex-en">It&#x27;s half past eight.</span></li>
+      <li><span class="ex-zh" lang="zh-Hans">我们九点十分上课。</span><span class="ex-py">Wǒmen jiǔ diǎn shí fēn shàngkè.</span><span class="ex-en">Our class starts at ten past nine.</span></li>
+      <li><span class="ex-zh" lang="zh-Hans">现在十点零五分。</span><span class="ex-py">Xiànzài shí diǎn líng wǔ fēn.</span><span class="ex-en">It&#x27;s five past ten.</span></li>
+      <li><span class="ex-zh" lang="zh-Hans">他晚上七点二十到家。</span><span class="ex-py">Tā wǎnshang qī diǎn èrshí dào jiā.</span><span class="ex-en">He gets home at 7:20 in the evening.</span></li>
+    </ol>
+  </section>
+  <section class="sheet learn">
+    <h2>Where the time goes in a sentence</h2>
+    <p>The time goes before the verb, usually straight after the subject: <span class="zh-inline">我早上七点起床</span>. Saying <span class="zh-inline">我起床早上七点</span>, following English word order, is a very common learner mistake.</p>
+    <p>Chinese does not use &quot;am&quot; and &quot;pm&quot;. Instead, put a word such as <span class="zh-inline">早上</span>, <span class="zh-inline">上午</span>, <span class="zh-inline">中午</span>, <span class="zh-inline">下午</span> or <span class="zh-inline">晚上</span> before the time. When there is a day as well, go from big to small: day, then part of the day, then the hour, as in <span class="zh-inline">明天上午十一点</span>.</p>
+    <ol class="examples">
+      <li><span class="ex-zh" lang="zh-Hans">我早上七点起床。</span><span class="ex-py">Wǒ zǎoshang qī diǎn qǐchuáng.</span><span class="ex-en">I get up at seven in the morning.</span></li>
+      <li><span class="ex-zh" lang="zh-Hans">你几点下班？</span><span class="ex-py">Nǐ jǐ diǎn xiàbān?</span><span class="ex-en">What time do you finish work?</span></li>
+      <li><span class="ex-zh" lang="zh-Hans">我下午五点半下班。</span><span class="ex-py">Wǒ xiàwǔ wǔ diǎn bàn xiàbān.</span><span class="ex-en">I finish work at half past five in the afternoon.</span></li>
+      <li><span class="ex-zh" lang="zh-Hans">明天上午十一点，你有时间吗？</span><span class="ex-py">Míngtiān shàngwǔ shíyī diǎn, nǐ yǒu shíjiān ma?</span><span class="ex-en">Are you free at eleven tomorrow morning?</span></li>
+      <li><span class="ex-zh" lang="zh-Hans">火车十二点到。</span><span class="ex-py">Huǒchē shí&#x27;èr diǎn dào.</span><span class="ex-en">The train arrives at twelve.</span></li>
+    </ol>
+  </section>
+  <section class="sheet learn">
+    <h2>A time vs how long: 点 or 小时, 分 or 分钟</h2>
+    <p><span class="zh-inline">点</span> and <span class="zh-inline">分</span> give a point in time: <span class="zh-inline">两点</span> is two o&#x27;clock. For how long something lasts, use <span class="zh-inline">个小时</span> (ge xiǎoshí, hours) and <span class="zh-inline">分钟</span> (fēnzhōng, minutes): <span class="zh-inline">两个小时</span> is two hours, <span class="zh-inline">二十分钟</span> is twenty minutes.</p>
+    <p>A length of time goes after the verb, not before it: <span class="zh-inline">我学习了两个小时</span> means &quot;I studied for two hours&quot;.</p>
+    <ol class="examples">
+      <li><span class="ex-zh" lang="zh-Hans">我今天学习了两个小时。</span><span class="ex-py">Wǒ jīntiān xuéxí le liǎng ge xiǎoshí.</span><span class="ex-en">I studied for two hours today.</span></li>
+      <li><span class="ex-zh" lang="zh-Hans">我昨天晚上睡了八个小时。</span><span class="ex-py">Wǒ zuótiān wǎnshang shuì le bā ge xiǎoshí.</span><span class="ex-en">I slept for eight hours last night.</span></li>
+      <li><span class="ex-zh" lang="zh-Hans">他看了二十分钟电视。</span><span class="ex-py">Tā kàn le èrshí fēnzhōng diànshì.</span><span class="ex-en">He watched TV for twenty minutes.</span></li>
+    </ol>
+  </section>
+
+  <section class="sheet learn">
+    <h2>Check your own sentences</h2>
+    <p>Every example on this page uses only words up to HSK 1. Paste your own sentences into the level checker to see which words, if any, are above your level.</p>
+    <div class="cta"><a class="button" href="/#hsk1">Open the level checker</a><a class="button ghost" href="/hsk-1-word-list/">HSK 1 word list</a></div>
+  </section>
+
+  <section class="sheet learn">
+    <h2>More HSK grammar</h2>
+    <ul class="more"><li><a href="/learn/ba-suggestions/"><span class="zh-inline">吧</span> How to Use 吧 (ba)</a> <span class="lv">HSK 1</span></li><li><a href="/learn/bu-vs-meiyou/"><span class="zh-inline">不 / 没有</span> 不 vs 没有: Which Negative to Use</a> <span class="lv">HSK 1</span></li><li><a href="/learn/de-possessive/"><span class="zh-inline">的</span> How to Use 的 (de) for Possession and Description</a> <span class="lv">HSK 1</span></li><li><a href="/learn/hui-neng-keyi/"><span class="zh-inline">会 / 能 / 可以</span> 会, 能 and 可以: Three Ways to Say &quot;Can&quot;</a> <span class="lv">HSK 1</span></li><li><a href="/learn/ji-vs-duoshao/"><span class="zh-inline">几 / 多少</span> 几 vs 多少: Asking &quot;How Many&quot;</a> <span class="lv">HSK 1</span></li><li><a href="/learn/le-particle/"><span class="zh-inline">了</span> How to Use 了 (le) in Chinese</a> <span class="lv">HSK 1</span></li></ul>
+    <p><a href="/learn/">All grammar points</a></p>
+  </section>
+</div>
+
+<footer class="site-foot">hskcheck.com · <a href="/privacy/">Privacy Policy</a></footer>
+</body>
+</html>

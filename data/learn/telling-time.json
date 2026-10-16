@@ -1,0 +1,63 @@
+{
+  "slug": "telling-time",
+  "level": 1,
+  "published": "2026-10-16",
+  "title": "Telling the Time in Chinese: 点, 分 and 半 (HSK 1)",
+  "description": "How to tell the time in Chinese: 几点 questions, 点, 分 and 半, why it is 两点 not 二点, where the time goes in a sentence, and HSK 1 examples.",
+  "zh": "几点",
+  "h1": "Telling the Time: 点, 分 and 半",
+  "lede": "Chinese tells the time with a number and 点 (diǎn) for the hour, 分 (fēn) for the minutes and 半 (bàn) for half past. The time always comes before the verb, so \"I get up at seven\" is 我七点起床.",
+  "sections": [
+    {
+      "h2": "Asking and saying the hour",
+      "paras": [
+        "To ask the time, use 几点 (jǐ diǎn, \"what time\"). To answer, put the number in front of 点. You don't need 是 (\"to be\"): 现在两点 simply means \"It's two o'clock now.\"",
+        "The most common mistake is 二点. For two o'clock, always say 两点 (liǎng diǎn). For twelve o'clock, it is still 十二点, because 二 is only replaced when it stands alone before 点."
+      ],
+      "examples": [
+        {"zh": "现在几点？", "py": "Xiànzài jǐ diǎn?", "en": "What time is it?"},
+        {"zh": "现在两点。", "py": "Xiànzài liǎng diǎn.", "en": "It's two o'clock."},
+        {"zh": "现在两点，不是十二点。", "py": "Xiànzài liǎng diǎn, bú shì shí'èr diǎn.", "en": "It's two o'clock, not twelve."}
+      ]
+    },
+    {
+      "h2": "Minutes and half past",
+      "paras": [
+        "Minutes come after the hour: hour + 点 + minutes + 分. For half past, add 半 after 点: 八点半 is half past eight. 半 never goes before the hour.",
+        "For minutes under ten, people often add 零 (líng, \"zero\"): 十点零五分. In everyday speech, 分 is often dropped when the minutes are ten or more, so 七点二十 means 7:20. You may also hear 一刻 (yí kè, \"a quarter\"), but it is not an HSK 1 word."
+      ],
+      "examples": [
+        {"zh": "现在八点半。", "py": "Xiànzài bā diǎn bàn.", "en": "It's half past eight."},
+        {"zh": "我们九点十分上课。", "py": "Wǒmen jiǔ diǎn shí fēn shàngkè.", "en": "Our class starts at ten past nine."},
+        {"zh": "现在十点零五分。", "py": "Xiànzài shí diǎn líng wǔ fēn.", "en": "It's five past ten."},
+        {"zh": "他晚上七点二十到家。", "py": "Tā wǎnshang qī diǎn èrshí dào jiā.", "en": "He gets home at 7:20 in the evening."}
+      ]
+    },
+    {
+      "h2": "Where the time goes in a sentence",
+      "paras": [
+        "The time goes before the verb, usually straight after the subject: 我早上七点起床. Saying 我起床早上七点, following English word order, is a very common learner mistake.",
+        "Chinese does not use \"am\" and \"pm\". Instead, put a word such as 早上, 上午, 中午, 下午 or 晚上 before the time. When there is a day as well, go from big to small: day, then part of the day, then the hour, as in 明天上午十一点."
+      ],
+      "examples": [
+        {"zh": "我早上七点起床。", "py": "Wǒ zǎoshang qī diǎn qǐchuáng.", "en": "I get up at seven in the morning."},
+        {"zh": "你几点下班？", "py": "Nǐ jǐ diǎn xiàbān?", "en": "What time do you finish work?"},
+        {"zh": "我下午五点半下班。", "py": "Wǒ xiàwǔ wǔ diǎn bàn xiàbān.", "en": "I finish work at half past five in the afternoon."},
+        {"zh": "明天上午十一点，你有时间吗？", "py": "Míngtiān shàngwǔ shíyī diǎn, nǐ yǒu shíjiān ma?", "en": "Are you free at eleven tomorrow morning?"},
+        {"zh": "火车十二点到。", "py": "Huǒchē shí'èr diǎn dào.", "en": "The train arrives at twelve."}
+      ]
+    },
+    {
+      "h2": "A time vs how long: 点 or 小时, 分 or 分钟",
+      "paras": [
+        "点 and 分 give a point in time: 两点 is two o'clock. For how long something lasts, use 个小时 (ge xiǎoshí, hours) and 分钟 (fēnzhōng, minutes): 两个小时 is two hours, 二十分钟 is twenty minutes.",
+        "A length of time goes after the verb, not before it: 我学习了两个小时 means \"I studied for two hours\"."
+      ],
+      "examples": [
+        {"zh": "我今天学习了两个小时。", "py": "Wǒ jīntiān xuéxí le liǎng ge xiǎoshí.", "en": "I studied for two hours today."},
+        {"zh": "我昨天晚上睡了八个小时。", "py": "Wǒ zuótiān wǎnshang shuì le bā ge xiǎoshí.", "en": "I slept for eight hours last night."},
+        {"zh": "他看了二十分钟电视。", "py": "Tā kàn le èrshí fēnzhōng diànshì.", "en": "He watched TV for twenty minutes."}
+      ]
+    }
+  ]
+}
