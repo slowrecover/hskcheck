@@ -1,0 +1,73 @@
+{
+  "slug": "zai-again",
+  "level": 1,
+  "published": "2026-10-16",
+  "title": "再 (zài) in Chinese: HSK 1 Grammar with Examples",
+  "description": "How to use 再 (zài) in Chinese: \"again\", \"one more\" and \"then\" for future actions, 不要再 and 再也不, the 再 vs 又 mistake, and HSK 1 examples.",
+  "zh": "再",
+  "h1": "再: \"Again\" and \"Then\" for Future Actions",
+  "lede": "再 (zài) goes before a verb and talks about something that has not happened yet: doing it again, doing a bit more, or doing it later, after something else. You already know it from 再见, \"see you again\".",
+  "sections": [
+    {
+      "h2": "\"Again\": doing it one more time",
+      "paras": [
+        "Subject + 再 + verb. 再 always comes before the verb, never at the end of the sentence as \"again\" does in English. If there is a word like 能 or 想, 再 goes after it and directly before the main verb.",
+        "Adding 一下 or doubling the verb (看看, 问问) makes the request sound lighter and more polite. 请再说一下 is the phrase to use when you didn't catch what someone said."
+      ],
+      "examples": [
+        {"zh": "请再说一下。", "py": "Qǐng zài shuō yíxià.", "en": "Could you say that again, please?"},
+        {"zh": "我不认识这个字，你能再写一下吗？", "py": "Wǒ bú rènshi zhège zì, nǐ néng zài xiě yíxià ma?", "en": "I don't know this character. Could you write it again?"},
+        {"zh": "我明天再来。", "py": "Wǒ míngtiān zài lái.", "en": "I'll come again tomorrow."},
+        {"zh": "我再问问老师。", "py": "Wǒ zài wènwen lǎoshī.", "en": "I'll ask the teacher again."}
+      ]
+    },
+    {
+      "h2": "\"More\": a bit more, one more",
+      "paras": [
+        "With food, drink and shopping, 再 means \"some more\" or \"another\". It is often followed by 一点儿 or a number and measure word. Hosts in China say 你再吃一点儿吧 all the time."
+      ],
+      "examples": [
+        {"zh": "你再吃一点儿吧。", "py": "Nǐ zài chī yìdiǎnr ba.", "en": "Have a bit more."},
+        {"zh": "我还想再喝一点儿水。", "py": "Wǒ hái xiǎng zài hē yìdiǎnr shuǐ.", "en": "I'd like a little more water."},
+        {"zh": "再买两个吧。", "py": "Zài mǎi liǎng ge ba.", "en": "Let's buy two more."}
+      ]
+    },
+    {
+      "h2": "\"Then\" and \"later\": first this, then that",
+      "paras": [
+        "再 can also mean \"then\" or \"only after that\". The first action comes first in the sentence, often with 了, and 再 introduces the second one: 吃了饭再去 means \"go after we've eaten\".",
+        "On its own with a time word, 再 puts something off until later. 明天再说 (\"let's talk about it tomorrow\") is a polite way to stop a conversation or delay a decision."
+      ],
+      "examples": [
+        {"zh": "吃了饭再去吧。", "py": "Chī le fàn zài qù ba.", "en": "Let's go after we've eaten."},
+        {"zh": "你到了家再给我打电话。", "py": "Nǐ dào le jiā zài gěi wǒ dǎ diànhuà.", "en": "Call me when you get home."},
+        {"zh": "我现在很忙，下午再给你打电话。", "py": "Wǒ xiànzài hěn máng, xiàwǔ zài gěi nǐ dǎ diànhuà.", "en": "I'm busy right now. I'll call you this afternoon."},
+        {"zh": "我今天不去了，明天再去。", "py": "Wǒ jīntiān bú qù le, míngtiān zài qù.", "en": "I'm not going today. I'll go tomorrow."},
+        {"zh": "好的，我们明天再说。", "py": "Hǎo de, wǒmen míngtiān zài shuō.", "en": "OK, let's talk about it tomorrow."}
+      ]
+    },
+    {
+      "h2": "Negatives and questions",
+      "paras": [
+        "不要再 + verb + 了 tells someone to stop doing something, or not to do it again. 不想再 + verb says you don't want to do it again. 再也不 is stronger: \"never again\".",
+        "In questions, 再 stays in front of the verb: 你能不能再说一下? Note the tone change: 不 becomes bú before a fourth tone, as in 不要 búyào."
+      ],
+      "examples": [
+        {"zh": "你不要再看手机了。", "py": "Nǐ búyào zài kàn shǒujī le.", "en": "Stop looking at your phone."},
+        {"zh": "我不想再去那儿了。", "py": "Wǒ bù xiǎng zài qù nàr le.", "en": "I don't want to go there again."},
+        {"zh": "她说她再也不想来了。", "py": "Tā shuō tā zài yě bù xiǎng lái le.", "en": "She said she never wants to come again."},
+        {"zh": "要不要再买一个？", "py": "Yào bu yào zài mǎi yí ge?", "en": "Shall we buy another one?"}
+      ]
+    },
+    {
+      "h2": "The most common mistake: 再 is for the future",
+      "paras": [
+        "再 is only for repeats that haven't happened yet: plans, requests and suggestions. For something that already happened again, Chinese uses a different word, 又 (yòu), which you will meet at HSK 3. So \"He came again yesterday\" is 他昨天又来了, not 他昨天再来了.",
+        "A quick test: if the English sentence is about the past (\"came again\", \"was late again\"), don't use 再."
+      ],
+      "examples": [
+        {"zh": "我不在家，你晚上再来吧。", "py": "Wǒ bú zài jiā, nǐ wǎnshang zài lái ba.", "en": "I'm not at home. Come back this evening."}
+      ]
+    }
+  ]
+}
