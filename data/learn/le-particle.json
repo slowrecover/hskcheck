@@ -68,5 +68,53 @@
         {"zh": "去年我在中国工作。", "py": "Qùnián wǒ zài Zhōngguó gōngzuò.", "en": "Last year I worked in China."}
       ]
     }
-  ]
+  ],
+  "worksheet": {
+    "title": "了 (le) Worksheet: HSK 1 Printable with Answers",
+    "description": "A free printable 了 (le) worksheet for HSK 1: 20 exercises (了 or 没有, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 了 or 没有",
+        "instructions": "Write 了 or 没有 in each gap. The English tells you what the sentence means.",
+        "options": ["了", "没有"],
+        "items": [
+          {"zh": "下雨＿＿。", "en": "It's raining now.", "answer": "了"},
+          {"zh": "他还＿＿来。", "en": "He hasn't come yet.", "answer": "没有"},
+          {"zh": "你吃饭＿＿吗？", "en": "Have you eaten?", "answer": "了"},
+          {"zh": "我喝＿＿很多水。", "en": "I drank a lot of water.", "answer": "了"},
+          {"zh": "我昨天＿＿看电视。", "en": "I didn't watch TV yesterday.", "answer": "没有"},
+          {"zh": "他今年二十岁＿＿。", "en": "He's twenty this year.", "answer": "了"},
+          {"zh": "天热＿＿。", "en": "It's got hot.", "answer": "了"},
+          {"zh": "她＿＿来上课。", "en": "She didn't come to class.", "answer": "没有"},
+          {"zh": "我不想吃＿＿。", "en": "I don't want to eat any more.", "answer": "了"},
+          {"zh": "妈妈还＿＿回家。", "en": "Mum hasn't come home yet.", "answer": "没有"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["了", "两本书", "我", "买"], "en": "I bought two books.", "answers": ["我买了两本书。"]},
+          {"words": ["了", "吃", "很多", "他", "米饭"], "en": "He ate a lot of rice.", "answers": ["他吃了很多米饭。"]},
+          {"words": ["吗", "你", "了", "起床"], "en": "Have you got up?", "answers": ["你起床了吗？"]},
+          {"words": ["没有", "他", "来", "还"], "en": "He hasn't come yet.", "answers": ["他还没有来。"]},
+          {"words": ["了", "了", "他", "在这儿", "工作", "两年"], "en": "He's been working here for two years.", "answers": ["他在这儿工作了两年了。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "他昨天没有来了。", "en": "He didn't come yesterday.", "answers": ["他昨天没有来。"]},
+          {"zh": "我没有看了那本书。", "en": "I didn't read that book.", "answers": ["我没有看那本书。"]},
+          {"zh": "去年我很忙了。", "en": "I was very busy last year.", "answers": ["去年我很忙。"]},
+          {"zh": "我了买三个苹果。", "en": "I bought three apples.", "answers": ["我买了三个苹果。"]},
+          {"zh": "你吃饭了没有吗？", "en": "Have you eaten?", "answers": ["你吃饭了没有？", "你吃饭了吗？"]}
+        ]
+      }
+    ]
+  }
 }
