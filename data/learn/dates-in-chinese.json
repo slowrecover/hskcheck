@@ -1,0 +1,107 @@
+{
+  "slug": "dates-in-chinese",
+  "level": 1,
+  "published": "2026-10-17",
+  "title": "Dates in Chinese: 年, 月, 号 and Days of the Week (HSK 1)",
+  "description": "How to say the date in Chinese: year, month and day in big-to-small order, 二月 vs 两个月, days of the week with 星期, and HSK 1 examples.",
+  "zh": "几月几号",
+  "h1": "Dates: 年, 月, 号 and Days of the Week",
+  "lede": "Chinese dates go from the biggest unit to the smallest: year (年 nián), then month (月 yuè), then day (号 hào), then the day of the week (星期 xīngqī). So 17 October 2026 is 2026年10月17号.",
+  "sections": [
+    {
+      "h2": "Biggest first: year, month, day",
+      "paras": [
+        "Year + 年, month + 月, day + 号. The order never changes, so a learner's most common mistake is to follow English and say 十七号十月. The correct order is 十月十七号.",
+        "Years are read one digit at a time: 2026年 is èr líng èr liù nián, not \"two thousand and twenty-six\". Months are just the numbers 一 to 十二 plus 月, so 一月 is January and 十二月 is December. In speech the day is 号; in writing, on forms and signs, you will also see 日 (rì)."
+      ],
+      "examples": [
+        {"zh": "今天是2026年10月17号。", "py": "Jīntiān shì èr líng èr liù nián shí yuè shíqī hào.", "en": "Today is 17 October 2026."},
+        {"zh": "现在是2026年。", "py": "Xiànzài shì èr líng èr liù nián.", "en": "It's 2026 now."},
+        {"zh": "他去年九月去中国了。", "py": "Tā qùnián jiǔ yuè qù Zhōngguó le.", "en": "He went to China last September."}
+      ]
+    },
+    {
+      "h2": "二月 is February, 两个月 is two months",
+      "paras": [
+        "A month name uses the plain number with no measure word: 二月 is February. To count how many months, add 个 and use 两 for two: 两个月 is \"two months\". Mixing these up is a very common mistake, so never say 两月."
+      ],
+      "examples": [
+        {"zh": "现在是二月，天很冷。", "py": "Xiànzài shì èr yuè, tiān hěn lěng.", "en": "It's February now, and it's very cold."},
+        {"zh": "他在中国工作了两个月。", "py": "Tā zài Zhōngguó gōngzuò le liǎng ge yuè.", "en": "He worked in China for two months."},
+        {"zh": "你几月去中国？", "py": "Nǐ jǐ yuè qù Zhōngguó?", "en": "Which month are you going to China?"}
+      ]
+    },
+    {
+      "h2": "Days of the week with 星期",
+      "paras": [
+        "Monday to Saturday are 星期 plus a number: 星期一 is Monday, 星期六 is Saturday. Sunday is different: 星期天 in speech or 星期日 in writing, never 星期七. To ask which day it is, put 几 where the number goes: 星期几.",
+        "For \"next\" and \"last\", use 下个 and 上个: 下个星期三 is next Wednesday, 上个月 is last month. For years, use 去年, 今年 and 明年 instead."
+      ],
+      "examples": [
+        {"zh": "今天星期几？", "py": "Jīntiān xīngqī jǐ?", "en": "What day is it today?"},
+        {"zh": "今天星期六。", "py": "Jīntiān xīngqīliù.", "en": "Today is Saturday."},
+        {"zh": "我星期天不上课。", "py": "Wǒ xīngqītiān bú shàngkè.", "en": "I don't have classes on Sunday."},
+        {"zh": "下个星期三我去医院。", "py": "Xià ge xīngqīsān wǒ qù yīyuàn.", "en": "I'm going to the hospital next Wednesday."}
+      ]
+    },
+    {
+      "h2": "Asking the date, negatives and word order",
+      "paras": [
+        "To ask the date, put 几 in place of the numbers: 几月几号. You don't need 是 when you give the date, but you do need it in a negative: 今天不是星期六, not 今天不星期六.",
+        "When you say when something happens, the date goes before the verb, either before or after the subject: 我们十月二十号回家 or 十月二十号我们回家. Putting it at the end, as in English, is wrong."
+      ],
+      "examples": [
+        {"zh": "今天几月几号？", "py": "Jīntiān jǐ yuè jǐ hào?", "en": "What's the date today?"},
+        {"zh": "明天不是十号，是十一号。", "py": "Míngtiān bú shì shí hào, shì shíyī hào.", "en": "Tomorrow isn't the 10th, it's the 11th."},
+        {"zh": "我们十月二十号回家。", "py": "Wǒmen shí yuè èrshí hào huí jiā.", "en": "We're going home on 20 October."}
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Chinese Dates Worksheet: HSK 1 Printable with Answers",
+    "description": "A free printable worksheet on dates in Chinese for HSK 1: 19 exercises (年, 月, 号 and 星期, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 年, 月, 号 or 星期",
+        "instructions": "Write 年, 月, 号 or 星期 in each gap. The English tells you what the sentence means.",
+        "options": ["年", "月", "号", "星期"],
+        "items": [
+          {"zh": "今天是十月十七＿＿。", "en": "Today is 17 October.", "answer": "号"},
+          {"zh": "我2024＿＿在中国工作。", "en": "In 2024 I worked in China.", "answer": "年"},
+          {"zh": "今天＿＿几？", "en": "What day of the week is it today?", "answer": "星期"},
+          {"zh": "现在是十二＿＿，天很冷。", "en": "It's December now, and it's very cold.", "answer": "月"},
+          {"zh": "下个＿＿一我去医院。", "en": "Next Monday I'm going to the hospital.", "answer": "星期"},
+          {"zh": "你几月几＿＿回家？", "en": "On what date are you going home?", "answer": "号"},
+          {"zh": "我在中国住了两个＿＿。", "en": "I lived in China for two months.", "answer": "月"},
+          {"zh": "明天是十一＿＿十二号。", "en": "Tomorrow is 12 November.", "answer": "月"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["十七号", "今天", "十月", "是"], "en": "Today is 17 October.", "answers": ["今天是十月十七号。"]},
+          {"words": ["星期六", "我们", "去", "商店"], "en": "We're going to the shop on Saturday.", "answers": ["我们星期六去商店。", "星期六我们去商店。"]},
+          {"words": ["几号", "几月", "明天"], "en": "What's the date tomorrow?", "answers": ["明天几月几号？"]},
+          {"words": ["工作", "星期天", "不", "我爸爸"], "en": "My dad doesn't work on Sundays.", "answers": ["我爸爸星期天不工作。", "星期天我爸爸不工作。"]},
+          {"words": ["是", "星期三", "明天", "不"], "en": "Tomorrow isn't Wednesday.", "answers": ["明天不是星期三。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "今天是十七号十月。", "en": "Today is 17 October.", "answers": ["今天是十月十七号。"]},
+          {"zh": "现在是两月。", "en": "It's February now.", "answers": ["现在是二月。"]},
+          {"zh": "我学了两月中文。", "en": "I studied Chinese for two months.", "answers": ["我学了两个月中文。"]},
+          {"zh": "我回家星期六。", "en": "I'm going home on Saturday.", "answers": ["我星期六回家。", "星期六我回家。"]},
+          {"zh": "今天是星期七。", "en": "Today is Sunday.", "answers": ["今天是星期天。", "今天是星期日。"]},
+          {"zh": "今天不星期六。", "en": "Today isn't Saturday.", "answers": ["今天不是星期六。"]}
+        ]
+      }
+    ]
+  }
+}
