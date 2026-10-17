@@ -1,0 +1,9 @@
+/* Thai pages: Thai UI font first, with Latin and Chinese fonts as before. */
+:root { --f-ui: "IBM Plex Sans Thai", "IBM Plex Sans", "Leelawadee UI", "Thonburi", Tahoma, sans-serif; }
+body { line-height: 1.65; }
+h1 { line-height: 1.25; letter-spacing: 0; }
+.eyebrow { letter-spacing: .02em; }
+table.words-table th, table.counts th { letter-spacing: 0; }
+.words { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); }
+.words .wd { display: grid; gap: 2px; min-width: 0; }
+.words .th-mean { font-size: 13px; color: var(--muted); line-height: 1.4; overflow-wrap: anywhere; }

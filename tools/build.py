@@ -17,6 +17,7 @@ import pathlib
 import re
 import unicodedata
 
+import build_th
 import learn
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -162,15 +163,32 @@ PRIVACY_URL = "/privacy/"
 SITE_FOOT = f'\n<footer class="site-foot">hskcheck.com · <a href="{PRIVACY_URL}">Privacy Policy</a></footer>'
 
 
-def render(title, description, url, css, body, head_extra=""):
+ALTERNATES = build_th.alternates(ROOT, LEVELS)  # English path -> Thai path
+
+
+def hreflang_links(url):
+    path = url[len(SITE):] if url.startswith(SITE) else url
+    en = path if path in ALTERNATES else next((e for e, t in ALTERNATES.items() if t == path), None)
+    if not en:
+        return ""
+    return "\n".join([
+        f'<link rel="alternate" hreflang="en" href="{SITE}{en}">',
+        f'<link rel="alternate" hreflang="th" href="{SITE}{ALTERNATES[en]}">',
+        f'<link rel="alternate" hreflang="x-default" href="{SITE}{en}">',
+    ])
+
+
+def render(title, description, url, css, body, head_extra="", lang="en", foot=None):
     page = (TPL / "layout.html").read_text(encoding="utf-8")
+    head_extra = "\n".join(x for x in (hreflang_links(url), head_extra) if x)
     for key, value in (
+        ("__LANG__", lang),
         ("__TITLE__", html.escape(title)),
         ("__DESCRIPTION__", html.escape(description)),
         ("__URL__", url),
         ("__HEAD_EXTRA__", head_extra),
         ("__CSS__", css),
-        ("__BODY__", body + SITE_FOOT),
+        ("__BODY__", body + (SITE_FOOT if foot is None else foot)),
     ):
         page = page.replace(key, value)
     return page
@@ -309,6 +327,8 @@ def main():
         pages.append(("/old-hsk-to-new-hsk/", "Old → New HSK"))
     if any((DATA / "learn").glob("*.json")):
         pages.append((learn.LEARN_URL, "Grammar"))
+    if ALTERNATES:
+        pages.append((build_th.TH_URL, "ภาษาไทย"))
     extra_urls = []
 
     # Level checker
@@ -490,17 +510,22 @@ def main():
         SITE + PRIVACY_URL, base_css, body), encoding="utf-8")
     extra_urls.append(PRIVACY_URL)
 
+    # Thai pages
+    extra_urls += build_th.build(root=ROOT, tpl=TPL, site=SITE, base_css=base_css, render=render,
+                                 word_lists=word_lists, level_table=level_table, search_key=search_key,
+                                 read_words=read_words)
+
     # Sitemap
     urls = "\n".join(
         f"  <url>\n    <loc>{SITE}{u}</loc>\n    <lastmod>{today}</lastmod>\n  </url>"
-        for u in [u for u, _ in pages] + extra_urls
+        for u in dict.fromkeys([u for u, _ in pages] + extra_urls)
     )
     (ROOT / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls + "\n</urlset>\n",
         encoding="utf-8",
     )
-    print("built:", ", ".join([u for u, _ in pages] + extra_urls))
+    print("built:", ", ".join(dict.fromkeys([u for u, _ in pages] + extra_urls)))
 
 
 if __name__ == "__main__":
