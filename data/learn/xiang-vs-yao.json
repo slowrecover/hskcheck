@@ -72,5 +72,53 @@
         {"zh": "你要不要喝水？", "py": "Nǐ yào bu yào hē shuǐ?", "en": "Would you like some water?"}
       ]
     }
-  ]
+  ],
+  "worksheet": {
+    "title": "想 vs 要 Worksheet: HSK 1 Printable with Answers",
+    "description": "A free printable 想 vs 要 worksheet for HSK 1: 20 exercises (choose 想 or 要, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 想 or 要",
+        "instructions": "Write 想 or 要 in each gap. The English tells you what the sentence means.",
+        "options": ["想", "要"],
+        "items": [
+          {"zh": "我很＿＿我的朋友们。", "en": "I miss my friends a lot.", "answer": "想"},
+          {"zh": "＿＿下雨了，我们回家吧。", "en": "It's about to rain. Let's go home.", "answer": "要"},
+          {"zh": "我＿＿那个大的。", "en": "I'll have that big one.", "answer": "要"},
+          {"zh": "我＿＿明天会下雨。", "en": "I think it will rain tomorrow.", "answer": "想"},
+          {"zh": "火车＿＿开了。", "en": "The train is about to leave.", "answer": "要"},
+          {"zh": "我很＿＿去中国看看。", "en": "I'd really love to go and see China.", "answer": "想"},
+          {"zh": "请不＿＿在这里吃东西。", "en": "Please don't eat here.", "answer": "要"},
+          {"zh": "你在中国的时候，＿＿家吗？", "en": "When you're in China, do you miss home?", "answer": "想"},
+          {"zh": "我不＿＿这个，太小了。", "en": "I don't want this one. It's too small.", "answer": "要"},
+          {"zh": "我很＿＿看这个电影。", "en": "I'd really like to see this film.", "answer": "想"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["吃", "中国菜", "很", "我", "想"], "en": "I'd really like to eat Chinese food.", "answers": ["我很想吃中国菜。"]},
+          {"words": ["了", "回来", "爸爸", "要"], "en": "Dad is about to come back.", "answers": ["爸爸要回来了。"]},
+          {"words": ["商店", "你", "去", "想不想"], "en": "Do you want to go to the shop?", "answers": ["你想不想去商店？"]},
+          {"words": ["你们", "想", "我", "很"], "en": "I miss you all very much.", "answers": ["我很想你们。"]},
+          {"words": ["医生", "去", "要", "看", "明天", "我"], "en": "I'm going to see the doctor tomorrow.", "answers": ["我明天要去看医生。", "明天我要去看医生。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "我想一个新电脑。", "en": "I'd like a new computer.", "answers": ["我要一个新电脑。", "我想要一个新电脑。"]},
+          {"zh": "我很要学汉语。", "en": "I really want to learn Chinese.", "answers": ["我很想学汉语。"]},
+          {"zh": "想下雪了。", "en": "It's about to snow.", "answers": ["要下雪了。"]},
+          {"zh": "我很要我的老师。", "en": "I miss my teacher a lot.", "answers": ["我很想我的老师。"]},
+          {"zh": "我想两个苹果。", "en": "I'd like two apples.", "answers": ["我要两个苹果。", "我想要两个苹果。"]}
+        ]
+      }
+    ]
+  }
 }

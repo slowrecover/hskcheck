@@ -69,5 +69,51 @@
         {"zh": "爸爸在家看书呢。", "py": "Bàba zài jiā kàn shū ne.", "en": "Dad is reading at home."}
       ]
     }
-  ]
+  ],
+  "worksheet": {
+    "title": "在 / 正在 Worksheet: HSK 1 Printable with Answers",
+    "description": "A free printable 在 / 正在 worksheet for HSK 1: 18 exercises (choose the word, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 在, 没有在 or 不",
+        "instructions": "Write 在, 没有在 or 不 in each gap. The English tells you what the sentence means.",
+        "options": ["在", "没有在", "不"],
+        "items": [
+          {"zh": "你＿＿写什么？", "en": "What are you writing?", "answer": "在"},
+          {"zh": "我＿＿看电视，我在看书。", "en": "I'm not watching TV. I'm reading.", "answer": "没有在"},
+          {"zh": "我＿＿认识他。", "en": "I don't know him.", "answer": "不"},
+          {"zh": "妈妈＿＿做饭呢。", "en": "Mum is cooking.", "answer": "在"},
+          {"zh": "他＿＿睡觉，他在看电视。", "en": "He isn't sleeping. He's watching TV.", "answer": "没有在"},
+          {"zh": "我＿＿喜欢喝茶。", "en": "I don't like tea.", "answer": "不"},
+          {"zh": "昨天晚上八点我＿＿看书。", "en": "At eight last night I was reading.", "answer": "在"},
+          {"zh": "他们＿＿吃饭吗？", "en": "Are they eating?", "answer": "在"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["在", "他们", "电视", "看"], "en": "They're watching TV.", "answers": ["他们在看电视。"]},
+          {"words": ["呢", "在", "我", "打电话"], "en": "I'm on the phone.", "answers": ["我在打电话呢。"]},
+          {"words": ["没有", "睡觉", "在", "她"], "en": "She isn't sleeping.", "answers": ["她没有在睡觉。"]},
+          {"words": ["正在", "我们", "汉语", "学习"], "en": "We're studying Chinese right now.", "answers": ["我们正在学习汉语。"]},
+          {"words": ["什么", "看", "在", "你"], "en": "What are you watching?", "answers": ["你在看什么？"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "我不在看电视。", "en": "I'm not watching TV.", "answers": ["我没有在看电视。"]},
+          {"zh": "他在吃饭了。", "en": "He's eating.", "answers": ["他在吃饭。", "他在吃饭呢。"]},
+          {"zh": "我正在喜欢她。", "en": "I like her.", "answers": ["我喜欢她。", "我很喜欢她。"]},
+          {"zh": "你做在什么？", "en": "What are you doing?", "answers": ["你在做什么？"]},
+          {"zh": "我在没有看书。", "en": "I'm not reading.", "answers": ["我没有在看书。"]}
+        ]
+      }
+    ]
+  }
 }

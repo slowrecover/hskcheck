@@ -70,5 +70,192 @@
         {"zh": "你能不能来我家？", "py": "Nǐ néng bu néng lái wǒ jiā?", "en": "Can you come to my place?"}
       ]
     }
-  ]
+  ],
+  "worksheet": {
+    "title": "会 vs 能 vs 可以 Worksheet: HSK 1 Printable with Answers",
+    "description": "A free printable 会, 能 and 可以 worksheet for HSK 1: 20 exercises (choose the right \"can\", word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 会, 能 or 可以",
+        "instructions": "Write 会, 能 or 可以 in each gap. The English tells you what the sentence means.",
+        "options": [
+          "会",
+          "能",
+          "可以"
+        ],
+        "items": [
+          {
+            "zh": "下午＿＿下雨吗？",
+            "en": "Is it going to rain this afternoon?",
+            "answer": "会"
+          },
+          {
+            "zh": "我今天很忙，不＿＿去看电影。",
+            "en": "I'm busy today, so I can't go to the cinema.",
+            "answer": "能"
+          },
+          {
+            "zh": "你＿＿唱中文歌吗？",
+            "en": "Do you know how to sing any Chinese songs?",
+            "answer": "会"
+          },
+          {
+            "zh": "我明天再来，＿＿吗？",
+            "en": "I'll come back tomorrow. Is that OK?",
+            "answer": "可以"
+          },
+          {
+            "zh": "这个电视不＿＿看了。",
+            "en": "This TV doesn't work any more.",
+            "answer": "能"
+          },
+          {
+            "zh": "我爸爸不＿＿做饭。",
+            "en": "My dad can't cook. He never learned how.",
+            "answer": "会"
+          },
+          {
+            "zh": "这个菜还＿＿。",
+            "en": "This dish is not bad.",
+            "answer": "可以"
+          },
+          {
+            "zh": "他病了，今天不＿＿来上课。",
+            "en": "He's ill, so he can't come to class today.",
+            "answer": "能"
+          },
+          {
+            "zh": "我想他不＿＿喜欢这个。",
+            "en": "I don't think he'll like this.",
+            "answer": "会"
+          },
+          {
+            "zh": "明天他＿＿来吗？",
+            "en": "Will he come tomorrow?",
+            "answer": "会"
+          }
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {
+            "words": [
+              "汉语",
+              "会",
+              "一点儿",
+              "我",
+              "说"
+            ],
+            "en": "I can speak a little Chinese.",
+            "answers": [
+              "我会说一点儿汉语。"
+            ]
+          },
+          {
+            "words": [
+              "来",
+              "下午",
+              "吗",
+              "能",
+              "你"
+            ],
+            "en": "Can you come this afternoon?",
+            "answers": [
+              "你下午能来吗？",
+              "下午你能来吗？"
+            ]
+          },
+          {
+            "words": [
+              "打电话",
+              "可以",
+              "吗",
+              "我",
+              "现在"
+            ],
+            "en": "May I make a phone call now?",
+            "answers": [
+              "我现在可以打电话吗？",
+              "现在我可以打电话吗？"
+            ]
+          },
+          {
+            "words": [
+              "冷",
+              "不",
+              "明天",
+              "很",
+              "会"
+            ],
+            "en": "It won't be very cold tomorrow.",
+            "answers": [
+              "明天不会很冷。"
+            ]
+          },
+          {
+            "words": [
+              "手机",
+              "能",
+              "上课",
+              "看",
+              "的时候",
+              "不"
+            ],
+            "en": "You can't look at your phone in class.",
+            "answers": [
+              "上课的时候不能看手机。"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {
+            "zh": "你可以说汉语吗？",
+            "en": "Do you speak Chinese? (Have you learned it?)",
+            "answers": [
+              "你会说汉语吗？"
+            ]
+          },
+          {
+            "zh": "明天能下雨吗？",
+            "en": "Will it rain tomorrow?",
+            "answers": [
+              "明天会下雨吗？"
+            ]
+          },
+          {
+            "zh": "她没有会开车。",
+            "en": "She can't drive.",
+            "answers": [
+              "她不会开车。"
+            ]
+          },
+          {
+            "zh": "你会不会写汉字吗？",
+            "en": "Can you write Chinese characters?",
+            "answers": [
+              "你会不会写汉字？",
+              "你会写汉字吗？"
+            ]
+          },
+          {
+            "zh": "老师，我会喝一点儿水吗？",
+            "en": "Teacher, may I have some water?",
+            "answers": [
+              "老师，我可以喝一点儿水吗？",
+              "老师，我能喝一点儿水吗？"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

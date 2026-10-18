@@ -62,5 +62,53 @@
         {"zh": "我昨天买了几本书。", "py": "Wǒ zuótiān mǎi le jǐ běn shū.", "en": "I bought a few books yesterday."}
       ]
     }
-  ]
+  ],
+  "worksheet": {
+    "title": "几 vs 多少 Worksheet: HSK 1 Printable with Answers",
+    "description": "A free printable 几 vs 多少 worksheet for HSK 1: 20 exercises (choose 几 or 多少, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 几 or 多少",
+        "instructions": "Write 几 or 多少 in each gap. The English tells you what the sentence means.",
+        "options": ["几", "多少"],
+        "items": [
+          {"zh": "你明天＿＿点起床？", "en": "What time are you getting up tomorrow?", "answer": "几"},
+          {"zh": "这本书＿＿钱？", "en": "How much is this book?", "answer": "多少"},
+          {"zh": "你们学校有＿＿老师？", "en": "How many teachers are there at your school?", "answer": "多少"},
+          {"zh": "明天星期＿＿？", "en": "What day of the week is it tomorrow?", "answer": "几"},
+          {"zh": "我在中国有＿＿个朋友。", "en": "I have a few friends in China.", "answer": "几"},
+          {"zh": "你的电话是＿＿？", "en": "What's your phone number?", "answer": "多少"},
+          {"zh": "你＿＿月去中国？", "en": "Which month are you going to China?", "answer": "几"},
+          {"zh": "那个医院有＿＿医生？", "en": "How many doctors are there at that hospital?", "answer": "多少"},
+          {"zh": "我昨天看了＿＿本书。", "en": "I read a few books yesterday.", "answer": "几"},
+          {"zh": "你会写＿＿汉字？", "en": "How many Chinese characters can you write?", "answer": "多少"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["几个", "你", "有", "哥哥"], "en": "How many older brothers do you have?", "answers": ["你有几个哥哥？"]},
+          {"words": ["多少", "那个", "钱", "苹果"], "en": "How much is that apple?", "answers": ["那个苹果多少钱？"]},
+          {"words": ["几点", "你", "睡觉"], "en": "What time do you go to bed?", "answers": ["你几点睡觉？"]},
+          {"words": ["你们公司", "人", "有", "多少"], "en": "How many people are there in your company?", "answers": ["你们公司有多少人？"]},
+          {"words": ["几本", "我", "买了", "中文书"], "en": "I bought a few Chinese books.", "answers": ["我买了几本中文书。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "你买了几苹果？", "en": "How many apples did you buy?", "answers": ["你买了几个苹果？", "你买了多少苹果？", "你买了多少个苹果？"]},
+          {"zh": "你们多少点下课？", "en": "What time does your class finish?", "answers": ["你们几点下课？"]},
+          {"zh": "昨天星期多少？", "en": "What day of the week was it yesterday?", "answers": ["昨天星期几？"]},
+          {"zh": "那本书几钱？", "en": "How much is that book?", "answers": ["那本书多少钱？", "那本书几块钱？", "那本书多少块钱？"]},
+          {"zh": "你几点去学校吗？", "en": "What time do you go to school?", "answers": ["你几点去学校？"]}
+        ]
+      }
+    ]
+  }
 }

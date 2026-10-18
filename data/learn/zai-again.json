@@ -69,5 +69,43 @@
         {"zh": "我不在家，你晚上再来吧。", "py": "Wǒ bú zài jiā, nǐ wǎnshang zài lái ba.", "en": "I'm not at home. Come back this evening."}
       ]
     }
-  ]
+  ],
+  "worksheet": {
+    "title": "再 (zài) Worksheet: HSK 1 Printable with Answers",
+    "description": "A free printable 再 (zài) worksheet for HSK 1: 18 exercises (word order with 再, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence. Remember: 再 goes directly before the verb.",
+        "items": [
+          {"words": ["读一下", "再", "请", "你"], "en": "Could you read it again, please?", "answers": ["请你再读一下。"]},
+          {"words": ["再", "晚上", "来", "我"], "en": "I'll come again this evening.", "answers": ["我晚上再来。", "晚上我再来。"]},
+          {"words": ["一点儿茶", "喝", "你", "吧", "再"], "en": "Have a bit more tea.", "answers": ["你再喝一点儿茶吧。"]},
+          {"words": ["再", "能", "您", "说一下", "吗"], "en": "Could you say that again?", "answers": ["您能再说一下吗？"]},
+          {"words": ["看电影", "再", "吃了饭", "我们", "去"], "en": "We'll go and see a film after we've eaten.", "answers": ["我们吃了饭再去看电影。", "吃了饭我们再去看电影。"]},
+          {"words": ["再", "看看", "我", "想"], "en": "I'd like to have another look.", "answers": ["我想再看看。"]},
+          {"words": ["看电视", "再", "你", "了", "不要"], "en": "Stop watching TV.", "answers": ["你不要再看电视了。"]},
+          {"words": ["再", "买", "要不要", "一本"], "en": "Shall we buy another book?", "answers": ["要不要再买一本？"]},
+          {"words": ["下个星期", "去", "我们", "再"], "en": "We'll go again next week.", "answers": ["我们下个星期再去。", "下个星期我们再去。"]},
+          {"words": ["爸爸", "再", "我", "问问"], "en": "I'll ask Dad again.", "answers": ["我再问问爸爸。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "请写一下再。", "en": "Please write it again.", "answers": ["请再写一下。"]},
+          {"zh": "我们明天去再。", "en": "We'll go again tomorrow.", "answers": ["我们明天再去。"]},
+          {"zh": "你再能读一下吗？", "en": "Can you read it again?", "answers": ["你能再读一下吗？"]},
+          {"zh": "我再想吃一点儿米饭。", "en": "I'd like a bit more rice.", "answers": ["我想再吃一点儿米饭。"]},
+          {"zh": "你不要说再了。", "en": "Don't say any more.", "answers": ["你不要再说了。"]},
+          {"zh": "吃了饭回去再吧。", "en": "Let's go back after we've eaten.", "answers": ["吃了饭再回去吧。"]},
+          {"zh": "我们买三个再吧。", "en": "Let's buy three more.", "answers": ["我们再买三个吧。"]},
+          {"zh": "我现在不在家，晚上给你打电话再。", "en": "I'm not at home now. I'll call you this evening.", "answers": ["我现在不在家，晚上再给你打电话。"]}
+        ]
+      }
+    ]
+  }
 }

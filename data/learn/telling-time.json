@@ -59,5 +59,53 @@
         {"zh": "他看了二十分钟电视。", "py": "Tā kàn le èrshí fēnzhōng diànshì.", "en": "He watched TV for twenty minutes."}
       ]
     }
-  ]
+  ],
+  "worksheet": {
+    "title": "Telling the Time Worksheet: HSK 1 Printable with Answers",
+    "description": "A free printable telling-the-time worksheet for HSK 1: 20 exercises (点, 半, 小时 or 分钟, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 点, 半, 小时 or 分钟",
+        "instructions": "Write 点, 半, 小时 or 分钟 in each gap. The English tells you what the sentence means.",
+        "options": ["点", "半", "小时", "分钟"],
+        "items": [
+          {"zh": "现在几＿＿？", "en": "What time is it now?", "answer": "点"},
+          {"zh": "我们三点＿＿下课。", "en": "Our class finishes at half past three.", "answer": "半"},
+          {"zh": "我今天看了一个＿＿书。", "en": "I read for an hour today.", "answer": "小时"},
+          {"zh": "我看了四十＿＿电视。", "en": "I watched TV for forty minutes.", "answer": "分钟"},
+          {"zh": "我晚上十＿＿睡觉。", "en": "I go to bed at ten in the evening.", "answer": "点"},
+          {"zh": "现在七点＿＿，我们去吃饭吧。", "en": "It's half past seven, let's go and eat.", "answer": "半"},
+          {"zh": "火车两＿＿到。", "en": "The train arrives at two o'clock.", "answer": "点"},
+          {"zh": "我们坐了三个＿＿飞机。", "en": "We were on the plane for three hours.", "answer": "小时"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["起床", "六点", "我", "早上"], "en": "I get up at six in the morning.", "answers": ["我早上六点起床。", "早上我六点起床。"]},
+          {"words": ["几点", "你", "睡觉", "晚上"], "en": "What time do you go to bed at night?", "answers": ["你晚上几点睡觉？", "晚上你几点睡觉？"]},
+          {"words": ["上课", "八点半", "我们", "明天"], "en": "Tomorrow our class starts at half past eight.", "answers": ["我们明天八点半上课。", "明天我们八点半上课。"]},
+          {"words": ["十二点", "不是", "现在"], "en": "It isn't twelve o'clock now.", "answers": ["现在不是十二点。"]},
+          {"words": ["下午", "到", "他", "四点十分", "家"], "en": "He gets home at ten past four in the afternoon.", "answers": ["他下午四点十分到家。", "下午他四点十分到家。"]},
+          {"words": ["学习", "我", "了", "一个小时", "昨天"], "en": "I studied for an hour yesterday.", "answers": ["我昨天学习了一个小时。", "昨天我学习了一个小时。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "现在二点。", "en": "It's two o'clock now.", "answers": ["现在两点。"]},
+          {"zh": "我起床早上七点。", "en": "I get up at seven in the morning.", "answers": ["我早上七点起床。", "早上我七点起床。"]},
+          {"zh": "现在半八点。", "en": "It's half past eight now.", "answers": ["现在八点半。"]},
+          {"zh": "我们上课九点。", "en": "Our class starts at nine.", "answers": ["我们九点上课。"]},
+          {"zh": "我学习了两点。", "en": "I studied for two hours.", "answers": ["我学习了两个小时。"]},
+          {"zh": "我两点半下午下班。", "en": "I finish work at half past two in the afternoon.", "answers": ["我下午两点半下班。", "下午我两点半下班。"]}
+        ]
+      }
+    ]
+  }
 }

@@ -62,5 +62,51 @@
         {"zh": "你没有吃饭吗？", "py": "Nǐ méiyǒu chī fàn ma?", "en": "Haven't you eaten?"}
       ]
     }
-  ]
+  ],
+  "worksheet": {
+    "title": "吗 Questions Worksheet: HSK 1 Printable with Answers",
+    "description": "A free printable 吗 worksheet for HSK 1: 18 exercises (吗 or a question word, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 吗 or a question word",
+        "instructions": "Write 吗, 什么, 谁 or 哪儿 in each gap. The English tells you what the question means.",
+        "options": ["吗", "什么", "谁", "哪儿"],
+        "items": [
+          {"zh": "你是学生＿＿？", "en": "Are you a student?", "answer": "吗"},
+          {"zh": "他是＿＿？", "en": "Who is he?", "answer": "谁"},
+          {"zh": "你去＿＿？", "en": "Where are you going?", "answer": "哪儿"},
+          {"zh": "你想吃＿＿？", "en": "What would you like to eat?", "answer": "什么"},
+          {"zh": "你会做饭＿＿？", "en": "Can you cook?", "answer": "吗"},
+          {"zh": "他们在家＿＿？", "en": "Are they at home?", "answer": "吗"},
+          {"zh": "那是＿＿？", "en": "What's that?", "answer": "什么"},
+          {"zh": "你的手机在＿＿？", "en": "Where is your phone?", "answer": "哪儿"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct question.",
+        "items": [
+          {"words": ["水", "吗", "你", "想", "喝"], "en": "Would you like some water?", "answers": ["你想喝水吗？"]},
+          {"words": ["学校", "吗", "去", "明天", "你"], "en": "Are you going to school tomorrow?", "answers": ["你明天去学校吗？", "明天你去学校吗？"]},
+          {"words": ["忙", "吗", "今天", "你"], "en": "Are you busy today?", "answers": ["你今天忙吗？", "今天你忙吗？"]},
+          {"words": ["老师", "吗", "你的", "是", "她"], "en": "Is she your teacher?", "answers": ["她是你的老师吗？"]},
+          {"words": ["哥哥", "你", "吗", "有"], "en": "Do you have an older brother?", "answers": ["你有哥哥吗？"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "他是谁吗？", "en": "Who is he?", "answers": ["他是谁？"]},
+          {"zh": "现在几点吗？", "en": "What time is it now?", "answers": ["现在几点？"]},
+          {"zh": "你喝不喝茶吗？", "en": "Do you drink tea?", "answers": ["你喝不喝茶？", "你喝茶吗？"]},
+          {"zh": "你吗是中国人？", "en": "Are you Chinese?", "answers": ["你是中国人吗？"]},
+          {"zh": "这是什么吗？", "en": "What is this?", "answers": ["这是什么？"]}
+        ]
+      }
+    ]
+  }
 }

@@ -61,5 +61,53 @@
         {"zh": "你也想去吗？", "py": "Nǐ yě xiǎng qù ma?", "en": "Do you want to go too?"}
       ]
     }
-  ]
+  ],
+  "worksheet": {
+    "title": "也 and 都 Worksheet: HSK 1 Printable with Answers",
+    "description": "A free printable 也 and 都 worksheet for HSK 1: 20 exercises (choose 也 or 都, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 也 or 都",
+        "instructions": "Write 也 or 都 in each gap. The English tells you what the sentence means.",
+        "options": ["也", "都"],
+        "items": [
+          {"zh": "我＿＿喜欢喝茶。", "en": "I like tea too.", "answer": "也"},
+          {"zh": "他们＿＿是学生。", "en": "They're all students.", "answer": "都"},
+          {"zh": "我爸爸和妈妈＿＿是医生。", "en": "My dad and mum are both doctors.", "answer": "都"},
+          {"zh": "我＿＿不想去。", "en": "I don't want to go either.", "answer": "也"},
+          {"zh": "这些衣服＿＿很漂亮。", "en": "These clothes are all really nice.", "answer": "都"},
+          {"zh": "他会说汉语，＿＿会写汉字。", "en": "He can speak Chinese, and he can write Chinese characters too.", "answer": "也"},
+          {"zh": "她很忙，我＿＿很忙。", "en": "She's busy, and I'm busy too.", "answer": "也"},
+          {"zh": "昨天我们＿＿没有去上课。", "en": "None of us went to class yesterday.", "answer": "都"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["是", "中国人", "我", "也"], "en": "I'm Chinese too.", "answers": ["我也是中国人。"]},
+          {"words": ["去", "我们", "想", "都"], "en": "We all want to go.", "answers": ["我们都想去。"]},
+          {"words": ["不", "他们", "来", "都"], "en": "None of them are coming.", "answers": ["他们都不来。"]},
+          {"words": ["喜欢", "也", "电影", "她", "看"], "en": "She likes watching films too.", "answers": ["她也喜欢看电影。"]},
+          {"words": ["都", "老师", "我们", "是", "也"], "en": "We're all teachers too.", "answers": ["我们也都是老师。"]},
+          {"words": ["没有", "也", "我", "去", "昨天"], "en": "I didn't go yesterday either.", "answers": ["我昨天也没有去。", "昨天我也没有去。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake with 也 or 都. Write the correct sentence.",
+        "items": [
+          {"zh": "也我是老师。", "en": "I'm a teacher too.", "answers": ["我也是老师。"]},
+          {"zh": "我喜欢喝茶也。", "en": "I like tea too.", "answers": ["我也喜欢喝茶。"]},
+          {"zh": "都我们是中国人。", "en": "We're all Chinese.", "answers": ["我们都是中国人。"]},
+          {"zh": "他不也会说汉语。", "en": "He can't speak Chinese either.", "answers": ["他也不会说汉语。"]},
+          {"zh": "他们都也是学生。", "en": "They're all students too.", "answers": ["他们也都是学生。"]},
+          {"zh": "我都喜欢这两本书。", "en": "I like both of these books.", "answers": ["这两本书我都喜欢。", "我这两本书都喜欢。"]}
+        ]
+      }
+    ]
+  }
 }

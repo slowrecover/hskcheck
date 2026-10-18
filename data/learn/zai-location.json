@@ -71,5 +71,196 @@
         {"zh": "桌子上有一本书。", "py": "Zhuōzi shang yǒu yì běn shū.", "en": "There's a book on the table."}
       ]
     }
-  ]
+  ],
+  "worksheet": {
+    "title": "在 (zài) Worksheet: HSK 1 Printable with Answers",
+    "description": "A free printable 在 (zài) worksheet for HSK 1: 20 exercises (在 or 有, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 在 or 有",
+        "instructions": "Write 在 or 有 in each gap. The English tells you what the sentence means.",
+        "options": [
+          "在",
+          "有"
+        ],
+        "items": [
+          {
+            "zh": "你的手机＿＿椅子上。",
+            "en": "Your phone is on the chair.",
+            "answer": "在"
+          },
+          {
+            "zh": "房间里＿＿三个人。",
+            "en": "There are three people in the room.",
+            "answer": "有"
+          },
+          {
+            "zh": "老师＿＿外边。",
+            "en": "The teacher is outside.",
+            "answer": "在"
+          },
+          {
+            "zh": "我家＿＿学校后边。",
+            "en": "My home is behind the school.",
+            "answer": "在"
+          },
+          {
+            "zh": "学校里＿＿一个商店。",
+            "en": "There's a shop in the school.",
+            "answer": "有"
+          },
+          {
+            "zh": "我们＿＿饭店吃饭。",
+            "en": "We're eating at a restaurant.",
+            "answer": "在"
+          },
+          {
+            "zh": "椅子下边＿＿一只猫。",
+            "en": "There's a cat under the chair.",
+            "answer": "有"
+          },
+          {
+            "zh": "你朋友＿＿家吗？",
+            "en": "Is your friend at home?",
+            "answer": "在"
+          },
+          {
+            "zh": "前边＿＿一个医院。",
+            "en": "There's a hospital up ahead.",
+            "answer": "有"
+          }
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {
+            "words": [
+              "在",
+              "工作",
+              "医院",
+              "我妈妈"
+            ],
+            "en": "My mum works at a hospital.",
+            "answers": [
+              "我妈妈在医院工作。"
+            ]
+          },
+          {
+            "words": [
+              "在",
+              "学习",
+              "学校",
+              "我们",
+              "汉语"
+            ],
+            "en": "We study Chinese at school.",
+            "answers": [
+              "我们在学校学习汉语。"
+            ]
+          },
+          {
+            "words": [
+              "在",
+              "椅子下边",
+              "猫"
+            ],
+            "en": "The cat is under the chair.",
+            "answers": [
+              "猫在椅子下边。"
+            ]
+          },
+          {
+            "words": [
+              "不",
+              "在",
+              "我",
+              "中国",
+              "现在"
+            ],
+            "en": "I'm not in China now.",
+            "answers": [
+              "我现在不在中国。",
+              "现在我不在中国。"
+            ]
+          },
+          {
+            "words": [
+              "在",
+              "哪儿",
+              "你",
+              "工作"
+            ],
+            "en": "Where do you work?",
+            "answers": [
+              "你在哪儿工作？"
+            ]
+          },
+          {
+            "words": [
+              "晚上",
+              "在",
+              "看",
+              "书",
+              "家",
+              "我"
+            ],
+            "en": "I read at home in the evening.",
+            "answers": [
+              "我晚上在家看书。",
+              "晚上我在家看书。"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {
+            "zh": "我工作在学校。",
+            "en": "I work at a school.",
+            "answers": [
+              "我在学校工作。"
+            ]
+          },
+          {
+            "zh": "他吃饭在饭店。",
+            "en": "He's eating at a restaurant.",
+            "answers": [
+              "他在饭店吃饭。",
+              "他在饭店里吃饭。"
+            ]
+          },
+          {
+            "zh": "我妈妈是商店。",
+            "en": "My mum is at the shop.",
+            "answers": [
+              "我妈妈在商店。",
+              "我妈妈在商店里。"
+            ]
+          },
+          {
+            "zh": "老师的手机在桌子。",
+            "en": "The teacher's phone is on the table.",
+            "answers": [
+              "老师的手机在桌子上。",
+              "老师的手机在桌子上边。"
+            ]
+          },
+          {
+            "zh": "他们在中国里。",
+            "en": "They're in China.",
+            "answers": [
+              "他们在中国。"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

@@ -55,5 +55,52 @@
         {"zh": "你不要把这件事告诉他。", "py": "Nǐ búyào bǎ zhè jiàn shì gàosu tā.", "en": "Don't tell him about this."}
       ]
     }
-  ]
+  ],
+  "worksheet": {
+    "title": "把 Sentences Worksheet: HSK 3 Printable with Answers",
+    "description": "A free printable 把 sentences worksheet for HSK 3: 19 exercises (choose the word after the verb, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 在, 给 or 完",
+        "instructions": "Write 在, 给 or 完 after the verb. The English tells you what the sentence means.",
+        "options": ["在", "给", "完"],
+        "items": [
+          {"zh": "我把饭吃＿＿了。", "en": "I've finished my meal.", "answer": "完"},
+          {"zh": "请把你的名字写＿＿这儿。", "en": "Please write your name here.", "answer": "在"},
+          {"zh": "你把这个手机还＿＿他吧。", "en": "Give this phone back to him.", "answer": "给"},
+          {"zh": "他把那本书看＿＿了。", "en": "He has finished reading that book.", "answer": "完"},
+          {"zh": "妈妈把水果放＿＿桌子上了。", "en": "Mum put the fruit on the table.", "answer": "在"},
+          {"zh": "我把钱借＿＿朋友了。", "en": "I lent the money to a friend.", "answer": "给"},
+          {"zh": "你把衣服洗＿＿了吗？", "en": "Have you finished washing the clothes?", "answer": "完"},
+          {"zh": "别把包放＿＿门口。", "en": "Don't leave your bag by the door.", "answer": "在"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence with 把.",
+        "items": [
+          {"words": ["书", "请", "桌子上", "把", "放在"], "en": "Please put the book on the table.", "answers": ["请把书放在桌子上。"]},
+          {"words": ["门", "没有", "她", "把", "关上"], "en": "She didn't close the door.", "answers": ["她没有把门关上。"]},
+          {"words": ["妈妈", "这件事", "把", "告诉", "别"], "en": "Don't tell Mum about this.", "answers": ["别把这件事告诉妈妈。"]},
+          {"words": ["车", "爸爸", "开回", "把", "了", "家"], "en": "Dad drove the car home.", "answers": ["爸爸把车开回家了。"]},
+          {"words": ["电脑", "送给", "哥哥", "我", "把", "他的", "了"], "en": "My older brother gave me his computer.", "answers": ["哥哥把他的电脑送给我了。"]},
+          {"words": ["打扫", "房间", "你", "一下", "把"], "en": "Give your room a quick clean.", "answers": ["你把房间打扫一下。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "我把作业做。", "en": "I've finished my homework.", "answers": ["我把作业做完了。", "我把作业做好了。"]},
+          {"zh": "他把没有灯关上。", "en": "He didn't turn off the light.", "answers": ["他没有把灯关上。"]},
+          {"zh": "请你把放手机在包里。", "en": "Please put your phone in your bag.", "answers": ["请你把手机放在包里。"]},
+          {"zh": "你把我的书别拿走。", "en": "Don't take my book away.", "answers": ["你别把我的书拿走。"]},
+          {"zh": "他把打开了电视。", "en": "He turned on the TV.", "answers": ["他把电视打开了。"]}
+        ]
+      }
+    ]
+  }
 }

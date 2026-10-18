@@ -68,5 +68,53 @@
         {"zh": "这个苹果太大了。", "py": "Zhège píngguǒ tài dà le.", "en": "This apple is too big."}
       ]
     }
-  ]
+  ],
+  "worksheet": {
+    "title": "太……了 Worksheet: HSK 1 Printable with Answers",
+    "description": "A free printable 太……了 worksheet for HSK 1: 20 exercises (太, 很 or 不太, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 太, 很 or 不太",
+        "instructions": "Write 太, 很 or 不太 in each gap. The English tells you what the sentence means.",
+        "options": ["太", "很", "不太"],
+        "items": [
+          {"zh": "这个桌子＿＿小了，有大一点儿的吗？", "en": "This table is too small. Do you have a bigger one?", "answer": "太"},
+          {"zh": "我的老师＿＿好。", "en": "My teacher is very nice.", "answer": "很"},
+          {"zh": "我＿＿喜欢看电视。", "en": "I don't really like watching TV.", "answer": "不太"},
+          {"zh": "今天的菜＿＿好吃了！", "en": "Today's food is so good!", "answer": "太"},
+          {"zh": "他家＿＿大。", "en": "His home is very big.", "answer": "很"},
+          {"zh": "茶＿＿热了，我现在不喝。", "en": "The tea is too hot. I won't drink it now.", "answer": "太"},
+          {"zh": "这个苹果＿＿好吃。", "en": "This apple isn't very nice.", "answer": "不太"},
+          {"zh": "这个电影＿＿好看了，我还想看。", "en": "This film is so good, I want to watch it again.", "answer": "太"},
+          {"zh": "我爸爸工作＿＿忙。", "en": "My dad is very busy at work.", "answer": "很"},
+          {"zh": "我今天＿＿忙，我们去看电影吧。", "en": "I'm not very busy today. Let's go and see a film.", "answer": "不太"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["衣服", "太", "这件", "了", "贵"], "en": "This top is too expensive.", "answers": ["这件衣服太贵了。"]},
+          {"words": ["了", "太", "我", "忙", "今天"], "en": "I'm too busy today.", "answers": ["我今天太忙了。", "今天我太忙了。"]},
+          {"words": ["米饭", "他", "不太", "喜欢", "吃"], "en": "He doesn't really like eating rice.", "answers": ["他不太喜欢吃米饭。"]},
+          {"words": ["小", "这个", "了", "太", "手机"], "en": "This phone is too small.", "answers": ["这个手机太小了。"]},
+          {"words": ["太", "了", "人", "多"], "en": "There are too many people.", "answers": ["人太多了。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "这个电脑太贵。", "en": "This computer is too expensive.", "answers": ["这个电脑太贵了。"]},
+          {"zh": "她是一个太好的老师。", "en": "She is a very good teacher.", "answers": ["她是一个很好的老师。"]},
+          {"zh": "这儿的东西太不贵。", "en": "Things here aren't very expensive.", "answers": ["这儿的东西不太贵。"]},
+          {"zh": "今天太冷。", "en": "It's too cold today.", "answers": ["今天太冷了。"]},
+          {"zh": "这件衣服太漂亮。", "en": "This top is so pretty!", "answers": ["这件衣服太漂亮了。", "这件衣服太漂亮了！"]}
+        ]
+      }
+    ]
+  }
 }

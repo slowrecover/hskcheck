@@ -68,5 +68,53 @@
         {"zh": "我明天去学校，你呢？", "py": "Wǒ míngtiān qù xuéxiào, nǐ ne?", "en": "I'm going to school tomorrow. What about you?"}
       ]
     }
-  ]
+  ],
+  "worksheet": {
+    "title": "呢 (ne) Worksheet: HSK 1 Printable with Answers",
+    "description": "A free printable 呢 (ne) worksheet for HSK 1: 20 exercises (呢 or 吗, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 呢 or 吗",
+        "instructions": "Write 呢 or 吗 in each gap. The English tells you what the sentence means.",
+        "options": ["呢", "吗"],
+        "items": [
+          {"zh": "我是学生，你＿＿？", "en": "I'm a student. What about you?", "answer": "呢"},
+          {"zh": "你喜欢吃米饭＿＿？", "en": "Do you like rice?", "answer": "吗"},
+          {"zh": "我的杯子＿＿？", "en": "Where's my cup?", "answer": "呢"},
+          {"zh": "他在看电视＿＿。", "en": "He's watching TV.", "answer": "呢"},
+          {"zh": "你今天忙＿＿？", "en": "Are you busy today?", "answer": "吗"},
+          {"zh": "你叫什么名字＿＿？", "en": "What's your name?", "answer": "呢"},
+          {"zh": "爸爸在打电话＿＿。", "en": "Dad is on the phone.", "answer": "呢"},
+          {"zh": "我今天不去，你＿＿？", "en": "I'm not going today. What about you?", "answer": "呢"},
+          {"zh": "他是你的朋友＿＿？", "en": "Is he your friend?", "answer": "吗"},
+          {"zh": "我们几点去＿＿？", "en": "So what time shall we go?", "answer": "呢"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["在", "呢", "他们", "吃饭"], "en": "They're eating.", "answers": ["他们在吃饭呢。"]},
+          {"words": ["你", "呢", "妈妈"], "en": "Where's your mum?", "answers": ["你妈妈呢？"]},
+          {"words": ["做", "呢", "什么", "你", "在"], "en": "What are you doing?", "answers": ["你在做什么呢？"]},
+          {"words": ["正在", "呢", "学习", "我", "汉语"], "en": "I'm studying Chinese right now.", "answers": ["我正在学习汉语呢。"]},
+          {"words": ["去", "哪儿", "我们", "明天", "呢"], "en": "So where shall we go tomorrow?", "answers": ["我们明天去哪儿呢？", "明天我们去哪儿呢？"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "你是老师呢？", "en": "Are you a teacher?", "answers": ["你是老师吗？"]},
+          {"zh": "你想去商店呢？", "en": "Do you want to go to the shop?", "answers": ["你想去商店吗？"]},
+          {"zh": "我很忙，你吗？", "en": "I'm very busy. And you?", "answers": ["我很忙，你呢？"]},
+          {"zh": "你去哪儿吗？", "en": "Where are you going?", "answers": ["你去哪儿呢？", "你去哪儿？"]},
+          {"zh": "我的电脑吗？", "en": "Where's my computer?", "answers": ["我的电脑呢？"]}
+        ]
+      }
+    ]
+  }
 }

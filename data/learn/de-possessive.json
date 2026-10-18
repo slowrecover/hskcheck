@@ -66,5 +66,53 @@
         "The other mistake is putting the description after the noun, as in English. In Chinese, whatever describes the noun, whether it is an owner, an adjective or a whole phrase, comes first, then 的, then the noun."
       ]
     }
-  ]
+  ],
+  "worksheet": {
+    "title": "的 (de) Worksheet: HSK 1 Printable with Answers",
+    "description": "A free printable 的 (de) worksheet for HSK 1: 20 exercises (choose 的 or 是, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 的 or 是",
+        "instructions": "Write 的 or 是 in each gap. The English tells you what the sentence means.",
+        "options": ["的", "是"],
+        "items": [
+          {"zh": "这＿＿我朋友的电脑。", "en": "This is my friend's computer.", "answer": "是"},
+          {"zh": "我＿＿老师很好。", "en": "My teacher is very nice.", "answer": "的"},
+          {"zh": "那是谁＿＿手机？", "en": "Whose phone is that?", "answer": "的"},
+          {"zh": "他＿＿我的同学。", "en": "He is my classmate.", "answer": "是"},
+          {"zh": "她是一个很好＿＿医生。", "en": "She is a very good doctor.", "answer": "的"},
+          {"zh": "这个杯子＿＿你的吗？", "en": "Is this cup yours?", "answer": "是"},
+          {"zh": "你昨天买＿＿书在哪儿？", "en": "Where is the book you bought yesterday?", "answer": "的"},
+          {"zh": "我要小＿＿。", "en": "I'd like the small one.", "answer": "的"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["书", "老师", "这是", "的"], "en": "This is the teacher's book.", "answers": ["这是老师的书。"]},
+          {"words": ["很好吃", "做", "妈妈", "的", "菜"], "en": "The food Mum cooks is delicious.", "answers": ["妈妈做的菜很好吃。"]},
+          {"words": ["朋友", "我", "很好的", "是", "他"], "en": "He is a very good friend of mine.", "answers": ["他是我很好的朋友。"]},
+          {"words": ["电影", "看", "很好看", "昨天", "的", "我们"], "en": "The film we watched yesterday was very good.", "answers": ["我们昨天看的电影很好看。", "昨天我们看的电影很好看。"]},
+          {"words": ["是", "我的", "电脑", "那个"], "en": "That computer is mine.", "answers": ["那个电脑是我的。"]},
+          {"words": ["医生", "的", "我同学", "爸爸", "是"], "en": "My classmate's dad is a doctor.", "answers": ["我同学的爸爸是医生。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "这是一个很大商店。", "en": "This is a very big shop.", "answers": ["这是一个很大的商店。"]},
+          {"zh": "我喜欢衣服你买的。", "en": "I like the clothes you bought.", "answers": ["我喜欢你买的衣服。"]},
+          {"zh": "那是电脑谁的？", "en": "Whose computer is that?", "answers": ["那是谁的电脑？"]},
+          {"zh": "这个手机是我。", "en": "This phone is mine.", "answers": ["这个手机是我的。"]},
+          {"zh": "他有一个很漂亮女朋友。", "en": "He has a very pretty girlfriend.", "answers": ["他有一个很漂亮的女朋友。"]},
+          {"zh": "我昨天买衣服很好看。", "en": "The clothes I bought yesterday look nice.", "answers": ["我昨天买的衣服很好看。"]}
+        ]
+      }
+    ]
+  }
 }
