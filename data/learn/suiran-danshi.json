@@ -1,0 +1,106 @@
+{
+  "slug": "suiran-danshi",
+  "level": 2,
+  "published": "2026-10-18",
+  "title": "虽然……但是 (Although) in Chinese: HSK 2 Grammar with Examples",
+  "description": "How to use 虽然……但是 (suīrán… dànshì) in Chinese: the pattern, where 虽然 goes, adding 还是, common mistakes, and 12 HSK 2 example sentences.",
+  "zh": "虽然……但是",
+  "h1": "How to Say \"Although\" with 虽然……但是",
+  "lede": "虽然 (suīrán) means \"although\" and 但是 (dànshì) means \"but\". In Chinese they normally work as a pair: 虽然 introduces a fact, and 但是 introduces something you might not expect because of it.",
+  "sections": [
+    {
+      "h2": "The pattern",
+      "paras": [
+        "虽然 + fact, 但是 + unexpected result.",
+        "In English you say either \"although\" or \"but\", never both in one sentence. In Chinese, using both is normal and natural: 虽然 starts the first part of the sentence, and 但是 starts the second part."
+      ],
+      "examples": [
+        {"zh": "虽然这件衣服很贵，但是很漂亮。", "py": "Suīrán zhè jiàn yīfu hěn guì, dànshì hěn piàoliang.", "en": "Although this piece of clothing is expensive, it's very pretty."},
+        {"zh": "虽然汉语不好学，但是很有意思。", "py": "Suīrán Hànyǔ bù hǎo xué, dànshì hěn yǒu yìsi.", "en": "Although Chinese isn't easy to learn, it's very interesting."},
+        {"zh": "虽然他是中国人，但是他不会做中国菜。", "py": "Suīrán tā shì Zhōngguó rén, dànshì tā bú huì zuò Zhōngguó cài.", "en": "Although he's Chinese, he can't cook Chinese food."}
+      ]
+    },
+    {
+      "h2": "Where 虽然 and 但是 go",
+      "paras": [
+        "虽然 can come before or after the subject of the first part: 虽然他很忙 and 他虽然很忙 are both correct. When both parts are about the same person, you don't need to say the subject again after 但是.",
+        "但是 is different: it always comes at the very start of the second part, before the subject. Negatives with 不 and 没有 work as usual inside each part."
+      ],
+      "examples": [
+        {"zh": "虽然他很忙，但是每天都学习汉语。", "py": "Suīrán tā hěn máng, dànshì měi tiān dōu xuéxí Hànyǔ.", "en": "Although he's busy, he studies Chinese every day."},
+        {"zh": "他虽然很忙，但是每天都学习汉语。", "py": "Tā suīrán hěn máng, dànshì měi tiān dōu xuéxí Hànyǔ.", "en": "Although he's busy, he studies Chinese every day."},
+        {"zh": "我虽然很累，但是不想睡觉。", "py": "Wǒ suīrán hěn lèi, dànshì bù xiǎng shuìjiào.", "en": "Although I'm tired, I don't want to go to sleep."}
+      ]
+    },
+    {
+      "h2": "但是 on its own, and adding 还是",
+      "paras": [
+        "但是 can be used without 虽然, just like \"but\" in English. 虽然, on the other hand, is rarely left on its own: the second part normally has 但是, 还是 or both.",
+        "还是 here means \"still\" or \"anyway\". It goes after the subject of the second part, before the verb."
+      ],
+      "examples": [
+        {"zh": "这个饭馆不大，但是菜很好吃。", "py": "Zhège fànguǎn bú dà, dànshì cài hěn hǎochī.", "en": "This restaurant isn't big, but the food is very good."},
+        {"zh": "虽然天气不好，但是我们还是去了。", "py": "Suīrán tiānqì bù hǎo, dànshì wǒmen háishi qù le.", "en": "Although the weather wasn't good, we still went."},
+        {"zh": "虽然医生说他要多休息，他还是去上班了。", "py": "Suīrán yīshēng shuō tā yào duō xiūxi, tā háishi qù shàngbān le.", "en": "Although the doctor told him to rest more, he went to work anyway."}
+      ]
+    },
+    {
+      "h2": "Common mistakes",
+      "paras": [
+        "The most common mistake is to put 但是 after the subject, as in 虽然他很忙，他但是每天都来. 但是 must come first: 虽然他很忙，但是他每天都来.",
+        "Another mistake is mixing up the two pairs 虽然……但是 (although… but) and 因为……所以 (because… so). 虽然 goes with 但是, and 因为 goes with 所以. 虽然……所以 and 因为……但是 are both wrong."
+      ],
+      "examples": [
+        {"zh": "因为太贵了，所以我没有买。", "py": "Yīnwèi tài guì le, suǒyǐ wǒ méiyǒu mǎi.", "en": "Because it was too expensive, I didn't buy it."},
+        {"zh": "虽然很贵，但是我买了。", "py": "Suīrán hěn guì, dànshì wǒ mǎi le.", "en": "Although it was expensive, I bought it."},
+        {"zh": "虽然他很忙，但是他每天都来。", "py": "Suīrán tā hěn máng, dànshì tā měi tiān dōu lái.", "en": "Although he's busy, he comes every day."}
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "虽然……但是 Worksheet: HSK 2 Printable with Answers",
+    "description": "A free printable 虽然……但是 worksheet for HSK 2: 18 exercises (虽然, 但是, 因为 or 所以, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 虽然, 但是, 因为 or 所以",
+        "instructions": "Write 虽然, 但是, 因为 or 所以 in each gap. The English tells you what the sentence means.",
+        "options": ["虽然", "但是", "因为", "所以"],
+        "items": [
+          {"zh": "＿＿天气很冷，但是孩子们还在外面玩。", "en": "Although it's cold, the children are still playing outside.", "answer": "虽然"},
+          {"zh": "虽然这个菜很好吃，＿＿太贵了。", "en": "Although this dish is tasty, it's too expensive.", "answer": "但是"},
+          {"zh": "＿＿下雨了，所以我们没有出去。", "en": "Because it was raining, we didn't go out.", "answer": "因为"},
+          {"zh": "因为他生病了，＿＿今天没有来上课。", "en": "Because he's ill, he didn't come to class today.", "answer": "所以"},
+          {"zh": "我＿＿学了两年汉语，但是说得不太好。", "en": "Although I've studied Chinese for two years, I don't speak it very well.", "answer": "虽然"},
+          {"zh": "虽然她只有二十岁，＿＿已经是医生了。", "en": "Although she's only twenty, she's already a doctor.", "answer": "但是"},
+          {"zh": "他＿＿很累，但是还在工作。", "en": "Although he's tired, he's still working.", "answer": "虽然"},
+          {"zh": "因为明天有考试，＿＿我今天不看电视了。", "en": "Because I have an exam tomorrow, I'm not watching TV today.", "answer": "所以"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence with 虽然 and 但是.",
+        "items": [
+          {"words": ["很晚了", "但是", "他", "已经", "虽然", "还在", "工作"], "en": "Although it's already very late, he's still working.", "answers": ["虽然已经很晚了，但是他还在工作。"]},
+          {"words": ["这个手机", "但是", "很贵", "我", "虽然", "还是", "想买"], "en": "Although this phone is expensive, I still want to buy it.", "answers": ["虽然这个手机很贵，但是我还是想买。", "这个手机虽然很贵，但是我还是想买。"]},
+          {"words": ["能听懂", "虽然", "说汉语", "他", "但是", "不会"], "en": "Although he can't speak Chinese, he can understand it.", "answers": ["虽然他不会说汉语，但是能听懂。", "他虽然不会说汉语，但是能听懂。", "虽然不会说汉语，但是他能听懂。"]},
+          {"words": ["我", "哥哥", "但是", "不高", "虽然", "很高"], "en": "Although my older brother is tall, I'm not.", "answers": ["虽然哥哥很高，但是我不高。", "哥哥虽然很高，但是我不高。"]},
+          {"words": ["很热", "外面", "虽然", "房间里", "很冷", "但是"], "en": "Although it's cold outside, it's hot in the room.", "answers": ["虽然外面很冷，但是房间里很热。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "虽然他很忙，他但是每天都运动。", "en": "Although he's busy, he exercises every day.", "answers": ["虽然他很忙，但是他每天都运动。"]},
+          {"zh": "虽然这个饭馆很远，所以我们每个星期都去。", "en": "Although this restaurant is far away, we go there every week.", "answers": ["虽然这个饭馆很远，但是我们每个星期都去。"]},
+          {"zh": "因为他是老师，但是他不喜欢看书。", "en": "Although he's a teacher, he doesn't like reading.", "answers": ["虽然他是老师，但是他不喜欢看书。"]},
+          {"zh": "虽然我不喜欢吃鱼，还是我吃了一点儿。", "en": "Although I don't like fish, I still ate a little.", "answers": ["虽然我不喜欢吃鱼，我还是吃了一点儿。", "虽然我不喜欢吃鱼，但是我还是吃了一点儿。", "虽然我不喜欢吃鱼，但是我吃了一点儿。"]},
+          {"zh": "虽然她很想去中国，她但是没有钱。", "en": "Although she really wants to go to China, she doesn't have the money.", "answers": ["虽然她很想去中国，但是她没有钱。"]}
+        ]
+      }
+    ]
+  }
+}

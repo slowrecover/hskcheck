@@ -1,0 +1,121 @@
+{
+  "slug": "de-de-de",
+  "level": 2,
+  "published": "2026-10-18",
+  "title": "的, 得 or 地 (de)? HSK 2 Chinese Grammar with Examples",
+  "description": "的, 得 and 地 all sound like de. Learn which one to write: 的 before a noun, 地 before a verb, 得 after a verb, with HSK 2 examples and common mistakes.",
+  "zh": "的 得 地",
+  "h1": "的, 得 or 地: Which de to Use",
+  "lede": "的, 得 and 地 are all pronounced de with a neutral tone, so you only need to tell them apart when you write. Look at where de sits: 的 comes before a noun, 地 comes before a verb, and 得 comes after a verb.",
+  "sections": [
+    {
+      "h2": "One sound, three characters",
+      "paras": [
+        "Look at the words on either side of de. If a noun comes after it, write 的. If a verb comes after it, write 地. If de comes straight after a verb and is followed by a comment on how the action went, such as 很快 or 很好, write 得.",
+        "In speech the three sound exactly the same, so nobody will misunderstand you. In writing, textbooks and HSK exams keep them apart, and the wrong one counts as a mistake."
+      ],
+      "examples": [
+        {"zh": "这是我的书。", "py": "Zhè shì wǒ de shū.", "en": "This is my book."},
+        {"zh": "我们慢慢地走吧。", "py": "Wǒmen mànmàn de zǒu ba.", "en": "Let's walk slowly."},
+        {"zh": "他跑得很快。", "py": "Tā pǎo de hěn kuài.", "en": "He runs very fast."}
+      ]
+    },
+    {
+      "h2": "的 before a noun",
+      "paras": [
+        "的 links an owner or a description to the noun after it: 我的 (my), 老师的 (the teacher's), 很漂亮的 (very pretty), 我买的 (that I bought). The description always comes first, then 的, then the noun.",
+        "When everyone knows which thing you mean, the noun can be left out, so a sentence can also end in 的: 这是我的 means \"this is mine\". The page on 的 covers this in more detail."
+      ],
+      "examples": [
+        {"zh": "她有一件很漂亮的衣服。", "py": "Tā yǒu yí jiàn hěn piàoliang de yīfu.", "en": "She has a very pretty top."},
+        {"zh": "我昨天买的书很好看。", "py": "Wǒ zuótiān mǎi de shū hěn hǎokàn.", "en": "The book I bought yesterday is really good."},
+        {"zh": "那个杯子是谁的？", "py": "Nàge bēizi shì shéi de?", "en": "Whose cup is that?"}
+      ]
+    },
+    {
+      "h2": "得 after a verb: how well, how fast",
+      "paras": [
+        "Verb + 得 + comment. 得 comes right after the verb and introduces a comment on how the action is done: how well, how fast, how early. The comment is usually an adjective, often with 很 in front of it.",
+        "If the verb has an object, either say the verb twice (说汉语说得很好) or put the object first (汉语说得很好). The object never goes between the verb and 得. For the negative, put 不 after 得: 跑得不快. To ask, put 怎么样 or a yes-no form such as 快不快 after 得."
+      ],
+      "examples": [
+        {"zh": "她汉语说得很好。", "py": "Tā Hànyǔ shuō de hěn hǎo.", "en": "She speaks Chinese very well."},
+        {"zh": "他每天睡得很晚。", "py": "Tā měitiān shuì de hěn wǎn.", "en": "He goes to bed very late every day."},
+        {"zh": "我唱歌唱得不好。", "py": "Wǒ chàng gē chàng de bù hǎo.", "en": "I'm not a good singer."},
+        {"zh": "你考得怎么样？", "py": "Nǐ kǎo de zěnmeyàng?", "en": "How did your exam go?"}
+      ]
+    },
+    {
+      "h2": "地 before a verb: the way someone does something",
+      "paras": [
+        "Description + 地 + verb. 地 turns a word into a description of the action, a bit like -ly in English: 高兴地说 (say happily), 慢慢地走 (walk slowly). The description and 地 always come before the verb.",
+        "The word in front of 地 is often a two-syllable adjective such as 高兴, a doubled word such as 慢慢 or 好好, or an adjective with 很, such as 很快. Doubled words can also go straight in front of the verb without 地: 慢慢走 is fine too."
+      ],
+      "examples": [
+        {"zh": "他高兴地说：“我找到工作了！”", "py": "Tā gāoxìng de shuō: \"Wǒ zhǎodào gōngzuò le!\"", "en": "He said happily, \"I've found a job!\""},
+        {"zh": "她慢慢地打开了门。", "py": "Tā mànmàn de dǎkāi le mén.", "en": "She slowly opened the door."},
+        {"zh": "你要好好地学习。", "py": "Nǐ yào hǎohǎo de xuéxí.", "en": "You need to study hard."},
+        {"zh": "他很快地穿上了衣服。", "py": "Tā hěn kuài de chuānshang le yīfu.", "en": "He quickly put his clothes on."}
+      ]
+    },
+    {
+      "h2": "得 or 地? Common mistakes",
+      "paras": [
+        "Some ideas can be said with either 地 or 得, but the word order changes. 地 goes before the verb and describes the way someone does something. 得 goes after the verb and gives a comment on how it was done, and that comment ends the sentence.",
+        "The most common mistake is writing 的 after a verb: 他跑的很快 should be 他跑得很快. You will see this a lot in casual writing online, but it is marked wrong in exams. The other is putting the object after 得: 他说得汉语很好 should be 他汉语说得很好 or 他说汉语说得很好."
+      ],
+      "examples": [
+        {"zh": "他慢慢地吃饭。", "py": "Tā mànmàn de chī fàn.", "en": "He eats his meal slowly."},
+        {"zh": "他吃得很慢。", "py": "Tā chī de hěn màn.", "en": "He's a slow eater."}
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "的, 得 or 地 Worksheet: HSK 2 Printable with Answers",
+    "description": "A free printable 的, 得 and 地 worksheet for HSK 2: 20 exercises (choose the right de, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 的, 得 or 地",
+        "instructions": "Write 的, 得 or 地 in each gap. The English tells you what the sentence means.",
+        "options": ["的", "得", "地"],
+        "items": [
+          {"zh": "这是我妈妈＿＿车。", "en": "This is my mum's car.", "answer": "的"},
+          {"zh": "他跑＿＿非常快。", "en": "He runs extremely fast.", "answer": "得"},
+          {"zh": "孩子们在外面快乐＿＿玩。", "en": "The children are playing happily outside.", "answer": "地"},
+          {"zh": "我昨天看＿＿电影很好看。", "en": "The film I saw yesterday was very good.", "answer": "的"},
+          {"zh": "他今天到＿＿很早。", "en": "He arrived very early today.", "answer": "得"},
+          {"zh": "你要好好＿＿休息。", "en": "You should get a good rest.", "answer": "地"},
+          {"zh": "这件衣服是谁＿＿？", "en": "Whose top is this?", "answer": "的"},
+          {"zh": "他汉语说＿＿不太好。", "en": "He doesn't speak Chinese very well.", "answer": "得"},
+          {"zh": "我们很快＿＿吃完了饭。", "en": "We quickly finished our meal.", "answer": "地"},
+          {"zh": "你昨天晚上睡＿＿怎么样？", "en": "How did you sleep last night?", "answer": "得"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["游得", "我哥哥", "很好", "游泳"], "en": "My older brother is a very good swimmer.", "answers": ["我哥哥游泳游得很好。"]},
+          {"words": ["走过来了", "妈妈", "地", "慢慢"], "en": "Mum walked slowly over to us.", "answers": ["妈妈慢慢地走过来了。"]},
+          {"words": ["水果", "很便宜", "我", "的", "买"], "en": "The fruit I bought was very cheap.", "answers": ["我买的水果很便宜。"]},
+          {"words": ["怎么样", "她", "唱得", "今天"], "en": "How did she sing today?", "answers": ["她今天唱得怎么样？", "今天她唱得怎么样？"]},
+          {"words": ["学习", "你", "好好地", "要"], "en": "You need to study hard.", "answers": ["你要好好地学习。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "我妹妹走的很慢。", "en": "My younger sister walks slowly.", "answers": ["我妹妹走得很慢。"]},
+          {"zh": "他说得汉语很好。", "en": "He speaks Chinese very well.", "answers": ["他汉语说得很好。", "他说汉语说得很好。"]},
+          {"zh": "请你慢慢得说。", "en": "Please speak slowly.", "answers": ["请你慢慢地说。", "请你慢慢说。"]},
+          {"zh": "我昨天买得衣服很漂亮。", "en": "The clothes I bought yesterday are very pretty.", "answers": ["我昨天买的衣服很漂亮。"]},
+          {"zh": "你跑地快不快？", "en": "Are you a fast runner?", "answers": ["你跑得快不快？"]}
+        ]
+      }
+    ]
+  }
+}

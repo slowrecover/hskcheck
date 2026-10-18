@@ -1,0 +1,106 @@
+{
+  "slug": "li-distance",
+  "level": 2,
+  "published": "2026-10-18",
+  "title": "离 (lí) in Chinese: How Far Something Is, HSK 2 Grammar",
+  "description": "How to use 离 (lí) in Chinese: A 离 B 很远 / 很近, asking 远吗 and 多远, 离 vs 从, counting down with 离…还有, and 14 HSK 2 example sentences.",
+  "zh": "离",
+  "h1": "How to Use 离 to Say How Far Something Is",
+  "lede": "离 (lí) means \"from\" when you talk about distance: how far one place is from another. It is the word behind everyday sentences like \"my home is close to school\" and \"is the station far from here?\"",
+  "sections": [
+    {
+      "h2": "The pattern",
+      "paras": [
+        "A + 离 + B + 远 / 近.",
+        "Put the two places on either side of 离, and finish the sentence with 远 (far) or 近 (close). As with other adjectives, 远 and 近 normally take 很 in front of them, and you don't need 是. For the negative, put 不 before the adjective: 不远, 不近, or 不太远 (not very far)."
+      ],
+      "examples": [
+        {"zh": "我家离学校很近。", "py": "Wǒ jiā lí xuéxiào hěn jìn.", "en": "My home is very close to school."},
+        {"zh": "机场离这儿很远。", "py": "Jīchǎng lí zhèr hěn yuǎn.", "en": "The airport is a long way from here."},
+        {"zh": "医院离我家不远。", "py": "Yīyuàn lí wǒ jiā bù yuǎn.", "en": "The hospital isn't far from my home."},
+        {"zh": "饭馆离这儿很近，我们走路去吧。", "py": "Fànguǎn lí zhèr hěn jìn, wǒmen zǒulù qù ba.", "en": "The restaurant is very close to here, so let's walk."}
+      ]
+    },
+    {
+      "h2": "Asking how far",
+      "paras": [
+        "To ask if a place is far, add 吗 at the end, or use 远不远 (the 不 is said lightly, with a neutral tone). To ask how far, use 多远. In everyday speech people usually answer with the time it takes, such as 走路五分钟 (five minutes on foot), rather than with a distance."
+      ],
+      "examples": [
+        {"zh": "你家离公司远吗？", "py": "Nǐ jiā lí gōngsī yuǎn ma?", "en": "Is your home far from your office?"},
+        {"zh": "车站离这儿远不远？", "py": "Chēzhàn lí zhèr yuǎn bu yuǎn?", "en": "Is the station far from here?"},
+        {"zh": "超市离你家多远？", "py": "Chāoshì lí nǐ jiā duō yuǎn?", "en": "How far is the supermarket from your home?"},
+        {"zh": "不太远，走路五分钟。", "py": "Bú tài yuǎn, zǒulù wǔ fēnzhōng.", "en": "Not very far, five minutes on foot."}
+      ]
+    },
+    {
+      "h2": "离 or 从?",
+      "paras": [
+        "English uses \"from\" for both, but Chinese does not. 离 is for the gap between two places, with nothing moving. 从 is the starting point of a trip, and usually goes with 到: 从 A 到 B (from A to B). So 我家从学校很远 is wrong; say 我家离学校很远.",
+        "The other common mistake is English word order. In English \"far\" comes before \"from school\", but in Chinese 离 and the place come first and 远 or 近 goes at the end: 我家离学校很远, not 我家很远离学校."
+      ],
+      "examples": [
+        {"zh": "我们学校离地铁站很近。", "py": "Wǒmen xuéxiào lí dìtiězhàn hěn jìn.", "en": "Our school is very close to the underground station."},
+        {"zh": "从我家到学校要二十分钟。", "py": "Cóng wǒ jiā dào xuéxiào yào èrshí fēnzhōng.", "en": "It takes twenty minutes from my home to school."},
+        {"zh": "他家离这儿很远，所以他每天开车上班。", "py": "Tā jiā lí zhèr hěn yuǎn, suǒyǐ tā měi tiān kāichē shàngbān.", "en": "He lives a long way from here, so he drives to work every day."}
+      ]
+    },
+    {
+      "h2": "Counting down with 离…还有",
+      "paras": [
+        "离 can also measure time: how long it is until something happens. The pattern is 离 + event + 还有 + amount of time. Here too, use 离, not 从."
+      ],
+      "examples": [
+        {"zh": "离上课还有十分钟。", "py": "Lí shàngkè hái yǒu shí fēnzhōng.", "en": "There are ten minutes until class starts."},
+        {"zh": "离考试还有三天。", "py": "Lí kǎoshì hái yǒu sān tiān.", "en": "The exam is in three days."},
+        {"zh": "现在离下班还有一个小时。", "py": "Xiànzài lí xiàbān hái yǒu yí ge xiǎoshí.", "en": "There's still an hour to go before we finish work."}
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "离 (lí) Worksheet: HSK 2 Printable with Answers",
+    "description": "A free printable 离 worksheet for HSK 2: 18 exercises (choose 离 or 从, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 离 or 从",
+        "instructions": "Write 离 or 从 in each gap. The English tells you what the sentence means.",
+        "options": ["离", "从"],
+        "items": [
+          {"zh": "我家＿＿学校很近。", "en": "My home is very close to school.", "answer": "离"},
+          {"zh": "我＿＿中国来。", "en": "I come from China.", "answer": "从"},
+          {"zh": "机场＿＿这儿很远。", "en": "The airport is a long way from here.", "answer": "离"},
+          {"zh": "＿＿这儿到车站要十分钟。", "en": "It takes ten minutes from here to the station.", "answer": "从"},
+          {"zh": "你家＿＿公司远吗？", "en": "Is your home far from your office?", "answer": "离"},
+          {"zh": "＿＿考试还有两天。", "en": "The exam is in two days.", "answer": "离"},
+          {"zh": "超市＿＿这儿不远。", "en": "The supermarket isn't far from here.", "answer": "离"},
+          {"zh": "你是＿＿哪儿来的？", "en": "Where are you from?", "answer": "从"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence with 离.",
+        "items": [
+          {"words": ["学校", "我家", "很", "离", "近"], "en": "My home is very close to school.", "answers": ["我家离学校很近。", "学校离我家很近。"]},
+          {"words": ["这儿", "远", "机场", "离", "吗"], "en": "Is the airport far from here?", "answers": ["机场离这儿远吗？", "这儿离机场远吗？"]},
+          {"words": ["还有", "上课", "五分钟", "离"], "en": "There are five minutes until class starts.", "answers": ["离上课还有五分钟。"]},
+          {"words": ["离", "多远", "你家", "车站"], "en": "How far is the station from your home?", "answers": ["车站离你家多远？", "你家离车站多远？"]},
+          {"words": ["不太", "公司", "远", "离", "他家"], "en": "His home isn't very far from his office.", "answers": ["他家离公司不太远。", "公司离他家不太远。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "我家从学校很远。", "en": "My home is a long way from school.", "answers": ["我家离学校很远。"]},
+          {"zh": "超市很近离我家。", "en": "The supermarket is very close to my home.", "answers": ["超市离我家很近。"]},
+          {"zh": "医院离这儿是不远。", "en": "The hospital isn't far from here.", "answers": ["医院离这儿不远。"]},
+          {"zh": "从考试还有三天。", "en": "The exam is in three days.", "answers": ["离考试还有三天。"]},
+          {"zh": "车站离这儿远不远吗？", "en": "Is the station far from here?", "answers": ["车站离这儿远不远？", "车站离这儿远吗？"]}
+        ]
+      }
+    ]
+  }
+}

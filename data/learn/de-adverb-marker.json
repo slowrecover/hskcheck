@@ -1,0 +1,117 @@
+{
+  "slug": "de-adverb-marker",
+  "level": 2,
+  "published": "2026-10-18",
+  "title": "地 (de) in Chinese: HSK 2 Grammar with Examples",
+  "description": "How to use 地 (de) in Chinese to say how someone does something: the word order, 慢慢地 and 好好地, 的 vs 地 vs 得, and HSK 2 example sentences.",
+  "zh": "地",
+  "h1": "How to Use 地 (de) to Say How Something Is Done",
+  "lede": "地 (de) turns a word like 高兴 (happy) into something like \"happily\". It goes between the description and the verb, so it tells you how someone does something. It is an HSK 2 grammar point and one of the three particles pronounced de.",
+  "sections": [
+    {
+      "h2": "The pattern",
+      "paras": [
+        "Subject + description + 地 + verb.",
+        "The description comes before the verb, not after it as in English: \"he said happily\" is 他高兴地说, literally \"he happy 地 said\". 地 is pronounced with a light, neutral tone. If the description is negative, 不 stays inside it: 不高兴地 means \"unhappily\"."
+      ],
+      "examples": [
+        {"zh": "他高兴地说：“我明天来！”", "py": "Tā gāoxìng de shuō: “Wǒ míngtiān lái!”", "en": "He said happily, \"I'll come tomorrow!\""},
+        {"zh": "孩子们快乐地唱歌。", "py": "Háizimen kuàilè de chàng gē.", "en": "The children are singing happily."},
+        {"zh": "她不高兴地走了。", "py": "Tā bù gāoxìng de zǒu le.", "en": "She left unhappily."}
+      ]
+    },
+    {
+      "h2": "Doubled words: 慢慢地, 好好地",
+      "paras": [
+        "A one-syllable adjective is often doubled before 地: 慢慢地 (slowly), 好好地 (properly, well), 早早地 (nice and early). Doubling makes the description sound more vivid.",
+        "With doubled words, 地 can usually be left out. 你慢慢吃 and 你慢慢地吃 are both correct."
+      ],
+      "examples": [
+        {"zh": "请慢慢地说。", "py": "Qǐng mànmàn de shuō.", "en": "Please speak slowly."},
+        {"zh": "你好好地休息吧。", "py": "Nǐ hǎohǎo de xiūxi ba.", "en": "Get some proper rest."},
+        {"zh": "她早早地起床了。", "py": "Tā zǎozǎo de qǐchuáng le.", "en": "She got up nice and early."},
+        {"zh": "你慢慢吃。", "py": "Nǐ mànmàn chī.", "en": "Take your time eating."}
+      ]
+    },
+    {
+      "h2": "One-syllable words and \"one by one\"",
+      "paras": [
+        "A single one-syllable adjective does not normally take 地. Put it straight before the verb (快走, 慢走), or add 很 and then use 地: 很快地. 快地 on its own sounds wrong.",
+        "地 also follows counting phrases such as 一个一个地 (one by one) and 一个字一个字地 (one character at a time)."
+      ],
+      "examples": [
+        {"zh": "你快走吧。", "py": "Nǐ kuài zǒu ba.", "en": "Hurry up and go."},
+        {"zh": "他很快地吃完了饭。", "py": "Tā hěn kuài de chīwán le fàn.", "en": "He quickly finished his meal."},
+        {"zh": "请大家一个一个地进来。", "py": "Qǐng dàjiā yí ge yí ge de jìnlái.", "en": "Please come in one by one, everyone."},
+        {"zh": "他一个字一个字地写。", "py": "Tā yí ge zì yí ge zì de xiě.", "en": "He writes one character at a time."}
+      ]
+    },
+    {
+      "h2": "的, 地 or 得?",
+      "paras": [
+        "All three are pronounced de, so learners mix them up in writing. 的 comes before a noun (快乐的孩子, a happy child). 地 comes before a verb (快乐地笑, laugh happily). 得 comes after a verb and adds a comment on how the action is done (跑得很快, runs fast).",
+        "A simple test: look at the word straight after the gap. If it is a noun, write 的; if it is a verb, write 地. If the gap comes right after the verb, write 得."
+      ],
+      "examples": [
+        {"zh": "他是一个快乐的孩子。", "py": "Tā shì yí ge kuàilè de háizi.", "en": "He is a happy child."},
+        {"zh": "他快乐地笑了。", "py": "Tā kuàilè de xiào le.", "en": "He laughed happily."},
+        {"zh": "他跑得很快。", "py": "Tā pǎo de hěn kuài.", "en": "He runs fast."}
+      ]
+    },
+    {
+      "h2": "The most common mistakes",
+      "paras": [
+        "The most common mistake is writing 的 instead of 地: 她高兴的说 should be 她高兴地说. You will see 的 used this way in casual writing online, but in textbooks and in the HSK exam the verb needs 地.",
+        "The other mistake is putting the description after the verb, as in English. 孩子们唱歌快乐地 is wrong; say 孩子们快乐地唱歌. The description with 地 always comes before the verb."
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "地 (de) Worksheet: HSK 2 Printable with Answers",
+    "description": "A free printable 地 (de) worksheet for HSK 2: 20 exercises (choose 的, 地 or 得, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 的, 地 or 得",
+        "instructions": "Write 的, 地 or 得 in each gap. The English tells you what the sentence means.",
+        "options": ["的", "地", "得"],
+        "items": [
+          {"zh": "她高兴＿＿说：“谢谢你！”", "en": "She said happily, \"Thank you!\"", "answer": "地"},
+          {"zh": "这是一个很好＿＿问题。", "en": "This is a very good question.", "answer": "的"},
+          {"zh": "我哥哥跑＿＿很快。", "en": "My older brother runs fast.", "answer": "得"},
+          {"zh": "你慢慢＿＿走，别跑。", "en": "Walk slowly, don't run.", "answer": "地"},
+          {"zh": "我妈妈做＿＿菜很好吃。", "en": "The food my mum cooks is delicious.", "answer": "的"},
+          {"zh": "她说汉语说＿＿很好。", "en": "She speaks Chinese very well.", "answer": "得"},
+          {"zh": "他们非常快乐＿＿玩了一天。", "en": "They played very happily all day.", "answer": "地"},
+          {"zh": "妈妈很快＿＿做好了饭。", "en": "Mum quickly made the meal.", "answer": "地"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence with 地.",
+        "items": [
+          {"words": ["慢慢地", "回家", "我们", "走"], "en": "We're walking home slowly.", "answers": ["我们慢慢地走回家。"]},
+          {"words": ["笑了", "高兴地", "大家", "都"], "en": "Everyone laughed happily.", "answers": ["大家都高兴地笑了。"]},
+          {"words": ["学习", "好好地", "我们", "要", "汉语"], "en": "We should study Chinese properly.", "answers": ["我们要好好地学习汉语。"]},
+          {"words": ["一天一天地", "孩子们", "长大了"], "en": "Day by day, the children grew up.", "answers": ["孩子们一天一天地长大了。"]},
+          {"words": ["舒服地", "看电视", "他", "坐在", "椅子上"], "en": "He sat comfortably in the chair watching TV.", "answers": ["他舒服地坐在椅子上看电视。", "他坐在椅子上舒服地看电视。"]},
+          {"words": ["很快地", "跑了", "他", "过来"], "en": "He quickly ran over.", "answers": ["他很快地跑了过来。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "她高兴的说：“我很好！”", "en": "She said happily, \"I'm fine!\"", "answers": ["她高兴地说：“我很好！”"]},
+          {"zh": "孩子们唱歌快乐地。", "en": "The children are singing happily.", "answers": ["孩子们快乐地唱歌。"]},
+          {"zh": "他跑地很快。", "en": "He runs fast.", "answers": ["他跑得很快。"]},
+          {"zh": "这是一个很快乐地孩子。", "en": "This is a very happy child.", "answers": ["这是一个很快乐的孩子。"]},
+          {"zh": "请慢慢的说。", "en": "Please speak slowly.", "answers": ["请慢慢地说。", "请慢慢说。"]},
+          {"zh": "他快地跑过来了。", "en": "He quickly ran over.", "answers": ["他很快地跑过来了。", "他很快跑过来了。"]}
+        ]
+      }
+    ]
+  }
+}

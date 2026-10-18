@@ -1,0 +1,119 @@
+{
+  "slug": "zhe-particle",
+  "level": 2,
+  "published": "2026-10-18",
+  "title": "着 (zhe) in Chinese: HSK 2 Grammar with Examples",
+  "description": "How to use 着 (zhe) in Chinese for ongoing states: verb + 着, doing two things at once, describing a scene, 着 vs 在, negatives and HSK 2 examples.",
+  "zh": "着",
+  "h1": "How to Use 着 (zhe) for Ongoing States",
+  "lede": "Put 着 (zhe) straight after a verb to show that a state is continuing: the door is open, she is holding a phone, he is wearing a red top. It is a key grammar point of HSK 2.",
+  "sections": [
+    {
+      "h2": "Verb + 着: a state that lasts",
+      "paras": [
+        "Subject + verb + 着 (+ object).",
+        "着 goes right after the verb, before the object. It does not describe the action itself but the state it leaves behind and that is still there: 开 is to open or switch on, and 开着 means it is open or on. You will often hear 呢 at the end of the sentence as well."
+      ],
+      "examples": [
+        {"zh": "门开着。", "py": "Mén kāi zhe.", "en": "The door is open."},
+        {"zh": "电视还开着呢。", "py": "Diànshì hái kāi zhe ne.", "en": "The TV is still on."},
+        {"zh": "她手里拿着一个手机。", "py": "Tā shǒu li ná zhe yí ge shǒujī.", "en": "She's holding a phone."},
+        {"zh": "他穿着一件红色的衣服。", "py": "Tā chuān zhe yí jiàn hóngsè de yīfu.", "en": "He's wearing a red top."}
+      ]
+    },
+    {
+      "h2": "Doing something in a certain way",
+      "paras": [
+        "Verb 1 + 着 + verb 2. The first verb with 着 tells you how or in what state the main action is done: smiling while you speak, sitting while you watch, going on foot. The main action is the second verb, so 着 goes on the first one."
+      ],
+      "examples": [
+        {"zh": "他笑着说：“没关系。”", "py": "Tā xiào zhe shuō: \"Méi guānxi.\"", "en": "He said with a smile, \"It doesn't matter.\""},
+        {"zh": "奶奶喜欢坐着看电视。", "py": "Nǎinai xǐhuan zuò zhe kàn diànshì.", "en": "Grandma likes to watch TV sitting down."},
+        {"zh": "我们走着去吧，不远。", "py": "Wǒmen zǒu zhe qù ba, bù yuǎn.", "en": "Let's walk there. It isn't far."}
+      ]
+    },
+    {
+      "h2": "Describing a scene",
+      "paras": [
+        "Place + verb + 着 + what is there. This is a common way to say what is somewhere and in what state, a bit like \"there is someone standing at the door\" in English. The place comes first, and the person or thing comes after the verb."
+      ],
+      "examples": [
+        {"zh": "门口站着一个人。", "py": "Ménkǒu zhàn zhe yí ge rén.", "en": "There's someone standing at the door."},
+        {"zh": "教室里坐着很多学生。", "py": "Jiàoshì li zuò zhe hěn duō xuésheng.", "en": "There are lots of students sitting in the classroom."},
+        {"zh": "本子上写着我的名字。", "py": "Běnzi shang xiě zhe wǒ de míngzi.", "en": "My name is written on the notebook."}
+      ]
+    },
+    {
+      "h2": "着 or 在?",
+      "paras": [
+        "在 before a verb says that an action is going on now: 他在穿衣服 means he is getting dressed. 着 after a verb says that the result of the action is still there: 他穿着新衣服 means he has new clothes on. To simply say what someone is doing at the moment, use 在, not 着.",
+        "A few actions, such as rain falling, can take 着 for something that is going on, often with 呢: 外面下着雨呢. Note also that 着 is read zháo in some words, for example 睡着 (shuìzháo, to fall asleep)."
+      ],
+      "examples": [
+        {"zh": "他在穿衣服呢。", "py": "Tā zài chuān yīfu ne.", "en": "He's getting dressed."},
+        {"zh": "他穿着一件新衣服。", "py": "Tā chuān zhe yí jiàn xīn yīfu.", "en": "He's got new clothes on."},
+        {"zh": "外面下着雨呢。", "py": "Wàimiàn xià zhe yǔ ne.", "en": "It's raining outside."}
+      ]
+    },
+    {
+      "h2": "Negatives, questions and common mistakes",
+      "paras": [
+        "To say a state is not there, use 没有 before the verb and keep 着: 电视没有开着. Don't use 不 here: 门不开着 is wrong for \"the door isn't open\". For a question, add 吗 at the end, or ask with 什么.",
+        "The most common mistake is putting 着 in the wrong place. It comes straight after the verb and before the object, so say 他穿着红色的衣服, not 他穿红色的衣服着. With two verbs, 着 goes on the first one: 笑着说, not 笑说着."
+      ],
+      "examples": [
+        {"zh": "电视没有开着。", "py": "Diànshì méiyǒu kāi zhe.", "en": "The TV isn't on."},
+        {"zh": "门开着吗？", "py": "Mén kāi zhe ma?", "en": "Is the door open?"},
+        {"zh": "你手里拿着什么？", "py": "Nǐ shǒu li ná zhe shénme?", "en": "What are you holding?"}
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "着 (zhe) Worksheet: HSK 2 Printable with Answers",
+    "description": "A free printable 着 (zhe) worksheet for HSK 2: 20 exercises (着, 在 or 没有, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 着, 在 or 没有",
+        "instructions": "Write 着, 在 or 没有 in each gap. The English tells you what the sentence means.",
+        "options": ["着", "在", "没有"],
+        "items": [
+          {"zh": "她手里拿＿＿一本书。", "en": "She's holding a book.", "answer": "着"},
+          {"zh": "我＿＿做饭呢，你等一下。", "en": "I'm cooking right now. Hold on a moment.", "answer": "在"},
+          {"zh": "电视＿＿开着。", "en": "The TV isn't on.", "answer": "没有"},
+          {"zh": "他喜欢站＿＿看书。", "en": "He likes to read standing up.", "answer": "着"},
+          {"zh": "你＿＿看什么？", "en": "What are you watching?", "answer": "在"},
+          {"zh": "门开＿＿，你进来吧。", "en": "The door's open. Come in.", "answer": "着"},
+          {"zh": "他手里＿＿拿着东西。", "en": "He isn't holding anything.", "answer": "没有"},
+          {"zh": "孩子们＿＿穿衣服呢。", "en": "The children are getting dressed.", "answer": "在"},
+          {"zh": "教室里坐＿＿很多学生。", "en": "There are lots of students sitting in the classroom.", "answer": "着"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["电视", "开着", "还", "呢"], "en": "The TV is still on.", "answers": ["电视还开着呢。"]},
+          {"words": ["穿着", "她", "一件", "红色的", "衣服"], "en": "She's wearing a red top.", "answers": ["她穿着一件红色的衣服。"]},
+          {"words": ["门口", "很多人", "站着"], "en": "There are lots of people standing at the door.", "answers": ["门口站着很多人。"]},
+          {"words": ["坐着", "我们", "吧", "说"], "en": "Let's sit down and talk.", "answers": ["我们坐着说吧。"]},
+          {"words": ["没有", "电视", "开着"], "en": "The TV isn't on.", "answers": ["电视没有开着。"]},
+          {"words": ["走着", "我们", "去", "学校", "吧"], "en": "Let's walk to school.", "answers": ["我们走着去学校吧。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "她穿一件新衣服着。", "en": "She's wearing new clothes.", "answers": ["她穿着一件新衣服。"]},
+          {"zh": "门不开着。", "en": "The door isn't open.", "answers": ["门没有开着。"]},
+          {"zh": "他着拿一个手机。", "en": "He's holding a phone.", "answers": ["他拿着一个手机。"]},
+          {"zh": "爷爷喜欢坐看书着。", "en": "Grandpa likes to read sitting down.", "answers": ["爷爷喜欢坐着看书。"]},
+          {"zh": "他笑说着：“你好！”", "en": "He said \"Hello!\" with a smile.", "answers": ["他笑着说：“你好！”"]}
+        ]
+      }
+    ]
+  }
+}

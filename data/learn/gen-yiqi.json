@@ -1,0 +1,107 @@
+{
+  "slug": "gen-yiqi",
+  "level": 2,
+  "published": "2026-10-18",
+  "title": "跟……一起 (gēn yìqǐ) in Chinese: HSK 2 Grammar with Examples",
+  "description": "How to say \"together with\" in Chinese with 跟……一起: the word order, the most common mistake, negatives, questions and 12 HSK 2 example sentences.",
+  "zh": "跟……一起",
+  "h1": "How to Use 跟……一起 (Together With)",
+  "lede": "To say that you do something with someone, Chinese uses 跟 (gēn) + person + 一起 (yìqǐ) + verb. The key point is that the whole \"with someone\" part comes before the verb, not at the end of the sentence as in English.",
+  "sections": [
+    {
+      "h2": "The pattern",
+      "paras": [
+        "Subject + 跟 + person + 一起 + verb (+ object).",
+        "跟 means \"with\" and introduces the other person. 一起 means \"together\" and comes straight after the person, just before the verb. Time words such as 每天 or 昨天 go at the start of the sentence or right after the subject."
+      ],
+      "examples": [
+        {"zh": "我跟朋友一起去商店。", "py": "Wǒ gēn péngyou yìqǐ qù shāngdiàn.", "en": "I'm going to the shop with a friend."},
+        {"zh": "她每天跟妈妈一起吃早饭。", "py": "Tā měi tiān gēn māma yìqǐ chī zǎofàn.", "en": "She has breakfast with her mum every day."},
+        {"zh": "昨天我跟同学一起看电影了。", "py": "Zuótiān wǒ gēn tóngxué yìqǐ kàn diànyǐng le.", "en": "Yesterday I watched a film with my classmates."}
+      ]
+    },
+    {
+      "h2": "Before the verb, not at the end",
+      "paras": [
+        "The most common mistake is to follow English word order and put \"with my friend\" or \"together\" at the end: 我去商店跟朋友一起 and 我们吃饭一起 are both wrong. In Chinese, 跟 + person + 一起 always comes before the verb.",
+        "Words like 想, 要 and 会 go before 跟, so the order is subject + 想 + 跟 + person + 一起 + verb."
+      ],
+      "examples": [
+        {"zh": "我想跟你一起去。", "py": "Wǒ xiǎng gēn nǐ yìqǐ qù.", "en": "I'd like to go with you."},
+        {"zh": "他跟我们一起坐飞机去中国。", "py": "Tā gēn wǒmen yìqǐ zuò fēijī qù Zhōngguó.", "en": "He's flying to China with us."},
+        {"zh": "我跟朋友一起去饭店吃饭。", "py": "Wǒ gēn péngyou yìqǐ qù fàndiàn chī fàn.", "en": "I'm going out to a restaurant with friends."}
+      ]
+    },
+    {
+      "h2": "一起 on its own, and 和",
+      "paras": [
+        "If the subject already includes everyone, such as 我们 or 你们, you don't need 跟: just put 一起 before the verb. 我们一起去吧 is the natural way to say \"let's go together\".",
+        "和 (hé) can replace 跟 in this pattern with the same meaning; 跟 is a little more common in everyday speech. Note that 我和哥哥 can also simply mean \"my brother and I\"."
+      ],
+      "examples": [
+        {"zh": "我们一起去吧。", "py": "Wǒmen yìqǐ qù ba.", "en": "Let's go together."},
+        {"zh": "我和哥哥一起学习汉语。", "py": "Wǒ hé gēge yìqǐ xuéxí Hànyǔ.", "en": "My older brother and I study Chinese together."}
+      ]
+    },
+    {
+      "h2": "Negatives and questions",
+      "paras": [
+        "To say you don't or didn't do something with someone, put 不 or 没有 before 跟, not before the verb: 我不跟他一起去, not 我跟他一起不去. Note the tones: 不 stays bù before 跟 (first tone), and 一 in 一起 is yì because 起 is third tone.",
+        "To ask who someone is doing something with, put 谁 after 跟. To invite someone, use 想 or 要 with 吗, or end a suggestion with 吧."
+      ],
+      "examples": [
+        {"zh": "我不跟他一起去。", "py": "Wǒ bù gēn tā yìqǐ qù.", "en": "I'm not going with him."},
+        {"zh": "昨天我没有跟他们一起吃饭。", "py": "Zuótiān wǒ méiyǒu gēn tāmen yìqǐ chī fàn.", "en": "I didn't eat with them yesterday."},
+        {"zh": "你跟谁一起去？", "py": "Nǐ gēn shéi yìqǐ qù?", "en": "Who are you going with?"},
+        {"zh": "你想跟我们一起吃饭吗？", "py": "Nǐ xiǎng gēn wǒmen yìqǐ chī fàn ma?", "en": "Would you like to eat with us?"}
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "跟……一起 Worksheet: HSK 2 Printable with Answers",
+    "description": "A free printable 跟……一起 worksheet for HSK 2: 19 exercises (choose 跟, 一起 or 谁, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 跟, 一起 or 谁",
+        "instructions": "Write 跟, 一起 or 谁 in each gap. The English tells you what the sentence means.",
+        "options": ["跟", "一起", "谁"],
+        "items": [
+          {"zh": "我＿＿姐姐一起去医院。", "en": "I'm going to the hospital with my older sister.", "answer": "跟"},
+          {"zh": "我们＿＿去吃饭吧。", "en": "Let's go and eat together.", "answer": "一起"},
+          {"zh": "你跟＿＿一起学习？", "en": "Who do you study with?", "answer": "谁"},
+          {"zh": "她每天跟姐姐＿＿走路去学校。", "en": "She walks to school with her older sister every day.", "answer": "一起"},
+          {"zh": "明天你想＿＿我们一起去看电影吗？", "en": "Would you like to go to the cinema with us tomorrow?", "answer": "跟"},
+          {"zh": "你跟＿＿一起去商店了？", "en": "Who did you go to the shop with?", "answer": "谁"},
+          {"zh": "我不想跟他＿＿玩。", "en": "I don't want to play with him.", "answer": "一起"},
+          {"zh": "爸爸没有＿＿我们一起回家。", "en": "Dad didn't come home with us.", "answer": "跟"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["一起", "我", "跟", "去", "你"], "en": "I'll go with you.", "answers": ["我跟你一起去。"]},
+          {"words": ["哥哥", "一起", "跟", "他", "打篮球"], "en": "He plays basketball with his older brother.", "answers": ["他跟哥哥一起打篮球。"]},
+          {"words": ["不", "他们", "跟", "一起", "我", "去"], "en": "I'm not going with them.", "answers": ["我不跟他们一起去。"]},
+          {"words": ["吃饭", "一起", "我们", "吧"], "en": "Let's eat together.", "answers": ["我们一起吃饭吧。"]},
+          {"words": ["想", "跟", "你", "一起", "我", "学习"], "en": "I'd like to study with you.", "answers": ["我想跟你一起学习。"]},
+          {"words": ["昨天", "朋友", "我", "跟", "一起", "看电影", "了"], "en": "Yesterday I watched a film with a friend.", "answers": ["昨天我跟朋友一起看电影了。", "我昨天跟朋友一起看电影了。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "我去商店跟妈妈一起。", "en": "I'm going to the shop with Mum.", "answers": ["我跟妈妈一起去商店。"]},
+          {"zh": "我们吃饭一起吧。", "en": "Let's eat together.", "answers": ["我们一起吃饭吧。"]},
+          {"zh": "我跟他们一起不去。", "en": "I'm not going with them.", "answers": ["我不跟他们一起去。"]},
+          {"zh": "我妈妈一起去医院。", "en": "I'm going to the hospital with my mum.", "answers": ["我跟妈妈一起去医院。", "我和妈妈一起去医院。"]},
+          {"zh": "你想跟我们吃饭一起吗？", "en": "Would you like to eat with us?", "answers": ["你想跟我们一起吃饭吗？"]}
+        ]
+      }
+    ]
+  }
+}

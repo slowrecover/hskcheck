@@ -1,0 +1,123 @@
+{
+  "slug": "cong-dao",
+  "level": 2,
+  "published": "2026-10-18",
+  "title": "从……到 (cóng... dào) in Chinese: HSK 2 Grammar with Examples",
+  "description": "How to say \"from... to\" with 从……到 (cóng... dào): times and places, word order before the verb, 从 vs 离, questions and 17 HSK 2 examples.",
+  "zh": "从……到",
+  "h1": "How to Say \"From... To\" with 从……到",
+  "lede": "从……到…… (cóng... dào...) means \"from... to\" or \"from... until\". You use it for times (from nine to five), days and months, and places (from my home to school). It is one of the key grammar points of HSK 2.",
+  "sections": [
+    {
+      "h2": "The pattern: from A to B",
+      "paras": [
+        "从 + starting point + 到 + end point.",
+        "从 (cóng) means \"from\" and 到 (dào) means \"to\" or \"until\". The two points can be times, days, months or places. With times, the whole 从……到…… phrase goes before the verb, like other time words in Chinese. It can also stand on its own after the subject, as in 电影从七点到九点 (the film is on from seven to nine)."
+      ],
+      "examples": [
+        {"zh": "我从九点到五点工作。", "py": "Wǒ cóng jiǔ diǎn dào wǔ diǎn gōngzuò.", "en": "I work from nine to five."},
+        {"zh": "我们从星期一到星期五上课。", "py": "Wǒmen cóng xīngqīyī dào xīngqīwǔ shàngkè.", "en": "We have classes from Monday to Friday."},
+        {"zh": "电影从七点到九点。", "py": "Diànyǐng cóng qī diǎn dào jiǔ diǎn.", "en": "The film is on from seven to nine."}
+      ]
+    },
+    {
+      "h2": "From one place to another",
+      "paras": [
+        "With places, 从 A 到 B usually starts the sentence, and what follows says how far it is (远, 不远) or how long it takes (要 + time). Put how you travel, such as 坐地铁 or 坐出租车, before 要.",
+        "Don't mix it up with 离 (lí). 离 says how far one place is from another and needs no 从 or 到: 我家离学校很远. A common mistake is 我家从学校很远, which uses 从 where 离 is needed."
+      ],
+      "examples": [
+        {"zh": "从我家到学校要二十分钟。", "py": "Cóng wǒ jiā dào xuéxiào yào èrshí fēnzhōng.", "en": "It takes twenty minutes to get from my home to school."},
+        {"zh": "从这儿到那儿坐地铁要半个小时。", "py": "Cóng zhèr dào nàr zuò dìtiě yào bàn ge xiǎoshí.", "en": "It's half an hour from here to there by metro."},
+        {"zh": "从医院到我家不远。", "py": "Cóng yīyuàn dào wǒ jiā bù yuǎn.", "en": "It isn't far from the hospital to my home."},
+        {"zh": "我家离学校很远。", "py": "Wǒ jiā lí xuéxiào hěn yuǎn.", "en": "My home is a long way from school."}
+      ]
+    },
+    {
+      "h2": "Before the verb, not after",
+      "paras": [
+        "In English, \"from nine to five\" comes at the end: I work from nine to five. In Chinese, 从……到…… comes before the verb: 我从九点到五点工作, not 我工作从九点到五点. This is the most common mistake with the pattern.",
+        "The phrase can come after the subject or at the very start of the sentence. 都 is often added after it to stress \"the whole time\", as in the common phrase 从早到晚 (from morning till night)."
+      ],
+      "examples": [
+        {"zh": "我从下午两点到四点有课。", "py": "Wǒ cóng xiàwǔ liǎng diǎn dào sì diǎn yǒu kè.", "en": "I have a class from two to four in the afternoon."},
+        {"zh": "这个星期我从星期一到星期四都很忙。", "py": "Zhège xīngqī wǒ cóng xīngqīyī dào xīngqīsì dōu hěn máng.", "en": "This week I'm busy every day from Monday to Thursday."},
+        {"zh": "妈妈从早到晚都很忙。", "py": "Māma cóng zǎo dào wǎn dōu hěn máng.", "en": "Mum is busy from morning till night."}
+      ]
+    },
+    {
+      "h2": "Questions and negatives",
+      "paras": [
+        "To ask a question, put a question word inside the pattern (从几点到几点) or add 吗 at the end. To ask how long a journey takes, use 要多长时间.",
+        "To say that something does not happen during that time, put 不 after the 从……到…… phrase, right before the verb."
+      ],
+      "examples": [
+        {"zh": "你从几点到几点上课？", "py": "Nǐ cóng jǐ diǎn dào jǐ diǎn shàngkè?", "en": "What time do your classes start and finish?"},
+        {"zh": "从这儿到火车站远吗？", "py": "Cóng zhèr dào huǒchēzhàn yuǎn ma?", "en": "Is it far from here to the train station?"},
+        {"zh": "从这儿到机场坐出租车要多长时间？", "py": "Cóng zhèr dào jīchǎng zuò chūzūchē yào duō cháng shíjiān?", "en": "How long does it take to get from here to the airport by taxi?"},
+        {"zh": "我从八点到九点不在家。", "py": "Wǒ cóng bā diǎn dào jiǔ diǎn bú zài jiā.", "en": "I'm not at home from eight to nine."}
+      ]
+    },
+    {
+      "h2": "从 and 到 on their own",
+      "paras": [
+        "从 can be used without 到: 从哪儿来 (come from where), 从明天开始 (starting from tomorrow). 到 can also follow a verb to mean \"to\" a place or \"until\" a time: 走到学校 (walk to school), 工作到十点 (work until ten).",
+        "This verb + 到 is the one case where 到 comes after the verb, and it can be combined with 从: 我从九点工作到五点 means the same as 我从九点到五点工作. But 从 itself never comes after the verb."
+      ],
+      "examples": [
+        {"zh": "你是从哪儿来的？", "py": "Nǐ shì cóng nǎr lái de?", "en": "Where are you from?"},
+        {"zh": "从明天开始，我不喝咖啡了。", "py": "Cóng míngtiān kāishǐ, wǒ bù hē kāfēi le.", "en": "Starting tomorrow, I'm not drinking coffee any more."},
+        {"zh": "我每天从家里走到学校。", "py": "Wǒ měi tiān cóng jiā li zǒudào xuéxiào.", "en": "I walk from home to school every day."},
+        {"zh": "昨天我工作到晚上十点。", "py": "Zuótiān wǒ gōngzuò dào wǎnshang shí diǎn.", "en": "Yesterday I worked until ten in the evening."}
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "从……到 Worksheet: HSK 2 Printable with Answers",
+    "description": "A free printable 从……到 worksheet for HSK 2: 20 exercises (choose 从 or 到, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 从 or 到",
+        "instructions": "Write 从 or 到 in each gap. The English tells you what the sentence means.",
+        "options": ["从", "到"],
+        "items": [
+          {"zh": "我从早上八点工作＿＿下午四点。", "en": "I work from eight in the morning until four in the afternoon.", "answer": "到"},
+          {"zh": "从我家＿＿学校要十分钟。", "en": "It takes ten minutes to get from my home to school.", "answer": "到"},
+          {"zh": "他是＿＿哪儿来的？", "en": "Where is he from?", "answer": "从"},
+          {"zh": "我们的课从八点＿＿十点。", "en": "Our class is from eight to ten.", "answer": "到"},
+          {"zh": "我＿＿星期一到星期五都在学校吃午饭。", "en": "From Monday to Friday I have lunch at school.", "answer": "从"},
+          {"zh": "我们从这儿走＿＿火车站吧。", "en": "Let's walk from here to the train station.", "answer": "到"},
+          {"zh": "今天我要工作＿＿晚上十点。", "en": "Today I have to work until ten in the evening.", "answer": "到"},
+          {"zh": "＿＿明天开始，我每天早上跑步。", "en": "Starting tomorrow, I'm going running every morning.", "answer": "从"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["到", "从", "医院", "要", "我家", "半个小时"], "en": "It takes half an hour to get from my home to the hospital.", "answers": ["从我家到医院要半个小时。"]},
+          {"words": ["到", "他", "几点", "从", "几点", "工作"], "en": "What time does he start and finish work?", "answers": ["他从几点到几点工作？"]},
+          {"words": ["从", "到", "远", "吗", "你家", "学校"], "en": "Is it far from your home to school?", "answers": ["从你家到学校远吗？"]},
+          {"words": ["爸爸", "从早到晚", "都", "在", "工作"], "en": "Dad is working from morning till night.", "answers": ["爸爸从早到晚都在工作。"]},
+          {"words": ["你们", "从", "来", "是", "哪个国家", "的"], "en": "Which country are you from? (talking to more than one person)", "answers": ["你们是从哪个国家来的？"]},
+          {"words": ["不", "在家", "我", "从", "下午两点", "到", "四点"], "en": "I'm not at home from two to four in the afternoon.", "answers": ["我从下午两点到四点不在家。", "从下午两点到四点我不在家。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "他工作从早上九点到下午五点。", "en": "He works from nine in the morning to five in the afternoon.", "answers": ["他从早上九点到下午五点工作。", "他从早上九点工作到下午五点。"]},
+          {"zh": "我在中国从一月到三月。", "en": "I'm in China from January to March.", "answers": ["我从一月到三月在中国。", "从一月到三月我在中国。"]},
+          {"zh": "我家从学校很远。", "en": "My home is a long way from school.", "answers": ["我家离学校很远。", "从我家到学校很远。", "我家到学校很远。"]},
+          {"zh": "从这儿火车站要五分钟。", "en": "It takes five minutes to get from here to the train station.", "answers": ["从这儿到火车站要五分钟。"]},
+          {"zh": "他是中国从来的。", "en": "He came from China.", "answers": ["他是从中国来的。"]},
+          {"zh": "我们看电视从八点到十点。", "en": "We watch TV from eight to ten.", "answers": ["我们从八点到十点看电视。", "从八点到十点我们看电视。"]}
+        ]
+      }
+    ]
+  }
+}

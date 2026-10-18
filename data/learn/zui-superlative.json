@@ -1,0 +1,118 @@
+{
+  "slug": "zui-superlative",
+  "level": 2,
+  "published": "2026-10-18",
+  "title": "最 (zuì) in Chinese: \"The Most\" – HSK 2 Grammar with Examples",
+  "description": "How to use 最 (zuì) for \"the most\" and \"-est\" in Chinese: word order, 最 with 喜欢, 最好的朋友, questions, common mistakes and 14 HSK 2 examples.",
+  "zh": "最",
+  "h1": "How to Use 最 (zuì): \"The Most\"",
+  "lede": "最 (zuì) means \"the most\". Put it in front of an adjective or a verb like 喜欢 and you get the English \"-est\" or \"most\": 最高 is \"the tallest\", 最喜欢 is \"like best\". It is a key word of HSK 2.",
+  "sections": [
+    {
+      "h2": "最 + adjective",
+      "paras": [
+        "Subject + 最 + adjective.",
+        "最 always comes directly before the adjective. You don't need 是, and you can't add 很 or 非常: 他最高 is right, 他最很高 is wrong. The group you are comparing within usually comes first, for example 我们家 (in our family) or 三个人里 (of the three people)."
+      ],
+      "examples": [
+        {"zh": "这个最便宜。", "py": "Zhège zuì piányi.", "en": "This one is the cheapest."},
+        {"zh": "我们家我哥哥最高。", "py": "Wǒmen jiā wǒ gēge zuì gāo.", "en": "My older brother is the tallest in our family."},
+        {"zh": "这家饭馆的菜最好吃。", "py": "Zhè jiā fànguǎn de cài zuì hǎochī.", "en": "The food at this restaurant is the best."}
+      ]
+    },
+    {
+      "h2": "最 + 喜欢, 想, 爱",
+      "paras": [
+        "最 also goes before verbs of liking and wanting, such as 喜欢, 想 and 爱. 我最喜欢 means \"I like best\" or \"my favourite is\".",
+        "The most common mistake is to follow English word order and put 最 after the verb: 我喜欢最茶. 最 must come before the verb: 我最喜欢茶."
+      ],
+      "examples": [
+        {"zh": "我最喜欢喝茶。", "py": "Wǒ zuì xǐhuan hē chá.", "en": "Tea is my favourite drink."},
+        {"zh": "你最想去哪儿？", "py": "Nǐ zuì xiǎng qù nǎr?", "en": "Where would you most like to go?"},
+        {"zh": "我最爱吃米饭。", "py": "Wǒ zuì ài chī mǐfàn.", "en": "Rice is what I love eating most."}
+      ]
+    },
+    {
+      "h2": "最 + adjective + 的 + noun",
+      "paras": [
+        "To say \"the best friend\" or \"the biggest room\", use 最 + adjective + 的 + noun. The 的 is needed: say 最好的朋友, not 最好朋友. 最 can never go straight before a noun.",
+        "If you want to use 是, end the sentence with 的: 他是最高的. 他是最高 on its own sounds unfinished; 他最高 is simpler."
+      ],
+      "examples": [
+        {"zh": "她是我最好的朋友。", "py": "Tā shì wǒ zuì hǎo de péngyou.", "en": "She is my best friend."},
+        {"zh": "这是我们学校最大的教室。", "py": "Zhè shì wǒmen xuéxiào zuì dà de jiàoshì.", "en": "This is the biggest classroom in our school."}
+      ]
+    },
+    {
+      "h2": "Questions and negatives",
+      "paras": [
+        "To ask which one is the most, use 谁 (who) or 哪个 (which one) before 最. The answer keeps the same word order: 你们班谁最高？ 我们班王明最高。",
+        "最不 + verb or adjective means \"the least\": 我最不喜欢 is \"what I like least\"."
+      ],
+      "examples": [
+        {"zh": "你们班谁最高？", "py": "Nǐmen bān shéi zuì gāo?", "en": "Who is the tallest in your class?"},
+        {"zh": "这三个里，哪个最好？", "py": "Zhè sān ge lǐ, nǎge zuì hǎo?", "en": "Which of these three is the best?"},
+        {"zh": "我最不喜欢下雨天。", "py": "Wǒ zuì bù xǐhuan xiàyǔtiān.", "en": "Rainy days are what I like least."}
+      ]
+    },
+    {
+      "h2": "Everyday words with 最",
+      "paras": [
+        "Three common words start with 最. 最近 means \"recently\" or \"lately\", 最后 means \"in the end\" or \"last\", and 最好 before a verb means \"you'd better\". Like other time words, 最近 and 最后 go at the start of the sentence or right after the subject."
+      ],
+      "examples": [
+        {"zh": "我最近很忙。", "py": "Wǒ zuìjìn hěn máng.", "en": "I've been very busy lately."},
+        {"zh": "最后我们坐出租车回家了。", "py": "Zuìhòu wǒmen zuò chūzūchē huí jiā le.", "en": "In the end we took a taxi home."},
+        {"zh": "你最好去医院看看。", "py": "Nǐ zuìhǎo qù yīyuàn kànkan.", "en": "You'd better go and see a doctor."}
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "最 (zuì) Worksheet: HSK 2 Printable with Answers",
+    "description": "A free printable 最 (zuì) worksheet for HSK 2: 20 exercises (choose 最 or 很, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 最 or 很",
+        "instructions": "Write 最 or 很 in each gap. The English tells you what the sentence means.",
+        "options": ["最", "很"],
+        "items": [
+          {"zh": "我们三个人里，他＿＿高。", "en": "Of the three of us, he is the tallest.", "answer": "最"},
+          {"zh": "今天天气＿＿好。", "en": "The weather is very nice today.", "answer": "很"},
+          {"zh": "这是我＿＿喜欢的歌。", "en": "This is my favourite song.", "answer": "最"},
+          {"zh": "你们班谁＿＿高？", "en": "Who is the tallest in your class?", "answer": "最"},
+          {"zh": "这件衣服＿＿漂亮，我买了。", "en": "This piece of clothing is very pretty, so I bought it.", "answer": "很"},
+          {"zh": "他是我＿＿好的朋友。", "en": "He is my best friend.", "answer": "最"},
+          {"zh": "她的汉语说得＿＿好。", "en": "She speaks Chinese very well.", "answer": "很"},
+          {"zh": "我们这儿一月＿＿冷。", "en": "Where we live, January is the coldest month.", "answer": "最"},
+          {"zh": "我＿＿忙，没有时间。", "en": "I'm very busy and don't have time.", "answer": "很"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence with 最.",
+        "items": [
+          {"words": ["最", "我", "喝", "喜欢", "茶"], "en": "Tea is my favourite drink.", "answers": ["我最喜欢喝茶。"]},
+          {"words": ["最", "的", "朋友", "好", "他", "是", "我"], "en": "He is my best friend.", "answers": ["他是我最好的朋友。"]},
+          {"words": ["谁", "高", "最", "你们班"], "en": "Who is the tallest in your class?", "answers": ["你们班谁最高？"]},
+          {"words": ["这个", "便宜", "最", "菜"], "en": "This dish is the cheapest.", "answers": ["这个菜最便宜。"]},
+          {"words": ["最", "去", "你", "哪儿", "想"], "en": "Where would you most like to go?", "answers": ["你最想去哪儿？"]},
+          {"words": ["最", "不", "喜欢", "我", "吃", "鱼"], "en": "Fish is the food I like least.", "answers": ["我最不喜欢吃鱼。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "我喜欢最苹果。", "en": "Apples are my favourite.", "answers": ["我最喜欢苹果。"]},
+          {"zh": "这个最很好吃。", "en": "This one is the tastiest.", "answers": ["这个最好吃。"]},
+          {"zh": "她是我最好朋友。", "en": "She is my best friend.", "answers": ["她是我最好的朋友。"]},
+          {"zh": "我们家我妈妈是最忙。", "en": "My mum is the busiest person in our family.", "answers": ["我们家我妈妈最忙。", "我们家我妈妈是最忙的。"]},
+          {"zh": "我觉得这个菜好吃最。", "en": "I think this dish is the tastiest.", "answers": ["我觉得这个菜最好吃。"]}
+        ]
+      }
+    ]
+  }
+}

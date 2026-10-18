@@ -1,0 +1,121 @@
+{
+  "slug": "rang-causative",
+  "level": 2,
+  "published": "2026-10-18",
+  "title": "让 (ràng) in Chinese: HSK 2 Grammar with Examples",
+  "description": "How to use 让 (ràng) to ask, let or make someone do something: the word order, 让我看看, feelings, 不让 and 没有让, common mistakes and HSK 2 examples.",
+  "zh": "让",
+  "h1": "How to Use 让 (ràng): Making or Letting Someone Do Something",
+  "lede": "让 (ràng) is the everyday word for getting someone else to do something. Depending on the context it means ask, tell, let or make, and it always comes before the person, with the action after them.",
+  "sections": [
+    {
+      "h2": "The pattern",
+      "paras": [
+        "A + 让 + B + verb.",
+        "A is the person (or thing) behind the action, B is the person who does it. The person comes straight after 让, and the action comes after the person. When the speaker is a teacher, a doctor or a parent, 让 usually means tell or ask someone to do something."
+      ],
+      "examples": [
+        {"zh": "老师让我读这本书。", "py": "Lǎoshī ràng wǒ dú zhè běn shū.", "en": "The teacher asked me to read this book."},
+        {"zh": "医生让他多休息。", "py": "Yīshēng ràng tā duō xiūxi.", "en": "The doctor told him to get plenty of rest."},
+        {"zh": "朋友让我帮他找工作。", "py": "Péngyou ràng wǒ bāng tā zhǎo gōngzuò.", "en": "My friend asked me to help him find a job."},
+        {"zh": "我让他明天给我打电话。", "py": "Wǒ ràng tā míngtiān gěi wǒ dǎ diànhuà.", "en": "I asked him to call me tomorrow."}
+      ]
+    },
+    {
+      "h2": "Letting someone do something",
+      "paras": [
+        "让 also means let or allow. Without a subject, 让 + person + verb is a request or an offer: 让我看看 is the normal way to say let me have a look, and 让我来吧 offers to do something for someone."
+      ],
+      "examples": [
+        {"zh": "让他进来吧。", "py": "Ràng tā jìnlai ba.", "en": "Let him come in."},
+        {"zh": "让我看看。", "py": "Ràng wǒ kànkan.", "en": "Let me have a look."},
+        {"zh": "让我想想。", "py": "Ràng wǒ xiǎngxiang.", "en": "Let me think."},
+        {"zh": "让我来吧。", "py": "Ràng wǒ lái ba.", "en": "Let me do it."}
+      ]
+    },
+    {
+      "h2": "Making someone feel something",
+      "paras": [
+        "After the person, 让 can be followed by an adjective or a feeling instead of an action. Then it means make: something makes someone happy, tired or not want to do something. The first part is often a thing or an event, not a person."
+      ],
+      "examples": [
+        {"zh": "这件事让我很高兴。", "py": "Zhè jiàn shì ràng wǒ hěn gāoxìng.", "en": "This made me very happy."},
+        {"zh": "考试让我很累。", "py": "Kǎoshì ràng wǒ hěn lèi.", "en": "Exams make me really tired."},
+        {"zh": "这么冷的天气让我不想出门。", "py": "Zhème lěng de tiānqì ràng wǒ bù xiǎng chūmén.", "en": "Cold weather like this makes me want to stay in."}
+      ]
+    },
+    {
+      "h2": "Negatives and questions",
+      "paras": [
+        "To say someone won't let you do something, put 不 before 让: 不让. For the past, use 没有让. If someone told you not to do something, the negative goes after the person instead, with 不要 or 别: 老师让我们不要说话 means the teacher told us not to talk.",
+        "For a question, add 吗 at the end, or use 让不让."
+      ],
+      "examples": [
+        {"zh": "爸爸不让我看电视。", "py": "Bàba bú ràng wǒ kàn diànshì.", "en": "Dad won't let me watch TV."},
+        {"zh": "妈妈没有让我去。", "py": "Māma méiyǒu ràng wǒ qù.", "en": "Mum didn't let me go."},
+        {"zh": "老师让我们不要说话。", "py": "Lǎoshī ràng wǒmen búyào shuōhuà.", "en": "The teacher told us not to talk."},
+        {"zh": "你妈妈让你去吗？", "py": "Nǐ māma ràng nǐ qù ma?", "en": "Is your mum letting you go?"},
+        {"zh": "你妈妈让不让你去？", "py": "Nǐ māma ràng bu ràng nǐ qù?", "en": "Is your mum going to let you go or not?"}
+      ]
+    },
+    {
+      "h2": "Common mistakes",
+      "paras": [
+        "The most common mistake is to translate make with 做. 做 means to do or make a thing, such as food or homework. To make someone feel or do something, use 让: 他让我很高兴, not 他做我很高兴.",
+        "Also, 了 does not go straight after 让. Put it after the second verb or at the end of the sentence."
+      ],
+      "examples": [
+        {"zh": "他让我很高兴。", "py": "Tā ràng wǒ hěn gāoxìng.", "en": "He made me very happy."},
+        {"zh": "他让我们等了一个小时。", "py": "Tā ràng wǒmen děng le yí ge xiǎoshí.", "en": "He kept us waiting for an hour."}
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "让 (ràng) Worksheet: HSK 2 Printable with Answers",
+    "description": "A free printable 让 (ràng) worksheet for HSK 2: 20 exercises (choose 让, 不让 or 没有让, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 让, 不让 or 没有让",
+        "instructions": "Write 让, 不让 or 没有让 in each gap. The English tells you what the sentence means.",
+        "options": ["让", "不让", "没有让"],
+        "items": [
+          {"zh": "医生＿＿他多喝水。", "en": "The doctor told him to drink plenty of water.", "answer": "让"},
+          {"zh": "爸爸＿＿我一个人出去。", "en": "Dad doesn't let me go out on my own.", "answer": "不让"},
+          {"zh": "昨天妈妈＿＿我去买菜。", "en": "Yesterday Mum didn't ask me to go and buy food.", "answer": "没有让"},
+          {"zh": "这件事＿＿我很不高兴。", "en": "This made me very unhappy.", "answer": "让"},
+          {"zh": "妈妈＿＿我晚上喝咖啡。", "en": "Mum doesn't let me drink coffee in the evening.", "answer": "不让"},
+          {"zh": "＿＿我想想。", "en": "Let me think.", "answer": "让"},
+          {"zh": "他＿＿我告诉你这件事。", "en": "He didn't ask me to tell you about this.", "answer": "没有让"},
+          {"zh": "天气太冷了，妈妈＿＿孩子出去玩。", "en": "It's too cold, so Mum won't let the children go out to play.", "answer": "不让"},
+          {"zh": "我＿＿他明天来我家。", "en": "I asked him to come to my place tomorrow.", "answer": "让"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence with 让.",
+        "items": [
+          {"words": ["让", "我", "老师", "读", "这本书"], "en": "The teacher asked me to read this book.", "answers": ["老师让我读这本书。"]},
+          {"words": ["不让", "电视", "我", "看", "爸爸"], "en": "Dad doesn't let me watch TV.", "answers": ["爸爸不让我看电视。"]},
+          {"words": ["让", "很累", "考试", "我"], "en": "Exams make me really tired.", "answers": ["考试让我很累。"]},
+          {"words": ["吧", "让", "进来", "他"], "en": "Let him come in.", "answers": ["让他进来吧。"]},
+          {"words": ["没有", "我", "让", "去", "妈妈"], "en": "Mum didn't let me go.", "answers": ["妈妈没有让我去。"]},
+          {"words": ["不要", "我们", "说话", "让", "老师"], "en": "The teacher told us not to talk.", "answers": ["老师让我们不要说话。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "他做我很高兴。", "en": "He made me very happy.", "answers": ["他让我很高兴。"]},
+          {"zh": "他让了我们等一个小时。", "en": "He kept us waiting for an hour.", "answers": ["他让我们等了一个小时。"]},
+          {"zh": "爸爸让我不看电视。", "en": "Dad doesn't let me watch TV.", "answers": ["爸爸不让我看电视。"]},
+          {"zh": "医生让多休息他。", "en": "The doctor told him to get plenty of rest.", "answers": ["医生让他多休息。"]},
+          {"zh": "我妈妈不让去我。", "en": "My mum won't let me go.", "answers": ["我妈妈不让我去。"]}
+        ]
+      }
+    ]
+  }
+}

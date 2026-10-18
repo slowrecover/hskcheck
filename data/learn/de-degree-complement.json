@@ -1,0 +1,109 @@
+{
+  "slug": "de-degree-complement",
+  "level": 2,
+  "published": "2026-10-18",
+  "title": "得 (de) in Chinese: HSK 2 Grammar with Examples",
+  "description": "How to use 得 (de) to say how well someone does something: verb + 得 + adjective, sentences with an object, negatives, questions and 得 vs 的, with HSK 2 examples.",
+  "zh": "得",
+  "h1": "How to Use 得 (de) to Describe How Someone Does Something",
+  "lede": "得 (de) comes straight after a verb and introduces a description of how the action is done: well, badly, fast, slowly, early or late. 他说得很好 means \"he speaks well\". It is a key grammar point of HSK 2.",
+  "sections": [
+    {
+      "h2": "The pattern",
+      "paras": [
+        "Subject + verb + 得 + 很 + adjective.",
+        "Put 得 directly after the verb, then the adjective that describes the action. As with adjectives on their own, the adjective usually takes 很 or another word such as 非常 or 太……了. Without one it can sound like a comparison: 他跑得快 suggests he runs faster than someone else. 得 is pronounced with a light, neutral tone."
+      ],
+      "examples": [
+        {"zh": "他说得很好。", "py": "Tā shuō de hěn hǎo.", "en": "He speaks very well."},
+        {"zh": "她跑得很快。", "py": "Tā pǎo de hěn kuài.", "en": "She runs fast."},
+        {"zh": "你今天来得很早。", "py": "Nǐ jīntiān lái de hěn zǎo.", "en": "You're early today."},
+        {"zh": "我昨天睡得很晚。", "py": "Wǒ zuótiān shuì de hěn wǎn.", "en": "I went to bed late last night."}
+      ]
+    },
+    {
+      "h2": "With an object: say the verb twice",
+      "paras": [
+        "得 must come right after the verb, so there is no room for an object between them. The most common learner mistake is 他说汉语得很好. There are two correct ways to say it: repeat the verb (verb + object + verb + 得 + adjective), or put the object before the verb and drop the first verb.",
+        "Both 他说汉语说得很好 and 他汉语说得很好 are correct and very common."
+      ],
+      "examples": [
+        {"zh": "他说汉语说得很好。", "py": "Tā shuō Hànyǔ shuō de hěn hǎo.", "en": "He speaks Chinese very well."},
+        {"zh": "他汉语说得很好。", "py": "Tā Hànyǔ shuō de hěn hǎo.", "en": "His Chinese is very good."},
+        {"zh": "我妈妈做饭做得非常好吃。", "py": "Wǒ māma zuò fàn zuò de fēicháng hǎochī.", "en": "My mum is a really good cook."},
+        {"zh": "她字写得很漂亮。", "py": "Tā zì xiě de hěn piàoliang.", "en": "She has beautiful handwriting."}
+      ]
+    },
+    {
+      "h2": "Negatives and questions",
+      "paras": [
+        "To say someone doesn't do something well, put 不 after 得, before the adjective: 我唱得不好. Putting 不 before the verb (我不唱得好) is wrong.",
+        "To ask, add 吗 at the end, use adjective + 不 + adjective after 得, or ask 怎么样 (how well?)."
+      ],
+      "examples": [
+        {"zh": "我唱得不好。", "py": "Wǒ chàng de bù hǎo.", "en": "I'm not a good singer."},
+        {"zh": "他跑得不快。", "py": "Tā pǎo de bú kuài.", "en": "He doesn't run fast."},
+        {"zh": "你睡得好吗？", "py": "Nǐ shuì de hǎo ma?", "en": "Did you sleep well?"},
+        {"zh": "她说得快不快？", "py": "Tā shuō de kuài bu kuài?", "en": "Does she speak fast?"},
+        {"zh": "他游泳游得怎么样？", "py": "Tā yóuyǒng yóu de zěnmeyàng?", "en": "How good is he at swimming?"}
+      ]
+    },
+    {
+      "h2": "得 or 的?",
+      "paras": [
+        "得 and 的 sound the same, but they do different jobs. 的 comes before a noun and describes the thing or person. 得 comes after a verb and describes the action. Compare 一个很好的老师 (a very good teacher) with 教得很好 (teaches very well)."
+      ],
+      "examples": [
+        {"zh": "她是一个很好的老师。", "py": "Tā shì yí ge hěn hǎo de lǎoshī.", "en": "She is a very good teacher."},
+        {"zh": "她教得很好。", "py": "Tā jiāo de hěn hǎo.", "en": "She teaches very well."}
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "得 (de) Worksheet: HSK 2 Printable with Answers",
+    "description": "A free printable 得 (de) worksheet for HSK 2: 19 exercises (得 or 的, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 得 or 的",
+        "instructions": "Write 得 or 的 in each gap. The English tells you what the sentence means.",
+        "options": ["得", "的"],
+        "items": [
+          {"zh": "他跑＿＿很快。", "en": "He runs fast.", "answer": "得"},
+          {"zh": "这是我妈妈做＿＿饭。", "en": "This is the food my mum made.", "answer": "的"},
+          {"zh": "她唱歌唱＿＿很好听。", "en": "She sings beautifully.", "answer": "得"},
+          {"zh": "他是一个很好＿＿医生。", "en": "He is a very good doctor.", "answer": "的"},
+          {"zh": "你昨天睡＿＿好吗？", "en": "Did you sleep well last night?", "answer": "得"},
+          {"zh": "我喜欢红色＿＿衣服。", "en": "I like red clothes.", "answer": "的"},
+          {"zh": "他们来＿＿太晚了。", "en": "They came far too late.", "answer": "得"},
+          {"zh": "他汉语说＿＿非常好。", "en": "His Chinese is excellent.", "answer": "得"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence with 得.",
+        "items": [
+          {"words": ["说", "很", "得", "他", "快"], "en": "He speaks fast.", "answers": ["他说得很快。"]},
+          {"words": ["她", "写", "字", "得", "很漂亮"], "en": "She has beautiful handwriting.", "answers": ["她字写得很漂亮。"]},
+          {"words": ["不", "我", "唱", "好", "得"], "en": "I'm not a good singer.", "answers": ["我唱得不好。"]},
+          {"words": ["游", "他", "游泳", "得", "怎么样"], "en": "How good is he at swimming?", "answers": ["他游泳游得怎么样？"]},
+          {"words": ["来", "你", "今天", "得", "很早"], "en": "You're early today.", "answers": ["你今天来得很早。", "今天你来得很早。"]},
+          {"words": ["做", "我爸爸", "做饭", "得", "很好吃"], "en": "My dad is a good cook.", "answers": ["我爸爸做饭做得很好吃。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "他说汉语得很好。", "en": "He speaks Chinese very well.", "answers": ["他说汉语说得很好。", "他汉语说得很好。"]},
+          {"zh": "他不跑得快。", "en": "He doesn't run fast.", "answers": ["他跑得不快。"]},
+          {"zh": "我昨天睡的很晚。", "en": "I went to bed late last night.", "answers": ["我昨天睡得很晚。"]},
+          {"zh": "你唱歌得怎么样？", "en": "How well do you sing?", "answers": ["你唱歌唱得怎么样？", "你歌唱得怎么样？"]},
+          {"zh": "她写字得很漂亮。", "en": "She has beautiful handwriting.", "answers": ["她写字写得很漂亮。", "她字写得很漂亮。"]}
+        ]
+      }
+    ]
+  }
+}

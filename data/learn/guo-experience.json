@@ -1,0 +1,116 @@
+{
+  "slug": "guo-experience",
+  "level": 2,
+  "published": "2026-10-18",
+  "title": "过 (guo) in Chinese: HSK 2 Grammar with Examples",
+  "description": "How to use 过 (guo) to say you have done something before: word order, negatives with 没有, questions, 过 vs 了, and 13 HSK 2 example sentences.",
+  "zh": "过",
+  "h1": "How to Use 过 (guo) for Past Experience",
+  "lede": "过 (guo) goes after a verb to say that you have done something at some time in the past: you have been to China, you have eaten dumplings, you have met someone. It is a key grammar point of HSK 2.",
+  "sections": [
+    {
+      "h2": "The pattern",
+      "paras": [
+        "Subject + verb + 过 + object.",
+        "Put 过 straight after the verb. It is said with a neutral tone (guo). The sentence tells you that this has happened at least once in your life, but not exactly when. In English this is usually \"have done\" or \"have ever done\"."
+      ],
+      "examples": [
+        {"zh": "我去过中国。", "py": "Wǒ qù guo Zhōngguó.", "en": "I've been to China."},
+        {"zh": "我吃过饺子。", "py": "Wǒ chī guo jiǎozi.", "en": "I've had dumplings before."},
+        {"zh": "她学过汉语。", "py": "Tā xué guo Hànyǔ.", "en": "She has studied Chinese."}
+      ]
+    },
+    {
+      "h2": "Negatives: 没有 + verb + 过",
+      "paras": [
+        "To say you have never done something, put 没有 before the verb and keep 过. This is different from 了, which you drop in a negative sentence.",
+        "The most common mistake is to use 不. 我不去过中国 is wrong: 过 is always negated with 没有, never with 不."
+      ],
+      "examples": [
+        {"zh": "我没有去过中国。", "py": "Wǒ méiyǒu qù guo Zhōngguó.", "en": "I've never been to China."},
+        {"zh": "他没有看过这个电影。", "py": "Tā méiyǒu kàn guo zhège diànyǐng.", "en": "He has never seen this film."},
+        {"zh": "我妈妈没有喝过咖啡。", "py": "Wǒ māma méiyǒu hē guo kāfēi.", "en": "My mum has never had coffee."}
+      ]
+    },
+    {
+      "h2": "Asking \"Have you ever...?\"",
+      "paras": [
+        "Add 吗 at the end, or end the question with 没有. To answer yes, repeat the verb with 过, as in 去过. To answer no, say 没有, or 没有 with the verb and 过, as in 没有去过."
+      ],
+      "examples": [
+        {"zh": "你吃过中国菜吗？", "py": "Nǐ chī guo Zhōngguó cài ma?", "en": "Have you ever had Chinese food?"},
+        {"zh": "你坐过飞机没有？", "py": "Nǐ zuò guo fēijī méiyǒu?", "en": "Have you ever been on a plane?"}
+      ]
+    },
+    {
+      "h2": "过 or 了?",
+      "paras": [
+        "了 tells you that one action happened or that something has changed. 过 tells you about an experience. 他去中国了 means he has gone to China and is probably there now. 他去过中国 means he has been there at some point and is not there any more.",
+        "You can add a time word or a number of times to a 过 sentence when you want to say a little more about the experience."
+      ],
+      "examples": [
+        {"zh": "他去中国了。", "py": "Tā qù Zhōngguó le.", "en": "He has gone to China (he's there now)."},
+        {"zh": "他去过中国。", "py": "Tā qù guo Zhōngguó.", "en": "He has been to China (and is back now)."},
+        {"zh": "他去年去过一次中国。", "py": "Tā qùnián qù guo yí cì Zhōngguó.", "en": "He went to China once last year."}
+      ]
+    },
+    {
+      "h2": "过 goes right after the verb",
+      "paras": [
+        "过 never goes at the end after the object. Say 我学过汉语, not 我学汉语过. With verb-object words such as 见面, 过 goes between the two parts: 见过面."
+      ],
+      "examples": [
+        {"zh": "我们见过面。", "py": "Wǒmen jiàn guo miàn.", "en": "We've met before."},
+        {"zh": "我们还没有见过面。", "py": "Wǒmen hái méiyǒu jiàn guo miàn.", "en": "We haven't met yet."}
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "过 (guo) Worksheet: HSK 2 Printable with Answers",
+    "description": "A free printable 过 (guo) worksheet for HSK 2: 20 exercises (过 or 了, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 过 or 了",
+        "instructions": "Write 过 or 了 in each gap. The English tells you what the sentence means.",
+        "options": ["过", "了"],
+        "items": [
+          {"zh": "你吃＿＿饺子吗？", "en": "Have you ever eaten dumplings?", "answer": "过"},
+          {"zh": "我没有去＿＿他家。", "en": "I've never been to his home.", "answer": "过"},
+          {"zh": "下雨＿＿，我们回家吧。", "en": "It's started raining, let's go home.", "answer": "了"},
+          {"zh": "我见＿＿他的妈妈。", "en": "I have met his mum before.", "answer": "过"},
+          {"zh": "他已经睡觉＿＿。", "en": "He has already gone to bed.", "answer": "了"},
+          {"zh": "你看＿＿这个电影没有？", "en": "Have you ever seen this film?", "answer": "过"},
+          {"zh": "天热＿＿。", "en": "It's got hot.", "answer": "了"},
+          {"zh": "我没有坐＿＿飞机。", "en": "I've never been on a plane.", "answer": "过"},
+          {"zh": "我十八岁＿＿。", "en": "I'm eighteen now.", "answer": "了"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence with 过.",
+        "items": [
+          {"words": ["过", "火车", "我", "坐"], "en": "I've been on a train before.", "answers": ["我坐过火车。", "火车我坐过。"]},
+          {"words": ["没有", "他", "汉语", "学", "过"], "en": "He has never studied Chinese.", "answers": ["他没有学过汉语。", "汉语他没有学过。"]},
+          {"words": ["你", "喝", "过", "中国", "茶", "吗"], "en": "Have you ever had Chinese tea?", "answers": ["你喝过中国茶吗？", "中国茶你喝过吗？"]},
+          {"words": ["我们", "过", "这个", "去", "饭馆"], "en": "We've been to this restaurant before.", "answers": ["我们去过这个饭馆。", "这个饭馆我们去过。"]},
+          {"words": ["没有", "我", "过", "这本书", "看"], "en": "I've never read this book.", "answers": ["我没有看过这本书。", "这本书我没有看过。"]},
+          {"words": ["她", "在", "中国", "工作", "过"], "en": "She has worked in China.", "answers": ["她在中国工作过。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "我不去过那个商店。", "en": "I've never been to that shop.", "answers": ["我没有去过那个商店。"]},
+          {"zh": "他没有吃饺子过。", "en": "He has never had dumplings.", "answers": ["他没有吃过饺子。"]},
+          {"zh": "她不喝过咖啡。", "en": "She has never had coffee.", "answers": ["她没有喝过咖啡。"]},
+          {"zh": "我学汉语过。", "en": "I have studied Chinese before.", "answers": ["我学过汉语。"]},
+          {"zh": "她没有来我家。", "en": "She has never been to my home.", "answers": ["她没有来过我家。"]}
+        ]
+      }
+    ]
+  }
+}

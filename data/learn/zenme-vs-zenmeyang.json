@@ -1,0 +1,124 @@
+{
+  "slug": "zenme-vs-zenmeyang",
+  "level": 1,
+  "published": "2026-10-18",
+  "title": "怎么 vs 怎么样 in Chinese: HSK 1 Grammar with Examples",
+  "description": "When to use 怎么 (zěnme) and 怎么样 (zěnmeyàng): \"how to\" before a verb, \"how come\", \"how is it\", \"how about\", common mistakes and HSK 1 examples.",
+  "zh": "怎么 / 怎么样",
+  "h1": "怎么 vs 怎么样: \"How\" and \"How About\"",
+  "lede": "怎么 (zěnme) and 怎么样 (zěnmeyàng) both translate as \"how\", but they sit in different places. 怎么 goes before a verb and asks how to do something, or why something is happening. 怎么样 usually comes at the end and asks what something is like, or what someone thinks of an idea.",
+  "sections": [
+    {
+      "h2": "怎么 + verb: how to do something",
+      "paras": [
+        "怎么 + verb.",
+        "Put 怎么 straight before the verb to ask about the way something is done: how to read a character, how to cook a dish, how you are getting somewhere. In the answer, the method goes in the same place, before the verb: 你们怎么去？ 我们坐飞机去。 There is no 吗 at the end, because 怎么 already makes it a question."
+      ],
+      "examples": [
+        {"zh": "这个字怎么读？", "py": "Zhège zì zěnme dú?", "en": "How do you read this character?"},
+        {"zh": "这个菜怎么做？", "py": "Zhège cài zěnme zuò?", "en": "How do you make this dish?"},
+        {"zh": "你们怎么去？", "py": "Nǐmen zěnme qù?", "en": "How are you getting there?"},
+        {"zh": "我们坐飞机去。", "py": "Wǒmen zuò fēijī qù.", "en": "We're flying."},
+        {"zh": "我不知道怎么说。", "py": "Wǒ bù zhīdào zěnme shuō.", "en": "I don't know how to say it."}
+      ]
+    },
+    {
+      "h2": "怎么 meaning \"how come\"",
+      "paras": [
+        "怎么 can also ask why, when you are surprised or a little annoyed. It is often followed by 不, 没有 or 还: 你怎么不说话？ means \"Why aren't you saying anything?\". It sounds like \"how come\" in English. Later you will meet 为什么, the plain word for \"why\".",
+        "你怎么了？ is a very common question. It means \"What's wrong?\" or \"What happened to you?\" when someone looks ill, sad or upset."
+      ],
+      "examples": [
+        {"zh": "你怎么不说话？", "py": "Nǐ zěnme bù shuōhuà?", "en": "Why aren't you saying anything?"},
+        {"zh": "他今天怎么没有来？", "py": "Tā jīntiān zěnme méiyǒu lái?", "en": "How come he didn't come today?"},
+        {"zh": "你怎么知道？", "py": "Nǐ zěnme zhīdào?", "en": "How did you know?"},
+        {"zh": "你怎么了？", "py": "Nǐ zěnme le?", "en": "What's wrong?"}
+      ]
+    },
+    {
+      "h2": "怎么样: how is it, what is it like",
+      "paras": [
+        "Thing or person + 怎么样？",
+        "Put 怎么样 after the thing you are asking about to ask what it is like or how it is going: a new job, a film, the weather, a teacher. You can also say 你觉得……怎么样？ (What do you think of ...?). Answer with an adjective, usually with 很 or 太: 很好, 很好吃, 太贵了. 你怎么样？ on its own means \"How are you doing?\"."
+      ],
+      "examples": [
+        {"zh": "你的新工作怎么样？", "py": "Nǐ de xīn gōngzuò zěnmeyàng?", "en": "How's your new job?"},
+        {"zh": "这件衣服怎么样？", "py": "Zhè jiàn yīfu zěnmeyàng?", "en": "What do you think of this top?"},
+        {"zh": "太贵了。", "py": "Tài guì le.", "en": "It's too expensive."},
+        {"zh": "你怎么样？", "py": "Nǐ zěnmeyàng?", "en": "How are you doing?"},
+        {"zh": "我很好，你呢？", "py": "Wǒ hěn hǎo, nǐ ne?", "en": "I'm fine, and you?"}
+      ]
+    },
+    {
+      "h2": "……，怎么样？ for suggestions",
+      "paras": [
+        "To make a suggestion, say your idea first and then add 怎么样 at the end, like \"how about it?\" or \"is that OK?\" in English. To agree, say 好的 or 好."
+      ],
+      "examples": [
+        {"zh": "我们三点去，怎么样？", "py": "Wǒmen sān diǎn qù, zěnmeyàng?", "en": "Let's go at three. Is that OK?"},
+        {"zh": "我们坐出租车去医院，怎么样？", "py": "Wǒmen zuò chūzūchē qù yīyuàn, zěnmeyàng?", "en": "How about taking a taxi to the hospital?"},
+        {"zh": "好的，我们三点去。", "py": "Hǎo de, wǒmen sān diǎn qù.", "en": "OK, we'll go at three."}
+      ]
+    },
+    {
+      "h2": "Common mistakes",
+      "paras": [
+        "The most common mistake is to swap the two words. 怎么 cannot end a question about what something is like: say 今天天气怎么样？, not 今天天气怎么？ And 怎么样 cannot mean \"why\": say 你怎么不喝茶？, not 你怎么样不喝茶？ A simple rule: before a verb, use 怎么; at the end of the sentence, use 怎么样.",
+        "Two more mistakes: putting 怎么 after the verb (你去怎么医院 is wrong; say 你怎么去医院), and adding 吗 to a question that already has 怎么 or 怎么样 (你的老师怎么样吗 is wrong)."
+      ],
+      "examples": [
+        {"zh": "今天天气怎么样？", "py": "Jīntiān tiānqì zěnmeyàng?", "en": "What's the weather like today?"},
+        {"zh": "你怎么不喝茶？", "py": "Nǐ zěnme bù hē chá?", "en": "Why aren't you drinking your tea?"},
+        {"zh": "你的老师怎么样？", "py": "Nǐ de lǎoshī zěnmeyàng?", "en": "What's your teacher like?"}
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "怎么 vs 怎么样 Worksheet: HSK 1 Printable with Answers",
+    "description": "A free printable 怎么 vs 怎么样 worksheet for HSK 1: 20 exercises (choose the word, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 怎么 or 怎么样",
+        "instructions": "Write 怎么 or 怎么样 in each gap. The English tells you what the sentence means.",
+        "options": ["怎么", "怎么样"],
+        "items": [
+          {"zh": "明天天气＿＿？", "en": "What will the weather be like tomorrow?", "answer": "怎么样"},
+          {"zh": "你＿＿不吃饭？", "en": "Why aren't you eating?", "answer": "怎么"},
+          {"zh": "你的新老师＿＿？", "en": "What's your new teacher like?", "answer": "怎么样"},
+          {"zh": "她＿＿还不睡觉？", "en": "How come she still isn't going to bed?", "answer": "怎么"},
+          {"zh": "我们明天去商店，＿＿？", "en": "Let's go to the shop tomorrow. How about it?", "answer": "怎么样"},
+          {"zh": "你＿＿知道我的名字？", "en": "How come you know my name?", "answer": "怎么"},
+          {"zh": "这本书＿＿？", "en": "Is this book any good?", "answer": "怎么样"},
+          {"zh": "你今天＿＿不上班？", "en": "Why aren't you at work today?", "answer": "怎么"},
+          {"zh": "你们＿＿都不说话？", "en": "Why is none of you saying anything?", "answer": "怎么"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["学校", "怎么", "你", "去"], "en": "How do you get to school?", "answers": ["你怎么去学校？"]},
+          {"words": ["名字", "你的", "怎么", "写", "中文"], "en": "How do you write your Chinese name?", "answers": ["你的中文名字怎么写？", "怎么写你的中文名字？"]},
+          {"words": ["那个", "怎么样", "饭店", "的", "菜"], "en": "What's the food like at that restaurant?", "answers": ["那个饭店的菜怎么样？"]},
+          {"words": ["睡觉", "怎么", "你", "没有", "还"], "en": "How come you haven't gone to bed yet?", "answers": ["你怎么还没有睡觉？"]},
+          {"words": ["我们", "怎么样", "晚上", "去", "中国菜", "吃"], "en": "Let's go and have Chinese food this evening. How about it?", "answers": ["我们晚上去吃中国菜，怎么样？", "晚上我们去吃中国菜，怎么样？"]},
+          {"words": ["了", "你", "怎么", "妈妈"], "en": "Mum, what's wrong?", "answers": ["妈妈，你怎么了？", "你怎么了，妈妈？"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "这个苹果怎么？", "en": "Is this apple any good?", "answers": ["这个苹果怎么样？"]},
+          {"zh": "你怎么样不喝水？", "en": "Why aren't you drinking any water?", "answers": ["你怎么不喝水？"]},
+          {"zh": "你去怎么商店？", "en": "How are you getting to the shop?", "answers": ["你怎么去商店？"]},
+          {"zh": "我们下午去看电影，怎么？", "en": "Let's go and see a film this afternoon. How about it?", "answers": ["我们下午去看电影，怎么样？"]},
+          {"zh": "你的汉语老师怎么样吗？", "en": "What's your Chinese teacher like?", "answers": ["你的汉语老师怎么样？"]}
+        ]
+      }
+    ]
+  }
+}

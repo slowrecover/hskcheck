@@ -1,0 +1,109 @@
+{
+  "slug": "haishi-questions",
+  "level": 2,
+  "published": "2026-10-18",
+  "title": "还是 (háishi) in Chinese: HSK 2 \"Or\" Questions with Examples",
+  "description": "How to ask \"A or B?\" in Chinese with 还是 (háishi): the word order, repeating the verb, why you never add 吗, and HSK 2 example sentences.",
+  "zh": "还是",
+  "h1": "How to Ask \"Or\" Questions with 还是",
+  "lede": "还是 (háishi) means \"or\" in questions. You put it between two choices, and the other person answers by picking one: 你喝茶还是咖啡？ \"Would you like tea or coffee?\" It is a key question pattern in HSK 2.",
+  "sections": [
+    {
+      "h2": "The pattern",
+      "paras": [
+        "A + 还是 + B？",
+        "Put 还是 between the two things the other person can choose from. The word order stays the same as in a normal sentence; you just replace one word with \"A 还是 B\". The question mark is enough: the sentence is already a question."
+      ],
+      "examples": [
+        {"zh": "你喝茶还是咖啡？", "py": "Nǐ hē chá háishi kāfēi?", "en": "Would you like tea or coffee?"},
+        {"zh": "你是老师还是学生？", "py": "Nǐ shì lǎoshī háishi xuésheng?", "en": "Are you a teacher or a student?"},
+        {"zh": "你要大的还是小的？", "py": "Nǐ yào dà de háishi xiǎo de?", "en": "Do you want the big one or the small one?"},
+        {"zh": "这是你的还是他的？", "py": "Zhè shì nǐ de háishi tā de?", "en": "Is this yours or his?"}
+      ]
+    },
+    {
+      "h2": "Choosing between actions, times and ways",
+      "paras": [
+        "When the choice is between two actions, say the whole verb phrase on both sides of 还是. When the choice is a time or a way of doing something, the verb usually comes after each choice: 你今天去还是明天去？",
+        "You can also put 是 before the first choice, as in 你是坐飞机去还是坐火车去？ It makes the question sound a little more careful, but it means the same."
+      ],
+      "examples": [
+        {"zh": "我们去看电影还是在家看电视？", "py": "Wǒmen qù kàn diànyǐng háishi zài jiā kàn diànshì?", "en": "Shall we go and see a film or watch TV at home?"},
+        {"zh": "你今天去还是明天去？", "py": "Nǐ jīntiān qù háishi míngtiān qù?", "en": "Are you going today or tomorrow?"},
+        {"zh": "你是坐飞机去还是坐火车去？", "py": "Nǐ shì zuò fēijī qù háishi zuò huǒchē qù?", "en": "Are you going by plane or by train?"},
+        {"zh": "我们坐出租车还是走路？", "py": "Wǒmen zuò chūzūchē háishi zǒulù?", "en": "Shall we take a taxi or walk?"}
+      ]
+    },
+    {
+      "h2": "The most common mistake: adding 吗",
+      "paras": [
+        "A 还是 question is already a question, so never add 吗. 你喝茶还是咖啡吗？ is wrong; say 你喝茶还是咖啡？. You can add 呢 at the end to make the question sound softer, but not 吗.",
+        "To answer, just pick one of the choices and say it in a short sentence: 你喜欢猫还是狗？ is answered with 我喜欢狗。 Don't answer with 是 or 对."
+      ],
+      "examples": [
+        {"zh": "你喜欢猫还是狗？", "py": "Nǐ xǐhuan māo háishi gǒu?", "en": "Do you prefer cats or dogs?"},
+        {"zh": "我喜欢狗。", "py": "Wǒ xǐhuan gǒu.", "en": "I prefer dogs."},
+        {"zh": "你要米饭还是面条呢？", "py": "Nǐ yào mǐfàn háishi miàntiáo ne?", "en": "So, would you like rice or noodles?"},
+        {"zh": "他是你哥哥还是你弟弟？", "py": "Tā shì nǐ gēge háishi nǐ dìdi?", "en": "Is he your older brother or your younger brother?"}
+      ]
+    },
+    {
+      "h2": "还是 inside a sentence",
+      "paras": [
+        "还是 can also sit inside a statement when the statement contains a question, for example after 不知道 (don't know) or 问 (ask).",
+        "In a plain statement such as \"I drink tea or coffee, either is fine\", Chinese uses a different word for \"or\": 或者, which you will learn in HSK 3. You will also meet 还是 meaning \"still\", as in 他还是很忙 (he's still busy). That is a different use and is not covered here."
+      ],
+      "examples": [
+        {"zh": "我不知道他是老师还是学生。", "py": "Wǒ bù zhīdào tā shì lǎoshī háishi xuésheng.", "en": "I don't know if he's a teacher or a student."},
+        {"zh": "你问问他今天来还是明天来。", "py": "Nǐ wènwen tā jīntiān lái háishi míngtiān lái.", "en": "Ask him whether he's coming today or tomorrow."}
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "还是 Worksheet: HSK 2 Printable with Answers",
+    "description": "A free printable 还是 (or) questions worksheet for HSK 2: 19 exercises (还是 or 吗, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 还是 or 吗",
+        "instructions": "Write 还是 or 吗 in each gap. The English tells you what the question means.",
+        "options": ["还是", "吗"],
+        "items": [
+          {"zh": "你喝咖啡＿＿？", "en": "Would you like some coffee?", "answer": "吗"},
+          {"zh": "你喝咖啡＿＿牛奶？", "en": "Would you like coffee or milk?", "answer": "还是"},
+          {"zh": "他是你的朋友＿＿？", "en": "Is he your friend?", "answer": "吗"},
+          {"zh": "你们星期六去＿＿星期天去？", "en": "Are you going on Saturday or on Sunday?", "answer": "还是"},
+          {"zh": "这本书是你的＿＿？", "en": "Is this book yours?", "answer": "吗"},
+          {"zh": "你喜欢游泳＿＿跑步？", "en": "Do you prefer swimming or running?", "answer": "还是"},
+          {"zh": "你明天有时间＿＿？", "en": "Are you free tomorrow?", "answer": "吗"},
+          {"zh": "你想吃饺子＿＿面条？", "en": "Do you want dumplings or noodles?", "answer": "还是"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct question or sentence with 还是.",
+        "items": [
+          {"words": ["还是", "你", "学生", "老师", "是"], "en": "Are you a teacher or a student?", "answers": ["你是老师还是学生？"]},
+          {"words": ["去", "还是", "明天", "今天", "你", "去"], "en": "Are you going today or tomorrow?", "answers": ["你今天去还是明天去？"]},
+          {"words": ["走路", "我们", "还是", "坐出租车"], "en": "Shall we take a taxi or walk?", "answers": ["我们坐出租车还是走路？"]},
+          {"words": ["喜欢", "狗", "你", "猫", "还是"], "en": "Do you prefer cats or dogs?", "answers": ["你喜欢猫还是狗？"]},
+          {"words": ["你", "要", "小的", "大的", "还是", "呢"], "en": "So, do you want the big one or the small one?", "answers": ["你要大的还是小的呢？"]},
+          {"words": ["不知道", "我", "他", "还是", "来", "明天", "今天", "来"], "en": "I don't know whether he's coming today or tomorrow.", "answers": ["我不知道他今天来还是明天来。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each question has one mistake. Write the correct question.",
+        "items": [
+          {"zh": "你喝茶还是咖啡吗？", "en": "Would you like tea or coffee?", "answers": ["你喝茶还是咖啡？", "你喝茶还是咖啡呢？"]},
+          {"zh": "他是医生还是老师吗？", "en": "Is he a doctor or a teacher?", "answers": ["他是医生还是老师？", "他是医生还是老师呢？"]},
+          {"zh": "你们坐火车去吗还是坐飞机去？", "en": "Are you going by train or by plane?", "answers": ["你们坐火车去还是坐飞机去？"]},
+          {"zh": "你要米饭吗还是面条？", "en": "Would you like rice or noodles?", "answers": ["你要米饭还是面条？"]},
+          {"zh": "你想今天去还是明天去吗？", "en": "Do you want to go today or tomorrow?", "answers": ["你想今天去还是明天去？", "你想今天去还是明天去呢？"]}
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "slug": "bi-comparisons",
+  "level": 2,
+  "published": "2026-10-18",
+  "title": "比 (bǐ) Comparisons in Chinese: HSK 2 Grammar with Examples",
+  "description": "How to compare with 比 (bǐ) in Chinese: A 比 B + adjective, why 很 can't go in, saying how much, negatives with 没有, and 13 HSK 2 examples.",
+  "zh": "比",
+  "h1": "How to Compare Two Things with 比",
+  "lede": "比 (bǐ) is the everyday way to say that one thing is bigger, colder, cheaper or better than another. The pattern is short, but it has two rules that learners often break: no 很 before the adjective, and no 不 for the negative.",
+  "sections": [
+    {
+      "h2": "The pattern: A 比 B + adjective",
+      "paras": [
+        "A + 比 + B + adjective. Read it as \"A, compared with B, is ...\". The adjective comes at the end, and there is no word for \"more\": 我比他高 already means \"I am taller than him\".",
+        "A and B should be the same kind of thing. To compare my phone with yours, say 我的手机比你的新; the 的 at the end stands for 手机, so you don't need to repeat it."
+      ],
+      "examples": [
+        {"zh": "我比他高。", "py": "Wǒ bǐ tā gāo.", "en": "I'm taller than him."},
+        {"zh": "今天比昨天冷。", "py": "Jīntiān bǐ zuótiān lěng.", "en": "Today is colder than yesterday."},
+        {"zh": "这个比那个便宜。", "py": "Zhège bǐ nàge piányi.", "en": "This one is cheaper than that one."},
+        {"zh": "我的手机比你的新。", "py": "Wǒ de shǒujī bǐ nǐ de xīn.", "en": "My phone is newer than yours."}
+      ]
+    },
+    {
+      "h2": "No 很, but you can say how much",
+      "paras": [
+        "The most common mistake is to put 很 or 非常 before the adjective, as in 他比我很高. With 比 the adjective stands on its own: 他比我高.",
+        "To say how big the difference is, add something after the adjective: 一点儿 for \"a bit\", 多了 or 得多 for \"much\", or an exact amount such as 三岁. To say \"even more\", put 还 before the adjective."
+      ],
+      "examples": [
+        {"zh": "他比我高一点儿。", "py": "Tā bǐ wǒ gāo yìdiǎnr.", "en": "He's a bit taller than me."},
+        {"zh": "坐飞机比坐火车快多了。", "py": "Zuò fēijī bǐ zuò huǒchē kuài duō le.", "en": "Flying is much faster than going by train."},
+        {"zh": "这个房间比那个大得多。", "py": "Zhège fángjiān bǐ nàge dà de duō.", "en": "This room is much bigger than that one."},
+        {"zh": "哥哥比我大三岁。", "py": "Gēge bǐ wǒ dà sān suì.", "en": "My older brother is three years older than me."},
+        {"zh": "今天比昨天还热。", "py": "Jīntiān bǐ zuótiān hái rè.", "en": "Today is even hotter than yesterday."}
+      ]
+    },
+    {
+      "h2": "Negatives and questions",
+      "paras": [
+        "To say \"A is not as ... as B\", use 没有 instead of 比: A + 没有 + B + adjective. You can add 那么 before the adjective, meaning \"as ... as that\". Don't say 我比他不高.",
+        "For a yes-or-no question, add 吗 at the end of a 比 sentence."
+      ],
+      "examples": [
+        {"zh": "我没有他高。", "py": "Wǒ méiyǒu tā gāo.", "en": "I'm not as tall as him."},
+        {"zh": "今天没有昨天那么热。", "py": "Jīntiān méiyǒu zuótiān nàme rè.", "en": "Today isn't as hot as yesterday."},
+        {"zh": "你比他大吗？", "py": "Nǐ bǐ tā dà ma?", "en": "Are you older than him?"}
+      ]
+    },
+    {
+      "h2": "Comparing how people do things",
+      "paras": [
+        "To compare actions, use a verb with 得 and put 比 either before the verb or after 得. Both word orders are correct and mean the same."
+      ],
+      "examples": [
+        {"zh": "他跑得比我快。", "py": "Tā pǎo de bǐ wǒ kuài.", "en": "He runs faster than me."},
+        {"zh": "他比我跑得快。", "py": "Tā bǐ wǒ pǎo de kuài.", "en": "He runs faster than me."}
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "比 Comparisons Worksheet: HSK 2 Printable with Answers",
+    "description": "A free printable 比 comparisons worksheet for HSK 2: 20 exercises (比 or 没有, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 比 or 没有",
+        "instructions": "Write 比 or 没有 in each gap. The English tells you what the sentence means.",
+        "options": ["比", "没有"],
+        "items": [
+          {"zh": "我＿＿他高。", "en": "I'm taller than him.", "answer": "比"},
+          {"zh": "这个＿＿那个好吃。", "en": "This one isn't as tasty as that one.", "answer": "没有"},
+          {"zh": "今天＿＿昨天冷一点儿。", "en": "Today is a bit colder than yesterday.", "answer": "比"},
+          {"zh": "我的房间＿＿你的大。", "en": "My room isn't as big as yours.", "answer": "没有"},
+          {"zh": "坐火车＿＿坐飞机那么快。", "en": "Going by train isn't as fast as flying.", "answer": "没有"},
+          {"zh": "他的汉语＿＿我好多了。", "en": "His Chinese is much better than mine.", "answer": "比"},
+          {"zh": "这件衣服＿＿那件贵。", "en": "This top isn't as expensive as that one.", "answer": "没有"},
+          {"zh": "他跑得＿＿我快。", "en": "He runs faster than me.", "answer": "比"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["比", "我", "高", "弟弟"], "en": "My younger brother is taller than me.", "answers": ["弟弟比我高。"]},
+          {"words": ["便宜", "这个", "那个", "比", "一点儿"], "en": "This one is a bit cheaper than that one.", "answers": ["这个比那个便宜一点儿。"]},
+          {"words": ["没有", "今天", "那么", "昨天", "冷"], "en": "Today isn't as cold as yesterday.", "answers": ["今天没有昨天那么冷。"]},
+          {"words": ["大", "哥哥", "三岁", "比", "我"], "en": "My older brother is three years older than me.", "answers": ["哥哥比我大三岁。"]},
+          {"words": ["快", "他", "得", "比", "跑", "我"], "en": "He runs faster than me.", "answers": ["他跑得比我快。", "他比我跑得快。"]},
+          {"words": ["多了", "坐飞机", "坐火车", "快", "比"], "en": "Flying is much faster than going by train.", "answers": ["坐飞机比坐火车快多了。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "他比我很高。", "en": "He is taller than me.", "answers": ["他比我高。"]},
+          {"zh": "今天比昨天非常热。", "en": "Today is much hotter than yesterday.", "answers": ["今天比昨天热多了。", "今天比昨天热得多。", "今天比昨天热很多。"]},
+          {"zh": "我比他不高。", "en": "I'm not as tall as him.", "answers": ["我没有他高。", "我没有他那么高。"]},
+          {"zh": "我比他两岁大。", "en": "I'm two years older than him.", "answers": ["我比他大两岁。"]},
+          {"zh": "今天比昨天那么冷。", "en": "Today isn't as cold as yesterday.", "answers": ["今天没有昨天那么冷。"]},
+          {"zh": "他比我一点儿高。", "en": "He is a bit taller than me.", "answers": ["他比我高一点儿。"]}
+        ]
+      }
+    ]
+  }
+}

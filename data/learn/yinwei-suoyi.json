@@ -1,0 +1,117 @@
+{
+  "slug": "yinwei-suoyi",
+  "level": 2,
+  "published": "2026-10-18",
+  "title": "因为……所以 in Chinese: Because and So, HSK 2 Grammar",
+  "description": "How to use 因为 (because) and 所以 (so) in Chinese: word order, using one or both, where the subject goes, answering 为什么, with HSK 2 examples.",
+  "zh": "因为……所以",
+  "h1": "How to Use 因为……所以 (Because … So)",
+  "lede": "因为 (yīnwèi) means \"because\" and introduces the reason. 所以 (suǒyǐ) means \"so\" and introduces the result. In Chinese the two are very often used together in one sentence, with the reason first and the result second.",
+  "sections": [
+    {
+      "h2": "The pattern",
+      "paras": [
+        "因为 + reason，所以 + result.",
+        "In English you say either \"because\" or \"so\", never both in one sentence. In Chinese, using 因为 and 所以 together is completely normal and very clear. The reason comes first, then a comma, then the result."
+      ],
+      "examples": [
+        {"zh": "因为下雨了，所以我们不去了。", "py": "Yīnwèi xià yǔ le, suǒyǐ wǒmen bú qù le.", "en": "It's started raining, so we're not going."},
+        {"zh": "因为他生病了，所以今天没有来上课。", "py": "Yīnwèi tā shēngbìng le, suǒyǐ jīntiān méiyǒu lái shàngkè.", "en": "He's ill, so he didn't come to class today."},
+        {"zh": "因为我想去中国工作，所以我在学汉语。", "py": "Yīnwèi wǒ xiǎng qù Zhōngguó gōngzuò, suǒyǐ wǒ zài xué Hànyǔ.", "en": "I'm learning Chinese because I want to work in China."}
+      ]
+    },
+    {
+      "h2": "Using only one of them",
+      "paras": [
+        "You don't always need both words. In everyday speech people often use just 所以, with the reason first and no word in front of it, or just 因为.",
+        "A 因为 clause can also come after the result, like \"because\" in English. In that order, don't add 所以."
+      ],
+      "examples": [
+        {"zh": "我今天很累，所以想早一点睡觉。", "py": "Wǒ jīntiān hěn lèi, suǒyǐ xiǎng zǎo yìdiǎn shuìjiào.", "en": "I'm tired today, so I want to go to bed a bit earlier."},
+        {"zh": "我没有给你打电话，因为我太忙了。", "py": "Wǒ méiyǒu gěi nǐ dǎ diànhuà, yīnwèi wǒ tài máng le.", "en": "I didn't call you because I was too busy."},
+        {"zh": "他今天不来了，因为他要工作。", "py": "Tā jīntiān bù lái le, yīnwèi tā yào gōngzuò.", "en": "He's not coming today after all, because he has to work."}
+      ]
+    },
+    {
+      "h2": "Where the subject goes",
+      "paras": [
+        "因为 can go before or after the subject: 因为我太忙 and 我因为太忙 are both correct. 所以 is different: it always starts its clause, in front of the subject. Say 所以我没有去, never 我所以没有去.",
+        "If both parts of the sentence are about the same person, you only need to say the subject once. Negatives with 不 and 没有 stay inside their own clause, just as in a normal sentence."
+      ],
+      "examples": [
+        {"zh": "我因为太忙，所以没有吃午饭。", "py": "Wǒ yīnwèi tài máng, suǒyǐ méiyǒu chī wǔfàn.", "en": "I was too busy, so I didn't have lunch."},
+        {"zh": "因为天气很好，所以我们都想出去玩。", "py": "Yīnwèi tiānqì hěn hǎo, suǒyǐ wǒmen dōu xiǎng chūqù wán.", "en": "The weather is lovely, so we all want to go out."}
+      ]
+    },
+    {
+      "h2": "The most common mistake",
+      "paras": [
+        "The most common mistake is to mix up the reason and the result: putting 所以 in front of the reason, or 因为 in front of the result. Before you choose, ask yourself which part explains why. That part gets 因为. The part that happens as a consequence gets 所以.",
+        "The two sentences below say the same thing in two orders. Notice that 因为 always stays with the reason, 路很远."
+      ],
+      "examples": [
+        {"zh": "因为路很远，所以我们坐出租车去。", "py": "Yīnwèi lù hěn yuǎn, suǒyǐ wǒmen zuò chūzūchē qù.", "en": "It's a long way, so we're going by taxi."},
+        {"zh": "我们坐出租车去，因为路很远。", "py": "Wǒmen zuò chūzūchē qù, yīnwèi lù hěn yuǎn.", "en": "We're going by taxi because it's a long way."}
+      ]
+    },
+    {
+      "h2": "Asking why: 为什么",
+      "paras": [
+        "To ask \"why\", use 为什么 (wèishénme), usually after the subject and before the verb. Answer with a 因为 clause on its own; this is a normal short answer, just like \"Because …\" in English. Don't start the answer with 所以."
+      ],
+      "examples": [
+        {"zh": "你为什么学习汉语？", "py": "Nǐ wèishénme xuéxí Hànyǔ?", "en": "Why are you learning Chinese?"},
+        {"zh": "因为我喜欢中国电影。", "py": "Yīnwèi wǒ xǐhuan Zhōngguó diànyǐng.", "en": "Because I like Chinese films."},
+        {"zh": "他为什么没有来？", "py": "Tā wèishénme méiyǒu lái?", "en": "Why didn't he come?"},
+        {"zh": "因为他今天要工作。", "py": "Yīnwèi tā jīntiān yào gōngzuò.", "en": "Because he has to work today."}
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "因为……所以 Worksheet: HSK 2 Printable with Answers",
+    "description": "A free printable 因为……所以 worksheet for HSK 2: 19 exercises (choose 因为, 所以 or 为什么, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 因为, 所以 or 为什么",
+        "instructions": "Write 因为, 所以 or 为什么 in each gap. The English tells you what the sentence means.",
+        "options": ["因为", "所以", "为什么"],
+        "items": [
+          {"zh": "＿＿今天很冷，所以我穿了很多衣服。", "en": "Because it's cold today, I'm wearing lots of clothes.", "answer": "因为"},
+          {"zh": "因为我没有钱，＿＿不能买这个手机。", "en": "I haven't got any money, so I can't buy this phone.", "answer": "所以"},
+          {"zh": "你＿＿不喜欢吃米饭？", "en": "Why don't you like rice?", "answer": "为什么"},
+          {"zh": "我今天没有去上班，＿＿我生病了。", "en": "I didn't go to work today because I was ill.", "answer": "因为"},
+          {"zh": "外面下雨了，＿＿我们在家看电视吧。", "en": "It's raining outside, so let's watch TV at home.", "answer": "所以"},
+          {"zh": "你昨天＿＿没有来？", "en": "Why didn't you come yesterday?", "answer": "为什么"},
+          {"zh": "这家饭馆的菜很好吃，＿＿我经常来。", "en": "The food at this restaurant is very good, so I come here often.", "answer": "所以"},
+          {"zh": "＿＿明天要考试，所以他今天晚上不看电视了。", "en": "He has an exam tomorrow, so he isn't watching TV this evening.", "answer": "因为"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence. Use all the words.",
+        "items": [
+          {"words": ["所以", "因为", "太贵了", "我没有买"], "en": "It was too expensive, so I didn't buy it.", "answers": ["因为太贵了，所以我没有买。"]},
+          {"words": ["他", "为什么", "不高兴"], "en": "Why is he unhappy?", "answers": ["他为什么不高兴？", "为什么他不高兴？"]},
+          {"words": ["因为", "所以", "我", "生病了", "没有去学校"], "en": "I was ill, so I didn't go to school.", "answers": ["因为我生病了，所以没有去学校。", "我因为生病了，所以没有去学校。", "因为生病了，所以我没有去学校。"]},
+          {"words": ["所以", "这个苹果", "很好吃", "我想再买一个", "因为"], "en": "This apple is delicious, so I want to buy another one.", "answers": ["因为这个苹果很好吃，所以我想再买一个。"]},
+          {"words": ["我不想出去", "因为", "我", "很累"], "en": "I don't want to go out because I'm tired.", "answers": ["我不想出去，因为我很累。", "因为我很累，我不想出去。"]},
+          {"words": ["所以", "她是中国人", "因为", "她汉语说得很好"], "en": "She's Chinese, so she speaks Chinese very well.", "answers": ["因为她是中国人，所以她汉语说得很好。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "所以今天下雨，因为我不出去了。", "en": "It's raining today, so I'm not going out.", "answers": ["因为今天下雨，所以我不出去了。"]},
+          {"zh": "因为他很忙，他所以没有来。", "en": "He was busy, so he didn't come.", "answers": ["因为他很忙，所以他没有来。", "因为他很忙，所以没有来。"]},
+          {"zh": "我很累，因为我想睡觉。", "en": "I'm tired, so I want to sleep.", "answers": ["我很累，所以我想睡觉。"]},
+          {"zh": "我没有去上课，所以我生病了。", "en": "I didn't go to class because I was ill.", "answers": ["我没有去上课，因为我生病了。"]},
+          {"zh": "他为什么不来？所以他太累了。", "en": "Why isn't he coming? Because he's too tired.", "answers": ["他为什么不来？因为他太累了。"]}
+        ]
+      }
+    ]
+  }
+}

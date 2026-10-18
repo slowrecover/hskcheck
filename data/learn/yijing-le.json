@@ -1,0 +1,109 @@
+{
+  "slug": "yijing-le",
+  "level": 2,
+  "published": "2026-10-18",
+  "title": "已经 (yǐjīng) \"Already\" in Chinese: HSK 2 Grammar with Examples",
+  "description": "How to say \"already\" in Chinese with 已经……了 (yǐjīng... le): word order, ages and times, \"not yet\" with 还没有, questions, and HSK 2 examples.",
+  "zh": "已经……了",
+  "h1": "How to Say \"Already\" with 已经……了",
+  "lede": "已经 (yǐjīng) means \"already\". It almost always comes with 了 at the end of the sentence: 已经 + verb + 了. Together they say that something has happened, or that a situation has been reached, by now. It is a key grammar point of HSK 2.",
+  "sections": [
+    {
+      "h2": "The pattern",
+      "paras": [
+        "Subject + 已经 + verb + 了.",
+        "已经 is an adverb, so it goes after the subject and straight before the verb. The 了 at the end shows that the action has happened. You could also just say 我吃饭了, but 已经 adds the idea that it is done by now, often sooner than the other person thinks."
+      ],
+      "examples": [
+        {"zh": "我已经吃饭了。", "py": "Wǒ yǐjīng chī fàn le.", "en": "I've already eaten."},
+        {"zh": "他已经回家了。", "py": "Tā yǐjīng huí jiā le.", "en": "He's already gone home."},
+        {"zh": "电影已经开始了。", "py": "Diànyǐng yǐjīng kāishǐ le.", "en": "The film has already started."}
+      ]
+    },
+    {
+      "h2": "Adjectives, times and ages",
+      "paras": [
+        "已经……了 also works with adjectives, clock times, ages and lengths of time. It says a point has been reached. With a time or a number and no subject, the sentence can begin with 已经.",
+        "With a length of time, as in 两年, you can use 了 after the verb as well as at the end: the action began in the past and is still going on."
+      ],
+      "examples": [
+        {"zh": "天已经晚了。", "py": "Tiān yǐjīng wǎn le.", "en": "It's already late."},
+        {"zh": "已经十点了，我们回家吧。", "py": "Yǐjīng shí diǎn le, wǒmen huí jiā ba.", "en": "It's already ten o'clock, let's go home."},
+        {"zh": "我儿子已经六岁了。", "py": "Wǒ érzi yǐjīng liù suì le.", "en": "My son is already six."},
+        {"zh": "我已经学了两年中文了。", "py": "Wǒ yǐjīng xué le liǎng nián Zhōngwén le.", "en": "I've been learning Chinese for two years now."}
+      ]
+    },
+    {
+      "h2": "Common mistakes: word order and the missing 了",
+      "paras": [
+        "In English, \"already\" can go at the end of the sentence. In Chinese, 已经 never does: say 我们已经到了, not 我们到了已经. It also does not go in front of the subject, so 已经他回家了 is wrong.",
+        "The other common mistake is to forget 了. 我已经吃饭 sounds unfinished to a Chinese speaker. Keep 了 at the end of the sentence."
+      ],
+      "examples": [
+        {"zh": "我们已经到了。", "py": "Wǒmen yǐjīng dào le.", "en": "We're already here."},
+        {"zh": "我已经知道了。", "py": "Wǒ yǐjīng zhīdào le.", "en": "I already know."}
+      ]
+    },
+    {
+      "h2": "Not yet, no longer, and questions",
+      "paras": [
+        "The opposite of 已经……了 is 还没有 + verb, \"not yet\". Do not use 已经 for this, and drop 了: 我还没有吃饭, not 我已经没有吃饭了. With 不, 已经不……了 means \"no longer\" or \"not any more\".",
+        "To ask whether something has already happened, add 吗 to the end. Answer yes with 已经 + verb + 了, or no with 还没有."
+      ],
+      "examples": [
+        {"zh": "我还没有吃饭。", "py": "Wǒ hái méiyǒu chī fàn.", "en": "I haven't eaten yet."},
+        {"zh": "你已经买票了吗？", "py": "Nǐ yǐjīng mǎi piào le ma?", "en": "Have you already bought the tickets?"},
+        {"zh": "他已经走了吗？", "py": "Tā yǐjīng zǒu le ma?", "en": "Has he left already?"},
+        {"zh": "我已经不喝咖啡了。", "py": "Wǒ yǐjīng bù hē kāfēi le.", "en": "I don't drink coffee any more."}
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "已经……了 Worksheet: HSK 2 Printable with Answers",
+    "description": "A free printable 已经……了 (already) worksheet for HSK 2: 20 exercises (已经 or 还没有, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 已经 or 还没有",
+        "instructions": "Write 已经 or 还没有 in each gap. The English tells you what the sentence means.",
+        "options": ["已经", "还没有"],
+        "items": [
+          {"zh": "我＿＿吃饭了，你们吃吧。", "en": "I've already eaten, you go ahead.", "answer": "已经"},
+          {"zh": "他＿＿起床，还在睡觉。", "en": "He hasn't got up yet, he's still asleep.", "answer": "还没有"},
+          {"zh": "电影＿＿开始了，快进来吧。", "en": "The film has already started, come in quickly.", "answer": "已经"},
+          {"zh": "妈妈＿＿回来，我们等等她吧。", "en": "Mum isn't back yet, let's wait for her.", "answer": "还没有"},
+          {"zh": "＿＿十二点了，快睡觉吧。", "en": "It's already twelve o'clock, go to bed.", "answer": "已经"},
+          {"zh": "这本书我＿＿看完。", "en": "I haven't finished reading this book yet.", "answer": "还没有"},
+          {"zh": "他＿＿到家了。", "en": "He's already home.", "answer": "已经"},
+          {"zh": "我＿＿买火车票，明天去买。", "en": "I haven't bought the train ticket yet; I'll buy it tomorrow.", "answer": "还没有"},
+          {"zh": "饭＿＿好了，快来吃吧。", "en": "Dinner's ready already, come and eat.", "answer": "已经"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["已经", "了", "他", "走"], "en": "He has already left.", "answers": ["他已经走了。"]},
+          {"words": ["了", "已经", "九点"], "en": "It's already nine o'clock.", "answers": ["已经九点了。"]},
+          {"words": ["已经", "了", "我们", "到", "机场"], "en": "We've already arrived at the airport.", "answers": ["我们已经到机场了。"]},
+          {"words": ["二十岁", "已经", "我妹妹", "了"], "en": "My little sister is already twenty.", "answers": ["我妹妹已经二十岁了。"]},
+          {"words": ["还", "没有", "他", "回家"], "en": "He hasn't come home yet.", "answers": ["他还没有回家。"]},
+          {"words": ["不", "已经", "他", "了", "在这儿", "工作"], "en": "He doesn't work here any more.", "answers": ["他已经不在这儿工作了。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "他已经起床。", "en": "He has already got up.", "answers": ["他已经起床了。"]},
+          {"zh": "已经她下班了。", "en": "She has already finished work.", "answers": ["她已经下班了。"]},
+          {"zh": "我们到了已经。", "en": "We've already arrived.", "answers": ["我们已经到了。"]},
+          {"zh": "他已经没有来。", "en": "He hasn't come yet.", "answers": ["他还没有来。"]},
+          {"zh": "他还没有睡觉了。", "en": "He hasn't gone to bed yet.", "answers": ["他还没有睡觉。"]}
+        ]
+      }
+    ]
+  }
+}
