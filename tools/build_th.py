@@ -3,6 +3,7 @@
 Outputs:
   th/index.html                    the level checker in Thai, with Thai meanings for words above the level
   th/hsk-N-word-list/index.html    one page per level that has data/th/hskN_th.tsv
+  th/learn/...                     Thai grammar explainers and worksheets (see tools/learn_th.py)
 
 data/th/hskN_th.tsv has two columns, word and Thai meaning, in the same order as data/hskN.tsv.
 The build stops if the words do not match exactly.
@@ -11,6 +12,8 @@ Called from tools/build.py; returns the URLs it wrote so they go into sitemap.xm
 """
 import html
 import json
+
+import learn_th
 
 TH_URL = "/th/"
 
@@ -99,6 +102,8 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
 
     pages = [(TH_URL, "ตรวจระดับคำศัพท์")]
     pages += [(f"{TH_URL}hsk-{n}-word-list/", f"คำศัพท์ HSK {n}") for n in levels]
+    if learn_th.slugs(root):
+        pages.append((learn_th.TH_LEARN_URL, "ไวยากรณ์"))
     pages.append(("/", "English"))
 
     def nav(current):
@@ -173,6 +178,13 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
         target.mkdir(parents=True, exist_ok=True)
         (target / "index.html").write_text(out, encoding="utf-8")
         urls.append(url)
+
+    # Grammar explainers
+    urls += learn_th.build(
+        root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK, foot=FOOT,
+        css=base_css + (tpl / "learn.css").read_text(encoding="utf-8") + th_css,
+        ws_css=base_css + (tpl / "learn_worksheet.css").read_text(encoding="utf-8") + th_css,
+    )
     return urls
 
 
@@ -183,4 +195,5 @@ def alternates(root, levels):
         return {}
     pairs = {"/": TH_URL}
     pairs.update({f"/hsk-{n}-word-list/": f"{TH_URL}hsk-{n}-word-list/" for n in have})
+    pairs.update(learn_th.alternates(root))
     return pairs

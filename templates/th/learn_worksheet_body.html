@@ -1,0 +1,45 @@
+<div class="wrap">
+  <header class="no-print">
+    __NAV__
+    <div class="eyebrow"><span>แบบฝึกหัดไวยากรณ์</span><span class="chip">HSK __LEVEL__</span></div>
+    <h1><span class="zh">__ZH__</span>แบบฝึกหัดพิมพ์ได้</h1>
+    <p class="lede">แบบฝึกหัด __COUNT__ ข้อ ใช้เฉพาะคำศัพท์ HSK __LEVEL__ พร้อมเฉลยแยกหน้า พิมพ์และถ่ายเอกสารแจกในชั้นเรียนได้ฟรี อยากทบทวนกฎก่อน? อ่าน<a href="__URL__">คำอธิบายพร้อมตัวอย่าง</a></p>
+  </header>
+
+  <section class="sheet ws-controls no-print" aria-label="ตั้งค่าแบบฝึกหัด">
+    <div class="ws-checks">
+      <label><input type="checkbox" id="opt-en" checked> คำแปลภาษาไทย</label>
+      <label><input type="checkbox" id="opt-key" checked> เฉลย (พิมพ์ในหน้า 2)</label>
+    </div>
+    <div><button type="button" class="button" id="print">พิมพ์แบบฝึกหัด</button></div>
+  </section>
+
+  <div class="ws-preview">
+    <article class="ws-paper" id="paper">
+      <div class="ws-head">
+        <div class="ws-title"><span lang="zh-Hans">__ZH__</span> · ไวยากรณ์ HSK __LEVEL__</div>
+        <div class="ws-name">ชื่อ <span class="ws-fill"></span> วันที่ <span class="ws-fill short"></span></div>
+      </div>
+__EXERCISES__
+      <div class="ws-foot">แบบฝึกหัดฟรีจาก __SITE_URL__</div>
+      <div class="ws-key">
+        <div class="ws-head"><div class="ws-title"><span lang="zh-Hans">__ZH__</span> · เฉลย</div></div>
+__KEY__
+      </div>
+    </article>
+  </div>
+</div>
+<script>
+(function () {
+  var paper = document.getElementById("paper");
+  function sync(id, cls) {
+    var box = document.getElementById(id);
+    var apply = function () { paper.classList.toggle(cls, !box.checked); };
+    box.addEventListener("change", apply);
+    apply();
+  }
+  sync("opt-en", "no-en");
+  sync("opt-key", "no-key");
+  document.getElementById("print").addEventListener("click", function () { window.print(); });
+})();
+</script>
