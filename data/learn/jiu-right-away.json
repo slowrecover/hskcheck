@@ -1,0 +1,111 @@
+{
+  "slug": "jiu-right-away",
+  "level": 2,
+  "published": "2026-10-18",
+  "title": "就 (jiù) in Chinese: Right Away, As Soon As: HSK 2 Grammar",
+  "description": "How to use 就 (jiù) in Chinese: \"right away\", \"sooner than expected\", 一……就 for \"as soon as\", 就 for \"then\", common mistakes and HSK 2 examples.",
+  "zh": "就",
+  "h1": "How to Use 就: \"Right Away\", \"As Soon As\" and \"Then\"",
+  "lede": "就 (jiù) is a short adverb with several jobs. It can mean \"right away\", show that something happened sooner than expected, join two actions as 一……就 (\"as soon as\"), or mean \"then\" after a condition. In every use, it goes straight before the verb.",
+  "sections": [
+    {
+      "h2": "就 for \"right away\"",
+      "paras": [
+        "Subject + 就 + verb.",
+        "就 before a verb says the action will happen very soon. It often comes after a time word such as 现在, 一会儿 or 很快. 我就来 is what you call out when someone is waiting for you."
+      ],
+      "examples": [
+        {"zh": "等一下，我就来。", "py": "Děng yíxià, wǒ jiù lái.", "en": "Hang on, I'm coming."},
+        {"zh": "我现在就去。", "py": "Wǒ xiànzài jiù qù.", "en": "I'll go right now."},
+        {"zh": "我们一会儿就到。", "py": "Wǒmen yíhuìr jiù dào.", "en": "We'll be there in a moment."},
+        {"zh": "你等一下，我很快就好。", "py": "Nǐ děng yíxià, wǒ hěn kuài jiù hǎo.", "en": "Wait a moment, I'll be ready soon."}
+      ]
+    },
+    {
+      "h2": "Sooner than expected",
+      "paras": [
+        "When 就 comes after a clock time or a length of time, it shows that something happened early or quickly, sooner than you might expect. For something that has already happened, put 了 at the end.",
+        "The opposite idea, \"not until\" or \"only then\", uses 才, an HSK 3 word."
+      ],
+      "examples": [
+        {"zh": "他七点就起床了。", "py": "Tā qī diǎn jiù qǐchuáng le.", "en": "He was up as early as seven."},
+        {"zh": "火车八点就开了。", "py": "Huǒchē bā diǎn jiù kāi le.", "en": "The train left as early as eight."},
+        {"zh": "他十分钟就做完了。", "py": "Tā shí fēnzhōng jiù zuòwán le.", "en": "He finished it in just ten minutes."}
+      ]
+    },
+    {
+      "h2": "一……就: \"as soon as\"",
+      "paras": [
+        "Subject + 一 + action 1, (subject) + 就 + action 2.",
+        "The second action happens straight after the first. It can be a one-off event or something that happens every time. Both words go after their own subject and in front of the verb. If the two parts have different subjects, as in 他一来，我就走, each subject comes before its 一 or 就.",
+        "Remember the tone of 一: it is yí before a fourth tone (一到 yí dào, 一下班 yí xiàbān) and yì before the other tones (一来 yì lái)."
+      ],
+      "examples": [
+        {"zh": "我一到家就给你打电话。", "py": "Wǒ yí dào jiā jiù gěi nǐ dǎ diànhuà.", "en": "I'll call you as soon as I get home."},
+        {"zh": "他每天一下班就回家。", "py": "Tā měi tiān yí xiàbān jiù huí jiā.", "en": "Every day he goes home as soon as he finishes work."},
+        {"zh": "他一上车就睡着了。", "py": "Tā yí shàng chē jiù shuìzháo le.", "en": "He fell asleep as soon as he got in the car."},
+        {"zh": "他一来，我就走。", "py": "Tā yì lái, wǒ jiù zǒu.", "en": "As soon as he arrives, I'll leave."}
+      ]
+    },
+    {
+      "h2": "就 meaning \"then\"",
+      "paras": [
+        "就 also links an action to what comes after it. After a first action, often verb + 了 + object, 就 says the second one follows straight on. After a condition, it works like \"then\" in \"if... then\", even when there is no word for \"if\" in the sentence.",
+        "那就 or 那我就 at the start of a reply means \"in that case\"."
+      ],
+      "examples": [
+        {"zh": "我们吃了饭就去看电影。", "py": "Wǒmen chī le fàn jiù qù kàn diànyǐng.", "en": "We'll go to the cinema after we eat."},
+        {"zh": "你到了就告诉我。", "py": "Nǐ dào le jiù gàosu wǒ.", "en": "Let me know when you get there."},
+        {"zh": "不舒服就回家休息吧。", "py": "Bù shūfu jiù huí jiā xiūxi ba.", "en": "If you don't feel well, go home and rest."},
+        {"zh": "那我就不去了。", "py": "Nà wǒ jiù bú qù le.", "en": "Then I won't go."}
+      ]
+    },
+    {
+      "h2": "Common mistakes",
+      "paras": [
+        "In English, \"right away\" and \"then\" can go at the end of a sentence. 就 never does: say 我就去, not 我去就. It always goes after the subject and straight before the verb.",
+        "With 一……就, learners often put 一 in front of the subject (一我到家) or leave 就 out. Say 他一下课就去打篮球, not 他一下课去打篮球. For something that has already happened, keep 了 at the end of the sentence."
+      ],
+      "examples": [
+        {"zh": "他一下课就去打篮球。", "py": "Tā yí xiàkè jiù qù dǎ lánqiú.", "en": "He goes to play basketball as soon as class finishes."},
+        {"zh": "她一看见我就笑了。", "py": "Tā yí kànjiàn wǒ jiù xiào le.", "en": "She smiled as soon as she saw me."}
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "就 and 一……就 Worksheet: HSK 2 Printable with Answers",
+    "description": "A free printable 就 (jiù) and 一……就 worksheet for HSK 2: 16 exercises (word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["回来", "就", "他", "一会儿"], "en": "He'll be back in a moment.", "answers": ["他一会儿就回来。", "一会儿他就回来。"]},
+          {"words": ["喝咖啡", "一", "我", "就", "起床"], "en": "I drink coffee as soon as I get up.", "answers": ["我一起床就喝咖啡。"]},
+          {"words": ["一", "回家了", "他", "下班", "就"], "en": "He went home as soon as he finished work.", "answers": ["他一下班就回家了。"]},
+          {"words": ["就", "我们", "吃完了", "十分钟"], "en": "We finished eating in just ten minutes.", "answers": ["我们十分钟就吃完了。", "十分钟我们就吃完了。"]},
+          {"words": ["打电话", "你", "就", "到了", "给我"], "en": "Call me when you get there.", "answers": ["你到了就给我打电话。", "到了你就给我打电话。"]},
+          {"words": ["商店", "我们", "就", "吃了饭", "去"], "en": "We'll go to the shop after we eat.", "answers": ["我们吃了饭就去商店。", "吃了饭我们就去商店。"]},
+          {"words": ["想睡觉", "累", "一", "我", "就"], "en": "As soon as I get tired, I want to sleep.", "answers": ["我一累就想睡觉。"]},
+          {"words": ["别吃了", "你", "不想吃", "就"], "en": "If you don't want to eat it, don't.", "answers": ["你不想吃就别吃了。", "不想吃你就别吃了。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "一我下课就去吃饭。", "en": "I go and eat as soon as class finishes.", "answers": ["我一下课就去吃饭。", "一下课我就去吃饭。"]},
+          {"zh": "他一回家去睡觉了。", "en": "He went to bed as soon as he got home.", "answers": ["他一回家就去睡觉了。"]},
+          {"zh": "我就一起床喝水。", "en": "I drink water as soon as I get up.", "answers": ["我一起床就喝水。"]},
+          {"zh": "妈妈，我去就。", "en": "Mum, I'll go right away.", "answers": ["妈妈，我就去。"]},
+          {"zh": "她五分钟吃完了就。", "en": "She finished eating in just five minutes.", "answers": ["她五分钟就吃完了。"]},
+          {"zh": "他下班一就回家。", "en": "He goes home as soon as he finishes work.", "answers": ["他一下班就回家。"]},
+          {"zh": "你到了机场告诉我就。", "en": "Tell me when you get to the airport.", "answers": ["你到了机场就告诉我。"]},
+          {"zh": "他一进来，我走。", "en": "As soon as he comes in, I'll leave.", "answers": ["他一进来，我就走。"]}
+        ]
+      }
+    ]
+  }
+}
