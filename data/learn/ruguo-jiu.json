@@ -1,0 +1,114 @@
+{
+  "slug": "ruguo-jiu",
+  "level": 3,
+  "published": "2026-10-19",
+  "title": "如果……就 in Chinese: How to Say \"If\" (HSK 3 Grammar)",
+  "description": "How to use 如果……就 (rúguǒ... jiù) for \"if... then\" in Chinese: word order, where 就 goes, 的话, \"if I were you\", common mistakes and HSK 3 examples.",
+  "zh": "如果……就",
+  "h1": "How to Say \"If\" with 如果……就",
+  "lede": "如果 (rúguǒ) means \"if\". It starts the condition, and 就 (jiù) often comes in the second part to mean \"then\". In Chinese the condition almost always comes first.",
+  "sections": [
+    {
+      "h2": "The pattern",
+      "paras": [
+        "如果 + condition, (subject) + 就 + result.",
+        "如果 can go before or after the subject of the first part: 如果你累了 and 你如果累了 are both fine. 就 goes before the verb in the second part. It isn't always needed, but it makes the link between the two parts clear."
+      ],
+      "examples": [
+        {"zh": "如果明天下雨，我们就不去了。", "py": "Rúguǒ míngtiān xià yǔ, wǒmen jiù bú qù le.", "en": "If it rains tomorrow, we won't go."},
+        {"zh": "如果你有时间，就来我家玩吧。", "py": "Rúguǒ nǐ yǒu shíjiān, jiù lái wǒ jiā wán ba.", "en": "If you have time, come over to my place."},
+        {"zh": "你如果累了，就休息一下吧。", "py": "Nǐ rúguǒ lèi le, jiù xiūxi yíxià ba.", "en": "If you're tired, have a rest."}
+      ]
+    },
+    {
+      "h2": "Where 就 goes",
+      "paras": [
+        "If the second part has its own subject, 就 comes after the subject, not before it. Say 我就去, not 就我去. If the second part has no subject, 就 starts it."
+      ],
+      "examples": [
+        {"zh": "如果你不想去，我就一个人去。", "py": "Rúguǒ nǐ bù xiǎng qù, wǒ jiù yí ge rén qù.", "en": "If you don't want to go, I'll go on my own."},
+        {"zh": "如果他问你，你就说不知道。", "py": "Rúguǒ tā wèn nǐ, nǐ jiù shuō bù zhīdào.", "en": "If he asks you, just say you don't know."},
+        {"zh": "如果你饿了，我们就去吃饭。", "py": "Rúguǒ nǐ è le, wǒmen jiù qù chīfàn.", "en": "If you're hungry, let's go and eat."}
+      ]
+    },
+    {
+      "h2": "的话 and shorter forms",
+      "paras": [
+        "You can add 的话 at the end of the condition: 如果……的话. It means the same and is very common in speech. With 的话, you can even leave out 如果.",
+        "In everyday speech, people often drop 如果 and keep only 就."
+      ],
+      "examples": [
+        {"zh": "如果有问题的话，就给我打电话。", "py": "Rúguǒ yǒu wèntí dehuà, jiù gěi wǒ dǎ diànhuà.", "en": "If there are any problems, give me a call."},
+        {"zh": "明天天气好的话，我们就去公园。", "py": "Míngtiān tiānqì hǎo dehuà, wǒmen jiù qù gōngyuán.", "en": "If the weather is nice tomorrow, we'll go to the park."},
+        {"zh": "你累了就休息吧。", "py": "Nǐ lèi le jiù xiūxi ba.", "en": "Have a rest if you're tired."}
+      ]
+    },
+    {
+      "h2": "\"If I were you\" and 就会",
+      "paras": [
+        "如果 works for real and imagined situations alike, so 如果我是你 is the way to say \"if I were you\". To say what will happen as a result, use 就会 + verb."
+      ],
+      "examples": [
+        {"zh": "如果我是你，我就买这件。", "py": "Rúguǒ wǒ shì nǐ, wǒ jiù mǎi zhè jiàn.", "en": "If I were you, I'd buy this one."},
+        {"zh": "如果你每天练习，你的汉语就会越来越好。", "py": "Rúguǒ nǐ měi tiān liànxí, nǐ de Hànyǔ jiù huì yuè lái yuè hǎo.", "en": "If you practise every day, your Chinese will get better and better."}
+      ]
+    },
+    {
+      "h2": "Common mistakes",
+      "paras": [
+        "In English the \"if\" part can come second: \"I'll go if you go\". In Chinese, put the condition first: 如果你去，我就去.",
+        "如果 only means \"if\", never \"when\". For something you know will happen, use a time word such as 以后 instead."
+      ],
+      "examples": [
+        {"zh": "我到家以后就给你打电话。", "py": "Wǒ dào jiā yǐhòu jiù gěi nǐ dǎ diànhuà.", "en": "I'll call you when I get home."}
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "如果……就 Worksheet: HSK 3 Printable with Answers",
+    "description": "A free printable 如果……就 worksheet for HSK 3: 19 exercises (如果, 因为 or 虽然, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 如果, 因为 or 虽然",
+        "instructions": "Write 如果, 因为 or 虽然 in each gap. Look at the second part of the sentence and the English.",
+        "options": ["如果", "因为", "虽然"],
+        "items": [
+          {"zh": "＿＿明天天气不好，我们就在家看电视。", "en": "If the weather is bad tomorrow, we'll stay in and watch TV.", "answer": "如果"},
+          {"zh": "＿＿他生病了，所以今天没有来上课。", "en": "He's ill, so he didn't come to class today.", "answer": "因为"},
+          {"zh": "＿＿这件衣服很漂亮，但是太贵了。", "en": "This top is nice, but it's too expensive.", "answer": "虽然"},
+          {"zh": "＿＿你不喜欢，就别买了。", "en": "If you don't like it, don't buy it.", "answer": "如果"},
+          {"zh": "＿＿明天你有时间，就来我家吃饭吧。", "en": "If you're free tomorrow, come to my place for dinner.", "answer": "如果"},
+          {"zh": "＿＿我很累，但是我还要工作。", "en": "I'm tired, but I still have to work.", "answer": "虽然"},
+          {"zh": "＿＿路上车很多，所以我来晚了。", "en": "There was a lot of traffic, so I was late.", "answer": "因为"},
+          {"zh": "＿＿我是你，我就不去。", "en": "If I were you, I wouldn't go.", "answer": "如果"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["如果", "太贵", "就", "我", "不买了"], "en": "If it's too expensive, I won't buy it.", "answers": ["如果太贵，我就不买了。"]},
+          {"words": ["如果", "你", "就", "饿了", "先吃吧"], "en": "If you're hungry, go ahead and eat first.", "answers": ["如果你饿了，就先吃吧。", "你如果饿了，就先吃吧。"]},
+          {"words": ["如果", "他", "来", "我", "就", "走"], "en": "If he comes, I'll leave.", "answers": ["如果他来，我就走。", "他如果来，我就走。"]},
+          {"words": ["的话", "有问题", "如果", "就", "问老师"], "en": "If you have any questions, ask the teacher.", "answers": ["如果有问题的话，就问老师。"]},
+          {"words": ["就会", "如果", "你", "多练习", "说得更好"], "en": "If you practise more, you'll speak better.", "answers": ["如果你多练习，就会说得更好。", "你如果多练习，就会说得更好。"]},
+          {"words": ["明天", "如果", "不冷", "就", "我们", "去公园"], "en": "If it isn't cold tomorrow, we'll go to the park.", "answers": ["如果明天不冷，我们就去公园。", "明天如果不冷，我们就去公园。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "如果你不去，就我不去。", "en": "If you don't go, I won't go.", "answers": ["如果你不去，我就不去。", "你如果不去，我就不去。"]},
+          {"zh": "我就去，如果你去。", "en": "I'll go if you go.", "answers": ["如果你去，我就去。", "你如果去，我就去。"]},
+          {"zh": "如果你累了，我们休息就一下。", "en": "If you're tired, let's have a rest.", "answers": ["如果你累了，我们就休息一下。", "你如果累了，我们就休息一下。"]},
+          {"zh": "如果你不吃早饭，会就饿。", "en": "If you don't eat breakfast, you'll get hungry.", "answers": ["如果你不吃早饭，就会饿。", "你如果不吃早饭，就会饿。", "如果你不吃早饭，你就会饿。"]},
+          {"zh": "我们就去爬山，如果明天天气好。", "en": "We'll go hiking if the weather is nice tomorrow.", "answers": ["如果明天天气好，我们就去爬山。", "明天如果天气好，我们就去爬山。"]}
+        ]
+      }
+    ]
+  }
+}
