@@ -1,0 +1,108 @@
+{
+  "slug": "bei-passive",
+  "level": 3,
+  "published": "2026-10-19",
+  "title": "被 (bèi) in Chinese: The Passive Voice, HSK 3 Grammar",
+  "description": "How to use 被 (bèi) for the passive in Chinese: the word order, leaving out the doer, why the verb needs an ending, negatives with 没有, and HSK 3 examples.",
+  "zh": "被",
+  "h1": "How to Use 被 for the Passive",
+  "lede": "被 (bèi) makes a passive sentence: the person or thing that something happened to comes first, and the one who did it comes after 被. It is mostly used for things that went wrong or were unexpected, and it is a key grammar point of HSK 3.",
+  "sections": [
+    {
+      "h2": "The pattern",
+      "paras": [
+        "Receiver + 被 + doer + verb + something else.",
+        "Start with the thing the action happened to, then 被, then who did it, then the verb. 我的手机被弟弟用坏了 tells the same story as 弟弟把我的手机用坏了, but it starts from my phone and what happened to it, not from my brother."
+      ],
+      "examples": [
+        {"zh": "我的手机被弟弟用坏了。", "py": "Wǒ de shǒujī bèi dìdi yònghuài le.", "en": "My phone got broken by my little brother."},
+        {"zh": "蛋糕被妹妹吃了。", "py": "Dàngāo bèi mèimei chī le.", "en": "The cake was eaten by my little sister."},
+        {"zh": "这件事被老师知道了。", "py": "Zhè jiàn shì bèi lǎoshī zhīdào le.", "en": "The teacher found out about this."}
+      ]
+    },
+    {
+      "h2": "Leaving out the doer",
+      "paras": [
+        "If you don't know or don't need to say who did it, put the verb straight after 被. To say \"someone\", use 被人."
+      ],
+      "examples": [
+        {"zh": "我的钱包被人拿走了。", "py": "Wǒ de qiánbāo bèi rén názǒu le.", "en": "Someone took my wallet."},
+        {"zh": "那本书被借走了。", "py": "Nà běn shū bèi jièzǒu le.", "en": "That book has been borrowed."},
+        {"zh": "他的自行车被人骑走了。", "py": "Tā de zìxíngchē bèi rén qízǒu le.", "en": "Someone rode off on his bike."}
+      ]
+    },
+    {
+      "h2": "The verb needs something after it",
+      "paras": [
+        "As with 把, the verb in a 被 sentence can't stand alone. After it, add a result such as 坏 or 完, a direction such as 走 or 回家, or at least 了. 我的手机被弟弟用 is not a complete sentence.",
+        "English uses the passive far more often than Chinese. 被 is mostly for things that happened to someone or something and were bad, unwanted or unexpected. When it is obvious that the subject can't do the action itself, Chinese usually leaves 被 out: say 作业做完了, not 作业被做完了."
+      ],
+      "examples": [
+        {"zh": "他被妈妈叫回家了。", "py": "Tā bèi māma jiào huí jiā le.", "en": "His mum called him home."},
+        {"zh": "鱼被猫吃了。", "py": "Yú bèi māo chī le.", "en": "The cat ate the fish."},
+        {"zh": "作业做完了。", "py": "Zuòyè zuòwán le.", "en": "The homework is done."}
+      ]
+    },
+    {
+      "h2": "Negatives, questions and 让",
+      "paras": [
+        "To say something didn't happen, put 没有 before 被, not before the verb, and leave out 了. To warn someone, put 别 before 被. To ask who did it, put 谁 after 被.",
+        "In everyday speech, 让 can take the place of 被, but then you must say who did it."
+      ],
+      "examples": [
+        {"zh": "我的电脑没有被他用坏。", "py": "Wǒ de diànnǎo méiyǒu bèi tā yònghuài.", "en": "He didn't break my computer."},
+        {"zh": "别被他看见。", "py": "Bié bèi tā kànjiàn.", "en": "Don't let him see you."},
+        {"zh": "你的手机被谁拿走了？", "py": "Nǐ de shǒujī bèi shéi názǒu le?", "en": "Who took your phone?"},
+        {"zh": "我的蛋糕让弟弟吃了。", "py": "Wǒ de dàngāo ràng dìdi chī le.", "en": "My little brother ate my cake."}
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "被 Passive Worksheet: HSK 3 Printable with Answers",
+    "description": "A free printable 被 (bèi) passive worksheet for HSK 3: 20 exercises (被 or 把, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 被 or 把",
+        "instructions": "Write 被 or 把 in each gap. The English tells you what the sentence means.",
+        "options": ["被", "把"],
+        "items": [
+          {"zh": "我的手机＿＿弟弟拿走了。", "en": "My little brother took my phone.", "answer": "被"},
+          {"zh": "弟弟＿＿我的手机拿走了。", "en": "My little brother took my phone.", "answer": "把"},
+          {"zh": "你＿＿门关上吧。", "en": "Close the door.", "answer": "把"},
+          {"zh": "我的面包＿＿妹妹吃了。", "en": "My little sister ate my bread.", "answer": "被"},
+          {"zh": "他＿＿老师叫到办公室去了。", "en": "The teacher called him to the office.", "answer": "被"},
+          {"zh": "请＿＿这些东西放在门口。", "en": "Please put these things by the door.", "answer": "把"},
+          {"zh": "那本书＿＿人借走了。", "en": "Someone has borrowed that book.", "answer": "被"},
+          {"zh": "妈妈＿＿衣服洗干净了。", "en": "Mum has washed the clothes.", "answer": "把"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence with 被.",
+        "items": [
+          {"words": ["被", "了", "我的", "吃", "鱼", "猫"], "en": "The cat ate my fish.", "answers": ["我的鱼被猫吃了。"]},
+          {"words": ["被", "拿走", "钱", "人", "了", "他的"], "en": "Someone took his money.", "answers": ["他的钱被人拿走了。"]},
+          {"words": ["没有", "被", "那个蛋糕", "吃完", "孩子们"], "en": "The children didn't finish the cake.", "answers": ["那个蛋糕没有被孩子们吃完。"]},
+          {"words": ["被", "谁", "的", "你", "拿走了", "书"], "en": "Who took your book?", "answers": ["你的书被谁拿走了？"]},
+          {"words": ["被", "了", "看见", "老师", "我们"], "en": "The teacher saw us.", "answers": ["我们被老师看见了。"]},
+          {"words": ["被", "的", "了", "我", "雨伞", "朋友", "借走"], "en": "A friend has borrowed my umbrella.", "answers": ["我的雨伞被朋友借走了。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "我的杯子被弟弟拿。", "en": "My little brother took my cup away.", "answers": ["我的杯子被弟弟拿走了。"]},
+          {"zh": "苹果被了妹妹吃。", "en": "My little sister ate the apples.", "answers": ["苹果被妹妹吃了。"]},
+          {"zh": "我的钱被弟弟没有拿走。", "en": "My little brother didn't take my money.", "answers": ["我的钱没有被弟弟拿走。"]},
+          {"zh": "被我的书他借走了。", "en": "He borrowed my book.", "answers": ["我的书被他借走了。"]},
+          {"zh": "我被看见了老师。", "en": "The teacher saw me.", "answers": ["我被老师看见了。"]},
+          {"zh": "我的水果把弟弟吃了。", "en": "My little brother ate my fruit.", "answers": ["我的水果被弟弟吃了。", "弟弟把我的水果吃了。"]}
+        ]
+      }
+    ]
+  }
+}
