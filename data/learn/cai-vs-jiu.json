@@ -1,0 +1,115 @@
+{
+  "slug": "cai-vs-jiu",
+  "level": 3,
+  "published": "2026-10-19",
+  "title": "才 vs 就 in Chinese: Later or Earlier Than Expected (HSK 3)",
+  "description": "才 (cái) vs 就 (jiù) in Chinese: \"not until\" vs \"as early as\", quick or slow, 才 for \"only\", 就 and 才 after a condition, common mistakes and HSK 3 examples.",
+  "zh": "才 就",
+  "h1": "才 vs 就: \"Only Then\" or \"Already\"",
+  "lede": "才 (cái) and 就 (jiù) both go before the verb and show how the speaker feels about the timing. 就 says something happened early, quickly or easily; 才 says it happened late, slowly or with difficulty.",
+  "sections": [
+    {
+      "h2": "就 is early, 才 is late",
+      "paras": [
+        "Time + 就 + verb + 了. Time + 才 + verb.",
+        "Both words come after the time word and straight before the verb. 就 says something happened earlier than expected. 才 says it happened later than expected, like \"not until\" in English. For something that has already happened, a 就 sentence usually ends in 了, but a 才 sentence doesn't."
+      ],
+      "examples": [
+        {"zh": "他六点就起床了。", "py": "Tā liù diǎn jiù qǐchuáng le.", "en": "He was up as early as six."},
+        {"zh": "他十点才起床。", "py": "Tā shí diǎn cái qǐchuáng.", "en": "He didn't get up until ten."},
+        {"zh": "电影七点开始，他七点半才到。", "py": "Diànyǐng qī diǎn kāishǐ, tā qī diǎn bàn cái dào.", "en": "The film started at seven, but he didn't arrive until half past."}
+      ]
+    },
+    {
+      "h2": "Quick or slow, young or old",
+      "paras": [
+        "The same idea works with lengths of time and with ages. With 就, it took less time than expected or happened at a young age. With 才, it took a long time or came late."
+      ],
+      "examples": [
+        {"zh": "我半个小时就做完了。", "py": "Wǒ bàn ge xiǎoshí jiù zuòwán le.", "en": "I finished it in just half an hour."},
+        {"zh": "他三个小时才做完。", "py": "Tā sān ge xiǎoshí cái zuòwán.", "en": "It took him three hours to finish."},
+        {"zh": "他二十二岁就结婚了。", "py": "Tā èrshí'èr suì jiù jiéhūn le.", "en": "He was already married at twenty-two."},
+        {"zh": "她三十八岁才结婚。", "py": "Tā sānshíbā suì cái jiéhūn.", "en": "She didn't get married until she was thirty-eight."}
+      ]
+    },
+    {
+      "h2": "才 meaning \"only\"",
+      "paras": [
+        "Straight before a number, 才 means \"only\": the speaker thinks the number is small. It is often used with ages, clock times and prices."
+      ],
+      "examples": [
+        {"zh": "他才八岁。", "py": "Tā cái bā suì.", "en": "He's only eight."},
+        {"zh": "现在才六点，你再睡一会儿吧。", "py": "Xiànzài cái liù diǎn, nǐ zài shuì yíhuìr ba.", "en": "It's only six. Go back to sleep for a bit."}
+      ]
+    },
+    {
+      "h2": "After a condition",
+      "paras": [
+        "After a condition, 就 means \"then\": if the first thing happens, the second follows. 才 means \"only then\": the second thing happens only if the first one does."
+      ],
+      "examples": [
+        {"zh": "你去，我就去。", "py": "Nǐ qù, wǒ jiù qù.", "en": "If you go, I'll go."},
+        {"zh": "你去，我才去。", "py": "Nǐ qù, wǒ cái qù.", "en": "I'll only go if you go."}
+      ]
+    },
+    {
+      "h2": "Common mistakes",
+      "paras": [
+        "The most common mistake is putting 了 at the end of a 才 sentence about the past. Say 他十点才来, not 他十点才来了.",
+        "Neither word can go at the end of the sentence. When they mean \"late\" or \"early\", put them after the subject and the time word, straight before the verb."
+      ],
+      "examples": [
+        {"zh": "我昨天晚上十二点才睡觉。", "py": "Wǒ zuótiān wǎnshang shí'èr diǎn cái shuìjiào.", "en": "I didn't go to bed until twelve last night."},
+        {"zh": "我们八点就到了。", "py": "Wǒmen bā diǎn jiù dào le.", "en": "We got there as early as eight."}
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "才 vs 就 Worksheet: HSK 3 Printable with Answers",
+    "description": "A free printable 才 vs 就 worksheet for HSK 3: 20 exercises (choose 才 or 就, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 才 or 就",
+        "instructions": "Write 才 or 就 in each gap. The English tells you what the sentence means.",
+        "options": ["才", "就"],
+        "items": [
+          {"zh": "他昨天晚上一点＿＿睡觉。", "en": "He didn't go to bed until one o'clock last night.", "answer": "才"},
+          {"zh": "我早上五点＿＿起床了。", "en": "I was up as early as five this morning.", "answer": "就"},
+          {"zh": "这本书我两天＿＿看完了。", "en": "I finished this book in just two days.", "answer": "就"},
+          {"zh": "我等了半个小时，车＿＿来。", "en": "I waited half an hour before the bus finally came.", "answer": "才"},
+          {"zh": "弟弟＿＿六岁，还不会写很多字。", "en": "My little brother is only six, so he can't write many characters yet.", "answer": "才"},
+          {"zh": "你去，我＿＿去。", "en": "If you're going, then I'll go.", "answer": "就"},
+          {"zh": "他学了三年＿＿会说一点儿汉语。", "en": "It took him three years to be able to speak a little Chinese.", "answer": "才"},
+          {"zh": "飞机十点起飞，他九点＿＿到机场了。", "en": "The plane took off at ten, and he got to the airport as early as nine.", "answer": "就"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["才", "他", "来", "十点"], "en": "He didn't come until ten.", "answers": ["他十点才来。", "十点他才来。"]},
+          {"words": ["就", "她", "了", "走", "五点"], "en": "She left as early as five.", "answers": ["她五点就走了。", "五点她就走了。"]},
+          {"words": ["才", "明白", "我", "现在"], "en": "Only now do I understand.", "answers": ["我现在才明白。", "现在我才明白。"]},
+          {"words": ["就", "到", "了", "十分钟", "我们"], "en": "We got there in just ten minutes.", "answers": ["我们十分钟就到了。", "十分钟我们就到了。"]},
+          {"words": ["才", "这个", "块", "十", "菜"], "en": "This dish is only ten kuai.", "answers": ["这个菜才十块。"]},
+          {"words": ["才", "到", "我", "下午", "家"], "en": "I didn't get home until the afternoon.", "answers": ["我下午才到家。", "下午我才到家。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "她十一点才来了。", "en": "She didn't come until eleven.", "answers": ["她十一点才来。"]},
+          {"zh": "我二十分钟做完就了。", "en": "I finished it in just twenty minutes.", "answers": ["我二十分钟就做完了。"]},
+          {"zh": "他两点吃午饭才。", "en": "He didn't have lunch until two.", "answers": ["他两点才吃午饭。"]},
+          {"zh": "他七点起床就了。", "en": "He was up as early as seven.", "answers": ["他七点就起床了。"]},
+          {"zh": "妈妈说了三次，他就起床。", "en": "Mum had to tell him three times before he got up.", "answers": ["妈妈说了三次，他才起床。"]},
+          {"zh": "他很聪明，一个小时才学会了。", "en": "He's clever: he learnt it in just an hour.", "answers": ["他很聪明，一个小时就学会了。"]}
+        ]
+      }
+    ]
+  }
+}
