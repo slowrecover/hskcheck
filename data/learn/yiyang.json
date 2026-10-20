@@ -1,0 +1,96 @@
+{
+  "slug": "yiyang",
+  "level": 3,
+  "published": "2026-10-20",
+  "title": "跟……一样 in Chinese: How to Say \"the Same as\" (HSK 3)",
+  "description": "How to use 跟……一样 (gēn... yíyàng) for \"the same as\" and \"as... as\" in Chinese: word order, 不一样, 没有 for \"not as\", common mistakes and HSK 3 examples.",
+  "zh": "跟……一样",
+  "h1": "How to Say \"the Same as\" with 跟……一样",
+  "lede": "一样 (yíyàng) means \"the same\". With 跟 (gēn) or 和 (hé) in front of the second thing, A 跟 B 一样 says that A and B are the same. Add an adjective after it to say \"as tall as\", \"as hot as\" and so on.",
+  "sections": [
+    {
+      "h2": "A 跟 B 一样: \"the same as\"",
+      "paras": [
+        "A + 跟 + B + 一样.",
+        "跟 and 和 both work here and mean the same. To ask if two things are the same, add 吗 at the end. Before a noun, use 一样的: 一样的书包 is \"the same school bag\". With a verb, 跟……一样 means \"like\": 我跟你一样，也喜欢喝茶 is \"Like you, I like tea too\"."
+      ],
+      "examples": [
+        {"zh": "我的手机跟你的一样。", "py": "Wǒ de shǒujī gēn nǐ de yíyàng.", "en": "My phone is the same as yours."},
+        {"zh": "你的书跟我的一样吗？", "py": "Nǐ de shū gēn wǒ de yíyàng ma?", "en": "Is your book the same as mine?"},
+        {"zh": "我和妹妹有一样的书包。", "py": "Wǒ hé mèimei yǒu yíyàng de shūbāo.", "en": "My little sister and I have the same school bag."},
+        {"zh": "我跟你一样，也喜欢喝茶。", "py": "Wǒ gēn nǐ yíyàng, yě xǐhuan hē chá.", "en": "Like you, I like tea too."}
+      ]
+    },
+    {
+      "h2": "A 跟 B 一样 + adjective: \"as... as\"",
+      "paras": [
+        "A + 跟 + B + 一样 + adjective.",
+        "The adjective goes after 一样, never before it. The most common mistake is to follow English word order and say 他跟我高一样; the right order is 他跟我一样高. To talk about how well someone does something, use a verb with 得 first."
+      ],
+      "examples": [
+        {"zh": "他跟他爸爸一样高。", "py": "Tā gēn tā bàba yíyàng gāo.", "en": "He's as tall as his dad."},
+        {"zh": "今天跟昨天一样热。", "py": "Jīntiān gēn zuótiān yíyàng rè.", "en": "Today is just as hot as yesterday."},
+        {"zh": "这件衣服和那件一样贵。", "py": "Zhè jiàn yīfu hé nà jiàn yíyàng guì.", "en": "This top costs the same as that one."},
+        {"zh": "他说汉语说得跟中国人一样好。", "py": "Tā shuō Hànyǔ shuō de gēn Zhōngguórén yíyàng hǎo.", "en": "He speaks Chinese as well as a Chinese person."}
+      ]
+    },
+    {
+      "h2": "Negatives: 不一样 and 没有",
+      "paras": [
+        "To say two things are different, put 不 directly before 一样: A 跟 B 不一样. A common mistake is to put 不 before 跟 instead. Note the pinyin: 不一样 is bù yíyàng.",
+        "To say \"not as tall as\" or \"not as expensive as\", Chinese usually uses 没有 instead: A + 没有 + B + adjective."
+      ],
+      "examples": [
+        {"zh": "这两个字不一样。", "py": "Zhè liǎng ge zì bù yíyàng.", "en": "These two characters are different."},
+        {"zh": "中国人的名字跟我们的不一样。", "py": "Zhōngguórén de míngzi gēn wǒmen de bù yíyàng.", "en": "Chinese names are different from ours."},
+        {"zh": "弟弟没有哥哥高。", "py": "Dìdi méiyǒu gēge gāo.", "en": "The younger brother isn't as tall as the older one."}
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "跟……一样 Worksheet: HSK 3 Printable with Answers",
+    "description": "A free printable 跟……一样 worksheet for HSK 3: 18 exercises (一样, 不一样 or 比, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 一样, 不一样 or 比",
+        "instructions": "Write 一样, 不一样 or 比 in each gap. The English tells you what the sentence means.",
+        "options": ["一样", "不一样", "比"],
+        "items": [
+          {"zh": "我的书包跟你的＿＿。", "en": "My school bag is the same as yours.", "answer": "一样"},
+          {"zh": "他＿＿我大两岁。", "en": "He's two years older than me.", "answer": "比"},
+          {"zh": "这两件衣服的颜色＿＿。", "en": "These two tops are different colours.", "answer": "不一样"},
+          {"zh": "这个房间跟那个房间＿＿大。", "en": "This room is as big as that one.", "answer": "一样"},
+          {"zh": "南方的菜跟北方的菜＿＿。", "en": "Food in the south is different from food in the north.", "answer": "不一样"},
+          {"zh": "坐地铁＿＿坐出租车便宜。", "en": "The underground is cheaper than a taxi.", "answer": "比"},
+          {"zh": "我跟你＿＿，也是学生。", "en": "Like you, I'm a student too.", "answer": "一样"},
+          {"zh": "你说的跟他说的＿＿。", "en": "What you said is different from what he said.", "answer": "不一样"},
+          {"zh": "我妹妹＿＿我高。", "en": "My little sister is taller than me.", "answer": "比"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["跟", "现在", "以前", "不一样", "这儿"], "en": "This place is different now from how it used to be.", "answers": ["这儿现在跟以前不一样。", "现在这儿跟以前不一样。"]},
+          {"words": ["一样", "跑得", "跟", "他", "我", "快"], "en": "He runs as fast as me.", "answers": ["他跑得跟我一样快。", "我跑得跟他一样快。"]},
+          {"words": ["一样", "这两个字", "吗"], "en": "Are these two characters the same?", "answers": ["这两个字一样吗？"]},
+          {"words": ["没有", "妹妹", "高", "姐姐"], "en": "My younger sister isn't as tall as my older sister.", "answers": ["妹妹没有姐姐高。"]},
+          {"words": ["和", "这个菜", "一样", "那个菜", "好吃"], "en": "This dish is just as tasty as that one.", "answers": ["这个菜和那个菜一样好吃。", "那个菜和这个菜一样好吃。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "这本书跟那本书贵一样。", "en": "This book costs the same as that one.", "answers": ["这本书跟那本书一样贵。", "这本书和那本书一样贵。"]},
+          {"zh": "这件衣服的颜色不跟那件一样。", "en": "This top is a different colour from that one.", "answers": ["这件衣服的颜色跟那件不一样。", "这件衣服的颜色和那件不一样。"]},
+          {"zh": "我一样他高。", "en": "I'm as tall as him.", "answers": ["我跟他一样高。", "我和他一样高。"]},
+          {"zh": "他汉语说得跟中国人一样很好。", "en": "He speaks Chinese as well as a Chinese person.", "answers": ["他汉语说得跟中国人一样好。", "他汉语说得和中国人一样好。"]}
+        ]
+      }
+    ]
+  }
+}
