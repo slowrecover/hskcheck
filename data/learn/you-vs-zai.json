@@ -1,0 +1,106 @@
+{
+  "slug": "you-vs-zai",
+  "level": 3,
+  "published": "2026-10-20",
+  "title": "又 vs 再 in Chinese: Two Ways to Say \"Again\" (HSK 3 Grammar)",
+  "description": "又 (yòu) vs 再 (zài): which \"again\" to use for the past and the future, word order with 想 and 没有, 别再……了, common mistakes and HSK 3 examples.",
+  "zh": "又 vs 再",
+  "h1": "又 vs 再: Two Ways to Say \"Again\"",
+  "lede": "Chinese has two words for \"again\". 又 (yòu) is for something that has already happened again. 再 (zài) is for something that hasn't happened yet: a plan, a request or a suggestion.",
+  "sections": [
+    {
+      "h2": "又: it happened again",
+      "paras": [
+        "Subject + 又 + verb + 了.",
+        "Use 又 when the repeat has already happened. The sentence usually ends with 了. It often sounds a little surprised or annoyed, like \"not again!\" in English. The most common mistake is to use 再 here: 他昨天再来了 is wrong, because yesterday is in the past."
+      ],
+      "examples": [
+        {"zh": "他昨天来了，今天又来了。", "py": "Tā zuótiān lái le, jīntiān yòu lái le.", "en": "He came yesterday, and he came again today."},
+        {"zh": "我的手机又坏了。", "py": "Wǒ de shǒujī yòu huài le.", "en": "My phone's broken again."},
+        {"zh": "你怎么又迟到了？", "py": "Nǐ zěnme yòu chídào le?", "en": "Why are you late again?"}
+      ]
+    },
+    {
+      "h2": "再: it will happen again",
+      "paras": [
+        "Subject + 再 + verb.",
+        "Use 再 when the repeat is still in the future. You will often hear it in requests and invitations, and with 一遍 or 一次 (one more time)."
+      ],
+      "examples": [
+        {"zh": "请你再说一遍。", "py": "Qǐng nǐ zài shuō yí biàn.", "en": "Please say that again."},
+        {"zh": "欢迎你们以后再来。", "py": "Huānyíng nǐmen yǐhòu zài lái.", "en": "You're welcome to come again any time."},
+        {"zh": "我们下次再来吧。", "py": "Wǒmen xià cì zài lái ba.", "en": "Let's come again next time."}
+      ]
+    },
+    {
+      "h2": "又 for things that are sure to happen again",
+      "paras": [
+        "There is one case where 又 talks about the future: something that comes round again for sure, like a day of the week, a holiday or an exam. This 又 usually comes with 是 or 要, and the sentence ends with 了."
+      ],
+      "examples": [
+        {"zh": "明天又是星期一了。", "py": "Míngtiān yòu shì xīngqīyī le.", "en": "It's Monday again tomorrow."},
+        {"zh": "下个星期又要考试了。", "py": "Xià ge xīngqī yòu yào kǎoshì le.", "en": "We've got another exam next week."}
+      ]
+    },
+    {
+      "h2": "Word order with 想, 没有 and 别",
+      "paras": [
+        "又 goes before words like 想, 要 and 没有: 他又没有来 means \"he didn't come, again\". 再 goes after 想, 要 and 能, directly before the main verb: say 我想再看一遍, not 我再想看一遍.",
+        "To tell someone not to do something again, use 别再 + verb + 了."
+      ],
+      "examples": [
+        {"zh": "他今天又没有来上课。", "py": "Tā jīntiān yòu méiyǒu lái shàngkè.", "en": "He didn't come to class again today."},
+        {"zh": "这个电影很好看，我想再看一遍。", "py": "Zhège diànyǐng hěn hǎokàn, wǒ xiǎng zài kàn yí biàn.", "en": "This film is great. I want to watch it again."},
+        {"zh": "别再迟到了。", "py": "Bié zài chídào le.", "en": "Don't be late again."}
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "又 vs 再 Worksheet: HSK 3 Printable with Answers",
+    "description": "A free printable 又 vs 再 worksheet for HSK 3: 20 exercises (choose 又 or 再, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 又 or 再",
+        "instructions": "Write 又 or 再 in each gap. The English tells you whether the repeat has already happened.",
+        "options": ["又", "再"],
+        "items": [
+          {"zh": "他上个星期来过，昨天＿＿来了。", "en": "He was here last week, and he came again yesterday.", "answer": "又"},
+          {"zh": "这个字我没有看清楚，请你＿＿写一遍。", "en": "I couldn't see this character clearly. Please write it again.", "answer": "再"},
+          {"zh": "你怎么＿＿忘了带手机？", "en": "Why have you forgotten your phone again?", "answer": "又"},
+          {"zh": "这个地方很漂亮，我想＿＿来一次。", "en": "This place is beautiful. I'd like to come again.", "answer": "再"},
+          {"zh": "下个月＿＿要放假了。", "en": "We've got another holiday next month.", "answer": "又"},
+          {"zh": "别＿＿喝了，你已经喝了很多了。", "en": "Don't drink any more. You've already had a lot.", "answer": "再"},
+          {"zh": "他今天＿＿没有吃早饭。", "en": "He skipped breakfast again today.", "answer": "又"},
+          {"zh": "我们下次＿＿去那家饭馆吧。", "en": "Let's go to that restaurant again next time.", "answer": "再"},
+          {"zh": "外面＿＿下雨了。", "en": "It's raining again outside.", "answer": "又"},
+          {"zh": "明天＿＿是星期一了，我不想上班。", "en": "It's Monday again tomorrow. I don't want to go to work.", "answer": "又"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["又", "哥哥", "生病", "了"], "en": "My older brother is ill again.", "answers": ["哥哥又生病了。"]},
+          {"words": ["再", "一次", "请", "试"], "en": "Please try again.", "answers": ["请再试一次。"]},
+          {"words": ["想", "我", "再", "一次", "去"], "en": "I'd like to go again.", "answers": ["我想再去一次。"]},
+          {"words": ["又", "周末", "明天", "是", "了"], "en": "It's the weekend again tomorrow.", "answers": ["明天又是周末了。"]},
+          {"words": ["又", "没有", "他", "作业", "做"], "en": "He didn't do his homework again.", "answers": ["他又没有做作业。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "他昨天再来了。", "en": "He came again yesterday.", "answers": ["他昨天又来了。"]},
+          {"zh": "我明天又来。", "en": "I'll come again tomorrow.", "answers": ["我明天再来。"]},
+          {"zh": "我再想吃一个。", "en": "I'd like to have another one.", "answers": ["我想再吃一个。"]},
+          {"zh": "我的电脑昨天再坏了。", "en": "My computer broke again yesterday.", "answers": ["我的电脑昨天又坏了。"]},
+          {"zh": "欢迎你们明年又来。", "en": "You're welcome to come again next year.", "answers": ["欢迎你们明年再来。"]}
+        ]
+      }
+    ]
+  }
+}
