@@ -1,0 +1,101 @@
+{
+  "slug": "yibian-yibian",
+  "level": 3,
+  "published": "2026-10-20",
+  "title": "一边……一边 in Chinese: Doing Two Things at Once (HSK 3)",
+  "description": "How to use 一边……一边 (yìbiān... yìbiān) to say you do two things at the same time: word order, 别 and 不要, the short form 边……边, and HSK 3 examples.",
+  "zh": "一边……一边",
+  "h1": "How to Say \"While\" with 一边……一边",
+  "lede": "一边 (yìbiān) goes before two actions to show that one person is doing both at the same time, like eating while watching TV. It is the everyday way to say \"while\" or \"as\" in Chinese.",
+  "sections": [
+    {
+      "h2": "The pattern",
+      "paras": [
+        "Subject + 一边 + action 1, 一边 + action 2.",
+        "Put 一边 directly before each verb. Both actions are done by the same person and happen at the same time. The comma in the middle is optional. In English the order often changes: 我一边吃饭，一边看电视 is \"I watch TV while I eat\"."
+      ],
+      "examples": [
+        {"zh": "我一边吃饭，一边看电视。", "py": "Wǒ yìbiān chī fàn, yìbiān kàn diànshì.", "en": "I watch TV while I eat."},
+        {"zh": "她一边听音乐，一边做作业。", "py": "Tā yìbiān tīng yīnyuè, yìbiān zuò zuòyè.", "en": "She listens to music while she does her homework."},
+        {"zh": "我们一边喝咖啡，一边聊天。", "py": "Wǒmen yìbiān hē kāfēi, yìbiān liáotiān.", "en": "We chatted over coffee."},
+        {"zh": "他一边上大学，一边工作。", "py": "Tā yìbiān shàng dàxué, yìbiān gōngzuò.", "en": "He works while he's at university."}
+      ]
+    },
+    {
+      "h2": "The subject comes first",
+      "paras": [
+        "The most common mistake is to put the subject after 一边, as in 一边我吃饭. The subject goes before the first 一边, and you don't repeat it after the second one. Also remember the second 一边: 我一边吃饭，看电视 is not complete.",
+        "To tell someone not to do two things at once, put 别 or 不要 before the first 一边."
+      ],
+      "examples": [
+        {"zh": "妈妈一边做饭，一边唱歌。", "py": "Māma yìbiān zuò fàn, yìbiān chàng gē.", "en": "Mum sings while she cooks."},
+        {"zh": "别一边吃饭，一边看手机。", "py": "Bié yìbiān chī fàn, yìbiān kàn shǒujī.", "en": "Don't look at your phone while you're eating."},
+        {"zh": "你不要一边开车，一边打电话。", "py": "Nǐ búyào yìbiān kāichē, yìbiān dǎ diànhuà.", "en": "Don't talk on the phone while you're driving."}
+      ]
+    },
+    {
+      "h2": "The short form 边……边",
+      "paras": [
+        "In speech you will also hear 边……边, mostly with short, one-syllable verbs. It means the same thing."
+      ],
+      "examples": [
+        {"zh": "我们边走边说吧。", "py": "Wǒmen biān zǒu biān shuō ba.", "en": "Let's talk as we walk."},
+        {"zh": "孩子们边唱边跳。", "py": "Háizimen biān chàng biān tiào.", "en": "The children sang and danced."}
+      ]
+    },
+    {
+      "h2": "Don't use it for adjectives",
+      "paras": [
+        "一边……一边 is only for actions. To say something has two qualities, such as big and sweet, use 又……又 instead: 又大又甜, not 一边大一边甜."
+      ],
+      "examples": [
+        {"zh": "这个苹果又大又甜。", "py": "Zhège píngguǒ yòu dà yòu tián.", "en": "This apple is big and sweet."},
+        {"zh": "这家饭馆的菜又便宜又好吃。", "py": "Zhè jiā fànguǎn de cài yòu piányi yòu hǎochī.", "en": "The food at this restaurant is cheap and tasty."}
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "一边……一边 Worksheet: HSK 3 Printable with Answers",
+    "description": "A free printable 一边……一边 worksheet for HSK 3: 16 exercises (一边 or 又, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 一边 or 又",
+        "instructions": "Write 一边 or 又 in each gap. Use 一边 for two actions and 又 for two qualities.",
+        "options": ["一边", "又"],
+        "items": [
+          {"zh": "他＿＿看书，一边喝茶。", "en": "He drinks tea while he reads.", "answer": "一边"},
+          {"zh": "这个房间＿＿大又干净。", "en": "This room is big and clean.", "answer": "又"},
+          {"zh": "妈妈一边做饭，＿＿听音乐。", "en": "Mum listens to music while she cooks.", "answer": "一边"},
+          {"zh": "她又聪明＿＿漂亮。", "en": "She's clever and pretty.", "answer": "又"},
+          {"zh": "我们＿＿走，一边聊天。", "en": "We chatted as we walked.", "answer": "一边"},
+          {"zh": "他＿＿高又瘦。", "en": "He's tall and thin.", "answer": "又"},
+          {"zh": "别一边看电视，＿＿做作业。", "en": "Don't watch TV while you're doing your homework.", "answer": "一边"},
+          {"zh": "这件衣服＿＿便宜又好看。", "en": "This top is cheap and looks nice.", "answer": "又"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["一边", "一边", "我", "做作业", "听音乐"], "en": "I listen to music while I do my homework.", "answers": ["我一边做作业，一边听音乐。", "我一边听音乐，一边做作业。"]},
+          {"words": ["别", "一边", "一边", "走路", "看手机"], "en": "Don't look at your phone while you're walking.", "answers": ["别一边走路，一边看手机。", "别一边看手机，一边走路。"]},
+          {"words": ["边", "边", "我们", "走", "说吧"], "en": "Let's talk as we walk.", "answers": ["我们边走边说吧。"]},
+          {"words": ["又", "又", "这个面包", "大", "好吃"], "en": "This bread is big and tasty.", "answers": ["这个面包又大又好吃。", "这个面包又好吃又大。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "一边她唱歌，一边跳舞。", "en": "She sings and dances at the same time.", "answers": ["她一边唱歌，一边跳舞。"]},
+          {"zh": "这个手机一边便宜，一边好用。", "en": "This phone is cheap and easy to use.", "answers": ["这个手机又便宜又好用。"]},
+          {"zh": "爸爸一边看报纸，喝咖啡。", "en": "Dad drinks coffee while he reads the newspaper.", "answers": ["爸爸一边看报纸，一边喝咖啡。"]},
+          {"zh": "你一边别吃饭，一边说话。", "en": "Don't talk while you're eating.", "answers": ["你别一边吃饭，一边说话。"]}
+        ]
+      }
+    ]
+  }
+}
