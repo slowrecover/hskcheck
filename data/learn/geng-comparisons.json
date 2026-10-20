@@ -1,0 +1,104 @@
+{
+  "slug": "geng-comparisons",
+  "level": 3,
+  "published": "2026-10-20",
+  "title": "更 (gèng) in Chinese: How to Say \"Even More\" (HSK 3 Grammar)",
+  "description": "How to use 更 (gèng) for \"even more\" in Chinese: 更 with adjectives, in 比 sentences and with 喜欢, 更 vs 最, common mistakes and HSK 3 examples.",
+  "zh": "更",
+  "h1": "How to Say \"Even More\" with 更",
+  "lede": "更 (gèng) means \"even more\" or \"-er\". Put it before an adjective or a verb like 喜欢 to say that something goes one step further than something else.",
+  "sections": [
+    {
+      "h2": "更 + adjective",
+      "paras": [
+        "Subject + 更 + adjective.",
+        "更 always comes directly before the adjective. It usually means the first thing already has the quality and the second has even more of it: if today is cold, tomorrow will be even colder. You can use 更 without 比 when it is clear what you are comparing with."
+      ],
+      "examples": [
+        {"zh": "今天很冷，明天会更冷。", "py": "Jīntiān hěn lěng, míngtiān huì gèng lěng.", "en": "It's cold today, and it'll be even colder tomorrow."},
+        {"zh": "这件衣服很便宜，那件更便宜。", "py": "Zhè jiàn yīfu hěn piányi, nà jiàn gèng piányi.", "en": "This top is cheap, and that one is even cheaper."},
+        {"zh": "多练习，你的汉语会更好。", "py": "Duō liànxí, nǐ de Hànyǔ huì gèng hǎo.", "en": "Practise more and your Chinese will get even better."}
+      ]
+    },
+    {
+      "h2": "更 in 比 sentences",
+      "paras": [
+        "A + 比 + B + 更 + adjective.",
+        "A plain 比 sentence (他比我高) is already complete. Adding 更 makes it \"even taller\". The most common mistake is to use 很 instead: 他比我很高 is wrong. You will also hear 还 in the same place, with the same meaning: 他比我还高."
+      ],
+      "examples": [
+        {"zh": "哥哥很高，弟弟比哥哥更高。", "py": "Gēge hěn gāo, dìdi bǐ gēge gèng gāo.", "en": "My older brother is tall, and my younger brother is even taller."},
+        {"zh": "这个房间比那个房间更大。", "py": "Zhège fángjiān bǐ nàge fángjiān gèng dà.", "en": "This room is even bigger than that one."},
+        {"zh": "他比我还高。", "py": "Tā bǐ wǒ hái gāo.", "en": "He's even taller than me."}
+      ]
+    },
+    {
+      "h2": "更喜欢: \"prefer\"",
+      "paras": [
+        "更 also goes before verbs of liking, such as 喜欢 and 想. 我更喜欢 is the usual way to say \"I prefer\". To ask which one someone prefers, use 你更喜欢 with 哪个 or 还是."
+      ],
+      "examples": [
+        {"zh": "我喜欢喝咖啡，但是我更喜欢喝茶。", "py": "Wǒ xǐhuan hē kāfēi, dànshì wǒ gèng xǐhuan hē chá.", "en": "I like coffee, but I like tea even more."},
+        {"zh": "你更喜欢哪个颜色？", "py": "Nǐ gèng xǐhuan nǎge yánsè?", "en": "Which colour do you prefer?"},
+        {"zh": "我觉得这个办法更好。", "py": "Wǒ juéde zhège bànfǎ gèng hǎo.", "en": "I think this way is better."}
+      ]
+    },
+    {
+      "h2": "更 vs 最",
+      "paras": [
+        "更 compares one thing with another: \"more\". 最 picks one out of a group: \"the most\". Both come before the adjective or verb, never after it, and neither is used together with 很: say 我更喜欢, not 我更很喜欢."
+      ],
+      "examples": [
+        {"zh": "他很高，他哥哥更高，他爸爸最高。", "py": "Tā hěn gāo, tā gēge gèng gāo, tā bàba zuì gāo.", "en": "He's tall, his older brother is taller, and his dad is the tallest."}
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "更 Worksheet: HSK 3 Printable with Answers",
+    "description": "A free printable 更 (gèng) worksheet for HSK 3: 20 exercises (更, 最 or 很, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 更, 最 or 很",
+        "instructions": "Write 更, 最 or 很 in each gap. The English tells you what the sentence means.",
+        "options": ["更", "最", "很"],
+        "items": [
+          {"zh": "这个包比那个包＿＿大。", "en": "This bag is even bigger than that one.", "answer": "更"},
+          {"zh": "他是我们班＿＿高的学生。", "en": "He's the tallest student in our class.", "answer": "最"},
+          {"zh": "我觉得汉语＿＿有意思。", "en": "I think Chinese is very interesting.", "answer": "很"},
+          {"zh": "昨天很热，今天＿＿热。", "en": "It was hot yesterday, and today it's even hotter.", "answer": "更"},
+          {"zh": "这是我＿＿喜欢的菜。", "en": "This is my favourite dish.", "answer": "最"},
+          {"zh": "坐地铁比坐出租车＿＿快。", "en": "The underground is even quicker than a taxi.", "answer": "更"},
+          {"zh": "这家店的东西＿＿便宜。", "en": "Everything in this shop is very cheap.", "answer": "很"},
+          {"zh": "他的汉语说得比我＿＿好。", "en": "He speaks Chinese even better than I do.", "answer": "更"},
+          {"zh": "苹果和香蕉，你＿＿喜欢哪个？", "en": "Apples or bananas: which do you like better?", "answer": "更"},
+          {"zh": "我喜欢夏天，但是我＿＿喜欢秋天。", "en": "I like summer, but I like autumn even more.", "answer": "更"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["更", "下午", "会", "热"], "en": "It'll be even hotter in the afternoon.", "answers": ["下午会更热。"]},
+          {"words": ["比", "这本书", "那本", "更", "有意思"], "en": "This book is even more interesting than that one.", "answers": ["这本书比那本更有意思。"]},
+          {"words": ["更", "我", "喜欢", "喝牛奶"], "en": "I prefer milk.", "answers": ["我更喜欢喝牛奶。"]},
+          {"words": ["这个", "比", "那个", "更", "贵"], "en": "This one is even more expensive than that one.", "answers": ["这个比那个更贵。"]},
+          {"words": ["比", "妹妹", "我", "更", "高"], "en": "My younger sister is even taller than me.", "answers": ["妹妹比我更高。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "他比我很高。", "en": "He's even taller than me.", "answers": ["他比我更高。", "他比我还高。"]},
+          {"zh": "今天比昨天热更。", "en": "Today is even hotter than yesterday.", "answers": ["今天比昨天更热。", "今天比昨天还热。"]},
+          {"zh": "这个菜比那个很好吃。", "en": "This dish is even tastier than that one.", "answers": ["这个菜比那个更好吃。", "这个菜比那个还好吃。"]},
+          {"zh": "我更很喜欢这个。", "en": "I like this one even more.", "answers": ["我更喜欢这个。"]},
+          {"zh": "你很喜欢猫还是狗？", "en": "Do you prefer cats or dogs?", "answers": ["你更喜欢猫还是狗？", "你喜欢猫还是狗？"]}
+        ]
+      }
+    ]
+  }
+}
