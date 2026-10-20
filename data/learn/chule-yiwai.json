@@ -1,0 +1,101 @@
+{
+  "slug": "chule-yiwai",
+  "level": 3,
+  "published": "2026-10-20",
+  "title": "除了……以外 in Chinese: \"Except\" and \"Besides\" (HSK 3 Grammar)",
+  "description": "How to use 除了……以外 (chúle... yǐwài) in Chinese: \"except\" with 都, \"besides\" with 还 and 也, word order, common mistakes and HSK 3 examples.",
+  "zh": "除了……以外",
+  "h1": "How to Say \"Except\" and \"Besides\" with 除了……以外",
+  "lede": "除了……以外 (chúle... yǐwài) sets one thing apart from the rest. Whether it means \"except\" or \"besides\" depends on the word that comes next: 都 for \"except\", 还 or 也 for \"besides\" or \"as well as\".",
+  "sections": [
+    {
+      "h2": "With 都: \"except\"",
+      "paras": [
+        "除了 + A + 以外，(subject) + 都 + verb.",
+        "When the second part has 都 (all), A is the one exception: everyone or everything else is included, but not A. 以外 is optional, so 除了这个字 and 除了这个字以外 mean the same."
+      ],
+      "examples": [
+        {"zh": "除了哥哥以外，我们都去了。", "py": "Chúle gēge yǐwài, wǒmen dōu qù le.", "en": "All of us went except my older brother."},
+        {"zh": "除了星期天以外，他每天都工作。", "py": "Chúle xīngqītiān yǐwài, tā měi tiān dōu gōngzuò.", "en": "He works every day except Sunday."},
+        {"zh": "除了这个字，别的我都认识。", "py": "Chúle zhège zì, biéde wǒ dōu rènshi.", "en": "I know all the others apart from this character."}
+      ]
+    },
+    {
+      "h2": "With 还 or 也: \"besides\" and \"as well as\"",
+      "paras": [
+        "除了 + A + 以外，(subject) + 还 / 也 + verb.",
+        "When the second part has 还 or 也, A is included and something is added to it. 还 usually adds something else that the same person does. 也 is common when a different person does the same thing."
+      ],
+      "examples": [
+        {"zh": "除了游泳以外，我还喜欢跑步。", "py": "Chúle yóuyǒng yǐwài, wǒ hái xǐhuan pǎobù.", "en": "Besides swimming, I also like running."},
+        {"zh": "我们除了吃饭以外，还去看了电影。", "py": "Wǒmen chúle chī fàn yǐwài, hái qù kàn le diànyǐng.", "en": "As well as having dinner, we went to see a film."},
+        {"zh": "除了我，妹妹也去过中国。", "py": "Chúle wǒ, mèimei yě qù guo Zhōngguó.", "en": "Besides me, my little sister has been to China too."}
+      ]
+    },
+    {
+      "h2": "Word order and the most common mistake",
+      "paras": [
+        "The subject can come before 除了 or after the 除了 part: 我除了游泳以外 and 除了游泳以外，我 are both fine. 都, 还 and 也 always go after the subject and before the verb, so 除了他，都我们去了 is wrong.",
+        "The most common mistake is to leave out 都 or 还, or to use the wrong one. They change the meaning completely: 除了他，我们都去了 means he didn't go, while 除了他，我们也去了 means he went and so did we."
+      ],
+      "examples": [
+        {"zh": "除了这个以外，别的都可以。", "py": "Chúle zhège yǐwài, biéde dōu kěyǐ.", "en": "Anything but this one is fine."}
+      ]
+    },
+    {
+      "h2": "Negatives and questions",
+      "paras": [
+        "With 都不 or 都没有, the sentence means \"nobody but\" or \"nothing but\". To ask \"what else?\" or \"who else?\", use 还 with a question word."
+      ],
+      "examples": [
+        {"zh": "除了他，大家都不知道这件事。", "py": "Chúle tā, dàjiā dōu bù zhīdào zhè jiàn shì.", "en": "Nobody knows about this except him."},
+        {"zh": "除了面条以外，你还想吃什么？", "py": "Chúle miàntiáo yǐwài, nǐ hái xiǎng chī shénme?", "en": "What else would you like to eat besides noodles?"}
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "除了……以外 Worksheet: HSK 3 Printable with Answers",
+    "description": "A free printable 除了……以外 worksheet for HSK 3: 17 exercises (都 or 还, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 都 or 还",
+        "instructions": "Write 都 or 还 in each gap. Does the English mean \"except\" or \"besides\"?",
+        "options": ["都", "还"],
+        "items": [
+          {"zh": "除了爸爸，我们＿＿去过中国。", "en": "All of us except Dad have been to China.", "answer": "都"},
+          {"zh": "除了苹果以外，我＿＿买了香蕉。", "en": "As well as apples, I bought bananas.", "answer": "还"},
+          {"zh": "除了星期六，我每天＿＿要上班。", "en": "I have to go to work every day except Saturday.", "answer": "都"},
+          {"zh": "除了唱歌，她＿＿喜欢跳舞。", "en": "Besides singing, she also likes dancing.", "answer": "还"},
+          {"zh": "除了这件衣服，别的我＿＿不喜欢。", "en": "Apart from this top, I don't like any of them.", "answer": "都"},
+          {"zh": "除了打扫房间以外，我＿＿洗了衣服。", "en": "Besides cleaning the room, I did the washing too.", "answer": "还"},
+          {"zh": "除了一个问题以外，别的问题他＿＿回答对了。", "en": "He got all the questions right except one.", "answer": "都"},
+          {"zh": "除了汉语，你＿＿学什么？", "en": "What else are you learning besides Chinese?", "answer": "还"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["除了", "下雨天", "每天", "她", "都", "跑步"], "en": "She goes running every day except when it rains.", "answers": ["除了下雨天，她每天都跑步。", "她除了下雨天，每天都跑步。"]},
+          {"words": ["除了", "米饭", "我", "还", "买了", "面包"], "en": "Besides rice, I also bought bread.", "answers": ["除了米饭，我还买了面包。", "我除了米饭，还买了面包。"]},
+          {"words": ["除了", "中国", "你", "还", "去过", "哪儿"], "en": "Where else have you been besides China?", "answers": ["除了中国，你还去过哪儿？", "你除了中国，还去过哪儿？"]},
+          {"words": ["除了", "我", "都", "不认识", "大家", "他"], "en": "Nobody knows him except me.", "answers": ["除了我，大家都不认识他。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "除了妹妹以外，我们还吃过饭了。", "en": "We've all eaten except my little sister.", "answers": ["除了妹妹以外，我们都吃过饭了。"]},
+          {"zh": "除了牛奶，我都买了鸡蛋。", "en": "As well as milk, I bought some eggs.", "answers": ["除了牛奶，我还买了鸡蛋。", "除了牛奶，我也买了鸡蛋。"]},
+          {"zh": "除了周末，他每天还很忙。", "en": "He's busy every day except at the weekend.", "answers": ["除了周末，他每天都很忙。"]},
+          {"zh": "除了喝茶以外，我都喜欢喝咖啡。", "en": "Besides tea, I like coffee too.", "answers": ["除了喝茶以外，我还喜欢喝咖啡。", "除了喝茶以外，我也喜欢喝咖啡。"]},
+          {"zh": "除了妈妈，都我们喜欢吃鱼。", "en": "All of us like fish except Mum.", "answers": ["除了妈妈，我们都喜欢吃鱼。"]}
+        ]
+      }
+    ]
+  }
+}
