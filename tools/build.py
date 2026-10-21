@@ -6,6 +6,7 @@ Outputs (written at the repository root):
   chinese-character-worksheets/   the writing worksheet maker
   hsk-N-character-worksheets/     the maker preset to the characters of one level (needs strokes/hskN.json)
   old-hsk-to-new-hsk/index.html   old HSK -> new HSK word gap (needs old-hsk-to-new-hsk/words.json)
+  yct/...                         YCT word lists and worksheets (see tools/yct.py)
   sitemap.xml                     every page above
 
 Run from anywhere:  python3 tools/build.py
@@ -19,6 +20,7 @@ import unicodedata
 
 import build_th
 import learn
+import yct
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -130,7 +132,7 @@ def level_links(current):
 
 
 def worksheet_page(tpl, pages, current, *, eyebrow, chips, h1, lede, chars, preset, range_html,
-                   sheet_title, chartable, about_title, prose):
+                   sheet_title, chartable, about_title, prose, links=None):
     body = tpl
     for key, value in (
         ("__NAV__", nav(pages, "/chinese-character-worksheets/")),
@@ -138,7 +140,7 @@ def worksheet_page(tpl, pages, current, *, eyebrow, chips, h1, lede, chars, pres
         ("__CHIPS__", "".join(f'<span class="chip">{c}</span>' for c in chips)),
         ("__H1__", h1),
         ("__LEDE__", lede),
-        ("__LEVEL_LINKS__", level_links(current)),
+        ("__LEVEL_LINKS__", level_links(current) if links is None else links),
         ("__CHARS__", html.escape(chars)),
         ("__RANGE__", range_html),
         ("__SHEET_TITLE__", html.escape(sheet_title)),
@@ -327,6 +329,7 @@ def main():
         pages.append(("/old-hsk-to-new-hsk/", "Old → New HSK"))
     if any((DATA / "learn").glob("*.json")):
         pages.append((learn.LEARN_URL, "Grammar"))
+    pages.append((yct.YCT_URL, "YCT"))
     if ALTERNATES:
         pages.append((build_th.TH_URL, "ภาษาไทย"))
     extra_urls = []
@@ -494,6 +497,9 @@ def main():
             "you have not learned yet. Free, with Anki and Pleco export.",
             SITE + url, base_css + (TPL / "upgrade.css").read_text(encoding="utf-8"), body,
             f'<script type="application/ld+json">{ld}</script>'), encoding="utf-8")
+
+    # YCT word lists and worksheets
+    extra_urls += yct.build(ROOT, pages, nav, render, base_css, TPL, SITE, search_key, worksheet_page)
 
     # Grammar explainers
     extra_urls += learn.build(pages, nav, render, base_css, TPL, SITE)

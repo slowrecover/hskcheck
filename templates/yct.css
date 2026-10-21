@@ -1,0 +1,15 @@
+/* YCT pages: level badges in the word list, the "only new words" toggle and the overview table. */
+.new-toggle { display: inline-flex; gap: 6px; align-items: center; font-size: 14px; color: var(--ink); white-space: nowrap; }
+.new-toggle input { width: 16px; height: 16px; accent-color: var(--accent); }
+table.words-table td.lv { white-space: nowrap; width: 3em; }
+span.lv { display: inline-block; min-width: 1.6em; text-align: center; font-size: 12px; font-weight: 500; padding: 1px 8px; border-radius: 999px; }
+span.lv1 { color: var(--l1); background: var(--l1-bg); }
+span.lv2 { color: var(--l2); background: var(--l2-bg); }
+span.lv3 { color: var(--l3); background: var(--l3-bg); }
+span.lv4 { color: var(--warn); background: var(--paper); border: 1px solid var(--rule); }
+.levels-wrap { overflow-x: auto; }
+table.levels { width: 100%; border-collapse: collapse; font-size: 15px; }
+table.levels th { text-align: left; font-weight: 600; color: var(--muted); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; padding: 8px 12px 8px 0; border-bottom: 1px solid var(--rule); }
+table.levels td { padding: 10px 12px 10px 0; border-bottom: 1px solid var(--rule); font-variant-numeric: tabular-nums; }
+table.levels th[scope="row"] { text-align: left; font-weight: 600; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+table.levels small { color: var(--muted); }
