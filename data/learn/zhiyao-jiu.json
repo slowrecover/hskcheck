@@ -1,0 +1,92 @@
+{
+  "slug": "zhiyao-jiu",
+  "level": 3,
+  "published": "2026-10-21",
+  "title": "只要……就 in Chinese: How to Say \"As Long As\" (HSK 3 Grammar)",
+  "description": "How to use 只要……就 (zhǐyào... jiù) for \"as long as\" in Chinese: word order, where 就 goes, 只要 vs 只有……才, common mistakes and HSK 3 examples.",
+  "zh": "只要……就",
+  "h1": "How to Say \"As Long As\" with 只要……就",
+  "lede": "只要 (zhǐyào) means \"as long as\" or \"all you need is\". It gives a condition that is enough on its own, and 就 (jiù) in the second part gives the result.",
+  "sections": [
+    {
+      "h2": "The pattern",
+      "paras": [
+        "只要 + condition, (subject) + 就 + result.",
+        "只要 can go before or after the subject of the first part: 只要你努力 and 你只要努力 are both fine. The condition comes first. 就 goes before the verb in the second part, after its subject if it has one."
+      ],
+      "examples": [
+        {"zh": "只要你努力，就能学好汉语。", "py": "Zhǐyào nǐ nǔlì, jiù néng xuéhǎo Hànyǔ.", "en": "As long as you work hard, you'll learn Chinese well."},
+        {"zh": "只要不下雨，我们就去公园。", "py": "Zhǐyào bú xià yǔ, wǒmen jiù qù gōngyuán.", "en": "As long as it doesn't rain, we'll go to the park."},
+        {"zh": "你只要多练习，就会说得很好。", "py": "Nǐ zhǐyào duō liànxí, jiù huì shuō de hěn hǎo.", "en": "As long as you practise a lot, you'll speak it well."}
+      ]
+    },
+    {
+      "h2": "\"All you have to do is...\"",
+      "paras": [
+        "只要 often says that the condition is easy: just do this one thing and the result will follow. It can also describe a habit, where it is close to \"whenever\"."
+      ],
+      "examples": [
+        {"zh": "只要你打个电话，他就会来。", "py": "Zhǐyào nǐ dǎ ge diànhuà, tā jiù huì lái.", "en": "All you have to do is call, and he'll come."},
+        {"zh": "只要你喜欢，就买吧。", "py": "Zhǐyào nǐ xǐhuan, jiù mǎi ba.", "en": "If you like it, just buy it."},
+        {"zh": "只要有时间，我就去跑步。", "py": "Zhǐyào yǒu shíjiān, wǒ jiù qù pǎobù.", "en": "Whenever I have time, I go running."},
+        {"zh": "只要你不说，他就不会知道。", "py": "Zhǐyào nǐ bù shuō, tā jiù bú huì zhīdào.", "en": "As long as you don't tell him, he won't find out."}
+      ]
+    },
+    {
+      "h2": "只要……就 vs 只有……才",
+      "paras": [
+        "只有 (zhǐyǒu) looks similar but means \"only if\": the condition is the one thing that must happen, and nothing else will do. It goes with 才, not 就. 只要 goes with 就, not 才.",
+        "Mixing the two pairs is the most common mistake. 只要你努力，才能学好 and 只有你去，我就去 are both wrong."
+      ],
+      "examples": [
+        {"zh": "只有多练习，才能说好汉语。", "py": "Zhǐyǒu duō liànxí, cái néng shuōhǎo Hànyǔ.", "en": "Only by practising a lot can you speak Chinese well."},
+        {"zh": "只有你来，我才去。", "py": "Zhǐyǒu nǐ lái, wǒ cái qù.", "en": "I'll only go if you come."}
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "只要……就 Worksheet: HSK 3 Printable with Answers",
+    "description": "A free printable 只要……就 worksheet for HSK 3: 17 exercises (只要 or 只有, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 只要 or 只有",
+        "instructions": "Write 只要 or 只有 in each gap. Look at 就 or 才 in the second part.",
+        "options": ["只要", "只有"],
+        "items": [
+          {"zh": "＿＿你来，我就很高兴。", "en": "As long as you come, I'll be happy.", "answer": "只要"},
+          {"zh": "＿＿做完作业，你才能看电视。", "en": "You can only watch TV once you've finished your homework.", "answer": "只有"},
+          {"zh": "＿＿天气好，我们就去爬山。", "en": "As long as the weather is nice, we'll go hiking.", "answer": "只要"},
+          {"zh": "＿＿每天复习，你才能记住这些字。", "en": "Only if you revise every day will you remember these characters.", "answer": "只有"},
+          {"zh": "＿＿不忙，她就去看妈妈。", "en": "Whenever she isn't busy, she goes to see her mum.", "answer": "只要"},
+          {"zh": "＿＿他同意，我们才能去。", "en": "We can only go if he agrees.", "answer": "只有"},
+          {"zh": "＿＿你说得慢一点儿，我就能听懂。", "en": "As long as you speak a bit more slowly, I can understand.", "answer": "只要"},
+          {"zh": "＿＿到了周末，他才有时间。", "en": "He only has time at the weekend.", "answer": "只有"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["只要", "你", "就", "想去", "去吧"], "en": "As long as you want to go, go.", "answers": ["只要你想去，就去吧。", "你只要想去，就去吧。"]},
+          {"words": ["只要", "不下雨", "就", "我们", "去"], "en": "As long as it doesn't rain, we'll go.", "answers": ["只要不下雨，我们就去。"]},
+          {"words": ["只要", "有时间", "我", "就", "看书"], "en": "Whenever I have time, I read.", "answers": ["只要有时间，我就看书。", "我只要有时间，就看书。"]},
+          {"words": ["只要", "你", "认真", "就", "能", "考好"], "en": "As long as you take it seriously, you'll do well in the exam.", "answers": ["只要你认真，就能考好。", "你只要认真，就能考好。"]},
+          {"words": ["只有", "才", "他", "来了", "我们", "能开始"], "en": "We can only start once he's here.", "answers": ["只有他来了，我们才能开始。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "只要你认真学，才能学好。", "en": "As long as you study carefully, you'll learn it well.", "answers": ["只要你认真学，就能学好。"]},
+          {"zh": "只要天气好，就我们去。", "en": "As long as the weather is nice, we'll go.", "answers": ["只要天气好，我们就去。"]},
+          {"zh": "只有星期天，他就在家。", "en": "He's only at home on Sundays.", "answers": ["只有星期天，他才在家。"]},
+          {"zh": "只要明天不忙，我去就看你。", "en": "As long as I'm not busy tomorrow, I'll come and see you.", "answers": ["只要明天不忙，我就去看你。"]}
+        ]
+      }
+    ]
+  }
+}
