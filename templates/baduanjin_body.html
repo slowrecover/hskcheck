@@ -1,0 +1,336 @@
+<div class="wrap">
+  <header>
+    __NAV__
+    <div class="eyebrow"><span>Chinese qigong</span><span class="chip">8 movements</span><span class="chip">About __MINUTES__ minutes</span><span class="chip">Free</span></div>
+    <h1><span class="zh">八段锦</span>Baduanjin Follow-Along</h1>
+    <p class="lede">Baduanjin, the Eight Brocades, is a gentle Chinese qigong routine of eight slow movements. Press start and follow the figure: it moves with your breath, counts the rounds and tells you what comes next.</p>
+  </header>
+
+  <section class="sheet bd-player" aria-labelledby="now-title">
+    <div class="bd-stage">
+      <svg class="bd-fig" id="fig" viewBox="0 0 200 250" role="img" aria-label="Animated figure showing the current movement"></svg>
+      <div class="bd-info">
+        <p class="bd-step" id="step-count">Ready</p>
+        <h2 id="now-title"><span class="zh" id="now-zh">预备势</span><span class="bd-en" id="now-en">Opening position</span></h2>
+        <p class="bd-py" id="now-py">yùbèi shì</p>
+        <p class="bd-cue" id="cue">Press start and stand comfortably, feet together.</p>
+        <div class="bd-breath">
+          <span class="bd-breath-label" id="breath">&nbsp;</span>
+          <div class="bd-meter" aria-hidden="true"><i id="meter"></i></div>
+        </div>
+        <p class="bd-round" id="round"></p>
+      </div>
+    </div>
+    <div class="bd-controls">
+      <button type="button" class="bd-btn bd-main" id="play">Start</button>
+      <button type="button" class="bd-btn" id="prev" aria-label="Previous movement">‹ Back</button>
+      <button type="button" class="bd-btn" id="next" aria-label="Next movement">Skip ›</button>
+      <div class="levels" role="group" aria-label="Pace">
+        <button type="button" class="lv-btn" data-pace="4" aria-pressed="true">Normal</button>
+        <button type="button" class="lv-btn" data-pace="6" aria-pressed="false">Slow</button>
+      </div>
+      <label class="bd-voice"><input type="checkbox" id="voice" checked> Voice cues</label>
+      <span class="count" id="left"></span>
+    </div>
+    <ol class="bd-track" id="track" aria-label="Movements"></ol>
+  </section>
+
+  <section class="prose bd-prose" aria-labelledby="what-title">
+    <h2 id="what-title">What is Baduanjin?</h2>
+    <p>Baduanjin (<span class="zh-inline">八段锦</span>, bā duàn jǐn) means "eight pieces of brocade": eight movements as fine as silk. It is one of the oldest and most widely practised forms of qigong, done slowly, with relaxed breathing and a calm mind. Many people in China practise it in parks every morning, and it needs no equipment and very little space.</p>
+    <p>This page follows the Health Qigong version promoted by China's General Administration of Sport: an opening, eight movements and a closing. In May 2026 the China Association of Chinese Medicine and the Chinese Health Qigong Association published the first group standard for Baduanjin, based on the same version.</p>
+    <p>Each movement has a traditional name that describes, in the language of Chinese medicine, what it was believed to do. The translations below are only to explain the names. Baduanjin is gentle exercise, not medical treatment.</p>
+  </section>
+
+  <section class="sheet" aria-labelledby="moves-title">
+    <h2 id="moves-title">The movements, step by step</h2>
+    <div class="bd-moves">
+__MOVES__
+    </div>
+  </section>
+
+  <footer class="notes">
+    <p><b>Safety.</b> Move within a range that feels comfortable and stop if anything hurts. If you have a heart condition, high blood pressure, back or joint problems, or are pregnant, check with a doctor first. The bending and bouncing movements can be made smaller or skipped.</p>
+    <p><b>Learning Chinese?</b> The movement names are good reading practice. Paste them into the <a href="/mandarin-tone-changes/">tone change checker</a> to hear how the tones are really said. Everything on this page runs in your browser.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  const STAGES = __STAGES_JSON__;
+  const fig = document.getElementById("fig");
+  const $ = id => document.getElementById(id);
+  const NUM = ["", "one", "two", "three", "four", "five", "six", "seven", "eight"];
+  let PACE = 4;
+
+  // ---------- Figure ----------
+  function ik(s, t, a, b, out) {
+    // Two-bone joint between s and t with lengths a and b; picks the solution on the "out" side (-1 left, 1 right).
+    const dx = t[0] - s[0], dy = t[1] - s[1];
+    let d = Math.hypot(dx, dy);
+    if (d >= a + b - 0.01) return [s[0] + dx / d * a, s[1] + dy / d * a];
+    d = Math.max(d, Math.abs(a - b) + 0.01);
+    const x = (a * a - b * b + d * d) / (2 * d), h = Math.sqrt(Math.max(0, a * a - x * x));
+    const ux = dx / d, uy = dy / d;
+    const c1 = [s[0] + ux * x - uy * h, s[1] + uy * x + ux * h];
+    const c2 = [s[0] + ux * x + uy * h, s[1] + uy * x - ux * h];
+    if (out === 0) return c1[1] > c2[1] ? c1 : c2;
+    return (c1[0] - c2[0]) * out > 0 ? c1 : c2;
+  }
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const lerp2 = (a, b, t) => [lerp(a[0], b[0], t), lerp(a[1], b[1], t)];
+
+  function mirror(p) {
+    const m = Object.assign({}, p);
+    const fx = v => v && [200 - v[0], v[1]];
+    m.hl = fx(p.hr); m.hr = fx(p.hl); m.el = fx(p.er); m.er = fx(p.el);
+    m.tilt = -(p.tilt || 0); m.head = -(p.head || 0);
+    if (p.punch) m.punch = p.punch === "l" ? "r" : "l";
+    return m;
+  }
+
+  function skeleton(p) {
+    const lift = p.lift || 0;
+    if (p.view === "side") {
+      const b = (p.bend || 0) * Math.PI / 180;
+      const hip = [100 - (p.bend || 0) * 0.08, p.hipY - lift];
+      const dir = [Math.sin(b), -Math.cos(b)];
+      const neck = [hip[0] + dir[0] * 58, hip[1] + dir[1] * 58];
+      const sh = [neck[0] - dir[0] * 4, neck[1] - dir[1] * 4];
+      const head = [neck[0] + dir[0] * 14, neck[1] + dir[1] * 14];
+      const foot = [100, 236];
+      return {side: true, dir, hip, neck, head, sh, foot, hand: p.hl};
+    }
+    const t = (p.tilt || 0) * Math.PI / 180;
+    const hipC = [100, p.hipY - lift];
+    const dir = [Math.sin(t), -Math.cos(t)];
+    const neck = [hipC[0] + dir[0] * 58, hipC[1] + dir[1] * 58];
+    const sc = [neck[0] - dir[0] * 4, neck[1] - dir[1] * 4];
+    const perp = [Math.cos(t), Math.sin(t)];
+    const shL = [sc[0] - perp[0] * 18, sc[1] - perp[1] * 18], shR = [sc[0] + perp[0] * 18, sc[1] + perp[1] * 18];
+    const head = [neck[0] + dir[0] * 14, neck[1] + dir[1] * 14];
+    const hipL = [90, hipC[1]], hipR = [110, hipC[1]];
+    const ankL = [100 - p.stance, 236 - lift], ankR = [100 + p.stance, 236 - lift];
+    return {hipC, neck, head, shL, shR, hipL, hipR, ankL, ankR, dir};
+  }
+
+  function pose(a, b, t) {
+    // Interpolate two poses at t (0..1).
+    const p = {view: a.view};
+    ["hipY", "stance", "tilt", "head", "lift", "bend"].forEach(k => { p[k] = lerp(a[k] || 0, b[k] || 0, t); });
+    p.hipY = lerp(a.hipY, b.hipY, t);
+    p.hl = lerp2(a.hl, b.hl, t); p.hr = lerp2(a.hr, b.hr, t);
+    p.fist = a.fist || b.fist;
+    p.palm = t > 0.75 ? b.palm : t < 0.25 ? a.palm : null;
+    p.punch = t > 0.5 ? b.punch : a.punch;
+    ["l", "r"].forEach(s => {
+      const ka = a["e" + s], kb = b["e" + s];
+      if (ka || kb) {
+        const ea = ka || elbowFor(a, s), eb = kb || elbowFor(b, s);
+        p["e" + s] = lerp2(ea, eb, t);
+      }
+    });
+    return p;
+  }
+  function elbowFor(p, s) {
+    const k = skeleton(p);
+    return s === "l" ? ik(k.shL, p.hl, 32, 30, -1) : ik(k.shR, p.hr, 32, 30, 1);
+  }
+
+  const L = (a, b, w, cls) => '<line x1="' + a[0].toFixed(1) + '" y1="' + a[1].toFixed(1) + '" x2="' + b[0].toFixed(1) +
+    '" y2="' + b[1].toFixed(1) + '"' + (w ? ' stroke-width="' + w + '"' : "") + (cls ? ' class="' + cls + '"' : "") + "/>";
+
+  function draw(p) {
+    const k = skeleton(p);
+    let s = '<line class="bd-ground" x1="20" y1="238" x2="180" y2="238"/>';
+    if (k.side) {
+      const knee = lerp2(k.hip, k.foot, 0.5);
+      s += L(k.hip, knee) + L(knee, k.foot) + L(k.foot, [k.foot[0] + 14, k.foot[1]]);
+      s += L(k.hip, k.neck, 7);
+      const el = ik(k.sh, k.hand, 32, 30, -1);
+      s += L(k.sh, el) + L(el, k.hand);
+      s += '<circle class="bd-head" cx="' + k.head[0].toFixed(1) + '" cy="' + k.head[1].toFixed(1) + '" r="11"/>';
+      const eye = [k.head[0] + k.dir[1] * -6 + k.dir[0] * 2, k.head[1] + k.dir[0] * 6 + k.dir[1] * 2];
+      s += '<circle class="bd-eye" cx="' + eye[0].toFixed(1) + '" cy="' + eye[1].toFixed(1) + '" r="1.6"/>';
+      return s;
+    }
+    const kneeL = ik(k.hipL, k.ankL, 48, 48, -1), kneeR = ik(k.hipR, k.ankR, 48, 48, 1);
+    const toe = p.lift > 1;
+    [[k.hipL, kneeL, k.ankL, -1], [k.hipR, kneeR, k.ankR, 1]].forEach(([h, kn, an, side]) => {
+      s += L(h, kn) + L(kn, an);
+      s += toe ? L(an, [an[0] + side * 4, 238]) : L(an, [an[0] + side * 9, an[1]]);
+    });
+    s += L(k.hipL, k.hipR) + L(k.hipC, k.neck, 7) + L(k.shL, k.shR);
+    const elL = p.el || ik(k.shL, p.hl, 32, 30, -1), elR = p.er || ik(k.shR, p.hr, 32, 30, 1);
+    s += L(k.shL, elL) + L(elL, p.hl) + L(k.shR, elR) + L(elR, p.hr);
+    [["l", p.hl], ["r", p.hr]].forEach(([side, h]) => {
+      if (p.fist) s += '<circle class="bd-fist" cx="' + h[0].toFixed(1) + '" cy="' + h[1].toFixed(1) + '" r="' + (p.punch === side ? 7 : 5) + '"/>';
+      if (p.palm === "up" && h[1] < 70) s += L([h[0] - 7, h[1] - 4], [h[0] + 7, h[1] - 4], 3, "bd-palm");
+    });
+    const hd = p.head || 0;
+    s += '<circle class="bd-head" cx="' + k.head[0].toFixed(1) + '" cy="' + k.head[1].toFixed(1) + '" r="11"/>';
+    const ex = k.head[0] + hd * 5, ey = k.head[1] - 1;
+    if (Math.abs(hd) < 0.8) {
+      s += '<circle class="bd-eye" cx="' + (ex - 3.5).toFixed(1) + '" cy="' + ey.toFixed(1) + '" r="1.5"/>';
+      s += '<circle class="bd-eye" cx="' + (ex + 3.5).toFixed(1) + '" cy="' + ey.toFixed(1) + '" r="1.5"/>';
+    } else {
+      s += '<circle class="bd-eye" cx="' + (k.head[0] + hd * 6).toFixed(1) + '" cy="' + ey.toFixed(1) + '" r="1.5"/>';
+      const ax = k.head[0] + hd * 16, ay = k.head[1] - 10;
+      s += '<path class="bd-arrow" d="M' + (k.head[0] + hd * 4) + " " + (ay - 6) + " Q" + ax + " " + (ay - 8) + " " + ax + " " + (ay + 4) + '"/>';
+      s += '<path class="bd-arrow" d="M' + (ax - 3) + " " + (ay + 1) + " L" + ax + " " + (ay + 5) + " L" + (ax + 3) + " " + (ay + 1) + '"/>';
+    }
+    return s;
+  }
+
+  // ---------- Timeline ----------
+  function buildTimeline() {
+    const segs = [];
+    let prevEnd = STAGES[0].a;
+    STAGES.forEach((st, si) => {
+      const view = st.view;
+      const A = Object.assign({view}, st.a), B = Object.assign({view}, st.b);
+      const sides = st.sides ? 2 : 1;
+      const inFirst = (st.breath || "in-out") === "in-out";
+      const label = first => (first === inFirst ? "Breathe in" : "Breathe out");
+      if (si > 0) segs.push({si, kind: "move", from: Object.assign({view: prevEnd.view}, prevEnd), to: A, dur: PACE, rep: 0, side: 0, breath: "Next movement", cue: st.cue_a});
+      if (st.mode === "in") {
+        segs.push({si, kind: "go", from: A, to: B, dur: PACE, rep: 1, side: 0, breath: "Breathe in", cue: st.cue_a});
+        segs.push({si, kind: "hold", from: B, to: B, dur: PACE * 2 * (st.hold || 1), rep: 1, side: 0, breath: "Breathe naturally", cue: st.cue_a});
+        prevEnd = B;
+        return;
+      }
+      for (let r = 1; r <= st.reps; r++) {
+        for (let sd = 0; sd < sides; sd++) {
+          const a = sd ? mirror(A) : A, b = sd ? mirror(B) : B;
+          segs.push({si, kind: "go", from: a, to: b, dur: PACE, rep: r, side: sides > 1 ? sd + 1 : 0, breath: label(true), cue: st.cue_a});
+          if (st.hold) segs.push({si, kind: "hold", from: b, to: b, dur: PACE * 2 * st.hold, rep: r, side: 0, breath: "Breathe naturally", cue: st.cue_a});
+          segs.push({si, kind: "back", from: b, to: a, dur: PACE, rep: r, side: sides > 1 ? sd + 1 : 0, breath: label(false), cue: st.cue_b});
+        }
+      }
+      prevEnd = A;
+    });
+    return segs;
+  }
+
+  let segs = buildTimeline(), cur = 0, segT = 0, playing = false, started = false, last = 0, wake = null;
+  const total = () => segs.reduce((n, s) => n + s.dur, 0);
+  const ease = t => 0.5 - Math.cos(Math.PI * t) / 2;
+
+  function speak(text) {
+    if (!$("voice").checked || !("speechSynthesis" in window)) return;
+    try {
+      speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = "en-US"; u.rate = 0.9;
+      speechSynthesis.speak(u);
+    } catch (e) { /* voice is optional */ }
+  }
+
+  function showStage(si) {
+    const st = STAGES[si];
+    $("now-zh").textContent = st.zh; $("now-en").textContent = st.en; $("now-py").textContent = st.py;
+    $("step-count").textContent = si === 0 ? "Opening" : si === STAGES.length - 1 ? "Closing" : "Movement " + si + " of 8";
+    document.querySelectorAll("#track li").forEach((li, i) => li.classList.toggle("on", i === si));
+  }
+
+  function render() {
+    const sg = segs[cur];
+    const t = sg.dur ? Math.min(1, segT / sg.dur) : 1;
+    fig.innerHTML = draw(pose(sg.from, sg.to, ease(t)));
+    $("meter").style.width = (t * 100).toFixed(1) + "%";
+    const st = STAGES[sg.si];
+    $("breath").textContent = started ? sg.breath : " ";
+    $("cue").textContent = started ? sg.cue : "Press start and stand comfortably, feet together.";
+    const sides = st.sides ? " · " + (sg.side === 1 ? "first side" : sg.side === 2 ? "second side" : "") : "";
+    $("round").textContent = sg.rep ? (st.reps > 1 ? "Round " + sg.rep + " of " + st.reps + (sg.side ? sides : "") : "") : "";
+    let left = segs.slice(cur).reduce((n, s) => n + s.dur, 0) - segT;
+    left = Math.max(0, Math.round(left));
+    $("left").textContent = Math.floor(left / 60) + ":" + String(left % 60).padStart(2, "0") + " left";
+  }
+
+  function enter(i) {
+    const prev = segs[cur];
+    cur = i; segT = 0;
+    const sg = segs[cur];
+    if (!prev || prev.si !== sg.si || i === 0) showStage(sg.si);
+    if (!started) return;
+    const st = STAGES[sg.si];
+    if (sg.kind === "move") speak((sg.si === STAGES.length - 1 ? "Closing. " : "Movement " + NUM[sg.si] + ". ") + st.en + ".");
+    else if (sg.kind === "go" && sg.rep === 1 && sg.side <= 1 && (i === 0 || segs[i - 1].si !== sg.si)) speak(st.en + ". " + sg.cue);
+    else if (sg.kind === "go") speak(st.reps > 1 ? NUM[sg.rep] || String(sg.rep) : sg.cue);
+  }
+
+  function tick(now) {
+    if (!playing) return;
+    const dt = Math.min(0.1, (now - last) / 1000); last = now;
+    segT += dt;
+    while (segT >= segs[cur].dur) {
+      if (cur === segs.length - 1) { finish(); return; }
+      const over = segT - segs[cur].dur;
+      enter(cur + 1); segT = over;
+    }
+    render();
+    requestAnimationFrame(tick);
+  }
+
+  async function keepAwake(on) {
+    try {
+      if (on && "wakeLock" in navigator) wake = await navigator.wakeLock.request("screen");
+      else if (!on && wake) { await wake.release(); wake = null; }
+    } catch (e) { /* not supported */ }
+  }
+
+  function play() {
+    if (!started) { started = true; enter(0); }
+    playing = true; $("play").textContent = "Pause";
+    last = performance.now(); keepAwake(true);
+    requestAnimationFrame(tick);
+  }
+  function pause() { playing = false; $("play").textContent = "Resume"; keepAwake(false); if ("speechSynthesis" in window) speechSynthesis.cancel(); }
+  function finish() {
+    playing = false; started = false; keepAwake(false);
+    $("play").textContent = "Start again"; $("breath").textContent = "Well done";
+    $("cue").textContent = "That is the full set. Stand still for a moment before you walk away.";
+    $("meter").style.width = "100%";
+    speak("Well done. That is the full set.");
+    cur = 0; segT = 0;
+  }
+  function jumpStage(delta) {
+    const si = Math.min(STAGES.length - 1, Math.max(0, segs[cur].si + delta));
+    let i = segs.findIndex(s => s.si === si && s.kind !== "move");
+    if (i < 0) i = 0;
+    if (!started) { cur = i; segT = 0; showStage(si); render(); return; }
+    enter(i); render();
+  }
+
+  $("play").addEventListener("click", () => (playing ? pause() : play()));
+  $("prev").addEventListener("click", () => jumpStage(-1));
+  $("next").addEventListener("click", () => jumpStage(1));
+  document.querySelectorAll("[data-pace]").forEach(b => b.addEventListener("click", () => {
+    document.querySelectorAll("[data-pace]").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+    const si = segs[cur].si, frac = segs[cur].dur ? segT / segs[cur].dur : 0, kind = segs[cur].kind, rep = segs[cur].rep, side = segs[cur].side;
+    PACE = Number(b.dataset.pace);
+    segs = buildTimeline();
+    const i = segs.findIndex(s => s.si === si && s.kind === kind && s.rep === rep && s.side === side);
+    cur = Math.max(0, i); segT = frac * segs[cur].dur;
+    render();
+  }));
+
+  $("track").innerHTML = STAGES.map((st, i) =>
+    '<li><button type="button" data-si="' + i + '"><span class="zh">' + st.zh + "</span><small>" +
+    (i === 0 ? "Opening" : i === STAGES.length - 1 ? "Closing" : i) + "</small></button></li>").join("");
+  document.querySelectorAll("#track button").forEach(b => b.addEventListener("click", () => {
+    const si = Number(b.dataset.si);
+    jumpStage(si - segs[cur].si);
+  }));
+
+  // Still pictures in the step-by-step list: each movement at its fullest point.
+  document.querySelectorAll("svg[data-pose]").forEach(svg => {
+    const st = STAGES[Number(svg.dataset.pose)];
+    svg.innerHTML = draw(pose(Object.assign({view: st.view}, st.b), Object.assign({view: st.view}, st.b), 1));
+  });
+
+  showStage(0);
+  render();
+})();
+</script>

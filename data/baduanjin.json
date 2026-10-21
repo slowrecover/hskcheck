@@ -1,0 +1,458 @@
+{
+  "_about": "Baduanjin (八段锦), the Health Qigong version promoted by China's General Administration of Sport: an opening, eight movements and a closing. Steps are written for this site. Poses drive the animated figure: hands are target points in a 200x250 box (viewer's left = l), hipY is hip height (140 standing), stance is half the distance between the feet, tilt leans the upper body (degrees), head turns the face (-1 to 1), lift raises the heels (px). Moves with sides=true alternate, the second side mirrored. breath says which phase is the in-breath.",
+  "stages": [
+    {
+      "id": "opening",
+      "zh": "预备势",
+      "py": "yùbèi shì",
+      "en": "Opening position",
+      "meaning": "Getting ready",
+      "reps": 1,
+      "sides": false,
+      "mode": "in",
+      "hold": 2,
+      "breath": "in-out",
+      "cue_a": "Hold a ball in front of your belly",
+      "cue_b": "Hold a ball in front of your belly",
+      "steps": [
+        "Stand with your feet together and arms by your sides, then step your left foot out to shoulder width.",
+        "Bend your knees a little. Raise your arms out to the sides and bring them round in front of your navel, palms facing you, as if holding a large ball.",
+        "Relax your shoulders and elbows, keep your head up and look straight ahead. Breathe naturally."
+      ],
+      "tip": "Keep your knees behind your toes and your lower back relaxed.",
+      "a": {
+        "hipY": 140,
+        "stance": 10,
+        "hl": [
+          76,
+          146
+        ],
+        "hr": [
+          124,
+          146
+        ]
+      },
+      "b": {
+        "hipY": 145,
+        "stance": 16,
+        "hl": [
+          88,
+          132
+        ],
+        "hr": [
+          112,
+          132
+        ]
+      }
+    },
+    {
+      "id": "holding-up-the-sky",
+      "zh": "两手托天理三焦",
+      "py": "liǎng shǒu tuō tiān lǐ sān jiāo",
+      "en": "Holding up the sky",
+      "meaning": "Both hands hold up the sky to regulate the Triple Burner",
+      "reps": 6,
+      "sides": false,
+      "mode": "cycle",
+      "breath": "in-out",
+      "cue_a": "Push up to the sky",
+      "cue_b": "Lower your arms",
+      "steps": [
+        "Interlace your fingers in front of your belly, palms up.",
+        "Lift your hands to your chest, turn the palms over and push them up above your head until your arms are straight. Glance up at your hands, then look ahead and hold the stretch for a moment.",
+        "Let go, lower your arms out to the sides and bend your knees a little, bringing your hands back in front of your belly."
+      ],
+      "tip": "Stretch up through the whole body, but keep your shoulders down.",
+      "a": {
+        "hipY": 145,
+        "stance": 16,
+        "hl": [
+          92,
+          134
+        ],
+        "hr": [
+          108,
+          134
+        ]
+      },
+      "b": {
+        "hipY": 140,
+        "stance": 16,
+        "hl": [
+          94,
+          22
+        ],
+        "hr": [
+          106,
+          22
+        ],
+        "palm": "up"
+      }
+    },
+    {
+      "id": "drawing-the-bow",
+      "zh": "左右开弓似射雕",
+      "py": "zuǒ yòu kāi gōng sì shè diāo",
+      "en": "Drawing the bow",
+      "meaning": "Draw the bow left and right like shooting an eagle",
+      "reps": 3,
+      "sides": true,
+      "mode": "cycle",
+      "breath": "in-out",
+      "cue_a": "Draw the bow",
+      "cue_b": "Bring your hands back",
+      "steps": [
+        "Step out into a wide horse stance and cross your wrists in front of your chest.",
+        "Push one hand out to the side at shoulder height, index finger pointing up, while the other hand pulls back to the opposite shoulder as if drawing a bow. Look at the pushing hand.",
+        "Open your hands, bring them back in front of your chest and do the other side. Left and right make one round."
+      ],
+      "tip": "Keep your upper body upright and both arms in one line, like a real bow.",
+      "a": {
+        "hipY": 152,
+        "stance": 38,
+        "hl": [
+          96,
+          104
+        ],
+        "hr": [
+          104,
+          104
+        ]
+      },
+      "b": {
+        "hipY": 152,
+        "stance": 38,
+        "hl": [
+          18,
+          98
+        ],
+        "hr": [
+          122,
+          93
+        ],
+        "head": -1,
+        "er": [
+          148,
+          103
+        ]
+      }
+    },
+    {
+      "id": "raising-one-arm",
+      "zh": "调理脾胃须单举",
+      "py": "tiáolǐ píwèi xū dān jǔ",
+      "en": "Raising one arm",
+      "meaning": "Raise one arm to regulate the spleen and stomach",
+      "reps": 3,
+      "sides": true,
+      "mode": "cycle",
+      "breath": "in-out",
+      "cue_a": "One hand up, one hand down",
+      "cue_b": "Back to the centre",
+      "steps": [
+        "Start with both hands in front of your belly.",
+        "Raise one hand past your face, turn the palm up and push it above your head. At the same time press the other hand down beside your hip, fingers forward.",
+        "Stretch between the two hands for a moment, then bring both back in front of your belly and change sides."
+      ],
+      "tip": "Push up and down with the same strength, keeping your body straight.",
+      "a": {
+        "hipY": 143,
+        "stance": 16,
+        "hl": [
+          94,
+          134
+        ],
+        "hr": [
+          106,
+          134
+        ]
+      },
+      "b": {
+        "hipY": 140,
+        "stance": 16,
+        "hl": [
+          88,
+          28
+        ],
+        "hr": [
+          134,
+          150
+        ],
+        "palm": "up"
+      }
+    },
+    {
+      "id": "looking-back",
+      "zh": "五劳七伤往后瞧",
+      "py": "wǔ láo qī shāng wǎng hòu qiáo",
+      "en": "Looking back",
+      "meaning": "Look back to ease the five strains and seven injuries",
+      "reps": 3,
+      "sides": true,
+      "mode": "cycle",
+      "breath": "in-out",
+      "cue_a": "Turn your head and look back",
+      "cue_b": "Look forward again",
+      "steps": [
+        "Straighten your legs with your arms hanging by your sides.",
+        "Turn your arms so the palms face out, and slowly turn your head to look back over one shoulder. Keep your body facing forward.",
+        "Turn your head back to the front, bend your knees a little and press your palms down beside your hips. Then look back over the other shoulder."
+      ],
+      "tip": "Only your head turns. If your neck is stiff, turn just as far as is comfortable.",
+      "a": {
+        "hipY": 143,
+        "stance": 16,
+        "hl": [
+          74,
+          146
+        ],
+        "hr": [
+          126,
+          146
+        ]
+      },
+      "b": {
+        "hipY": 140,
+        "stance": 16,
+        "hl": [
+          66,
+          144
+        ],
+        "hr": [
+          134,
+          144
+        ],
+        "head": -1
+      }
+    },
+    {
+      "id": "swaying-head-and-tail",
+      "zh": "摇头摆尾去心火",
+      "py": "yáo tóu bǎi wěi qù xīn huǒ",
+      "en": "Swaying the head and tail",
+      "meaning": "Sway the head and swing the tail to clear heart fire",
+      "reps": 3,
+      "sides": true,
+      "mode": "cycle",
+      "breath": "out-in",
+      "cue_a": "Lean and sway",
+      "cue_b": "Come back to the centre",
+      "steps": [
+        "Step into a wide horse stance and rest your hands on your thighs just above the knees.",
+        "Lean your upper body down to one side, then sweep it round in a low arc to the other side, with your head and tailbone moving in opposite directions.",
+        "Come back up to the centre and repeat the other way. One sweep each way is one round."
+      ],
+      "tip": "Move from the hips, smoothly and slowly. Make the lean smaller if you have back problems.",
+      "a": {
+        "hipY": 156,
+        "stance": 40,
+        "hl": [
+          72,
+          186
+        ],
+        "hr": [
+          128,
+          186
+        ]
+      },
+      "b": {
+        "hipY": 158,
+        "stance": 40,
+        "hl": [
+          72,
+          188
+        ],
+        "hr": [
+          128,
+          188
+        ],
+        "tilt": -20,
+        "head": -0.4,
+        "el": [
+          50,
+          150
+        ]
+      }
+    },
+    {
+      "id": "reaching-the-feet",
+      "zh": "两手攀足固肾腰",
+      "py": "liǎng shǒu pān zú gù shèn yāo",
+      "en": "Reaching down to the feet",
+      "meaning": "Both hands reach the feet to strengthen the kidneys and waist",
+      "reps": 6,
+      "sides": false,
+      "mode": "cycle",
+      "breath": "out-in",
+      "view": "side",
+      "cue_a": "Slide your hands down to your feet",
+      "cue_b": "Rise up with your arms",
+      "steps": [
+        "Raise your arms above your head, palms forward. Lower your hands to your chest, palms down.",
+        "Slide your hands under your arms and round to your back, then down along your spine and the backs of your legs as you bend forward, until they reach your feet.",
+        "Slide your hands forward over your feet and rise up slowly, arms leading, until you are standing with your arms above your head."
+      ],
+      "tip": "Keep your knees straight but not locked, and only bend as far as is comfortable. Skip this movement if bending forward is not safe for you.",
+      "a": {
+        "hipY": 140,
+        "stance": 0,
+        "hl": [
+          110,
+          28
+        ],
+        "hr": [
+          110,
+          28
+        ],
+        "bend": 0
+      },
+      "b": {
+        "hipY": 140,
+        "stance": 0,
+        "hl": [
+          114,
+          232
+        ],
+        "hr": [
+          114,
+          232
+        ],
+        "bend": 150
+      }
+    },
+    {
+      "id": "punching-with-fists",
+      "zh": "攒拳怒目增气力",
+      "py": "cuán quán nù mù zēng qìlì",
+      "en": "Punching with a fierce gaze",
+      "meaning": "Clench the fists and glare to build strength",
+      "reps": 3,
+      "sides": true,
+      "mode": "cycle",
+      "breath": "out-in",
+      "cue_a": "Punch slowly, eyes wide",
+      "cue_b": "Grasp and pull back",
+      "steps": [
+        "Step into a horse stance with both fists at your waist, thumbs tucked in.",
+        "Slowly punch one fist forward at shoulder height. Open your eyes wide and look at your fist, gripping the ground with your toes.",
+        "Open the hand, turn the wrist in a circle and grasp, then pull the fist back to your waist. Change sides."
+      ],
+      "tip": "The punch is slow and firm, not fast. Keep your body upright.",
+      "a": {
+        "hipY": 154,
+        "stance": 38,
+        "hl": [
+          86,
+          150
+        ],
+        "hr": [
+          114,
+          150
+        ],
+        "fist": true
+      },
+      "b": {
+        "hipY": 154,
+        "stance": 38,
+        "hl": [
+          84,
+          104
+        ],
+        "hr": [
+          114,
+          150
+        ],
+        "fist": true,
+        "punch": "l"
+      }
+    },
+    {
+      "id": "bouncing-on-toes",
+      "zh": "背后七颠百病消",
+      "py": "bèi hòu qī diān bǎi bìng xiāo",
+      "en": "Bouncing on the toes",
+      "meaning": "Seven jolts at the back to send away a hundred illnesses",
+      "reps": 7,
+      "sides": false,
+      "mode": "cycle",
+      "breath": "in-out",
+      "cue_a": "Rise up on your toes",
+      "cue_b": "Drop your heels gently",
+      "steps": [
+        "Stand with your feet together and your arms by your sides.",
+        "Rise up onto your toes, lift your head and hold for a moment.",
+        "Let your heels drop lightly to the ground with a small jolt, relaxing your whole body. Do it seven times."
+      ],
+      "tip": "Drop the heels softly. Hold on to a chair if your balance is not steady.",
+      "a": {
+        "hipY": 140,
+        "stance": 6,
+        "hl": [
+          78,
+          146
+        ],
+        "hr": [
+          122,
+          146
+        ]
+      },
+      "b": {
+        "hipY": 140,
+        "stance": 6,
+        "hl": [
+          78,
+          146
+        ],
+        "hr": [
+          122,
+          146
+        ],
+        "lift": 10
+      }
+    },
+    {
+      "id": "closing",
+      "zh": "收势",
+      "py": "shōu shì",
+      "en": "Closing",
+      "meaning": "Finishing the set",
+      "reps": 1,
+      "sides": false,
+      "mode": "cycle",
+      "hold": 2,
+      "breath": "in-out",
+      "cue_a": "Hands over your lower belly, breathe calmly",
+      "cue_b": "Lower your arms and relax",
+      "steps": [
+        "Raise your arms out to the sides, palms facing back.",
+        "Bring your hands together over your lower belly, one on top of the other, and look down. Breathe calmly for a few breaths.",
+        "Lower your arms to your sides and relax."
+      ],
+      "tip": "Take a moment to stand still before you walk away.",
+      "a": {
+        "hipY": 140,
+        "stance": 10,
+        "hl": [
+          76,
+          146
+        ],
+        "hr": [
+          124,
+          146
+        ]
+      },
+      "b": {
+        "hipY": 140,
+        "stance": 10,
+        "hl": [
+          97,
+          136
+        ],
+        "hr": [
+          103,
+          136
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Baduanjin (Eight Brocades) Qigong: Free Follow-Along Routine</title>
+<meta name="description" content="Do the Baduanjin (八段锦, Eight Brocades) qigong routine with an animated guide that moves with your breath, counts the rounds and gives voice cues. All 8 movements step by step, about 8 minutes. Free.">
+<link rel="canonical" href="https://hskcheck.com/baduanjin/">
+<meta property="og:title" content="Baduanjin (Eight Brocades) Qigong: Free Follow-Along Routine">
+<meta property="og:description" content="Do the Baduanjin (八段锦, Eight Brocades) qigong routine with an animated guide that moves with your breath, counts the rounds and gives voice cues. All 8 movements step by step, about 8 minutes. Free.">
+<meta property="og:url" content="https://hskcheck.com/baduanjin/">
+<meta property="og:type" content="website">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Baduanjin Follow-Along", "url": "https://hskcheck.com/baduanjin/", "applicationCategory": "HealthApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Follow the Baduanjin (Eight Brocades) qigong routine with an animated guide, breathing pace and voice cues."}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@600&display=swap">
+<style>
+:root {
+  --paper: #F3F5F8;
+  --sheet: #FFFFFF;
+  --ink: #1A2130;
+  --muted: #586274;
+  --rule: #DCE1E9;
+  --accent: #2A4A9A;
+  --accent-ink: #FFFFFF;
+  --l1: #1F7A5C; --l1-bg: #E2F2EB;
+  --l2: #2A68AE; --l2-bg: #E3EDF8;
+  --l3: #7A4CAE; --l3-bg: #EEE6F8;
+  --over: #C0392B; --over-bg: #FCE5E1;
+  --ok: #1F7A5C; --warn: #A15C00; --bad: #C0392B;
+  --f-ui: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --f-num: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --f-zh: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --f-zh-display: "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --radius: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0F131A; --sheet: #171C25; --ink: #E6EAF1; --muted: #9AA4B6; --rule: #2A3242;
+    --accent: #93ACEB; --accent-ink: #0F131A;
+    --l1: #63CDA2; --l1-bg: #15302A; --l2: #82B4EE; --l2-bg: #172A40; --l3: #BB9EEA; --l3-bg: #2A2142;
+    --over: #F28B78; --over-bg: #3D1F1A; --ok: #63CDA2; --warn: #E9B060; --bad: #F28B78;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0F131A; --sheet: #171C25; --ink: #E6EAF1; --muted: #9AA4B6; --rule: #2A3242;
+  --accent: #93ACEB; --accent-ink: #0F131A;
+  --l1: #63CDA2; --l1-bg: #15302A; --l2: #82B4EE; --l2-bg: #172A40; --l3: #BB9EEA; --l3-bg: #2A2142;
+  --over: #F28B78; --over-bg: #3D1F1A; --ok: #63CDA2; --warn: #E9B060; --bad: #F28B78;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: var(--f-ui); font-size: 16px; line-height: 1.55;
+  padding-inline: 16px; padding-block: 28px 48px;
+}
+.wrap { max-width: 760px; margin: 0 auto; display: grid; gap: 22px; }
+header { display: grid; gap: 8px; }
+.eyebrow { display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+  font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+.chip { border: 1px solid var(--rule); border-radius: 999px; padding: 1px 8px; letter-spacing: .04em; }
+h1 { margin: 0; font-size: clamp(28px, 6vw, 40px); line-height: 1.12; font-weight: 600; text-wrap: balance; letter-spacing: -.01em; }
+h1 .zh { font-family: var(--f-zh-display); font-weight: 600; color: var(--accent); margin-right: .25em; }
+.lede { margin: 0; color: var(--muted); max-width: 60ch; }
+
+.sheet { background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--radius); padding: 18px; display: grid; gap: 14px; min-width: 0; }
+a { color: var(--accent); text-underline-offset: 3px; }
+.zh-inline { font-family: var(--f-zh); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.site-nav { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; font-weight: 500; }
+.site-nav a { text-decoration: none; color: var(--muted); padding-block: 2px; border-bottom: 2px solid transparent; }
+.site-nav a:hover { color: var(--ink); }
+.site-nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
+h2 { margin: 0; font-size: 15px; font-weight: 600; letter-spacing: .01em; }
+.table-wrap { overflow-x: auto; }
+table.counts { border-collapse: collapse; font-size: 14px; min-width: 320px; }
+table.counts th, table.counts td { text-align: left; padding: 7px 14px 7px 0; border-bottom: 1px solid var(--rule); }
+table.counts th { font-weight: 600; color: var(--muted); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+table.counts td.num { font-family: var(--f-num); font-variant-numeric: tabular-nums; }
+.notes { font-size: 13px; color: var(--muted); display: grid; gap: 6px; max-width: 70ch; }
+.notes p { margin: 0; }
+.notes b { color: var(--ink); font-weight: 600; }
+.site-foot { max-width: 760px; margin: 28px auto 0; font-size: 13px; color: var(--muted); }
+.site-foot a { color: var(--muted); }
+.policy { gap: 10px; }
+.policy h2 { margin-top: 8px; }
+.policy p { margin: 0; max-width: 70ch; }
+/* Checker page: input sheet on top, graded result sheet below, red-pen marks for words above the chosen level. */
+label.field { font-weight: 600; font-size: 14px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+label.field span.hint { font-weight: 400; color: var(--muted); font-size: 13px; }
+textarea {
+  width: 100%; min-height: 150px; resize: vertical; padding: 12px 14px;
+  font-family: var(--f-zh); font-size: 18px; line-height: 1.8; color: var(--ink);
+  background: var(--paper); border: 1px solid var(--rule); border-radius: 8px;
+}
+.controls { display: flex; gap: 12px 18px; align-items: center; flex-wrap: wrap; justify-content: space-between; }
+.levels { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.levels .lbl { font-size: 14px; font-weight: 600; margin-right: 4px; }
+.lv-btn {
+  font: 500 14px var(--f-ui); padding: 7px 14px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--rule); background: var(--sheet); color: var(--ink);
+}
+.lv-btn[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.ghost { font: 500 14px var(--f-ui); background: none; border: none; color: var(--accent); cursor: pointer; padding: 6px 2px; text-decoration: underline; text-underline-offset: 3px; }
+
+.verdict { display: grid; gap: 10px; }
+.verdict-top { display: flex; gap: 12px 20px; align-items: baseline; flex-wrap: wrap; }
+.big { font-family: var(--f-num); font-size: clamp(34px, 9vw, 46px); font-weight: 500; line-height: 1; font-variant-numeric: tabular-nums; }
+.verdict-text { display: grid; gap: 2px; min-width: 0; }
+.verdict-text strong { font-size: 17px; }
+.verdict-text span { color: var(--muted); font-size: 14px; }
+.state-ok { color: var(--ok); } .state-warn { color: var(--warn); } .state-bad { color: var(--bad); }
+
+.bar { display: flex; height: 12px; border-radius: 6px; overflow: hidden; background: var(--rule); }
+.bar i { display: block; height: 100%; }
+.bar .b1 { background: var(--l1); } .bar .b2 { background: var(--l2); } .bar .b3 { background: var(--l3); } .bar .bx { background: var(--over); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; font-variant-numeric: tabular-nums; }
+.legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+
+.graded { font-family: var(--f-zh); font-size: 20px; line-height: 2.1; word-break: break-all; }
+.graded .w { border-bottom: 2px solid transparent; padding: 0 1px; border-radius: 2px; }
+.graded .w1 { border-bottom-color: color-mix(in srgb, var(--l1) 45%, transparent); }
+.graded .w2 { border-bottom-color: color-mix(in srgb, var(--l2) 45%, transparent); }
+.graded .w3 { border-bottom-color: color-mix(in srgb, var(--l3) 45%, transparent); }
+.graded .above { background: var(--over-bg); color: var(--over); border-bottom: 2px solid var(--over); font-weight: 500; }
+.empty { color: var(--muted); font-size: 15px; margin: 0; }
+
+.words { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.words li { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 8px 10px; border: 1px solid var(--rule); border-radius: 8px; min-width: 0; }
+.words .zh { font-family: var(--f-zh); font-size: 19px; overflow-wrap: anywhere; }
+.tag { font: 500 12px var(--f-num); padding: 2px 7px; border-radius: 999px; white-space: nowrap; }
+.tag.t2 { background: var(--l2-bg); color: var(--l2); }
+.tag.t3 { background: var(--l3-bg); color: var(--l3); }
+.tag.tx { background: var(--over-bg); color: var(--over); }
+.guide { display: grid; gap: 18px; max-width: 68ch; }
+.guide h2 { font-size: 20px; letter-spacing: -.005em; text-wrap: balance; }
+.guide h3 { margin: 0 0 4px; font-size: 16px; font-weight: 600; }
+.guide p { margin: 0; color: var(--ink); }
+.guide .qa { display: grid; gap: 14px; }
+.guide .zh-inline { font-family: var(--f-zh); }
+@media (prefers-reduced-motion: no-preference) { .bar i { transition: width .25s ease; } }
+/* Baduanjin page: a player with an animated line figure, then the movements written out. */
+.prose { display: grid; gap: 12px; max-width: 68ch; }
+.prose h2 { font-size: 20px; letter-spacing: -.005em; }
+.prose p { margin: 0; }
+.count { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.zh { font-family: var(--f-zh); }
+
+.bd-stage { display: grid; grid-template-columns: minmax(150px, 220px) 1fr; gap: 18px; align-items: center; }
+.bd-fig, .bd-thumb { width: 100%; height: auto; display: block; color: var(--ink); }
+.bd-fig line, .bd-thumb line { stroke: currentColor; stroke-width: 6; stroke-linecap: round; }
+.bd-fig .bd-ground, .bd-thumb .bd-ground { stroke: var(--rule); stroke-width: 2; }
+.bd-fig .bd-palm, .bd-thumb .bd-palm { stroke: var(--accent); }
+.bd-head { fill: var(--sheet); stroke: currentColor; stroke-width: 5; }
+.bd-eye { fill: currentColor; }
+.bd-fist { fill: var(--accent); }
+.bd-arrow { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+.bd-info { display: grid; gap: 6px; min-width: 0; }
+.bd-info h2 { display: grid; gap: 2px; font-size: 22px; line-height: 1.25; }
+.bd-info h2 .zh { font-family: var(--f-zh-display); color: var(--accent); font-size: 28px; }
+.bd-en { font-size: 17px; }
+.bd-step { margin: 0; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.bd-py { margin: 0; color: var(--muted); font-size: 14px; }
+.bd-cue { margin: 6px 0 0; font-size: 17px; font-weight: 500; min-height: 2.6em; }
+.bd-breath { display: grid; gap: 6px; }
+.bd-breath-label { font: 500 14px var(--f-num); color: var(--accent); }
+.bd-meter { height: 6px; border-radius: 3px; background: var(--rule); overflow: hidden; }
+.bd-meter i { display: block; height: 100%; width: 0; background: var(--accent); }
+.bd-round { margin: 0; font-size: 14px; color: var(--muted); min-height: 1.4em; font-variant-numeric: tabular-nums; }
+
+.bd-controls { display: flex; flex-wrap: wrap; gap: 10px 12px; align-items: center; }
+.bd-btn { font: 500 15px var(--f-ui); padding: 9px 16px; border-radius: 999px; cursor: pointer; border: 1px solid var(--rule); background: var(--sheet); color: var(--ink); }
+.bd-btn.bd-main { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); min-width: 104px; font-weight: 600; }
+.bd-voice { display: inline-flex; gap: 6px; align-items: center; font-size: 14px; }
+.bd-controls .count { margin-left: auto; }
+
+.bd-track { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 6px; }
+.bd-track button { width: 100%; display: grid; gap: 2px; padding: 6px 4px; border: 1px solid var(--rule); border-radius: 8px; background: var(--paper); color: var(--ink); cursor: pointer; text-align: center; }
+.bd-track .zh { font-size: 13px; line-height: 1.3; }
+.bd-track small { color: var(--muted); font-size: 11px; }
+.bd-track li.on button { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, var(--sheet)); }
+
+.bd-moves { display: grid; gap: 18px; }
+.bd-move { display: grid; grid-template-columns: 96px 1fr; gap: 16px; padding-top: 16px; border-top: 1px solid var(--rule); scroll-margin-top: 16px; }
+.bd-move:first-child { border-top: none; padding-top: 0; }
+.bd-move h3 { margin: 2px 0 0; font-size: 17px; font-weight: 600; }
+.bd-move h3 .zh { font-family: var(--f-zh-display); color: var(--accent); margin-right: .3em; }
+.bd-move ol { margin: 8px 0; padding-left: 20px; display: grid; gap: 4px; }
+.bd-reps { margin: 0; font-size: 14px; color: var(--muted); }
+.bd-reps b { color: var(--ink); font-weight: 600; margin-right: .3em; }
+
+@media (max-width: 560px) {
+  .bd-stage { grid-template-columns: 1fr; }
+  .bd-fig { max-width: 190px; margin: 0 auto; }
+  .bd-move { grid-template-columns: 72px 1fr; gap: 12px; }
+  .bd-controls .count { margin-left: 0; }
+}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <nav class="site-nav" aria-label="Site"><a href="/">Level Checker</a><a href="/hsk-1-word-list/">HSK 1 Words</a><a href="/hsk-2-word-list/">HSK 2 Words</a><a href="/hsk-3-word-list/">HSK 3 Words</a><a href="/chinese-character-worksheets/">Writing Sheets</a><a href="/hsk-handwriting-characters/">Handwriting</a><a href="/mandarin-tone-changes/">Tone Changes</a><a href="/baduanjin/" aria-current="page">Baduanjin</a><a href="/chinese-measure-words/">Measure Words</a><a href="/old-hsk-to-new-hsk/">Old → New HSK</a><a href="/learn/">Grammar</a><a href="/yct/">YCT</a><a href="/th/">ภาษาไทย</a></nav>
+    <div class="eyebrow"><span>Chinese qigong</span><span class="chip">8 movements</span><span class="chip">About 8 minutes</span><span class="chip">Free</span></div>
+    <h1><span class="zh">八段锦</span>Baduanjin Follow-Along</h1>
+    <p class="lede">Baduanjin, the Eight Brocades, is a gentle Chinese qigong routine of eight slow movements. Press start and follow the figure: it moves with your breath, counts the rounds and tells you what comes next.</p>
+  </header>
+
+  <section class="sheet bd-player" aria-labelledby="now-title">
+    <div class="bd-stage">
+      <svg class="bd-fig" id="fig" viewBox="0 0 200 250" role="img" aria-label="Animated figure showing the current movement"></svg>
+      <div class="bd-info">
+        <p class="bd-step" id="step-count">Ready</p>
+        <h2 id="now-title"><span class="zh" id="now-zh">预备势</span><span class="bd-en" id="now-en">Opening position</span></h2>
+        <p class="bd-py" id="now-py">yùbèi shì</p>
+        <p class="bd-cue" id="cue">Press start and stand comfortably, feet together.</p>
+        <div class="bd-breath">
+          <span class="bd-breath-label" id="breath">&nbsp;</span>
+          <div class="bd-meter" aria-hidden="true"><i id="meter"></i></div>
+        </div>
+        <p class="bd-round" id="round"></p>
+      </div>
+    </div>
+    <div class="bd-controls">
+      <button type="button" class="bd-btn bd-main" id="play">Start</button>
+      <button type="button" class="bd-btn" id="prev" aria-label="Previous movement">‹ Back</button>
+      <button type="button" class="bd-btn" id="next" aria-label="Next movement">Skip ›</button>
+      <div class="levels" role="group" aria-label="Pace">
+        <button type="button" class="lv-btn" data-pace="4" aria-pressed="true">Normal</button>
+        <button type="button" class="lv-btn" data-pace="6" aria-pressed="false">Slow</button>
+      </div>
+      <label class="bd-voice"><input type="checkbox" id="voice" checked> Voice cues</label>
+      <span class="count" id="left"></span>
+    </div>
+    <ol class="bd-track" id="track" aria-label="Movements"></ol>
+  </section>
+
+  <section class="prose bd-prose" aria-labelledby="what-title">
+    <h2 id="what-title">What is Baduanjin?</h2>
+    <p>Baduanjin (<span class="zh-inline">八段锦</span>, bā duàn jǐn) means "eight pieces of brocade": eight movements as fine as silk. It is one of the oldest and most widely practised forms of qigong, done slowly, with relaxed breathing and a calm mind. Many people in China practise it in parks every morning, and it needs no equipment and very little space.</p>
+    <p>This page follows the Health Qigong version promoted by China's General Administration of Sport: an opening, eight movements and a closing. In May 2026 the China Association of Chinese Medicine and the Chinese Health Qigong Association published the first group standard for Baduanjin, based on the same version.</p>
+    <p>Each movement has a traditional name that describes, in the language of Chinese medicine, what it was believed to do. The translations below are only to explain the names. Baduanjin is gentle exercise, not medical treatment.</p>
+  </section>
+
+  <section class="sheet" aria-labelledby="moves-title">
+    <h2 id="moves-title">The movements, step by step</h2>
+    <div class="bd-moves">
+      <article class="bd-move" id="opening">
+        <svg class="bd-thumb" viewBox="0 0 200 250" data-pose="0" role="img" aria-label="Opening position"></svg>
+        <div>
+          <p class="bd-step">Opening</p>
+          <h3><span class="zh">预备势</span> Opening position</h3>
+          <p class="bd-py">yùbèi shì · <i>Getting ready</i></p>
+          <ol><li>Stand with your feet together and arms by your sides, then step your left foot out to shoulder width.</li><li>Bend your knees a little. Raise your arms out to the sides and bring them round in front of your navel, palms facing you, as if holding a large ball.</li><li>Relax your shoulders and elbows, keep your head up and look straight ahead. Breathe naturally.</li></ol>
+          <p class="bd-reps"><b>Do once, then breathe calmly for a moment.</b> Keep your knees behind your toes and your lower back relaxed.</p>
+        </div>
+      </article>
+      <article class="bd-move" id="holding-up-the-sky">
+        <svg class="bd-thumb" viewBox="0 0 200 250" data-pose="1" role="img" aria-label="Holding up the sky"></svg>
+        <div>
+          <p class="bd-step">Movement 1</p>
+          <h3><span class="zh">两手托天理三焦</span> Holding up the sky</h3>
+          <p class="bd-py">liǎng shǒu tuō tiān lǐ sān jiāo · <i>Both hands hold up the sky to regulate the Triple Burner</i></p>
+          <ol><li>Interlace your fingers in front of your belly, palms up.</li><li>Lift your hands to your chest, turn the palms over and push them up above your head until your arms are straight. Glance up at your hands, then look ahead and hold the stretch for a moment.</li><li>Let go, lower your arms out to the sides and bend your knees a little, bringing your hands back in front of your belly.</li></ol>
+          <p class="bd-reps"><b>6 times.</b> Stretch up through the whole body, but keep your shoulders down.</p>
+        </div>
+      </article>
+      <article class="bd-move" id="drawing-the-bow">
+        <svg class="bd-thumb" viewBox="0 0 200 250" data-pose="2" role="img" aria-label="Drawing the bow"></svg>
+        <div>
+          <p class="bd-step">Movement 2</p>
+          <h3><span class="zh">左右开弓似射雕</span> Drawing the bow</h3>
+          <p class="bd-py">zuǒ yòu kāi gōng sì shè diāo · <i>Draw the bow left and right like shooting an eagle</i></p>
+          <ol><li>Step out into a wide horse stance and cross your wrists in front of your chest.</li><li>Push one hand out to the side at shoulder height, index finger pointing up, while the other hand pulls back to the opposite shoulder as if drawing a bow. Look at the pushing hand.</li><li>Open your hands, bring them back in front of your chest and do the other side. Left and right make one round.</li></ol>
+          <p class="bd-reps"><b>3 rounds, each round once to each side.</b> Keep your upper body upright and both arms in one line, like a real bow.</p>
+        </div>
+      </article>
+      <article class="bd-move" id="raising-one-arm">
+        <svg class="bd-thumb" viewBox="0 0 200 250" data-pose="3" role="img" aria-label="Raising one arm"></svg>
+        <div>
+          <p class="bd-step">Movement 3</p>
+          <h3><span class="zh">调理脾胃须单举</span> Raising one arm</h3>
+          <p class="bd-py">tiáolǐ píwèi xū dān jǔ · <i>Raise one arm to regulate the spleen and stomach</i></p>
+          <ol><li>Start with both hands in front of your belly.</li><li>Raise one hand past your face, turn the palm up and push it above your head. At the same time press the other hand down beside your hip, fingers forward.</li><li>Stretch between the two hands for a moment, then bring both back in front of your belly and change sides.</li></ol>
+          <p class="bd-reps"><b>3 rounds, each round once to each side.</b> Push up and down with the same strength, keeping your body straight.</p>
+        </div>
+      </article>
+      <article class="bd-move" id="looking-back">
+        <svg class="bd-thumb" viewBox="0 0 200 250" data-pose="4" role="img" aria-label="Looking back"></svg>
+        <div>
+          <p class="bd-step">Movement 4</p>
+          <h3><span class="zh">五劳七伤往后瞧</span> Looking back</h3>
+          <p class="bd-py">wǔ láo qī shāng wǎng hòu qiáo · <i>Look back to ease the five strains and seven injuries</i></p>
+          <ol><li>Straighten your legs with your arms hanging by your sides.</li><li>Turn your arms so the palms face out, and slowly turn your head to look back over one shoulder. Keep your body facing forward.</li><li>Turn your head back to the front, bend your knees a little and press your palms down beside your hips. Then look back over the other shoulder.</li></ol>
+          <p class="bd-reps"><b>3 rounds, each round once to each side.</b> Only your head turns. If your neck is stiff, turn just as far as is comfortable.</p>
+        </div>
+      </article>
+      <article class="bd-move" id="swaying-head-and-tail">
+        <svg class="bd-thumb" viewBox="0 0 200 250" data-pose="5" role="img" aria-label="Swaying the head and tail"></svg>
+        <div>
+          <p class="bd-step">Movement 5</p>
+          <h3><span class="zh">摇头摆尾去心火</span> Swaying the head and tail</h3>
+          <p class="bd-py">yáo tóu bǎi wěi qù xīn huǒ · <i>Sway the head and swing the tail to clear heart fire</i></p>
+          <ol><li>Step into a wide horse stance and rest your hands on your thighs just above the knees.</li><li>Lean your upper body down to one side, then sweep it round in a low arc to the other side, with your head and tailbone moving in opposite directions.</li><li>Come back up to the centre and repeat the other way. One sweep each way is one round.</li></ol>
+          <p class="bd-reps"><b>3 rounds, each round once to each side.</b> Move from the hips, smoothly and slowly. Make the lean smaller if you have back problems.</p>
+        </div>
+      </article>
+      <article class="bd-move" id="reaching-the-feet">
+        <svg class="bd-thumb" viewBox="0 0 200 250" data-pose="6" role="img" aria-label="Reaching down to the feet"></svg>
+        <div>
+          <p class="bd-step">Movement 6</p>
+          <h3><span class="zh">两手攀足固肾腰</span> Reaching down to the feet</h3>
+          <p class="bd-py">liǎng shǒu pān zú gù shèn yāo · <i>Both hands reach the feet to strengthen the kidneys and waist</i></p>
+          <ol><li>Raise your arms above your head, palms forward. Lower your hands to your chest, palms down.</li><li>Slide your hands under your arms and round to your back, then down along your spine and the backs of your legs as you bend forward, until they reach your feet.</li><li>Slide your hands forward over your feet and rise up slowly, arms leading, until you are standing with your arms above your head.</li></ol>
+          <p class="bd-reps"><b>6 times.</b> Keep your knees straight but not locked, and only bend as far as is comfortable. Skip this movement if bending forward is not safe for you.</p>
+        </div>
+      </article>
+      <article class="bd-move" id="punching-with-fists">
+        <svg class="bd-thumb" viewBox="0 0 200 250" data-pose="7" role="img" aria-label="Punching with a fierce gaze"></svg>
+        <div>
+          <p class="bd-step">Movement 7</p>
+          <h3><span class="zh">攒拳怒目增气力</span> Punching with a fierce gaze</h3>
+          <p class="bd-py">cuán quán nù mù zēng qìlì · <i>Clench the fists and glare to build strength</i></p>
+          <ol><li>Step into a horse stance with both fists at your waist, thumbs tucked in.</li><li>Slowly punch one fist forward at shoulder height. Open your eyes wide and look at your fist, gripping the ground with your toes.</li><li>Open the hand, turn the wrist in a circle and grasp, then pull the fist back to your waist. Change sides.</li></ol>
+          <p class="bd-reps"><b>3 rounds, each round once to each side.</b> The punch is slow and firm, not fast. Keep your body upright.</p>
+        </div>
+      </article>
+      <article class="bd-move" id="bouncing-on-toes">
+        <svg class="bd-thumb" viewBox="0 0 200 250" data-pose="8" role="img" aria-label="Bouncing on the toes"></svg>
+        <div>
+          <p class="bd-step">Movement 8</p>
+          <h3><span class="zh">背后七颠百病消</span> Bouncing on the toes</h3>
+          <p class="bd-py">bèi hòu qī diān bǎi bìng xiāo · <i>Seven jolts at the back to send away a hundred illnesses</i></p>
+          <ol><li>Stand with your feet together and your arms by your sides.</li><li>Rise up onto your toes, lift your head and hold for a moment.</li><li>Let your heels drop lightly to the ground with a small jolt, relaxing your whole body. Do it seven times.</li></ol>
+          <p class="bd-reps"><b>7 times.</b> Drop the heels softly. Hold on to a chair if your balance is not steady.</p>
+        </div>
+      </article>
+      <article class="bd-move" id="closing">
+        <svg class="bd-thumb" viewBox="0 0 200 250" data-pose="9" role="img" aria-label="Closing"></svg>
+        <div>
+          <p class="bd-step">Closing</p>
+          <h3><span class="zh">收势</span> Closing</h3>
+          <p class="bd-py">shōu shì · <i>Finishing the set</i></p>
+          <ol><li>Raise your arms out to the sides, palms facing back.</li><li>Bring your hands together over your lower belly, one on top of the other, and look down. Breathe calmly for a few breaths.</li><li>Lower your arms to your sides and relax.</li></ol>
+          <p class="bd-reps"><b>Do once, then breathe calmly for a moment.</b> Take a moment to stand still before you walk away.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer class="notes">
+    <p><b>Safety.</b> Move within a range that feels comfortable and stop if anything hurts. If you have a heart condition, high blood pressure, back or joint problems, or are pregnant, check with a doctor first. The bending and bouncing movements can be made smaller or skipped.</p>
+    <p><b>Learning Chinese?</b> The movement names are good reading practice. Paste them into the <a href="/mandarin-tone-changes/">tone change checker</a> to hear how the tones are really said. Everything on this page runs in your browser.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  const STAGES = [{"id":"opening","zh":"预备势","py":"yùbèi shì","en":"Opening position","meaning":"Getting ready","reps":1,"sides":false,"mode":"in","hold":2,"breath":"in-out","cue_a":"Hold a ball in front of your belly","cue_b":"Hold a ball in front of your belly","steps":["Stand with your feet together and arms by your sides, then step your left foot out to shoulder width.","Bend your knees a little. Raise your arms out to the sides and bring them round in front of your navel, palms facing you, as if holding a large ball.","Relax your shoulders and elbows, keep your head up and look straight ahead. Breathe naturally."],"tip":"Keep your knees behind your toes and your lower back relaxed.","a":{"hipY":140,"stance":10,"hl":[76,146],"hr":[124,146]},"b":{"hipY":145,"stance":16,"hl":[88,132],"hr":[112,132]}},{"id":"holding-up-the-sky","zh":"两手托天理三焦","py":"liǎng shǒu tuō tiān lǐ sān jiāo","en":"Holding up the sky","meaning":"Both hands hold up the sky to regulate the Triple Burner","reps":6,"sides":false,"mode":"cycle","breath":"in-out","cue_a":"Push up to the sky","cue_b":"Lower your arms","steps":["Interlace your fingers in front of your belly, palms up.","Lift your hands to your chest, turn the palms over and push them up above your head until your arms are straight. Glance up at your hands, then look ahead and hold the stretch for a moment.","Let go, lower your arms out to the sides and bend your knees a little, bringing your hands back in front of your belly."],"tip":"Stretch up through the whole body, but keep your shoulders down.","a":{"hipY":145,"stance":16,"hl":[92,134],"hr":[108,134]},"b":{"hipY":140,"stance":16,"hl":[94,22],"hr":[106,22],"palm":"up"}},{"id":"drawing-the-bow","zh":"左右开弓似射雕","py":"zuǒ yòu kāi gōng sì shè diāo","en":"Drawing the bow","meaning":"Draw the bow left and right like shooting an eagle","reps":3,"sides":true,"mode":"cycle","breath":"in-out","cue_a":"Draw the bow","cue_b":"Bring your hands back","steps":["Step out into a wide horse stance and cross your wrists in front of your chest.","Push one hand out to the side at shoulder height, index finger pointing up, while the other hand pulls back to the opposite shoulder as if drawing a bow. Look at the pushing hand.","Open your hands, bring them back in front of your chest and do the other side. Left and right make one round."],"tip":"Keep your upper body upright and both arms in one line, like a real bow.","a":{"hipY":152,"stance":38,"hl":[96,104],"hr":[104,104]},"b":{"hipY":152,"stance":38,"hl":[18,98],"hr":[122,93],"head":-1,"er":[148,103]}},{"id":"raising-one-arm","zh":"调理脾胃须单举","py":"tiáolǐ píwèi xū dān jǔ","en":"Raising one arm","meaning":"Raise one arm to regulate the spleen and stomach","reps":3,"sides":true,"mode":"cycle","breath":"in-out","cue_a":"One hand up, one hand down","cue_b":"Back to the centre","steps":["Start with both hands in front of your belly.","Raise one hand past your face, turn the palm up and push it above your head. At the same time press the other hand down beside your hip, fingers forward.","Stretch between the two hands for a moment, then bring both back in front of your belly and change sides."],"tip":"Push up and down with the same strength, keeping your body straight.","a":{"hipY":143,"stance":16,"hl":[94,134],"hr":[106,134]},"b":{"hipY":140,"stance":16,"hl":[88,28],"hr":[134,150],"palm":"up"}},{"id":"looking-back","zh":"五劳七伤往后瞧","py":"wǔ láo qī shāng wǎng hòu qiáo","en":"Looking back","meaning":"Look back to ease the five strains and seven injuries","reps":3,"sides":true,"mode":"cycle","breath":"in-out","cue_a":"Turn your head and look back","cue_b":"Look forward again","steps":["Straighten your legs with your arms hanging by your sides.","Turn your arms so the palms face out, and slowly turn your head to look back over one shoulder. Keep your body facing forward.","Turn your head back to the front, bend your knees a little and press your palms down beside your hips. Then look back over the other shoulder."],"tip":"Only your head turns. If your neck is stiff, turn just as far as is comfortable.","a":{"hipY":143,"stance":16,"hl":[74,146],"hr":[126,146]},"b":{"hipY":140,"stance":16,"hl":[66,144],"hr":[134,144],"head":-1}},{"id":"swaying-head-and-tail","zh":"摇头摆尾去心火","py":"yáo tóu bǎi wěi qù xīn huǒ","en":"Swaying the head and tail","meaning":"Sway the head and swing the tail to clear heart fire","reps":3,"sides":true,"mode":"cycle","breath":"out-in","cue_a":"Lean and sway","cue_b":"Come back to the centre","steps":["Step into a wide horse stance and rest your hands on your thighs just above the knees.","Lean your upper body down to one side, then sweep it round in a low arc to the other side, with your head and tailbone moving in opposite directions.","Come back up to the centre and repeat the other way. One sweep each way is one round."],"tip":"Move from the hips, smoothly and slowly. Make the lean smaller if you have back problems.","a":{"hipY":156,"stance":40,"hl":[72,186],"hr":[128,186]},"b":{"hipY":158,"stance":40,"hl":[72,188],"hr":[128,188],"tilt":-20,"head":-0.4,"el":[50,150]}},{"id":"reaching-the-feet","zh":"两手攀足固肾腰","py":"liǎng shǒu pān zú gù shèn yāo","en":"Reaching down to the feet","meaning":"Both hands reach the feet to strengthen the kidneys and waist","reps":6,"sides":false,"mode":"cycle","breath":"out-in","view":"side","cue_a":"Slide your hands down to your feet","cue_b":"Rise up with your arms","steps":["Raise your arms above your head, palms forward. Lower your hands to your chest, palms down.","Slide your hands under your arms and round to your back, then down along your spine and the backs of your legs as you bend forward, until they reach your feet.","Slide your hands forward over your feet and rise up slowly, arms leading, until you are standing with your arms above your head."],"tip":"Keep your knees straight but not locked, and only bend as far as is comfortable. Skip this movement if bending forward is not safe for you.","a":{"hipY":140,"stance":0,"hl":[110,28],"hr":[110,28],"bend":0},"b":{"hipY":140,"stance":0,"hl":[114,232],"hr":[114,232],"bend":150}},{"id":"punching-with-fists","zh":"攒拳怒目增气力","py":"cuán quán nù mù zēng qìlì","en":"Punching with a fierce gaze","meaning":"Clench the fists and glare to build strength","reps":3,"sides":true,"mode":"cycle","breath":"out-in","cue_a":"Punch slowly, eyes wide","cue_b":"Grasp and pull back","steps":["Step into a horse stance with both fists at your waist, thumbs tucked in.","Slowly punch one fist forward at shoulder height. Open your eyes wide and look at your fist, gripping the ground with your toes.","Open the hand, turn the wrist in a circle and grasp, then pull the fist back to your waist. Change sides."],"tip":"The punch is slow and firm, not fast. Keep your body upright.","a":{"hipY":154,"stance":38,"hl":[86,150],"hr":[114,150],"fist":true},"b":{"hipY":154,"stance":38,"hl":[84,104],"hr":[114,150],"fist":true,"punch":"l"}},{"id":"bouncing-on-toes","zh":"背后七颠百病消","py":"bèi hòu qī diān bǎi bìng xiāo","en":"Bouncing on the toes","meaning":"Seven jolts at the back to send away a hundred illnesses","reps":7,"sides":false,"mode":"cycle","breath":"in-out","cue_a":"Rise up on your toes","cue_b":"Drop your heels gently","steps":["Stand with your feet together and your arms by your sides.","Rise up onto your toes, lift your head and hold for a moment.","Let your heels drop lightly to the ground with a small jolt, relaxing your whole body. Do it seven times."],"tip":"Drop the heels softly. Hold on to a chair if your balance is not steady.","a":{"hipY":140,"stance":6,"hl":[78,146],"hr":[122,146]},"b":{"hipY":140,"stance":6,"hl":[78,146],"hr":[122,146],"lift":10}},{"id":"closing","zh":"收势","py":"shōu shì","en":"Closing","meaning":"Finishing the set","reps":1,"sides":false,"mode":"cycle","hold":2,"breath":"in-out","cue_a":"Hands over your lower belly, breathe calmly","cue_b":"Lower your arms and relax","steps":["Raise your arms out to the sides, palms facing back.","Bring your hands together over your lower belly, one on top of the other, and look down. Breathe calmly for a few breaths.","Lower your arms to your sides and relax."],"tip":"Take a moment to stand still before you walk away.","a":{"hipY":140,"stance":10,"hl":[76,146],"hr":[124,146]},"b":{"hipY":140,"stance":10,"hl":[97,136],"hr":[103,136]}}];
+  const fig = document.getElementById("fig");
+  const $ = id => document.getElementById(id);
+  const NUM = ["", "one", "two", "three", "four", "five", "six", "seven", "eight"];
+  let PACE = 4;
+
+  // ---------- Figure ----------
+  function ik(s, t, a, b, out) {
+    // Two-bone joint between s and t with lengths a and b; picks the solution on the "out" side (-1 left, 1 right).
+    const dx = t[0] - s[0], dy = t[1] - s[1];
+    let d = Math.hypot(dx, dy);
+    if (d >= a + b - 0.01) return [s[0] + dx / d * a, s[1] + dy / d * a];
+    d = Math.max(d, Math.abs(a - b) + 0.01);
+    const x = (a * a - b * b + d * d) / (2 * d), h = Math.sqrt(Math.max(0, a * a - x * x));
+    const ux = dx / d, uy = dy / d;
+    const c1 = [s[0] + ux * x - uy * h, s[1] + uy * x + ux * h];
+    const c2 = [s[0] + ux * x + uy * h, s[1] + uy * x - ux * h];
+    if (out === 0) return c1[1] > c2[1] ? c1 : c2;
+    return (c1[0] - c2[0]) * out > 0 ? c1 : c2;
+  }
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const lerp2 = (a, b, t) => [lerp(a[0], b[0], t), lerp(a[1], b[1], t)];
+
+  function mirror(p) {
+    const m = Object.assign({}, p);
+    const fx = v => v && [200 - v[0], v[1]];
+    m.hl = fx(p.hr); m.hr = fx(p.hl); m.el = fx(p.er); m.er = fx(p.el);
+    m.tilt = -(p.tilt || 0); m.head = -(p.head || 0);
+    if (p.punch) m.punch = p.punch === "l" ? "r" : "l";
+    return m;
+  }
+
+  function skeleton(p) {
+    const lift = p.lift || 0;
+    if (p.view === "side") {
+      const b = (p.bend || 0) * Math.PI / 180;
+      const hip = [100 - (p.bend || 0) * 0.08, p.hipY - lift];
+      const dir = [Math.sin(b), -Math.cos(b)];
+      const neck = [hip[0] + dir[0] * 58, hip[1] + dir[1] * 58];
+      const sh = [neck[0] - dir[0] * 4, neck[1] - dir[1] * 4];
+      const head = [neck[0] + dir[0] * 14, neck[1] + dir[1] * 14];
+      const foot = [100, 236];
+      return {side: true, dir, hip, neck, head, sh, foot, hand: p.hl};
+    }
+    const t = (p.tilt || 0) * Math.PI / 180;
+    const hipC = [100, p.hipY - lift];
+    const dir = [Math.sin(t), -Math.cos(t)];
+    const neck = [hipC[0] + dir[0] * 58, hipC[1] + dir[1] * 58];
+    const sc = [neck[0] - dir[0] * 4, neck[1] - dir[1] * 4];
+    const perp = [Math.cos(t), Math.sin(t)];
+    const shL = [sc[0] - perp[0] * 18, sc[1] - perp[1] * 18], shR = [sc[0] + perp[0] * 18, sc[1] + perp[1] * 18];
+    const head = [neck[0] + dir[0] * 14, neck[1] + dir[1] * 14];
+    const hipL = [90, hipC[1]], hipR = [110, hipC[1]];
+    const ankL = [100 - p.stance, 236 - lift], ankR = [100 + p.stance, 236 - lift];
+    return {hipC, neck, head, shL, shR, hipL, hipR, ankL, ankR, dir};
+  }
+
+  function pose(a, b, t) {
+    // Interpolate two poses at t (0..1).
+    const p = {view: a.view};
+    ["hipY", "stance", "tilt", "head", "lift", "bend"].forEach(k => { p[k] = lerp(a[k] || 0, b[k] || 0, t); });
+    p.hipY = lerp(a.hipY, b.hipY, t);
+    p.hl = lerp2(a.hl, b.hl, t); p.hr = lerp2(a.hr, b.hr, t);
+    p.fist = a.fist || b.fist;
+    p.palm = t > 0.75 ? b.palm : t < 0.25 ? a.palm : null;
+    p.punch = t > 0.5 ? b.punch : a.punch;
+    ["l", "r"].forEach(s => {
+      const ka = a["e" + s], kb = b["e" + s];
+      if (ka || kb) {
+        const ea = ka || elbowFor(a, s), eb = kb || elbowFor(b, s);
+        p["e" + s] = lerp2(ea, eb, t);
+      }
+    });
+    return p;
+  }
+  function elbowFor(p, s) {
+    const k = skeleton(p);
+    return s === "l" ? ik(k.shL, p.hl, 32, 30, -1) : ik(k.shR, p.hr, 32, 30, 1);
+  }
+
+  const L = (a, b, w, cls) => '<line x1="' + a[0].toFixed(1) + '" y1="' + a[1].toFixed(1) + '" x2="' + b[0].toFixed(1) +
+    '" y2="' + b[1].toFixed(1) + '"' + (w ? ' stroke-width="' + w + '"' : "") + (cls ? ' class="' + cls + '"' : "") + "/>";
+
+  function draw(p) {
+    const k = skeleton(p);
+    let s = '<line class="bd-ground" x1="20" y1="238" x2="180" y2="238"/>';
+    if (k.side) {
+      const knee = lerp2(k.hip, k.foot, 0.5);
+      s += L(k.hip, knee) + L(knee, k.foot) + L(k.foot, [k.foot[0] + 14, k.foot[1]]);
+      s += L(k.hip, k.neck, 7);
+      const el = ik(k.sh, k.hand, 32, 30, -1);
+      s += L(k.sh, el) + L(el, k.hand);
+      s += '<circle class="bd-head" cx="' + k.head[0].toFixed(1) + '" cy="' + k.head[1].toFixed(1) + '" r="11"/>';
+      const eye = [k.head[0] + k.dir[1] * -6 + k.dir[0] * 2, k.head[1] + k.dir[0] * 6 + k.dir[1] * 2];
+      s += '<circle class="bd-eye" cx="' + eye[0].toFixed(1) + '" cy="' + eye[1].toFixed(1) + '" r="1.6"/>';
+      return s;
+    }
+    const kneeL = ik(k.hipL, k.ankL, 48, 48, -1), kneeR = ik(k.hipR, k.ankR, 48, 48, 1);
+    const toe = p.lift > 1;
+    [[k.hipL, kneeL, k.ankL, -1], [k.hipR, kneeR, k.ankR, 1]].forEach(([h, kn, an, side]) => {
+      s += L(h, kn) + L(kn, an);
+      s += toe ? L(an, [an[0] + side * 4, 238]) : L(an, [an[0] + side * 9, an[1]]);
+    });
+    s += L(k.hipL, k.hipR) + L(k.hipC, k.neck, 7) + L(k.shL, k.shR);
+    const elL = p.el || ik(k.shL, p.hl, 32, 30, -1), elR = p.er || ik(k.shR, p.hr, 32, 30, 1);
+    s += L(k.shL, elL) + L(elL, p.hl) + L(k.shR, elR) + L(elR, p.hr);
+    [["l", p.hl], ["r", p.hr]].forEach(([side, h]) => {
+      if (p.fist) s += '<circle class="bd-fist" cx="' + h[0].toFixed(1) + '" cy="' + h[1].toFixed(1) + '" r="' + (p.punch === side ? 7 : 5) + '"/>';
+      if (p.palm === "up" && h[1] < 70) s += L([h[0] - 7, h[1] - 4], [h[0] + 7, h[1] - 4], 3, "bd-palm");
+    });
+    const hd = p.head || 0;
+    s += '<circle class="bd-head" cx="' + k.head[0].toFixed(1) + '" cy="' + k.head[1].toFixed(1) + '" r="11"/>';
+    const ex = k.head[0] + hd * 5, ey = k.head[1] - 1;
+    if (Math.abs(hd) < 0.8) {
+      s += '<circle class="bd-eye" cx="' + (ex - 3.5).toFixed(1) + '" cy="' + ey.toFixed(1) + '" r="1.5"/>';
+      s += '<circle class="bd-eye" cx="' + (ex + 3.5).toFixed(1) + '" cy="' + ey.toFixed(1) + '" r="1.5"/>';
+    } else {
+      s += '<circle class="bd-eye" cx="' + (k.head[0] + hd * 6).toFixed(1) + '" cy="' + ey.toFixed(1) + '" r="1.5"/>';
+      const ax = k.head[0] + hd * 16, ay = k.head[1] - 10;
+      s += '<path class="bd-arrow" d="M' + (k.head[0] + hd * 4) + " " + (ay - 6) + " Q" + ax + " " + (ay - 8) + " " + ax + " " + (ay + 4) + '"/>';
+      s += '<path class="bd-arrow" d="M' + (ax - 3) + " " + (ay + 1) + " L" + ax + " " + (ay + 5) + " L" + (ax + 3) + " " + (ay + 1) + '"/>';
+    }
+    return s;
+  }
+
+  // ---------- Timeline ----------
+  function buildTimeline() {
+    const segs = [];
+    let prevEnd = STAGES[0].a;
+    STAGES.forEach((st, si) => {
+      const view = st.view;
+      const A = Object.assign({view}, st.a), B = Object.assign({view}, st.b);
+      const sides = st.sides ? 2 : 1;
+      const inFirst = (st.breath || "in-out") === "in-out";
+      const label = first => (first === inFirst ? "Breathe in" : "Breathe out");
+      if (si > 0) segs.push({si, kind: "move", from: Object.assign({view: prevEnd.view}, prevEnd), to: A, dur: PACE, rep: 0, side: 0, breath: "Next movement", cue: st.cue_a});
+      if (st.mode === "in") {
+        segs.push({si, kind: "go", from: A, to: B, dur: PACE, rep: 1, side: 0, breath: "Breathe in", cue: st.cue_a});
+        segs.push({si, kind: "hold", from: B, to: B, dur: PACE * 2 * (st.hold || 1), rep: 1, side: 0, breath: "Breathe naturally", cue: st.cue_a});
+        prevEnd = B;
+        return;
+      }
+      for (let r = 1; r <= st.reps; r++) {
+        for (let sd = 0; sd < sides; sd++) {
+          const a = sd ? mirror(A) : A, b = sd ? mirror(B) : B;
+          segs.push({si, kind: "go", from: a, to: b, dur: PACE, rep: r, side: sides > 1 ? sd + 1 : 0, breath: label(true), cue: st.cue_a});
+          if (st.hold) segs.push({si, kind: "hold", from: b, to: b, dur: PACE * 2 * st.hold, rep: r, side: 0, breath: "Breathe naturally", cue: st.cue_a});
+          segs.push({si, kind: "back", from: b, to: a, dur: PACE, rep: r, side: sides > 1 ? sd + 1 : 0, breath: label(false), cue: st.cue_b});
+        }
+      }
+      prevEnd = A;
+    });
+    return segs;
+  }
+
+  let segs = buildTimeline(), cur = 0, segT = 0, playing = false, started = false, last = 0, wake = null;
+  const total = () => segs.reduce((n, s) => n + s.dur, 0);
+  const ease = t => 0.5 - Math.cos(Math.PI * t) / 2;
+
+  function speak(text) {
+    if (!$("voice").checked || !("speechSynthesis" in window)) return;
+    try {
+      speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = "en-US"; u.rate = 0.9;
+      speechSynthesis.speak(u);
+    } catch (e) { /* voice is optional */ }
+  }
+
+  function showStage(si) {
+    const st = STAGES[si];
+    $("now-zh").textContent = st.zh; $("now-en").textContent = st.en; $("now-py").textContent = st.py;
+    $("step-count").textContent = si === 0 ? "Opening" : si === STAGES.length - 1 ? "Closing" : "Movement " + si + " of 8";
+    document.querySelectorAll("#track li").forEach((li, i) => li.classList.toggle("on", i === si));
+  }
+
+  function render() {
+    const sg = segs[cur];
+    const t = sg.dur ? Math.min(1, segT / sg.dur) : 1;
+    fig.innerHTML = draw(pose(sg.from, sg.to, ease(t)));
+    $("meter").style.width = (t * 100).toFixed(1) + "%";
+    const st = STAGES[sg.si];
+    $("breath").textContent = started ? sg.breath : " ";
+    $("cue").textContent = started ? sg.cue : "Press start and stand comfortably, feet together.";
+    const sides = st.sides ? " · " + (sg.side === 1 ? "first side" : sg.side === 2 ? "second side" : "") : "";
+    $("round").textContent = sg.rep ? (st.reps > 1 ? "Round " + sg.rep + " of " + st.reps + (sg.side ? sides : "") : "") : "";
+    let left = segs.slice(cur).reduce((n, s) => n + s.dur, 0) - segT;
+    left = Math.max(0, Math.round(left));
+    $("left").textContent = Math.floor(left / 60) + ":" + String(left % 60).padStart(2, "0") + " left";
+  }
+
+  function enter(i) {
+    const prev = segs[cur];
+    cur = i; segT = 0;
+    const sg = segs[cur];
+    if (!prev || prev.si !== sg.si || i === 0) showStage(sg.si);
+    if (!started) return;
+    const st = STAGES[sg.si];
+    if (sg.kind === "move") speak((sg.si === STAGES.length - 1 ? "Closing. " : "Movement " + NUM[sg.si] + ". ") + st.en + ".");
+    else if (sg.kind === "go" && sg.rep === 1 && sg.side <= 1 && (i === 0 || segs[i - 1].si !== sg.si)) speak(st.en + ". " + sg.cue);
+    else if (sg.kind === "go") speak(st.reps > 1 ? NUM[sg.rep] || String(sg.rep) : sg.cue);
+  }
+
+  function tick(now) {
+    if (!playing) return;
+    const dt = Math.min(0.1, (now - last) / 1000); last = now;
+    segT += dt;
+    while (segT >= segs[cur].dur) {
+      if (cur === segs.length - 1) { finish(); return; }
+      const over = segT - segs[cur].dur;
+      enter(cur + 1); segT = over;
+    }
+    render();
+    requestAnimationFrame(tick);
+  }
+
+  async function keepAwake(on) {
+    try {
+      if (on && "wakeLock" in navigator) wake = await navigator.wakeLock.request("screen");
+      else if (!on && wake) { await wake.release(); wake = null; }
+    } catch (e) { /* not supported */ }
+  }
+
+  function play() {
+    if (!started) { started = true; enter(0); }
+    playing = true; $("play").textContent = "Pause";
+    last = performance.now(); keepAwake(true);
+    requestAnimationFrame(tick);
+  }
+  function pause() { playing = false; $("play").textContent = "Resume"; keepAwake(false); if ("speechSynthesis" in window) speechSynthesis.cancel(); }
+  function finish() {
+    playing = false; started = false; keepAwake(false);
+    $("play").textContent = "Start again"; $("breath").textContent = "Well done";
+    $("cue").textContent = "That is the full set. Stand still for a moment before you walk away.";
+    $("meter").style.width = "100%";
+    speak("Well done. That is the full set.");
+    cur = 0; segT = 0;
+  }
+  function jumpStage(delta) {
+    const si = Math.min(STAGES.length - 1, Math.max(0, segs[cur].si + delta));
+    let i = segs.findIndex(s => s.si === si && s.kind !== "move");
+    if (i < 0) i = 0;
+    if (!started) { cur = i; segT = 0; showStage(si); render(); return; }
+    enter(i); render();
+  }
+
+  $("play").addEventListener("click", () => (playing ? pause() : play()));
+  $("prev").addEventListener("click", () => jumpStage(-1));
+  $("next").addEventListener("click", () => jumpStage(1));
+  document.querySelectorAll("[data-pace]").forEach(b => b.addEventListener("click", () => {
+    document.querySelectorAll("[data-pace]").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+    const si = segs[cur].si, frac = segs[cur].dur ? segT / segs[cur].dur : 0, kind = segs[cur].kind, rep = segs[cur].rep, side = segs[cur].side;
+    PACE = Number(b.dataset.pace);
+    segs = buildTimeline();
+    const i = segs.findIndex(s => s.si === si && s.kind === kind && s.rep === rep && s.side === side);
+    cur = Math.max(0, i); segT = frac * segs[cur].dur;
+    render();
+  }));
+
+  $("track").innerHTML = STAGES.map((st, i) =>
+    '<li><button type="button" data-si="' + i + '"><span class="zh">' + st.zh + "</span><small>" +
+    (i === 0 ? "Opening" : i === STAGES.length - 1 ? "Closing" : i) + "</small></button></li>").join("");
+  document.querySelectorAll("#track button").forEach(b => b.addEventListener("click", () => {
+    const si = Number(b.dataset.si);
+    jumpStage(si - segs[cur].si);
+  }));
+
+  // Still pictures in the step-by-step list: each movement at its fullest point.
+  document.querySelectorAll("svg[data-pose]").forEach(svg => {
+    const st = STAGES[Number(svg.dataset.pose)];
+    svg.innerHTML = draw(pose(Object.assign({view: st.view}, st.b), Object.assign({view: st.view}, st.b), 1));
+  });
+
+  showStage(0);
+  render();
+})();
+</script>
+
+<footer class="site-foot">hskcheck.com · <a href="/privacy/">Privacy Policy</a></footer>
+</body>
+</html>
