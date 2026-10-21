@@ -1,0 +1,100 @@
+{
+  "slug": "yiqian-yihou",
+  "level": 3,
+  "published": "2026-10-21",
+  "title": "以前 and 以后 in Chinese: \"Before\" and \"After\" (HSK 3 Grammar)",
+  "description": "How to use 以前 (yǐqián) and 以后 (yǐhòu) for \"before\", \"after\", \"ago\" and \"in the future\" in Chinese: word order, 以后 vs 后来, mistakes and HSK 3 examples.",
+  "zh": "以前, 以后",
+  "h1": "How to Say \"Before\" and \"After\" with 以前 and 以后",
+  "lede": "以前 (yǐqián) means \"before\" and 以后 (yǐhòu) means \"after\". On their own they mean \"in the past\" and \"in the future\". After an action or a time, they mean \"before...\" and \"after...\", but the word order is the opposite of English.",
+  "sections": [
+    {
+      "h2": "On their own: \"in the past\" and \"in the future\"",
+      "paras": [
+        "以前 on its own means \"before\", \"in the past\" or \"used to\". 以后 on its own means \"later\" or \"in the future\". Like other time words, they go at the start of the sentence or right after the subject."
+      ],
+      "examples": [
+        {"zh": "以前我不喜欢吃鱼。", "py": "Yǐqián wǒ bù xǐhuan chī yú.", "en": "I didn't use to like fish."},
+        {"zh": "我以前是老师。", "py": "Wǒ yǐqián shì lǎoshī.", "en": "I used to be a teacher."},
+        {"zh": "以后我想去中国工作。", "py": "Yǐhòu wǒ xiǎng qù Zhōngguó gōngzuò.", "en": "In the future I'd like to work in China."}
+      ]
+    },
+    {
+      "h2": "Action or time + 以前 / 以后",
+      "paras": [
+        "Action or time + 以前 / 以后.",
+        "To say \"before eating\" or \"after class\", the action comes first and 以前 or 以后 comes after it: 吃饭以前, 下课以后. The most common mistake is to follow English word order and say 以前吃饭. The same goes for clock times: 十点以后 is \"after ten o'clock\"."
+      ],
+      "examples": [
+        {"zh": "吃饭以前要洗手。", "py": "Chī fàn yǐqián yào xǐ shǒu.", "en": "You should wash your hands before you eat."},
+        {"zh": "下课以后，我们去打篮球吧。", "py": "Xiàkè yǐhòu, wǒmen qù dǎ lánqiú ba.", "en": "Let's go and play basketball after class."},
+        {"zh": "晚上十点以后别给我打电话。", "py": "Wǎnshang shí diǎn yǐhòu bié gěi wǒ dǎ diànhuà.", "en": "Don't call me after ten at night."}
+      ]
+    },
+    {
+      "h2": "\"Ago\" and \"in... time\"",
+      "paras": [
+        "After a length of time, 以前 means \"ago\" and 以后 means \"in... time\" or \"later\". In speech you will also hear the short forms 前 and 后: 三天前, 睡觉前."
+      ],
+      "examples": [
+        {"zh": "三年以前，我开始学汉语。", "py": "Sān nián yǐqián, wǒ kāishǐ xué Hànyǔ.", "en": "I started learning Chinese three years ago."},
+        {"zh": "他两个星期以后回来。", "py": "Tā liǎng ge xīngqī yǐhòu huílai.", "en": "He'll be back in two weeks."},
+        {"zh": "睡觉前别喝咖啡。", "py": "Shuìjiào qián bié hē kāfēi.", "en": "Don't drink coffee before bed."}
+      ]
+    },
+    {
+      "h2": "以后 vs 后来",
+      "paras": [
+        "On its own, 以后 looks forward to the future. To say \"later\" or \"after that\" when you tell a story about the past, Chinese usually uses 后来 (hòulái) instead."
+      ],
+      "examples": [
+        {"zh": "他去年来过我家，后来我们就没有见过面。", "py": "Tā qùnián lái guo wǒ jiā, hòulái wǒmen jiù méiyǒu jiàn guo miàn.", "en": "He came to my place last year, but we haven't seen each other since."}
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "以前 and 以后 Worksheet: HSK 3 Printable with Answers",
+    "description": "A free printable 以前 and 以后 worksheet for HSK 3: 17 exercises (choose 以前 or 以后, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 以前 or 以后",
+        "instructions": "Write 以前 or 以后 in each gap. The English tells you what the sentence means.",
+        "options": ["以前", "以后"],
+        "items": [
+          {"zh": "吃饭＿＿，我们先洗手吧。", "en": "Let's wash our hands before we eat.", "answer": "以前"},
+          {"zh": "下班＿＿，我去超市买东西。", "en": "After work I'm going to the supermarket.", "answer": "以后"},
+          {"zh": "＿＿我很胖，现在瘦了。", "en": "I used to be fat, but now I'm thin.", "answer": "以前"},
+          {"zh": "五年＿＿，我来到了这个城市。", "en": "I came to this city five years ago.", "answer": "以前"},
+          {"zh": "他一个月＿＿回国。", "en": "He's going back to his country in a month.", "answer": "以后"},
+          {"zh": "睡觉＿＿别玩手机。", "en": "Don't play on your phone before you go to sleep.", "answer": "以前"},
+          {"zh": "考完试＿＿，我想去旅游。", "en": "After my exams, I'd like to go travelling.", "answer": "以后"},
+          {"zh": "＿＿你有问题，可以给我打电话。", "en": "If you have any questions in future, you can call me.", "answer": "以后"},
+          {"zh": "这儿＿＿没有地铁。", "en": "There didn't use to be an underground line here.", "answer": "以前"},
+          {"zh": "八点＿＿我都在家，你来吧。", "en": "I'm at home from eight o'clock onwards, so come over.", "answer": "以后"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["以前", "睡觉", "我", "看书", "常常"], "en": "I often read before going to sleep.", "answers": ["我睡觉以前常常看书。", "睡觉以前我常常看书。"]},
+          {"words": ["以后", "下课", "去", "我们", "图书馆"], "en": "We'll go to the library after class.", "answers": ["下课以后我们去图书馆。", "我们下课以后去图书馆。"]},
+          {"words": ["以后", "一年", "我", "去中国", "想"], "en": "I'd like to go to China in a year's time.", "answers": ["一年以后我想去中国。", "我一年以后想去中国。"]},
+          {"words": ["以前", "这儿", "商店", "是", "一个"], "en": "This used to be a shop.", "answers": ["这儿以前是一个商店。", "以前这儿是一个商店。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "以前两年我来过这儿。", "en": "I came here two years ago.", "answers": ["两年以前我来过这儿。", "我两年以前来过这儿。"]},
+          {"zh": "以前出门，别忘了关灯。", "en": "Don't forget to turn off the lights before you go out.", "answers": ["出门以前，别忘了关灯。"]},
+          {"zh": "以后三天他回来。", "en": "He'll be back in three days.", "answers": ["三天以后他回来。", "他三天以后回来。"]}
+        ]
+      }
+    ]
+  }
+}
