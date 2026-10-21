@@ -1,0 +1,90 @@
+{
+  "slug": "xian-ranhou",
+  "level": 3,
+  "published": "2026-10-21",
+  "title": "先……然后 in Chinese: How to Say \"First... Then\" (HSK 3 Grammar)",
+  "description": "How to use 先……然后 (xiān... ránhòu) for \"first... then\" in Chinese: where 先 goes, 然后再, 最后, the most common mistake and HSK 3 examples.",
+  "zh": "先……然后",
+  "h1": "How to Say \"First... Then\" with 先……然后",
+  "lede": "先 (xiān) marks the action that happens first, and 然后 (ránhòu) introduces what comes next. Together they put two or more actions in order, like \"first... then\" in English.",
+  "sections": [
+    {
+      "h2": "The pattern",
+      "paras": [
+        "Subject + 先 + action 1, 然后 + action 2.",
+        "先 is an adverb, so it goes after the subject and directly before the verb. 然后 starts the second part of the sentence. If both actions are done by the same person, you don't need to say the subject again."
+      ],
+      "examples": [
+        {"zh": "我先去银行，然后去超市。", "py": "Wǒ xiān qù yínháng, ránhòu qù chāoshì.", "en": "I'm going to the bank first, then the supermarket."},
+        {"zh": "我们先吃饭，然后去看电影吧。", "py": "Wǒmen xiān chī fàn, ránhòu qù kàn diànyǐng ba.", "en": "Let's eat first and then go and see a film."},
+        {"zh": "他每天先跑步，然后吃早饭。", "py": "Tā měi tiān xiān pǎobù, ránhòu chī zǎofàn.", "en": "Every day he goes for a run first, then has breakfast."}
+      ]
+    },
+    {
+      "h2": "Don't start the sentence with 先",
+      "paras": [
+        "The most common mistake is to follow English \"First, I...\" and put 先 before the subject: 先我去银行 is wrong. Say 我先去银行.",
+        "然后 works the other way round. It joins the two parts, so if the second action has a new subject, that subject comes after 然后: 然后你说, not 你然后说."
+      ],
+      "examples": [
+        {"zh": "我先说，然后你说。", "py": "Wǒ xiān shuō, ránhòu nǐ shuō.", "en": "I'll speak first, then you."},
+        {"zh": "我们先做什么？", "py": "Wǒmen xiān zuò shénme?", "en": "What shall we do first?"}
+      ]
+    },
+    {
+      "h2": "然后再, 先……再 and 最后",
+      "paras": [
+        "You will often hear 再 before the second verb, either after 然后 or on its own: 先……再…… means the same as 先……然后. For a third step, use 最后 (finally)."
+      ],
+      "examples": [
+        {"zh": "你先洗手，然后再吃东西。", "py": "Nǐ xiān xǐ shǒu, ránhòu zài chī dōngxi.", "en": "Wash your hands first, then you can eat."},
+        {"zh": "我们先休息一下再走吧。", "py": "Wǒmen xiān xiūxi yíxià zài zǒu ba.", "en": "Let's have a rest before we go."},
+        {"zh": "我们先去商店，然后去饭馆，最后回家。", "py": "Wǒmen xiān qù shāngdiàn, ránhòu qù fànguǎn, zuìhòu huí jiā.", "en": "We'll go to the shops first, then to a restaurant, and finally home."}
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "先……然后 Worksheet: HSK 3 Printable with Answers",
+    "description": "A free printable 先……然后 worksheet for HSK 3: 16 exercises (先 or 然后, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 先 or 然后",
+        "instructions": "Write 先 or 然后 in each gap.",
+        "options": ["先", "然后"],
+        "items": [
+          {"zh": "我＿＿做作业，然后看电视。", "en": "I'll do my homework first, then watch TV.", "answer": "先"},
+          {"zh": "你先想一想，＿＿回答。", "en": "Think about it first, then answer.", "answer": "然后"},
+          {"zh": "我们＿＿买票，然后进去。", "en": "Let's buy the tickets first, then go in.", "answer": "先"},
+          {"zh": "他先看了一会儿书，＿＿就睡觉了。", "en": "He read for a while, then went to bed.", "answer": "然后"},
+          {"zh": "请大家＿＿看书，然后回答问题。", "en": "Everyone, please read first, then answer the questions.", "answer": "先"},
+          {"zh": "我们先坐地铁，＿＿走路去学校。", "en": "We take the underground first, then walk to school.", "answer": "然后"},
+          {"zh": "早上我＿＿喝一点儿水，然后吃早饭。", "en": "In the morning I drink some water first, then have breakfast.", "answer": "先"},
+          {"zh": "我们＿＿去吃饭，然后去买东西吧。", "en": "Let's go and eat first, then go shopping.", "answer": "先"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["先", "我们", "然后", "吃饭", "去公园"], "en": "We'll eat first, then go to the park.", "answers": ["我们先吃饭，然后去公园。"]},
+          {"words": ["先", "你", "再", "休息一下", "工作"], "en": "Have a rest first, then get back to work.", "answers": ["你先休息一下，再工作。"]},
+          {"words": ["先", "然后", "你", "我", "说", "说"], "en": "You speak first, then me.", "answers": ["你先说，然后我说。"]},
+          {"words": ["先", "然后", "最后", "洗手", "做饭", "吃饭"], "en": "First wash your hands, then cook, and finally eat.", "answers": ["先洗手，然后做饭，最后吃饭。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "先我们看电影，然后吃饭。", "en": "We'll watch a film first, then eat.", "answers": ["我们先看电影，然后吃饭。"]},
+          {"zh": "我然后洗澡，先睡觉。", "en": "I'll have a shower first, then go to bed.", "answers": ["我先洗澡，然后睡觉。"]},
+          {"zh": "我先吃饭，我然后去上班。", "en": "I'll eat first, then go to work.", "answers": ["我先吃饭，然后去上班。", "我先吃饭，然后我去上班。"]},
+          {"zh": "你先做完作业，先出去玩。", "en": "Finish your homework first, then go out to play.", "answers": ["你先做完作业，然后出去玩。", "你先做完作业，再出去玩。", "你先做完作业，然后再出去玩。"]}
+        ]
+      }
+    ]
+  }
+}
