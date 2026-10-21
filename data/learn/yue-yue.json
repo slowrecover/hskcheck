@@ -1,0 +1,100 @@
+{
+  "slug": "yue-yue",
+  "level": 3,
+  "published": "2026-10-21",
+  "title": "越……越 in Chinese: \"The More... the More\" (HSK 3 Grammar)",
+  "description": "How to use 越……越 (yuè... yuè) for \"the more... the more\" and 越来越 for \"more and more\" in Chinese: word order, common mistakes and HSK 3 examples.",
+  "zh": "越……越",
+  "h1": "How to Say \"The More... the More\" with 越……越",
+  "lede": "越 (yuè) is used in pairs. 越 A 越 B means \"the more A, the more B\": as one thing grows, so does the other. 越来越 means \"more and more\", for something that keeps changing over time.",
+  "sections": [
+    {
+      "h2": "越 + verb + 越 + adjective",
+      "paras": [
+        "Subject + 越 + verb + 越 + adjective.",
+        "With one subject, the first 越 goes before the verb and the second before the result. 雨越下越大 says that the longer it rains, the heavier it gets. 越 always comes after the subject, never before it."
+      ],
+      "examples": [
+        {"zh": "雨越下越大。", "py": "Yǔ yuè xià yuè dà.", "en": "The rain is getting heavier and heavier."},
+        {"zh": "他越说越快。", "py": "Tā yuè shuō yuè kuài.", "en": "He talked faster and faster."},
+        {"zh": "汉语越学越有意思。", "py": "Hànyǔ yuè xué yuè yǒu yìsi.", "en": "The more you learn Chinese, the more interesting it gets."}
+      ]
+    },
+    {
+      "h2": "Two different subjects",
+      "paras": [
+        "Subject 1 + 越 + A, subject 2 + 越 + B.",
+        "Each part can have its own subject. Put each 越 after its subject."
+      ],
+      "examples": [
+        {"zh": "你越说，他越不高兴。", "py": "Nǐ yuè shuō, tā yuè bù gāoxìng.", "en": "The more you say, the less happy he gets."},
+        {"zh": "东西越便宜，买的人越多。", "py": "Dōngxi yuè piányi, mǎi de rén yuè duō.", "en": "The cheaper something is, the more people buy it."}
+      ]
+    },
+    {
+      "h2": "越来越: \"more and more\"",
+      "paras": [
+        "Subject + 越来越 + adjective (+ 了).",
+        "越来越 says that something keeps changing as time goes by. It goes before an adjective, or before verbs of feeling such as 喜欢. The sentence often ends with 了, because it describes a change."
+      ],
+      "examples": [
+        {"zh": "天气越来越冷了。", "py": "Tiānqì yuè lái yuè lěng le.", "en": "It's getting colder and colder."},
+        {"zh": "我越来越喜欢这个城市了。", "py": "Wǒ yuè lái yuè xǐhuan zhège chéngshì le.", "en": "I like this city more and more."},
+        {"zh": "学汉语的人越来越多了。", "py": "Xué Hànyǔ de rén yuè lái yuè duō le.", "en": "More and more people are learning Chinese."}
+      ]
+    },
+    {
+      "h2": "No 很 after 越",
+      "paras": [
+        "越 already means \"more\", so don't add 很, 非常 or 太 after it. 天气越来越很冷 is wrong; say 天气越来越冷了. The other common mistake is to forget the second 越: 他越走慢 should be 他越走越慢."
+      ],
+      "examples": [
+        {"zh": "他的汉语越来越好了。", "py": "Tā de Hànyǔ yuè lái yuè hǎo le.", "en": "His Chinese is getting better and better."}
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "越……越 Worksheet: HSK 3 Printable with Answers",
+    "description": "A free printable 越……越 worksheet for HSK 3: 16 exercises (越 or 越来越, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 越 or 越来越",
+        "instructions": "Write 越 or 越来越 in each gap.",
+        "options": ["越", "越来越"],
+        "items": [
+          {"zh": "天气＿＿热了。", "en": "It's getting hotter and hotter.", "answer": "越来越"},
+          {"zh": "他越跑＿＿快。", "en": "He ran faster and faster.", "answer": "越"},
+          {"zh": "我＿＿喜欢我的工作了。", "en": "I like my job more and more.", "answer": "越来越"},
+          {"zh": "这个字我越写＿＿好看。", "en": "The more I write this character, the better it looks.", "answer": "越"},
+          {"zh": "来中国旅游的人＿＿多了。", "en": "More and more people are coming to China on holiday.", "answer": "越来越"},
+          {"zh": "这个问题我越想＿＿不明白。", "en": "The more I think about this question, the less I understand it.", "answer": "越"},
+          {"zh": "妹妹＿＿漂亮了。", "en": "My little sister is getting prettier and prettier.", "answer": "越来越"},
+          {"zh": "这个电影我越看＿＿喜欢。", "en": "The more I watch this film, the more I like it.", "answer": "越"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["越", "越", "雪", "下", "大"], "en": "The snow is getting heavier and heavier.", "answers": ["雪越下越大。"]},
+          {"words": ["越来越", "我的", "身体", "好了"], "en": "My health is getting better and better.", "answers": ["我的身体越来越好了。"]},
+          {"words": ["越", "越", "他", "想", "高兴"], "en": "The more he thought about it, the happier he got.", "answers": ["他越想越高兴。"]},
+          {"words": ["越", "越", "早", "去", "好"], "en": "The earlier you go, the better.", "answers": ["越早去越好。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "房子越来越很贵了。", "en": "Flats and houses are getting more and more expensive.", "answers": ["房子越来越贵了。"]},
+          {"zh": "他越走慢。", "en": "He walked slower and slower.", "answers": ["他越走越慢。"]},
+          {"zh": "她越唱越非常好听。", "en": "The more she sang, the better she sounded.", "answers": ["她越唱越好听。"]},
+          {"zh": "越他喝，越想喝。", "en": "The more he drinks, the more he wants to drink.", "answers": ["他越喝越想喝。", "他越喝，越想喝。"]}
+        ]
+      }
+    ]
+  }
+}
