@@ -1,0 +1,102 @@
+{
+  "slug": "huozhe-vs-haishi",
+  "level": 3,
+  "published": "2026-10-21",
+  "title": "或者 vs 还是 in Chinese: Two Ways to Say \"Or\" (HSK 3 Grammar)",
+  "description": "或者 (huòzhě) vs 还是 (háishi): which \"or\" to use in questions and statements, 还是 after 不知道, 还是……吧 for \"had better\", and HSK 3 examples.",
+  "zh": "或者 vs 还是",
+  "h1": "或者 vs 还是: Two Ways to Say \"Or\"",
+  "lede": "English has one word for \"or\", Chinese has two. 还是 (háishi) is for questions where the other person has to choose. 或者 (huòzhě) is for statements, when either choice is possible.",
+  "sections": [
+    {
+      "h2": "还是: \"or\" in questions",
+      "paras": [
+        "A + 还是 + B？",
+        "Use 还是 when you ask someone to choose between two things. The sentence is already a question, so don't add 吗 at the end."
+      ],
+      "examples": [
+        {"zh": "你想喝茶还是喝咖啡？", "py": "Nǐ xiǎng hē chá háishi hē kāfēi?", "en": "Would you like tea or coffee?"},
+        {"zh": "我们今天去还是明天去？", "py": "Wǒmen jīntiān qù háishi míngtiān qù?", "en": "Shall we go today or tomorrow?"},
+        {"zh": "你想吃米饭还是面条？", "py": "Nǐ xiǎng chī mǐfàn háishi miàntiáo?", "en": "Do you want rice or noodles?"}
+      ]
+    },
+    {
+      "h2": "或者: \"or\" in statements",
+      "paras": [
+        "A + 或者 + B.",
+        "Use 或者 when you are not asking a question but saying that one choice or the other is possible, or that you do one thing or another. The most common mistake is to use 或者 in a choice question: 你喝茶或者咖啡？ should be 你喝茶还是咖啡？"
+      ],
+      "examples": [
+        {"zh": "我喝茶或者咖啡都可以。", "py": "Wǒ hē chá huòzhě kāfēi dōu kěyǐ.", "en": "Tea or coffee, either is fine for me."},
+        {"zh": "你可以坐地铁，或者坐出租车。", "py": "Nǐ kěyǐ zuò dìtiě, huòzhě zuò chūzūchē.", "en": "You can take the underground or a taxi."},
+        {"zh": "周末我常常看书或者看电影。", "py": "Zhōumò wǒ chángcháng kàn shū huòzhě kàn diànyǐng.", "en": "At the weekend I usually read or watch a film."},
+        {"zh": "你今天或者明天给我打电话吧。", "py": "Nǐ jīntiān huòzhě míngtiān gěi wǒ dǎ diànhuà ba.", "en": "Give me a call today or tomorrow."}
+      ]
+    },
+    {
+      "h2": "还是 after 不知道",
+      "paras": [
+        "A statement can contain a question, for example after 不知道 (don't know) or 问 (ask). Then the \"or\" is still 还是, because there is still a choice to be made: \"whether... or...\"."
+      ],
+      "examples": [
+        {"zh": "我不知道他来还是不来。", "py": "Wǒ bù zhīdào tā lái háishi bù lái.", "en": "I don't know whether he's coming or not."}
+      ]
+    },
+    {
+      "h2": "还是……吧: \"had better\"",
+      "paras": [
+        "还是 has one more common use that has nothing to do with \"or\". Before a verb, with 吧 at the end, it means \"we'd better\" or \"it would be better to\", after thinking about the choices."
+      ],
+      "examples": [
+        {"zh": "我们还是坐出租车吧。", "py": "Wǒmen háishi zuò chūzūchē ba.", "en": "We'd better take a taxi."}
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "或者 vs 还是 Worksheet: HSK 3 Printable with Answers",
+    "description": "A free printable 或者 vs 还是 worksheet for HSK 3: 19 exercises (choose 或者 or 还是, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 或者 or 还是",
+        "instructions": "Write 或者 or 还是 in each gap. Is it a question with a choice, or a statement?",
+        "options": ["或者", "还是"],
+        "items": [
+          {"zh": "你想喝水＿＿喝茶？", "en": "Would you like water or tea?", "answer": "还是"},
+          {"zh": "我们星期六＿＿星期天去看电影吧。", "en": "Let's go and see a film on Saturday or Sunday.", "answer": "或者"},
+          {"zh": "这个手机是你的＿＿你哥哥的？", "en": "Is this phone yours or your brother's?", "answer": "还是"},
+          {"zh": "你可以问老师，＿＿问同学。", "en": "You can ask the teacher or a classmate.", "answer": "或者"},
+          {"zh": "我们坐火车去＿＿坐飞机去？", "en": "Are we going by train or by plane?", "answer": "还是"},
+          {"zh": "晚上我常常看电视＿＿上网。", "en": "In the evening I usually watch TV or go online.", "answer": "或者"},
+          {"zh": "我不知道这家饭馆今天开门＿＿不开门。", "en": "I don't know whether this restaurant is open today or not.", "answer": "还是"},
+          {"zh": "你可以今天＿＿明天来。", "en": "You can come today or tomorrow.", "answer": "或者"},
+          {"zh": "你喜欢夏天＿＿冬天？", "en": "Do you like summer or winter better?", "answer": "还是"},
+          {"zh": "我想明天＿＿后天去看他。", "en": "I'm thinking of going to see him tomorrow or the day after.", "answer": "或者"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["还是", "你", "米饭", "吃", "面条"], "en": "Are you having rice or noodles?", "answers": ["你吃米饭还是面条？"]},
+          {"words": ["或者", "我们", "走路去", "可以", "骑自行车去"], "en": "We can walk or cycle there.", "answers": ["我们可以走路去或者骑自行车去。", "我们可以骑自行车去或者走路去。"]},
+          {"words": ["还是", "不知道", "我", "他", "去", "不去"], "en": "I don't know whether he's going or not.", "answers": ["我不知道他去还是不去。"]},
+          {"words": ["还是", "吧", "我们", "在家吃"], "en": "We'd better eat at home.", "answers": ["我们还是在家吃吧。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "你喝咖啡或者喝茶？", "en": "Would you like coffee or tea?", "answers": ["你喝咖啡还是喝茶？"]},
+          {"zh": "我周末看书还是看电视。", "en": "At the weekend I read or watch TV.", "answers": ["我周末看书或者看电视。"]},
+          {"zh": "我不知道明天下雨或者不下雨。", "en": "I don't know whether it'll rain tomorrow or not.", "answers": ["我不知道明天下雨还是不下雨。"]},
+          {"zh": "你想去公园或者去商店？", "en": "Do you want to go to the park or to the shops?", "answers": ["你想去公园还是去商店？"]},
+          {"zh": "你去或者我去？", "en": "Are you going, or am I?", "answers": ["你去还是我去？"]}
+        ]
+      }
+    ]
+  }
+}
