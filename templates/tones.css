@@ -1,0 +1,31 @@
+/* Tone change page: each character shows its written pinyin above and its spoken pinyin below. */
+.tools-row { display: flex; gap: 8px 16px; align-items: baseline; flex-wrap: wrap; }
+.tools-row h2 { margin-right: auto; }
+.count { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+.tn-out { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 10px 2px; line-height: 1.2; }
+.tn-word { display: inline-flex; gap: 1px; margin-right: 8px; }
+.tn-gap { font-family: var(--f-zh); font-size: 22px; align-self: center; color: var(--muted); }
+.tn-syl { display: inline-grid; grid-template-rows: auto auto auto; justify-items: center; min-width: 30px; padding: 2px 1px; border-radius: 6px; }
+.tn-w, .tn-s { font: 13px var(--f-ui); white-space: nowrap; }
+.tn-w { color: var(--muted); }
+.tn-s { color: var(--ink); }
+.tn-c { font-family: var(--f-zh); font-size: 26px; line-height: 1.25; }
+.tn-changed .tn-s { background: var(--over-bg); color: var(--over); font-weight: 600; padding: 0 3px; border-radius: 3px; }
+.tn-changed .tn-w { text-decoration: line-through; text-decoration-color: color-mix(in srgb, var(--muted) 60%, transparent); }
+.tn-unknown .tn-w, .tn-unknown .tn-s { color: var(--muted); }
+.tn-out[data-view="spoken"] .tn-w { display: none; }
+.tn-key { margin: 0; font-size: 13px; color: var(--muted); }
+.tn-key mark { background: var(--over-bg); color: var(--over); font-weight: 600; padding: 0 3px; border-radius: 3px; }
+.tn-row-label { color: var(--ink); font-weight: 500; }
+
+.tn-changes { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.tn-changes li { display: grid; grid-template-columns: 4.5em 9em 1fr; gap: 4px 12px; align-items: baseline; padding: 8px 10px; border: 1px solid var(--rule); border-radius: 8px; }
+.tn-changes .zh { font-family: var(--f-zh); font-size: 19px; }
+.tn-arrow { font-family: var(--f-ui); white-space: nowrap; }
+.tn-arrow b { color: var(--over); }
+.tn-why { color: var(--muted); font-size: 14px; }
+@media (max-width: 520px) {
+  .tn-changes li { grid-template-columns: auto 1fr; }
+  .tn-why { grid-column: 1 / -1; }
+}

@@ -8,6 +8,7 @@ Outputs (written at the repository root):
   old-hsk-to-new-hsk/index.html   old HSK -> new HSK word gap (needs old-hsk-to-new-hsk/words.json)
   yct/...                         YCT word lists and worksheets (see tools/yct.py)
   hsk-handwriting-characters/     which characters must be written by hand (see tools/handwriting.py)
+  mandarin-tone-changes/          written vs spoken tones (see tools/tones.py; data in tones/words.json)
   sitemap.xml                     every page above
 
 Run from anywhere:  python3 tools/build.py
@@ -22,6 +23,7 @@ import unicodedata
 import build_th
 import handwriting
 import learn
+import tones
 import yct
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -326,6 +328,7 @@ def main():
             pages.append((f"/hsk-{n}-word-list/", f"HSK {n} Words"))
     pages.append(("/chinese-character-worksheets/", "Writing Sheets"))
     pages.append((handwriting.URL, "Handwriting"))
+    pages.append((tones.URL, "Tone Changes"))
     pages.append((MW_URL, "Measure Words"))
     upgrade_data = ROOT / "old-hsk-to-new-hsk" / "words.json"
     if upgrade_data.exists():
@@ -503,6 +506,9 @@ def main():
 
     # Handwriting characters
     extra_urls += handwriting.build(ROOT, pages, nav, render, base_css, TPL, SITE)
+
+    # Tone changes
+    extra_urls += tones.build(ROOT, pages, nav, render, base_css, TPL, SITE)
 
     # YCT word lists and worksheets
     extra_urls += yct.build(ROOT, pages, nav, render, base_css, TPL, SITE, search_key, worksheet_page)

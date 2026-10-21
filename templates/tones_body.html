@@ -1,0 +1,212 @@
+<div class="wrap">
+  <header>
+    __NAV__
+    <div class="eyebrow"><span>Pronunciation</span><span class="chip">三声 · 一 · 不</span><span class="chip">Free</span></div>
+    <h1><span class="zh">变调</span>Mandarin Tone Change Checker</h1>
+    <p class="lede">Pinyin shows each character's dictionary tone, but in speech some tones change. Paste Chinese text to see the tones as they are written and as they are actually said, with every change explained.</p>
+  </header>
+
+  <section class="sheet" aria-labelledby="in-label">
+    <label class="field" id="in-label" for="text-input">Chinese text <span class="hint" id="example-hint">Example text loaded. Replace it with your own.</span></label>
+    <textarea id="text-input" spellcheck="false" lang="zh-Hans"></textarea>
+    <div class="controls">
+      <div class="levels" role="group" aria-label="Show">
+        <span class="lbl">Show</span>
+        <button type="button" class="lv-btn" data-view="both" aria-pressed="true">Written and spoken</button>
+        <button type="button" class="lv-btn" data-view="spoken" aria-pressed="false">Spoken only</button>
+      </div>
+      <button type="button" class="ghost" id="clear-btn">Clear text</button>
+    </div>
+  </section>
+
+  <section class="sheet" aria-live="polite" aria-labelledby="res-title">
+    <div class="tools-row">
+      <h2 id="res-title">How it is said</h2>
+      <span class="count" id="change-count"></span>
+    </div>
+    <div class="tn-out" id="out" lang="zh-Hans"><p class="empty">Loading pinyin…</p></div>
+    <p class="tn-key"><span class="tn-row-label">Top line</span> written pinyin · <span class="tn-row-label">bottom line</span> spoken pinyin, <mark>highlighted</mark> where the tone changes</p>
+  </section>
+
+  <section class="sheet" aria-labelledby="changes-title">
+    <h2 id="changes-title">Tone changes in this text</h2>
+    <ul class="tn-changes" id="changes"></ul>
+    <p class="empty" id="no-changes" hidden>No tone changes in this text.</p>
+  </section>
+
+  <section class="guide" aria-labelledby="guide-title">
+    <h2 id="guide-title">The three tone changes every learner needs</h2>
+    <div class="qa">
+      <div>
+        <h3>1. Third tone before third tone</h3>
+        <p>When two third tones come together, the first one is said as a second tone: <span class="zh-inline">你好</span> is written nǐ hǎo but said ní hǎo, and <span class="zh-inline">可以</span> is written kěyǐ but said kéyǐ. In a longer run of third tones, every one except the last usually rises: <span class="zh-inline">我也很好</span> is said wó yé hén hǎo at normal speed.</p>
+      </div>
+      <div>
+        <h3>2. 一 (yī)</h3>
+        <p><span class="zh-inline">一</span> keeps its first tone when you count, in dates and numbers, and at the end of a word: <span class="zh-inline">一、二、三</span>, <span class="zh-inline">第一</span>, <span class="zh-inline">统一</span>. Before a fourth tone it becomes second tone: <span class="zh-inline">一定</span> yídìng, <span class="zh-inline">一个</span> yí ge. Before the other tones it becomes fourth tone: <span class="zh-inline">一起</span> yìqǐ, <span class="zh-inline">一天</span> yì tiān. Between two copies of a verb it is light: <span class="zh-inline">看一看</span> kàn yi kàn.</p>
+      </div>
+      <div>
+        <h3>3. 不 (bù)</h3>
+        <p><span class="zh-inline">不</span> becomes second tone before a fourth tone: <span class="zh-inline">不是</span> búshì, <span class="zh-inline">不要</span> búyào. Before other tones it stays bù: <span class="zh-inline">不好</span> bù hǎo. In a yes-no question like <span class="zh-inline">去不去</span> it is light: qù bu qù.</p>
+      </div>
+      <div>
+        <h3>Why doesn't pinyin show the changes?</h3>
+        <p>Dictionaries write the original tone so you always know a character's own tone. Textbooks are mixed: many mark the changes for <span class="zh-inline">一</span> and <span class="zh-inline">不</span> but not for third tones. That is why the same word can look different in two books. This page shows both, so you can see which is which.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="notes">
+    <p><b>How it works.</b> The text is split into words using the 11,000-word HSK vocabulary, so characters with more than one reading, like <span class="zh-inline">行</span> in <span class="zh-inline">银行</span>, get the reading of the word. A character on its own gets its most common reading. Characters outside the HSK lists show <b>?</b>.</p>
+    <p><b>Long runs of third tones.</b> When three or more third tones come together, speakers sometimes group them differently, especially when speaking slowly. This page shows the common pattern at normal speed. Pinyin data: <a href="https://github.com/drkameleon/complete-hsk-vocabulary">complete-hsk-vocabulary</a> (MIT). Everything runs in your browser.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  const EXAMPLE = "你好！我很好，你呢？这本书不错，我们一起去买吧。你可以等一等吗？我不去，你去不去？第一次来北京，一定要好好玩儿。";
+  const NUMERAL = "〇零一二三四五六七八九十百千万亿两";
+  const input = document.getElementById("text-input");
+  const hint = document.getElementById("example-hint");
+  const out = document.getElementById("out");
+  const changesEl = document.getElementById("changes");
+  const noChanges = document.getElementById("no-changes");
+  const countEl = document.getElementById("change-count");
+  const viewBtns = Array.from(document.querySelectorAll("[data-view]"));
+  let DICT = null, MAXLEN = 1, view = "both";
+
+  function esc(s) {
+    return s.replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+  }
+  const isHan = c => /\p{Script=Han}/u.test(c);
+  const tone = s => Number(s.slice(-1));
+
+  const MARKS = {a: "āáǎà", e: "ēéěè", i: "īíǐì", o: "ōóǒò", u: "ūúǔù", "ü": "ǖǘǚǜ"};
+  function mark(num) {
+    const t = tone(num), syl = num.slice(0, -1);
+    if (syl === "r") return "r";
+    if (t === 5) return syl;
+    let at = -1;
+    if (syl.includes("a")) at = syl.indexOf("a");
+    else if (syl.includes("e")) at = syl.indexOf("e");
+    else if (syl.includes("ou")) at = syl.indexOf("o");
+    else for (let i = syl.length - 1; i >= 0; i--) if (MARKS[syl[i]]) { at = i; break; }
+    if (at < 0) return syl;
+    return syl.slice(0, at) + MARKS[syl[at]][t - 1] + syl.slice(at + 1);
+  }
+
+  // Bidirectional maximum matching: keep the split with fewer words, then fewer single characters.
+  function split(run) {
+    const fwd = [], bwd = [];
+    for (let i = 0; i < run.length;) {
+      let n = Math.min(MAXLEN, run.length - i);
+      while (n > 1 && !DICT[run.substr(i, n)]) n--;
+      fwd.push(run.substr(i, n)); i += n;
+    }
+    for (let j = run.length; j > 0;) {
+      let n = Math.min(MAXLEN, j);
+      while (n > 1 && !DICT[run.substr(j - n, n)]) n--;
+      bwd.unshift(run.substr(j - n, n)); j -= n;
+    }
+    const singles = a => a.filter(w => w.length === 1).length;
+    if (bwd.length !== fwd.length) return bwd.length < fwd.length ? bwd : fwd;
+    return singles(bwd) <= singles(fwd) ? bwd : fwd;
+  }
+
+  function sandhi(syl) {
+    // syl: [{c, base, said, why, last}] for one stretch of text without punctuation.
+    syl.forEach((s, i) => {
+      const prev = syl[i - 1], next = syl[i + 1];
+      if (s.c === "不" && s.base === "bu4" && next) {
+        if (prev && prev.c === next.c) { s.said = "bu5"; s.why = "bu-q"; }
+        else if (tone(next.base) === 4) { s.said = "bu2"; s.why = "bu"; }
+      }
+      if (s.c === "一" && s.base === "yi1" && next) {
+        const keep = s.last || (prev && (prev.c === "第" || prev.c === "期" || prev.c === "周" || NUMERAL.includes(prev.c)))
+          || NUMERAL.includes(next.c) || next.c === "月" || next.c === "号";
+        if (keep) return;
+        if (prev && prev.c === next.c) { s.said = "yi5"; s.why = "yi-v"; }
+        else if (tone(next.base) === 4 || next.c === "个") { s.said = "yi2"; s.why = "yi4"; }
+        else { s.said = "yi4"; s.why = "yi"; }
+      }
+    });
+    for (let i = 0; i < syl.length;) {
+      if (tone(syl[i].said) !== 3) { i++; continue; }
+      let j = i;
+      while (j + 1 < syl.length && tone(syl[j + 1].said) === 3) j++;
+      for (let k = i; k < j; k++) { syl[k].said = syl[k].said.slice(0, -1) + "2"; syl[k].why = "33"; }
+      i = j + 1;
+    }
+  }
+
+  const WHY = {
+    "33": "third tone before a third tone becomes second tone",
+    "yi4": "一 before a fourth tone becomes second tone",
+    "yi": "一 before a first, second or third tone becomes fourth tone",
+    "yi-v": "一 between two copies of a verb is light",
+    "bu": "不 before a fourth tone becomes second tone",
+    "bu-q": "不 in an A-不-A question is light",
+  };
+
+  function run() {
+    if (!DICT) return;
+    const text = input.value;
+    let html = "", changes = [];
+    const parts = text.match(/\p{Script=Han}+|[^\p{Script=Han}]+/gu) || [];
+    parts.forEach(part => {
+      if (!isHan(part[0])) { html += '<span class="tn-gap">' + esc(part).replace(/\n/g, "<br>") + "</span>"; return; }
+      const words = split(part);
+      const syl = [];
+      const wordOf = [];
+      words.forEach((w, wi) => {
+        const py = DICT[w];
+        const pys = py ? py.split(" ") : null;
+        [...w].forEach((c, k) => {
+          const base = pys ? pys[k] : (DICT[c] || "?5");
+          syl.push({c, base, said: base, why: "", last: w.length > 1 && k === w.length - 1});
+          wordOf.push(wi);
+        });
+      });
+      sandhi(syl);
+      let wi = -1;
+      syl.forEach((s, i) => {
+        if (wordOf[i] !== wi) { if (wi >= 0) html += "</span>"; wi = wordOf[i]; html += '<span class="tn-word">'; }
+        const unknown = s.base === "?5";
+        const changed = s.said !== s.base;
+        const written = unknown ? "?" : mark(s.base), said = unknown ? "?" : mark(s.said);
+        html += '<span class="tn-syl' + (changed ? " tn-changed" : "") + (unknown ? " tn-unknown" : "") + '"' +
+          (changed ? ' title="' + esc(WHY[s.why]) + '"' : "") + ">" +
+          '<span class="tn-w">' + esc(written) + '</span><span class="tn-c">' + esc(s.c) + "</span>" +
+          '<span class="tn-s">' + esc(said) + "</span></span>";
+        if (changed) changes.push({word: words[wordOf[i]], c: s.c, from: written, to: said, why: s.why,
+          ctx: syl.slice(Math.max(0, i - 1), i + 2).map(x => x.c).join("")});
+      });
+      if (wi >= 0) html += "</span>";
+    });
+    out.innerHTML = html.trim() ? html : '<p class="empty">Paste some Chinese text above.</p>';
+    out.dataset.view = view;
+    changesEl.innerHTML = changes.map(ch =>
+      '<li><span class="zh">' + esc(ch.ctx) + '</span><span class="tn-arrow">' + esc(ch.c) + " " + esc(ch.from) + " → <b>" +
+      esc(ch.to) + '</b></span><span class="tn-why">' + esc(WHY[ch.why]) + "</span></li>").join("");
+    noChanges.hidden = changes.length > 0 || !text.trim();
+    countEl.textContent = changes.length ? changes.length + (changes.length === 1 ? " change" : " changes") : "";
+  }
+
+  viewBtns.forEach(b => b.addEventListener("click", () => {
+    view = b.dataset.view;
+    viewBtns.forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+    out.dataset.view = view;
+  }));
+  input.addEventListener("input", () => { hint.hidden = true; run(); });
+  document.getElementById("clear-btn").addEventListener("click", () => { input.value = ""; hint.hidden = true; input.focus(); run(); });
+  input.value = EXAMPLE;
+
+  fetch("/tones/words.json").then(r => r.json()).then(data => {
+    DICT = data.w;
+    for (const w in DICT) if (w.length > MAXLEN) MAXLEN = w.length;
+    run();
+  }).catch(() => {
+    out.innerHTML = '<p class="empty">The pinyin data could not be loaded. Check your connection and reload the page.</p>';
+  });
+})();
+</script>
