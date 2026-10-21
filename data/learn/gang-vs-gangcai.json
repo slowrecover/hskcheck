@@ -1,0 +1,92 @@
+{
+  "slug": "gang-vs-gangcai",
+  "level": 3,
+  "published": "2026-10-21",
+  "title": "刚 vs 刚才 in Chinese: Two Ways to Say \"Just\" (HSK 3 Grammar)",
+  "description": "刚 (gāng) vs 刚才 (gāngcái): two ways to say \"just\" in Chinese, where each one goes, negatives, the most common mistakes and HSK 3 examples.",
+  "zh": "刚 vs 刚才",
+  "h1": "刚 vs 刚才: Two Ways to Say \"Just\"",
+  "lede": "刚 (gāng) and 刚才 (gāngcái) both translate as \"just\", but they work differently. 刚 is an adverb that goes before the verb. 刚才 is a time word meaning \"just now\" or \"a moment ago\".",
+  "sections": [
+    {
+      "h2": "刚: \"just\", \"only recently\"",
+      "paras": [
+        "Subject + 刚 + verb.",
+        "刚 goes after the subject and directly before the verb. It means something happened only a short time ago, and \"short\" can be a few minutes or a few months, as the speaker feels it. You don't need 了 at the end: 我刚到 is a complete sentence."
+      ],
+      "examples": [
+        {"zh": "我刚到。", "py": "Wǒ gāng dào.", "en": "I've just arrived."},
+        {"zh": "他刚走。", "py": "Tā gāng zǒu.", "en": "He's just left."},
+        {"zh": "我刚吃完饭。", "py": "Wǒ gāng chīwán fàn.", "en": "I've just finished eating."},
+        {"zh": "他刚来中国两个月。", "py": "Tā gāng lái Zhōngguó liǎng ge yuè.", "en": "He's only been in China for two months."}
+      ]
+    },
+    {
+      "h2": "刚才: \"just now\"",
+      "paras": [
+        "刚才 is a time word, like 今天 or 昨天. It can go at the start of the sentence or after the subject, and it only means a few minutes ago."
+      ],
+      "examples": [
+        {"zh": "刚才有人给你打电话。", "py": "Gāngcái yǒu rén gěi nǐ dǎ diànhuà.", "en": "Someone called you just now."},
+        {"zh": "你刚才去哪儿了？", "py": "Nǐ gāngcái qù nǎr le?", "en": "Where did you go just now?"},
+        {"zh": "刚才那个人是谁？", "py": "Gāngcái nàge rén shì shéi?", "en": "Who was that person just now?"}
+      ]
+    },
+    {
+      "h2": "Where they are different",
+      "paras": [
+        "Because 刚才 is a time word, it can do things 刚 can't. Only 刚才 can start a sentence: 刚我吃了饭 is wrong. Only 刚才 can come before a noun: 刚才的电话, not 刚的电话. Only 刚才 can go before a negative: 刚才我没有听见, never 刚没有.",
+        "刚 can do things 刚才 can't. It can go with a length of time (刚来两个月), and with 就 to say that one thing happened right after another: 我刚到家，就下雨了."
+      ],
+      "examples": [
+        {"zh": "对不起，刚才我没有听见。", "py": "Duìbuqǐ, gāngcái wǒ méiyǒu tīngjiàn.", "en": "Sorry, I didn't hear you just now."},
+        {"zh": "我刚到家，就下雨了。", "py": "Wǒ gāng dào jiā, jiù xià yǔ le.", "en": "I'd only just got home when it started to rain."}
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "刚 vs 刚才 Worksheet: HSK 3 Printable with Answers",
+    "description": "A free printable 刚 vs 刚才 worksheet for HSK 3: 17 exercises (choose 刚 or 刚才, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 刚 or 刚才",
+        "instructions": "Write 刚 or 刚才 in each gap. Look at where the gap is and what comes after it.",
+        "options": ["刚", "刚才"],
+        "items": [
+          {"zh": "＿＿有人找你。", "en": "Someone was looking for you just now.", "answer": "刚才"},
+          {"zh": "他＿＿来中国三个星期。", "en": "He's only been in China for three weeks.", "answer": "刚"},
+          {"zh": "＿＿的问题你明白了吗？", "en": "Did you understand the question just now?", "answer": "刚才"},
+          {"zh": "我＿＿到家，就有人来了。", "en": "I'd only just got home when someone came round.", "answer": "刚"},
+          {"zh": "对不起，我＿＿没有听见。", "en": "Sorry, I didn't hear you just now.", "answer": "刚才"},
+          {"zh": "我们＿＿认识两个月。", "en": "We've only known each other for two months.", "answer": "刚"},
+          {"zh": "＿＿你说什么了？", "en": "What did you say just now?", "answer": "刚才"},
+          {"zh": "我妹妹上个月＿＿开始工作。", "en": "My little sister only started work last month.", "answer": "刚"},
+          {"zh": "＿＿我在开会，所以没有接你的电话。", "en": "I was in a meeting just now, so I didn't answer your call.", "answer": "刚才"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["刚", "我", "到", "学校"], "en": "I've just got to school.", "answers": ["我刚到学校。"]},
+          {"words": ["刚才", "谁", "来", "了"], "en": "Who came just now?", "answers": ["刚才谁来了？", "谁刚才来了？"]},
+          {"words": ["刚", "他", "下班", "回家"], "en": "He's just got home from work.", "answers": ["他刚下班回家。"]},
+          {"words": ["刚才", "没有", "我", "看见", "他"], "en": "I didn't see him just now.", "answers": ["我刚才没有看见他。", "刚才我没有看见他。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "刚我吃了饭。", "en": "I've just eaten.", "answers": ["我刚吃了饭。", "刚才我吃了饭。", "我刚才吃了饭。"]},
+          {"zh": "他刚才来中国一年。", "en": "He's only been in China for a year.", "answers": ["他刚来中国一年。"]},
+          {"zh": "刚的电话是谁打的？", "en": "Who was that on the phone just now?", "answers": ["刚才的电话是谁打的？"]},
+          {"zh": "我刚没有带手机。", "en": "I didn't have my phone with me just now.", "answers": ["我刚才没有带手机。", "刚才我没有带手机。"]}
+        ]
+      }
+    ]
+  }
+}
