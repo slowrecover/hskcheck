@@ -1,0 +1,70 @@
+<div class="wrap">
+  <header>
+    __NAV__
+    <div class="eyebrow"><span>YCT · การสอบภาษาจีนสำหรับนักเรียน</span><span class="chip">ระดับ __LEVEL__</span><span class="chip">__COUNT__ คำ</span></div>
+    <h1>คำศัพท์ YCT __LEVEL__ พร้อมคำแปลภาษาไทย</h1>
+    <p class="lede">__LEDE__</p>
+  </header>
+
+  <section class="sheet" aria-label="คำศัพท์ YCT __LEVEL__">
+    <div class="tools-row">
+      <label class="visually-hidden" for="word-search">ค้นหาคำศัพท์ YCT __LEVEL__</label>
+      <input id="word-search" class="search" type="search" placeholder="ค้นหา: 猫, mao หรือ แมว" autocomplete="off" spellcheck="false">
+      __NEW_TOGGLE__
+      <span class="count" id="word-count">__ROWCOUNT__ คำ</span>
+    </div>
+    <div class="table-wrap">
+      <table class="words-table">
+        <thead><tr><th scope="col">#</th><th scope="col">คำ</th><th scope="col">พินอิน</th><th scope="col">ความหมาย</th><th scope="col" title="ระดับ YCT ที่คำนี้ปรากฏครั้งแรก">ระดับ</th></tr></thead>
+        <tbody id="word-rows">
+__ROWS__
+        </tbody>
+      </table>
+    </div>
+    <p class="empty" id="no-match" hidden>ไม่พบคำที่ตรงกัน ลองพิมพ์ตัวอักษรจีนตัวเดียว หรือพินอินแบบไม่มีวรรณยุกต์</p>
+  </section>
+
+  <section class="sheet" aria-labelledby="cta-title">
+    <h2 id="cta-title">ฝึกเขียนตัวอักษร YCT __LEVEL__</h2>
+    <p class="lede">พิมพ์แบบฝึกคัดตัวอักษรจีนของคำศัพท์ระดับนี้ได้ฟรี มีลำดับขีด พินอิน และช่องให้เขียนตามบนตาราง 田 (หน้าแบบฝึกเป็นภาษาอังกฤษ)</p>
+    <div class="cta"><a class="button" href="/yct/yct-__LEVEL__-character-worksheets/" hreflang="en">พิมพ์แบบฝึกเขียน</a><a class="button ghost" href="/th/yct/">YCT ทุกระดับ</a></div>
+  </section>
+
+  <section class="prose" aria-labelledby="about-title">
+    <h2 id="about-title">เกี่ยวกับ YCT __LEVEL__</h2>
+__PROSE__
+  </section>
+
+  <footer class="notes">
+    <p><b>ที่มา</b> คำศัพท์และพินอินเป็นไปตามหลักสูตร YCT ระดับ __LEVEL__ อย่างเป็นทางการ (新中小学生汉语考试 YCT 大纲) และตรวจทานกับสำเนารายการที่เผยแพร่อย่างอิสระอีกหนึ่งแหล่ง เรียงตามลำดับตัวอักษรของพินอิน</p>
+    <p><b>ความหมาย</b> หลักสูตรไม่มีคำแปล คำแปลภาษาไทยในหน้านี้ให้เฉพาะความหมายที่ใช้บ่อย</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  const input = document.getElementById("word-search");
+  const onlyNew = document.getElementById("only-new");
+  const rows = Array.from(document.querySelectorAll("#word-rows tr"));
+  const countEl = document.getElementById("word-count");
+  const none = document.getElementById("no-match");
+  const total = rows.length;
+  function norm(s) {
+    return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[\s'’-]/g, "");
+  }
+  function apply() {
+    const q = norm(input.value);
+    const fresh = onlyNew && onlyNew.checked;
+    let shown = 0;
+    rows.forEach(r => {
+      const hit = (!q || r.dataset.k.includes(q)) && (!fresh || r.dataset.new === "1");
+      r.hidden = !hit;
+      if (hit) shown++;
+    });
+    countEl.textContent = (q || fresh) ? shown + " จาก " + total + " คำ" : total + " คำ";
+    none.hidden = shown > 0;
+  }
+  input.addEventListener("input", apply);
+  if (onlyNew) onlyNew.addEventListener("change", apply);
+})();
+</script>

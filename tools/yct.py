@@ -28,7 +28,7 @@ LEDE = {
     3: "All 300 words for YCT Level 3, with pinyin and English. The list includes the 150 words of YCT 1 and 2; "
        "tick “Only new words” to see the 150 words added at this level.",
     4: "All 600 words for YCT Level 4, the highest level of the Youth Chinese Test, with pinyin and English. "
-       "The list includes the 300 words of YCT 1–3; tick “Only new words” to see the 300 words added at this level.",
+       "The list includes the 300 words of YCT 1–3; tick “Only new words” to see the words added at this level.",
 }
 
 PROSE = {
@@ -237,3 +237,157 @@ def build(root, pages, nav, render, base_css, tpl, site, search_key, worksheet_p
         + (tpl / "yct.css").read_text(encoding="utf-8"), body), encoding="utf-8")
     return urls
 
+
+
+TH_YCT_URL = "/th/yct/"
+
+TH_LEDE = {
+    1: "คำศัพท์ YCT ระดับ 1 ทั้ง 80 คำ ระดับแรกของการสอบภาษาจีนสำหรับนักเรียน พร้อมพินอินและความหมายภาษาไทย "
+       "ค้นหาได้ด้วยตัวอักษรจีน พินอิน หรือภาษาไทย",
+    2: "คำศัพท์ YCT ระดับ 2 ทั้ง 150 คำ พร้อมพินอินและความหมายภาษาไทย รายการนี้รวมคำศัพท์ 80 คำของ YCT 1 ไว้ด้วย "
+       "ติ๊ก “เฉพาะคำใหม่” เพื่อดู 70 คำที่เพิ่มในระดับนี้",
+    3: "คำศัพท์ YCT ระดับ 3 ทั้ง 300 คำ พร้อมพินอินและความหมายภาษาไทย รายการนี้รวมคำศัพท์ 150 คำของ YCT 1 และ 2 ไว้ด้วย "
+       "ติ๊ก “เฉพาะคำใหม่” เพื่อดู 150 คำที่เพิ่มในระดับนี้",
+    4: "คำศัพท์ YCT ระดับ 4 ทั้ง 600 คำ ระดับสูงสุดของการสอบภาษาจีนสำหรับนักเรียน พร้อมพินอินและความหมายภาษาไทย "
+       "รายการนี้รวมคำศัพท์ 300 คำของ YCT 1–3 ไว้ด้วย ติ๊ก “เฉพาะคำใหม่” เพื่อดูคำที่เพิ่มในระดับนี้",
+}
+
+TH_PROSE = {
+    1: [
+        "YCT 1 เป็นระดับเริ่มต้นของ YCT (<span class=\"zh-inline\">中小学生汉语考试</span>) การสอบวัดระดับภาษาจีนอย่างเป็นทางการ "
+        "สำหรับนักเรียนประถมและมัธยมที่ไม่ได้ใช้ภาษาจีนเป็นภาษาแม่",
+        "คำศัพท์ 80 คำเป็นคำที่เด็ก ๆ เจอเป็นอันดับแรก ได้แก่ ตัวเลขหนึ่งถึงสิบ สมาชิกในครอบครัว อวัยวะบนใบหน้า สัตว์เลี้ยง "
+        "อาหารและเครื่องดื่มง่าย ๆ วันและวันที่ และคำกริยาอย่าง <span class=\"zh-inline\">吃</span> "
+        "<span class=\"zh-inline\">喝</span> และ <span class=\"zh-inline\">喜欢</span>",
+        "หลักสูตรระบุ <span class=\"zh-inline\">这</span> <span class=\"zh-inline\">那</span> และ "
+        "<span class=\"zh-inline\">哪</span> พร้อมรูปที่หมายถึงสถานที่ คือ <span class=\"zh-inline\">这儿</span> "
+        "<span class=\"zh-inline\">那儿</span> และ <span class=\"zh-inline\">哪儿</span> คำเหล่านี้จึงอยู่ใน YCT 1 ด้วย",
+    ],
+    2: [
+        "YCT 2 มีคำศัพท์ 150 คำ คือ 80 คำของ YCT 1 บวกคำใหม่อีก 70 คำ คำใหม่ได้แก่ ของใช้ในโรงเรียนอย่าง "
+        "<span class=\"zh-inline\">铅笔</span> และ <span class=\"zh-inline\">书包</span> สี สภาพอากาศ "
+        "คำสุภาพอย่าง <span class=\"zh-inline\">对不起</span> และ <span class=\"zh-inline\">没关系</span> "
+        "และคำถามอย่าง <span class=\"zh-inline\">怎么</span> และ <span class=\"zh-inline\">多少</span>",
+        "ระดับนี้ยังเริ่มมีคำไวยากรณ์ที่มากกว่าพื้นฐาน ได้แก่ <span class=\"zh-inline\">了</span> "
+        "<span class=\"zh-inline\">呢</span> <span class=\"zh-inline\">也</span> และ <span class=\"zh-inline\">比</span> "
+        "สำหรับการเปรียบเทียบ",
+    ],
+    3: [
+        "YCT 3 เพิ่มคำศัพท์เป็นสองเท่า รวมเป็น 300 คำ ผู้เรียนเริ่มเล่าเรื่องในแต่ละวัน โรงเรียน กีฬา สุขภาพ การซื้อของ "
+        "และสภาพอากาศได้ และให้เหตุผลง่าย ๆ ด้วย <span class=\"zh-inline\">因为</span> และ <span class=\"zh-inline\">所以</span>",
+        "คำไวยากรณ์ใหม่ในระดับนี้ได้แก่ <span class=\"zh-inline\">把</span> <span class=\"zh-inline\">过</span> "
+        "<span class=\"zh-inline\">得</span> และ <span class=\"zh-inline\">吧</span>",
+    ],
+    4: [
+        "YCT 4 เป็นระดับสูงสุดของข้อสอบข้อเขียน มีคำศัพท์ 600 คำ คือ 300 คำของ YCT 1–3 และคำใหม่อีก 300 คำ "
+        "ครอบคลุมชีวิตประจำวันได้ลึกขึ้น ตั้งแต่การท่องเที่ยวและงานอดิเรก ไปจนถึงความรู้สึก ผลการเรียน และข่าว",
+        "ระดับนี้เพิ่มรูปประโยคที่ใช้เป็นคู่ เช่น <span class=\"zh-inline\">不但……而且……</span> "
+        "<span class=\"zh-inline\">如果……那么……</span> และ <span class=\"zh-inline\">一边……一边……</span> "
+        "รวมถึงคำไวยากรณ์อย่าง <span class=\"zh-inline\">被</span> <span class=\"zh-inline\">着</span> และ "
+        "<span class=\"zh-inline\">地</span>",
+        "หลักสูตรระบุ <span class=\"zh-inline\">对</span> ไว้สองครั้ง (คำคุณศัพท์และคำบุพบท) และ "
+        "<span class=\"zh-inline\">还</span> ไว้สองครั้ง (hái และ huán) หน้านี้แสดงแต่ละคำเพียงครั้งเดียวพร้อมทั้งสองความหมาย "
+        "ตารางจึงมี 598 แถวสำหรับ 600 รายการในหลักสูตร",
+    ],
+}
+
+
+def read_thai(root, n, rows):
+    path = root / "data" / "th" / "yct" / f"yct{n}_th.tsv"
+    if not path.exists():
+        return None
+    th = []
+    for i, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
+        if not line.strip():
+            continue
+        parts = [p.strip() for p in line.split("\t")]
+        if len(parts) != 2 or not parts[1]:
+            raise SystemExit(f"data/th/yct/yct{n}_th.tsv line {i}: expected word<TAB>Thai meaning")
+        th.append(parts)
+    if [w for w, _ in th] != [r[0] for r in rows]:
+        raise SystemExit(f"data/th/yct/yct{n}_th.tsv does not match data/yct/yct{n}.tsv word for word")
+    return [m for _, m in th]
+
+
+def has_thai(root):
+    return all((root / "data" / "th" / "yct" / f"yct{n}_th.tsv").exists() for n in LEVELS)
+
+
+def alternates(root):
+    if not has_thai(root):
+        return {}
+    pairs = {YCT_URL: TH_YCT_URL}
+    pairs.update({f"{YCT_URL}yct-{n}-word-list/": f"{TH_YCT_URL}yct-{n}-word-list/" for n in LEVELS})
+    return pairs
+
+
+def build_th(*, root, tpl, site, css, render, nav, font_link, foot, search_key, thai_key):
+    """Thai word list pages at /th/yct/. The worksheet pages stay in English and are linked from here."""
+    if not has_thai(root):
+        return []
+    levels = {n: read_level(root, n) for n in LEVELS}
+    first = {}
+    for n in LEVELS:
+        for w, _, _ in levels[n]:
+            first.setdefault(w, n)
+    urls = []
+    wl_body = (tpl / "th" / "yct_wordlist_body.html").read_text(encoding="utf-8")
+    for n in LEVELS:
+        thai = read_thai(root, n, levels[n])
+        url = f"{TH_YCT_URL}yct-{n}-word-list/"
+        rows = []
+        for i, ((word, pinyin, en), th) in enumerate(zip(levels[n], thai), 1):
+            key = html.escape(search_key(word, pinyin, en) + "|" + thai_key(th), quote=True)
+            lv = first[word]
+            rows.append(
+                f'          <tr data-k="{key}" data-new="{1 if lv == n else 0}"><td class="n">{i}</td>'
+                f'<td class="hz">{html.escape(word)}</td><td class="py">{html.escape(pinyin)}</td>'
+                f'<td class="en">{html.escape(th)}</td><td class="lv"><span class="lv lv{lv}" title="YCT {lv}">{lv}</span></td></tr>'
+            )
+        toggle = (f'<label class="new-toggle"><input type="checkbox" id="only-new"> เฉพาะคำใหม่ของ YCT {n}</label>'
+                  if n > 1 else "")
+        body = (wl_body.replace("__NAV__", nav(TH_YCT_URL))
+                .replace("__ROWS__", "\n".join(rows))
+                .replace("__PROSE__", "\n".join(f"    <p>{p}</p>" for p in TH_PROSE[n]))
+                .replace("__LEDE__", TH_LEDE[n])
+                .replace("__NEW_TOGGLE__", toggle)
+                .replace("__ROWCOUNT__", str(len(rows)))
+                .replace("__COUNT__", str(OFFICIAL[n]))
+                .replace("__LEVEL__", str(n)))
+        out = render(
+            f"คำศัพท์ YCT {n} ครบ {OFFICIAL[n]} คำ พร้อมพินอินและคำแปลไทย",
+            f"คำศัพท์ YCT ระดับ {n} ทั้ง {OFFICIAL[n]} คำ พร้อมพินอินและความหมายภาษาไทย ค้นหาได้ ฟรี "
+            "พร้อมแบบฝึกเขียนตัวอักษรจีนที่พิมพ์ได้",
+            site + url, css, body, font_link, lang="th", foot=foot,
+        )
+        target = root / url.strip("/")
+        target.mkdir(parents=True, exist_ok=True)
+        (target / "index.html").write_text(out, encoding="utf-8")
+        urls.append(url)
+
+    seen, new_chars = set(), {}
+    for n in LEVELS:
+        count = 0
+        for w, _, _ in levels[n]:
+            for c in hanzi(w):
+                if c not in seen:
+                    seen.add(c)
+                    count += 1
+        new_chars[n] = count
+    rows = []
+    for n in LEVELS:
+        new = OFFICIAL[n] - (OFFICIAL[n - 1] if n > 1 else 0)
+        rows.append(f'<tr><th scope="row">YCT {n}</th><td>{OFFICIAL[n]} <small>(ใหม่ {new})</small></td>'
+                    f'<td><a href="{TH_YCT_URL}yct-{n}-word-list/">คำศัพท์</a><br>'
+                    f'<a href="{YCT_URL}yct-{n}-character-worksheets/" hreflang="en">แบบฝึกเขียน {new_chars[n]} ตัว</a></td></tr>')
+    body = ((tpl / "th" / "yct_index_body.html").read_text(encoding="utf-8")
+            .replace("__NAV__", nav(TH_YCT_URL)).replace("__ROWS__", "\n".join(rows)))
+    target = root / TH_YCT_URL.strip("/")
+    target.mkdir(parents=True, exist_ok=True)
+    (target / "index.html").write_text(render(
+        "คำศัพท์ YCT 1–4 และแบบฝึกเขียน พร้อมคำแปลไทย ฟรี",
+        "คำศัพท์ YCT ระดับ 1–4 พร้อมพินอินและความหมายภาษาไทย และแบบฝึกคัดตัวอักษรจีนที่พิมพ์ได้ฟรีสำหรับแต่ละระดับ "
+        "เหมาะสำหรับนักเรียน ครู และผู้ปกครอง",
+        site + TH_YCT_URL, css, body, font_link, lang="th", foot=foot), encoding="utf-8")
+    urls.insert(0, TH_YCT_URL)
+    return urls
