@@ -1,0 +1,100 @@
+{
+  "slug": "dei-have-to",
+  "level": 3,
+  "published": "2026-10-21",
+  "title": "得 (děi), 必须 and 应该: \"Must\" and \"Should\" in Chinese (HSK 3)",
+  "description": "得 (děi), 必须 (bìxū) and 应该 (yīnggāi): how to say \"have to\", \"must\" and \"should\" in Chinese, the negatives 不用 and 不应该, and HSK 3 examples.",
+  "zh": "得, 必须, 应该",
+  "h1": "得, 必须 and 应该: \"Must\" and \"Should\"",
+  "lede": "Chinese has three common words for what you need to do. 得 (děi) is the everyday spoken \"have to\". 必须 (bìxū) is a firm \"must\", often for rules. 应该 (yīnggāi) is \"should\": the right or sensible thing to do.",
+  "sections": [
+    {
+      "h2": "得 (děi): \"have to\", \"have got to\"",
+      "paras": [
+        "Subject + 得 + verb.",
+        "This 得 is read děi, not de. It is the usual word in conversation when something needs to be done, often because of the time or the situation."
+      ],
+      "examples": [
+        {"zh": "太晚了，我得走了。", "py": "Tài wǎn le, wǒ děi zǒu le.", "en": "It's late. I've got to go."},
+        {"zh": "明天有考试，我今天得复习。", "py": "Míngtiān yǒu kǎoshì, wǒ jīntiān děi fùxí.", "en": "There's an exam tomorrow, so I have to revise today."}
+      ]
+    },
+    {
+      "h2": "必须 (bìxū): \"must\"",
+      "paras": [
+        "Subject + 必须 + verb.",
+        "必须 is stronger than 得 and sounds more serious. You often see it in rules and instructions, and it is the word to use in writing."
+      ],
+      "examples": [
+        {"zh": "上课的时候必须关手机。", "py": "Shàngkè de shíhou bìxū guān shǒujī.", "en": "Phones must be switched off during lessons."},
+        {"zh": "坐飞机必须带护照。", "py": "Zuò fēijī bìxū dài hùzhào.", "en": "You must take your passport when you fly."}
+      ]
+    },
+    {
+      "h2": "应该 (yīnggāi): \"should\"",
+      "paras": [
+        "Subject + 应该 + verb.",
+        "应该 gives advice or says what is right. With 不 in front, 不应该 means \"shouldn't\". 应该 can also mean \"should\" in the sense of \"probably\": 他应该到了 is \"he should be there by now\"."
+      ],
+      "examples": [
+        {"zh": "你应该多喝水。", "py": "Nǐ yīnggāi duō hē shuǐ.", "en": "You should drink more water."},
+        {"zh": "你不应该这么晚睡觉。", "py": "Nǐ bù yīnggāi zhème wǎn shuìjiào.", "en": "You shouldn't go to bed so late."},
+        {"zh": "他应该已经到家了。", "py": "Tā yīnggāi yǐjīng dào jiā le.", "en": "He should be home by now."},
+        {"zh": "我应该怎么办？", "py": "Wǒ yīnggāi zěnme bàn?", "en": "What should I do?"}
+      ]
+    },
+    {
+      "h2": "\"Don't have to\" is 不用",
+      "paras": [
+        "The most common mistake is the negative. To say \"don't have to\" or \"don't need to\", use 不用 for both 得 and 必须. 不得 does not mean \"don't have to\", and 不必须 is wrong. Note the tone change: 不用 is búyòng."
+      ],
+      "examples": [
+        {"zh": "明天是星期六，你不用去上班。", "py": "Míngtiān shì xīngqīliù, nǐ búyòng qù shàngbān.", "en": "Tomorrow's Saturday, so you don't have to go to work."}
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "得, 必须 and 应该 Worksheet: HSK 3 Printable with Answers",
+    "description": "A free printable 得 (děi), 必须 and 应该 worksheet for HSK 3: 16 exercises (应该, 得 or 不用, word order, fix the mistake) with an answer key.",
+    "exercises": [
+      {
+        "type": "choose",
+        "h2": "Choose 应该, 得 or 不用",
+        "instructions": "Write 应该, 得 or 不用 in each gap. Does the English say \"should\", \"have to\" or \"don't have to\"?",
+        "options": ["应该", "得", "不用"],
+        "items": [
+          {"zh": "你感冒了，＿＿多休息。", "en": "You've got a cold. You should rest more.", "answer": "应该"},
+          {"zh": "今天是星期天，我＿＿上班。", "en": "It's Sunday, so I don't have to work.", "answer": "不用"},
+          {"zh": "九点了，我＿＿走了。", "en": "It's nine o'clock. I've got to go.", "answer": "得"},
+          {"zh": "你＿＿给我钱，这是我送你的。", "en": "You don't need to give me any money. It's a present.", "answer": "不用"},
+          {"zh": "你＿＿早一点儿睡觉。", "en": "You should go to bed a bit earlier.", "answer": "应该"},
+          {"zh": "明天早上六点的飞机，我＿＿五点起床。", "en": "My flight is at six tomorrow morning, so I have to get up at five.", "answer": "得"},
+          {"zh": "外面不冷，你＿＿穿这么多。", "en": "It isn't cold outside. You don't need to wear so much.", "answer": "不用"},
+          {"zh": "他八点就出发了，现在＿＿到了。", "en": "He left at eight, so he should be there by now.", "answer": "应该"},
+          {"zh": "我的作业还没有做完，今天晚上＿＿做完。", "en": "I haven't finished my homework, so I've got to finish it tonight.", "answer": "得"}
+        ]
+      },
+      {
+        "type": "order",
+        "h2": "Put the words in order",
+        "instructions": "Write the words as one correct sentence.",
+        "items": [
+          {"words": ["应该", "你", "多", "运动"], "en": "You should do more exercise.", "answers": ["你应该多运动。"]},
+          {"words": ["必须", "你", "今天", "做完"], "en": "You must finish it today.", "answers": ["你今天必须做完。", "今天你必须做完。"]},
+          {"words": ["不用", "你", "来", "明天"], "en": "You don't have to come tomorrow.", "answers": ["你明天不用来。", "明天你不用来。"]},
+          {"words": ["得", "我", "去", "医院", "现在"], "en": "I've got to go to the hospital now.", "answers": ["我现在得去医院。", "现在我得去医院。"]}
+        ]
+      },
+      {
+        "type": "fix",
+        "h2": "Find and fix the mistake",
+        "instructions": "Each sentence has one mistake. Write the correct sentence.",
+        "items": [
+          {"zh": "明天不上课，你不得去学校。", "en": "There are no lessons tomorrow, so you don't have to go to school.", "answers": ["明天不上课，你不用去学校。"]},
+          {"zh": "你不必须来。", "en": "You don't have to come.", "answers": ["你不用来。"]},
+          {"zh": "你应该不这么说。", "en": "You shouldn't say that.", "answers": ["你不应该这么说。"]}
+        ]
+      }
+    ]
+  }
+}
