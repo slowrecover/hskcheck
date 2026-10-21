@@ -7,6 +7,7 @@ Outputs (written at the repository root):
   hsk-N-character-worksheets/     the maker preset to the characters of one level (needs strokes/hskN.json)
   old-hsk-to-new-hsk/index.html   old HSK -> new HSK word gap (needs old-hsk-to-new-hsk/words.json)
   yct/...                         YCT word lists and worksheets (see tools/yct.py)
+  hsk-handwriting-characters/     which characters must be written by hand (see tools/handwriting.py)
   sitemap.xml                     every page above
 
 Run from anywhere:  python3 tools/build.py
@@ -19,6 +20,7 @@ import re
 import unicodedata
 
 import build_th
+import handwriting
 import learn
 import yct
 
@@ -323,6 +325,7 @@ def main():
             word_lists[n] = entries
             pages.append((f"/hsk-{n}-word-list/", f"HSK {n} Words"))
     pages.append(("/chinese-character-worksheets/", "Writing Sheets"))
+    pages.append((handwriting.URL, "Handwriting"))
     pages.append((MW_URL, "Measure Words"))
     upgrade_data = ROOT / "old-hsk-to-new-hsk" / "words.json"
     if upgrade_data.exists():
@@ -497,6 +500,9 @@ def main():
             "you have not learned yet. Free, with Anki and Pleco export.",
             SITE + url, base_css + (TPL / "upgrade.css").read_text(encoding="utf-8"), body,
             f'<script type="application/ld+json">{ld}</script>'), encoding="utf-8")
+
+    # Handwriting characters
+    extra_urls += handwriting.build(ROOT, pages, nav, render, base_css, TPL, SITE)
 
     # YCT word lists and worksheets
     extra_urls += yct.build(ROOT, pages, nav, render, base_css, TPL, SITE, search_key, worksheet_page)

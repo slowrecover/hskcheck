@@ -1,0 +1,36 @@
+/* Handwriting page: reuses the checker styles; each character is marked by whether it must be written at the chosen level. */
+.tools-row { display: flex; gap: 8px 16px; align-items: baseline; flex-wrap: wrap; }
+.tools-row h2, .tools-row h3 { margin-right: auto; }
+.count { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.ws-link { font-size: 14px; font-weight: 500; }
+
+.hw-graded { word-break: normal; overflow-wrap: anywhere; }
+.hw-graded .c { padding: 0 1px; border-radius: 2px; border-bottom: 2px solid transparent; }
+.hw-graded .c-now { background: var(--l1-bg); color: var(--l1); border-bottom-color: var(--l1); font-weight: 500; }
+.hw-graded .c-later { border-bottom-color: color-mix(in srgb, var(--l2) 55%, transparent); }
+.hw-graded .c-read { color: var(--muted); }
+.hw-graded .c-out { background: var(--over-bg); color: var(--over); border-bottom-color: var(--over); }
+
+.bar .bg { background: color-mix(in srgb, var(--muted) 45%, transparent); }
+.legend i.key-now-sw { background: var(--l1); }
+.legend i.key-later-sw { background: var(--l2); }
+.legend i.key-read-sw { background: color-mix(in srgb, var(--muted) 45%, transparent); }
+.legend i.key-out-sw { background: var(--over); }
+
+.hw-list { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.tag-now { background: var(--l1-bg); color: var(--l1); }
+.tag-later { background: var(--l2-bg); color: var(--l2); }
+.tag-read { background: var(--paper); color: var(--muted); border: 1px solid var(--rule); }
+.tag-out { background: var(--over-bg); color: var(--over); }
+
+.key { font-weight: 600; padding: 0 4px; border-radius: 3px; }
+.key-now { background: var(--l1-bg); color: var(--l1); }
+.key-later { background: var(--l2-bg); color: var(--l2); }
+.key-read { background: var(--paper); color: var(--muted); }
+.key-out { background: var(--over-bg); color: var(--over); }
+
+.hw-group { display: grid; gap: 10px; padding-top: 6px; border-top: 1px solid var(--rule); scroll-margin-top: 16px; }
+.hw-group:first-of-type { border-top: none; padding-top: 0; }
+.hw-group h3 { margin: 0; font-size: 15px; font-weight: 600; }
+.hw-grid { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; grid-template-columns: repeat(auto-fill, minmax(38px, 1fr)); }
+.hw-grid li { font-family: var(--f-zh); font-size: 21px; line-height: 38px; text-align: center; border: 1px solid var(--rule); border-radius: 6px; background: var(--paper); }

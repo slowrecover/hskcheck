@@ -1,0 +1,182 @@
+<div class="wrap">
+  <header>
+    __NAV__
+    <div class="eyebrow"><span>New HSK · 2025 syllabus</span><span class="chip">1,200 characters to write</span><span class="chip">Free</span></div>
+    <h1><span class="zh">手写</span>HSK Handwriting Character Checker</h1>
+    <p class="lede">HSK 3.0 asks you to read 3,088 characters but write only 1,200 of them by hand. Paste any Chinese text to see which characters you need to be able to write at your level, and which you only need to recognise.</p>
+  </header>
+
+  <section class="sheet" aria-labelledby="in-label">
+    <label class="field" id="in-label" for="text-input">Chinese text <span class="hint" id="example-hint">Example text loaded. Replace it with your own.</span></label>
+    <textarea id="text-input" spellcheck="false" lang="zh-Hans"></textarea>
+    <div class="controls">
+      <div class="levels" role="group" aria-label="Your target level">
+        <span class="lbl">Your level</span>
+        <button type="button" class="lv-btn" data-level="0" aria-pressed="false">HSK 1–2</button>
+        <button type="button" class="lv-btn" data-level="1" aria-pressed="true">HSK 3</button>
+        <button type="button" class="lv-btn" data-level="2" aria-pressed="false">HSK 4</button>
+        <button type="button" class="lv-btn" data-level="3" aria-pressed="false">HSK 5</button>
+        <button type="button" class="lv-btn" data-level="4" aria-pressed="false">HSK 6</button>
+        <button type="button" class="lv-btn" data-level="5" aria-pressed="false">HSK 7–9</button>
+      </div>
+      <button type="button" class="ghost" id="clear-btn">Clear text</button>
+    </div>
+  </section>
+
+  <section class="sheet" aria-live="polite" aria-labelledby="res-title">
+    <h2 id="res-title">Result for <span id="res-level">HSK 3</span></h2>
+    <div class="verdict" id="verdict"></div>
+    <div class="graded hw-graded" id="graded" lang="zh-Hans"></div>
+  </section>
+
+  <section class="sheet" aria-labelledby="write-title">
+    <div class="tools-row">
+      <h2 id="write-title">Characters to write by <span class="lv-name">HSK 3</span></h2>
+      <a class="ws-link" id="ws-now" href="/chinese-character-worksheets/" hidden>Make a worksheet for these</a>
+    </div>
+    <ul class="words hw-list" id="list-now" lang="zh-Hans"></ul>
+    <p class="empty" id="empty-now" hidden>None of the characters in this text are on the handwriting list for this level.</p>
+  </section>
+
+  <section class="sheet" aria-labelledby="other-title">
+    <h2 id="other-title">Characters you only need to read for now</h2>
+    <ul class="words hw-list" id="list-other" lang="zh-Hans"></ul>
+    <p class="empty" id="empty-other" hidden>Nothing here: every character in this text is one you need to write.</p>
+  </section>
+
+  <section class="guide" aria-labelledby="guide-title">
+    <h2 id="guide-title">Reading and writing in HSK 3.0</h2>
+    <div class="qa">
+      <div>
+        <h3>Why are there two character lists?</h3>
+        <p>The HSK 3.0 syllabus grades characters twice. One list sets the characters you must <b>recognise</b> at each level, 3,088 in total. A second, much shorter list sets the characters you must be able to <b>write by hand</b>: 1,200 in total. Every character on the writing list is also on the reading list, at the same level or earlier.</p>
+      </div>
+      <div>
+        <h3>How many characters do I need to write at each level?</h3>
+        <p>The counts build up: each level adds new characters to the ones before it. Levels 1 and 2 share a single list of 100.</p>
+        <div class="table-wrap">
+          <table class="counts">
+            <thead><tr><th>Level</th><th>New to write</th><th>Total to write</th></tr></thead>
+            <tbody>
+__COUNT_ROWS__
+            </tbody>
+          </table>
+        </div>
+        <p>For comparison, by the end of HSK 3 you need to read __READ_3__ characters, and by the end of HSK 6, __READ_6__.</p>
+      </div>
+      <div>
+        <h3>Does this mean I can skip writing the other characters?</h3>
+        <p>For the exam, yes: only the characters on the writing list are expected by hand. Many learners still practise writing the most common reading characters, because writing a character a few times helps you remember it. Use the lists below to decide what to practise first.</p>
+      </div>
+      <div>
+        <h3>What colours does the checker use?</h3>
+        <p><span class="key key-now">Green</span> characters are on the writing list at or below your level. <span class="key key-later">Blue</span> characters are on the writing list for a higher level. <span class="key key-read">Grey</span> characters only need to be read, and <span class="key key-out">red</span> characters are not on any HSK 3.0 list.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sheet" aria-labelledby="all-title">
+    <h2 id="all-title">All 1,200 handwriting characters by level</h2>
+__GROUPS__
+  </section>
+
+  <footer class="notes">
+    <p><b>Source.</b> The writing and reading lists follow the 2025 HSK 3.0 syllabus (新版HSK考试大纲). The checker runs in your browser; nothing you paste is sent anywhere.</p>
+    <p><b>Words, too.</b> This page checks single characters. To see which words in a text are above a level, use the <a href="/">HSK 3.0 level checker</a>.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  const WRITE = __WRITE_JSON__;
+  const READ = __READ_JSON__;
+  const WL = __WRITE_LEVELS__;
+  const top = lv => Number(lv.split("-").pop());
+  const name = lv => "HSK " + lv.replace("-", "–");
+  const writeAt = {}, readAt = {};
+  WL.forEach((lv, i) => { for (const c of WRITE[lv]) writeAt[c] = i; });
+  Object.keys(READ).forEach(lv => { for (const c of READ[lv]) readAt[c] = lv; });
+
+  const EXAMPLE = "我每天早上七点起床，先喝一杯茶，然后坐地铁去公司。周末我喜欢和朋友一起去公园散步，有时候也去图书馆看书。";
+  const input = document.getElementById("text-input");
+  const hint = document.getElementById("example-hint");
+  const btns = Array.from(document.querySelectorAll(".lv-btn"));
+  const graded = document.getElementById("graded");
+  const verdict = document.getElementById("verdict");
+  const listNow = document.getElementById("list-now");
+  const listOther = document.getElementById("list-other");
+  const emptyNow = document.getElementById("empty-now");
+  const emptyOther = document.getElementById("empty-other");
+  const wsNow = document.getElementById("ws-now");
+  let target = 1;
+
+  function esc(s) {
+    return s.replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+  }
+  function isHan(c) { return /\p{Script=Han}/u.test(c); }
+  function status(c) {
+    if (c in writeAt) {
+      return writeAt[c] <= target
+        ? {k: "now", tag: name(WL[writeAt[c]])}
+        : {k: "later", tag: "write · " + name(WL[writeAt[c]])};
+    }
+    if (c in readAt) return {k: "read", tag: "read · " + name(readAt[c])};
+    return {k: "out", tag: "not HSK"};
+  }
+
+  function run() {
+    const lvName = name(WL[target]);
+    document.getElementById("res-level").textContent = lvName;
+    document.querySelectorAll(".lv-name").forEach(el => { el.textContent = lvName; });
+    const text = input.value;
+    const seen = new Map();
+    let out = "";
+    for (const c of text) {
+      if (!isHan(c)) { out += c === "\n" ? "<br>" : esc(c); continue; }
+      const s = status(c);
+      if (!seen.has(c)) seen.set(c, s);
+      out += '<span class="c c-' + s.k + '" title="' + esc(s.tag) + '">' + esc(c) + "</span>";
+    }
+    graded.innerHTML = out || '<p class="empty">Paste some Chinese text above.</p>';
+
+    const counts = {now: 0, later: 0, read: 0, out: 0};
+    const now = [], other = [];
+    seen.forEach((s, c) => {
+      counts[s.k]++;
+      (s.k === "now" ? now : other).push([c, s]);
+    });
+    const total = seen.size;
+    if (!total) { verdict.innerHTML = ""; }
+    else {
+      const pct = k => (100 * counts[k] / total).toFixed(1) + "%";
+      verdict.innerHTML =
+        '<div class="verdict-top"><span class="big">' + counts.now + '</span><div class="verdict-text"><strong>' +
+        (counts.now === 1 ? "character" : "characters") + " to write by " + esc(lvName) + "</strong><span>out of " + total +
+        " different characters in this text</span></div></div>" +
+        '<div class="bar" aria-hidden="true"><i class="b1" style="width:' + pct("now") + '"></i><i class="b2" style="width:' + pct("later") +
+        '"></i><i class="bg" style="width:' + pct("read") + '"></i><i class="bx" style="width:' + pct("out") + '"></i></div>' +
+        '<div class="legend"><span><i class="key-now-sw"></i>Write now ' + counts.now + '</span><span><i class="key-later-sw"></i>Write later ' +
+        counts.later + '</span><span><i class="key-read-sw"></i>Read only ' + counts.read + '</span><span><i class="key-out-sw"></i>Not in HSK ' +
+        counts.out + "</span></div>";
+    }
+
+    const item = ([c, s]) => '<li><span class="zh">' + esc(c) + '</span><span class="tag tag-' + s.k + '">' + esc(s.tag) + "</span></li>";
+    listNow.innerHTML = now.map(item).join("");
+    listOther.innerHTML = other.map(item).join("");
+    emptyNow.hidden = now.length > 0 || !total;
+    emptyOther.hidden = other.length > 0 || !total;
+    wsNow.hidden = !now.length;
+    wsNow.href = "/chinese-character-worksheets/#c=" + encodeURIComponent(now.map(x => x[0]).join(""));
+  }
+
+  btns.forEach(b => b.addEventListener("click", () => {
+    target = Number(b.dataset.level);
+    btns.forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+    run();
+  }));
+  input.addEventListener("input", () => { hint.hidden = true; run(); });
+  document.getElementById("clear-btn").addEventListener("click", () => { input.value = ""; hint.hidden = true; input.focus(); run(); });
+  input.value = EXAMPLE;
+  run();
+})();
+</script>

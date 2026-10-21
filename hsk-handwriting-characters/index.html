@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HSK Handwriting Characters: Which 1,200 Characters You Must Write (HSK 3.0)</title>
+<meta name="description" content="HSK 3.0 asks you to read 3,088 characters but write only 1,200. Paste any Chinese text to see which characters you must be able to write at your level, and print practice sheets for each level. Free.">
+<link rel="canonical" href="https://hskcheck.com/hsk-handwriting-characters/">
+<meta property="og:title" content="HSK Handwriting Characters: Which 1,200 Characters You Must Write (HSK 3.0)">
+<meta property="og:description" content="HSK 3.0 asks you to read 3,088 characters but write only 1,200. Paste any Chinese text to see which characters you must be able to write at your level, and print practice sheets for each level. Free.">
+<meta property="og:url" content="https://hskcheck.com/hsk-handwriting-characters/">
+<meta property="og:type" content="website">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "HSK Handwriting Character Checker", "url": "https://hskcheck.com/hsk-handwriting-characters/", "applicationCategory": "EducationalApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Check which Chinese characters you must be able to write by hand at each HSK 3.0 level."}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@600&display=swap">
+<style>
+:root {
+  --paper: #F3F5F8;
+  --sheet: #FFFFFF;
+  --ink: #1A2130;
+  --muted: #586274;
+  --rule: #DCE1E9;
+  --accent: #2A4A9A;
+  --accent-ink: #FFFFFF;
+  --l1: #1F7A5C; --l1-bg: #E2F2EB;
+  --l2: #2A68AE; --l2-bg: #E3EDF8;
+  --l3: #7A4CAE; --l3-bg: #EEE6F8;
+  --over: #C0392B; --over-bg: #FCE5E1;
+  --ok: #1F7A5C; --warn: #A15C00; --bad: #C0392B;
+  --f-ui: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --f-num: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --f-zh: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --f-zh-display: "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --radius: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0F131A; --sheet: #171C25; --ink: #E6EAF1; --muted: #9AA4B6; --rule: #2A3242;
+    --accent: #93ACEB; --accent-ink: #0F131A;
+    --l1: #63CDA2; --l1-bg: #15302A; --l2: #82B4EE; --l2-bg: #172A40; --l3: #BB9EEA; --l3-bg: #2A2142;
+    --over: #F28B78; --over-bg: #3D1F1A; --ok: #63CDA2; --warn: #E9B060; --bad: #F28B78;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0F131A; --sheet: #171C25; --ink: #E6EAF1; --muted: #9AA4B6; --rule: #2A3242;
+  --accent: #93ACEB; --accent-ink: #0F131A;
+  --l1: #63CDA2; --l1-bg: #15302A; --l2: #82B4EE; --l2-bg: #172A40; --l3: #BB9EEA; --l3-bg: #2A2142;
+  --over: #F28B78; --over-bg: #3D1F1A; --ok: #63CDA2; --warn: #E9B060; --bad: #F28B78;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: var(--f-ui); font-size: 16px; line-height: 1.55;
+  padding-inline: 16px; padding-block: 28px 48px;
+}
+.wrap { max-width: 760px; margin: 0 auto; display: grid; gap: 22px; }
+header { display: grid; gap: 8px; }
+.eyebrow { display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+  font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+.chip { border: 1px solid var(--rule); border-radius: 999px; padding: 1px 8px; letter-spacing: .04em; }
+h1 { margin: 0; font-size: clamp(28px, 6vw, 40px); line-height: 1.12; font-weight: 600; text-wrap: balance; letter-spacing: -.01em; }
+h1 .zh { font-family: var(--f-zh-display); font-weight: 600; color: var(--accent); margin-right: .25em; }
+.lede { margin: 0; color: var(--muted); max-width: 60ch; }
+
+.sheet { background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--radius); padding: 18px; display: grid; gap: 14px; min-width: 0; }
+a { color: var(--accent); text-underline-offset: 3px; }
+.zh-inline { font-family: var(--f-zh); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.site-nav { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; font-weight: 500; }
+.site-nav a { text-decoration: none; color: var(--muted); padding-block: 2px; border-bottom: 2px solid transparent; }
+.site-nav a:hover { color: var(--ink); }
+.site-nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
+h2 { margin: 0; font-size: 15px; font-weight: 600; letter-spacing: .01em; }
+.table-wrap { overflow-x: auto; }
+table.counts { border-collapse: collapse; font-size: 14px; min-width: 320px; }
+table.counts th, table.counts td { text-align: left; padding: 7px 14px 7px 0; border-bottom: 1px solid var(--rule); }
+table.counts th { font-weight: 600; color: var(--muted); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+table.counts td.num { font-family: var(--f-num); font-variant-numeric: tabular-nums; }
+.notes { font-size: 13px; color: var(--muted); display: grid; gap: 6px; max-width: 70ch; }
+.notes p { margin: 0; }
+.notes b { color: var(--ink); font-weight: 600; }
+.site-foot { max-width: 760px; margin: 28px auto 0; font-size: 13px; color: var(--muted); }
+.site-foot a { color: var(--muted); }
+.policy { gap: 10px; }
+.policy h2 { margin-top: 8px; }
+.policy p { margin: 0; max-width: 70ch; }
+/* Checker page: input sheet on top, graded result sheet below, red-pen marks for words above the chosen level. */
+label.field { font-weight: 600; font-size: 14px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+label.field span.hint { font-weight: 400; color: var(--muted); font-size: 13px; }
+textarea {
+  width: 100%; min-height: 150px; resize: vertical; padding: 12px 14px;
+  font-family: var(--f-zh); font-size: 18px; line-height: 1.8; color: var(--ink);
+  background: var(--paper); border: 1px solid var(--rule); border-radius: 8px;
+}
+.controls { display: flex; gap: 12px 18px; align-items: center; flex-wrap: wrap; justify-content: space-between; }
+.levels { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.levels .lbl { font-size: 14px; font-weight: 600; margin-right: 4px; }
+.lv-btn {
+  font: 500 14px var(--f-ui); padding: 7px 14px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--rule); background: var(--sheet); color: var(--ink);
+}
+.lv-btn[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.ghost { font: 500 14px var(--f-ui); background: none; border: none; color: var(--accent); cursor: pointer; padding: 6px 2px; text-decoration: underline; text-underline-offset: 3px; }
+
+.verdict { display: grid; gap: 10px; }
+.verdict-top { display: flex; gap: 12px 20px; align-items: baseline; flex-wrap: wrap; }
+.big { font-family: var(--f-num); font-size: clamp(34px, 9vw, 46px); font-weight: 500; line-height: 1; font-variant-numeric: tabular-nums; }
+.verdict-text { display: grid; gap: 2px; min-width: 0; }
+.verdict-text strong { font-size: 17px; }
+.verdict-text span { color: var(--muted); font-size: 14px; }
+.state-ok { color: var(--ok); } .state-warn { color: var(--warn); } .state-bad { color: var(--bad); }
+
+.bar { display: flex; height: 12px; border-radius: 6px; overflow: hidden; background: var(--rule); }
+.bar i { display: block; height: 100%; }
+.bar .b1 { background: var(--l1); } .bar .b2 { background: var(--l2); } .bar .b3 { background: var(--l3); } .bar .bx { background: var(--over); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; font-variant-numeric: tabular-nums; }
+.legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+
+.graded { font-family: var(--f-zh); font-size: 20px; line-height: 2.1; word-break: break-all; }
+.graded .w { border-bottom: 2px solid transparent; padding: 0 1px; border-radius: 2px; }
+.graded .w1 { border-bottom-color: color-mix(in srgb, var(--l1) 45%, transparent); }
+.graded .w2 { border-bottom-color: color-mix(in srgb, var(--l2) 45%, transparent); }
+.graded .w3 { border-bottom-color: color-mix(in srgb, var(--l3) 45%, transparent); }
+.graded .above { background: var(--over-bg); color: var(--over); border-bottom: 2px solid var(--over); font-weight: 500; }
+.empty { color: var(--muted); font-size: 15px; margin: 0; }
+
+.words { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.words li { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 8px 10px; border: 1px solid var(--rule); border-radius: 8px; min-width: 0; }
+.words .zh { font-family: var(--f-zh); font-size: 19px; overflow-wrap: anywhere; }
+.tag { font: 500 12px var(--f-num); padding: 2px 7px; border-radius: 999px; white-space: nowrap; }
+.tag.t2 { background: var(--l2-bg); color: var(--l2); }
+.tag.t3 { background: var(--l3-bg); color: var(--l3); }
+.tag.tx { background: var(--over-bg); color: var(--over); }
+.guide { display: grid; gap: 18px; max-width: 68ch; }
+.guide h2 { font-size: 20px; letter-spacing: -.005em; text-wrap: balance; }
+.guide h3 { margin: 0 0 4px; font-size: 16px; font-weight: 600; }
+.guide p { margin: 0; color: var(--ink); }
+.guide .qa { display: grid; gap: 14px; }
+.guide .zh-inline { font-family: var(--f-zh); }
+@media (prefers-reduced-motion: no-preference) { .bar i { transition: width .25s ease; } }
+/* Handwriting page: reuses the checker styles; each character is marked by whether it must be written at the chosen level. */
+.tools-row { display: flex; gap: 8px 16px; align-items: baseline; flex-wrap: wrap; }
+.tools-row h2, .tools-row h3 { margin-right: auto; }
+.count { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.ws-link { font-size: 14px; font-weight: 500; }
+
+.hw-graded { word-break: normal; overflow-wrap: anywhere; }
+.hw-graded .c { padding: 0 1px; border-radius: 2px; border-bottom: 2px solid transparent; }
+.hw-graded .c-now { background: var(--l1-bg); color: var(--l1); border-bottom-color: var(--l1); font-weight: 500; }
+.hw-graded .c-later { border-bottom-color: color-mix(in srgb, var(--l2) 55%, transparent); }
+.hw-graded .c-read { color: var(--muted); }
+.hw-graded .c-out { background: var(--over-bg); color: var(--over); border-bottom-color: var(--over); }
+
+.bar .bg { background: color-mix(in srgb, var(--muted) 45%, transparent); }
+.legend i.key-now-sw { background: var(--l1); }
+.legend i.key-later-sw { background: var(--l2); }
+.legend i.key-read-sw { background: color-mix(in srgb, var(--muted) 45%, transparent); }
+.legend i.key-out-sw { background: var(--over); }
+
+.hw-list { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.tag-now { background: var(--l1-bg); color: var(--l1); }
+.tag-later { background: var(--l2-bg); color: var(--l2); }
+.tag-read { background: var(--paper); color: var(--muted); border: 1px solid var(--rule); }
+.tag-out { background: var(--over-bg); color: var(--over); }
+
+.key { font-weight: 600; padding: 0 4px; border-radius: 3px; }
+.key-now { background: var(--l1-bg); color: var(--l1); }
+.key-later { background: var(--l2-bg); color: var(--l2); }
+.key-read { background: var(--paper); color: var(--muted); }
+.key-out { background: var(--over-bg); color: var(--over); }
+
+.hw-group { display: grid; gap: 10px; padding-top: 6px; border-top: 1px solid var(--rule); scroll-margin-top: 16px; }
+.hw-group:first-of-type { border-top: none; padding-top: 0; }
+.hw-group h3 { margin: 0; font-size: 15px; font-weight: 600; }
+.hw-grid { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; grid-template-columns: repeat(auto-fill, minmax(38px, 1fr)); }
+.hw-grid li { font-family: var(--f-zh); font-size: 21px; line-height: 38px; text-align: center; border: 1px solid var(--rule); border-radius: 6px; background: var(--paper); }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <nav class="site-nav" aria-label="Site"><a href="/">Level Checker</a><a href="/hsk-1-word-list/">HSK 1 Words</a><a href="/hsk-2-word-list/">HSK 2 Words</a><a href="/hsk-3-word-list/">HSK 3 Words</a><a href="/chinese-character-worksheets/">Writing Sheets</a><a href="/hsk-handwriting-characters/" aria-current="page">Handwriting</a><a href="/chinese-measure-words/">Measure Words</a><a href="/old-hsk-to-new-hsk/">Old → New HSK</a><a href="/learn/">Grammar</a><a href="/yct/">YCT</a><a href="/th/">ภาษาไทย</a></nav>
+    <div class="eyebrow"><span>New HSK · 2025 syllabus</span><span class="chip">1,200 characters to write</span><span class="chip">Free</span></div>
+    <h1><span class="zh">手写</span>HSK Handwriting Character Checker</h1>
+    <p class="lede">HSK 3.0 asks you to read 3,088 characters but write only 1,200 of them by hand. Paste any Chinese text to see which characters you need to be able to write at your level, and which you only need to recognise.</p>
+  </header>
+
+  <section class="sheet" aria-labelledby="in-label">
+    <label class="field" id="in-label" for="text-input">Chinese text <span class="hint" id="example-hint">Example text loaded. Replace it with your own.</span></label>
+    <textarea id="text-input" spellcheck="false" lang="zh-Hans"></textarea>
+    <div class="controls">
+      <div class="levels" role="group" aria-label="Your target level">
+        <span class="lbl">Your level</span>
+        <button type="button" class="lv-btn" data-level="0" aria-pressed="false">HSK 1–2</button>
+        <button type="button" class="lv-btn" data-level="1" aria-pressed="true">HSK 3</button>
+        <button type="button" class="lv-btn" data-level="2" aria-pressed="false">HSK 4</button>
+        <button type="button" class="lv-btn" data-level="3" aria-pressed="false">HSK 5</button>
+        <button type="button" class="lv-btn" data-level="4" aria-pressed="false">HSK 6</button>
+        <button type="button" class="lv-btn" data-level="5" aria-pressed="false">HSK 7–9</button>
+      </div>
+      <button type="button" class="ghost" id="clear-btn">Clear text</button>
+    </div>
+  </section>
+
+  <section class="sheet" aria-live="polite" aria-labelledby="res-title">
+    <h2 id="res-title">Result for <span id="res-level">HSK 3</span></h2>
+    <div class="verdict" id="verdict"></div>
+    <div class="graded hw-graded" id="graded" lang="zh-Hans"></div>
+  </section>
+
+  <section class="sheet" aria-labelledby="write-title">
+    <div class="tools-row">
+      <h2 id="write-title">Characters to write by <span class="lv-name">HSK 3</span></h2>
+      <a class="ws-link" id="ws-now" href="/chinese-character-worksheets/" hidden>Make a worksheet for these</a>
+    </div>
+    <ul class="words hw-list" id="list-now" lang="zh-Hans"></ul>
+    <p class="empty" id="empty-now" hidden>None of the characters in this text are on the handwriting list for this level.</p>
+  </section>
+
+  <section class="sheet" aria-labelledby="other-title">
+    <h2 id="other-title">Characters you only need to read for now</h2>
+    <ul class="words hw-list" id="list-other" lang="zh-Hans"></ul>
+    <p class="empty" id="empty-other" hidden>Nothing here: every character in this text is one you need to write.</p>
+  </section>
+
+  <section class="guide" aria-labelledby="guide-title">
+    <h2 id="guide-title">Reading and writing in HSK 3.0</h2>
+    <div class="qa">
+      <div>
+        <h3>Why are there two character lists?</h3>
+        <p>The HSK 3.0 syllabus grades characters twice. One list sets the characters you must <b>recognise</b> at each level, 3,088 in total. A second, much shorter list sets the characters you must be able to <b>write by hand</b>: 1,200 in total. Every character on the writing list is also on the reading list, at the same level or earlier.</p>
+      </div>
+      <div>
+        <h3>How many characters do I need to write at each level?</h3>
+        <p>The counts build up: each level adds new characters to the ones before it. Levels 1 and 2 share a single list of 100.</p>
+        <div class="table-wrap">
+          <table class="counts">
+            <thead><tr><th>Level</th><th>New to write</th><th>Total to write</th></tr></thead>
+            <tbody>
+              <tr><td><a href="#hsk-1-2">HSK 1–2</a></td><td class="num">100</td><td class="num">100</td></tr>
+              <tr><td><a href="#hsk-3">HSK 3</a></td><td class="num">150</td><td class="num">250</td></tr>
+              <tr><td><a href="#hsk-4">HSK 4</a></td><td class="num">150</td><td class="num">400</td></tr>
+              <tr><td><a href="#hsk-5">HSK 5</a></td><td class="num">150</td><td class="num">550</td></tr>
+              <tr><td><a href="#hsk-6">HSK 6</a></td><td class="num">150</td><td class="num">700</td></tr>
+              <tr><td><a href="#hsk-7-9">HSK 7–9</a></td><td class="num">500</td><td class="num">1,200</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>For comparison, by the end of HSK 3 you need to read 655 characters, and by the end of HSK 6, 1,940.</p>
+      </div>
+      <div>
+        <h3>Does this mean I can skip writing the other characters?</h3>
+        <p>For the exam, yes: only the characters on the writing list are expected by hand. Many learners still practise writing the most common reading characters, because writing a character a few times helps you remember it. Use the lists below to decide what to practise first.</p>
+      </div>
+      <div>
+        <h3>What colours does the checker use?</h3>
+        <p><span class="key key-now">Green</span> characters are on the writing list at or below your level. <span class="key key-later">Blue</span> characters are on the writing list for a higher level. <span class="key key-read">Grey</span> characters only need to be read, and <span class="key key-out">red</span> characters are not on any HSK 3.0 list.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sheet" aria-labelledby="all-title">
+    <h2 id="all-title">All 1,200 handwriting characters by level</h2>
+    <section class="hw-group" id="hsk-1-2" aria-labelledby="g-1-2">
+      <div class="tools-row"><h3 id="g-1-2">HSK 1–2</h3><span class="count">100 new · 100 in total</span><a class="ws-link" href="/chinese-character-worksheets/#c=爱还名文八汉那我爸好你五百和年午半很七习比后去下边会人小不几日现茶家三写打间少学大叫上要地姐什也的今生一点男十以对九时有多可是语儿来书月二了说在分两四长哥六岁这个妈他中工吗她子口么天女国没同字过们为作">Print worksheet</a></div>
+      <ul class="hw-grid" lang="zh-Hans"><li>爱</li><li>还</li><li>名</li><li>文</li><li>八</li><li>汉</li><li>那</li><li>我</li><li>爸</li><li>好</li><li>你</li><li>五</li><li>百</li><li>和</li><li>年</li><li>午</li><li>半</li><li>很</li><li>七</li><li>习</li><li>比</li><li>后</li><li>去</li><li>下</li><li>边</li><li>会</li><li>人</li><li>小</li><li>不</li><li>几</li><li>日</li><li>现</li><li>茶</li><li>家</li><li>三</li><li>写</li><li>打</li><li>间</li><li>少</li><li>学</li><li>大</li><li>叫</li><li>上</li><li>要</li><li>地</li><li>姐</li><li>什</li><li>也</li><li>的</li><li>今</li><li>生</li><li>一</li><li>点</li><li>男</li><li>十</li><li>以</li><li>对</li><li>九</li><li>时</li><li>有</li><li>多</li><li>可</li><li>是</li><li>语</li><li>儿</li><li>来</li><li>书</li><li>月</li><li>二</li><li>了</li><li>说</li><li>在</li><li>分</li><li>两</li><li>四</li><li>长</li><li>哥</li><li>六</li><li>岁</li><li>这</li><li>个</li><li>妈</li><li>他</li><li>中</li><li>工</li><li>吗</li><li>她</li><li>子</li><li>口</li><li>么</li><li>天</li><li>女</li><li>国</li><li>没</li><li>同</li><li>字</li><li>过</li><li>们</li><li>为</li><li>作</li></ul>
+    </section>
+    <section class="hw-group" id="hsk-3" aria-labelledby="g-3">
+      <div class="tools-row"><h3 id="g-3">HSK 3</h3><span class="count">150 new · 250 in total</span><a class="ws-link" href="/chinese-character-worksheets/#c=安方礼务把放李物般风力夏板复练相办该凉香饱干马响报刚毛向北更目心被共南信必故难行变瓜努须冰海怕选才合胖牙参河片言草护平羊层化瓶阳查换其养差活汽业成或且页城级轻音除急秋饮处加求应春假区用答讲全又带角如于单饺伞育当节山咱灯结勺张典借声者调斤实直定净适纸丢久收种冬句受重段卡树主而渴特助耳刻挺总发空图法哭闻">Print worksheet</a></div>
+      <ul class="hw-grid" lang="zh-Hans"><li>安</li><li>方</li><li>礼</li><li>务</li><li>把</li><li>放</li><li>李</li><li>物</li><li>般</li><li>风</li><li>力</li><li>夏</li><li>板</li><li>复</li><li>练</li><li>相</li><li>办</li><li>该</li><li>凉</li><li>香</li><li>饱</li><li>干</li><li>马</li><li>响</li><li>报</li><li>刚</li><li>毛</li><li>向</li><li>北</li><li>更</li><li>目</li><li>心</li><li>被</li><li>共</li><li>南</li><li>信</li><li>必</li><li>故</li><li>难</li><li>行</li><li>变</li><li>瓜</li><li>努</li><li>须</li><li>冰</li><li>海</li><li>怕</li><li>选</li><li>才</li><li>合</li><li>胖</li><li>牙</li><li>参</li><li>河</li><li>片</li><li>言</li><li>草</li><li>护</li><li>平</li><li>羊</li><li>层</li><li>化</li><li>瓶</li><li>阳</li><li>查</li><li>换</li><li>其</li><li>养</li><li>差</li><li>活</li><li>汽</li><li>业</li><li>成</li><li>或</li><li>且</li><li>页</li><li>城</li><li>级</li><li>轻</li><li>音</li><li>除</li><li>急</li><li>秋</li><li>饮</li><li>处</li><li>加</li><li>求</li><li>应</li><li>春</li><li>假</li><li>区</li><li>用</li><li>答</li><li>讲</li><li>全</li><li>又</li><li>带</li><li>角</li><li>如</li><li>于</li><li>单</li><li>饺</li><li>伞</li><li>育</li><li>当</li><li>节</li><li>山</li><li>咱</li><li>灯</li><li>结</li><li>勺</li><li>张</li><li>典</li><li>借</li><li>声</li><li>者</li><li>调</li><li>斤</li><li>实</li><li>直</li><li>定</li><li>净</li><li>适</li><li>纸</li><li>丢</li><li>久</li><li>收</li><li>种</li><li>冬</li><li>句</li><li>受</li><li>重</li><li>段</li><li>卡</li><li>树</li><li>主</li><li>而</li><li>渴</li><li>特</li><li>助</li><li>耳</li><li>刻</li><li>挺</li><li>总</li><li>发</li><li>空</li><li>图</li><li>法</li><li>哭</li><li>闻</li></ul>
+    </section>
+    <section class="hw-group" id="hsk-4" aria-labelledby="g-4">
+      <div class="tools-row"><h3 id="g-4">HSK 4</h3><span class="count">150 new · 400 in total</span><a class="ws-link" href="/chinese-character-worksheets/#c=巴忽牌无保虎篇误抱划品线背基普象标及强性并计青兄部技取许餐际确血产济任压厂寄扔亚晨建入研程江社验吹将深夜此金省印村京食永达究使由刀举示油导科式与倒克输原低况熟约掉困术云度拉顺增断利随章队例台之烦俩态支反连谈止份联汤指否量堂至父另讨志改流套众敢论庭专各麻停转够美通装挂民痛资观内土组管农推座广弄味喊排温">Print worksheet</a></div>
+      <ul class="hw-grid" lang="zh-Hans"><li>巴</li><li>忽</li><li>牌</li><li>无</li><li>保</li><li>虎</li><li>篇</li><li>误</li><li>抱</li><li>划</li><li>品</li><li>线</li><li>背</li><li>基</li><li>普</li><li>象</li><li>标</li><li>及</li><li>强</li><li>性</li><li>并</li><li>计</li><li>青</li><li>兄</li><li>部</li><li>技</li><li>取</li><li>许</li><li>餐</li><li>际</li><li>确</li><li>血</li><li>产</li><li>济</li><li>任</li><li>压</li><li>厂</li><li>寄</li><li>扔</li><li>亚</li><li>晨</li><li>建</li><li>入</li><li>研</li><li>程</li><li>江</li><li>社</li><li>验</li><li>吹</li><li>将</li><li>深</li><li>夜</li><li>此</li><li>金</li><li>省</li><li>印</li><li>村</li><li>京</li><li>食</li><li>永</li><li>达</li><li>究</li><li>使</li><li>由</li><li>刀</li><li>举</li><li>示</li><li>油</li><li>导</li><li>科</li><li>式</li><li>与</li><li>倒</li><li>克</li><li>输</li><li>原</li><li>低</li><li>况</li><li>熟</li><li>约</li><li>掉</li><li>困</li><li>术</li><li>云</li><li>度</li><li>拉</li><li>顺</li><li>增</li><li>断</li><li>利</li><li>随</li><li>章</li><li>队</li><li>例</li><li>台</li><li>之</li><li>烦</li><li>俩</li><li>态</li><li>支</li><li>反</li><li>连</li><li>谈</li><li>止</li><li>份</li><li>联</li><li>汤</li><li>指</li><li>否</li><li>量</li><li>堂</li><li>至</li><li>父</li><li>另</li><li>讨</li><li>志</li><li>改</li><li>流</li><li>套</li><li>众</li><li>敢</li><li>论</li><li>庭</li><li>专</li><li>各</li><li>麻</li><li>停</li><li>转</li><li>够</li><li>美</li><li>通</li><li>装</li><li>挂</li><li>民</li><li>痛</li><li>资</li><li>观</li><li>内</li><li>土</li><li>组</li><li>管</li><li>农</li><li>推</li><li>座</li><li>广</li><li>弄</li><li>味</li><li>喊</li><li>排</li><li>温</li></ul>
+    </section>
+    <section class="hw-group" id="hsk-5" aria-labelledby="g-5">
+      <div class="tools-row"><h3 id="g-5">HSK 5</h3><span class="count">150 new · 550 in total</span><a class="ws-link" href="/chinese-character-worksheets/#c=版访陆胃扮疯录武伴佛骂夕宝府秘析贝妇某席币搞念闲闭贡派显补构配县布古盆形采柜碰宣册哈匹寻测含拼训叉胡齐咬吵湖欠依沉华曲乙称挥权亿承挤劝义尺甲忍益冲架晒映充艰舍余虫局设玉抽巨神圆丑军升载臭均胜造传靠诗占创宽石召代亏似政胆括势织旦劳守制挡泪私治敌类素致冻立宿猪斗良挑竹豆疗团抓独烈退状吨领拖追范令伟防龙未">Print worksheet</a></div>
+      <ul class="hw-grid" lang="zh-Hans"><li>版</li><li>访</li><li>陆</li><li>胃</li><li>扮</li><li>疯</li><li>录</li><li>武</li><li>伴</li><li>佛</li><li>骂</li><li>夕</li><li>宝</li><li>府</li><li>秘</li><li>析</li><li>贝</li><li>妇</li><li>某</li><li>席</li><li>币</li><li>搞</li><li>念</li><li>闲</li><li>闭</li><li>贡</li><li>派</li><li>显</li><li>补</li><li>构</li><li>配</li><li>县</li><li>布</li><li>古</li><li>盆</li><li>形</li><li>采</li><li>柜</li><li>碰</li><li>宣</li><li>册</li><li>哈</li><li>匹</li><li>寻</li><li>测</li><li>含</li><li>拼</li><li>训</li><li>叉</li><li>胡</li><li>齐</li><li>咬</li><li>吵</li><li>湖</li><li>欠</li><li>依</li><li>沉</li><li>华</li><li>曲</li><li>乙</li><li>称</li><li>挥</li><li>权</li><li>亿</li><li>承</li><li>挤</li><li>劝</li><li>义</li><li>尺</li><li>甲</li><li>忍</li><li>益</li><li>冲</li><li>架</li><li>晒</li><li>映</li><li>充</li><li>艰</li><li>舍</li><li>余</li><li>虫</li><li>局</li><li>设</li><li>玉</li><li>抽</li><li>巨</li><li>神</li><li>圆</li><li>丑</li><li>军</li><li>升</li><li>载</li><li>臭</li><li>均</li><li>胜</li><li>造</li><li>传</li><li>靠</li><li>诗</li><li>占</li><li>创</li><li>宽</li><li>石</li><li>召</li><li>代</li><li>亏</li><li>似</li><li>政</li><li>胆</li><li>括</li><li>势</li><li>织</li><li>旦</li><li>劳</li><li>守</li><li>制</li><li>挡</li><li>泪</li><li>私</li><li>治</li><li>敌</li><li>类</li><li>素</li><li>致</li><li>冻</li><li>立</li><li>宿</li><li>猪</li><li>斗</li><li>良</li><li>挑</li><li>竹</li><li>豆</li><li>疗</li><li>团</li><li>抓</li><li>独</li><li>烈</li><li>退</li><li>状</li><li>吨</li><li>领</li><li>拖</li><li>追</li><li>范</li><li>令</li><li>伟</li><li>防</li><li>龙</li><li>未</li></ul>
+    </section>
+    <section class="hw-group" id="hsk-6" aria-labelledby="g-6">
+      <div class="tools-row"><h3 id="g-6">HSK 6</h3><span class="count">150 new · 700 in total</span><a class="ws-link" href="/chinese-character-worksheets/#c=岸氛拦坛昂奉牢吐拔辅雷吞摆肝劣托悲岗轮亡奔攻迈委编巩麦谓兵孤盲沃财股贸乌仓骨妙吓侧拐灭雄策官纳旬肠贯泥讯畅归拟讶抄龟扭炎臣轨盼央尘罕抛仰呈旱泡仪愁恨佩异串宏披抑闯幻贫英纯皇坡忧匆击迫予寸饥扑晕呆吉朴匀诞夹启孕岛尖枪灾德肩瞧扎抵杰圈宅吊戒券仗顶劲丧枝夺井杀肿恶径闪州帆纠尚妆凡刊舌庄犯抗审壮妨夸寿肺兰汰">Print worksheet</a></div>
+      <ul class="hw-grid" lang="zh-Hans"><li>岸</li><li>氛</li><li>拦</li><li>坛</li><li>昂</li><li>奉</li><li>牢</li><li>吐</li><li>拔</li><li>辅</li><li>雷</li><li>吞</li><li>摆</li><li>肝</li><li>劣</li><li>托</li><li>悲</li><li>岗</li><li>轮</li><li>亡</li><li>奔</li><li>攻</li><li>迈</li><li>委</li><li>编</li><li>巩</li><li>麦</li><li>谓</li><li>兵</li><li>孤</li><li>盲</li><li>沃</li><li>财</li><li>股</li><li>贸</li><li>乌</li><li>仓</li><li>骨</li><li>妙</li><li>吓</li><li>侧</li><li>拐</li><li>灭</li><li>雄</li><li>策</li><li>官</li><li>纳</li><li>旬</li><li>肠</li><li>贯</li><li>泥</li><li>讯</li><li>畅</li><li>归</li><li>拟</li><li>讶</li><li>抄</li><li>龟</li><li>扭</li><li>炎</li><li>臣</li><li>轨</li><li>盼</li><li>央</li><li>尘</li><li>罕</li><li>抛</li><li>仰</li><li>呈</li><li>旱</li><li>泡</li><li>仪</li><li>愁</li><li>恨</li><li>佩</li><li>异</li><li>串</li><li>宏</li><li>披</li><li>抑</li><li>闯</li><li>幻</li><li>贫</li><li>英</li><li>纯</li><li>皇</li><li>坡</li><li>忧</li><li>匆</li><li>击</li><li>迫</li><li>予</li><li>寸</li><li>饥</li><li>扑</li><li>晕</li><li>呆</li><li>吉</li><li>朴</li><li>匀</li><li>诞</li><li>夹</li><li>启</li><li>孕</li><li>岛</li><li>尖</li><li>枪</li><li>灾</li><li>德</li><li>肩</li><li>瞧</li><li>扎</li><li>抵</li><li>杰</li><li>圈</li><li>宅</li><li>吊</li><li>戒</li><li>券</li><li>仗</li><li>顶</li><li>劲</li><li>丧</li><li>枝</li><li>夺</li><li>井</li><li>杀</li><li>肿</li><li>恶</li><li>径</li><li>闪</li><li>州</li><li>帆</li><li>纠</li><li>尚</li><li>妆</li><li>凡</li><li>刊</li><li>舌</li><li>庄</li><li>犯</li><li>抗</li><li>审</li><li>壮</li><li>妨</li><li>夸</li><li>寿</li><li>肺</li><li>兰</li><li>汰</li></ul>
+    </section>
+    <section class="hw-group" id="hsk-7-9" aria-labelledby="g-7-9">
+      <div class="tools-row"><h3 id="g-7-9">HSK 7–9</h3><span class="count">500 new · 1,200 in total</span><a class="ws-link" href="/chinese-character-worksheets/#c=挨扯爹钩癌陈叠谷疤秤碟雇坝痴丁乖罢耻盯灌掰赤钉鬼扳仇董函颁绸兜撼拌畴抖呵绊酬陡禾绑稠赌哼磅瞅妒恒煲锄兑轰卑揣炖哄碑踹鹅烘绷喘遏弘蹦幢恩吼弊捶伐唤贬锤废焕扁蠢沸荒辨戳坟慌辩慈粪凰憋赐锋煌丙葱逢晃波丛凤谎剥凑缝辉伯窜敷毁勃粹伏昏搏搓辐荤卜逮抚魂怖党赴豁惨荡腹稽灿盗钙忌蹭蹬甘剂岔瞪杆祭掺堤纲暨搀颠缸煎馋垫搁拣缠淀耕俭铲奠弓贱阐叼拱溅昌雕勾姜僵勒莫翘桨愣墨撬匠廉谋侵绞咧亩擎搅猎牧驱缴裂募诠皆拎墓拳揭赁乃瘸劫聆挠嚷竭溜嫩饶筋瘤逆惹茎遛腻仁晶聋黏饪鲸隆撵揉揪搂尿若倔陋捏桑掘鹿宁骚崛卵凝纱嚼抡纽捎俊萝钮哨峻裸挪肾慨屡趴渗堪缕攀牲侃脉畔圣槛瞒刨屎扛蔓炮逝磕茫烹梳壳枚棚疏恳昧蓬赎啃闷劈署坑蒙辟墅孔盟偏耍抠猛泊甩垮眯颇拴挎谜魄涮跨泌谱霜筐苗曝爽框庙沏丝愧蔑漆撕捆鸣乞寺蜡膜契肆揽磨掐耸捞魔迁讼涝抹呛苏酥狭溢振蒜辖翼蒸塌仙瘾旨拓纤鹰帜胎掀盈滞贪弦庸忠摊衔诱衷滩宪愚宙瘫镶舆皱痰巷屿烛坦邪宇拄叹泄郁嘱炭泻御驻淌卸愈拽陶懈冤撰腾馨缘桩剃腥曰坠舔刑悦卓捅凶蕴兹凸绣熨滋秃锈砸籽涂嗅栽宗臀吁宰纵驮玄攒揍妥悬葬瓦削凿丸穴枣挽熏灶旺巡躁伪驯贼畏芽渣纹涯闸吻哑诈窝雅榨捂衍债勿掩沾悟咽斩牺窑盏稀耀绽溪矣蘸袭倚彰虾亦胀瞎役罩峡绎遮">Print worksheet</a></div>
+      <ul class="hw-grid" lang="zh-Hans"><li>挨</li><li>扯</li><li>爹</li><li>钩</li><li>癌</li><li>陈</li><li>叠</li><li>谷</li><li>疤</li><li>秤</li><li>碟</li><li>雇</li><li>坝</li><li>痴</li><li>丁</li><li>乖</li><li>罢</li><li>耻</li><li>盯</li><li>灌</li><li>掰</li><li>赤</li><li>钉</li><li>鬼</li><li>扳</li><li>仇</li><li>董</li><li>函</li><li>颁</li><li>绸</li><li>兜</li><li>撼</li><li>拌</li><li>畴</li><li>抖</li><li>呵</li><li>绊</li><li>酬</li><li>陡</li><li>禾</li><li>绑</li><li>稠</li><li>赌</li><li>哼</li><li>磅</li><li>瞅</li><li>妒</li><li>恒</li><li>煲</li><li>锄</li><li>兑</li><li>轰</li><li>卑</li><li>揣</li><li>炖</li><li>哄</li><li>碑</li><li>踹</li><li>鹅</li><li>烘</li><li>绷</li><li>喘</li><li>遏</li><li>弘</li><li>蹦</li><li>幢</li><li>恩</li><li>吼</li><li>弊</li><li>捶</li><li>伐</li><li>唤</li><li>贬</li><li>锤</li><li>废</li><li>焕</li><li>扁</li><li>蠢</li><li>沸</li><li>荒</li><li>辨</li><li>戳</li><li>坟</li><li>慌</li><li>辩</li><li>慈</li><li>粪</li><li>凰</li><li>憋</li><li>赐</li><li>锋</li><li>煌</li><li>丙</li><li>葱</li><li>逢</li><li>晃</li><li>波</li><li>丛</li><li>凤</li><li>谎</li><li>剥</li><li>凑</li><li>缝</li><li>辉</li><li>伯</li><li>窜</li><li>敷</li><li>毁</li><li>勃</li><li>粹</li><li>伏</li><li>昏</li><li>搏</li><li>搓</li><li>辐</li><li>荤</li><li>卜</li><li>逮</li><li>抚</li><li>魂</li><li>怖</li><li>党</li><li>赴</li><li>豁</li><li>惨</li><li>荡</li><li>腹</li><li>稽</li><li>灿</li><li>盗</li><li>钙</li><li>忌</li><li>蹭</li><li>蹬</li><li>甘</li><li>剂</li><li>岔</li><li>瞪</li><li>杆</li><li>祭</li><li>掺</li><li>堤</li><li>纲</li><li>暨</li><li>搀</li><li>颠</li><li>缸</li><li>煎</li><li>馋</li><li>垫</li><li>搁</li><li>拣</li><li>缠</li><li>淀</li><li>耕</li><li>俭</li><li>铲</li><li>奠</li><li>弓</li><li>贱</li><li>阐</li><li>叼</li><li>拱</li><li>溅</li><li>昌</li><li>雕</li><li>勾</li><li>姜</li><li>僵</li><li>勒</li><li>莫</li><li>翘</li><li>桨</li><li>愣</li><li>墨</li><li>撬</li><li>匠</li><li>廉</li><li>谋</li><li>侵</li><li>绞</li><li>咧</li><li>亩</li><li>擎</li><li>搅</li><li>猎</li><li>牧</li><li>驱</li><li>缴</li><li>裂</li><li>募</li><li>诠</li><li>皆</li><li>拎</li><li>墓</li><li>拳</li><li>揭</li><li>赁</li><li>乃</li><li>瘸</li><li>劫</li><li>聆</li><li>挠</li><li>嚷</li><li>竭</li><li>溜</li><li>嫩</li><li>饶</li><li>筋</li><li>瘤</li><li>逆</li><li>惹</li><li>茎</li><li>遛</li><li>腻</li><li>仁</li><li>晶</li><li>聋</li><li>黏</li><li>饪</li><li>鲸</li><li>隆</li><li>撵</li><li>揉</li><li>揪</li><li>搂</li><li>尿</li><li>若</li><li>倔</li><li>陋</li><li>捏</li><li>桑</li><li>掘</li><li>鹿</li><li>宁</li><li>骚</li><li>崛</li><li>卵</li><li>凝</li><li>纱</li><li>嚼</li><li>抡</li><li>纽</li><li>捎</li><li>俊</li><li>萝</li><li>钮</li><li>哨</li><li>峻</li><li>裸</li><li>挪</li><li>肾</li><li>慨</li><li>屡</li><li>趴</li><li>渗</li><li>堪</li><li>缕</li><li>攀</li><li>牲</li><li>侃</li><li>脉</li><li>畔</li><li>圣</li><li>槛</li><li>瞒</li><li>刨</li><li>屎</li><li>扛</li><li>蔓</li><li>炮</li><li>逝</li><li>磕</li><li>茫</li><li>烹</li><li>梳</li><li>壳</li><li>枚</li><li>棚</li><li>疏</li><li>恳</li><li>昧</li><li>蓬</li><li>赎</li><li>啃</li><li>闷</li><li>劈</li><li>署</li><li>坑</li><li>蒙</li><li>辟</li><li>墅</li><li>孔</li><li>盟</li><li>偏</li><li>耍</li><li>抠</li><li>猛</li><li>泊</li><li>甩</li><li>垮</li><li>眯</li><li>颇</li><li>拴</li><li>挎</li><li>谜</li><li>魄</li><li>涮</li><li>跨</li><li>泌</li><li>谱</li><li>霜</li><li>筐</li><li>苗</li><li>曝</li><li>爽</li><li>框</li><li>庙</li><li>沏</li><li>丝</li><li>愧</li><li>蔑</li><li>漆</li><li>撕</li><li>捆</li><li>鸣</li><li>乞</li><li>寺</li><li>蜡</li><li>膜</li><li>契</li><li>肆</li><li>揽</li><li>磨</li><li>掐</li><li>耸</li><li>捞</li><li>魔</li><li>迁</li><li>讼</li><li>涝</li><li>抹</li><li>呛</li><li>苏</li><li>酥</li><li>狭</li><li>溢</li><li>振</li><li>蒜</li><li>辖</li><li>翼</li><li>蒸</li><li>塌</li><li>仙</li><li>瘾</li><li>旨</li><li>拓</li><li>纤</li><li>鹰</li><li>帜</li><li>胎</li><li>掀</li><li>盈</li><li>滞</li><li>贪</li><li>弦</li><li>庸</li><li>忠</li><li>摊</li><li>衔</li><li>诱</li><li>衷</li><li>滩</li><li>宪</li><li>愚</li><li>宙</li><li>瘫</li><li>镶</li><li>舆</li><li>皱</li><li>痰</li><li>巷</li><li>屿</li><li>烛</li><li>坦</li><li>邪</li><li>宇</li><li>拄</li><li>叹</li><li>泄</li><li>郁</li><li>嘱</li><li>炭</li><li>泻</li><li>御</li><li>驻</li><li>淌</li><li>卸</li><li>愈</li><li>拽</li><li>陶</li><li>懈</li><li>冤</li><li>撰</li><li>腾</li><li>馨</li><li>缘</li><li>桩</li><li>剃</li><li>腥</li><li>曰</li><li>坠</li><li>舔</li><li>刑</li><li>悦</li><li>卓</li><li>捅</li><li>凶</li><li>蕴</li><li>兹</li><li>凸</li><li>绣</li><li>熨</li><li>滋</li><li>秃</li><li>锈</li><li>砸</li><li>籽</li><li>涂</li><li>嗅</li><li>栽</li><li>宗</li><li>臀</li><li>吁</li><li>宰</li><li>纵</li><li>驮</li><li>玄</li><li>攒</li><li>揍</li><li>妥</li><li>悬</li><li>葬</li><li>瓦</li><li>削</li><li>凿</li><li>丸</li><li>穴</li><li>枣</li><li>挽</li><li>熏</li><li>灶</li><li>旺</li><li>巡</li><li>躁</li><li>伪</li><li>驯</li><li>贼</li><li>畏</li><li>芽</li><li>渣</li><li>纹</li><li>涯</li><li>闸</li><li>吻</li><li>哑</li><li>诈</li><li>窝</li><li>雅</li><li>榨</li><li>捂</li><li>衍</li><li>债</li><li>勿</li><li>掩</li><li>沾</li><li>悟</li><li>咽</li><li>斩</li><li>牺</li><li>窑</li><li>盏</li><li>稀</li><li>耀</li><li>绽</li><li>溪</li><li>矣</li><li>蘸</li><li>袭</li><li>倚</li><li>彰</li><li>虾</li><li>亦</li><li>胀</li><li>瞎</li><li>役</li><li>罩</li><li>峡</li><li>绎</li><li>遮</li></ul>
+    </section>
+  </section>
+
+  <footer class="notes">
+    <p><b>Source.</b> The writing and reading lists follow the 2025 HSK 3.0 syllabus (新版HSK考试大纲). The checker runs in your browser; nothing you paste is sent anywhere.</p>
+    <p><b>Words, too.</b> This page checks single characters. To see which words in a text are above a level, use the <a href="/">HSK 3.0 level checker</a>.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  const WRITE = {"1-2":"爱还名文八汉那我爸好你五百和年午半很七习比后去下边会人小不几日现茶家三写打间少学大叫上要地姐什也的今生一点男十以对九时有多可是语儿来书月二了说在分两四长哥六岁这个妈他中工吗她子口么天女国没同字过们为作","3":"安方礼务把放李物般风力夏板复练相办该凉香饱干马响报刚毛向北更目心被共南信必故难行变瓜努须冰海怕选才合胖牙参河片言草护平羊层化瓶阳查换其养差活汽业成或且页城级轻音除急秋饮处加求应春假区用答讲全又带角如于单饺伞育当节山咱灯结勺张典借声者调斤实直定净适纸丢久收种冬句受重段卡树主而渴特助耳刻挺总发空图法哭闻","4":"巴忽牌无保虎篇误抱划品线背基普象标及强性并计青兄部技取许餐际确血产济任压厂寄扔亚晨建入研程江社验吹将深夜此金省印村京食永达究使由刀举示油导科式与倒克输原低况熟约掉困术云度拉顺增断利随章队例台之烦俩态支反连谈止份联汤指否量堂至父另讨志改流套众敢论庭专各麻停转够美通装挂民痛资观内土组管农推座广弄味喊排温","5":"版访陆胃扮疯录武伴佛骂夕宝府秘析贝妇某席币搞念闲闭贡派显补构配县布古盆形采柜碰宣册哈匹寻测含拼训叉胡齐咬吵湖欠依沉华曲乙称挥权亿承挤劝义尺甲忍益冲架晒映充艰舍余虫局设玉抽巨神圆丑军升载臭均胜造传靠诗占创宽石召代亏似政胆括势织旦劳守制挡泪私治敌类素致冻立宿猪斗良挑竹豆疗团抓独烈退状吨领拖追范令伟防龙未","6":"岸氛拦坛昂奉牢吐拔辅雷吞摆肝劣托悲岗轮亡奔攻迈委编巩麦谓兵孤盲沃财股贸乌仓骨妙吓侧拐灭雄策官纳旬肠贯泥讯畅归拟讶抄龟扭炎臣轨盼央尘罕抛仰呈旱泡仪愁恨佩异串宏披抑闯幻贫英纯皇坡忧匆击迫予寸饥扑晕呆吉朴匀诞夹启孕岛尖枪灾德肩瞧扎抵杰圈宅吊戒券仗顶劲丧枝夺井杀肿恶径闪州帆纠尚妆凡刊舌庄犯抗审壮妨夸寿肺兰汰","7-9":"挨扯爹钩癌陈叠谷疤秤碟雇坝痴丁乖罢耻盯灌掰赤钉鬼扳仇董函颁绸兜撼拌畴抖呵绊酬陡禾绑稠赌哼磅瞅妒恒煲锄兑轰卑揣炖哄碑踹鹅烘绷喘遏弘蹦幢恩吼弊捶伐唤贬锤废焕扁蠢沸荒辨戳坟慌辩慈粪凰憋赐锋煌丙葱逢晃波丛凤谎剥凑缝辉伯窜敷毁勃粹伏昏搏搓辐荤卜逮抚魂怖党赴豁惨荡腹稽灿盗钙忌蹭蹬甘剂岔瞪杆祭掺堤纲暨搀颠缸煎馋垫搁拣缠淀耕俭铲奠弓贱阐叼拱溅昌雕勾姜僵勒莫翘桨愣墨撬匠廉谋侵绞咧亩擎搅猎牧驱缴裂募诠皆拎墓拳揭赁乃瘸劫聆挠嚷竭溜嫩饶筋瘤逆惹茎遛腻仁晶聋黏饪鲸隆撵揉揪搂尿若倔陋捏桑掘鹿宁骚崛卵凝纱嚼抡纽捎俊萝钮哨峻裸挪肾慨屡趴渗堪缕攀牲侃脉畔圣槛瞒刨屎扛蔓炮逝磕茫烹梳壳枚棚疏恳昧蓬赎啃闷劈署坑蒙辟墅孔盟偏耍抠猛泊甩垮眯颇拴挎谜魄涮跨泌谱霜筐苗曝爽框庙沏丝愧蔑漆撕捆鸣乞寺蜡膜契肆揽磨掐耸捞魔迁讼涝抹呛苏酥狭溢振蒜辖翼蒸塌仙瘾旨拓纤鹰帜胎掀盈滞贪弦庸忠摊衔诱衷滩宪愚宙瘫镶舆皱痰巷屿烛坦邪宇拄叹泄郁嘱炭泻御驻淌卸愈拽陶懈冤撰腾馨缘桩剃腥曰坠舔刑悦卓捅凶蕴兹凸绣熨滋秃锈砸籽涂嗅栽宗臀吁宰纵驮玄攒揍妥悬葬瓦削凿丸穴枣挽熏灶旺巡躁伪驯贼畏芽渣纹涯闸吻哑诈窝雅榨捂衍债勿掩沾悟咽斩牺窑盏稀耀绽溪矣蘸袭倚彰虾亦胀瞎役罩峡绎遮"};
+  const READ = {"1":"爱二姐年八饭今您爸房九牛吧飞觉女白非开朋百分看漂班服可苹半高客七包哥课期杯歌口起本个块气边给来千便工老前病公了钱不狗冷请菜关里去茶贵两热常国亮人唱果零认超还六日车孩妈三吃汉吗商出好买上穿号卖少床喝忙谁打和猫什大很么生蛋后没师到候妹十道话们时得欢米识的回面士弟会名市第火明事点机哪视电鸡那是东几奶手都家男书读间脑水对见呢睡多件能说儿叫你司四西样怎岁息要找他习也这它喜一真她系衣正太下医知题先宜只天现以中条想椅钟听小影住同校友桌外些有子玩写雨字晚谢语租喂新元昨文星院作问兴月坐我休再做五学在午雪早","2":"啊交晴希帮教球洗备介然笑比进让姓笔近肉颜表经色眼别睛绍药步酒身爷场就始已词咖试意次考室因从裤舒阴错快思泳但篮送游地乐诉右等累虽鱼店离所远懂留疼运动楼踢站啡路体长夫旅跳丈告绿铁周跟慢头着馆每完准过门万自黑拿网走红鸟往足花旁忘最画跑望左坏票为己妻位记情舞","3":"阿典环康矮调换渴安定黄刻把丢婚空般冬活哭搬短或筷板段激矿办锻级蓝饱朵极礼报饿急李北而季理被耳绩力必发加历变法假脸遍方坚练宾放检炼冰风简凉才封健辆参附讲聊草复蕉料层该角邻查概饺凌差感脚马尝干较码衬刚接满成糕街毛城根节冒迟更结末持共解目初故界南除顾借难楚瓜斤努处刮净爬船怪静怕春惯境拍聪海久盘答害旧胖带合居啤担河句片单乎据平当护决瓶灯化卡其奇收香用骑受箱邮汽瘦响又铅叔向于且束像羽轻树鞋育清数心遇秋刷信园求双行员区算熊愿趣糖须越全特需咱泉梯选脏裙提牙澡容甜言择如挺演展赛突羊张伞图阳照扫腿养者沙碗业直山卫页纸衫闻姨终烧屋议种勺务易重声物音主实戏银助史夏饮注世鲜应总适相迎嘴","4":"按达膏即案待胳籍傲袋格计巴戴各纪败弹功技棒刀供际保导购济抱倒够既背登估继倍低姑寄笨底鼓价鼻递挂减毕掉观建标订管键饼堵光江并肚广将播度逛奖博断规降膊队咳郊部顿寒骄擦尔喊巾猜翻汗金材烦航仅彩反何尽餐费盒紧操份贺禁厕奋厚京察丰呼惊产否忽精厂肤虎景晨符互警诚幅户竞乘福划竟程父怀镜厨付悔究础负伙举窗傅货拒吹富获具此改圾剧粗赶积距村敢基聚存钢及绝烤秒琴死科民青松棵命庆嗽克默取速肯母缺塑恐慕却酸苦耐确随况恼染孙困闹扰台垃内任抬拉嗯扔态辣娘仍谈懒农入汤浪弄散躺厉暖森趟丽偶伤萄励排稍讨利牌社套例判摄堂俩乓申填连陪深厅联批甚庭谅皮省停量脾剩通列篇失童林频拾桶龄品食痛另聘使土流乒氏推乱评示脱论泼式袜落破柿危律葡释微虑普匙围麻戚首味馒弃授温漫签售污帽歉输无貌强熟误美敲暑吸梦桥术悉迷巧帅惜密切顺细免亲硕咸险研愉值线盐与职羡厌预植乡验原止详扬约址项洋阅指象邀云至消钥允志效叶杂质辛夜仔众醒疑暂洲幸艺则祝性忆责著兄译增专修谊章转羞引账赚秀印招装许赢折资序永针族续勇争组血优整尊压幽证座亚尤之烟由支严油汁","5":"哎翅仿汇唉冲访惠暗充肥慧熬虫纷祸版宠疯肌扮抽扶疾伴丑佛集膀臭府辑傍触腐挤薄传妇迹宝创副佳暴辞盖嘉贝刺搞甲彼促革驾币催隔架闭措恭艰避代贡捡拨胆沟剪玻旦构荐补淡古渐布挡固践裁档冠浆采蹈瑰浇藏敌柜阶册蝶滚届测冻锅谨曾洞裹敬叉斗哈救插豆含局拆独憾橘倡堆衡巨朝吨猴捐吵盾胡卷炒躲湖军彻乏蝴均沉罚糊靠称番华颗承繁滑控橙返缓扣池泛灰库尺范挥宽齿防恢款狂模润索亏陌弱锁昆漠洒桃扩某傻替括木厦挑览幕晒贴郎奈删统劳念扇投姥浓善途泪哦擅兔类欧赏团厘派蛇退梨培舍拖璃赔设弯立配伸威恋盆神违良碰慎唯粮匹升维疗骗胜伟烈拼诗尾临凭施未灵屏湿胃铃婆石慰领齐驶稳令企似卧浏器势握龙浅饰伍漏欠守武陆墙殊雾录抢蔬夕碌悄属析逻茄鼠席络勤述闲率穷摔显骂曲税县矛趋私限玫权搜献媒劝俗厢魅群肃享秘燃素橡眠绕宿销描忍碎肖敏荣损协摸软缩胁斜乙赞制欣亿糟治形义造致型益赠智虚营炸置绪映摘猪宣硬窄竹寻拥占逐询悠战煮训犹涨筑迅幼掌抓押余召状鸭娱哲撞呀玉珍追延域诊咨沿喻阵姿腰寓震紫摇豫征综咬圆挣阻依源政醉移怨织遵遗载执","6":"碍储氛恨岸串粉横昂闯愤宏拔垂峰虹摆纯蜂洪拜瓷奉壶榜匆浮幻胞醋辅患爆脆赋皇悲寸覆绘辈挫尬混奔搭肝惑逼呆尴击壁贷岗饥臂耽港吉编诞稿寂兵岛割夹脖稻攻嫁捕德宫稼财滴巩尖踩抵孤肩残帝股监仓吊骨兼侧钓拐剑策跌官鉴柴顶贯箭肠栋罐酱偿逗归胶畅督龟椒抄毒轨焦嘲渡跪杰潮端棍洁撤蹲涵捷臣夺罕截尘额旱戒趁恶毫劲撑帆豪井呈凡耗颈惩犯核径崇妨嘿纠愁肪痕舅筹肺狠菊矩煤渠铜俱弥娶筒惧蜜圈偷菌棉券透刊勉壤徒砍妙绒吐抗灭融吞枯摩柔托酷寞撒挖夸纳塞娃馈泥嗓哇阔拟丧歪啦扭杀顽赖怒刹亡兰诺鲨王拦盼筛委栏庞闪谓烂抛尚沃狼泡舌乌廊佩射晰朗喷涉媳牢捧审吓雷披甥嫌粒疲盛陷怜飘狮祥链贫寿宵梁坡薯歇晾迫竖谐劣扑漱携淋朴衰械笼铺瞬薪露欺艘胸轮棋塔雄履旗踏袖略启汰叙蚂恰坛蓄嘛牵探旋埋谦碳旬迈潜烫循麦枪掏讯盲腔逃讶贸瞧淘淹眉倾添炎梅屈田艳宴涌粘株央忧崭诸仰予仗砖氧浴障妆痒欲枕庄遥裕镇壮野誉睁椎液援症捉仪跃枝棕蚁晕脂踪异匀侄粽抑孕殖奏疫灾秩祖姻遭肿钻隐噪州罪英燥粥婴扎骤颖宅珠","7-9":"哀鄙嘈矗挨庇槽揣癌毙蹭踹蔼痹岔川艾碧诧喘隘蔽掺幢暧弊搀炊凹鞭馋捶奥贬禅锤扒扁缠唇叭辨铲淳芭辩阐醇疤辫颤蠢靶飙昌戳坝憋猖绰罢彬敞疵霸滨钞慈掰缤巢磁柏濒扯雌扳丙澈伺颁秉辰赐斑柄陈囱拌波澄葱绊剥逞丛瓣伯秤凑绑驳痴簇谤勃弛窜磅舶驰摧煲搏侈璀褒簸耻悴雹卜斥粹堡哺赤翠豹怖憧搓卑睬仇磋碑惭绸瘩狈惨畴歹惫灿酬逮焙璨稠怠崩苍瞅丹绷沧锄惮迸舱橱党蹦糙畜荡叨妒辐鬼捣兑抚桂祷敦斧骇盗盹俯酣悼炖咐憨蹬钝赴函凳哆腹捍瞪舵缚撼堤堕丐瀚迪惰钙夯涤讹溉浩笛鹅甘呵嘀厄杆禾蒂遏竿阂缔噩纲荷颠鳄缸赫巅恩杠鹤甸饵戈哼垫伐疙恒淀阀鸽轰惦贩搁哄奠坊阁烘殿芳骼弘刁纺耕喉叼绯耿吼凋匪哽狐雕诽弓唬爹废躬哗迭沸拱猾谍芬勾徊叠吩钩槐碟坟苟唤丁焚咕焕叮粪菇痪盯锋辜荒钉逢谷慌鼎讽雇凰董凤寡煌兜缝卦恍抖孵乖晃陡敷棺谎赌伏灌辉睹俘闺徽杜袱诡毁卉矫慨唠讳搅楷涝贿缴勘酪秽轿堪勒昏酵坎垒荤皆侃磊浑揭槛蕾魂劫慷棱豁竭扛愣霍诫苛狸讥津磕黎缉筋壳鲤畸锦坷吏稽晋垦隶汲浸恳莉棘茎啃莅嫉荆坑帘脊晶吭莲忌兢孔廉剂鲸抠敛祭阱窟辽暨憬垮僚颊窘挎寥贾揪跨潦奸灸筐咧歼拘旷猎煎鞠框裂拣咀眶拎柬沮窥麟俭炬魁吝贱倦溃赁舰诀愧陵溅抉捆聆姜倔廓岭僵掘喇溜疆崛腊瘤桨嚼蜡柳匠君睐遛娇钧婪咙跤俊澜胧礁峻揽聋侥骏缆隆狡竣滥窿绞凯捞拢垄眯腻譬搂谜溺偏陋觅黏撇炉泌撵坪卤绵酿萍虏缅尿泊鲁腼捏颇赂苗宁粕鹿瞄拧魄孪渺凝剖卵藐泞仆抡庙纽菩伦蔑钮谱啰鸣奴瀑罗铭虐曝萝谬挪沏螺膜殴栖裸磨呕凄侣蘑趴漆屡魔帕蹊缕抹徘歧滤茉湃祈掠沫攀崎脉莫叛乞蛮墨畔岂瞒谋螃迄蔓牡刨泣芒亩袍契氓拇炮砌茫姆胚掐莽沐沛洽髦牧抨迁茂募烹虔枚墓棚遣霉睦蓬谴昧暮鹏嵌寐呐澎呛媚乃篷跷闷囊膨侨萌挠劈憔蒙馁屁俏盟嫩辟峭朦逆媲窍猛匿僻翘撬煽祀剔怯膳饲屉窃赡肆剃惬裳怂涕锲捎耸惕钦梢讼嚏侵哨诵腆禽奢颂舔寝慑苏眺擎呻酥帖顷绅溯廷丘肾蒜亭囚渗髓艇岖牲隧捅驱绳邃凸躯圣唆秃诠尸梭涂拳蚀嗦屠犬矢琐颓瘸屎塌豚雀侍拓臀攘逝蹋驮嚷嗜胎妥饶誓泰椭惹兽贪唾仁抒摊蛙韧枢滩瓦饪梳瘫湾溶疏痰丸冗赎潭挽揉署坦惋乳曙毯婉辱恕叹腕锐墅炭汪瑞耍唐枉若甩塘妄萨拴膛旺桑涮倘帷骚霜淌伪嫂爽涛纬涩烁滔萎啬丝陶畏僧撕腾蔚纱寺藤瘟纹宪炫役蚊馅削绎吻镶靴弈紊翔穴逸翁巷勋裔涡萧熏溢窝潇巡毅幄嚣汛翼呜淆驯荫诬晓逊殷侮孝丫吟捂啸鸦瘾兀邪芽鹰勿挟崖荧悟泄涯盈晤泻哑莹昔卸雅蝇牺屑揠佣奚懈岩庸稀蟹阎恿犀芯檐踊锡馨衍佑溪衅掩诱熙猩咽淤熄腥雁渔膝刑焰逾嬉凶燕愚袭汹殃舆徙朽秧屿隙绣杨宇虾锈漾驭瞎嗅妖郁侠吁肴狱峡墟窑御狭徐谣愈瑕旭耀冤辖恤椰渊霞酗冶缘仙絮夷辕纤婿怡曰掀喧矣岳贤暄倚悦弦玄屹耘衔悬亦陨酝沾拯瞩韵瞻郑贮蕴斩芝驻熨盏肢柱砸辗旨蛀栽绽帜铸宰湛峙拽攒蘸挚撰赃彰掷桩葬杖窒坠凿帐滞缀枣胀稚赘藻爪忠拙皂沼衷灼灶兆仲茁躁罩舟卓泽肇轴浊贼遮帚酌渣辙宙兹闸贞昼滋眨侦皱籽诈斟朱宗榨振烛纵债筝拄揍寨蒸嘱琢"};
+  const WL = ["1-2", "3", "4", "5", "6", "7-9"];
+  const top = lv => Number(lv.split("-").pop());
+  const name = lv => "HSK " + lv.replace("-", "–");
+  const writeAt = {}, readAt = {};
+  WL.forEach((lv, i) => { for (const c of WRITE[lv]) writeAt[c] = i; });
+  Object.keys(READ).forEach(lv => { for (const c of READ[lv]) readAt[c] = lv; });
+
+  const EXAMPLE = "我每天早上七点起床，先喝一杯茶，然后坐地铁去公司。周末我喜欢和朋友一起去公园散步，有时候也去图书馆看书。";
+  const input = document.getElementById("text-input");
+  const hint = document.getElementById("example-hint");
+  const btns = Array.from(document.querySelectorAll(".lv-btn"));
+  const graded = document.getElementById("graded");
+  const verdict = document.getElementById("verdict");
+  const listNow = document.getElementById("list-now");
+  const listOther = document.getElementById("list-other");
+  const emptyNow = document.getElementById("empty-now");
+  const emptyOther = document.getElementById("empty-other");
+  const wsNow = document.getElementById("ws-now");
+  let target = 1;
+
+  function esc(s) {
+    return s.replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+  }
+  function isHan(c) { return /\p{Script=Han}/u.test(c); }
+  function status(c) {
+    if (c in writeAt) {
+      return writeAt[c] <= target
+        ? {k: "now", tag: name(WL[writeAt[c]])}
+        : {k: "later", tag: "write · " + name(WL[writeAt[c]])};
+    }
+    if (c in readAt) return {k: "read", tag: "read · " + name(readAt[c])};
+    return {k: "out", tag: "not HSK"};
+  }
+
+  function run() {
+    const lvName = name(WL[target]);
+    document.getElementById("res-level").textContent = lvName;
+    document.querySelectorAll(".lv-name").forEach(el => { el.textContent = lvName; });
+    const text = input.value;
+    const seen = new Map();
+    let out = "";
+    for (const c of text) {
+      if (!isHan(c)) { out += c === "\n" ? "<br>" : esc(c); continue; }
+      const s = status(c);
+      if (!seen.has(c)) seen.set(c, s);
+      out += '<span class="c c-' + s.k + '" title="' + esc(s.tag) + '">' + esc(c) + "</span>";
+    }
+    graded.innerHTML = out || '<p class="empty">Paste some Chinese text above.</p>';
+
+    const counts = {now: 0, later: 0, read: 0, out: 0};
+    const now = [], other = [];
+    seen.forEach((s, c) => {
+      counts[s.k]++;
+      (s.k === "now" ? now : other).push([c, s]);
+    });
+    const total = seen.size;
+    if (!total) { verdict.innerHTML = ""; }
+    else {
+      const pct = k => (100 * counts[k] / total).toFixed(1) + "%";
+      verdict.innerHTML =
+        '<div class="verdict-top"><span class="big">' + counts.now + '</span><div class="verdict-text"><strong>' +
+        (counts.now === 1 ? "character" : "characters") + " to write by " + esc(lvName) + "</strong><span>out of " + total +
+        " different characters in this text</span></div></div>" +
+        '<div class="bar" aria-hidden="true"><i class="b1" style="width:' + pct("now") + '"></i><i class="b2" style="width:' + pct("later") +
+        '"></i><i class="bg" style="width:' + pct("read") + '"></i><i class="bx" style="width:' + pct("out") + '"></i></div>' +
+        '<div class="legend"><span><i class="key-now-sw"></i>Write now ' + counts.now + '</span><span><i class="key-later-sw"></i>Write later ' +
+        counts.later + '</span><span><i class="key-read-sw"></i>Read only ' + counts.read + '</span><span><i class="key-out-sw"></i>Not in HSK ' +
+        counts.out + "</span></div>";
+    }
+
+    const item = ([c, s]) => '<li><span class="zh">' + esc(c) + '</span><span class="tag tag-' + s.k + '">' + esc(s.tag) + "</span></li>";
+    listNow.innerHTML = now.map(item).join("");
+    listOther.innerHTML = other.map(item).join("");
+    emptyNow.hidden = now.length > 0 || !total;
+    emptyOther.hidden = other.length > 0 || !total;
+    wsNow.hidden = !now.length;
+    wsNow.href = "/chinese-character-worksheets/#c=" + encodeURIComponent(now.map(x => x[0]).join(""));
+  }
+
+  btns.forEach(b => b.addEventListener("click", () => {
+    target = Number(b.dataset.level);
+    btns.forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+    run();
+  }));
+  input.addEventListener("input", () => { hint.hidden = true; run(); });
+  document.getElementById("clear-btn").addEventListener("click", () => { input.value = ""; hint.hidden = true; input.focus(); run(); });
+  input.value = EXAMPLE;
+  run();
+})();
+</script>
+
+<footer class="site-foot">hskcheck.com · <a href="/privacy/">Privacy Policy</a></footer>
+</body>
+</html>
