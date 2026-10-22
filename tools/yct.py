@@ -322,7 +322,7 @@ def alternates(root):
 
 
 def build_th(*, root, tpl, site, css, render, nav, font_link, foot, search_key, thai_key):
-    """Thai word list pages at /th/yct/. The worksheet pages stay in English and are linked from here."""
+    """Thai word list pages at /th/yct/. The Thai worksheet pages are built by tools/worksheets_th.py."""
     if not has_thai(root):
         return []
     levels = {n: read_level(root, n) for n in LEVELS}
@@ -379,7 +379,7 @@ def build_th(*, root, tpl, site, css, render, nav, font_link, foot, search_key, 
         new = OFFICIAL[n] - (OFFICIAL[n - 1] if n > 1 else 0)
         rows.append(f'<tr><th scope="row">YCT {n}</th><td>{OFFICIAL[n]} <small>(ใหม่ {new})</small></td>'
                     f'<td><a href="{TH_YCT_URL}yct-{n}-word-list/">คำศัพท์</a><br>'
-                    f'<a href="{YCT_URL}yct-{n}-character-worksheets/" hreflang="en">แบบฝึกเขียน {new_chars[n]} ตัว</a></td></tr>')
+                    f'<a href="{TH_YCT_URL}yct-{n}-character-worksheets/">แบบฝึกเขียน {new_chars[n]} ตัว</a></td></tr>')
     body = ((tpl / "th" / "yct_index_body.html").read_text(encoding="utf-8")
             .replace("__NAV__", nav(TH_YCT_URL)).replace("__ROWS__", "\n".join(rows)))
     target = root / TH_YCT_URL.strip("/")

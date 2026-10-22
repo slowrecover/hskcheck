@@ -5,6 +5,7 @@ Outputs:
   th/hsk-N-word-list/index.html    one page per level that has data/th/hskN_th.tsv
   th/learn/...                     Thai grammar explainers and worksheets (see tools/learn_th.py)
   th/yct/...                       Thai YCT word lists (see tools/yct.py)
+  th/...-character-worksheets/     Thai worksheet maker and presets (see tools/worksheets_th.py)
 
 data/th/hskN_th.tsv has two columns, word and Thai meaning, in the same order as data/hskN.tsv.
 The build stops if the words do not match exactly.
@@ -15,6 +16,7 @@ import html
 import json
 
 import learn_th
+import worksheets_th
 import yct
 
 TH_URL = "/th/"
@@ -104,6 +106,7 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
 
     pages = [(TH_URL, "ตรวจระดับคำศัพท์")]
     pages += [(f"{TH_URL}hsk-{n}-word-list/", f"คำศัพท์ HSK {n}") for n in levels]
+    pages.append((worksheets_th.TH_WS_URL, "แบบฝึกเขียน"))
     if learn_th.slugs(root):
         pages.append((learn_th.TH_LEARN_URL, "ไวยากรณ์"))
     if yct.has_thai(root):
@@ -183,6 +186,11 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
         (target / "index.html").write_text(out, encoding="utf-8")
         urls.append(url)
 
+    # Character worksheets
+    urls += worksheets_th.build(root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK, foot=FOOT,
+                                css=base_css + (tpl / "worksheet.css").read_text(encoding="utf-8") + th_css,
+                                word_lists=word_lists, meanings=meanings)
+
     # YCT word lists
     urls += yct.build_th(root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK, foot=FOOT,
                          css=wl_css + (tpl / "yct.css").read_text(encoding="utf-8"),
@@ -206,4 +214,5 @@ def alternates(root, levels):
     pairs.update({f"/hsk-{n}-word-list/": f"{TH_URL}hsk-{n}-word-list/" for n in have})
     pairs.update(learn_th.alternates(root))
     pairs.update(yct.alternates(root))
+    pairs.update(worksheets_th.alternates(root, have))
     return pairs
