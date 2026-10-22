@@ -109,6 +109,7 @@ table.counts td.num { font-family: var(--f-num); font-variant-numeric: tabular-n
 @media (max-width: 420px) { .summary { grid-template-columns: 1fr 1fr; } .stat.key { grid-column: 1 / -1; } }
 .summary-line { margin: 0; font-size: 15px; }
 table.counts td.num, table.counts th.num { text-align: right; }
+.pack-cta { margin: 0; padding: 10px 12px; border-radius: 8px; background: var(--l1-bg); font-size: 14px; }
 
 .tools-row { display: flex; gap: 10px 16px; align-items: center; flex-wrap: wrap; justify-content: space-between; }
 .seg { display: flex; flex-wrap: wrap; gap: 6px; border: 0; margin: 0; padding: 0; min-width: 0; }
@@ -358,6 +359,8 @@ table.words-table th, table.counts th { letter-spacing: 0; }
     $("ws-cap").hidden = chars.length <= 400;
     $("summary").hidden = false;
     $("breakdown-wrap").hidden = false;
+    const cta = $("pack-cta");  // printable pack, only for the old HSK 1 -> new HSK 1 list (not on the Thai page)
+    if (cta) cta.hidden = !(O === 1 && T === 1);
   }
 
   const group = () => document.querySelector('input[name="group"]:checked').value;
@@ -445,6 +448,6 @@ table.words-table th, table.counts th { letter-spacing: 0; }
 })();
 </script>
 
-<footer class="site-foot">hskcheck.com · <a href="/th/about/">เกี่ยวกับเรา</a> · <a href="/privacy/" hreflang="en">นโยบายความเป็นส่วนตัว</a></footer>
+<footer class="site-foot">hskcheck.com · <a href="/th/about/">เกี่ยวกับเรา</a> · <a href="/terms/" hreflang="en">ข้อกำหนดการใช้งาน</a> · <a href="/privacy/" hreflang="en">นโยบายความเป็นส่วนตัว</a></footer>
 </body>
 </html>

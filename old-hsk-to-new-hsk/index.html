@@ -108,6 +108,7 @@ table.counts td.num { font-family: var(--f-num); font-variant-numeric: tabular-n
 @media (max-width: 420px) { .summary { grid-template-columns: 1fr 1fr; } .stat.key { grid-column: 1 / -1; } }
 .summary-line { margin: 0; font-size: 15px; }
 table.counts td.num, table.counts th.num { text-align: right; }
+.pack-cta { margin: 0; padding: 10px 12px; border-radius: 8px; background: var(--l1-bg); font-size: 14px; }
 
 .tools-row { display: flex; gap: 10px 16px; align-items: center; flex-wrap: wrap; justify-content: space-between; }
 .seg { display: flex; flex-wrap: wrap; gap: 6px; border: 0; margin: 0; padding: 0; min-width: 0; }
@@ -205,6 +206,7 @@ table.words-table td.lv { white-space: nowrap; text-align: right; padding-right:
         <tbody id="breakdown"></tbody>
       </table>
     </div>
+    <p class="pack-cta" id="pack-cta" hidden><b>Want this list on paper?</b> The <a href="/upgrade-packs/old-hsk-1-to-new-hsk-1/">Old HSK 1 → New HSK 1 Upgrade Pack</a> has the same words with example sentences, writing practice for the new characters, and quizzes, ready to print. $1.99.</p>
   </section>
 
   <section class="sheet" aria-labelledby="words-title">
@@ -346,6 +348,8 @@ table.words-table td.lv { white-space: nowrap; text-align: right; padding-right:
     $("ws-cap").hidden = chars.length <= 400;
     $("summary").hidden = false;
     $("breakdown-wrap").hidden = false;
+    const cta = $("pack-cta");  // printable pack, only for the old HSK 1 -> new HSK 1 list (not on the Thai page)
+    if (cta) cta.hidden = !(O === 1 && T === 1);
   }
 
   const group = () => document.querySelector('input[name="group"]:checked').value;
@@ -433,6 +437,6 @@ table.words-table td.lv { white-space: nowrap; text-align: right; padding-right:
 })();
 </script>
 
-<footer class="site-foot">hskcheck.com · <a href="/about/">About</a> · <a href="/privacy/">Privacy Policy</a></footer>
+<footer class="site-foot">hskcheck.com · <a href="/about/">About</a> · <a href="/upgrade-packs/">Printable packs</a> · <a href="/terms/">Terms</a> · <a href="/privacy/">Privacy Policy</a></footer>
 </body>
 </html>

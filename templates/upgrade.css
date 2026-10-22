@@ -13,6 +13,7 @@
 @media (max-width: 420px) { .summary { grid-template-columns: 1fr 1fr; } .stat.key { grid-column: 1 / -1; } }
 .summary-line { margin: 0; font-size: 15px; }
 table.counts td.num, table.counts th.num { text-align: right; }
+.pack-cta { margin: 0; padding: 10px 12px; border-radius: 8px; background: var(--l1-bg); font-size: 14px; }
 
 .tools-row { display: flex; gap: 10px 16px; align-items: center; flex-wrap: wrap; justify-content: space-between; }
 .seg { display: flex; flex-wrap: wrap; gap: 6px; border: 0; margin: 0; padding: 0; min-width: 0; }

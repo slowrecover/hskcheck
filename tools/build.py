@@ -25,6 +25,7 @@ import handwriting
 import learn
 import tones
 import hsk4
+import packs
 import yct
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -172,6 +173,7 @@ def nav(pages, current):
 PRIVACY_URL = "/privacy/"
 ABOUT_URL = "/about/"
 SITE_FOOT = (f'\n<footer class="site-foot">hskcheck.com · <a href="{ABOUT_URL}">About</a> · '
+             f'<a href="{packs.INDEX_URL}">Printable packs</a> · <a href="{packs.TERMS_URL}">Terms</a> · '
              f'<a href="{PRIVACY_URL}">Privacy Policy</a></footer>')
 
 
@@ -528,6 +530,9 @@ def main():
 
     # Grammar explainers
     extra_urls += learn.build(pages, nav, render, base_css, TPL, SITE)
+
+    # Printable packs and the Terms of Service
+    extra_urls += packs.build(ROOT, pages, nav, render, base_css, SITE)
 
     # Privacy policy
     today = datetime.date.today().isoformat()

@@ -70,6 +70,7 @@ FONT_LINK = ('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?fam
              '&display=swap">')
 TH_ABOUT_URL = "/th/about/"
 FOOT = ('\n<footer class="site-foot">hskcheck.com · <a href="/th/about/">เกี่ยวกับเรา</a> · '
+        '<a href="/terms/" hreflang="en">ข้อกำหนดการใช้งาน</a> · '
         '<a href="/privacy/" hreflang="en">นโยบายความเป็นส่วนตัว</a></footer>')
 
 

@@ -1,0 +1,245 @@
+"""Printable packs sold on the site, the packs index page, and the Terms of Service page.
+
+Each pack has its own page at /upgrade-packs/<slug>/ with what's inside, a few preview images (JPEGs kept in that
+folder, made from the PDF), the price and a checkout link. The PDF itself is NOT kept in this repository: everything
+here is public on hskcheck.com. While "checkout" is empty (before the payment provider approves the store) the page
+shows "Checkout opens soon" instead of a buy button.
+
+Outputs:
+  /upgrade-packs/                     list of packs
+  /upgrade-packs/<slug>/index.html    one page per pack
+  /terms/index.html                   Terms of Service, with the refund policy
+
+Called from tools/build.py; returns the URLs it wrote.
+"""
+import html
+
+INDEX_URL = "/upgrade-packs/"
+TERMS_URL = "/terms/"
+TERMS_UPDATED = "2026-10-22"
+CONTACT = "willowbewater@gmail.com"
+REFUND_DAYS = 14
+
+PACKS = [
+    {
+        "slug": "old-hsk-1-to-new-hsk-1",
+        "name": "Old HSK 1 → New HSK 1 Upgrade Pack",
+        "short": "Old HSK 1 → New HSK 1",
+        "price": "$1.99",
+        "pages": 60,
+        "checkout": "",  # Creem checkout link, added once the store is approved
+        "title": "Old HSK 1 to New HSK 1 Upgrade Pack: Printable PDF for HSK 3.0",
+        "description": ("Studied the old HSK 1? Learn the 155 new HSK 1 words you haven't met yet: example sentences, "
+                        "writing practice for 74 new characters, quizzes and answers. Printable PDF, $1.99."),
+        "lede": ("Studied the old HSK 1? The new HSK 1 has 300 words, and 155 of them were not in old HSK 1. "
+                 "This printable pack teaches you those 155 words in ten short lessons."),
+        "inside": [
+            "All 155 words with pinyin and meaning, each with an example sentence that uses only new HSK 1 words, "
+            "with pinyin and English",
+            "Stroke order and tracing practice for the 74 characters that were not in old HSK 1",
+            "A quiz after every lesson, a 20-question final check, and all the answers",
+            "A 10-day study plan and a word index",
+            "60 pages, A4. It prints on US Letter paper too: choose \"fit to page\" when you print.",
+        ],
+        "previews": [
+            ("page-1.jpg", "The cover"),
+            ("page-3.jpg", "Every word with an example sentence"),
+            ("page-5.jpg", "Writing practice for each new character"),
+            ("page-6.jpg", "A quiz after every lesson"),
+        ],
+        "free_url": "/old-hsk-to-new-hsk/#old=1&new=1",
+        "free_text": ("The free Old HSK → New HSK tool lists the same 155 words with pinyin and meaning, and exports them to "
+                      "Anki or Pleco. The pack adds example sentences, writing practice and quizzes, laid out to print."),
+    },
+]
+
+CSS = """
+/* Printable pack pages */
+.buy { grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 10px 16px; }
+.price { font: 500 34px/1.1 var(--f-num); letter-spacing: -.01em; }
+.price-note { font-size: 14px; color: var(--muted); }
+.buy .hint { grid-column: 1 / -1; font-size: 13px; color: var(--muted); margin: 0; }
+@media (max-width: 420px) { .buy { grid-template-columns: 1fr; } }
+.button { display: inline-block; text-decoration: none; font: 500 15px var(--f-ui); padding: 10px 18px; border-radius: 999px;
+  border: 1px solid var(--accent); background: var(--accent); color: var(--accent-ink); cursor: pointer; text-align: center; }
+.button.ghost { background: transparent; color: var(--accent); }
+.button[aria-disabled="true"] { opacity: .5; cursor: default; }
+.inside { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+.previews { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.previews figure { margin: 0; display: grid; gap: 6px; }
+.previews img { width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 6px; background: #fff; }
+.previews figcaption { font-size: 13px; color: var(--muted); }
+.prose { display: grid; gap: 12px; max-width: 68ch; }
+.prose h2 { font-size: 20px; letter-spacing: -.005em; }
+.prose h3 { margin: 0 0 4px; font-size: 16px; font-weight: 600; }
+.prose p { margin: 0; }
+.pack-list { display: grid; gap: 12px; }
+.pack-item { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 14px; align-items: start; text-decoration: none; color: inherit; }
+.pack-item img { width: 96px; height: auto; border: 1px solid var(--rule); border-radius: 4px; }
+.pack-item b { display: block; color: var(--accent); }
+.pack-item span { font-size: 14px; color: var(--muted); }
+"""
+
+E = html.escape
+
+
+def url(p):
+    return f"{INDEX_URL}{p['slug']}/"
+
+
+def buy_button(p):
+    if p["checkout"]:
+        return f'<a class="button" href="{E(p["checkout"])}">Buy for {p["price"]}</a>'
+    return '<span class="button" aria-disabled="true">Checkout opens soon</span>'
+
+
+def pack_body(p, nav_html):
+    inside = "".join(f"<li>{E(x)}</li>" for x in p["inside"])
+    figs = "".join(
+        f'<figure><img src="{url(p)}{f}" width="620" height="878" loading="lazy" alt="{E(cap)}"><figcaption>{E(cap)}</figcaption></figure>'
+        for f, cap in p["previews"])
+    return f"""<div class="wrap">
+  <header>
+    {nav_html}
+    <div class="eyebrow"><span>Printable pack</span><span class="chip">PDF · {p['pages']} pages</span><span class="chip">{p['price']}</span></div>
+    <h1><span class="zh">补差</span>{E(p['name'])}</h1>
+    <p class="lede">{E(p['lede'])}</p>
+  </header>
+
+  <section class="sheet buy" aria-label="Price">
+    <div><div class="price">{p['price']}</div><div class="price-note">One-time payment · instant PDF download</div></div>
+    <div>{buy_button(p)}</div>
+    <p class="hint">If the pack isn't useful to you, email us within {REFUND_DAYS} days for a full refund. See the <a href="{TERMS_URL}">Terms</a>.</p>
+  </section>
+
+  <section class="sheet" aria-labelledby="inside-title">
+    <h2 id="inside-title">What's inside</h2>
+    <ul class="inside">{inside}</ul>
+  </section>
+
+  <section class="sheet" aria-labelledby="look-title">
+    <h2 id="look-title">Look inside</h2>
+    <div class="previews">{figs}</div>
+  </section>
+
+  <section class="sheet" aria-labelledby="free-title">
+    <h2 id="free-title">Try the free version first</h2>
+    <p class="price-note">{E(p['free_text'])}</p>
+    <p><a class="button ghost" href="{p['free_url']}">Open the free word gap tool</a></p>
+  </section>
+
+  <section class="prose" aria-labelledby="faq-title">
+    <h2 id="faq-title">Questions</h2>
+    <div>
+      <h3>Is this the official word list?</h3>
+      <p>The words follow the 2025 HSK 3.0 syllabus, the same lists used on the rest of hskcheck.com. The pack is made by
+      hskcheck.com and is not affiliated with or endorsed by the organisers of the HSK exam.</p>
+    </div>
+    <div>
+      <h3>How do I get the file?</h3>
+      <p>Right after you pay, you get a download link, and a copy of it by email. Payments are handled by Creem, our
+      online reseller, which also sends your receipt.</p>
+    </div>
+    <div>
+      <h3>Can I use it with my class?</h3>
+      <p>The pack is for one learner's own study. Teachers who would like to use it with a class can email
+      <a href="mailto:{CONTACT}">{CONTACT}</a>.</p>
+    </div>
+    <div>
+      <h3>I found a mistake.</h3>
+      <p>Please tell us at <a href="mailto:{CONTACT}">{CONTACT}</a>. We fix it and send you the corrected file.</p>
+    </div>
+  </section>
+</div>"""
+
+
+def index_body(nav_html):
+    items = "".join(
+        f'<a class="pack-item" href="{url(p)}"><img src="{url(p)}{p["previews"][0][0]}" width="620" height="878" alt="" loading="lazy">'
+        f'<div><b>{E(p["name"])}</b><span>{E(p["lede"])} {p["price"]}.</span></div></a>' for p in PACKS)
+    return f"""<div class="wrap">
+  <header>
+    {nav_html}
+    <div class="eyebrow"><span>hskcheck.com</span></div>
+    <h1>Printable packs</h1>
+    <p class="lede">Low-cost printable workbooks that go with the free tools on this site. Everything else on hskcheck.com stays free.</p>
+  </header>
+  <section class="sheet"><div class="pack-list">{items}</div></section>
+</div>"""
+
+
+def terms_body(nav_html):
+    return f"""<div class="wrap">
+  <header>
+    {nav_html}
+    <div class="eyebrow"><span>hskcheck.com</span></div>
+    <h1>Terms of Service</h1>
+    <p class="lede">Last updated: {TERMS_UPDATED}</p>
+  </header>
+
+  <section class="sheet policy">
+    <h2>About these terms</h2>
+    <p>These terms cover hskcheck.com and the printable packs sold on it. By using the site or buying a pack, you agree to them.</p>
+
+    <h2>The free tools and pages</h2>
+    <p>The tools, word lists, grammar pages and worksheets on hskcheck.com are free to use and print, including for a class.
+    We check the word lists and example sentences carefully, but we can't promise they are free of mistakes. hskcheck.com is
+    an independent site and is not affiliated with or endorsed by the organisers of the HSK or YCT exams.</p>
+
+    <h2>Printable packs</h2>
+    <p>A printable pack is a PDF file. What each pack contains is described on its page. Prices are in US dollars; any
+    sales tax or VAT for your country is added at checkout.</p>
+
+    <h2>Payment and delivery</h2>
+    <p>Orders are processed by our online reseller, Creem (creem.io), which is the merchant of record for all orders. Creem
+    takes the payment, handles sales tax and sends your receipt. Right after payment you get a link to download the PDF,
+    and the link is also sent to your email address.</p>
+
+    <h2>How you may use a pack</h2>
+    <p>A pack is for one person's own study, and you may print it as often as you like. Please don't share, upload or resell
+    the file. Teachers who want to use a pack with a class can email us for permission.</p>
+
+    <h2>Refunds</h2>
+    <p>If a pack isn't useful to you, email <a href="mailto:{CONTACT}">{CONTACT}</a> within {REFUND_DAYS} days of buying it
+    and we will refund you in full. You don't need to give a reason. Refunds go back to your original payment method through Creem.</p>
+
+    <h2>Mistakes</h2>
+    <p>If you find a mistake in a pack, tell us and we will send you a corrected version at no cost.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about these terms or an order: <a href="mailto:{CONTACT}">{CONTACT}</a>.</p>
+
+    <h2>Changes</h2>
+    <p>If these terms change, the new version will be posted on this page with a new date.</p>
+  </section>
+</div>"""
+
+
+def build(root, pages, nav, render, base_css, site):
+    css = base_css + CSS
+    urls = []
+    for p in PACKS:
+        target = root / url(p).strip("/")
+        target.mkdir(parents=True, exist_ok=True)
+        for f, _ in p["previews"]:
+            if not (target / f).exists():
+                raise SystemExit(f"packs: missing preview image {target / f}")
+        (target / "index.html").write_text(render(
+            p["title"], p["description"], site + url(p), css, pack_body(p, nav(pages, url(p)))), encoding="utf-8")
+        urls.append(url(p))
+
+    target = root / INDEX_URL.strip("/")
+    (target / "index.html").write_text(render(
+        "Printable HSK Packs | hskcheck.com",
+        "Low-cost printable HSK workbooks that go with the free tools on hskcheck.com.",
+        site + INDEX_URL, css, index_body(nav(pages, INDEX_URL))), encoding="utf-8")
+    urls.append(INDEX_URL)
+
+    target = root / TERMS_URL.strip("/")
+    target.mkdir(exist_ok=True)
+    (target / "index.html").write_text(render(
+        "Terms of Service | hskcheck.com",
+        "Terms for using hskcheck.com and buying its printable packs, including payment, delivery and refunds.",
+        site + TERMS_URL, base_css, terms_body(nav(pages, TERMS_URL))), encoding="utf-8")
+    urls.append(TERMS_URL)
+    return urls
