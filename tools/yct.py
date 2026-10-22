@@ -235,6 +235,8 @@ def build(root, pages, nav, render, base_css, tpl, site, search_key, worksheet_p
         "of the Youth Chinese Test.",
         site + YCT_URL, base_css + (tpl / "wordlist.css").read_text(encoding="utf-8")
         + (tpl / "yct.css").read_text(encoding="utf-8"), body), encoding="utf-8")
+    urls += build_compare(root, lang="en", site=site, render=render, nav_html=nav(pages, YCT_URL),
+                          css=base_css + (tpl / "wordlist.css").read_text(encoding="utf-8") + (tpl / "yct.css").read_text(encoding="utf-8"))
     return urls
 
 
@@ -318,6 +320,7 @@ def alternates(root):
         return {}
     pairs = {YCT_URL: TH_YCT_URL}
     pairs.update({f"{YCT_URL}yct-{n}-word-list/": f"{TH_YCT_URL}yct-{n}-word-list/" for n in LEVELS})
+    pairs[YCT_URL + COMPARE] = TH_YCT_URL + COMPARE
     return pairs
 
 
@@ -390,4 +393,192 @@ def build_th(*, root, tpl, site, css, render, nav, font_link, foot, search_key, 
         "เหมาะสำหรับนักเรียน ครู และผู้ปกครอง",
         site + TH_YCT_URL, css, body, font_link, lang="th", foot=foot), encoding="utf-8")
     urls.insert(0, TH_YCT_URL)
+    urls += build_compare(root, lang="th", site=site, render=render, css=css, nav_html=nav(TH_YCT_URL),
+                          font_link=font_link, foot=foot)
     return urls
+
+
+# YCT vs HSK comparison --------------------------------------------------------------------------------
+
+COMPARE = "yct-vs-hsk/"
+
+
+def hsk_levels(root):
+    """Word -> lowest HSK 3.0 level (1-9), from the old-to-new HSK data (levels 1-3 come from data/hskN.tsv)."""
+    import json
+    lv = {}
+    for name in ("words.json", "words-7-9.json"):
+        path = root / "old-hsk-to-new-hsk" / name
+        if path.exists():
+            for w in json.loads(path.read_text(encoding="utf-8"))["w"]:
+                lv.setdefault(w[0], w[3])
+    for w, n in list(lv.items()):
+        if len(w) >= 3 and w.endswith("儿"):
+            lv.setdefault(w[:-1], n)
+    return lv
+
+
+def hsk_level_of(word, lv):
+    """The HSK level where the YCT word is listed as a word, or None. Paired patterns take their later part."""
+    if word in lv:
+        return lv[word]
+    if word.endswith("儿") and word[:-1] in lv:
+        return lv[word[:-1]]
+    parts = [p for p in word.split("……") if p]
+    if len(parts) > 1 and all(p in lv for p in parts):
+        return max(lv[p] for p in parts)
+    return None
+
+
+def comparison(root):
+    lv = hsk_levels(root)
+    if not lv:
+        return None
+    hsk = {}
+    for n in (1, 2, 3):
+        hsk[n] = [line.split("\t")[0] for line in (root / "data" / f"hsk{n}.tsv").read_text(encoding="utf-8").splitlines()
+                  if line.strip()]
+    out = {}
+    for n in LEVELS:
+        rows = read_level(root, n)
+        words = {r[0] for r in rows}
+        levels = [hsk_level_of(r[0], lv) for r in rows]
+        out[n] = {
+            "rows": rows, "levels": levels, "total": len(rows),
+            "h1": levels.count(1), "h2": levels.count(2), "h3": levels.count(3),
+            "h46": sum(1 for x in levels if x and 4 <= x <= 6), "h79": sum(1 for x in levels if x and x >= 7),
+            "none": levels.count(None),
+            "covers": [sum(1 for w in hsk[k] if w in words or w + "儿" in words or (w.endswith("儿") and w[:-1] in words))
+                       for k in (1, 2, 3)],
+            "hsk_sizes": [len(hsk[k]) for k in (1, 2, 3)],
+        }
+    return out
+
+
+def pct(a, b):
+    return f"{round(100 * a / b)}%"
+
+
+def compare_body(data, lang, nav_html, thai=None):
+    th = lang == "th"
+    T = (lambda en, t: t) if th else (lambda en, t: en)
+    rows = []
+    for n in LEVELS:
+        d = data[n]
+        upto3 = d["h1"] + d["h2"] + d["h3"]
+        rows.append(f'<tr><th scope="row">YCT {n}</th><td>{d["total"]}</td><td>{d["h1"]}</td><td>{d["h2"]}</td>'
+                    f'<td>{d["h3"]}</td><td>{d["h46"] + d["h79"]}</td><td>{d["none"]}</td>'
+                    f'<td><b>{pct(upto3, d["total"])}</b></td></tr>')
+    cover = []
+    for n in LEVELS:
+        d = data[n]
+        cells = "".join(f'<td>{c} / {s}</td>' for c, s in zip(d["covers"], d["hsk_sizes"]))
+        cover.append(f'<tr><th scope="row">YCT {n}</th>{cells}<td><b>{sum(d["covers"])} / {sum(d["hsk_sizes"])}</b></td></tr>')
+    d4 = data[4]
+    above = [(r, l) for r, l in zip(d4["rows"], d4["levels"]) if l and l >= 4]
+    above.sort(key=lambda x: (x[1], x[0][1]))
+    meaning = {r[0]: m for r, m in zip(d4["rows"], thai)} if thai else {}
+    arows = "\n".join(
+        f'<tr><td class="hz">{html.escape(r[0])}</td><td class="py">{html.escape(r[1])}</td>'
+        f'<td class="en">{html.escape(meaning.get(r[0], r[2]))}</td><td>HSK {l}</td></tr>' for r, l in above)
+    none = [r for r, l in zip(d4["rows"], d4["levels"]) if l is None]
+    none_html = "、".join(f'<span class="zh-inline">{html.escape(r[0])}</span>' for r in none)
+    y4_upto3 = d4["h1"] + d4["h2"] + d4["h3"]
+    y3 = data[3]
+    wl = (lambda n: f"{TH_YCT_URL}yct-{n}-word-list/") if th else (lambda n: f"{YCT_URL}yct-{n}-word-list/")
+    hskwl = (lambda n: f"/th/hsk-{n}-word-list/") if th else (lambda n: f"/hsk-{n}-word-list/")
+    summary = T(
+        f"Most YCT words are HSK 1–3 words: {pct(y3['h1'] + y3['h2'] + y3['h3'], y3['total'])} of YCT 3 and "
+        f"{pct(y4_upto3, d4['total'])} of YCT 4. But YCT 4, the top level, covers only {sum(d4['covers'])} of the "
+        f"{sum(d4['hsk_sizes'])} different words in HSK 1–3. In vocabulary, YCT 1–2 are mostly HSK 1 words, YCT 3 reaches "
+        "into HSK 2 and 3, and YCT 4 spreads across HSK 1–3 without covering any of them completely.",
+        f"คำศัพท์ YCT ส่วนใหญ่เป็นคำศัพท์ HSK 1–3 คือ {pct(y3['h1'] + y3['h2'] + y3['h3'], y3['total'])} ของ YCT 3 และ "
+        f"{pct(y4_upto3, d4['total'])} ของ YCT 4 แต่ YCT 4 ซึ่งเป็นระดับสูงสุด ครอบคลุมคำศัพท์เพียง {sum(d4['covers'])} คำ "
+        f"จาก {sum(d4['hsk_sizes'])} คำที่ไม่ซ้ำกันของ HSK 1–3 ในแง่คำศัพท์ YCT 1–2 ส่วนใหญ่เป็นคำศัพท์ HSK 1 YCT 3 เริ่มเข้าไปใน HSK 2 และ 3 "
+        "ส่วน YCT 4 กระจายอยู่ใน HSK 1–3 แต่ไม่ครอบคลุมระดับใดครบทั้งหมด")
+    return f"""<div class="wrap">
+  <header>
+    {nav_html}
+    <div class="eyebrow"><span>{T("YCT · HSK 3.0", "YCT · HSK 3.0")}</span><span class="chip">{T("Word list comparison", "เปรียบเทียบคำศัพท์")}</span></div>
+    <h1>{T("YCT vs HSK: Which HSK Level Is Each YCT Level?", "YCT เทียบกับ HSK: YCT แต่ละระดับเท่ากับ HSK ระดับไหน")}</h1>
+    <p class="lede">{summary}</p>
+  </header>
+
+  <section class="sheet" aria-labelledby="t1">
+    <h2 id="t1">{T("Where the YCT words sit in HSK 3.0", "คำศัพท์ YCT อยู่ใน HSK 3.0 ระดับไหน")}</h2>
+    <p class="lede">{T("Each YCT word is counted at the lowest HSK 3.0 level that lists it.", "นับคำศัพท์ YCT แต่ละคำตามระดับ HSK 3.0 ที่ต่ำที่สุดที่มีคำนั้นอยู่")}</p>
+    <div class="levels-wrap"><table class="levels">
+      <thead><tr><th scope="col">YCT</th><th scope="col">{T("Words", "คำ")}</th><th scope="col">HSK 1</th><th scope="col">HSK 2</th><th scope="col">HSK 3</th><th scope="col">HSK 4–6</th><th scope="col">{T("Not an HSK word", "ไม่ใช่คำใน HSK")}</th><th scope="col">{T("HSK 1–3", "HSK 1–3")}</th></tr></thead>
+      <tbody>
+{chr(10).join(rows)}
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="sheet" aria-labelledby="t2">
+    <h2 id="t2">{T("How much of HSK each YCT level covers", "YCT แต่ละระดับครอบคลุมคำศัพท์ HSK ได้แค่ไหน")}</h2>
+    <p class="lede">{T("The other way round: how many words of each HSK level are already in the YCT list.", "มองกลับกัน: คำศัพท์ของ HSK แต่ละระดับมีอยู่ในรายการ YCT แล้วกี่คำ")}</p>
+    <div class="levels-wrap"><table class="levels">
+      <thead><tr><th scope="col">YCT</th><th scope="col">HSK 1</th><th scope="col">HSK 2</th><th scope="col">HSK 3</th><th scope="col">HSK 1–3</th></tr></thead>
+      <tbody>
+{chr(10).join(cover)}
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="prose" aria-labelledby="t3">
+    <h2 id="t3">{T("What this means", "หมายความว่าอย่างไร")}</h2>
+    <p>{T("A student who passes YCT 4 knows a good part of the HSK 1–3 vocabulary, but not all of it. Moving on to the HSK, the quickest path is to learn the HSK 1–3 words that are not in the YCT list, rather than starting HSK 1 from scratch.",
+          "นักเรียนที่สอบผ่าน YCT 4 รู้คำศัพท์ HSK 1–3 ไปมากพอสมควร แต่ไม่ครบทั้งหมด ถ้าจะต่อไปสอบ HSK วิธีที่เร็วที่สุดคือเรียนคำศัพท์ HSK 1–3 ส่วนที่ไม่อยู่ใน YCT แทนที่จะเริ่ม HSK 1 ใหม่ตั้งแต่ต้น")}</p>
+    <p>{T("The YCT is written for children, so its list includes words the HSK leaves for later, such as animals, sports and single-character colours like <span class=\"zh-inline\">红</span> and <span class=\"zh-inline\">黄</span>, and a few everyday phrases that the HSK does not list as separate words. Those are shown below.",
+          "YCT ออกแบบมาสำหรับเด็ก รายการคำศัพท์จึงมีคำที่ HSK เก็บไว้ในระดับสูงกว่า เช่น สัตว์ กีฬา และชื่อสีแบบตัวเดียวอย่าง <span class=\"zh-inline\">红</span> และ <span class=\"zh-inline\">黄</span> รวมถึงวลีในชีวิตประจำวันบางคำที่ HSK ไม่ได้นับเป็นคำแยก ดูรายการด้านล่าง")}</p>
+    <p>{T("This page compares word lists only. The YCT and the HSK are different exams with their own formats, and there is no official equivalence between their levels.",
+          "หน้านี้เปรียบเทียบเฉพาะรายการคำศัพท์ YCT และ HSK เป็นการสอบคนละแบบ มีรูปแบบข้อสอบของตัวเอง และไม่มีการเทียบระดับอย่างเป็นทางการระหว่างกัน")}</p>
+  </section>
+
+  <section class="sheet" aria-labelledby="t4">
+    <h2 id="t4">{T(f"The {len(above)} YCT 4 words above HSK 3", f"คำศัพท์ YCT 4 จำนวน {len(above)} คำที่สูงกว่า HSK 3")}</h2>
+    <div class="table-wrap"><table class="words-table">
+      <thead><tr><th scope="col">{T("Word", "คำ")}</th><th scope="col">{T("Pinyin", "พินอิน")}</th><th scope="col">{T("Meaning", "ความหมาย")}</th><th scope="col">HSK</th></tr></thead>
+      <tbody>
+{arows}
+      </tbody>
+    </table></div>
+    <p class="lede">{T(f"Not listed as separate words in HSK 3.0 ({len(none)}): ", f"ไม่ได้อยู่ใน HSK 3.0 ในฐานะคำแยก ({len(none)} คำ): ")}{none_html}</p>
+  </section>
+
+  <section class="sheet" aria-labelledby="t5">
+    <h2 id="t5">{T("Word lists", "รายการคำศัพท์")}</h2>
+    <div class="cta"><a class="button ghost" href="{wl(1)}">YCT 1</a><a class="button ghost" href="{wl(2)}">YCT 2</a><a class="button ghost" href="{wl(3)}">YCT 3</a><a class="button ghost" href="{wl(4)}">YCT 4</a><a class="button ghost" href="{hskwl(1)}">HSK 1</a><a class="button ghost" href="{hskwl(2)}">HSK 2</a><a class="button ghost" href="{hskwl(3)}">HSK 3</a></div>
+  </section>
+
+  <footer class="notes">
+    <p><b>{T("Method.", "วิธีนับ")}</b> {T("YCT words follow the official YCT syllabus. HSK levels follow the HSK 3.0 (2025) word lists: levels 1–3 from this site's cross-checked lists, levels 4–9 from complete-hsk-vocabulary. A word counts as an HSK word only if the HSK list has it as written (a final 儿 may be dropped); phrases such as 打篮球 are not split into parts. Paired patterns such as 一边……一边…… are counted at the level of their parts.",
+        "คำศัพท์ YCT เป็นไปตามหลักสูตร YCT อย่างเป็นทางการ ระดับ HSK เป็นไปตามรายการคำศัพท์ HSK 3.0 (2025) ระดับ 1–3 จากรายการที่เว็บไซต์นี้ตรวจทานแล้ว ระดับ 4–9 จาก complete-hsk-vocabulary คำหนึ่งจะนับเป็นคำ HSK ก็ต่อเมื่อรายการ HSK มีคำนั้นตรงตามที่เขียน (ตัด 儿 ท้ายคำได้) วลีอย่าง 打篮球 จะไม่ถูกแยกเป็นส่วน ๆ ส่วนรูปประโยคคู่อย่าง 一边……一边…… นับตามระดับของส่วนประกอบ")}</p>
+  </footer>
+</div>"""
+
+
+def build_compare(root, *, lang, site, render, css, nav_html, font_link="", foot=None):
+    data = comparison(root)
+    if not data:
+        return []
+    th = lang == "th"
+    thai = read_thai(root, 4, data[4]["rows"]) if th else None
+    url = (TH_YCT_URL if th else YCT_URL) + COMPARE
+    body = compare_body(data, lang, nav_html, thai)
+    d4, d3 = data[4], data[3]
+    if th:
+        title = "YCT เทียบกับ HSK: YCT แต่ละระดับเท่ากับ HSK ระดับไหน"
+        desc = (f"เปรียบเทียบคำศัพท์ YCT 1–4 กับ HSK 3.0: YCT 4 ครอบคลุมคำศัพท์ HSK 1–3 {sum(d4['covers'])} จาก "
+                f"{sum(d4['hsk_sizes'])} คำ พร้อมรายการคำที่สูงกว่า HSK 3")
+        kw = dict(lang="th", foot=foot)
+    else:
+        title = "YCT vs HSK: Which HSK Level Is Each YCT Level?"
+        desc = (f"YCT 1–4 compared with HSK 3.0, word by word: YCT 4 covers {sum(d4['covers'])} of the "
+                f"{sum(d4['hsk_sizes'])} HSK 1–3 words. With the YCT 4 words above HSK 3.")
+        kw = {}
+    target = root / url.strip("/")
+    target.mkdir(parents=True, exist_ok=True)
+    (target / "index.html").write_text(render(title, desc, site + url, css, body, font_link, **kw), encoding="utf-8")
+    return [url]

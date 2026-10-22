@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>YCT vs HSK: Which HSK Level Is Each YCT Level?</title>
+<meta name="description" content="YCT 1–4 compared with HSK 3.0, word by word: YCT 4 covers 484 of the 997 HSK 1–3 words. With the YCT 4 words above HSK 3.">
+<link rel="canonical" href="https://hskcheck.com/yct/yct-vs-hsk/">
+<meta property="og:title" content="YCT vs HSK: Which HSK Level Is Each YCT Level?">
+<meta property="og:description" content="YCT 1–4 compared with HSK 3.0, word by word: YCT 4 covers 484 of the 997 HSK 1–3 words. With the YCT 4 words above HSK 3.">
+<meta property="og:url" content="https://hskcheck.com/yct/yct-vs-hsk/">
+<meta property="og:type" content="website">
+<link rel="alternate" hreflang="en" href="https://hskcheck.com/yct/yct-vs-hsk/">
+<link rel="alternate" hreflang="th" href="https://hskcheck.com/th/yct/yct-vs-hsk/">
+<link rel="alternate" hreflang="x-default" href="https://hskcheck.com/yct/yct-vs-hsk/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@600&display=swap">
+<style>
+:root {
+  --paper: #F3F5F8;
+  --sheet: #FFFFFF;
+  --ink: #1A2130;
+  --muted: #586274;
+  --rule: #DCE1E9;
+  --accent: #2A4A9A;
+  --accent-ink: #FFFFFF;
+  --l1: #1F7A5C; --l1-bg: #E2F2EB;
+  --l2: #2A68AE; --l2-bg: #E3EDF8;
+  --l3: #7A4CAE; --l3-bg: #EEE6F8;
+  --over: #C0392B; --over-bg: #FCE5E1;
+  --ok: #1F7A5C; --warn: #A15C00; --bad: #C0392B;
+  --f-ui: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --f-num: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --f-zh: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --f-zh-display: "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --radius: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0F131A; --sheet: #171C25; --ink: #E6EAF1; --muted: #9AA4B6; --rule: #2A3242;
+    --accent: #93ACEB; --accent-ink: #0F131A;
+    --l1: #63CDA2; --l1-bg: #15302A; --l2: #82B4EE; --l2-bg: #172A40; --l3: #BB9EEA; --l3-bg: #2A2142;
+    --over: #F28B78; --over-bg: #3D1F1A; --ok: #63CDA2; --warn: #E9B060; --bad: #F28B78;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0F131A; --sheet: #171C25; --ink: #E6EAF1; --muted: #9AA4B6; --rule: #2A3242;
+  --accent: #93ACEB; --accent-ink: #0F131A;
+  --l1: #63CDA2; --l1-bg: #15302A; --l2: #82B4EE; --l2-bg: #172A40; --l3: #BB9EEA; --l3-bg: #2A2142;
+  --over: #F28B78; --over-bg: #3D1F1A; --ok: #63CDA2; --warn: #E9B060; --bad: #F28B78;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: var(--f-ui); font-size: 16px; line-height: 1.55;
+  padding-inline: 16px; padding-block: 28px 48px;
+}
+.wrap { max-width: 760px; margin: 0 auto; display: grid; gap: 22px; }
+header { display: grid; gap: 8px; }
+.eyebrow { display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+  font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+.chip { border: 1px solid var(--rule); border-radius: 999px; padding: 1px 8px; letter-spacing: .04em; }
+h1 { margin: 0; font-size: clamp(28px, 6vw, 40px); line-height: 1.12; font-weight: 600; text-wrap: balance; letter-spacing: -.01em; }
+h1 .zh { font-family: var(--f-zh-display); font-weight: 600; color: var(--accent); margin-right: .25em; }
+.lede { margin: 0; color: var(--muted); max-width: 60ch; }
+
+.sheet { background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--radius); padding: 18px; display: grid; gap: 14px; min-width: 0; }
+a { color: var(--accent); text-underline-offset: 3px; }
+.zh-inline { font-family: var(--f-zh); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.site-nav { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; font-weight: 500; }
+.site-nav a { text-decoration: none; color: var(--muted); padding-block: 2px; border-bottom: 2px solid transparent; }
+.site-nav a:hover { color: var(--ink); }
+.site-nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
+h2 { margin: 0; font-size: 15px; font-weight: 600; letter-spacing: .01em; }
+.table-wrap { overflow-x: auto; }
+table.counts { border-collapse: collapse; font-size: 14px; min-width: 320px; }
+table.counts th, table.counts td { text-align: left; padding: 7px 14px 7px 0; border-bottom: 1px solid var(--rule); }
+table.counts th { font-weight: 600; color: var(--muted); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+table.counts td.num { font-family: var(--f-num); font-variant-numeric: tabular-nums; }
+.notes { font-size: 13px; color: var(--muted); display: grid; gap: 6px; max-width: 70ch; }
+.notes p { margin: 0; }
+.notes b { color: var(--ink); font-weight: 600; }
+.site-foot { max-width: 760px; margin: 28px auto 0; font-size: 13px; color: var(--muted); }
+.site-foot a { color: var(--muted); }
+.policy { gap: 10px; }
+.policy h2 { margin-top: 8px; }
+.policy p { margin: 0; max-width: 70ch; }
+/* Word list page: a searchable vocabulary sheet, one row per word, numbered in syllabus order. */
+.tools-row { display: flex; gap: 10px 16px; align-items: center; flex-wrap: wrap; justify-content: space-between; }
+.search { flex: 1 1 240px; min-width: 0; padding: 10px 12px; font: 400 16px var(--f-ui); color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; }
+.count { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+table.words-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+table.words-table th { text-align: left; font-weight: 600; color: var(--muted); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; padding: 8px 10px 8px 0; border-bottom: 1px solid var(--rule); position: sticky; top: env(safe-area-inset-top, 0px); background: var(--sheet); }
+table.words-table td { padding: 9px 10px 9px 0; border-bottom: 1px solid var(--rule); vertical-align: baseline; }
+table.words-table td.n { font-family: var(--f-num); font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; width: 3.2em; }
+table.words-table td.hz { font-family: var(--f-zh); font-size: 21px; white-space: nowrap; }
+table.words-table td.py { font-size: 15px; color: var(--accent); white-space: nowrap; }
+table.words-table td.en { color: var(--ink); min-width: 0; }
+.cta { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.cta a.button { display: inline-block; text-decoration: none; font: 500 14px var(--f-ui); padding: 9px 16px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); }
+.cta a.button.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+.empty { color: var(--muted); font-size: 15px; margin: 0; }
+.prose { display: grid; gap: 12px; max-width: 68ch; }
+.prose p { margin: 0; }
+.prose .zh-inline { font-family: var(--f-zh); }
+@media (max-width: 480px) { table.words-table td.hz { font-size: 19px; } table.words-table td.py { white-space: normal; } }
+/* YCT pages: level badges in the word list, the "only new words" toggle and the overview table. */
+.new-toggle { display: inline-flex; gap: 6px; align-items: center; font-size: 14px; color: var(--ink); white-space: nowrap; }
+.new-toggle input { width: 16px; height: 16px; accent-color: var(--accent); }
+table.words-table td.lv { white-space: nowrap; width: 3em; }
+span.lv { display: inline-block; min-width: 1.6em; text-align: center; font-size: 12px; font-weight: 500; padding: 1px 8px; border-radius: 999px; }
+span.lv1 { color: var(--l1); background: var(--l1-bg); }
+span.lv2 { color: var(--l2); background: var(--l2-bg); }
+span.lv3 { color: var(--l3); background: var(--l3-bg); }
+span.lv4 { color: var(--warn); background: var(--paper); border: 1px solid var(--rule); }
+.levels-wrap { overflow-x: auto; }
+table.levels { width: 100%; border-collapse: collapse; font-size: 15px; }
+table.levels th { text-align: left; font-weight: 600; color: var(--muted); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; padding: 8px 12px 8px 0; border-bottom: 1px solid var(--rule); }
+table.levels td { padding: 10px 12px 10px 0; border-bottom: 1px solid var(--rule); font-variant-numeric: tabular-nums; }
+table.levels th[scope="row"] { text-align: left; font-weight: 600; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+table.levels small { color: var(--muted); }
+table.words-table td.en { min-width: 8em; }
+table.words-table td.hz { white-space: normal; min-width: 2.2em; }
+@media (max-width: 480px) { table.words-table td.py { overflow-wrap: anywhere; min-width: 4em; } }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <nav class="site-nav" aria-label="Site"><a href="/">Level Checker</a><a href="/hsk-1-word-list/">HSK 1 Words</a><a href="/hsk-2-word-list/">HSK 2 Words</a><a href="/hsk-3-word-list/">HSK 3 Words</a><a href="/chinese-character-worksheets/">Writing Sheets</a><a href="/hsk-handwriting-characters/">Handwriting</a><a href="/mandarin-tone-changes/">Tone Changes</a><a href="/baduanjin/">Baduanjin</a><a href="/chinese-measure-words/">Measure Words</a><a href="/old-hsk-to-new-hsk/">Old → New HSK</a><a href="/learn/">Grammar</a><a href="/yct/" aria-current="page">YCT</a><a href="/th/">ภาษาไทย</a></nav>
+    <div class="eyebrow"><span>YCT · HSK 3.0</span><span class="chip">Word list comparison</span></div>
+    <h1>YCT vs HSK: Which HSK Level Is Each YCT Level?</h1>
+    <p class="lede">Most YCT words are HSK 1–3 words: 92% of YCT 3 and 80% of YCT 4. But YCT 4, the top level, covers only 484 of the 997 different words in HSK 1–3. In vocabulary, YCT 1–2 are mostly HSK 1 words, YCT 3 reaches into HSK 2 and 3, and YCT 4 spreads across HSK 1–3 without covering any of them completely.</p>
+  </header>
+
+  <section class="sheet" aria-labelledby="t1">
+    <h2 id="t1">Where the YCT words sit in HSK 3.0</h2>
+    <p class="lede">Each YCT word is counted at the lowest HSK 3.0 level that lists it.</p>
+    <div class="levels-wrap"><table class="levels">
+      <thead><tr><th scope="col">YCT</th><th scope="col">Words</th><th scope="col">HSK 1</th><th scope="col">HSK 2</th><th scope="col">HSK 3</th><th scope="col">HSK 4–6</th><th scope="col">Not an HSK word</th><th scope="col">HSK 1–3</th></tr></thead>
+      <tbody>
+<tr><th scope="row">YCT 1</th><td>80</td><td>69</td><td>7</td><td>2</td><td>1</td><td>1</td><td><b>98%</b></td></tr>
+<tr><th scope="row">YCT 2</th><td>150</td><td>125</td><td>12</td><td>5</td><td>3</td><td>5</td><td><b>95%</b></td></tr>
+<tr><th scope="row">YCT 3</th><td>300</td><td>182</td><td>62</td><td>33</td><td>9</td><td>14</td><td><b>92%</b></td></tr>
+<tr><th scope="row">YCT 4</th><td>598</td><td>198</td><td>96</td><td>182</td><td>88</td><td>34</td><td><b>80%</b></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="sheet" aria-labelledby="t2">
+    <h2 id="t2">How much of HSK each YCT level covers</h2>
+    <p class="lede">The other way round: how many words of each HSK level are already in the YCT list.</p>
+    <div class="levels-wrap"><table class="levels">
+      <thead><tr><th scope="col">YCT</th><th scope="col">HSK 1</th><th scope="col">HSK 2</th><th scope="col">HSK 3</th><th scope="col">HSK 1–3</th></tr></thead>
+      <tbody>
+<tr><th scope="row">YCT 1</th><td>72 / 300</td><td>8 / 198</td><td>3 / 499</td><td><b>83 / 997</b></td></tr>
+<tr><th scope="row">YCT 2</th><td>128 / 300</td><td>13 / 198</td><td>8 / 499</td><td><b>149 / 997</b></td></tr>
+<tr><th scope="row">YCT 3</th><td>186 / 300</td><td>63 / 198</td><td>38 / 499</td><td><b>287 / 997</b></td></tr>
+<tr><th scope="row">YCT 4</th><td>201 / 300</td><td>97 / 198</td><td>186 / 499</td><td><b>484 / 997</b></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="prose" aria-labelledby="t3">
+    <h2 id="t3">What this means</h2>
+    <p>A student who passes YCT 4 knows a good part of the HSK 1–3 vocabulary, but not all of it. Moving on to the HSK, the quickest path is to learn the HSK 1–3 words that are not in the YCT list, rather than starting HSK 1 from scratch.</p>
+    <p>The YCT is written for children, so its list includes words the HSK leaves for later, such as animals, sports and single-character colours like <span class="zh-inline">红</span> and <span class="zh-inline">黄</span>, and a few everyday phrases that the HSK does not list as separate words. Those are shown below.</p>
+    <p>This page compares word lists only. The YCT and the HSK are different exams with their own formats, and there is no official equivalence between their levels.</p>
+  </section>
+
+  <section class="sheet" aria-labelledby="t4">
+    <h2 id="t4">The 88 YCT 4 words above HSK 3</h2>
+    <div class="table-wrap"><table class="words-table">
+      <thead><tr><th scope="col">Word</th><th scope="col">Pinyin</th><th scope="col">Meaning</th><th scope="col">HSK</th></tr></thead>
+      <tbody>
+<tr><td class="hz">毕业</td><td class="py">bìyè</td><td class="en">to graduate</td><td>HSK 4</td></tr>
+<tr><td class="hz">鼻子</td><td class="py">bízi</td><td class="en">nose</td><td>HSK 4</td></tr>
+<tr><td class="hz">饼干</td><td class="py">bǐnggān</td><td class="en">biscuit</td><td>HSK 4</td></tr>
+<tr><td class="hz">窗户</td><td class="py">chuānghu</td><td class="en">window</td><td>HSK 4</td></tr>
+<tr><td class="hz">猜</td><td class="py">cāi</td><td class="en">to guess</td><td>HSK 4</td></tr>
+<tr><td class="hz">参观</td><td class="py">cānguān</td><td class="en">to visit (a place)</td><td>HSK 4</td></tr>
+<tr><td class="hz">多么</td><td class="py">duōme</td><td class="en">how (in exclamations)</td><td>HSK 4</td></tr>
+<tr><td class="hz">戴</td><td class="py">dài</td><td class="en">to wear (glasses, a hat, a watch)</td><td>HSK 4</td></tr>
+<tr><td class="hz">地址</td><td class="py">dìzhǐ</td><td class="en">address</td><td>HSK 4</td></tr>
+<tr><td class="hz">肚子</td><td class="py">dùzi</td><td class="en">belly, tummy</td><td>HSK 4</td></tr>
+<tr><td class="hz">打扰</td><td class="py">dǎrǎo</td><td class="en">to disturb</td><td>HSK 4</td></tr>
+<tr><td class="hz">打针</td><td class="py">dǎzhēn</td><td class="en">to have an injection</td><td>HSK 4</td></tr>
+<tr><td class="hz">挂</td><td class="py">guà</td><td class="en">to hang</td><td>HSK 4</td></tr>
+<tr><td class="hz">果汁</td><td class="py">guǒzhī</td><td class="en">fruit juice</td><td>HSK 4</td></tr>
+<tr><td class="hz">够</td><td class="py">gòu</td><td class="en">enough</td><td>HSK 4</td></tr>
+<tr><td class="hz">功夫</td><td class="py">gōngfu</td><td class="en">kung fu</td><td>HSK 4</td></tr>
+<tr><td class="hz">公里</td><td class="py">gōnglǐ</td><td class="en">kilometre</td><td>HSK 4</td></tr>
+<tr><td class="hz">敢</td><td class="py">gǎn</td><td class="en">to dare</td><td>HSK 4</td></tr>
+<tr><td class="hz">寒假</td><td class="py">hánjià</td><td class="en">winter holiday</td><td>HSK 4</td></tr>
+<tr><td class="hz">盒子</td><td class="py">hézi</td><td class="en">box</td><td>HSK 4</td></tr>
+<tr><td class="hz">护士</td><td class="py">hùshi</td><td class="en">nurse</td><td>HSK 4</td></tr>
+<tr><td class="hz">互相</td><td class="py">hùxiāng</td><td class="en">each other</td><td>HSK 4</td></tr>
+<tr><td class="hz">将来</td><td class="py">jiānglái</td><td class="en">the future</td><td>HSK 4</td></tr>
+<tr><td class="hz">减</td><td class="py">jiǎn</td><td class="en">to subtract</td><td>HSK 4</td></tr>
+<tr><td class="hz">既……又……</td><td class="py">jì…yòu…</td><td class="en">both... and...</td><td>HSK 4</td></tr>
+<tr><td class="hz">警察</td><td class="py">jǐngchá</td><td class="en">police officer</td><td>HSK 4</td></tr>
+<tr><td class="hz">紧张</td><td class="py">jǐnzhāng</td><td class="en">nervous</td><td>HSK 4</td></tr>
+<tr><td class="hz">联系</td><td class="py">liánxì</td><td class="en">to contact</td><td>HSK 4</td></tr>
+<tr><td class="hz">俩</td><td class="py">liǎ</td><td class="en">two (people)</td><td>HSK 4</td></tr>
+<tr><td class="hz">辣</td><td class="py">là</td><td class="en">spicy</td><td>HSK 4</td></tr>
+<tr><td class="hz">来得及</td><td class="py">láidejí</td><td class="en">to have enough time</td><td>HSK 4</td></tr>
+<tr><td class="hz">厉害</td><td class="py">lìhai</td><td class="en">amazing; severe</td><td>HSK 4</td></tr>
+<tr><td class="hz">另外</td><td class="py">lìngwài</td><td class="en">besides, in addition</td><td>HSK 4</td></tr>
+<tr><td class="hz">老虎</td><td class="py">lǎohǔ</td><td class="en">tiger</td><td>HSK 4</td></tr>
+<tr><td class="hz">礼貌</td><td class="py">lǐmào</td><td class="en">polite; manners</td><td>HSK 4</td></tr>
+<tr><td class="hz">暖和</td><td class="py">nuǎnhuo</td><td class="en">warm</td><td>HSK 4</td></tr>
+<tr><td class="hz">排队</td><td class="py">páiduì</td><td class="en">to queue</td><td>HSK 4</td></tr>
+<tr><td class="hz">排球</td><td class="py">páiqiú</td><td class="en">volleyball</td><td>HSK 4</td></tr>
+<tr><td class="hz">破</td><td class="py">pò</td><td class="en">broken, torn</td><td>HSK 4</td></tr>
+<tr><td class="hz">葡萄</td><td class="py">pútao</td><td class="en">grape</td><td>HSK 4</td></tr>
+<tr><td class="hz">乒乓球</td><td class="py">pīngpāngqiú</td><td class="en">table tennis</td><td>HSK 4</td></tr>
+<tr><td class="hz">桥</td><td class="py">qiáo</td><td class="en">bridge</td><td>HSK 4</td></tr>
+<tr><td class="hz">巧克力</td><td class="py">qiǎokèlì</td><td class="en">chocolate</td><td>HSK 4</td></tr>
+<tr><td class="hz">受不了</td><td class="py">shòubuliǎo</td><td class="en">can&#x27;t stand</td><td>HSK 4</td></tr>
+<tr><td class="hz">熟悉</td><td class="py">shúxī</td><td class="en">familiar</td><td>HSK 4</td></tr>
+<tr><td class="hz">暑假</td><td class="py">shǔjià</td><td class="en">summer holiday</td><td>HSK 4</td></tr>
+<tr><td class="hz">散步</td><td class="py">sànbù</td><td class="en">to go for a walk</td><td>HSK 4</td></tr>
+<tr><td class="hz">孙子</td><td class="py">sūnzi</td><td class="en">grandson</td><td>HSK 4</td></tr>
+<tr><td class="hz">脱</td><td class="py">tuō</td><td class="en">to take off (clothes, shoes)</td><td>HSK 4</td></tr>
+<tr><td class="hz">停</td><td class="py">tíng</td><td class="en">to stop</td><td>HSK 4</td></tr>
+<tr><td class="hz">汤</td><td class="py">tāng</td><td class="en">soup</td><td>HSK 4</td></tr>
+<tr><td class="hz">躺</td><td class="py">tǎng</td><td class="en">to lie down</td><td>HSK 4</td></tr>
+<tr><td class="hz">讨论</td><td class="py">tǎolùn</td><td class="en">to discuss</td><td>HSK 4</td></tr>
+<tr><td class="hz">讨厌</td><td class="py">tǎoyàn</td><td class="en">to dislike; annoying</td><td>HSK 4</td></tr>
+<tr><td class="hz">无论</td><td class="py">wúlùn</td><td class="en">no matter</td><td>HSK 4</td></tr>
+<tr><td class="hz">危险</td><td class="py">wēixiǎn</td><td class="en">dangerous</td><td>HSK 4</td></tr>
+<tr><td class="hz">响</td><td class="py">xiǎng</td><td class="en">to ring, to make a sound</td><td>HSK 4</td></tr>
+<tr><td class="hz">幸福</td><td class="py">xìngfú</td><td class="en">happy (a deep, lasting happiness)</td><td>HSK 4</td></tr>
+<tr><td class="hz">西红柿</td><td class="py">xīhóngshì</td><td class="en">tomato</td><td>HSK 4</td></tr>
+<tr><td class="hz">星星</td><td class="py">xīngxing</td><td class="en">star</td><td>HSK 4</td></tr>
+<tr><td class="hz">心情</td><td class="py">xīnqíng</td><td class="en">mood</td><td>HSK 4</td></tr>
+<tr><td class="hz">醒</td><td class="py">xǐng</td><td class="en">to wake up</td><td>HSK 4</td></tr>
+<tr><td class="hz">钥匙</td><td class="py">yàoshi</td><td class="en">key</td><td>HSK 4</td></tr>
+<tr><td class="hz">云</td><td class="py">yún</td><td class="en">cloud</td><td>HSK 4</td></tr>
+<tr><td class="hz">眼镜</td><td class="py">yǎnjìng</td><td class="en">glasses</td><td>HSK 4</td></tr>
+<tr><td class="hz">勇敢</td><td class="py">yǒnggǎn</td><td class="en">brave</td><td>HSK 4</td></tr>
+<tr><td class="hz">祝贺</td><td class="py">zhùhè</td><td class="en">to congratulate</td><td>HSK 4</td></tr>
+<tr><td class="hz">知识</td><td class="py">zhīshi</td><td class="en">knowledge</td><td>HSK 4</td></tr>
+<tr><td class="hz">准时</td><td class="py">zhǔnshí</td><td class="en">on time</td><td>HSK 4</td></tr>
+<tr><td class="hz">杂志</td><td class="py">zázhì</td><td class="en">magazine</td><td>HSK 4</td></tr>
+<tr><td class="hz">白</td><td class="py">bái</td><td class="en">white</td><td>HSK 5</td></tr>
+<tr><td class="hz">虫子</td><td class="py">chóngzi</td><td class="en">insect, bug</td><td>HSK 5</td></tr>
+<tr><td class="hz">大象</td><td class="py">dàxiàng</td><td class="en">elephant</td><td>HSK 5</td></tr>
+<tr><td class="hz">红</td><td class="py">hóng</td><td class="en">red</td><td>HSK 5</td></tr>
+<tr><td class="hz">猴子</td><td class="py">hóuzi</td><td class="en">monkey</td><td>HSK 5</td></tr>
+<tr><td class="hz">蝴蝶</td><td class="py">húdié</td><td class="en">butterfly</td><td>HSK 5</td></tr>
+<tr><td class="hz">哈</td><td class="py">hā</td><td class="en">ha (laughter)</td><td>HSK 5</td></tr>
+<tr><td class="hz">黑</td><td class="py">hēi</td><td class="en">black</td><td>HSK 5</td></tr>
+<tr><td class="hz">梨</td><td class="py">lí</td><td class="en">pear</td><td>HSK 5</td></tr>
+<tr><td class="hz">迷路</td><td class="py">mílù</td><td class="en">to get lost</td><td>HSK 5</td></tr>
+<tr><td class="hz">桃</td><td class="py">táo</td><td class="en">peach</td><td>HSK 5</td></tr>
+<tr><td class="hz">兔子</td><td class="py">tùzi</td><td class="en">rabbit</td><td>HSK 5</td></tr>
+<tr><td class="hz">玩具</td><td class="py">wánjù</td><td class="en">toy</td><td>HSK 5</td></tr>
+<tr><td class="hz">小姐</td><td class="py">xiǎojiě</td><td class="en">Miss; young lady</td><td>HSK 5</td></tr>
+<tr><td class="hz">信封</td><td class="py">xìnfēng</td><td class="en">envelope</td><td>HSK 5</td></tr>
+<tr><td class="hz">圆</td><td class="py">yuán</td><td class="en">round</td><td>HSK 5</td></tr>
+<tr><td class="hz">黄</td><td class="py">huáng</td><td class="en">yellow</td><td>HSK 6</td></tr>
+<tr><td class="hz">马虎</td><td class="py">mǎhu</td><td class="en">careless</td><td>HSK 6</td></tr>
+      </tbody>
+    </table></div>
+    <p class="lede">Not listed as separate words in HSK 3.0 (34): <span class="zh-inline">北京</span>、<span class="zh-inline">长城</span>、<span class="zh-inline">唱歌</span>、<span class="zh-inline">春季</span>、<span class="zh-inline">打篮球</span>、<span class="zh-inline">大海</span>、<span class="zh-inline">第一</span>、<span class="zh-inline">电灯</span>、<span class="zh-inline">电子邮件</span>、<span class="zh-inline">冬</span>、<span class="zh-inline">服务员</span>、<span class="zh-inline">公共汽车</span>、<span class="zh-inline">刮风</span>、<span class="zh-inline">极了</span>、<span class="zh-inline">烤鸭</span>、<span class="zh-inline">流汗</span>、<span class="zh-inline">绿</span>、<span class="zh-inline">玫瑰花</span>、<span class="zh-inline">爬山</span>、<span class="zh-inline">骑马</span>、<span class="zh-inline">秋</span>、<span class="zh-inline">上边</span>、<span class="zh-inline">上海</span>、<span class="zh-inline">售票员</span>、<span class="zh-inline">刷牙</span>、<span class="zh-inline">弹钢琴</span>、<span class="zh-inline">踢足球</span>、<span class="zh-inline">下雪</span>、<span class="zh-inline">夏</span>、<span class="zh-inline">熊猫</span>、<span class="zh-inline">羊肉</span>、<span class="zh-inline">雨伞</span>、<span class="zh-inline">越来越</span>、<span class="zh-inline">中国人</span></p>
+  </section>
+
+  <section class="sheet" aria-labelledby="t5">
+    <h2 id="t5">Word lists</h2>
+    <div class="cta"><a class="button ghost" href="/yct/yct-1-word-list/">YCT 1</a><a class="button ghost" href="/yct/yct-2-word-list/">YCT 2</a><a class="button ghost" href="/yct/yct-3-word-list/">YCT 3</a><a class="button ghost" href="/yct/yct-4-word-list/">YCT 4</a><a class="button ghost" href="/hsk-1-word-list/">HSK 1</a><a class="button ghost" href="/hsk-2-word-list/">HSK 2</a><a class="button ghost" href="/hsk-3-word-list/">HSK 3</a></div>
+  </section>
+
+  <footer class="notes">
+    <p><b>Method.</b> YCT words follow the official YCT syllabus. HSK levels follow the HSK 3.0 (2025) word lists: levels 1–3 from this site's cross-checked lists, levels 4–9 from complete-hsk-vocabulary. A word counts as an HSK word only if the HSK list has it as written (a final 儿 may be dropped); phrases such as 打篮球 are not split into parts. Paired patterns such as 一边……一边…… are counted at the level of their parts.</p>
+  </footer>
+</div>
+<footer class="site-foot">hskcheck.com · <a href="/privacy/">Privacy Policy</a></footer>
+</body>
+</html>
