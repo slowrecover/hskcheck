@@ -67,7 +67,9 @@ LEVEL_COPY = {
 
 FONT_LINK = ('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600'
              '&display=swap">')
-FOOT = '\n<footer class="site-foot">hskcheck.com · <a href="/privacy/" hreflang="en">นโยบายความเป็นส่วนตัว</a></footer>'
+TH_ABOUT_URL = "/th/about/"
+FOOT = ('\n<footer class="site-foot">hskcheck.com · <a href="/th/about/">เกี่ยวกับเรา</a> · '
+        '<a href="/privacy/" hreflang="en">นโยบายความเป็นส่วนตัว</a></footer>')
 
 
 def read_meanings(root, n, entries):
@@ -215,6 +217,16 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
                          search_key=search_key, thai_key=thai_key,
                          ws_css=base_css + (tpl / "learn_worksheet.css").read_text(encoding="utf-8") + th_css)
 
+    # About
+    body = (tpl / "th" / "about_body.html").read_text(encoding="utf-8").replace("__NAV__", nav(TH_ABOUT_URL))
+    (root / TH_ABOUT_URL.strip("/")).mkdir(parents=True, exist_ok=True)
+    (root / TH_ABOUT_URL.strip("/") / "index.html").write_text(render(
+        "เกี่ยวกับ hskcheck.com: เครื่องมือ HSK 3.0 และ YCT ฟรี",
+        "เกี่ยวกับ hskcheck.com: รายการคำศัพท์ ไวยากรณ์ แบบฝึกหัด และเครื่องมือฟรีสำหรับผู้เรียนและครู HSK 3.0 และ YCT "
+        "ทั้งภาษาไทยและภาษาอังกฤษ เนื้อหาทำขึ้นอย่างไรและข้อมูลมาจากไหน",
+        site + TH_ABOUT_URL, base_css + th_css, body, FONT_LINK, lang="th", foot=FOOT), encoding="utf-8")
+    urls.append(TH_ABOUT_URL)
+
     # Grammar explainers
     urls += learn_th.build(
         root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK, foot=FOOT,
@@ -236,4 +248,5 @@ def alternates(root, levels):
     pairs.update(worksheets_th.alternates(root, have))
     pairs.update(measure_th.alternates(root))
     pairs.update(upgrade_th.alternates(root))
+    pairs["/about/"] = TH_ABOUT_URL
     return pairs

@@ -168,7 +168,9 @@ def nav(pages, current):
 
 
 PRIVACY_URL = "/privacy/"
-SITE_FOOT = f'\n<footer class="site-foot">hskcheck.com · <a href="{PRIVACY_URL}">Privacy Policy</a></footer>'
+ABOUT_URL = "/about/"
+SITE_FOOT = (f'\n<footer class="site-foot">hskcheck.com · <a href="{ABOUT_URL}">About</a> · '
+             f'<a href="{PRIVACY_URL}">Privacy Policy</a></footer>')
 
 
 ALTERNATES = build_th.alternates(ROOT, LEVELS)  # English path -> Thai path
@@ -533,6 +535,17 @@ def main():
         "How hskcheck.com handles your data: the tools run in your browser, and the site may show Google ads that use cookies.",
         SITE + PRIVACY_URL, base_css, body), encoding="utf-8")
     extra_urls.append(PRIVACY_URL)
+
+    # About
+    body = (TPL / "about_body.html").read_text(encoding="utf-8").replace("__NAV__", nav(pages, ABOUT_URL))
+    target = ROOT / ABOUT_URL.strip("/")
+    target.mkdir(exist_ok=True)
+    (target / "index.html").write_text(render(
+        "About hskcheck.com: Free HSK 3.0 and YCT Tools",
+        "About hskcheck.com: free word lists, grammar explanations, worksheets and tools for HSK 3.0 and YCT learners "
+        "and teachers, in English and Thai. How the content is made and where the data comes from.",
+        SITE + ABOUT_URL, base_css, body), encoding="utf-8")
+    extra_urls.append(ABOUT_URL)
 
     # Thai pages
     extra_urls += build_th.build(root=ROOT, tpl=TPL, site=SITE, base_css=base_css, render=render,

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>เกี่ยวกับ hskcheck.com: เครื่องมือ HSK 3.0 และ YCT ฟรี</title>
+<meta name="description" content="เกี่ยวกับ hskcheck.com: รายการคำศัพท์ ไวยากรณ์ แบบฝึกหัด และเครื่องมือฟรีสำหรับผู้เรียนและครู HSK 3.0 และ YCT ทั้งภาษาไทยและภาษาอังกฤษ เนื้อหาทำขึ้นอย่างไรและข้อมูลมาจากไหน">
+<link rel="canonical" href="https://hskcheck.com/th/about/">
+<meta property="og:title" content="เกี่ยวกับ hskcheck.com: เครื่องมือ HSK 3.0 และ YCT ฟรี">
+<meta property="og:description" content="เกี่ยวกับ hskcheck.com: รายการคำศัพท์ ไวยากรณ์ แบบฝึกหัด และเครื่องมือฟรีสำหรับผู้เรียนและครู HSK 3.0 และ YCT ทั้งภาษาไทยและภาษาอังกฤษ เนื้อหาทำขึ้นอย่างไรและข้อมูลมาจากไหน">
+<meta property="og:url" content="https://hskcheck.com/th/about/">
+<meta property="og:type" content="website">
+<link rel="alternate" hreflang="en" href="https://hskcheck.com/about/">
+<link rel="alternate" hreflang="th" href="https://hskcheck.com/th/about/">
+<link rel="alternate" hreflang="x-default" href="https://hskcheck.com/about/">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600&display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@600&display=swap">
+<style>
+:root {
+  --paper: #F3F5F8;
+  --sheet: #FFFFFF;
+  --ink: #1A2130;
+  --muted: #586274;
+  --rule: #DCE1E9;
+  --accent: #2A4A9A;
+  --accent-ink: #FFFFFF;
+  --l1: #1F7A5C; --l1-bg: #E2F2EB;
+  --l2: #2A68AE; --l2-bg: #E3EDF8;
+  --l3: #7A4CAE; --l3-bg: #EEE6F8;
+  --over: #C0392B; --over-bg: #FCE5E1;
+  --ok: #1F7A5C; --warn: #A15C00; --bad: #C0392B;
+  --f-ui: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --f-num: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --f-zh: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --f-zh-display: "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --radius: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0F131A; --sheet: #171C25; --ink: #E6EAF1; --muted: #9AA4B6; --rule: #2A3242;
+    --accent: #93ACEB; --accent-ink: #0F131A;
+    --l1: #63CDA2; --l1-bg: #15302A; --l2: #82B4EE; --l2-bg: #172A40; --l3: #BB9EEA; --l3-bg: #2A2142;
+    --over: #F28B78; --over-bg: #3D1F1A; --ok: #63CDA2; --warn: #E9B060; --bad: #F28B78;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0F131A; --sheet: #171C25; --ink: #E6EAF1; --muted: #9AA4B6; --rule: #2A3242;
+  --accent: #93ACEB; --accent-ink: #0F131A;
+  --l1: #63CDA2; --l1-bg: #15302A; --l2: #82B4EE; --l2-bg: #172A40; --l3: #BB9EEA; --l3-bg: #2A2142;
+  --over: #F28B78; --over-bg: #3D1F1A; --ok: #63CDA2; --warn: #E9B060; --bad: #F28B78;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: var(--f-ui); font-size: 16px; line-height: 1.55;
+  padding-inline: 16px; padding-block: 28px 48px;
+}
+.wrap { max-width: 760px; margin: 0 auto; display: grid; gap: 22px; }
+header { display: grid; gap: 8px; }
+.eyebrow { display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+  font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+.chip { border: 1px solid var(--rule); border-radius: 999px; padding: 1px 8px; letter-spacing: .04em; }
+h1 { margin: 0; font-size: clamp(28px, 6vw, 40px); line-height: 1.12; font-weight: 600; text-wrap: balance; letter-spacing: -.01em; }
+h1 .zh { font-family: var(--f-zh-display); font-weight: 600; color: var(--accent); margin-right: .25em; }
+.lede { margin: 0; color: var(--muted); max-width: 60ch; }
+
+.sheet { background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--radius); padding: 18px; display: grid; gap: 14px; min-width: 0; }
+a { color: var(--accent); text-underline-offset: 3px; }
+.zh-inline { font-family: var(--f-zh); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.site-nav { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; font-weight: 500; }
+.site-nav a { text-decoration: none; color: var(--muted); padding-block: 2px; border-bottom: 2px solid transparent; }
+.site-nav a:hover { color: var(--ink); }
+.site-nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
+h2 { margin: 0; font-size: 15px; font-weight: 600; letter-spacing: .01em; }
+.table-wrap { overflow-x: auto; }
+table.counts { border-collapse: collapse; font-size: 14px; min-width: 320px; }
+table.counts th, table.counts td { text-align: left; padding: 7px 14px 7px 0; border-bottom: 1px solid var(--rule); }
+table.counts th { font-weight: 600; color: var(--muted); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+table.counts td.num { font-family: var(--f-num); font-variant-numeric: tabular-nums; }
+.notes { font-size: 13px; color: var(--muted); display: grid; gap: 6px; max-width: 70ch; }
+.notes p { margin: 0; }
+.notes b { color: var(--ink); font-weight: 600; }
+.site-foot { max-width: 760px; margin: 28px auto 0; font-size: 13px; color: var(--muted); }
+.site-foot a { color: var(--muted); }
+.policy { gap: 10px; }
+.policy h2 { margin-top: 8px; }
+.policy p { margin: 0; max-width: 70ch; }
+/* Thai pages: Thai UI font first, with Latin and Chinese fonts as before. */
+:root { --f-ui: "IBM Plex Sans Thai", "IBM Plex Sans", "Leelawadee UI", "Thonburi", Tahoma, sans-serif; }
+body { line-height: 1.65; }
+h1 { line-height: 1.25; letter-spacing: 0; }
+.eyebrow { letter-spacing: .02em; }
+table.words-table th, table.counts th { letter-spacing: 0; }
+.words { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); }
+.words .wd { display: grid; gap: 2px; min-width: 0; }
+.words .th-mean { font-size: 13px; color: var(--muted); line-height: 1.4; overflow-wrap: anywhere; }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <nav class="site-nav" aria-label="เมนูเว็บไซต์"><a href="/th/">ตรวจระดับคำศัพท์</a><a href="/th/hsk-1-word-list/">คำศัพท์ HSK 1</a><a href="/th/hsk-2-word-list/">คำศัพท์ HSK 2</a><a href="/th/hsk-3-word-list/">คำศัพท์ HSK 3</a><a href="/th/chinese-character-worksheets/">แบบฝึกเขียน</a><a href="/th/chinese-measure-words/">ลักษณนาม</a><a href="/th/old-hsk-to-new-hsk/">HSK เก่า → ใหม่</a><a href="/th/learn/">ไวยากรณ์</a><a href="/th/yct/">YCT</a><a href="/" hreflang="en" lang="en">English</a></nav>
+    <div class="eyebrow"><span>hskcheck.com</span></div>
+    <h1>เกี่ยวกับ hskcheck.com</h1>
+    <p class="lede">เครื่องมือฟรีที่แม่นยำสำหรับผู้เรียนและครูภาษาจีน สร้างจากรายการคำศัพท์ HSK 3.0 (HSK ใหม่) และ YCT</p>
+  </header>
+
+  <section class="sheet policy">
+    <h2>เว็บไซต์นี้คืออะไร</h2>
+    <p>hskcheck.com เริ่มต้นจากเครื่องมือตรวจระดับ: วางข้อความภาษาจีนแล้วดูว่าคำไหนเกินระดับ HSK ของคุณ จากนั้นจึงเพิ่มเครื่องมือและเอกสารพิมพ์ได้ฟรีอีกหลายอย่าง ได้แก่ รายการคำศัพท์ HSK 1–3 และ YCT 1–4 คำอธิบายไวยากรณ์พร้อมแบบฝึกหัด แบบฝึกเขียนตัวอักษร เครื่องมือค้นหาลักษณนาม และการเทียบ HSK เก่ากับ HSK ใหม่ หน้าส่วนใหญ่มีทั้งภาษาอังกฤษและภาษาไทย</p>
+
+    <h2>เหมาะสำหรับใคร</h2>
+    <p>นักเรียนที่เตรียมสอบ HSK หรือ YCT ครูที่ต้องการสื่อการสอนให้ตรงกับระดับ และผู้ปกครองที่ช่วยลูกเรียนภาษาจีน ทุกอย่างใช้ พิมพ์ และถ่ายเอกสารใช้ในห้องเรียนได้ฟรี</p>
+
+    <h2>เนื้อหาทำขึ้นอย่างไร</h2>
+    <p>รายการคำศัพท์เป็นไปตามหลักสูตรอย่างเป็นทางการ และตรวจทานกับสำเนาที่เผยแพร่อย่างอิสระ ประโยคตัวอย่างทุกประโยคในหน้าไวยากรณ์ถูกตรวจด้วยโปรแกรมเทียบกับรายการคำศัพท์ของระดับนั้น จึงไม่มีคำที่เกินระดับ ข้อมูลลำดับขีดมาจากโครงการเปิด <a href="https://github.com/skishore/makemeahanzi" hreflang="en">Make Me a Hanzi</a> และ HSK ระดับ 4–9 มาจาก <a href="https://github.com/drkameleon/complete-hsk-vocabulary" hreflang="en">complete-hsk-vocabulary</a> ทุกหน้าระบุแหล่งที่มาของข้อมูลไว้</p>
+
+    <h2>เว็บไซต์อิสระ</h2>
+    <p>hskcheck.com เป็นเว็บไซต์อิสระ ไม่มีส่วนเกี่ยวข้องและไม่ได้รับการรับรองจากผู้จัดสอบ HSK หรือ YCT ข้อมูลการสอบอย่างเป็นทางการ การสมัครสอบ และผลสอบ กรุณาดูจากเว็บไซต์ทางการของการสอบ</p>
+
+    <h2>ความเป็นส่วนตัวและโฆษณา</h2>
+    <p>เครื่องมือทั้งหมดทำงานในเบราว์เซอร์ของคุณ สิ่งที่คุณพิมพ์จะไม่ถูกส่งมาที่เรา เว็บไซต์อาจแสดงโฆษณาของ Google เพื่อช่วยค่าใช้จ่าย ดูรายละเอียดได้ที่<a href="/privacy/" hreflang="en">นโยบายความเป็นส่วนตัว</a></p>
+  </section>
+</div>
+
+<footer class="site-foot">hskcheck.com · <a href="/th/about/">เกี่ยวกับเรา</a> · <a href="/privacy/" hreflang="en">นโยบายความเป็นส่วนตัว</a></footer>
+</body>
+</html>
