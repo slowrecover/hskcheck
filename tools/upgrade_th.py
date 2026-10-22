@@ -87,12 +87,14 @@ UI = [
      'จะนับว่าเคยเรียนแล้ว คำจะถูกเทียบตามที่เขียน คำหนึ่งจะนับว่าเคยเรียนก็ต่อเมื่อรายการเก่ามีคำนั้นตรงทุกตัว คำที่ลงท้ายด้วย '
      '<span class="zh-inline">儿</span> ตรงกับคำเดียวกันที่ไม่มี 儿 ได้ และคำที่เป็นส่วนหนึ่งของคำในรายการเก่าก็นับว่าเคยเรียนแล้ว '
      '(<span class="zh-inline">篮球</span> ใน <span class="zh-inline">打篮球</span>)</p>'),
-    ("<p><b>Sources.</b> New HSK 1–3: the site's own lists from the 2025 syllabus, cross-checked against two published copies. "
-     "New HSK 4–9 and old HSK 1–6: the open <a href=\"https://github.com/drkameleon/complete-hsk-vocabulary\">complete-hsk-vocabulary</a> "
-     "data set (MIT licence), with meanings from CC-CEDICT. Levels 4–9 have not been cross-checked yet.</p>",
-     "<p><b>ที่มา</b> HSK ใหม่ 1–3: รายการของเว็บไซต์นี้จากหลักสูตรปี 2025 ตรวจทานกับสำเนาที่เผยแพร่สองแหล่ง "
-     "HSK ใหม่ 4–9 และ HSK เก่า 1–6: ชุดข้อมูลเปิด <a href=\"https://github.com/drkameleon/complete-hsk-vocabulary\">complete-hsk-vocabulary</a> "
-     "(สัญญาอนุญาต MIT) ความหมายมาจาก CC-CEDICT ระดับ 4–9 ยังไม่ได้ตรวจทาน "
+    ("<p><b>Sources.</b> New HSK 1–4: the site's own lists from the 2025 syllabus, HSK 1–3 cross-checked against two published copies "
+     "and HSK 4 against one. "
+     "New HSK 5–9 and old HSK 1–6: the open <a href=\"https://github.com/drkameleon/complete-hsk-vocabulary\">complete-hsk-vocabulary</a> "
+     "data set (MIT licence), with meanings from CC-CEDICT. Levels 5–9 have not been cross-checked yet.</p>",
+     "<p><b>ที่มา</b> HSK ใหม่ 1–4: รายการของเว็บไซต์นี้จากหลักสูตรปี 2025 โดย HSK 1–3 ตรวจทานกับสำเนาที่เผยแพร่สองแหล่ง "
+     "และ HSK 4 ตรวจทานกับอีกหนึ่งแหล่ง "
+     "HSK ใหม่ 5–9 และ HSK เก่า 1–6: ชุดข้อมูลเปิด <a href=\"https://github.com/drkameleon/complete-hsk-vocabulary\">complete-hsk-vocabulary</a> "
+     "(สัญญาอนุญาต MIT) ความหมายมาจาก CC-CEDICT ระดับ 5–9 ยังไม่ได้ตรวจทาน "
      "คำศัพท์ HSK ใหม่ 1–3 แสดงความหมายภาษาไทย ส่วนระดับ 4–9 ยังแสดงความหมายภาษาอังกฤษ</p>"),
     ("<p><b>Privacy.</b> Everything runs in your browser. Nothing you pick is sent anywhere.</p>",
      "<p><b>ความเป็นส่วนตัว</b> ทุกอย่างทำงานในเบราว์เซอร์ของคุณ สิ่งที่คุณเลือกจะไม่ถูกส่งไปที่ไหน</p>"),

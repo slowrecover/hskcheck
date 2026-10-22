@@ -9,8 +9,9 @@ Writes, in old-hsk-to-new-hsk/:
   old_level is 1-6, or 0 if the word is in none of the old HSK lists.
 
 New HSK (3.0, 2025 syllabus):
-  levels 1-3  from data/hskN.tsv (the site's own cross-checked lists)
-  levels 4-9  from complete-hsk-vocabulary wordlists/exclusive/newest/ (MIT licence)
+  levels 1-4  from data/hskN.tsv (the site's own cross-checked lists)
+  levels 5-9  from complete-hsk-vocabulary wordlists/exclusive/newest/ (MIT licence)
+  (That data set lacks some 2025 HSK 4 words, such as 扫码, 网购 and 线上, so level 4 comes from data/hsk4.tsv.)
 Old HSK (2.0, levels 1-6) from the old-N tags in complete-hsk-vocabulary complete.json.
 
 Words are compared as written. A word ending in 儿 (3+ characters) also matches the same word without it,
@@ -105,12 +106,12 @@ def main(src):
         seen.add(k)
         words.append([w, p, m, n, met_in(w)])
 
-    for n in (1, 2, 3):
+    for n in (1, 2, 3, 4):
         for line in (ROOT / "data" / f"hsk{n}.tsv").read_text(encoding="utf-8").splitlines():
             if line.strip():
                 w, p, m = (x.strip() for x in line.split("\t"))
                 add(w, p, m, n)
-    for n in (4, 5, 6, 7):
+    for n in (5, 6, 7):
         for e in json.loads((src / "wordlists" / "exclusive" / "newest" / f"{n}.json").read_text(encoding="utf-8")):
             p, m = describe(e)
             add(e["simplified"], p, m, n)
