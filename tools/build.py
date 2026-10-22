@@ -9,7 +9,6 @@ Outputs (written at the repository root):
   yct/...                         YCT word lists and worksheets (see tools/yct.py)
   hsk-handwriting-characters/     which characters must be written by hand (see tools/handwriting.py)
   mandarin-tone-changes/          written vs spoken tones (see tools/tones.py; data in tones/words.json)
-  baduanjin/                      Baduanjin qigong follow-along (see tools/baduanjin.py; data in data/baduanjin.json)
   sitemap.xml                     every page above
 
 Run from anywhere:  python3 tools/build.py
@@ -21,7 +20,6 @@ import pathlib
 import re
 import unicodedata
 
-import baduanjin
 import build_th
 import handwriting
 import learn
@@ -333,7 +331,6 @@ def main():
     pages.append(("/chinese-character-worksheets/", "Writing Sheets"))
     pages.append((handwriting.URL, "Handwriting"))
     pages.append((tones.URL, "Tone Changes"))
-    pages.append((baduanjin.URL, "Baduanjin"))
     pages.append((MW_URL, "Measure Words"))
     upgrade_data = ROOT / "old-hsk-to-new-hsk" / "words.json"
     if upgrade_data.exists():
@@ -515,8 +512,6 @@ def main():
     # Tone changes
     extra_urls += tones.build(ROOT, pages, nav, render, base_css, TPL, SITE)
 
-    # Baduanjin follow-along
-    extra_urls += baduanjin.build(ROOT, pages, nav, render, base_css, TPL, SITE)
 
     # YCT word lists and worksheets
     extra_urls += yct.build(ROOT, pages, nav, render, base_css, TPL, SITE, search_key, worksheet_page)
