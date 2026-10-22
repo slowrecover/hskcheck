@@ -7,6 +7,7 @@ Outputs:
   th/yct/...                       Thai YCT word lists (see tools/yct.py)
   th/...-character-worksheets/     Thai worksheet maker and presets (see tools/worksheets_th.py)
   th/chinese-measure-words/        Thai measure word finder (see tools/measure_th.py)
+  th/old-hsk-to-new-hsk/           Thai old HSK -> new HSK page (see tools/upgrade_th.py)
 
 data/th/hskN_th.tsv has two columns, word and Thai meaning, in the same order as data/hskN.tsv.
 The build stops if the words do not match exactly.
@@ -18,6 +19,7 @@ import json
 
 import learn_th
 import measure_th
+import upgrade_th
 import worksheets_th
 import yct
 
@@ -111,6 +113,8 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
     pages.append((worksheets_th.TH_WS_URL, "แบบฝึกเขียน"))
     if measure and measure_th.available(root):
         pages.append((measure_th.TH_MW_URL, "ลักษณนาม"))
+    if (root / "old-hsk-to-new-hsk" / "words.json").exists():
+        pages.append((upgrade_th.TH_UP_URL, "HSK เก่า → ใหม่"))
     if learn_th.slugs(root):
         pages.append((learn_th.TH_LEARN_URL, "ไวยากรณ์"))
     if yct.has_thai(root):
@@ -201,6 +205,10 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
                                  css=base_css + (tpl / "measure.css").read_text(encoding="utf-8") + th_css,
                                  level_table=level_table, search_key=search_key, thai_key=thai_key, **measure)
 
+    # Old HSK -> new HSK
+    urls += upgrade_th.build(root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK, foot=FOOT,
+                             css=base_css + (tpl / "upgrade.css").read_text(encoding="utf-8") + th_css, thai_meanings=word_th)
+
     # YCT word lists
     urls += yct.build_th(root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK, foot=FOOT,
                          css=wl_css + (tpl / "yct.css").read_text(encoding="utf-8"),
@@ -226,4 +234,5 @@ def alternates(root, levels):
     pairs.update(yct.alternates(root))
     pairs.update(worksheets_th.alternates(root, have))
     pairs.update(measure_th.alternates(root))
+    pairs.update(upgrade_th.alternates(root))
     return pairs
