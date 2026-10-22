@@ -12,10 +12,12 @@ Called from tools/build_th.py; returns the URLs it wrote.
 """
 import html
 import json
+import pathlib
 
 import yct
 
 TH_WS_URL = "/th/chinese-character-worksheets/"
+_ROOT = pathlib.Path(__file__).resolve().parent.parent
 
 # English text in templates/worksheet_body.html -> Thai. Every key must occur in the template.
 UI = [
@@ -112,6 +114,10 @@ def word_cell(word, pinyin, th):
 
 def links_html(current, hsk_levels):
     items = [(f"/th/hsk-{n}-character-worksheets/", f"HSK {n}") for n in hsk_levels]
+    if 4 not in hsk_levels and (_ROOT / "data" / "th" / "hsk4_th.tsv").exists():
+        import hsk4
+        if hsk4.th_alternates(_ROOT):
+            items.append((hsk4.TH_WS_URL, "HSK 4"))
     items += [(f"{yct.TH_YCT_URL}yct-{n}-character-worksheets/", f"YCT {n}") for n in yct.LEVELS]
     items.append((TH_WS_URL, "ตัวอักษรอะไรก็ได้"))
     out = []

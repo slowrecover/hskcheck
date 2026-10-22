@@ -17,6 +17,7 @@ Called from tools/build.py; returns the URLs it wrote so they go into sitemap.xm
 import html
 import json
 
+import hsk4
 import learn_th
 import measure_th
 import upgrade_th
@@ -112,6 +113,8 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
 
     pages = [(TH_URL, "ตรวจระดับคำศัพท์")]
     pages += [(f"{TH_URL}hsk-{n}-word-list/", f"คำศัพท์ HSK {n}") for n in levels]
+    if hsk4.th_alternates(root):
+        pages.append((hsk4.TH_URL, "คำศัพท์ HSK 4"))
     pages.append((worksheets_th.TH_WS_URL, "แบบฝึกเขียน"))
     if measure and measure_th.available(root):
         pages.append((measure_th.TH_MW_URL, "ลักษณนาม"))
@@ -196,6 +199,13 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
         (target / "index.html").write_text(out, encoding="utf-8")
         urls.append(url)
 
+    # HSK 4 (only once data/th/hsk4_th.tsv is complete)
+    hsk4_urls = hsk4.build_th(root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK, foot=FOOT,
+                              wl_css=wl_css, ws_css=base_css + (tpl / "worksheet.css").read_text(encoding="utf-8") + th_css,
+                              search_key=search_key, thai_key=thai_key,
+                              lower_words=[w for n in levels for w, _, _ in word_lists[n]])
+    urls += hsk4_urls
+
     # Character worksheets
     urls += worksheets_th.build(root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK, foot=FOOT,
                                 css=base_css + (tpl / "worksheet.css").read_text(encoding="utf-8") + th_css,
@@ -247,6 +257,7 @@ def alternates(root, levels):
     pairs.update(yct.alternates(root))
     pairs.update(worksheets_th.alternates(root, have))
     pairs.update(measure_th.alternates(root))
+    pairs.update(hsk4.th_alternates(root))
     pairs.update(upgrade_th.alternates(root))
     pairs["/about/"] = TH_ABOUT_URL
     return pairs

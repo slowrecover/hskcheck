@@ -2,7 +2,7 @@
 
 Outputs (written at the repository root):
   index.html                      the level checker
-  hsk-N-word-list/index.html      one page per level that has data/hskN.tsv
+  hsk-N-word-list/index.html      one page per level that has data/hskN.tsv (HSK 4: see tools/hsk4.py)
   chinese-character-worksheets/   the writing worksheet maker
   hsk-N-character-worksheets/     the maker preset to the characters of one level (needs strokes/hskN.json)
   old-hsk-to-new-hsk/index.html   old HSK -> new HSK word gap (needs old-hsk-to-new-hsk/words.json)
@@ -24,6 +24,7 @@ import build_th
 import handwriting
 import learn
 import tones
+import hsk4
 import yct
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -131,6 +132,9 @@ def level_links(current):
         cur = ' aria-current="page"' if url == current else ""
         links.append(f'<a href="{url}"{cur}>HSK {n}</a>')
     cur = ' aria-current="page"' if current == "/chinese-character-worksheets/" else ""
+    if (DATA / "hsk4.tsv").exists():
+        cur4 = ' aria-current="page"' if current == hsk4.WS_URL else ""
+        links.append(f'<a href="{hsk4.WS_URL}"{cur4}>HSK 4</a>')
     links.append(f'<a href="/chinese-character-worksheets/"{cur}>Any characters</a>')
     return '<nav class="level-links" aria-label="Character sets"><span>Start from:</span>' + "".join(links) + "</nav>"
 
@@ -328,6 +332,8 @@ def main():
         if entries:
             word_lists[n] = entries
             pages.append((f"/hsk-{n}-word-list/", f"HSK {n} Words"))
+    if (DATA / "hsk4.tsv").exists():
+        pages.append((hsk4.URL, "HSK 4 Words"))
     pages.append(("/chinese-character-worksheets/", "Writing Sheets"))
     pages.append((handwriting.URL, "Handwriting"))
     pages.append((tones.URL, "Tone Changes"))
@@ -512,6 +518,10 @@ def main():
     # Tone changes
     extra_urls += tones.build(ROOT, pages, nav, render, base_css, TPL, SITE)
 
+
+    # HSK 4 word list and worksheets
+    extra_urls += hsk4.build(ROOT, pages, nav, render, base_css, TPL, SITE, search_key, worksheet_page,
+                             [w for n in LEVELS for w in read_words(n)])
 
     # YCT word lists and worksheets
     extra_urls += yct.build(ROOT, pages, nav, render, base_css, TPL, SITE, search_key, worksheet_page)
