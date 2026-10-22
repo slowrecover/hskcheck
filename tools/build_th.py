@@ -212,7 +212,8 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
     # YCT word lists
     urls += yct.build_th(root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK, foot=FOOT,
                          css=wl_css + (tpl / "yct.css").read_text(encoding="utf-8"),
-                         search_key=search_key, thai_key=thai_key)
+                         search_key=search_key, thai_key=thai_key,
+                         ws_css=base_css + (tpl / "learn_worksheet.css").read_text(encoding="utf-8") + th_css)
 
     # Grammar explainers
     urls += learn_th.build(

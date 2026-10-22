@@ -10,6 +10,8 @@ Outputs:
   yct/index.html                               overview of the four levels
   yct/yct-N-word-list/index.html               the full word list for level N
   yct/yct-N-character-worksheets/index.html    the worksheet maker preset to the characters new at level N
+  yct/yct-N-vocabulary-worksheets/index.html   printable vocabulary sheets with answer keys (see tools/yct_ws.py)
+  yct/yct-vs-hsk/index.html                    YCT vs HSK word list comparison
 
 Called from tools/build.py; returns the URLs it wrote so they go into sitemap.xml.
 """
@@ -224,6 +226,7 @@ def build(root, pages, nav, render, base_css, tpl, site, search_key, worksheet_p
         new = OFFICIAL[n] - (OFFICIAL[n - 1] if n > 1 else 0)
         rows.append(f'<tr><th scope="row">YCT {n}</th><td>{OFFICIAL[n]} <small>({new} new)</small></td>'
                     f'<td><a href="{YCT_URL}yct-{n}-word-list/">Word list</a><br>'
+                    f'<a href="{YCT_URL}yct-{n}-vocabulary-worksheets/">Vocabulary worksheets</a><br>'
                     f'<a href="{YCT_URL}yct-{n}-character-worksheets/">{len(level_chars[n])} characters to write</a></td></tr>')
     body = ((tpl / "yct_index_body.html").read_text(encoding="utf-8")
             .replace("__NAV__", nav(pages, YCT_URL)).replace("__ROWS__", "\n".join(rows)))
@@ -237,6 +240,8 @@ def build(root, pages, nav, render, base_css, tpl, site, search_key, worksheet_p
         + (tpl / "yct.css").read_text(encoding="utf-8"), body), encoding="utf-8")
     urls += build_compare(root, lang="en", site=site, render=render, nav_html=nav(pages, YCT_URL),
                           css=base_css + (tpl / "wordlist.css").read_text(encoding="utf-8") + (tpl / "yct.css").read_text(encoding="utf-8"))
+    urls += build_vocab_sheets(root, lang="en", site=site, render=render, nav_html=nav(pages, YCT_URL),
+                               css=base_css + (tpl / "learn_worksheet.css").read_text(encoding="utf-8"))
     return urls
 
 
@@ -321,10 +326,11 @@ def alternates(root):
     pairs = {YCT_URL: TH_YCT_URL}
     pairs.update({f"{YCT_URL}yct-{n}-word-list/": f"{TH_YCT_URL}yct-{n}-word-list/" for n in LEVELS})
     pairs[YCT_URL + COMPARE] = TH_YCT_URL + COMPARE
+    pairs.update({f"{YCT_URL}yct-{n}-vocabulary-worksheets/": f"{TH_YCT_URL}yct-{n}-vocabulary-worksheets/" for n in LEVELS})
     return pairs
 
 
-def build_th(*, root, tpl, site, css, render, nav, font_link, foot, search_key, thai_key):
+def build_th(*, root, tpl, site, css, render, nav, font_link, foot, search_key, thai_key, ws_css=None):
     """Thai word list pages at /th/yct/. The Thai worksheet pages are built by tools/worksheets_th.py."""
     if not has_thai(root):
         return []
@@ -382,6 +388,7 @@ def build_th(*, root, tpl, site, css, render, nav, font_link, foot, search_key, 
         new = OFFICIAL[n] - (OFFICIAL[n - 1] if n > 1 else 0)
         rows.append(f'<tr><th scope="row">YCT {n}</th><td>{OFFICIAL[n]} <small>(ใหม่ {new})</small></td>'
                     f'<td><a href="{TH_YCT_URL}yct-{n}-word-list/">คำศัพท์</a><br>'
+                    f'<a href="{TH_YCT_URL}yct-{n}-vocabulary-worksheets/">แบบฝึกหัดคำศัพท์</a><br>'
                     f'<a href="{TH_YCT_URL}yct-{n}-character-worksheets/">แบบฝึกเขียน {new_chars[n]} ตัว</a></td></tr>')
     body = ((tpl / "th" / "yct_index_body.html").read_text(encoding="utf-8")
             .replace("__NAV__", nav(TH_YCT_URL)).replace("__ROWS__", "\n".join(rows)))
@@ -395,6 +402,9 @@ def build_th(*, root, tpl, site, css, render, nav, font_link, foot, search_key, 
     urls.insert(0, TH_YCT_URL)
     urls += build_compare(root, lang="th", site=site, render=render, css=css, nav_html=nav(TH_YCT_URL),
                           font_link=font_link, foot=foot)
+    if ws_css:
+        urls += build_vocab_sheets(root, lang="th", site=site, render=render, css=ws_css, nav_html=nav(TH_YCT_URL),
+                                   font_link=font_link, foot=foot)
     return urls
 
 
@@ -582,3 +592,30 @@ def build_compare(root, *, lang, site, render, css, nav_html, font_link="", foot
     target.mkdir(parents=True, exist_ok=True)
     (target / "index.html").write_text(render(title, desc, site + url, css, body, font_link, **kw), encoding="utf-8")
     return [url]
+
+
+def build_vocab_sheets(root, *, lang, site, render, css, nav_html, font_link="", foot=None):
+    """Printable vocabulary worksheets, one page per level (see tools/yct_ws.py)."""
+    import yct_ws
+    levels = {n: read_level(root, n) for n in LEVELS}
+    first = {}
+    for n in LEVELS:
+        for w, _, _ in levels[n]:
+            first.setdefault(w, n)
+    th = lang == "th"
+    base = TH_YCT_URL if th else YCT_URL
+    t = yct_ws.T[lang]
+    urls = []
+    for n in LEVELS:
+        url = f"{base}yct-{n}-vocabulary-worksheets/"
+        thai = read_thai(root, n, levels[n]) if th else None
+        body, sets, words = yct_ws.page(n, lang, levels[n], first, thai, site, nav_html,
+                                        f"{base}yct-{n}-character-worksheets/", url)
+        kw = dict(lang="th", foot=foot) if th else {}
+        target = root / url.strip("/")
+        target.mkdir(parents=True, exist_ok=True)
+        (target / "index.html").write_text(render(
+            t["doc_title"].format(n=n), t["doc_desc"].format(n=n, sets=sets, words=words), site + url,
+            css + yct_ws.CSS, body, font_link, **kw), encoding="utf-8")
+        urls.append(url)
+    return urls
