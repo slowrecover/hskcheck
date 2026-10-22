@@ -6,6 +6,7 @@ Outputs:
   th/learn/...                     Thai grammar explainers and worksheets (see tools/learn_th.py)
   th/yct/...                       Thai YCT word lists (see tools/yct.py)
   th/...-character-worksheets/     Thai worksheet maker and presets (see tools/worksheets_th.py)
+  th/chinese-measure-words/        Thai measure word finder (see tools/measure_th.py)
 
 data/th/hskN_th.tsv has two columns, word and Thai meaning, in the same order as data/hskN.tsv.
 The build stops if the words do not match exactly.
@@ -16,6 +17,7 @@ import html
 import json
 
 import learn_th
+import measure_th
 import worksheets_th
 import yct
 
@@ -97,7 +99,7 @@ def available_levels(root, levels):
     return [n for n in levels if (root / "data" / "th" / f"hsk{n}_th.tsv").exists()]
 
 
-def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_key, read_words):
+def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_key, read_words, measure=None):
     """Write the Thai pages. Returns the URLs written."""
     levels = [n for n in available_levels(root, sorted(word_lists)) if n in word_lists]
     if not levels:
@@ -107,6 +109,8 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
     pages = [(TH_URL, "ตรวจระดับคำศัพท์")]
     pages += [(f"{TH_URL}hsk-{n}-word-list/", f"คำศัพท์ HSK {n}") for n in levels]
     pages.append((worksheets_th.TH_WS_URL, "แบบฝึกเขียน"))
+    if measure and measure_th.available(root):
+        pages.append((measure_th.TH_MW_URL, "ลักษณนาม"))
     if learn_th.slugs(root):
         pages.append((learn_th.TH_LEARN_URL, "ไวยากรณ์"))
     if yct.has_thai(root):
@@ -191,6 +195,12 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
                                 css=base_css + (tpl / "worksheet.css").read_text(encoding="utf-8") + th_css,
                                 word_lists=word_lists, meanings=meanings)
 
+    # Measure words
+    if measure:
+        urls += measure_th.build(root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK, foot=FOOT,
+                                 css=base_css + (tpl / "measure.css").read_text(encoding="utf-8") + th_css,
+                                 level_table=level_table, search_key=search_key, thai_key=thai_key, **measure)
+
     # YCT word lists
     urls += yct.build_th(root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK, foot=FOOT,
                          css=wl_css + (tpl / "yct.css").read_text(encoding="utf-8"),
@@ -215,4 +225,5 @@ def alternates(root, levels):
     pairs.update(learn_th.alternates(root))
     pairs.update(yct.alternates(root))
     pairs.update(worksheets_th.alternates(root, have))
+    pairs.update(measure_th.alternates(root))
     return pairs

@@ -537,7 +537,9 @@ def main():
     # Thai pages
     extra_urls += build_th.build(root=ROOT, tpl=TPL, site=SITE, base_css=base_css, render=render,
                                  word_lists=word_lists, level_table=level_table, search_key=search_key,
-                                 read_words=read_words)
+                                 read_words=read_words,
+                                 measure=dict(read_classifiers=read_classifiers, read_measure_words=read_measure_words,
+                                              yi_before=yi_before, zh_spans=zh_spans, squash=_squash))
 
     # Sitemap
     urls = "\n".join(
