@@ -235,13 +235,18 @@ textarea {
 .fc-pick { display: grid; gap: 10px; justify-items: center; text-align: center; padding: 20px 4px; }
 .fc-pick p { margin: 0; color: var(--muted); }
 .fc-pick-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; width: 100%; margin-top: 6px; }
+.fc-story { display: grid; gap: 2px; justify-items: center; width: 100%; margin-top: 4px; padding: 14px; border-radius: var(--radius);
+  text-decoration: none; color: var(--ink); background: color-mix(in srgb, var(--accent) 9%, var(--sheet)); border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--rule)); }
+.fc-story-head { font: 500 12px var(--f-ui); letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+.fc-story-t { font-family: var(--f-zh); font-size: 22px; }
+.fc-story-en { font-size: 14px; color: var(--muted); }
 
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <nav class="site-nav" aria-label="Site"><button type="button" class="nav-toggle" aria-expanded="false">Menu</button><div class="nav-links"><a href="/">Level Checker</a><a href="/hsk-1-word-list/">HSK 1 Words</a><a href="/hsk-2-word-list/">HSK 2 Words</a><a href="/hsk-3-word-list/">HSK 3 Words</a><a href="/hsk-4-word-list/">HSK 4 Words</a><a href="/hsk-5-word-list/">HSK 5 Words</a><a href="/hsk-flashcards/" aria-current="page">Flashcards</a><a href="/chinese-character-worksheets/">Writing Sheets</a><a href="/hsk-handwriting-characters/">Handwriting</a><a href="/mandarin-tone-changes/">Tone Changes</a><a href="/chinese-measure-words/">Measure Words</a><a href="/old-hsk-to-new-hsk/">Old → New HSK</a><a href="/learn/">Grammar</a><a href="/yct/">YCT</a><a href="/th/">ภาษาไทย</a></div></nav>
+    <nav class="site-nav" aria-label="Site"><button type="button" class="nav-toggle" aria-expanded="false">Menu</button><div class="nav-links"><a href="/">Level Checker</a><a href="/hsk-1-word-list/">HSK 1 Words</a><a href="/hsk-2-word-list/">HSK 2 Words</a><a href="/hsk-3-word-list/">HSK 3 Words</a><a href="/hsk-4-word-list/">HSK 4 Words</a><a href="/hsk-5-word-list/">HSK 5 Words</a><a href="/hsk-flashcards/" aria-current="page">Flashcards</a><a href="/reading/">Reading</a><a href="/chinese-character-worksheets/">Writing Sheets</a><a href="/hsk-handwriting-characters/">Handwriting</a><a href="/mandarin-tone-changes/">Tone Changes</a><a href="/chinese-measure-words/">Measure Words</a><a href="/old-hsk-to-new-hsk/">Old → New HSK</a><a href="/learn/">Grammar</a><a href="/yct/">YCT</a><a href="/th/">ภาษาไทย</a></div></nav>
     <div class="eyebrow"><span>New HSK · 2025 syllabus</span><span class="chip">Levels 1–5</span><span class="chip">Free</span></div>
     <h1><span class="zh">背词</span>HSK Flashcards</h1>
     <p class="lede">A few minutes a day. You get new words and the ones you are due to review, and your progress is saved on this device, with no account.</p>
@@ -307,7 +312,7 @@ textarea {
 </div>
 
 <script>
-const UI = {"started": "words started", "strong": "well known", "day": "day", "days": "days", "streak": "in a row", "newWord": "New", "review": "Review", "show": "Show answer", "know": "I know this word", "again": "Again", "got": "Got it", "listen": "Listen", "doneHead": "All done for today", "doneSub": "Come back tomorrow for your reviews and new words.", "more": "Learn more new words", "allSeen": "You have started every word at this level.", "loading": "Loading words…", "loadFail": "The word list could not be loaded. Check your connection and try again.", "resetAsk": "Reset your progress for HSK {n}? This cannot be undone.", "installHead": "Open it from your home screen tomorrow", "installText": "Add the flashcards to your home screen and they open like an app, one tap a day.", "installBtn": "Add to home screen", "pickHead": "Which HSK level are you studying?", "pickSub": "New to Chinese? Start with HSK 1. You can change level any time.", "iosTip": "On iPhone: tap the Share button in Safari, then “Add to Home Screen”. The flashcards then open like an app."};
+const UI = {"started": "words started", "strong": "well known", "day": "day", "days": "days", "streak": "in a row", "newWord": "New", "review": "Review", "show": "Show answer", "know": "I know this word", "again": "Again", "got": "Got it", "listen": "Listen", "doneHead": "All done for today", "doneSub": "Come back tomorrow for your reviews and new words.", "more": "Learn more new words", "allSeen": "You have started every word at this level.", "loading": "Loading words…", "loadFail": "The word list could not be loaded. Check your connection and try again.", "resetAsk": "Reset your progress for HSK {n}? This cannot be undone.", "installHead": "Open it from your home screen tomorrow", "installText": "Add the flashcards to your home screen and they open like an app, one tap a day.", "installBtn": "Add to home screen", "pickHead": "Which HSK level are you studying?", "pickSub": "New to Chinese? Start with HSK 1. You can change level any time.", "storyHead": "Now read a short HSK story", "readBase": "/reading/", "titleKey": "en", "iosTip": "On iPhone: tap the Share button in Safari, then “Add to Home Screen”. The flashcards then open like an app."};
 const DATA_BASE = "/hsk-flashcards/";
 const INTERVALS = [0, 1, 3, 7, 14, 30];  // days until the next review, by box
 const KEY = "hskcheck-flashcards-v1";
@@ -345,7 +350,10 @@ function buildQueue() {
     .sort((a, b) => st[a[0]][1] - st[b[0]][1]);
   const intro = state.intro[level] && state.intro[level][0] === t ? state.intro[level][1] : 0;
   const room = Math.max(0, (+state.set.newPerDay || 10) - intro);
-  const fresh = words.filter(w => !st[w[0]]).slice(0, room);
+  const boost = (state.boost && state.boost[level]) || [];  // words added from a story come first
+  const pool = words.filter(w => !st[w[0]]);
+  pool.sort((a, b) => (boost.includes(a[0]) ? 0 : 1) - (boost.includes(b[0]) ? 0 : 1));
+  const fresh = pool.slice(0, room);
   queue = due.concat(fresh);
   doneToday = 0;
   plannedToday = queue.length;
@@ -389,7 +397,8 @@ function show() {
     const more = words.some(w => !lvState()[w[0]]);
     area.innerHTML = '<div class="fc-done"><p class="fc-done-head">' + UI.doneHead + '</p><p>' + UI.doneSub + '</p>' +
       (more ? '<button type="button" class="button ghost-btn" id="more-btn">' + UI.more + '</button>' : '<p>' + UI.allSeen + '</p>') +
-      installBlock() + '</div>';
+      '<div id="story-next"></div>' + installBlock() + '</div>';
+    suggestStory();
     const ib = document.getElementById("install-btn");
     if (ib) ib.addEventListener("click", async () => {
       if (!installEvent) return;
@@ -499,6 +508,19 @@ function installBlock() {
                   : '<p>' + UI.iosTip + '</p>') + '</div>';
 }
 
+// After the day's cards: point to the newest story at this level.
+let storyIndex = null;
+async function suggestStory() {
+  try {
+    if (!storyIndex) storyIndex = await (await fetch(UI.readBase + "index.json")).json();
+    const list = storyIndex[level] || [], el = document.getElementById("story-next");
+    if (!list.length || !el) return;
+    const s = list[0];
+    el.innerHTML = '<a class="fc-story" href="' + UI.readBase + s.slug + '/"><span class="fc-story-head">' + UI.storyHead +
+      '</span><span class="fc-story-t" lang="zh-Hans">' + esc(s.title) + '</span><span class="fc-story-en">' + esc(s[UI.titleKey]) + '</span></a>';
+  } catch (e) {}
+}
+
 // First visit: ask which level, so nobody starts in the wrong place.
 function pickLevel() {
   area.innerHTML = '<div class="fc-pick"><p class="fc-done-head">' + UI.pickHead + '</p><p>' + UI.pickSub + '</p>' +
@@ -515,6 +537,6 @@ else setLevel(Math.min(5, Math.max(1, level)));
 </script>
 
 <footer class="site-foot">hskcheck.com · <a href="/about/">About</a> · <a href="/upgrade-packs/">Printable packs</a> · <a href="/terms/">Terms</a> · <a href="/privacy/">Privacy Policy</a></footer>
-<nav class="tab-bar" aria-label="Main"><a href="/hsk-flashcards/" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="14" height="14" rx="2"/><path d="M7 3h12a2 2 0 0 1 2 2v12"/></svg><span>Flashcards</span></a><a href="/hsk-1-word-list/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 10h16M4 15h10M4 20h7"/></svg><span>Word lists</span></a><a href="/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span>Checker</span></a></nav>
+<nav class="tab-bar" aria-label="Main"><a href="/hsk-flashcards/" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="14" height="14" rx="2"/><path d="M7 3h12a2 2 0 0 1 2 2v12"/></svg><span>Flashcards</span></a><a href="/reading/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5C5.5 4 8.5 4 12 6c3.5-2 6.5-2 9-.5V19c-2.5-1.5-5.5-1.5-9 .5-3.5-2-6.5-2-9-.5z"/><path d="M12 6v13.5"/></svg><span>Reading</span></a><a href="/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span>Checker</span></a></nav>
 </body>
 </html>

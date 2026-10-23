@@ -27,6 +27,7 @@ UI_EN = {
     "installBtn": "Add to home screen",
     "pickHead": "Which HSK level are you studying?",
     "pickSub": "New to Chinese? Start with HSK 1. You can change level any time.",
+    "storyHead": "Now read a short HSK story", "readBase": "/reading/", "titleKey": "en",
     "iosTip": "On iPhone: tap the Share button in Safari, then “Add to Home Screen”. The flashcards then open like an app.",
 }
 UI_TH = {
@@ -42,6 +43,7 @@ UI_TH = {
     "installBtn": "เพิ่มไปยังหน้าจอโฮม",
     "pickHead": "คุณกำลังเรียน HSK ระดับไหน?",
     "pickSub": "เพิ่งเริ่มเรียนภาษาจีน? เริ่มที่ HSK 1 เปลี่ยนระดับได้ทุกเมื่อ",
+    "storyHead": "อ่านเรื่องสั้น HSK ต่อเลย", "readBase": "/th/reading/", "titleKey": "th",
     "iosTip": "บน iPhone: แตะปุ่มแชร์ใน Safari แล้วเลือก “เพิ่มไปยังหน้าจอโฮม” แฟลชการ์ดจะเปิดได้เหมือนแอป",
 }
 

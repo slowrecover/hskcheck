@@ -104,7 +104,10 @@ function buildQueue() {
     .sort((a, b) => st[a[0]][1] - st[b[0]][1]);
   const intro = state.intro[level] && state.intro[level][0] === t ? state.intro[level][1] : 0;
   const room = Math.max(0, (+state.set.newPerDay || 10) - intro);
-  const fresh = words.filter(w => !st[w[0]]).slice(0, room);
+  const boost = (state.boost && state.boost[level]) || [];  // words added from a story come first
+  const pool = words.filter(w => !st[w[0]]);
+  pool.sort((a, b) => (boost.includes(a[0]) ? 0 : 1) - (boost.includes(b[0]) ? 0 : 1));
+  const fresh = pool.slice(0, room);
   queue = due.concat(fresh);
   doneToday = 0;
   plannedToday = queue.length;
@@ -148,7 +151,8 @@ function show() {
     const more = words.some(w => !lvState()[w[0]]);
     area.innerHTML = '<div class="fc-done"><p class="fc-done-head">' + UI.doneHead + '</p><p>' + UI.doneSub + '</p>' +
       (more ? '<button type="button" class="button ghost-btn" id="more-btn">' + UI.more + '</button>' : '<p>' + UI.allSeen + '</p>') +
-      installBlock() + '</div>';
+      '<div id="story-next"></div>' + installBlock() + '</div>';
+    suggestStory();
     const ib = document.getElementById("install-btn");
     if (ib) ib.addEventListener("click", async () => {
       if (!installEvent) return;
@@ -256,6 +260,19 @@ function installBlock() {
   return '<div class="fc-install"><p class="fc-install-head">' + UI.installHead + '</p>' +
     (installEvent ? '<p>' + UI.installText + '</p><button type="button" class="button" id="install-btn">' + UI.installBtn + '</button>'
                   : '<p>' + UI.iosTip + '</p>') + '</div>';
+}
+
+// After the day's cards: point to the newest story at this level.
+let storyIndex = null;
+async function suggestStory() {
+  try {
+    if (!storyIndex) storyIndex = await (await fetch(UI.readBase + "index.json")).json();
+    const list = storyIndex[level] || [], el = document.getElementById("story-next");
+    if (!list.length || !el) return;
+    const s = list[0];
+    el.innerHTML = '<a class="fc-story" href="' + UI.readBase + s.slug + '/"><span class="fc-story-head">' + UI.storyHead +
+      '</span><span class="fc-story-t" lang="zh-Hans">' + esc(s.title) + '</span><span class="fc-story-en">' + esc(s[UI.titleKey]) + '</span></a>';
+  } catch (e) {}
 }
 
 // First visit: ask which level, so nobody starts in the wrong place.

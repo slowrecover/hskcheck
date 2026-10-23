@@ -21,6 +21,7 @@ import hsk4
 import learn_th
 import measure_th
 import study
+import reading
 import upgrade_th
 import worksheets_th
 import yct
@@ -120,6 +121,8 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
         pages.append((hsk4.TH_URL, "คำศัพท์ HSK 4"))
     if (root / "data" / "hsk5.tsv").exists():
         pages.append((study.TH_URL, "แฟลชการ์ด"))
+    if any((root / "data" / "stories").glob("*.json")):
+        pages.append((reading.TH_URL, "อ่าน"))
     pages.append((worksheets_th.TH_WS_URL, "แบบฝึกเขียน"))
     if measure and measure_th.available(root):
         pages.append((measure_th.TH_MW_URL, "ลักษณนาม"))
@@ -221,6 +224,13 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
                               lower_words=[w for n in levels for w, _, _ in word_lists[n]])
     urls += hsk4_urls
 
+    # Graded reading (Thai glosses for HSK 1-4)
+    thai_all = {n: meanings[n] for n in levels}
+    if hsk4_th:
+        thai_all[4] = hsk4_th
+    urls += reading.build_th(root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK, foot=FOOT,
+                             base_css=base_css, th_css=th_css, thai=thai_all)
+
     # Flashcards (HSK 1-4 with Thai meanings, HSK 5 in English)
     if (root / "data" / "hsk5.tsv").exists():
         thai = {n: meanings[n] for n in levels}
@@ -284,6 +294,7 @@ def alternates(root, levels):
     pairs.update(hsk4.th_alternates(root))
     if (root / "data" / "hsk5.tsv").exists():
         pairs.update(study.alternates(root))
+    pairs.update(reading.alternates(root))
     pairs.update(upgrade_th.alternates(root))
     pairs["/about/"] = TH_ABOUT_URL
     return pairs

@@ -236,6 +236,11 @@ textarea {
 .fc-pick { display: grid; gap: 10px; justify-items: center; text-align: center; padding: 20px 4px; }
 .fc-pick p { margin: 0; color: var(--muted); }
 .fc-pick-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; width: 100%; margin-top: 6px; }
+.fc-story { display: grid; gap: 2px; justify-items: center; width: 100%; margin-top: 4px; padding: 14px; border-radius: var(--radius);
+  text-decoration: none; color: var(--ink); background: color-mix(in srgb, var(--accent) 9%, var(--sheet)); border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--rule)); }
+.fc-story-head { font: 500 12px var(--f-ui); letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+.fc-story-t { font-family: var(--f-zh); font-size: 22px; }
+.fc-story-en { font-size: 14px; color: var(--muted); }
 /* Thai pages: Thai UI font first, with Latin and Chinese fonts as before. */
 :root { --f-ui: "IBM Plex Sans Thai", "IBM Plex Sans", "Leelawadee UI", "Thonburi", Tahoma, sans-serif; }
 body { line-height: 1.65; }
@@ -251,7 +256,7 @@ table.words-table th, table.counts th { letter-spacing: 0; }
 <body>
 <div class="wrap">
   <header>
-    <nav class="site-nav" aria-label="เมนูเว็บไซต์"><button type="button" class="nav-toggle" aria-expanded="false">เมนู</button><div class="nav-links"><a href="/th/">ตรวจระดับคำศัพท์</a><a href="/th/hsk-1-word-list/">คำศัพท์ HSK 1</a><a href="/th/hsk-2-word-list/">คำศัพท์ HSK 2</a><a href="/th/hsk-3-word-list/">คำศัพท์ HSK 3</a><a href="/th/hsk-4-word-list/">คำศัพท์ HSK 4</a><a href="/th/hsk-flashcards/" aria-current="page">แฟลชการ์ด</a><a href="/th/chinese-character-worksheets/">แบบฝึกเขียน</a><a href="/th/chinese-measure-words/">ลักษณนาม</a><a href="/th/old-hsk-to-new-hsk/">HSK เก่า → ใหม่</a><a href="/th/learn/">ไวยากรณ์</a><a href="/th/yct/">YCT</a><a href="/" hreflang="en" lang="en">English</a></div></nav>
+    <nav class="site-nav" aria-label="เมนูเว็บไซต์"><button type="button" class="nav-toggle" aria-expanded="false">เมนู</button><div class="nav-links"><a href="/th/">ตรวจระดับคำศัพท์</a><a href="/th/hsk-1-word-list/">คำศัพท์ HSK 1</a><a href="/th/hsk-2-word-list/">คำศัพท์ HSK 2</a><a href="/th/hsk-3-word-list/">คำศัพท์ HSK 3</a><a href="/th/hsk-4-word-list/">คำศัพท์ HSK 4</a><a href="/th/hsk-flashcards/" aria-current="page">แฟลชการ์ด</a><a href="/th/reading/">อ่าน</a><a href="/th/chinese-character-worksheets/">แบบฝึกเขียน</a><a href="/th/chinese-measure-words/">ลักษณนาม</a><a href="/th/old-hsk-to-new-hsk/">HSK เก่า → ใหม่</a><a href="/th/learn/">ไวยากรณ์</a><a href="/th/yct/">YCT</a><a href="/" hreflang="en" lang="en">English</a></div></nav>
     <div class="eyebrow"><span>HSK ใหม่ · หลักสูตรปี 2025</span><span class="chip">ระดับ 1–5</span><span class="chip">ฟรี</span></div>
     <h1><span class="zh">背词</span>แฟลชการ์ด HSK</h1>
     <p class="lede">วันละไม่กี่นาที ได้ทั้งคำใหม่และคำที่ถึงเวลาทบทวน ความคืบหน้าบันทึกไว้ในอุปกรณ์นี้ ไม่ต้องสมัครสมาชิก</p>
@@ -317,7 +322,7 @@ table.words-table th, table.counts th { letter-spacing: 0; }
 </div>
 
 <script>
-const UI = {"started": "คำที่เริ่มเรียนแล้ว", "strong": "คำที่จำได้ดี", "day": "วัน", "days": "วัน", "streak": "ติดต่อกัน", "newWord": "คำใหม่", "review": "ทบทวน", "show": "ดูคำตอบ", "know": "รู้คำนี้แล้ว", "again": "อีกครั้ง", "got": "จำได้", "listen": "ฟังเสียง", "doneHead": "วันนี้เรียนครบแล้ว", "doneSub": "พรุ่งนี้กลับมาทบทวนและเรียนคำใหม่กัน", "more": "เรียนคำใหม่เพิ่ม", "allSeen": "คุณเริ่มเรียนครบทุกคำในระดับนี้แล้ว", "loading": "กำลังโหลดคำศัพท์…", "loadFail": "โหลดรายการคำศัพท์ไม่ได้ ตรวจสอบอินเทอร์เน็ตแล้วลองอีกครั้ง", "resetAsk": "ล้างความคืบหน้าของ HSK {n} ใช่ไหม ย้อนกลับไม่ได้", "installHead": "พรุ่งนี้เปิดจากหน้าจอโฮมได้เลย", "installText": "เพิ่มแฟลชการ์ดไว้ที่หน้าจอโฮม แตะครั้งเดียวก็เปิดได้เหมือนแอป", "installBtn": "เพิ่มไปยังหน้าจอโฮม", "pickHead": "คุณกำลังเรียน HSK ระดับไหน?", "pickSub": "เพิ่งเริ่มเรียนภาษาจีน? เริ่มที่ HSK 1 เปลี่ยนระดับได้ทุกเมื่อ", "iosTip": "บน iPhone: แตะปุ่มแชร์ใน Safari แล้วเลือก “เพิ่มไปยังหน้าจอโฮม” แฟลชการ์ดจะเปิดได้เหมือนแอป"};
+const UI = {"started": "คำที่เริ่มเรียนแล้ว", "strong": "คำที่จำได้ดี", "day": "วัน", "days": "วัน", "streak": "ติดต่อกัน", "newWord": "คำใหม่", "review": "ทบทวน", "show": "ดูคำตอบ", "know": "รู้คำนี้แล้ว", "again": "อีกครั้ง", "got": "จำได้", "listen": "ฟังเสียง", "doneHead": "วันนี้เรียนครบแล้ว", "doneSub": "พรุ่งนี้กลับมาทบทวนและเรียนคำใหม่กัน", "more": "เรียนคำใหม่เพิ่ม", "allSeen": "คุณเริ่มเรียนครบทุกคำในระดับนี้แล้ว", "loading": "กำลังโหลดคำศัพท์…", "loadFail": "โหลดรายการคำศัพท์ไม่ได้ ตรวจสอบอินเทอร์เน็ตแล้วลองอีกครั้ง", "resetAsk": "ล้างความคืบหน้าของ HSK {n} ใช่ไหม ย้อนกลับไม่ได้", "installHead": "พรุ่งนี้เปิดจากหน้าจอโฮมได้เลย", "installText": "เพิ่มแฟลชการ์ดไว้ที่หน้าจอโฮม แตะครั้งเดียวก็เปิดได้เหมือนแอป", "installBtn": "เพิ่มไปยังหน้าจอโฮม", "pickHead": "คุณกำลังเรียน HSK ระดับไหน?", "pickSub": "เพิ่งเริ่มเรียนภาษาจีน? เริ่มที่ HSK 1 เปลี่ยนระดับได้ทุกเมื่อ", "storyHead": "อ่านเรื่องสั้น HSK ต่อเลย", "readBase": "/th/reading/", "titleKey": "th", "iosTip": "บน iPhone: แตะปุ่มแชร์ใน Safari แล้วเลือก “เพิ่มไปยังหน้าจอโฮม” แฟลชการ์ดจะเปิดได้เหมือนแอป"};
 const DATA_BASE = "/th/hsk-flashcards/";
 const INTERVALS = [0, 1, 3, 7, 14, 30];  // days until the next review, by box
 const KEY = "hskcheck-flashcards-v1";
@@ -355,7 +360,10 @@ function buildQueue() {
     .sort((a, b) => st[a[0]][1] - st[b[0]][1]);
   const intro = state.intro[level] && state.intro[level][0] === t ? state.intro[level][1] : 0;
   const room = Math.max(0, (+state.set.newPerDay || 10) - intro);
-  const fresh = words.filter(w => !st[w[0]]).slice(0, room);
+  const boost = (state.boost && state.boost[level]) || [];  // words added from a story come first
+  const pool = words.filter(w => !st[w[0]]);
+  pool.sort((a, b) => (boost.includes(a[0]) ? 0 : 1) - (boost.includes(b[0]) ? 0 : 1));
+  const fresh = pool.slice(0, room);
   queue = due.concat(fresh);
   doneToday = 0;
   plannedToday = queue.length;
@@ -399,7 +407,8 @@ function show() {
     const more = words.some(w => !lvState()[w[0]]);
     area.innerHTML = '<div class="fc-done"><p class="fc-done-head">' + UI.doneHead + '</p><p>' + UI.doneSub + '</p>' +
       (more ? '<button type="button" class="button ghost-btn" id="more-btn">' + UI.more + '</button>' : '<p>' + UI.allSeen + '</p>') +
-      installBlock() + '</div>';
+      '<div id="story-next"></div>' + installBlock() + '</div>';
+    suggestStory();
     const ib = document.getElementById("install-btn");
     if (ib) ib.addEventListener("click", async () => {
       if (!installEvent) return;
@@ -509,6 +518,19 @@ function installBlock() {
                   : '<p>' + UI.iosTip + '</p>') + '</div>';
 }
 
+// After the day's cards: point to the newest story at this level.
+let storyIndex = null;
+async function suggestStory() {
+  try {
+    if (!storyIndex) storyIndex = await (await fetch(UI.readBase + "index.json")).json();
+    const list = storyIndex[level] || [], el = document.getElementById("story-next");
+    if (!list.length || !el) return;
+    const s = list[0];
+    el.innerHTML = '<a class="fc-story" href="' + UI.readBase + s.slug + '/"><span class="fc-story-head">' + UI.storyHead +
+      '</span><span class="fc-story-t" lang="zh-Hans">' + esc(s.title) + '</span><span class="fc-story-en">' + esc(s[UI.titleKey]) + '</span></a>';
+  } catch (e) {}
+}
+
 // First visit: ask which level, so nobody starts in the wrong place.
 function pickLevel() {
   area.innerHTML = '<div class="fc-pick"><p class="fc-done-head">' + UI.pickHead + '</p><p>' + UI.pickSub + '</p>' +
@@ -525,6 +547,6 @@ else setLevel(Math.min(5, Math.max(1, level)));
 </script>
 
 <footer class="site-foot">hskcheck.com · <a href="/th/about/">เกี่ยวกับเรา</a> · <a href="/terms/" hreflang="en">ข้อกำหนดการใช้งาน</a> · <a href="/privacy/" hreflang="en">นโยบายความเป็นส่วนตัว</a></footer>
-<nav class="tab-bar" aria-label="แถบหลัก"><a href="/th/hsk-flashcards/" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="14" height="14" rx="2"/><path d="M7 3h12a2 2 0 0 1 2 2v12"/></svg><span>แฟลชการ์ด</span></a><a href="/th/hsk-1-word-list/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 10h16M4 15h10M4 20h7"/></svg><span>คำศัพท์</span></a><a href="/th/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span>ตรวจระดับ</span></a></nav>
+<nav class="tab-bar" aria-label="แถบหลัก"><a href="/th/hsk-flashcards/" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="14" height="14" rx="2"/><path d="M7 3h12a2 2 0 0 1 2 2v12"/></svg><span>แฟลชการ์ด</span></a><a href="/th/reading/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5C5.5 4 8.5 4 12 6c3.5-2 6.5-2 9-.5V19c-2.5-1.5-5.5-1.5-9 .5-3.5-2-6.5-2-9-.5z"/><path d="M12 6v13.5"/></svg><span>อ่าน</span></a><a href="/th/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span>ตรวจระดับ</span></a></nav>
 </body>
 </html>

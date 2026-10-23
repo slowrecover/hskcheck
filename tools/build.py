@@ -28,6 +28,7 @@ import hsk4
 import hsk5
 import packs
 import study
+import reading
 import yct
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -201,12 +202,12 @@ def hreflang_links(url):
 
 TAB_ICONS = {
     "cards": '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="14" height="14" rx="2"/><path d="M7 3h12a2 2 0 0 1 2 2v12"/></svg>',
-    "words": '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 10h16M4 15h10M4 20h7"/></svg>',
+    "read": '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5C5.5 4 8.5 4 12 6c3.5-2 6.5-2 9-.5V19c-2.5-1.5-5.5-1.5-9 .5-3.5-2-6.5-2-9-.5z"/><path d="M12 6v13.5"/></svg>',
     "check": '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg>',
 }
 TABS = {
-    "en": [("/hsk-flashcards/", "Flashcards", "cards"), ("/hsk-1-word-list/", "Word lists", "words"), ("/", "Checker", "check")],
-    "th": [("/th/hsk-flashcards/", "แฟลชการ์ด", "cards"), ("/th/hsk-1-word-list/", "คำศัพท์", "words"), ("/th/", "ตรวจระดับ", "check")],
+    "en": [("/hsk-flashcards/", "Flashcards", "cards"), ("/reading/", "Reading", "read"), ("/", "Checker", "check")],
+    "th": [("/th/hsk-flashcards/", "แฟลชการ์ด", "cards"), ("/th/reading/", "อ่าน", "read"), ("/th/", "ตรวจระดับ", "check")],
 }
 
 
@@ -215,8 +216,8 @@ def tab_bar(url, lang):
     path = url[len(SITE):] if url.startswith(SITE) else url
     items = []
     for href, label, icon in TABS.get(lang, TABS["en"]):
-        if icon == "words":
-            on = "-word-list/" in path
+        if icon == "read":
+            on = path.startswith(href)
         else:
             on = path == href
         cur = ' aria-current="page"' if on else ""
@@ -382,6 +383,8 @@ def main():
     if (DATA / "hsk5.tsv").exists():
         pages.append((hsk5.URL, "HSK 5 Words"))
         pages.append((study.URL, "Flashcards"))
+    if any((DATA / "stories").glob("*.json")):
+        pages.append((reading.URL, "Reading"))
     pages.append(("/chinese-character-worksheets/", "Writing Sheets"))
     pages.append((handwriting.URL, "Handwriting"))
     pages.append((tones.URL, "Tone Changes"))
@@ -570,6 +573,9 @@ def main():
     # HSK 4 word list and worksheets
     extra_urls += hsk4.build(ROOT, pages, nav, render, base_css, TPL, SITE, search_key, worksheet_page,
                              [w for n in LEVELS for w in read_words(n)])
+
+    # Graded reading
+    extra_urls += reading.build(ROOT, pages, nav, render, base_css, TPL, SITE)
 
     # Flashcards
     if (DATA / "hsk5.tsv").exists():
