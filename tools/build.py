@@ -21,6 +21,7 @@ import re
 import unicodedata
 
 import build_th
+import cny
 import handwriting
 import learn
 import tones
@@ -395,6 +396,7 @@ def main():
     if any((DATA / "learn").glob("*.json")):
         pages.append((learn.LEARN_URL, "Grammar"))
     pages.append((yct.YCT_URL, "YCT"))
+    pages.append((cny.URL, "New Year 2027"))
     if ALTERNATES:
         pages.append((build_th.TH_URL, "ภาษาไทย"))
     extra_urls = []
@@ -565,6 +567,9 @@ def main():
 
     # Handwriting characters
     extra_urls += handwriting.build(ROOT, pages, nav, render, base_css, TPL, SITE)
+
+    # Chinese New Year greetings
+    extra_urls += cny.build(ROOT, pages, nav, render, base_css, TPL, SITE)
 
     # Tone changes
     extra_urls += tones.build(ROOT, pages, nav, render, base_css, TPL, SITE)
