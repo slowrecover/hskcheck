@@ -17,3 +17,4 @@ table.words-table td.en { color: var(--ink); min-width: 0; }
 .prose p { margin: 0; }
 .prose .zh-inline { font-family: var(--f-zh); }
 @media (max-width: 480px) { table.words-table td.hz { font-size: 19px; } table.words-table td.py { white-space: normal; } }
+.study-link { margin: 0; font-weight: 500; }

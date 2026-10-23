@@ -27,6 +27,7 @@ import tones
 import hsk4
 import hsk5
 import packs
+import study
 import yct
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -343,6 +344,7 @@ def main():
         pages.append((hsk4.URL, "HSK 4 Words"))
     if (DATA / "hsk5.tsv").exists():
         pages.append((hsk5.URL, "HSK 5 Words"))
+        pages.append((study.URL, "Flashcards"))
     pages.append(("/chinese-character-worksheets/", "Writing Sheets"))
     pages.append((handwriting.URL, "Handwriting"))
     pages.append((tones.URL, "Tone Changes"))
@@ -531,6 +533,10 @@ def main():
     # HSK 4 word list and worksheets
     extra_urls += hsk4.build(ROOT, pages, nav, render, base_css, TPL, SITE, search_key, worksheet_page,
                              [w for n in LEVELS for w in read_words(n)])
+
+    # Flashcards
+    if (DATA / "hsk5.tsv").exists():
+        extra_urls += study.build(ROOT, pages, nav, render, base_css, TPL, SITE)
 
     # HSK 5 word list and worksheets
     extra_urls += hsk5.build(ROOT, pages, nav, render, base_css, TPL, SITE, search_key, worksheet_page,

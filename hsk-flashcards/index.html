@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HSK Flashcards: Learn HSK 1–5 Words with Daily Review (HSK 3.0)</title>
+<meta name="description" content="Free HSK flashcards for the HSK 3.0 word lists, levels 1–5, with daily spaced review. No sign-up: your progress stays on your device.">
+<link rel="canonical" href="https://hskcheck.com/hsk-flashcards/">
+<meta property="og:title" content="HSK Flashcards: Learn HSK 1–5 Words with Daily Review (HSK 3.0)">
+<meta property="og:description" content="Free HSK flashcards for the HSK 3.0 word lists, levels 1–5, with daily spaced review. No sign-up: your progress stays on your device.">
+<meta property="og:url" content="https://hskcheck.com/hsk-flashcards/">
+<meta property="og:type" content="website">
+<link rel="alternate" hreflang="en" href="https://hskcheck.com/hsk-flashcards/">
+<link rel="alternate" hreflang="th" href="https://hskcheck.com/th/hsk-flashcards/">
+<link rel="alternate" hreflang="x-default" href="https://hskcheck.com/hsk-flashcards/">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "HSK Flashcards", "url": "https://hskcheck.com/hsk-flashcards/", "inLanguage": "en", "applicationCategory": "EducationalApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Free HSK flashcards for the HSK 3.0 word lists, levels 1–5, with daily spaced review. No sign-up: your progress stays on your device."}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6894573398022493"
+     crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@600&display=swap">
+<style>
+:root {
+  --paper: #F3F5F8;
+  --sheet: #FFFFFF;
+  --ink: #1A2130;
+  --muted: #586274;
+  --rule: #DCE1E9;
+  --accent: #2A4A9A;
+  --accent-ink: #FFFFFF;
+  --l1: #1F7A5C; --l1-bg: #E2F2EB;
+  --l2: #2A68AE; --l2-bg: #E3EDF8;
+  --l3: #7A4CAE; --l3-bg: #EEE6F8;
+  --l4: #8A5A12; --l4-bg: #F5EBDB;
+  --l5: #0E6E78; --l5-bg: #DDF0F1;
+  --over: #C0392B; --over-bg: #FCE5E1;
+  --ok: #1F7A5C; --warn: #A15C00; --bad: #C0392B;
+  --f-ui: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --f-num: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --f-zh: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --f-zh-display: "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --radius: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0F131A; --sheet: #171C25; --ink: #E6EAF1; --muted: #9AA4B6; --rule: #2A3242;
+    --accent: #93ACEB; --accent-ink: #0F131A;
+    --l1: #63CDA2; --l1-bg: #15302A; --l2: #82B4EE; --l2-bg: #172A40; --l3: #BB9EEA; --l3-bg: #2A2142;
+    --l4: #D7AE6A; --l4-bg: #33270F;
+    --l5: #6CC9D1; --l5-bg: #12302F;
+    --over: #F28B78; --over-bg: #3D1F1A; --ok: #63CDA2; --warn: #E9B060; --bad: #F28B78;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0F131A; --sheet: #171C25; --ink: #E6EAF1; --muted: #9AA4B6; --rule: #2A3242;
+  --accent: #93ACEB; --accent-ink: #0F131A;
+  --l1: #63CDA2; --l1-bg: #15302A; --l2: #82B4EE; --l2-bg: #172A40; --l3: #BB9EEA; --l3-bg: #2A2142;
+    --l4: #D7AE6A; --l4-bg: #33270F;
+    --l5: #6CC9D1; --l5-bg: #12302F;
+  --over: #F28B78; --over-bg: #3D1F1A; --ok: #63CDA2; --warn: #E9B060; --bad: #F28B78;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: var(--f-ui); font-size: 16px; line-height: 1.55;
+  padding-inline: 16px; padding-block: 28px 48px;
+}
+.wrap { max-width: 760px; margin: 0 auto; display: grid; gap: 22px; }
+header { display: grid; gap: 8px; }
+.eyebrow { display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+  font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+.chip { border: 1px solid var(--rule); border-radius: 999px; padding: 1px 8px; letter-spacing: .04em; }
+h1 { margin: 0; font-size: clamp(28px, 6vw, 40px); line-height: 1.12; font-weight: 600; text-wrap: balance; letter-spacing: -.01em; }
+h1 .zh { font-family: var(--f-zh-display); font-weight: 600; color: var(--accent); margin-right: .25em; }
+.lede { margin: 0; color: var(--muted); max-width: 60ch; }
+
+.sheet { background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--radius); padding: 18px; display: grid; gap: 14px; min-width: 0; }
+a { color: var(--accent); text-underline-offset: 3px; }
+.zh-inline { font-family: var(--f-zh); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.site-nav { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; font-weight: 500; }
+.site-nav a { text-decoration: none; color: var(--muted); padding-block: 2px; border-bottom: 2px solid transparent; }
+.site-nav a:hover { color: var(--ink); }
+.site-nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
+h2 { margin: 0; font-size: 15px; font-weight: 600; letter-spacing: .01em; }
+.table-wrap { overflow-x: auto; }
+table.counts { border-collapse: collapse; font-size: 14px; min-width: 320px; }
+table.counts th, table.counts td { text-align: left; padding: 7px 14px 7px 0; border-bottom: 1px solid var(--rule); }
+table.counts th { font-weight: 600; color: var(--muted); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+table.counts td.num { font-family: var(--f-num); font-variant-numeric: tabular-nums; }
+.notes { font-size: 13px; color: var(--muted); display: grid; gap: 6px; max-width: 70ch; }
+.notes p { margin: 0; }
+.notes b { color: var(--ink); font-weight: 600; }
+.site-foot { max-width: 760px; margin: 28px auto 0; font-size: 13px; color: var(--muted); }
+.site-foot a { color: var(--muted); }
+.policy { gap: 10px; }
+.policy h2 { margin-top: 8px; }
+.policy p { margin: 0; max-width: 70ch; }
+/* Checker page: input sheet on top, graded result sheet below, red-pen marks for words above the chosen level. */
+label.field { font-weight: 600; font-size: 14px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+label.field span.hint { font-weight: 400; color: var(--muted); font-size: 13px; }
+textarea {
+  width: 100%; min-height: 150px; resize: vertical; padding: 12px 14px;
+  font-family: var(--f-zh); font-size: 18px; line-height: 1.8; color: var(--ink);
+  background: var(--paper); border: 1px solid var(--rule); border-radius: 8px;
+}
+.controls { display: flex; gap: 12px 18px; align-items: center; flex-wrap: wrap; justify-content: space-between; }
+.levels { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.levels .lbl { font-size: 14px; font-weight: 600; margin-right: 4px; }
+.lv-btn {
+  font: 500 14px var(--f-ui); padding: 7px 14px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--rule); background: var(--sheet); color: var(--ink);
+}
+.lv-btn[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.ghost { font: 500 14px var(--f-ui); background: none; border: none; color: var(--accent); cursor: pointer; padding: 6px 2px; text-decoration: underline; text-underline-offset: 3px; }
+
+.verdict { display: grid; gap: 10px; }
+.verdict-top { display: flex; gap: 12px 20px; align-items: baseline; flex-wrap: wrap; }
+.big { font-family: var(--f-num); font-size: clamp(34px, 9vw, 46px); font-weight: 500; line-height: 1; font-variant-numeric: tabular-nums; }
+.verdict-text { display: grid; gap: 2px; min-width: 0; }
+.verdict-text strong { font-size: 17px; }
+.verdict-text span { color: var(--muted); font-size: 14px; }
+.state-ok { color: var(--ok); } .state-warn { color: var(--warn); } .state-bad { color: var(--bad); }
+
+.bar { display: flex; height: 12px; border-radius: 6px; overflow: hidden; background: var(--rule); }
+.bar i { display: block; height: 100%; }
+.bar .b1 { background: var(--l1); } .bar .b2 { background: var(--l2); } .bar .b3 { background: var(--l3); } .bar .b4 { background: var(--l4); } .bar .b5 { background: var(--l5); } .bar .bx { background: var(--over); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; font-variant-numeric: tabular-nums; }
+.legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+
+.graded { font-family: var(--f-zh); font-size: 20px; line-height: 2.1; word-break: break-all; }
+.graded .w { border-bottom: 2px solid transparent; padding: 0 1px; border-radius: 2px; }
+.graded .w1 { border-bottom-color: color-mix(in srgb, var(--l1) 45%, transparent); }
+.graded .w2 { border-bottom-color: color-mix(in srgb, var(--l2) 45%, transparent); }
+.graded .w3 { border-bottom-color: color-mix(in srgb, var(--l3) 45%, transparent); }
+.graded .w4 { border-bottom-color: color-mix(in srgb, var(--l4) 45%, transparent); }
+.graded .w5 { border-bottom-color: color-mix(in srgb, var(--l5) 45%, transparent); }
+.graded .above { background: var(--over-bg); color: var(--over); border-bottom: 2px solid var(--over); font-weight: 500; }
+.empty { color: var(--muted); font-size: 15px; margin: 0; }
+
+.words { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.words li { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 8px 10px; border: 1px solid var(--rule); border-radius: 8px; min-width: 0; }
+.words .zh { font-family: var(--f-zh); font-size: 19px; overflow-wrap: anywhere; }
+.tag { font: 500 12px var(--f-num); padding: 2px 7px; border-radius: 999px; white-space: nowrap; }
+.tag.t2 { background: var(--l2-bg); color: var(--l2); }
+.tag.t3 { background: var(--l3-bg); color: var(--l3); }
+.tag.t4 { background: var(--l4-bg); color: var(--l4); }
+.tag.t5 { background: var(--l5-bg); color: var(--l5); }
+.tag.tx { background: var(--over-bg); color: var(--over); }
+.guide { display: grid; gap: 18px; max-width: 68ch; }
+.guide h2 { font-size: 20px; letter-spacing: -.005em; text-wrap: balance; }
+.guide h3 { margin: 0 0 4px; font-size: 16px; font-weight: 600; }
+.guide p { margin: 0; color: var(--ink); }
+.guide .qa { display: grid; gap: 14px; }
+.guide .zh-inline { font-family: var(--f-zh); }
+@media (prefers-reduced-motion: no-preference) { .bar i { transition: width .25s ease; } }
+/* Flashcards page: one big card, answer buttons below it, sized for a phone held in one hand. */
+.fc-stats { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.fc-stats b { color: var(--ink); font-family: var(--f-num); font-weight: 500; }
+.fc-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.count { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; font-family: var(--f-num); }
+.fc-bar { height: 6px; border-radius: 3px; background: var(--rule); overflow: hidden; }
+.fc-bar i { display: block; height: 100%; width: 0; background: var(--accent); }
+@media (prefers-reduced-motion: no-preference) { .fc-bar i { transition: width .25s ease; } }
+
+.fc-card {
+  position: relative; display: grid; justify-items: center; align-content: center; gap: 8px;
+  min-height: 260px; padding: 36px 16px 24px; text-align: center;
+  border: 1px solid var(--rule); border-radius: var(--radius); background: var(--paper);
+}
+.fc-tag { position: absolute; top: 12px; left: 12px; font: 500 11px var(--f-ui); letter-spacing: .06em; text-transform: uppercase;
+  padding: 2px 8px; border-radius: 999px; background: var(--l2-bg); color: var(--l2); }
+.fc-tag-rev { background: var(--l1-bg); color: var(--l1); }
+.fc-hz { font-family: var(--f-zh); font-size: clamp(56px, 18vw, 88px); line-height: 1.15; overflow-wrap: anywhere; }
+.fc-py { font-size: 22px; color: var(--ink); }
+.fc-mean { font-size: 18px; color: var(--muted); max-width: 32ch; text-wrap: balance; }
+.fc-say { margin-top: 4px; }
+
+.fc-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; align-items: center; }
+.fc-actions .fc-wide { grid-column: 1 / -1; }
+.fc-actions .ghost { grid-column: 1 / -1; justify-self: center; }
+.button { font: 500 16px var(--f-ui); padding: 14px 18px; border-radius: 999px; border: 1px solid var(--accent);
+  background: var(--accent); color: var(--accent-ink); cursor: pointer; min-height: 48px; }
+.button.ghost-btn { background: transparent; color: var(--accent); }
+.fc-done { display: grid; gap: 10px; justify-items: center; text-align: center; padding: 28px 8px; }
+.fc-done p { margin: 0; color: var(--muted); }
+.fc-done .fc-done-head { font-size: 20px; font-weight: 600; color: var(--ink); }
+
+.fc-settings { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; font-size: 14px; }
+.fc-set { display: inline-flex; gap: 8px; align-items: center; }
+.fc-set select { font: 400 15px var(--f-ui); padding: 6px 8px; border-radius: 8px; border: 1px solid var(--rule); background: var(--paper); color: var(--ink); }
+.fc-check input { width: 18px; height: 18px; accent-color: var(--accent); }
+.fc-note { margin: 0; font-size: 13px; color: var(--warn); }
+.study-link { margin: 0; }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <nav class="site-nav" aria-label="Site"><a href="/">Level Checker</a><a href="/hsk-1-word-list/">HSK 1 Words</a><a href="/hsk-2-word-list/">HSK 2 Words</a><a href="/hsk-3-word-list/">HSK 3 Words</a><a href="/hsk-4-word-list/">HSK 4 Words</a><a href="/hsk-5-word-list/">HSK 5 Words</a><a href="/hsk-flashcards/" aria-current="page">Flashcards</a><a href="/chinese-character-worksheets/">Writing Sheets</a><a href="/hsk-handwriting-characters/">Handwriting</a><a href="/mandarin-tone-changes/">Tone Changes</a><a href="/chinese-measure-words/">Measure Words</a><a href="/old-hsk-to-new-hsk/">Old → New HSK</a><a href="/learn/">Grammar</a><a href="/yct/">YCT</a><a href="/th/">ภาษาไทย</a></nav>
+    <div class="eyebrow"><span>New HSK · 2025 syllabus</span><span class="chip">Levels 1–5</span><span class="chip">Free</span></div>
+    <h1><span class="zh">背词</span>HSK Flashcards</h1>
+    <p class="lede">A few minutes a day. You get new words and the ones you are due to review, and your progress is saved on this device, with no account.</p>
+  </header>
+
+  <section class="sheet" aria-labelledby="pick-title">
+    <h2 id="pick-title" class="visually-hidden">Choose a level</h2>
+    <div class="levels" role="group" aria-label="Level">
+      <span class="lbl">Level</span>
+      <button type="button" class="lv-btn" data-level="1" aria-pressed="true">HSK 1</button>
+      <button type="button" class="lv-btn" data-level="2" aria-pressed="false">HSK 2</button>
+      <button type="button" class="lv-btn" data-level="3" aria-pressed="false">HSK 3</button>
+      <button type="button" class="lv-btn" data-level="4" aria-pressed="false">HSK 4</button>
+      <button type="button" class="lv-btn" data-level="5" aria-pressed="false">HSK 5</button>
+    </div>
+    <div class="fc-stats" id="stats" aria-live="polite"></div>
+  </section>
+
+  <section class="sheet fc-sheet" aria-labelledby="card-title">
+    <div class="fc-top">
+      <h2 id="card-title">Today</h2>
+      <span class="count" id="today-count"></span>
+    </div>
+    <div class="fc-bar" aria-hidden="true"><i id="today-bar"></i></div>
+    <div id="card-area">
+      <p class="empty" id="loading">Loading words…</p>
+    </div>
+  </section>
+
+  <section class="sheet" aria-labelledby="set-title">
+    <h2 id="set-title">Settings</h2>
+    <div class="fc-settings">
+      <label class="fc-set">New words a day
+        <select id="new-per-day"><option value="5">5</option><option value="10" selected>10</option><option value="20">20</option><option value="30">30</option></select>
+      </label>
+      <label class="fc-set fc-check"><input type="checkbox" id="show-pinyin"> Show pinyin on the front</label>
+      <button type="button" class="ghost" id="reset-btn">Reset this level</button>
+    </div>
+    <p class="fc-note" id="storage-note" hidden>This browser is not letting the page save, so your progress will be lost when you close it.</p>
+  </section>
+
+  <section class="guide" aria-labelledby="guide-title">
+    <h2 id="guide-title">How it works</h2>
+    <div class="qa">
+      <div>
+        <h3>New words and reviews</h3>
+        <p>Each day you get a few new words from your level, in syllabus order, plus the words you are due to review. Say the meaning to yourself, then tap <b>Show answer</b>.</p>
+      </div>
+      <div>
+        <h3>Got it, or again</h3>
+        <p>If you knew it, the word comes back later: after 1 day, then 3, 7, 14 and 30 days. If not, it comes back at the end of today's session and again tomorrow. Words you already know can be skipped with <b>I know this word</b>.</p>
+      </div>
+      <div>
+        <h3>Where is my progress kept?</h3>
+        <p>In this browser on this device. Nothing is sent to us. Clearing your browser data, or using another phone or computer, starts you from the beginning.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="notes">
+    <p><b>Word lists.</b> HSK 3.0 (New HSK) vocabulary, 2025 syllabus, the same lists as the <a href="/hsk-1-word-list/">word list pages</a>. Pronunciation uses your device's Chinese voice when it has one.</p>
+  </footer>
+</div>
+
+<script>
+const UI = {"started": "words started", "strong": "well known", "day": "day", "days": "days", "streak": "in a row", "newWord": "New", "review": "Review", "show": "Show answer", "know": "I know this word", "again": "Again", "got": "Got it", "listen": "Listen", "doneHead": "All done for today", "doneSub": "Come back tomorrow for your reviews and new words.", "more": "Learn more new words", "allSeen": "You have started every word at this level.", "loading": "Loading words…", "loadFail": "The word list could not be loaded. Check your connection and try again.", "resetAsk": "Reset your progress for HSK {n}? This cannot be undone."};
+const DATA_BASE = "/hsk-flashcards/";
+const INTERVALS = [0, 1, 3, 7, 14, 30];  // days until the next review, by box
+const KEY = "hskcheck-flashcards-v1";
+
+let saveOk = true;
+function loadState() {
+  try { const s = JSON.parse(localStorage.getItem(KEY) || "null"); if (s && s.lv) return s; } catch (e) { saveOk = false; }
+  return { lv: {}, intro: {}, streak: { last: -1, n: 0 }, set: { newPerDay: 10, pinyin: false, level: 1 } };
+}
+const state = loadState();
+function save() {
+  try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { saveOk = false; }
+  document.getElementById("storage-note").hidden = saveOk;
+}
+function today() { const d = new Date(); return Math.floor((d.getTime() - d.getTimezoneOffset() * 60000) / 86400000); }
+
+const cache = {};
+let level = +state.set.level || 1, words = [], queue = [], current = null, revealed = false, doneToday = 0, plannedToday = 0;
+const area = document.getElementById("card-area");
+
+function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+function lvState() { return state.lv[level] || (state.lv[level] = {}); }
+
+async function loadLevel(n) {
+  if (!cache[n]) {
+    const r = await fetch(DATA_BASE + "hsk" + n + ".json");
+    cache[n] = await r.json();
+  }
+  return cache[n];
+}
+
+function buildQueue() {
+  const t = today(), st = lvState();
+  const due = words.filter(w => st[w[0]] && st[w[0]][1] <= t && st[w[0]][0] < 6)
+    .sort((a, b) => st[a[0]][1] - st[b[0]][1]);
+  const intro = state.intro[level] && state.intro[level][0] === t ? state.intro[level][1] : 0;
+  const room = Math.max(0, (+state.set.newPerDay || 10) - intro);
+  const fresh = words.filter(w => !st[w[0]]).slice(0, room);
+  queue = due.concat(fresh);
+  doneToday = 0;
+  plannedToday = queue.length;
+}
+
+function stats() {
+  const st = lvState(), seen = Object.keys(st).length;
+  const strong = Object.values(st).filter(v => v[0] >= 4).length;
+  const s = state.streak;
+  const streak = s.last === today() || s.last === today() - 1 ? s.n : 0;
+  document.getElementById("stats").innerHTML =
+    '<span><b>' + seen + '</b> / ' + words.length + ' ' + UI.started + '</span>' +
+    '<span><b>' + strong + '</b> ' + UI.strong + '</span>' +
+    '<span><b>' + streak + '</b> ' + (streak === 1 ? UI.day : UI.days) + ' ' + UI.streak + '</span>';
+}
+
+function progress() {
+  const total = Math.max(plannedToday, doneToday + queue.length);
+  document.getElementById("today-count").textContent = queue.length ? doneToday + " / " + total : "";
+  document.getElementById("today-bar").style.width = total ? (doneToday / total * 100) + "%" : "100%";
+}
+
+function voice() {
+  if (!("speechSynthesis" in window)) return null;
+  return speechSynthesis.getVoices().find(v => /^zh(-|_)?(CN|Hans)?/i.test(v.lang)) || null;
+}
+function speak(text) {
+  const v = voice(); if (!v) return;
+  const u = new SpeechSynthesisUtterance(text); u.voice = v; u.lang = v.lang; u.rate = 0.85;
+  speechSynthesis.cancel(); speechSynthesis.speak(u);
+}
+
+function show() {
+  stats(); progress();
+  if (!queue.length) {
+    const more = words.some(w => !lvState()[w[0]]);
+    area.innerHTML = '<div class="fc-done"><p class="fc-done-head">' + UI.doneHead + '</p><p>' + UI.doneSub + '</p>' +
+      (more ? '<button type="button" class="button" id="more-btn">' + UI.more + '</button>' : '<p>' + UI.allSeen + '</p>') + '</div>';
+    const m = document.getElementById("more-btn");
+    if (m) m.addEventListener("click", () => {
+      const t = today(), st = lvState();
+      queue = words.filter(w => !st[w[0]]).slice(0, +state.set.newPerDay || 10);
+      plannedToday = doneToday + queue.length;
+      show();
+    });
+    current = null; return;
+  }
+  current = queue[0]; revealed = false;
+  const isNew = !lvState()[current[0]];
+  const hasVoice = !!voice();
+  area.innerHTML =
+    '<div class="fc-card" id="card">' +
+      (isNew ? '<span class="fc-tag">' + UI.newWord + '</span>' : '<span class="fc-tag fc-tag-rev">' + UI.review + '</span>') +
+      '<div class="fc-hz" lang="zh-Hans">' + esc(current[0]) + '</div>' +
+      '<div class="fc-py"' + (state.set.pinyin ? '' : ' hidden') + ' id="py">' + esc(current[1]) + '</div>' +
+      '<div class="fc-mean" id="mean" hidden>' + esc(current[2]) + '</div>' +
+      (hasVoice ? '<button type="button" class="ghost fc-say" id="say-btn">' + UI.listen + '</button>' : '') +
+    '</div>' +
+    '<div class="fc-actions" id="actions">' +
+      '<button type="button" class="button fc-wide" id="reveal-btn">' + UI.show + '</button>' +
+      (isNew ? '<button type="button" class="ghost" id="know-btn">' + UI.know + '</button>' : '') +
+    '</div>';
+  document.getElementById("reveal-btn").addEventListener("click", reveal);
+  const k = document.getElementById("know-btn"); if (k) k.addEventListener("click", () => answer("known"));
+  const s = document.getElementById("say-btn"); if (s) s.addEventListener("click", () => speak(current[0]));
+}
+
+function reveal() {
+  if (!current || revealed) return;
+  revealed = true;
+  document.getElementById("py").hidden = false;
+  document.getElementById("mean").hidden = false;
+  document.getElementById("actions").innerHTML =
+    '<button type="button" class="button ghost-btn" id="again-btn">' + UI.again + '</button>' +
+    '<button type="button" class="button" id="got-btn">' + UI.got + '</button>';
+  document.getElementById("again-btn").addEventListener("click", () => answer("again"));
+  document.getElementById("got-btn").addEventListener("click", () => answer("got"));
+  speak(current[0]);
+}
+
+function markStudied() {
+  const t = today(), s = state.streak;
+  if (s.last !== t) { s.n = s.last === t - 1 ? s.n + 1 : 1; s.last = t; }
+}
+
+function answer(kind) {
+  if (!current) return;
+  const t = today(), st = lvState(), w = current[0];
+  if (!st[w]) {  // first time this word is shown: counts toward today's new words
+    const i = state.intro[level] && state.intro[level][0] === t ? state.intro[level][1] : 0;
+    state.intro[level] = [t, i + 1];
+  }
+  queue.shift();
+  if (kind === "known") st[w] = [5, t + 60];
+  else if (kind === "again") { st[w] = [0, t]; queue.push(current); }
+  else { const box = Math.min(5, (st[w] ? st[w][0] : 0) + 1); st[w] = [box, t + INTERVALS[box]]; }
+  if (kind !== "again") doneToday++;
+  markStudied(); save(); show();
+}
+
+async function setLevel(n) {
+  level = n; state.set.level = n; save();
+  document.querySelectorAll(".lv-btn").forEach(b => b.setAttribute("aria-pressed", String(+b.dataset.level === n)));
+  area.innerHTML = '<p class="empty">' + UI.loading + '</p>';
+  try { words = await loadLevel(n); } catch (e) { area.innerHTML = '<p class="empty">' + UI.loadFail + '</p>'; return; }
+  buildQueue(); show();
+}
+
+document.querySelectorAll(".lv-btn").forEach(b => b.addEventListener("click", () => setLevel(+b.dataset.level)));
+const npd = document.getElementById("new-per-day");
+npd.value = String(state.set.newPerDay || 10);
+npd.addEventListener("change", () => { state.set.newPerDay = +npd.value; save(); buildQueue(); show(); });
+const sp = document.getElementById("show-pinyin");
+sp.checked = !!state.set.pinyin;
+sp.addEventListener("change", () => { state.set.pinyin = sp.checked; save(); const p = document.getElementById("py"); if (p && !revealed) p.hidden = !sp.checked; });
+document.getElementById("reset-btn").addEventListener("click", () => {
+  if (!confirm(UI.resetAsk.replace("{n}", level))) return;
+  state.lv[level] = {}; delete state.intro[level]; save(); buildQueue(); show();
+});
+document.addEventListener("keydown", e => {
+  if (e.target.closest && e.target.closest("select, input, textarea")) return;
+  if (e.key === " " || e.key === "Enter") { if (current && !revealed) { e.preventDefault(); reveal(); } }
+  else if (revealed && e.key === "1") answer("again");
+  else if (revealed && e.key === "2") answer("got");
+});
+if ("speechSynthesis" in window) speechSynthesis.onvoiceschanged = () => { if (current && !document.getElementById("say-btn") && voice()) show(); };
+
+const hashLevel = (location.hash.match(/^#hsk([1-5])$/) || [])[1];
+document.getElementById("storage-note").hidden = saveOk;
+setLevel(hashLevel ? +hashLevel : Math.min(5, Math.max(1, level)));
+</script>
+
+<footer class="site-foot">hskcheck.com · <a href="/about/">About</a> · <a href="/upgrade-packs/">Printable packs</a> · <a href="/terms/">Terms</a> · <a href="/privacy/">Privacy Policy</a></footer>
+</body>
+</html>

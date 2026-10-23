@@ -1,0 +1,38 @@
+/* Flashcards page: one big card, answer buttons below it, sized for a phone held in one hand. */
+.fc-stats { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.fc-stats b { color: var(--ink); font-family: var(--f-num); font-weight: 500; }
+.fc-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.count { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; font-family: var(--f-num); }
+.fc-bar { height: 6px; border-radius: 3px; background: var(--rule); overflow: hidden; }
+.fc-bar i { display: block; height: 100%; width: 0; background: var(--accent); }
+@media (prefers-reduced-motion: no-preference) { .fc-bar i { transition: width .25s ease; } }
+
+.fc-card {
+  position: relative; display: grid; justify-items: center; align-content: center; gap: 8px;
+  min-height: 260px; padding: 36px 16px 24px; text-align: center;
+  border: 1px solid var(--rule); border-radius: var(--radius); background: var(--paper);
+}
+.fc-tag { position: absolute; top: 12px; left: 12px; font: 500 11px var(--f-ui); letter-spacing: .06em; text-transform: uppercase;
+  padding: 2px 8px; border-radius: 999px; background: var(--l2-bg); color: var(--l2); }
+.fc-tag-rev { background: var(--l1-bg); color: var(--l1); }
+.fc-hz { font-family: var(--f-zh); font-size: clamp(56px, 18vw, 88px); line-height: 1.15; overflow-wrap: anywhere; }
+.fc-py { font-size: 22px; color: var(--ink); }
+.fc-mean { font-size: 18px; color: var(--muted); max-width: 32ch; text-wrap: balance; }
+.fc-say { margin-top: 4px; }
+
+.fc-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; align-items: center; }
+.fc-actions .fc-wide { grid-column: 1 / -1; }
+.fc-actions .ghost { grid-column: 1 / -1; justify-self: center; }
+.button { font: 500 16px var(--f-ui); padding: 14px 18px; border-radius: 999px; border: 1px solid var(--accent);
+  background: var(--accent); color: var(--accent-ink); cursor: pointer; min-height: 48px; }
+.button.ghost-btn { background: transparent; color: var(--accent); }
+.fc-done { display: grid; gap: 10px; justify-items: center; text-align: center; padding: 28px 8px; }
+.fc-done p { margin: 0; color: var(--muted); }
+.fc-done .fc-done-head { font-size: 20px; font-weight: 600; color: var(--ink); }
+
+.fc-settings { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; font-size: 14px; }
+.fc-set { display: inline-flex; gap: 8px; align-items: center; }
+.fc-set select { font: 400 15px var(--f-ui); padding: 6px 8px; border-radius: 8px; border: 1px solid var(--rule); background: var(--paper); color: var(--ink); }
+.fc-check input { width: 18px; height: 18px; accent-color: var(--accent); }
+.fc-note { margin: 0; font-size: 13px; color: var(--warn); }
+.study-link { margin: 0; }
