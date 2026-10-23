@@ -33,6 +33,7 @@ DATA = ROOT / "data"
 TPL = ROOT / "templates"
 SITE = "https://hskcheck.com"
 LEVELS = (1, 2, 3)
+CHECKER_LEVELS = (1, 2, 3, 4)  # the level checker also knows HSK 4 (data/hsk4_words.txt)
 
 LEVEL_COPY = {
     1: {
@@ -67,10 +68,10 @@ def read_words(n):
     return [w.strip() for w in raw.split(",") if w.strip()]
 
 
-def level_table():
+def level_table(levels=LEVELS):
     """Word -> lowest level, plus 儿化 variants without the final 儿."""
     table = {}
-    for n in LEVELS:
+    for n in levels:
         for w in read_words(n):
             table.setdefault(w, n)
     for w, n in list(table.items()):
@@ -359,7 +360,7 @@ def main():
     }, ensure_ascii=False)
     body = (TPL / "checker_body.html").read_text(encoding="utf-8")
     body = body.replace("__NAV__", nav(pages, "/"))
-    body = body.replace("__LEVELS_JSON__", json.dumps(level_table(), ensure_ascii=False, separators=(",", ":")))
+    body = body.replace("__LEVELS_JSON__", json.dumps(level_table(CHECKER_LEVELS), ensure_ascii=False, separators=(",", ":")))
     out = render(
         "HSK 3.0 Level Checker",
         "Paste Chinese text and see which words are above your HSK 3.0 level. Free, instant, works in your browser.",
@@ -560,6 +561,7 @@ def main():
     # Thai pages
     extra_urls += build_th.build(root=ROOT, tpl=TPL, site=SITE, base_css=base_css, render=render,
                                  word_lists=word_lists, level_table=level_table, search_key=search_key,
+                                 checker_level_table=lambda: level_table(CHECKER_LEVELS),
                                  read_words=read_words,
                                  measure=dict(read_classifiers=read_classifiers, read_measure_words=read_measure_words,
                                               yi_before=yi_before, zh_spans=zh_spans, squash=_squash))

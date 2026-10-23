@@ -7,7 +7,8 @@ Source: the 2025 HSK syllabus (新版HSK考试大纲, 2025-11), via the transcri
 matches this site's HSK 1-3 lists word for word; cross-checked against complete-hsk-vocabulary (972 of the 1,000
 entries are in both; the other 25 are words the second source lists at a lower level or lacks).
 
-HSK 4 is kept out of build.LEVELS for now, so the level checker still covers HSK 1-3 only.
+HSK 4 is kept out of build.LEVELS (word list and worksheet pages are built here instead), but the level
+checker includes it through build.CHECKER_LEVELS.
 
 Outputs:
   hsk-4-word-list/index.html

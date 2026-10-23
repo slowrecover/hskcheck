@@ -105,7 +105,8 @@ def available_levels(root, levels):
     return [n for n in levels if (root / "data" / "th" / f"hsk{n}_th.tsv").exists()]
 
 
-def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_key, read_words, measure=None):
+def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_key, read_words, measure=None,
+          checker_level_table=None):
     """Write the Thai pages. Returns the URLs written."""
     levels = [n for n in available_levels(root, sorted(word_lists)) if n in word_lists]
     if not levels:
@@ -154,7 +155,7 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
     }, ensure_ascii=False)
     body = (tpl / "th" / "checker_body.html").read_text(encoding="utf-8")
     body = (body.replace("__NAV__", nav(TH_URL))
-            .replace("__LEVELS_JSON__", json.dumps(level_table(), ensure_ascii=False, separators=(",", ":")))
+            .replace("__LEVELS_JSON__", json.dumps((checker_level_table or level_table)(), ensure_ascii=False, separators=(",", ":")))
             .replace("__MEANINGS_JSON__", json.dumps(word_th, ensure_ascii=False, separators=(",", ":"))))
     out = render(
         "ตรวจคำศัพท์เกินระดับ HSK 3.0 (超纲词) พร้อมคำแปลไทย ฟรี",
