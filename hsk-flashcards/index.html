@@ -13,6 +13,12 @@
 <link rel="alternate" hreflang="en" href="https://hskcheck.com/hsk-flashcards/">
 <link rel="alternate" hreflang="th" href="https://hskcheck.com/th/hsk-flashcards/">
 <link rel="alternate" hreflang="x-default" href="https://hskcheck.com/hsk-flashcards/">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#2A4A9A">
+<link rel="icon" type="image/png" sizes="48x48" href="/icons/favicon-48.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="hskcheck">
+<script>if ("serviceWorker" in navigator) addEventListener("load", () => navigator.serviceWorker.register("/sw.js").catch(() => {}));</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "HSK Flashcards", "url": "https://hskcheck.com/hsk-flashcards/", "inLanguage": "en", "applicationCategory": "EducationalApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Free HSK flashcards for the HSK 3.0 word lists, levels 1–5, with daily spaced review. No sign-up: your progress stays on your device."}</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6894573398022493"
      crossorigin="anonymous"></script>
@@ -196,6 +202,9 @@ textarea {
 .fc-check input { width: 18px; height: 18px; accent-color: var(--accent); }
 .fc-note { margin: 0; font-size: 13px; color: var(--warn); }
 .study-link { margin: 0; }
+.fc-install-text { margin: 0; color: var(--muted); font-size: 14px; }
+.fc-install .button { justify-self: start; }
+.fc-install[hidden] { display: none; }
 
 </style>
 </head>
@@ -230,6 +239,12 @@ textarea {
     <div id="card-area">
       <p class="empty" id="loading">Loading words…</p>
     </div>
+  </section>
+
+  <section class="sheet fc-install" id="install" hidden aria-labelledby="install-title">
+    <h2 id="install-title">Put it on your home screen</h2>
+    <p class="fc-install-text" id="install-text">Open these flashcards from your phone's home screen, like an app.</p>
+    <button type="button" class="button" id="install-btn" hidden>Add to home screen</button>
   </section>
 
   <section class="sheet" aria-labelledby="set-title">
@@ -268,7 +283,7 @@ textarea {
 </div>
 
 <script>
-const UI = {"started": "words started", "strong": "well known", "day": "day", "days": "days", "streak": "in a row", "newWord": "New", "review": "Review", "show": "Show answer", "know": "I know this word", "again": "Again", "got": "Got it", "listen": "Listen", "doneHead": "All done for today", "doneSub": "Come back tomorrow for your reviews and new words.", "more": "Learn more new words", "allSeen": "You have started every word at this level.", "loading": "Loading words…", "loadFail": "The word list could not be loaded. Check your connection and try again.", "resetAsk": "Reset your progress for HSK {n}? This cannot be undone."};
+const UI = {"started": "words started", "strong": "well known", "day": "day", "days": "days", "streak": "in a row", "newWord": "New", "review": "Review", "show": "Show answer", "know": "I know this word", "again": "Again", "got": "Got it", "listen": "Listen", "doneHead": "All done for today", "doneSub": "Come back tomorrow for your reviews and new words.", "more": "Learn more new words", "allSeen": "You have started every word at this level.", "loading": "Loading words…", "loadFail": "The word list could not be loaded. Check your connection and try again.", "resetAsk": "Reset your progress for HSK {n}? This cannot be undone.", "iosTip": "On iPhone: tap the Share button in Safari, then “Add to Home Screen”. The flashcards then open like an app."};
 const DATA_BASE = "/hsk-flashcards/";
 const INTERVALS = [0, 1, 3, 7, 14, 30];  // days until the next review, by box
 const KEY = "hskcheck-flashcards-v1";
@@ -433,6 +448,26 @@ document.addEventListener("keydown", e => {
   else if (revealed && e.key === "2") answer("got");
 });
 if ("speechSynthesis" in window) speechSynthesis.onvoiceschanged = () => { if (current && !document.getElementById("say-btn") && voice()) show(); };
+
+// Home screen: Android/Chrome offers an install prompt; on iPhone we explain the Share menu.
+const standalone = matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
+let installEvent = null;
+addEventListener("beforeinstallprompt", e => {
+  e.preventDefault(); installEvent = e;
+  if (standalone) return;
+  document.getElementById("install").hidden = false;
+  document.getElementById("install-btn").hidden = false;
+});
+document.getElementById("install-btn").addEventListener("click", async () => {
+  if (!installEvent) return;
+  installEvent.prompt();
+  try { await installEvent.userChoice; } catch (e) {}
+  installEvent = null; document.getElementById("install").hidden = true;
+});
+if (!standalone && /iphone|ipad|ipod/i.test(navigator.userAgent)) {
+  document.getElementById("install").hidden = false;
+  document.getElementById("install-text").textContent = UI.iosTip;
+}
 
 const hashLevel = (location.hash.match(/^#hsk([1-5])$/) || [])[1];
 document.getElementById("storage-note").hidden = saveOk;

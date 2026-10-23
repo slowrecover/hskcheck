@@ -1,0 +1,29 @@
+{
+ "name": "hskcheck: แฟลชการ์ด HSK",
+ "short_name": "hskcheck",
+ "description": "แฟลชการ์ดและเครื่องมือ HSK สำหรับฝึกทุกวัน",
+ "lang": "th",
+ "start_url": "/th/hsk-flashcards/?source=app",
+ "scope": "/",
+ "display": "standalone",
+ "background_color": "#F3F5F8",
+ "theme_color": "#2A4A9A",
+ "icons": [
+  {
+   "src": "/icons/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "/icons/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "/icons/maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ]
+}

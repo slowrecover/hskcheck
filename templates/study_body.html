@@ -30,6 +30,12 @@
     </div>
   </section>
 
+  <section class="sheet fc-install" id="install" hidden aria-labelledby="install-title">
+    <h2 id="install-title">Put it on your home screen</h2>
+    <p class="fc-install-text" id="install-text">Open these flashcards from your phone's home screen, like an app.</p>
+    <button type="button" class="button" id="install-btn" hidden>Add to home screen</button>
+  </section>
+
   <section class="sheet" aria-labelledby="set-title">
     <h2 id="set-title">Settings</h2>
     <div class="fc-settings">
@@ -231,6 +237,26 @@ document.addEventListener("keydown", e => {
   else if (revealed && e.key === "2") answer("got");
 });
 if ("speechSynthesis" in window) speechSynthesis.onvoiceschanged = () => { if (current && !document.getElementById("say-btn") && voice()) show(); };
+
+// Home screen: Android/Chrome offers an install prompt; on iPhone we explain the Share menu.
+const standalone = matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
+let installEvent = null;
+addEventListener("beforeinstallprompt", e => {
+  e.preventDefault(); installEvent = e;
+  if (standalone) return;
+  document.getElementById("install").hidden = false;
+  document.getElementById("install-btn").hidden = false;
+});
+document.getElementById("install-btn").addEventListener("click", async () => {
+  if (!installEvent) return;
+  installEvent.prompt();
+  try { await installEvent.userChoice; } catch (e) {}
+  installEvent = null; document.getElementById("install").hidden = true;
+});
+if (!standalone && /iphone|ipad|ipod/i.test(navigator.userAgent)) {
+  document.getElementById("install").hidden = false;
+  document.getElementById("install-text").textContent = UI.iosTip;
+}
 
 const hashLevel = (location.hash.match(/^#hsk([1-5])$/) || [])[1];
 document.getElementById("storage-note").hidden = saveOk;

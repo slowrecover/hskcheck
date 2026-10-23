@@ -200,7 +200,14 @@ def hreflang_links(url):
 
 def render(title, description, url, css, body, head_extra="", lang="en", foot=None):
     page = (TPL / "layout.html").read_text(encoding="utf-8")
-    head_extra = "\n".join(x for x in (hreflang_links(url), head_extra) if x)
+    app = (f'<link rel="manifest" href="{"/th/manifest.webmanifest" if lang == "th" else "/manifest.webmanifest"}">\n'
+           '<meta name="theme-color" content="#2A4A9A">\n'
+           '<link rel="icon" type="image/png" sizes="48x48" href="/icons/favicon-48.png">\n'
+           '<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">\n'
+           '<meta name="apple-mobile-web-app-title" content="hskcheck">\n'
+           '<script>if ("serviceWorker" in navigator) addEventListener("load", () => '
+           'navigator.serviceWorker.register("/sw.js").catch(() => {}));</script>')
+    head_extra = "\n".join(x for x in (hreflang_links(url), app, head_extra) if x)
     for key, value in (
         ("__LANG__", lang),
         ("__TITLE__", html.escape(title)),

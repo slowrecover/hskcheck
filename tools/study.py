@@ -22,6 +22,7 @@ UI_EN = {
     "more": "Learn more new words", "allSeen": "You have started every word at this level.",
     "loading": "Loading words…", "loadFail": "The word list could not be loaded. Check your connection and try again.",
     "resetAsk": "Reset your progress for HSK {n}? This cannot be undone.",
+    "iosTip": "On iPhone: tap the Share button in Safari, then “Add to Home Screen”. The flashcards then open like an app.",
 }
 UI_TH = {
     "started": "คำที่เริ่มเรียนแล้ว", "strong": "คำที่จำได้ดี", "day": "วัน", "days": "วัน", "streak": "ติดต่อกัน",
@@ -31,6 +32,7 @@ UI_TH = {
     "more": "เรียนคำใหม่เพิ่ม", "allSeen": "คุณเริ่มเรียนครบทุกคำในระดับนี้แล้ว",
     "loading": "กำลังโหลดคำศัพท์…", "loadFail": "โหลดรายการคำศัพท์ไม่ได้ ตรวจสอบอินเทอร์เน็ตแล้วลองอีกครั้ง",
     "resetAsk": "ล้างความคืบหน้าของ HSK {n} ใช่ไหม ย้อนกลับไม่ได้",
+    "iosTip": "บน iPhone: แตะปุ่มแชร์ใน Safari แล้วเลือก “เพิ่มไปยังหน้าจอโฮม” แฟลชการ์ดจะเปิดได้เหมือนแอป",
 }
 
 TH_SWAPS = [
@@ -45,6 +47,11 @@ TH_SWAPS = [
      '<div class="levels" role="group" aria-label="ระดับ">\n      <span class="lbl">ระดับ</span>'),
     ('<h2 id="card-title">Today</h2>', '<h2 id="card-title">วันนี้</h2>'),
     ('<p class="empty" id="loading">Loading words…</p>', '<p class="empty" id="loading">กำลังโหลดคำศัพท์…</p>'),
+    ('<h2 id="install-title">Put it on your home screen</h2>', '<h2 id="install-title">เพิ่มไว้ที่หน้าจอโฮม</h2>'),
+    ("<p class=\"fc-install-text\" id=\"install-text\">Open these flashcards from your phone's home screen, like an app.</p>",
+     '<p class="fc-install-text" id="install-text">เปิดแฟลชการ์ดจากหน้าจอโฮมของโทรศัพท์ได้เหมือนแอป</p>'),
+    ('<button type="button" class="button" id="install-btn" hidden>Add to home screen</button>',
+     '<button type="button" class="button" id="install-btn" hidden>เพิ่มไปยังหน้าจอโฮม</button>'),
     ('<h2 id="set-title">Settings</h2>', '<h2 id="set-title">ตั้งค่า</h2>'),
     ('<label class="fc-set">New words a day', '<label class="fc-set">คำใหม่ต่อวัน'),
     ('<input type="checkbox" id="show-pinyin"> Show pinyin on the front</label>',

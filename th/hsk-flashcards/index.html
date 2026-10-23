@@ -13,6 +13,12 @@
 <link rel="alternate" hreflang="en" href="https://hskcheck.com/hsk-flashcards/">
 <link rel="alternate" hreflang="th" href="https://hskcheck.com/th/hsk-flashcards/">
 <link rel="alternate" hreflang="x-default" href="https://hskcheck.com/hsk-flashcards/">
+<link rel="manifest" href="/th/manifest.webmanifest">
+<meta name="theme-color" content="#2A4A9A">
+<link rel="icon" type="image/png" sizes="48x48" href="/icons/favicon-48.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="hskcheck">
+<script>if ("serviceWorker" in navigator) addEventListener("load", () => navigator.serviceWorker.register("/sw.js").catch(() => {}));</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600&display=swap">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "แฟลชการ์ด HSK", "url": "https://hskcheck.com/th/hsk-flashcards/", "inLanguage": "th", "applicationCategory": "EducationalApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "แฟลชการ์ดคำศัพท์ HSK 3.0 ระดับ 1–5 ฟรี พร้อมความหมายภาษาไทยและการทบทวนรายวัน ไม่ต้องสมัคร ความคืบหน้าเก็บในอุปกรณ์ของคุณ"}</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6894573398022493"
@@ -197,6 +203,9 @@ textarea {
 .fc-check input { width: 18px; height: 18px; accent-color: var(--accent); }
 .fc-note { margin: 0; font-size: 13px; color: var(--warn); }
 .study-link { margin: 0; }
+.fc-install-text { margin: 0; color: var(--muted); font-size: 14px; }
+.fc-install .button { justify-self: start; }
+.fc-install[hidden] { display: none; }
 /* Thai pages: Thai UI font first, with Latin and Chinese fonts as before. */
 :root { --f-ui: "IBM Plex Sans Thai", "IBM Plex Sans", "Leelawadee UI", "Thonburi", Tahoma, sans-serif; }
 body { line-height: 1.65; }
@@ -242,6 +251,12 @@ table.words-table th, table.counts th { letter-spacing: 0; }
     </div>
   </section>
 
+  <section class="sheet fc-install" id="install" hidden aria-labelledby="install-title">
+    <h2 id="install-title">เพิ่มไว้ที่หน้าจอโฮม</h2>
+    <p class="fc-install-text" id="install-text">เปิดแฟลชการ์ดจากหน้าจอโฮมของโทรศัพท์ได้เหมือนแอป</p>
+    <button type="button" class="button" id="install-btn" hidden>เพิ่มไปยังหน้าจอโฮม</button>
+  </section>
+
   <section class="sheet" aria-labelledby="set-title">
     <h2 id="set-title">ตั้งค่า</h2>
     <div class="fc-settings">
@@ -278,7 +293,7 @@ table.words-table th, table.counts th { letter-spacing: 0; }
 </div>
 
 <script>
-const UI = {"started": "คำที่เริ่มเรียนแล้ว", "strong": "คำที่จำได้ดี", "day": "วัน", "days": "วัน", "streak": "ติดต่อกัน", "newWord": "คำใหม่", "review": "ทบทวน", "show": "ดูคำตอบ", "know": "รู้คำนี้แล้ว", "again": "อีกครั้ง", "got": "จำได้", "listen": "ฟังเสียง", "doneHead": "วันนี้เรียนครบแล้ว", "doneSub": "พรุ่งนี้กลับมาทบทวนและเรียนคำใหม่กัน", "more": "เรียนคำใหม่เพิ่ม", "allSeen": "คุณเริ่มเรียนครบทุกคำในระดับนี้แล้ว", "loading": "กำลังโหลดคำศัพท์…", "loadFail": "โหลดรายการคำศัพท์ไม่ได้ ตรวจสอบอินเทอร์เน็ตแล้วลองอีกครั้ง", "resetAsk": "ล้างความคืบหน้าของ HSK {n} ใช่ไหม ย้อนกลับไม่ได้"};
+const UI = {"started": "คำที่เริ่มเรียนแล้ว", "strong": "คำที่จำได้ดี", "day": "วัน", "days": "วัน", "streak": "ติดต่อกัน", "newWord": "คำใหม่", "review": "ทบทวน", "show": "ดูคำตอบ", "know": "รู้คำนี้แล้ว", "again": "อีกครั้ง", "got": "จำได้", "listen": "ฟังเสียง", "doneHead": "วันนี้เรียนครบแล้ว", "doneSub": "พรุ่งนี้กลับมาทบทวนและเรียนคำใหม่กัน", "more": "เรียนคำใหม่เพิ่ม", "allSeen": "คุณเริ่มเรียนครบทุกคำในระดับนี้แล้ว", "loading": "กำลังโหลดคำศัพท์…", "loadFail": "โหลดรายการคำศัพท์ไม่ได้ ตรวจสอบอินเทอร์เน็ตแล้วลองอีกครั้ง", "resetAsk": "ล้างความคืบหน้าของ HSK {n} ใช่ไหม ย้อนกลับไม่ได้", "iosTip": "บน iPhone: แตะปุ่มแชร์ใน Safari แล้วเลือก “เพิ่มไปยังหน้าจอโฮม” แฟลชการ์ดจะเปิดได้เหมือนแอป"};
 const DATA_BASE = "/th/hsk-flashcards/";
 const INTERVALS = [0, 1, 3, 7, 14, 30];  // days until the next review, by box
 const KEY = "hskcheck-flashcards-v1";
@@ -443,6 +458,26 @@ document.addEventListener("keydown", e => {
   else if (revealed && e.key === "2") answer("got");
 });
 if ("speechSynthesis" in window) speechSynthesis.onvoiceschanged = () => { if (current && !document.getElementById("say-btn") && voice()) show(); };
+
+// Home screen: Android/Chrome offers an install prompt; on iPhone we explain the Share menu.
+const standalone = matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
+let installEvent = null;
+addEventListener("beforeinstallprompt", e => {
+  e.preventDefault(); installEvent = e;
+  if (standalone) return;
+  document.getElementById("install").hidden = false;
+  document.getElementById("install-btn").hidden = false;
+});
+document.getElementById("install-btn").addEventListener("click", async () => {
+  if (!installEvent) return;
+  installEvent.prompt();
+  try { await installEvent.userChoice; } catch (e) {}
+  installEvent = null; document.getElementById("install").hidden = true;
+});
+if (!standalone && /iphone|ipad|ipod/i.test(navigator.userAgent)) {
+  document.getElementById("install").hidden = false;
+  document.getElementById("install-text").textContent = UI.iosTip;
+}
 
 const hashLevel = (location.hash.match(/^#hsk([1-5])$/) || [])[1];
 document.getElementById("storage-note").hidden = saveOk;
