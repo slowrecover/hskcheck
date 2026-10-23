@@ -261,7 +261,7 @@ def zh_spans(text):
 def build_measure_words(pages, base_css):
     classifiers = read_classifiers()
     entries = read_measure_words(classifiers)
-    levels = level_table()
+    levels = level_table(CHECKER_LEVELS)
     used = {m for e in entries for m in e[3]}
     unused = [m for m in classifiers if m not in used]
     if unused:

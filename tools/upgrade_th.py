@@ -1,8 +1,9 @@
 """Thai version of the Old HSK -> New HSK page at /th/old-hsk-to-new-hsk/.
 
 Made from the English template (templates/upgrade_body.html) with its text swapped for Thai, so the two never
-drift apart: the build stops if an English string to be replaced is no longer found. Words of new HSK 1-3 show
-their Thai meaning (from data/th/hskN_th.tsv); levels 4-9 have no Thai meanings yet and show the English one.
+drift apart: the build stops if an English string to be replaced is no longer found. Words of new HSK 1-4 show
+their Thai meaning (from data/th/hskN_th.tsv and data/th/hsk4_th.tsv); levels 5-9 have no Thai meanings yet and show
+the English one.
 
 Called from tools/build_th.py; returns the URLs it wrote.
 """
@@ -99,7 +100,7 @@ UI = [
      "และ HSK 4 ตรวจทานกับอีกหนึ่งแหล่ง "
      "HSK ใหม่ 5–9 และ HSK เก่า 1–6: ชุดข้อมูลเปิด <a href=\"https://github.com/drkameleon/complete-hsk-vocabulary\">complete-hsk-vocabulary</a> "
      "(สัญญาอนุญาต MIT) ความหมายมาจาก CC-CEDICT ระดับ 5–9 ยังไม่ได้ตรวจทาน "
-     "คำศัพท์ HSK ใหม่ 1–3 แสดงความหมายภาษาไทย ส่วนระดับ 4–9 ยังแสดงความหมายภาษาอังกฤษ</p>"),
+     "คำศัพท์ HSK ใหม่ 1–4 แสดงความหมายภาษาไทย ส่วนระดับ 5–9 ยังแสดงความหมายภาษาอังกฤษ</p>"),
     ("<p><b>Privacy.</b> Everything runs in your browser. Nothing you pick is sent anywhere.</p>",
      "<p><b>ความเป็นส่วนตัว</b> ทุกอย่างทำงานในเบราว์เซอร์ของคุณ สิ่งที่คุณเลือกจะไม่ถูกส่งไปที่ไหน</p>"),
     # script

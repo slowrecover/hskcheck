@@ -147,7 +147,7 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
     for w, m in list(word_th.items()):
         if len(w) >= 3 and w.endswith("儿"):
             word_th.setdefault(w[:-1], m)
-    # The checker also knows HSK 4: add its Thai meanings once they cover every word (not passed on to other pages).
+    # The checker and the old -> new HSK page also know HSK 4: add its Thai meanings once they cover every word.
     checker_th = dict(word_th)
     _, hsk4_rows = hsk4.read(root)
     hsk4_th = hsk4.read_thai(root, hsk4_rows)
@@ -226,11 +226,11 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
     if measure:
         urls += measure_th.build(root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK, foot=FOOT,
                                  css=base_css + (tpl / "measure.css").read_text(encoding="utf-8") + th_css,
-                                 level_table=level_table, search_key=search_key, thai_key=thai_key, **measure)
+                                 level_table=checker_level_table or level_table, search_key=search_key, thai_key=thai_key, **measure)
 
     # Old HSK -> new HSK
     urls += upgrade_th.build(root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK, foot=FOOT,
-                             css=base_css + (tpl / "upgrade.css").read_text(encoding="utf-8") + th_css, thai_meanings=word_th)
+                             css=base_css + (tpl / "upgrade.css").read_text(encoding="utf-8") + th_css, thai_meanings=checker_th)
 
     # YCT word lists
     urls += yct.build_th(root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK, foot=FOOT,
