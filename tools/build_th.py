@@ -147,6 +147,15 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
     for w, m in list(word_th.items()):
         if len(w) >= 3 and w.endswith("儿"):
             word_th.setdefault(w[:-1], m)
+    # The checker also knows HSK 4: add its Thai meanings once they cover every word (not passed on to other pages).
+    checker_th = dict(word_th)
+    _, hsk4_rows = hsk4.read(root)
+    hsk4_th = hsk4.read_thai(root, hsk4_rows)
+    if hsk4_th:
+        for row, m in zip(hsk4_rows, hsk4_th):
+            checker_th.setdefault(row[0], m)
+            if len(row[0]) >= 3 and row[0].endswith("儿"):
+                checker_th.setdefault(row[0][:-1], m)
     ld = json.dumps({
         "@context": "https://schema.org", "@type": "WebApplication", "name": "ตรวจคำศัพท์เกินระดับ HSK 3.0",
         "url": site + TH_URL, "inLanguage": "th", "applicationCategory": "EducationalApplication", "operatingSystem": "Any",
@@ -156,7 +165,7 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
     body = (tpl / "th" / "checker_body.html").read_text(encoding="utf-8")
     body = (body.replace("__NAV__", nav(TH_URL))
             .replace("__LEVELS_JSON__", json.dumps((checker_level_table or level_table)(), ensure_ascii=False, separators=(",", ":")))
-            .replace("__MEANINGS_JSON__", json.dumps(word_th, ensure_ascii=False, separators=(",", ":"))))
+            .replace("__MEANINGS_JSON__", json.dumps(checker_th, ensure_ascii=False, separators=(",", ":"))))
     out = render(
         "ตรวจคำศัพท์เกินระดับ HSK 3.0 (超纲词) พร้อมคำแปลไทย ฟรี",
         "วางข้อความภาษาจีนแล้วรู้ทันทีว่าคำไหนเกินระดับ HSK 3.0 ของคุณ พร้อมคำแปลภาษาไทย ฟรี ใช้งานในเบราว์เซอร์ ไม่ต้องสมัคร",
