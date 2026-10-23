@@ -10,6 +10,7 @@
 .lv2 { color: var(--l2); background: var(--l2-bg); }
 .lv3 { color: var(--l3); background: var(--l3-bg); }
 .lv4 { color: var(--l4); background: var(--l4-bg); }
+.lv5 { color: var(--l5); background: var(--l5-bg); }
 .lv-x { color: var(--muted); border: 1px solid var(--rule); }
 
 .answer:empty { display: none; }

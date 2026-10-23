@@ -10,6 +10,7 @@
   --l2: #2A68AE; --l2-bg: #E3EDF8;
   --l3: #7A4CAE; --l3-bg: #EEE6F8;
   --l4: #8A5A12; --l4-bg: #F5EBDB;
+  --l5: #0E6E78; --l5-bg: #DDF0F1;
   --over: #C0392B; --over-bg: #FCE5E1;
   --ok: #1F7A5C; --warn: #A15C00; --bad: #C0392B;
   --f-ui: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
@@ -24,6 +25,7 @@
     --accent: #93ACEB; --accent-ink: #0F131A;
     --l1: #63CDA2; --l1-bg: #15302A; --l2: #82B4EE; --l2-bg: #172A40; --l3: #BB9EEA; --l3-bg: #2A2142;
     --l4: #D7AE6A; --l4-bg: #33270F;
+    --l5: #6CC9D1; --l5-bg: #12302F;
     --over: #F28B78; --over-bg: #3D1F1A; --ok: #63CDA2; --warn: #E9B060; --bad: #F28B78;
     color-scheme: dark;
   }
@@ -33,6 +35,7 @@
   --accent: #93ACEB; --accent-ink: #0F131A;
   --l1: #63CDA2; --l1-bg: #15302A; --l2: #82B4EE; --l2-bg: #172A40; --l3: #BB9EEA; --l3-bg: #2A2142;
     --l4: #D7AE6A; --l4-bg: #33270F;
+    --l5: #6CC9D1; --l5-bg: #12302F;
   --over: #F28B78; --over-bg: #3D1F1A; --ok: #63CDA2; --warn: #E9B060; --bad: #F28B78;
   color-scheme: dark;
 }

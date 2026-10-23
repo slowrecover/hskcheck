@@ -25,6 +25,7 @@ import handwriting
 import learn
 import tones
 import hsk4
+import hsk5
 import packs
 import yct
 
@@ -33,7 +34,7 @@ DATA = ROOT / "data"
 TPL = ROOT / "templates"
 SITE = "https://hskcheck.com"
 LEVELS = (1, 2, 3)
-CHECKER_LEVELS = (1, 2, 3, 4)  # the level checker also knows HSK 4 (data/hsk4_words.txt)
+CHECKER_LEVELS = (1, 2, 3, 4, 5)  # the level checker also knows HSK 4 and 5 (data/hsk4_words.txt, hsk5_words.txt)
 
 LEVEL_COPY = {
     1: {
@@ -137,6 +138,9 @@ def level_links(current):
     if (DATA / "hsk4.tsv").exists():
         cur4 = ' aria-current="page"' if current == hsk4.WS_URL else ""
         links.append(f'<a href="{hsk4.WS_URL}"{cur4}>HSK 4</a>')
+    if (DATA / "hsk5.tsv").exists():
+        cur5 = ' aria-current="page"' if current == hsk5.WS_URL else ""
+        links.append(f'<a href="{hsk5.WS_URL}"{cur5}>HSK 5</a>')
     links.append(f'<a href="/chinese-character-worksheets/"{cur}>Any characters</a>')
     return '<nav class="level-links" aria-label="Character sets"><span>Start from:</span>' + "".join(links) + "</nav>"
 
@@ -337,6 +341,8 @@ def main():
             pages.append((f"/hsk-{n}-word-list/", f"HSK {n} Words"))
     if (DATA / "hsk4.tsv").exists():
         pages.append((hsk4.URL, "HSK 4 Words"))
+    if (DATA / "hsk5.tsv").exists():
+        pages.append((hsk5.URL, "HSK 5 Words"))
     pages.append(("/chinese-character-worksheets/", "Writing Sheets"))
     pages.append((handwriting.URL, "Handwriting"))
     pages.append((tones.URL, "Tone Changes"))
@@ -525,6 +531,10 @@ def main():
     # HSK 4 word list and worksheets
     extra_urls += hsk4.build(ROOT, pages, nav, render, base_css, TPL, SITE, search_key, worksheet_page,
                              [w for n in LEVELS for w in read_words(n)])
+
+    # HSK 5 word list and worksheets
+    extra_urls += hsk5.build(ROOT, pages, nav, render, base_css, TPL, SITE, search_key, worksheet_page,
+                             [w for n in (1, 2, 3, 4) for w in read_words(n)])
 
     # YCT word lists and worksheets
     extra_urls += yct.build(ROOT, pages, nav, render, base_css, TPL, SITE, search_key, worksheet_page)

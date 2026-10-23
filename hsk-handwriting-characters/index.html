@@ -29,6 +29,7 @@
   --l2: #2A68AE; --l2-bg: #E3EDF8;
   --l3: #7A4CAE; --l3-bg: #EEE6F8;
   --l4: #8A5A12; --l4-bg: #F5EBDB;
+  --l5: #0E6E78; --l5-bg: #DDF0F1;
   --over: #C0392B; --over-bg: #FCE5E1;
   --ok: #1F7A5C; --warn: #A15C00; --bad: #C0392B;
   --f-ui: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
@@ -43,6 +44,7 @@
     --accent: #93ACEB; --accent-ink: #0F131A;
     --l1: #63CDA2; --l1-bg: #15302A; --l2: #82B4EE; --l2-bg: #172A40; --l3: #BB9EEA; --l3-bg: #2A2142;
     --l4: #D7AE6A; --l4-bg: #33270F;
+    --l5: #6CC9D1; --l5-bg: #12302F;
     --over: #F28B78; --over-bg: #3D1F1A; --ok: #63CDA2; --warn: #E9B060; --bad: #F28B78;
     color-scheme: dark;
   }
@@ -52,6 +54,7 @@
   --accent: #93ACEB; --accent-ink: #0F131A;
   --l1: #63CDA2; --l1-bg: #15302A; --l2: #82B4EE; --l2-bg: #172A40; --l3: #BB9EEA; --l3-bg: #2A2142;
     --l4: #D7AE6A; --l4-bg: #33270F;
+    --l5: #6CC9D1; --l5-bg: #12302F;
   --over: #F28B78; --over-bg: #3D1F1A; --ok: #63CDA2; --warn: #E9B060; --bad: #F28B78;
   color-scheme: dark;
 }
@@ -121,7 +124,7 @@ textarea {
 
 .bar { display: flex; height: 12px; border-radius: 6px; overflow: hidden; background: var(--rule); }
 .bar i { display: block; height: 100%; }
-.bar .b1 { background: var(--l1); } .bar .b2 { background: var(--l2); } .bar .b3 { background: var(--l3); } .bar .b4 { background: var(--l4); } .bar .bx { background: var(--over); }
+.bar .b1 { background: var(--l1); } .bar .b2 { background: var(--l2); } .bar .b3 { background: var(--l3); } .bar .b4 { background: var(--l4); } .bar .b5 { background: var(--l5); } .bar .bx { background: var(--over); }
 .legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--muted); }
 .legend span { display: inline-flex; align-items: center; gap: 6px; font-variant-numeric: tabular-nums; }
 .legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
@@ -132,6 +135,7 @@ textarea {
 .graded .w2 { border-bottom-color: color-mix(in srgb, var(--l2) 45%, transparent); }
 .graded .w3 { border-bottom-color: color-mix(in srgb, var(--l3) 45%, transparent); }
 .graded .w4 { border-bottom-color: color-mix(in srgb, var(--l4) 45%, transparent); }
+.graded .w5 { border-bottom-color: color-mix(in srgb, var(--l5) 45%, transparent); }
 .graded .above { background: var(--over-bg); color: var(--over); border-bottom: 2px solid var(--over); font-weight: 500; }
 .empty { color: var(--muted); font-size: 15px; margin: 0; }
 
@@ -142,6 +146,7 @@ textarea {
 .tag.t2 { background: var(--l2-bg); color: var(--l2); }
 .tag.t3 { background: var(--l3-bg); color: var(--l3); }
 .tag.t4 { background: var(--l4-bg); color: var(--l4); }
+.tag.t5 { background: var(--l5-bg); color: var(--l5); }
 .tag.tx { background: var(--over-bg); color: var(--over); }
 .guide { display: grid; gap: 18px; max-width: 68ch; }
 .guide h2 { font-size: 20px; letter-spacing: -.005em; text-wrap: balance; }
@@ -192,7 +197,7 @@ textarea {
 <body>
 <div class="wrap">
   <header>
-    <nav class="site-nav" aria-label="Site"><a href="/">Level Checker</a><a href="/hsk-1-word-list/">HSK 1 Words</a><a href="/hsk-2-word-list/">HSK 2 Words</a><a href="/hsk-3-word-list/">HSK 3 Words</a><a href="/hsk-4-word-list/">HSK 4 Words</a><a href="/chinese-character-worksheets/">Writing Sheets</a><a href="/hsk-handwriting-characters/" aria-current="page">Handwriting</a><a href="/mandarin-tone-changes/">Tone Changes</a><a href="/chinese-measure-words/">Measure Words</a><a href="/old-hsk-to-new-hsk/">Old → New HSK</a><a href="/learn/">Grammar</a><a href="/yct/">YCT</a><a href="/th/">ภาษาไทย</a></nav>
+    <nav class="site-nav" aria-label="Site"><a href="/">Level Checker</a><a href="/hsk-1-word-list/">HSK 1 Words</a><a href="/hsk-2-word-list/">HSK 2 Words</a><a href="/hsk-3-word-list/">HSK 3 Words</a><a href="/hsk-4-word-list/">HSK 4 Words</a><a href="/hsk-5-word-list/">HSK 5 Words</a><a href="/chinese-character-worksheets/">Writing Sheets</a><a href="/hsk-handwriting-characters/" aria-current="page">Handwriting</a><a href="/mandarin-tone-changes/">Tone Changes</a><a href="/chinese-measure-words/">Measure Words</a><a href="/old-hsk-to-new-hsk/">Old → New HSK</a><a href="/learn/">Grammar</a><a href="/yct/">YCT</a><a href="/th/">ภาษาไทย</a></nav>
     <div class="eyebrow"><span>New HSK · 2025 syllabus</span><span class="chip">1,200 characters to write</span><span class="chip">Free</span></div>
     <h1><span class="zh">手写</span>HSK Handwriting Character Checker</h1>
     <p class="lede">HSK 3.0 asks you to read 3,088 characters but write only 1,200 of them by hand. Paste any Chinese text to see which characters you need to be able to write at your level, and which you only need to recognise.</p>

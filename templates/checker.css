@@ -26,7 +26,7 @@ textarea {
 
 .bar { display: flex; height: 12px; border-radius: 6px; overflow: hidden; background: var(--rule); }
 .bar i { display: block; height: 100%; }
-.bar .b1 { background: var(--l1); } .bar .b2 { background: var(--l2); } .bar .b3 { background: var(--l3); } .bar .b4 { background: var(--l4); } .bar .bx { background: var(--over); }
+.bar .b1 { background: var(--l1); } .bar .b2 { background: var(--l2); } .bar .b3 { background: var(--l3); } .bar .b4 { background: var(--l4); } .bar .b5 { background: var(--l5); } .bar .bx { background: var(--over); }
 .legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--muted); }
 .legend span { display: inline-flex; align-items: center; gap: 6px; font-variant-numeric: tabular-nums; }
 .legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
@@ -37,6 +37,7 @@ textarea {
 .graded .w2 { border-bottom-color: color-mix(in srgb, var(--l2) 45%, transparent); }
 .graded .w3 { border-bottom-color: color-mix(in srgb, var(--l3) 45%, transparent); }
 .graded .w4 { border-bottom-color: color-mix(in srgb, var(--l4) 45%, transparent); }
+.graded .w5 { border-bottom-color: color-mix(in srgb, var(--l5) 45%, transparent); }
 .graded .above { background: var(--over-bg); color: var(--over); border-bottom: 2px solid var(--over); font-weight: 500; }
 .empty { color: var(--muted); font-size: 15px; margin: 0; }
 
@@ -47,6 +48,7 @@ textarea {
 .tag.t2 { background: var(--l2-bg); color: var(--l2); }
 .tag.t3 { background: var(--l3-bg); color: var(--l3); }
 .tag.t4 { background: var(--l4-bg); color: var(--l4); }
+.tag.t5 { background: var(--l5-bg); color: var(--l5); }
 .tag.tx { background: var(--over-bg); color: var(--over); }
 .guide { display: grid; gap: 18px; max-width: 68ch; }
 .guide h2 { font-size: 20px; letter-spacing: -.005em; text-wrap: balance; }
