@@ -77,3 +77,25 @@ table.counts td.num { font-family: var(--f-num); font-variant-numeric: tabular-n
 .policy { gap: 10px; }
 .policy h2 { margin-top: 8px; }
 .policy p { margin: 0; max-width: 70ch; }
+
+/* Phones: the long site menu folds behind a Menu button, and a bar at the bottom holds the daily tools. */
+.nav-toggle { display: none; }
+.nav-links { display: contents; }
+.tab-bar { display: none; }
+@media (max-width: 640px) {
+  .js .nav-toggle { display: inline-flex; align-items: center; gap: 6px; font: 500 14px var(--f-ui); color: var(--ink);
+    background: var(--sheet); border: 1px solid var(--rule); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+  .js .nav-toggle::after { content: "▾"; font-size: 11px; color: var(--muted); }
+  .js .site-nav.open .nav-toggle::after { content: "▴"; }
+  .js .nav-links { display: none; }
+  .js .site-nav.open .nav-links { display: flex; flex-wrap: wrap; gap: 10px 18px; width: 100%; padding: 6px 2px 2px; }
+  .js .site-nav.open .nav-links a { padding-block: 4px; }
+  body { padding-bottom: calc(84px + env(safe-area-inset-bottom)); }
+  .tab-bar { display: grid; grid-template-columns: repeat(3, 1fr); position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
+    background: var(--sheet); border-top: 1px solid var(--rule); padding: 6px 8px calc(6px + env(safe-area-inset-bottom)); }
+  .tab-bar a { display: grid; justify-items: center; gap: 2px; padding: 6px 4px; text-decoration: none; color: var(--muted);
+    font: 500 12px var(--f-ui); border-radius: 10px; min-height: 48px; }
+  .tab-bar a[aria-current="page"] { color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); }
+  .tab-bar svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+}
+@media print { .tab-bar, .nav-toggle { display: none !important; } }

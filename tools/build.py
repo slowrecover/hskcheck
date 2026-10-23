@@ -173,7 +173,8 @@ def nav(pages, current):
     for url, label in pages:
         cur = ' aria-current="page"' if url == current else ""
         links.append(f'<a href="{url}"{cur}>{label}</a>')
-    return '<nav class="site-nav" aria-label="Site">' + "".join(links) + "</nav>"
+    return ('<nav class="site-nav" aria-label="Site"><button type="button" class="nav-toggle" aria-expanded="false">'
+            'Menu</button><div class="nav-links">' + "".join(links) + "</div></nav>")
 
 
 PRIVACY_URL = "/privacy/"
@@ -198,6 +199,32 @@ def hreflang_links(url):
     ])
 
 
+TAB_ICONS = {
+    "cards": '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="14" height="14" rx="2"/><path d="M7 3h12a2 2 0 0 1 2 2v12"/></svg>',
+    "words": '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 10h16M4 15h10M4 20h7"/></svg>',
+    "check": '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg>',
+}
+TABS = {
+    "en": [("/hsk-flashcards/", "Flashcards", "cards"), ("/hsk-1-word-list/", "Word lists", "words"), ("/", "Checker", "check")],
+    "th": [("/th/hsk-flashcards/", "แฟลชการ์ด", "cards"), ("/th/hsk-1-word-list/", "คำศัพท์", "words"), ("/th/", "ตรวจระดับ", "check")],
+}
+
+
+def tab_bar(url, lang):
+    """Fixed bottom bar on phones: the three things a learner comes back for."""
+    path = url[len(SITE):] if url.startswith(SITE) else url
+    items = []
+    for href, label, icon in TABS.get(lang, TABS["en"]):
+        if icon == "words":
+            on = "-word-list/" in path
+        else:
+            on = path == href
+        cur = ' aria-current="page"' if on else ""
+        items.append(f'<a href="{href}"{cur}>{TAB_ICONS[icon]}<span>{label}</span></a>')
+    label = "แถบหลัก" if lang == "th" else "Main"
+    return f'\n<nav class="tab-bar" aria-label="{label}">' + "".join(items) + "</nav>"
+
+
 def render(title, description, url, css, body, head_extra="", lang="en", foot=None):
     page = (TPL / "layout.html").read_text(encoding="utf-8")
     app = (f'<link rel="manifest" href="{"/th/manifest.webmanifest" if lang == "th" else "/manifest.webmanifest"}">\n'
@@ -205,7 +232,10 @@ def render(title, description, url, css, body, head_extra="", lang="en", foot=No
            '<link rel="icon" type="image/png" sizes="48x48" href="/icons/favicon-48.png">\n'
            '<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">\n'
            '<meta name="apple-mobile-web-app-title" content="hskcheck">\n'
-           '<script>if ("serviceWorker" in navigator) addEventListener("load", () => '
+           '<script>document.documentElement.classList.add("js");'
+           'document.addEventListener("click", e => { const b = e.target.closest(".nav-toggle"); if (!b) return; '
+           'const open = b.parentNode.classList.toggle("open"); b.setAttribute("aria-expanded", String(open)); });'
+           'if ("serviceWorker" in navigator) addEventListener("load", () => '
            'navigator.serviceWorker.register("/sw.js").catch(() => {}));</script>')
     head_extra = "\n".join(x for x in (hreflang_links(url), app, head_extra) if x)
     for key, value in (
@@ -215,7 +245,7 @@ def render(title, description, url, css, body, head_extra="", lang="en", foot=No
         ("__URL__", url),
         ("__HEAD_EXTRA__", head_extra),
         ("__CSS__", css),
-        ("__BODY__", body + (SITE_FOOT if foot is None else foot)),
+        ("__BODY__", body + (SITE_FOOT if foot is None else foot) + tab_bar(url, lang)),
     ):
         page = page.replace(key, value)
     return page

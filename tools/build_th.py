@@ -137,7 +137,8 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
             cur = ' aria-current="page"' if url == current else ""
             lang = ' hreflang="en" lang="en"' if url == "/" else ""
             links.append(f'<a href="{url}"{cur}{lang}>{label}</a>')
-        return '<nav class="site-nav" aria-label="เมนูเว็บไซต์">' + "".join(links) + "</nav>"
+        return ('<nav class="site-nav" aria-label="เมนูเว็บไซต์"><button type="button" class="nav-toggle" aria-expanded="false">'
+                'เมนู</button><div class="nav-links">' + "".join(links) + "</div></nav>")
 
     th_css = (tpl / "th" / "th.css").read_text(encoding="utf-8")
     urls = []

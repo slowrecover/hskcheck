@@ -18,7 +18,7 @@
 <link rel="icon" type="image/png" sizes="48x48" href="/icons/favicon-48.png">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <meta name="apple-mobile-web-app-title" content="hskcheck">
-<script>if ("serviceWorker" in navigator) addEventListener("load", () => navigator.serviceWorker.register("/sw.js").catch(() => {}));</script>
+<script>document.documentElement.classList.add("js");document.addEventListener("click", e => { const b = e.target.closest(".nav-toggle"); if (!b) return; const open = b.parentNode.classList.toggle("open"); b.setAttribute("aria-expanded", String(open)); });if ("serviceWorker" in navigator) addEventListener("load", () => navigator.serviceWorker.register("/sw.js").catch(() => {}));</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "跟……一样 Worksheet: HSK 3 Printable with Answers", "description": "A free printable 跟……一样 worksheet for HSK 3: 18 exercises (一样, 不一样 or 比, word order, fix the mistake) with an answer key.", "learningResourceType": "Worksheet", "educationalLevel": "HSK 3", "inLanguage": ["en", "zh-Hans"], "isAccessibleForFree": true, "url": "https://hskcheck.com/learn/yiyang/worksheet/", "isPartOf": "https://hskcheck.com/learn/yiyang/", "publisher": {"@type": "Organization", "name": "hskcheck.com", "url": "https://hskcheck.com/"}}</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6894573398022493"
      crossorigin="anonymous"></script>
@@ -105,6 +105,28 @@ table.counts td.num { font-family: var(--f-num); font-variant-numeric: tabular-n
 .policy { gap: 10px; }
 .policy h2 { margin-top: 8px; }
 .policy p { margin: 0; max-width: 70ch; }
+
+/* Phones: the long site menu folds behind a Menu button, and a bar at the bottom holds the daily tools. */
+.nav-toggle { display: none; }
+.nav-links { display: contents; }
+.tab-bar { display: none; }
+@media (max-width: 640px) {
+  .js .nav-toggle { display: inline-flex; align-items: center; gap: 6px; font: 500 14px var(--f-ui); color: var(--ink);
+    background: var(--sheet); border: 1px solid var(--rule); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+  .js .nav-toggle::after { content: "▾"; font-size: 11px; color: var(--muted); }
+  .js .site-nav.open .nav-toggle::after { content: "▴"; }
+  .js .nav-links { display: none; }
+  .js .site-nav.open .nav-links { display: flex; flex-wrap: wrap; gap: 10px 18px; width: 100%; padding: 6px 2px 2px; }
+  .js .site-nav.open .nav-links a { padding-block: 4px; }
+  body { padding-bottom: calc(84px + env(safe-area-inset-bottom)); }
+  .tab-bar { display: grid; grid-template-columns: repeat(3, 1fr); position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
+    background: var(--sheet); border-top: 1px solid var(--rule); padding: 6px 8px calc(6px + env(safe-area-inset-bottom)); }
+  .tab-bar a { display: grid; justify-items: center; gap: 2px; padding: 6px 4px; text-decoration: none; color: var(--muted);
+    font: 500 12px var(--f-ui); border-radius: 10px; min-height: 48px; }
+  .tab-bar a[aria-current="page"] { color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); }
+  .tab-bar svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+}
+@media print { .tab-bar, .nav-toggle { display: none !important; } }
 /* Printable grammar worksheet: settings card, then a paper-white sheet that is exactly what prints. */
 .ws-controls { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; justify-content: space-between; }
 .ws-checks { display: flex; flex-wrap: wrap; gap: 6px 20px; }
@@ -162,7 +184,7 @@ table.counts td.num { font-family: var(--f-num); font-variant-numeric: tabular-n
 <body>
 <div class="wrap">
   <header class="no-print">
-    <nav class="site-nav" aria-label="Site"><a href="/">Level Checker</a><a href="/hsk-1-word-list/">HSK 1 Words</a><a href="/hsk-2-word-list/">HSK 2 Words</a><a href="/hsk-3-word-list/">HSK 3 Words</a><a href="/hsk-4-word-list/">HSK 4 Words</a><a href="/hsk-5-word-list/">HSK 5 Words</a><a href="/hsk-flashcards/">Flashcards</a><a href="/chinese-character-worksheets/">Writing Sheets</a><a href="/hsk-handwriting-characters/">Handwriting</a><a href="/mandarin-tone-changes/">Tone Changes</a><a href="/chinese-measure-words/">Measure Words</a><a href="/old-hsk-to-new-hsk/">Old → New HSK</a><a href="/learn/" aria-current="page">Grammar</a><a href="/yct/">YCT</a><a href="/th/">ภาษาไทย</a></nav>
+    <nav class="site-nav" aria-label="Site"><button type="button" class="nav-toggle" aria-expanded="false">Menu</button><div class="nav-links"><a href="/">Level Checker</a><a href="/hsk-1-word-list/">HSK 1 Words</a><a href="/hsk-2-word-list/">HSK 2 Words</a><a href="/hsk-3-word-list/">HSK 3 Words</a><a href="/hsk-4-word-list/">HSK 4 Words</a><a href="/hsk-5-word-list/">HSK 5 Words</a><a href="/hsk-flashcards/">Flashcards</a><a href="/chinese-character-worksheets/">Writing Sheets</a><a href="/hsk-handwriting-characters/">Handwriting</a><a href="/mandarin-tone-changes/">Tone Changes</a><a href="/chinese-measure-words/">Measure Words</a><a href="/old-hsk-to-new-hsk/">Old → New HSK</a><a href="/learn/" aria-current="page">Grammar</a><a href="/yct/">YCT</a><a href="/th/">ภาษาไทย</a></div></nav>
     <div class="eyebrow"><span>Grammar worksheet</span><span class="chip">HSK 3</span></div>
     <h1><span class="zh">跟……一样</span>Printable Worksheet</h1>
     <p class="lede">18 exercises that use only HSK 3 words, with an answer key on a separate page. Free to print and copy for your class. Need the rules first? Read the <a href="/learn/yiyang/">explanation with examples</a>.</p>
@@ -211,5 +233,6 @@ table.counts td.num { font-family: var(--f-num); font-variant-numeric: tabular-n
 </script>
 
 <footer class="site-foot">hskcheck.com · <a href="/about/">About</a> · <a href="/upgrade-packs/">Printable packs</a> · <a href="/terms/">Terms</a> · <a href="/privacy/">Privacy Policy</a></footer>
+<nav class="tab-bar" aria-label="Main"><a href="/hsk-flashcards/"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="14" height="14" rx="2"/><path d="M7 3h12a2 2 0 0 1 2 2v12"/></svg><span>Flashcards</span></a><a href="/hsk-1-word-list/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 10h16M4 15h10M4 20h7"/></svg><span>Word lists</span></a><a href="/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span>Checker</span></a></nav>
 </body>
 </html>

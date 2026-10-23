@@ -18,7 +18,7 @@
 <link rel="icon" type="image/png" sizes="48x48" href="/icons/favicon-48.png">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <meta name="apple-mobile-web-app-title" content="hskcheck">
-<script>if ("serviceWorker" in navigator) addEventListener("load", () => navigator.serviceWorker.register("/sw.js").catch(() => {}));</script>
+<script>document.documentElement.classList.add("js");document.addEventListener("click", e => { const b = e.target.closest(".nav-toggle"); if (!b) return; const open = b.parentNode.classList.toggle("open"); b.setAttribute("aria-expanded", String(open)); });if ("serviceWorker" in navigator) addEventListener("load", () => navigator.serviceWorker.register("/sw.js").catch(() => {}));</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600&display=swap">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "แฟลชการ์ด HSK", "url": "https://hskcheck.com/th/hsk-flashcards/", "inLanguage": "th", "applicationCategory": "EducationalApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "แฟลชการ์ดคำศัพท์ HSK 3.0 ระดับ 1–5 ฟรี พร้อมความหมายภาษาไทยและการทบทวนรายวัน ไม่ต้องสมัคร ความคืบหน้าเก็บในอุปกรณ์ของคุณ"}</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6894573398022493"
@@ -106,6 +106,28 @@ table.counts td.num { font-family: var(--f-num); font-variant-numeric: tabular-n
 .policy { gap: 10px; }
 .policy h2 { margin-top: 8px; }
 .policy p { margin: 0; max-width: 70ch; }
+
+/* Phones: the long site menu folds behind a Menu button, and a bar at the bottom holds the daily tools. */
+.nav-toggle { display: none; }
+.nav-links { display: contents; }
+.tab-bar { display: none; }
+@media (max-width: 640px) {
+  .js .nav-toggle { display: inline-flex; align-items: center; gap: 6px; font: 500 14px var(--f-ui); color: var(--ink);
+    background: var(--sheet); border: 1px solid var(--rule); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+  .js .nav-toggle::after { content: "▾"; font-size: 11px; color: var(--muted); }
+  .js .site-nav.open .nav-toggle::after { content: "▴"; }
+  .js .nav-links { display: none; }
+  .js .site-nav.open .nav-links { display: flex; flex-wrap: wrap; gap: 10px 18px; width: 100%; padding: 6px 2px 2px; }
+  .js .site-nav.open .nav-links a { padding-block: 4px; }
+  body { padding-bottom: calc(84px + env(safe-area-inset-bottom)); }
+  .tab-bar { display: grid; grid-template-columns: repeat(3, 1fr); position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
+    background: var(--sheet); border-top: 1px solid var(--rule); padding: 6px 8px calc(6px + env(safe-area-inset-bottom)); }
+  .tab-bar a { display: grid; justify-items: center; gap: 2px; padding: 6px 4px; text-decoration: none; color: var(--muted);
+    font: 500 12px var(--f-ui); border-radius: 10px; min-height: 48px; }
+  .tab-bar a[aria-current="page"] { color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); }
+  .tab-bar svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+}
+@media print { .tab-bar, .nav-toggle { display: none !important; } }
 /* Checker page: input sheet on top, graded result sheet below, red-pen marks for words above the chosen level. */
 label.field { font-weight: 600; font-size: 14px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
 label.field span.hint { font-weight: 400; color: var(--muted); font-size: 13px; }
@@ -165,6 +187,12 @@ textarea {
 .guide .qa { display: grid; gap: 14px; }
 .guide .zh-inline { font-family: var(--f-zh); }
 @media (prefers-reduced-motion: no-preference) { .bar i { transition: width .25s ease; } }
+.start-banner { display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; align-items: center; margin-top: 6px;
+  padding: 12px 16px; border-radius: var(--radius); text-decoration: none; color: var(--ink);
+  background: color-mix(in srgb, var(--accent) 9%, var(--sheet)); border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--rule)); }
+.start-banner .sb-head { font-weight: 600; }
+.start-banner .sb-text { grid-column: 1; font-size: 14px; color: var(--muted); }
+.start-banner .sb-go { grid-column: 2; grid-row: 1 / span 2; font-weight: 600; color: var(--accent); white-space: nowrap; }
 /* Flashcards page: one big card, answer buttons below it, sized for a phone held in one hand. */
 .fc-stats { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
 .fc-stats b { color: var(--ink); font-family: var(--f-num); font-weight: 500; }
@@ -203,9 +231,11 @@ textarea {
 .fc-check input { width: 18px; height: 18px; accent-color: var(--accent); }
 .fc-note { margin: 0; font-size: 13px; color: var(--warn); }
 .study-link { margin: 0; }
-.fc-install-text { margin: 0; color: var(--muted); font-size: 14px; }
-.fc-install .button { justify-self: start; }
-.fc-install[hidden] { display: none; }
+.fc-install { display: grid; gap: 8px; justify-items: center; margin-top: 10px; padding: 16px; border-radius: var(--radius); background: var(--paper); border: 1px solid var(--rule); width: 100%; }
+.fc-install-head { font-weight: 600; color: var(--ink) !important; }
+.fc-pick { display: grid; gap: 10px; justify-items: center; text-align: center; padding: 20px 4px; }
+.fc-pick p { margin: 0; color: var(--muted); }
+.fc-pick-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; width: 100%; margin-top: 6px; }
 /* Thai pages: Thai UI font first, with Latin and Chinese fonts as before. */
 :root { --f-ui: "IBM Plex Sans Thai", "IBM Plex Sans", "Leelawadee UI", "Thonburi", Tahoma, sans-serif; }
 body { line-height: 1.65; }
@@ -221,7 +251,7 @@ table.words-table th, table.counts th { letter-spacing: 0; }
 <body>
 <div class="wrap">
   <header>
-    <nav class="site-nav" aria-label="เมนูเว็บไซต์"><a href="/th/">ตรวจระดับคำศัพท์</a><a href="/th/hsk-1-word-list/">คำศัพท์ HSK 1</a><a href="/th/hsk-2-word-list/">คำศัพท์ HSK 2</a><a href="/th/hsk-3-word-list/">คำศัพท์ HSK 3</a><a href="/th/hsk-4-word-list/">คำศัพท์ HSK 4</a><a href="/th/hsk-flashcards/" aria-current="page">แฟลชการ์ด</a><a href="/th/chinese-character-worksheets/">แบบฝึกเขียน</a><a href="/th/chinese-measure-words/">ลักษณนาม</a><a href="/th/old-hsk-to-new-hsk/">HSK เก่า → ใหม่</a><a href="/th/learn/">ไวยากรณ์</a><a href="/th/yct/">YCT</a><a href="/" hreflang="en" lang="en">English</a></nav>
+    <nav class="site-nav" aria-label="เมนูเว็บไซต์"><button type="button" class="nav-toggle" aria-expanded="false">เมนู</button><div class="nav-links"><a href="/th/">ตรวจระดับคำศัพท์</a><a href="/th/hsk-1-word-list/">คำศัพท์ HSK 1</a><a href="/th/hsk-2-word-list/">คำศัพท์ HSK 2</a><a href="/th/hsk-3-word-list/">คำศัพท์ HSK 3</a><a href="/th/hsk-4-word-list/">คำศัพท์ HSK 4</a><a href="/th/hsk-flashcards/" aria-current="page">แฟลชการ์ด</a><a href="/th/chinese-character-worksheets/">แบบฝึกเขียน</a><a href="/th/chinese-measure-words/">ลักษณนาม</a><a href="/th/old-hsk-to-new-hsk/">HSK เก่า → ใหม่</a><a href="/th/learn/">ไวยากรณ์</a><a href="/th/yct/">YCT</a><a href="/" hreflang="en" lang="en">English</a></div></nav>
     <div class="eyebrow"><span>HSK ใหม่ · หลักสูตรปี 2025</span><span class="chip">ระดับ 1–5</span><span class="chip">ฟรี</span></div>
     <h1><span class="zh">背词</span>แฟลชการ์ด HSK</h1>
     <p class="lede">วันละไม่กี่นาที ได้ทั้งคำใหม่และคำที่ถึงเวลาทบทวน ความคืบหน้าบันทึกไว้ในอุปกรณ์นี้ ไม่ต้องสมัครสมาชิก</p>
@@ -249,12 +279,6 @@ table.words-table th, table.counts th { letter-spacing: 0; }
     <div id="card-area">
       <p class="empty" id="loading">กำลังโหลดคำศัพท์…</p>
     </div>
-  </section>
-
-  <section class="sheet fc-install" id="install" hidden aria-labelledby="install-title">
-    <h2 id="install-title">เพิ่มไว้ที่หน้าจอโฮม</h2>
-    <p class="fc-install-text" id="install-text">เปิดแฟลชการ์ดจากหน้าจอโฮมของโทรศัพท์ได้เหมือนแอป</p>
-    <button type="button" class="button" id="install-btn" hidden>เพิ่มไปยังหน้าจอโฮม</button>
   </section>
 
   <section class="sheet" aria-labelledby="set-title">
@@ -293,7 +317,7 @@ table.words-table th, table.counts th { letter-spacing: 0; }
 </div>
 
 <script>
-const UI = {"started": "คำที่เริ่มเรียนแล้ว", "strong": "คำที่จำได้ดี", "day": "วัน", "days": "วัน", "streak": "ติดต่อกัน", "newWord": "คำใหม่", "review": "ทบทวน", "show": "ดูคำตอบ", "know": "รู้คำนี้แล้ว", "again": "อีกครั้ง", "got": "จำได้", "listen": "ฟังเสียง", "doneHead": "วันนี้เรียนครบแล้ว", "doneSub": "พรุ่งนี้กลับมาทบทวนและเรียนคำใหม่กัน", "more": "เรียนคำใหม่เพิ่ม", "allSeen": "คุณเริ่มเรียนครบทุกคำในระดับนี้แล้ว", "loading": "กำลังโหลดคำศัพท์…", "loadFail": "โหลดรายการคำศัพท์ไม่ได้ ตรวจสอบอินเทอร์เน็ตแล้วลองอีกครั้ง", "resetAsk": "ล้างความคืบหน้าของ HSK {n} ใช่ไหม ย้อนกลับไม่ได้", "iosTip": "บน iPhone: แตะปุ่มแชร์ใน Safari แล้วเลือก “เพิ่มไปยังหน้าจอโฮม” แฟลชการ์ดจะเปิดได้เหมือนแอป"};
+const UI = {"started": "คำที่เริ่มเรียนแล้ว", "strong": "คำที่จำได้ดี", "day": "วัน", "days": "วัน", "streak": "ติดต่อกัน", "newWord": "คำใหม่", "review": "ทบทวน", "show": "ดูคำตอบ", "know": "รู้คำนี้แล้ว", "again": "อีกครั้ง", "got": "จำได้", "listen": "ฟังเสียง", "doneHead": "วันนี้เรียนครบแล้ว", "doneSub": "พรุ่งนี้กลับมาทบทวนและเรียนคำใหม่กัน", "more": "เรียนคำใหม่เพิ่ม", "allSeen": "คุณเริ่มเรียนครบทุกคำในระดับนี้แล้ว", "loading": "กำลังโหลดคำศัพท์…", "loadFail": "โหลดรายการคำศัพท์ไม่ได้ ตรวจสอบอินเทอร์เน็ตแล้วลองอีกครั้ง", "resetAsk": "ล้างความคืบหน้าของ HSK {n} ใช่ไหม ย้อนกลับไม่ได้", "installHead": "พรุ่งนี้เปิดจากหน้าจอโฮมได้เลย", "installText": "เพิ่มแฟลชการ์ดไว้ที่หน้าจอโฮม แตะครั้งเดียวก็เปิดได้เหมือนแอป", "installBtn": "เพิ่มไปยังหน้าจอโฮม", "pickHead": "คุณกำลังเรียน HSK ระดับไหน?", "pickSub": "เพิ่งเริ่มเรียนภาษาจีน? เริ่มที่ HSK 1 เปลี่ยนระดับได้ทุกเมื่อ", "iosTip": "บน iPhone: แตะปุ่มแชร์ใน Safari แล้วเลือก “เพิ่มไปยังหน้าจอโฮม” แฟลชการ์ดจะเปิดได้เหมือนแอป"};
 const DATA_BASE = "/th/hsk-flashcards/";
 const INTERVALS = [0, 1, 3, 7, 14, 30];  // days until the next review, by box
 const KEY = "hskcheck-flashcards-v1";
@@ -348,6 +372,11 @@ function stats() {
     '<span><b>' + streak + '</b> ' + (streak === 1 ? UI.day : UI.days) + ' ' + UI.streak + '</span>';
 }
 
+function stats0() {
+  document.querySelectorAll(".lv-btn").forEach(b => b.setAttribute("aria-pressed", "false"));
+  document.getElementById("stats").innerHTML = "";
+}
+
 function progress() {
   const total = Math.max(plannedToday, doneToday + queue.length);
   document.getElementById("today-count").textContent = queue.length ? doneToday + " / " + total : "";
@@ -369,7 +398,15 @@ function show() {
   if (!queue.length) {
     const more = words.some(w => !lvState()[w[0]]);
     area.innerHTML = '<div class="fc-done"><p class="fc-done-head">' + UI.doneHead + '</p><p>' + UI.doneSub + '</p>' +
-      (more ? '<button type="button" class="button" id="more-btn">' + UI.more + '</button>' : '<p>' + UI.allSeen + '</p>') + '</div>';
+      (more ? '<button type="button" class="button ghost-btn" id="more-btn">' + UI.more + '</button>' : '<p>' + UI.allSeen + '</p>') +
+      installBlock() + '</div>';
+    const ib = document.getElementById("install-btn");
+    if (ib) ib.addEventListener("click", async () => {
+      if (!installEvent) return;
+      installEvent.prompt();
+      try { await installEvent.userChoice; } catch (e) {}
+      installEvent = null; show();
+    });
     const m = document.getElementById("more-btn");
     if (m) m.addEventListener("click", () => {
       const t = today(), st = lvState();
@@ -440,7 +477,7 @@ async function setLevel(n) {
   buildQueue(); show();
 }
 
-document.querySelectorAll(".lv-btn").forEach(b => b.addEventListener("click", () => setLevel(+b.dataset.level)));
+document.querySelectorAll(".lv-btn").forEach(b => b.addEventListener("click", () => { state.set.chosen = true; setLevel(+b.dataset.level); }));
 const npd = document.getElementById("new-per-day");
 npd.value = String(state.set.newPerDay || 10);
 npd.addEventListener("change", () => { state.set.newPerDay = +npd.value; save(); buildQueue(); show(); });
@@ -459,31 +496,35 @@ document.addEventListener("keydown", e => {
 });
 if ("speechSynthesis" in window) speechSynthesis.onvoiceschanged = () => { if (current && !document.getElementById("say-btn") && voice()) show(); };
 
-// Home screen: Android/Chrome offers an install prompt; on iPhone we explain the Share menu.
+// Home screen: offered once today's cards are done, when a learner is most likely to want tomorrow's.
+// Android/Chrome gives an install prompt; on iPhone we explain the Share menu.
 const standalone = matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
+const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
 let installEvent = null;
-addEventListener("beforeinstallprompt", e => {
-  e.preventDefault(); installEvent = e;
-  if (standalone) return;
-  document.getElementById("install").hidden = false;
-  document.getElementById("install-btn").hidden = false;
-});
-document.getElementById("install-btn").addEventListener("click", async () => {
-  if (!installEvent) return;
-  installEvent.prompt();
-  try { await installEvent.userChoice; } catch (e) {}
-  installEvent = null; document.getElementById("install").hidden = true;
-});
-if (!standalone && /iphone|ipad|ipod/i.test(navigator.userAgent)) {
-  document.getElementById("install").hidden = false;
-  document.getElementById("install-text").textContent = UI.iosTip;
+addEventListener("beforeinstallprompt", e => { e.preventDefault(); installEvent = e; if (!current && words.length) show(); });
+function installBlock() {
+  if (standalone || (!installEvent && !isIOS)) return "";
+  return '<div class="fc-install"><p class="fc-install-head">' + UI.installHead + '</p>' +
+    (installEvent ? '<p>' + UI.installText + '</p><button type="button" class="button" id="install-btn">' + UI.installBtn + '</button>'
+                  : '<p>' + UI.iosTip + '</p>') + '</div>';
+}
+
+// First visit: ask which level, so nobody starts in the wrong place.
+function pickLevel() {
+  area.innerHTML = '<div class="fc-pick"><p class="fc-done-head">' + UI.pickHead + '</p><p>' + UI.pickSub + '</p>' +
+    '<div class="fc-pick-grid">' + [1, 2, 3, 4, 5].map(n => '<button type="button" class="button ghost-btn" data-pick="' + n + '">HSK ' + n + '</button>').join("") +
+    '</div></div>';
+  area.querySelectorAll("[data-pick]").forEach(b => b.addEventListener("click", () => { state.set.chosen = true; setLevel(+b.dataset.pick); }));
 }
 
 const hashLevel = (location.hash.match(/^#hsk([1-5])$/) || [])[1];
 document.getElementById("storage-note").hidden = saveOk;
-setLevel(hashLevel ? +hashLevel : Math.min(5, Math.max(1, level)));
+if (hashLevel) { state.set.chosen = true; setLevel(+hashLevel); }
+else if (!state.set.chosen) { stats0(); pickLevel(); }
+else setLevel(Math.min(5, Math.max(1, level)));
 </script>
 
 <footer class="site-foot">hskcheck.com · <a href="/th/about/">เกี่ยวกับเรา</a> · <a href="/terms/" hreflang="en">ข้อกำหนดการใช้งาน</a> · <a href="/privacy/" hreflang="en">นโยบายความเป็นส่วนตัว</a></footer>
+<nav class="tab-bar" aria-label="แถบหลัก"><a href="/th/hsk-flashcards/" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="14" height="14" rx="2"/><path d="M7 3h12a2 2 0 0 1 2 2v12"/></svg><span>แฟลชการ์ด</span></a><a href="/th/hsk-1-word-list/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 10h16M4 15h10M4 20h7"/></svg><span>คำศัพท์</span></a><a href="/th/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span>ตรวจระดับ</span></a></nav>
 </body>
 </html>

@@ -36,6 +36,8 @@
 .fc-check input { width: 18px; height: 18px; accent-color: var(--accent); }
 .fc-note { margin: 0; font-size: 13px; color: var(--warn); }
 .study-link { margin: 0; }
-.fc-install-text { margin: 0; color: var(--muted); font-size: 14px; }
-.fc-install .button { justify-self: start; }
-.fc-install[hidden] { display: none; }
+.fc-install { display: grid; gap: 8px; justify-items: center; margin-top: 10px; padding: 16px; border-radius: var(--radius); background: var(--paper); border: 1px solid var(--rule); width: 100%; }
+.fc-install-head { font-weight: 600; color: var(--ink) !important; }
+.fc-pick { display: grid; gap: 10px; justify-items: center; text-align: center; padding: 20px 4px; }
+.fc-pick p { margin: 0; color: var(--muted); }
+.fc-pick-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; width: 100%; margin-top: 6px; }

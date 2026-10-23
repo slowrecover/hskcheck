@@ -18,7 +18,7 @@
 <link rel="icon" type="image/png" sizes="48x48" href="/icons/favicon-48.png">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <meta name="apple-mobile-web-app-title" content="hskcheck">
-<script>if ("serviceWorker" in navigator) addEventListener("load", () => navigator.serviceWorker.register("/sw.js").catch(() => {}));</script>
+<script>document.documentElement.classList.add("js");document.addEventListener("click", e => { const b = e.target.closest(".nav-toggle"); if (!b) return; const open = b.parentNode.classList.toggle("open"); b.setAttribute("aria-expanded", String(open)); });if ("serviceWorker" in navigator) addEventListener("load", () => navigator.serviceWorker.register("/sw.js").catch(() => {}));</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600&display=swap">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "几 กับ 多少 ภาษาจีน: ไวยากรณ์ HSK 1 พร้อมตัวอย่าง", "description": "ถาม \"เท่าไร กี่...\" ภาษาจีน ใช้ 几 (jǐ) หรือ 多少 (duōshao) เมื่อไร: ลักษณนาม เวลา วันที่ ราคา พร้อมตัวอย่าง HSK 1", "datePublished": "2026-10-18", "inLanguage": "th", "about": "ไวยากรณ์ภาษาจีน (HSK 3.0)", "url": "https://hskcheck.com/th/learn/ji-vs-duoshao/", "publisher": {"@type": "Organization", "name": "hskcheck.com", "url": "https://hskcheck.com/"}}</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6894573398022493"
@@ -106,6 +106,28 @@ table.counts td.num { font-family: var(--f-num); font-variant-numeric: tabular-n
 .policy { gap: 10px; }
 .policy h2 { margin-top: 8px; }
 .policy p { margin: 0; max-width: 70ch; }
+
+/* Phones: the long site menu folds behind a Menu button, and a bar at the bottom holds the daily tools. */
+.nav-toggle { display: none; }
+.nav-links { display: contents; }
+.tab-bar { display: none; }
+@media (max-width: 640px) {
+  .js .nav-toggle { display: inline-flex; align-items: center; gap: 6px; font: 500 14px var(--f-ui); color: var(--ink);
+    background: var(--sheet); border: 1px solid var(--rule); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+  .js .nav-toggle::after { content: "▾"; font-size: 11px; color: var(--muted); }
+  .js .site-nav.open .nav-toggle::after { content: "▴"; }
+  .js .nav-links { display: none; }
+  .js .site-nav.open .nav-links { display: flex; flex-wrap: wrap; gap: 10px 18px; width: 100%; padding: 6px 2px 2px; }
+  .js .site-nav.open .nav-links a { padding-block: 4px; }
+  body { padding-bottom: calc(84px + env(safe-area-inset-bottom)); }
+  .tab-bar { display: grid; grid-template-columns: repeat(3, 1fr); position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
+    background: var(--sheet); border-top: 1px solid var(--rule); padding: 6px 8px calc(6px + env(safe-area-inset-bottom)); }
+  .tab-bar a { display: grid; justify-items: center; gap: 2px; padding: 6px 4px; text-decoration: none; color: var(--muted);
+    font: 500 12px var(--f-ui); border-radius: 10px; min-height: 48px; }
+  .tab-bar a[aria-current="page"] { color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); }
+  .tab-bar svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+}
+@media print { .tab-bar, .nav-toggle { display: none !important; } }
 .learn p { margin: 0; max-width: 68ch; }
 .examples { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; counter-reset: ex; }
 .examples li { display: grid; gap: 2px; padding: 12px 0 12px 34px; border-top: 1px solid var(--rule); position: relative; counter-increment: ex; }
@@ -136,7 +158,7 @@ table.words-table th, table.counts th { letter-spacing: 0; }
 <body>
 <div class="wrap">
   <header>
-    <nav class="site-nav" aria-label="เมนูเว็บไซต์"><a href="/th/">ตรวจระดับคำศัพท์</a><a href="/th/hsk-1-word-list/">คำศัพท์ HSK 1</a><a href="/th/hsk-2-word-list/">คำศัพท์ HSK 2</a><a href="/th/hsk-3-word-list/">คำศัพท์ HSK 3</a><a href="/th/hsk-4-word-list/">คำศัพท์ HSK 4</a><a href="/th/hsk-flashcards/">แฟลชการ์ด</a><a href="/th/chinese-character-worksheets/">แบบฝึกเขียน</a><a href="/th/chinese-measure-words/">ลักษณนาม</a><a href="/th/old-hsk-to-new-hsk/">HSK เก่า → ใหม่</a><a href="/th/learn/" aria-current="page">ไวยากรณ์</a><a href="/th/yct/">YCT</a><a href="/" hreflang="en" lang="en">English</a></nav>
+    <nav class="site-nav" aria-label="เมนูเว็บไซต์"><button type="button" class="nav-toggle" aria-expanded="false">เมนู</button><div class="nav-links"><a href="/th/">ตรวจระดับคำศัพท์</a><a href="/th/hsk-1-word-list/">คำศัพท์ HSK 1</a><a href="/th/hsk-2-word-list/">คำศัพท์ HSK 2</a><a href="/th/hsk-3-word-list/">คำศัพท์ HSK 3</a><a href="/th/hsk-4-word-list/">คำศัพท์ HSK 4</a><a href="/th/hsk-flashcards/">แฟลชการ์ด</a><a href="/th/chinese-character-worksheets/">แบบฝึกเขียน</a><a href="/th/chinese-measure-words/">ลักษณนาม</a><a href="/th/old-hsk-to-new-hsk/">HSK เก่า → ใหม่</a><a href="/th/learn/" aria-current="page">ไวยากรณ์</a><a href="/th/yct/">YCT</a><a href="/" hreflang="en" lang="en">English</a></div></nav>
     <div class="eyebrow"><span>ไวยากรณ์ HSK</span><span class="chip">HSK 1</span></div>
     <h1><span class="zh">几 / 多少</span><span class="zh-inline">几</span> กับ <span class="zh-inline">多少</span>: ถามว่า &quot;กี่&quot; และ &quot;เท่าไร&quot;</h1>
     <p class="lede">ภาษาจีนถามจำนวนได้สองแบบ <span class="zh-inline">几</span> (jǐ) ใช้กับจำนวนน้อย และต้องมีลักษณนามตามหลังเสมอ ส่วน <span class="zh-inline">多少</span> (duōshao) ใช้ได้กับทุกจำนวน ไม่ว่ามากหรือน้อย และยังใช้ถามราคากับเบอร์โทรศัพท์ด้วย</p>
@@ -208,5 +230,6 @@ table.words-table th, table.counts th { letter-spacing: 0; }
 </div>
 
 <footer class="site-foot">hskcheck.com · <a href="/th/about/">เกี่ยวกับเรา</a> · <a href="/terms/" hreflang="en">ข้อกำหนดการใช้งาน</a> · <a href="/privacy/" hreflang="en">นโยบายความเป็นส่วนตัว</a></footer>
+<nav class="tab-bar" aria-label="แถบหลัก"><a href="/th/hsk-flashcards/"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="14" height="14" rx="2"/><path d="M7 3h12a2 2 0 0 1 2 2v12"/></svg><span>แฟลชการ์ด</span></a><a href="/th/hsk-1-word-list/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 10h16M4 15h10M4 20h7"/></svg><span>คำศัพท์</span></a><a href="/th/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span>ตรวจระดับ</span></a></nav>
 </body>
 </html>
