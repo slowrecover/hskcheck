@@ -28,7 +28,7 @@ PACKS = [
         "short": "Old HSK 1 → New HSK 1",
         "price": "$3.99",
         "pages": 60,
-        "checkout": "",  # Creem checkout link, added once the store is approved
+        "checkout": "https://www.creem.io/payment/prod_5Nvf2dQ07MmAfG19A1v9O6",  # Creem checkout link
         "title": "Old HSK 1 to New HSK 1 Upgrade Pack: Printable PDF for HSK 3.0",
         "description": ("Studied the old HSK 1? Learn the 155 new HSK 1 words you haven't met yet: example sentences, "
                         "writing practice for 74 new characters, quizzes and answers. Printable PDF, $3.99."),
