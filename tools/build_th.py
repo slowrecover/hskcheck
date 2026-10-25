@@ -8,6 +8,7 @@ Outputs:
   th/...-character-worksheets/     Thai worksheet maker and presets (see tools/worksheets_th.py)
   th/chinese-measure-words/        Thai measure word finder (see tools/measure_th.py)
   th/old-hsk-to-new-hsk/           Thai old HSK -> new HSK page (see tools/upgrade_th.py)
+  th/hsk-practice-test/            Thai HSK practice test (see tools/practice.py)
 
 data/th/hskN_th.tsv has two columns, word and Thai meaning, in the same order as data/hskN.tsv.
 The build stops if the words do not match exactly.
@@ -21,6 +22,7 @@ import hsk4
 import hsk5
 import learn_th
 import measure_th
+import practice
 import study
 import reading
 import upgrade_th
@@ -124,6 +126,7 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
         pages.append((hsk5.TH_URL, "คำศัพท์ HSK 5"))
     if (root / "data" / "hsk5.tsv").exists():
         pages.append((study.TH_URL, "แฟลชการ์ด"))
+        pages.append((practice.TH_URL, "แบบทดสอบ HSK"))
     if any((root / "data" / "stories").glob("*.json")):
         pages.append((reading.TH_URL, "อ่าน"))
     pages.append((worksheets_th.TH_WS_URL, "แบบฝึกเขียน"))
@@ -256,6 +259,9 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
         urls += study.build_th(root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK, foot=FOOT,
                                css=base_css + (tpl / "checker.css").read_text(encoding="utf-8")
                                + (tpl / "study.css").read_text(encoding="utf-8") + th_css, thai=thai)
+        urls += practice.build_th(root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK, foot=FOOT,
+                                  css=base_css + (tpl / "checker.css").read_text(encoding="utf-8")
+                                  + (tpl / "practice.css").read_text(encoding="utf-8") + th_css)
 
     # Character worksheets
     urls += worksheets_th.build(root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK, foot=FOOT,
@@ -312,6 +318,7 @@ def alternates(root, levels):
     pairs.update(hsk5.th_alternates(root))
     if (root / "data" / "hsk5.tsv").exists():
         pairs.update(study.alternates(root))
+        pairs.update(practice.alternates(root))
     pairs.update(reading.alternates(root))
     pairs.update(upgrade_th.alternates(root))
     pairs["/about/"] = TH_ABOUT_URL

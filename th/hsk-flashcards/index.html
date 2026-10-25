@@ -258,7 +258,7 @@ table.words-table th, table.counts th { letter-spacing: 0; }
 <body>
 <div class="wrap">
   <header>
-    <nav class="site-nav" aria-label="เมนูเว็บไซต์"><button type="button" class="nav-toggle" aria-expanded="false">เมนู</button><div class="nav-links"><a href="/th/">ตรวจระดับคำศัพท์</a><a href="/th/hsk-1-word-list/">คำศัพท์ HSK 1</a><a href="/th/hsk-2-word-list/">คำศัพท์ HSK 2</a><a href="/th/hsk-3-word-list/">คำศัพท์ HSK 3</a><a href="/th/hsk-4-word-list/">คำศัพท์ HSK 4</a><a href="/th/hsk-flashcards/" aria-current="page">แฟลชการ์ด</a><a href="/th/reading/">อ่าน</a><a href="/th/chinese-character-worksheets/">แบบฝึกเขียน</a><a href="/th/chinese-measure-words/">ลักษณนาม</a><a href="/th/old-hsk-to-new-hsk/">HSK เก่า → ใหม่</a><a href="/th/learn/">ไวยากรณ์</a><a href="/th/yct/">YCT</a><a href="/" hreflang="en" lang="en">English</a></div></nav>
+    <nav class="site-nav" aria-label="เมนูเว็บไซต์"><button type="button" class="nav-toggle" aria-expanded="false">เมนู</button><div class="nav-links"><a href="/th/">ตรวจระดับคำศัพท์</a><a href="/th/hsk-1-word-list/">คำศัพท์ HSK 1</a><a href="/th/hsk-2-word-list/">คำศัพท์ HSK 2</a><a href="/th/hsk-3-word-list/">คำศัพท์ HSK 3</a><a href="/th/hsk-4-word-list/">คำศัพท์ HSK 4</a><a href="/th/hsk-flashcards/" aria-current="page">แฟลชการ์ด</a><a href="/th/hsk-practice-test/">แบบทดสอบ HSK</a><a href="/th/reading/">อ่าน</a><a href="/th/chinese-character-worksheets/">แบบฝึกเขียน</a><a href="/th/chinese-measure-words/">ลักษณนาม</a><a href="/th/old-hsk-to-new-hsk/">HSK เก่า → ใหม่</a><a href="/th/learn/">ไวยากรณ์</a><a href="/th/yct/">YCT</a><a href="/" hreflang="en" lang="en">English</a></div></nav>
     <div class="eyebrow"><span>HSK ใหม่ · หลักสูตรปี 2025</span><span class="chip">ระดับ 1–5</span><span class="chip">ฟรี</span></div>
     <h1><span class="zh">背词</span>แฟลชการ์ด HSK</h1>
     <p class="lede">วันละไม่กี่นาที ได้ทั้งคำใหม่และคำที่ถึงเวลาทบทวน ความคืบหน้าบันทึกไว้ในอุปกรณ์นี้ ไม่ต้องสมัครสมาชิก</p>
@@ -286,6 +286,7 @@ table.words-table th, table.counts th { letter-spacing: 0; }
     <div id="card-area">
       <p class="empty" id="loading">กำลังโหลดคำศัพท์…</p>
     </div>
+    <p class="study-link"><a id="test-link" href="/th/hsk-practice-test/">ทดสอบตัวเอง: ทำแบบทดสอบ HSK →</a></p>
   </section>
 
   <section class="sheet" aria-labelledby="set-title">
@@ -483,6 +484,7 @@ function answer(kind) {
 async function setLevel(n) {
   level = n; state.set.level = n; save();
   document.querySelectorAll(".lv-btn").forEach(b => b.setAttribute("aria-pressed", String(+b.dataset.level === n)));
+  document.getElementById("test-link").hash = "hsk" + n;
   area.innerHTML = '<p class="empty">' + UI.loading + '</p>';
   try { words = await loadLevel(n); } catch (e) { area.innerHTML = '<p class="empty">' + UI.loadFail + '</p>'; return; }
   buildQueue(); show();

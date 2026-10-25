@@ -28,6 +28,7 @@
     <div id="card-area">
       <p class="empty" id="loading">Loading words…</p>
     </div>
+    <p class="study-link"><a id="test-link" href="/hsk-practice-test/">Test yourself: take the HSK practice test →</a></p>
   </section>
 
   <section class="sheet" aria-labelledby="set-title">
@@ -225,6 +226,7 @@ function answer(kind) {
 async function setLevel(n) {
   level = n; state.set.level = n; save();
   document.querySelectorAll(".lv-btn").forEach(b => b.setAttribute("aria-pressed", String(+b.dataset.level === n)));
+  document.getElementById("test-link").hash = "hsk" + n;
   area.innerHTML = '<p class="empty">' + UI.loading + '</p>';
   try { words = await loadLevel(n); } catch (e) { area.innerHTML = '<p class="empty">' + UI.loadFail + '</p>'; return; }
   buildQueue(); show();

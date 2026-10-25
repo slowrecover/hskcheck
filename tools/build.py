@@ -9,6 +9,7 @@ Outputs (written at the repository root):
   yct/...                         YCT word lists and worksheets (see tools/yct.py)
   hsk-handwriting-characters/     which characters must be written by hand (see tools/handwriting.py)
   mandarin-tone-changes/          written vs spoken tones (see tools/tones.py; data in tones/words.json)
+  hsk-practice-test/              the HSK practice test (see tools/practice.py)
   sitemap.xml                     every page above
 
 Run from anywhere:  python3 tools/build.py
@@ -28,6 +29,7 @@ import tones
 import hsk4
 import hsk5
 import packs
+import practice
 import study
 import reading
 import yct
@@ -384,6 +386,7 @@ def main():
     if (DATA / "hsk5.tsv").exists():
         pages.append((hsk5.URL, "HSK 5 Words"))
         pages.append((study.URL, "Flashcards"))
+        pages.append((practice.URL, "Practice Test"))
     if any((DATA / "stories").glob("*.json")):
         pages.append((reading.URL, "Reading"))
     pages.append(("/chinese-character-worksheets/", "Writing Sheets"))
@@ -585,6 +588,7 @@ def main():
     # Flashcards
     if (DATA / "hsk5.tsv").exists():
         extra_urls += study.build(ROOT, pages, nav, render, base_css, TPL, SITE)
+        extra_urls += practice.build(ROOT, pages, nav, render, base_css, TPL, SITE)
 
     # HSK 5 word list and worksheets
     extra_urls += hsk5.build(ROOT, pages, nav, render, base_css, TPL, SITE, search_key, worksheet_page,

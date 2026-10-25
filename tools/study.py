@@ -59,6 +59,8 @@ TH_SWAPS = [
      '<div class="levels" role="group" aria-label="ระดับ">\n      <span class="lbl">ระดับ</span>'),
     ('<h2 id="card-title">Today</h2>', '<h2 id="card-title">วันนี้</h2>'),
     ('<p class="empty" id="loading">Loading words…</p>', '<p class="empty" id="loading">กำลังโหลดคำศัพท์…</p>'),
+    ('<a id="test-link" href="/hsk-practice-test/">Test yourself: take the HSK practice test →</a>',
+     '<a id="test-link" href="/th/hsk-practice-test/">ทดสอบตัวเอง: ทำแบบทดสอบ HSK →</a>'),
     ('<h2 id="set-title">Settings</h2>', '<h2 id="set-title">ตั้งค่า</h2>'),
     ('<label class="fc-set">New words a day', '<label class="fc-set">คำใหม่ต่อวัน'),
     ('<input type="checkbox" id="show-pinyin"> Show pinyin on the front</label>',

@@ -248,7 +248,7 @@ textarea {
 <body>
 <div class="wrap">
   <header>
-    <nav class="site-nav" aria-label="Site"><button type="button" class="nav-toggle" aria-expanded="false">Menu</button><div class="nav-links"><a href="/">Level Checker</a><a href="/hsk-1-word-list/">HSK 1 Words</a><a href="/hsk-2-word-list/">HSK 2 Words</a><a href="/hsk-3-word-list/">HSK 3 Words</a><a href="/hsk-4-word-list/">HSK 4 Words</a><a href="/hsk-5-word-list/">HSK 5 Words</a><a href="/hsk-flashcards/" aria-current="page">Flashcards</a><a href="/reading/">Reading</a><a href="/chinese-character-worksheets/">Writing Sheets</a><a href="/hsk-handwriting-characters/">Handwriting</a><a href="/mandarin-tone-changes/">Tone Changes</a><a href="/chinese-measure-words/">Measure Words</a><a href="/old-hsk-to-new-hsk/">Old → New HSK</a><a href="/learn/">Grammar</a><a href="/yct/">YCT</a><a href="/chinese-new-year-greetings/">New Year 2027</a><a href="/th/">ภาษาไทย</a></div></nav>
+    <nav class="site-nav" aria-label="Site"><button type="button" class="nav-toggle" aria-expanded="false">Menu</button><div class="nav-links"><a href="/">Level Checker</a><a href="/hsk-1-word-list/">HSK 1 Words</a><a href="/hsk-2-word-list/">HSK 2 Words</a><a href="/hsk-3-word-list/">HSK 3 Words</a><a href="/hsk-4-word-list/">HSK 4 Words</a><a href="/hsk-5-word-list/">HSK 5 Words</a><a href="/hsk-flashcards/" aria-current="page">Flashcards</a><a href="/hsk-practice-test/">Practice Test</a><a href="/reading/">Reading</a><a href="/chinese-character-worksheets/">Writing Sheets</a><a href="/hsk-handwriting-characters/">Handwriting</a><a href="/mandarin-tone-changes/">Tone Changes</a><a href="/chinese-measure-words/">Measure Words</a><a href="/old-hsk-to-new-hsk/">Old → New HSK</a><a href="/learn/">Grammar</a><a href="/yct/">YCT</a><a href="/chinese-new-year-greetings/">New Year 2027</a><a href="/th/">ภาษาไทย</a></div></nav>
     <div class="eyebrow"><span>New HSK · 2025 syllabus</span><span class="chip">Levels 1–5</span><span class="chip">Free</span></div>
     <h1><span class="zh">背词</span>HSK Flashcards</h1>
     <p class="lede">A few minutes a day. You get new words and the ones you are due to review, and your progress is saved on this device, with no account.</p>
@@ -276,6 +276,7 @@ textarea {
     <div id="card-area">
       <p class="empty" id="loading">Loading words…</p>
     </div>
+    <p class="study-link"><a id="test-link" href="/hsk-practice-test/">Test yourself: take the HSK practice test →</a></p>
   </section>
 
   <section class="sheet" aria-labelledby="set-title">
@@ -473,6 +474,7 @@ function answer(kind) {
 async function setLevel(n) {
   level = n; state.set.level = n; save();
   document.querySelectorAll(".lv-btn").forEach(b => b.setAttribute("aria-pressed", String(+b.dataset.level === n)));
+  document.getElementById("test-link").hash = "hsk" + n;
   area.innerHTML = '<p class="empty">' + UI.loading + '</p>';
   try { words = await loadLevel(n); } catch (e) { area.innerHTML = '<p class="empty">' + UI.loadFail + '</p>'; return; }
   buildQueue(); show();
