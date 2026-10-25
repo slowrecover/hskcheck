@@ -25,12 +25,12 @@ PACKS = [
         "slug": "old-hsk-1-to-new-hsk-1",
         "name": "Old HSK 1 → New HSK 1 Upgrade Pack",
         "short": "Old HSK 1 → New HSK 1",
-        "price": "$1.99",
+        "price": "$3.99",
         "pages": 60,
         "checkout": "",  # Creem checkout link, added once the store is approved
         "title": "Old HSK 1 to New HSK 1 Upgrade Pack: Printable PDF for HSK 3.0",
         "description": ("Studied the old HSK 1? Learn the 155 new HSK 1 words you haven't met yet: example sentences, "
-                        "writing practice for 74 new characters, quizzes and answers. Printable PDF, $1.99."),
+                        "writing practice for 74 new characters, quizzes and answers. Printable PDF, $3.99."),
         "lede": ("Studied the old HSK 1? The new HSK 1 has 300 words, and 155 of them were not in old HSK 1. "
                  "This printable pack teaches you those 155 words in ten short lessons."),
         "inside": [
