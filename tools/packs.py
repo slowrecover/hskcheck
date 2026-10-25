@@ -16,8 +16,9 @@ import html
 
 INDEX_URL = "/upgrade-packs/"
 TERMS_URL = "/terms/"
-TERMS_UPDATED = "2026-10-22"
+TERMS_UPDATED = "2026-10-25"
 CONTACT = "willowbewater@gmail.com"
+OPERATOR = "OUYUN QIQIKE"  # legal name of the individual who runs the site; must match the Creem onboarding details
 REFUND_DAYS = 14
 
 PACKS = [
@@ -141,6 +142,11 @@ def pack_body(p, nav_html):
       online reseller, which also sends your receipt.</p>
     </div>
     <div>
+      <h3>Who runs hskcheck.com?</h3>
+      <p>hskcheck.com and its printable packs are made and sold by {OPERATOR}, an individual. Contact:
+      <a href="mailto:{CONTACT}">{CONTACT}</a>.</p>
+    </div>
+    <div>
       <h3>Can I use it with my class?</h3>
       <p>The pack is for one learner's own study. Teachers who would like to use it with a class can email
       <a href="mailto:{CONTACT}">{CONTACT}</a>.</p>
@@ -179,7 +185,8 @@ def terms_body(nav_html):
 
   <section class="sheet policy">
     <h2>About these terms</h2>
-    <p>These terms cover hskcheck.com and the printable packs sold on it. By using the site or buying a pack, you agree to them.</p>
+    <p>These terms cover hskcheck.com and the printable packs sold on it. By using the site or buying a pack, you agree to them.
+    hskcheck.com is operated by {OPERATOR}, an individual. "We" and "us" in these terms mean {OPERATOR}.</p>
 
     <h2>The free tools and pages</h2>
     <p>The tools, word lists, grammar pages and worksheets on hskcheck.com are free to use and print, including for a class.
@@ -207,7 +214,7 @@ def terms_body(nav_html):
     <p>If you find a mistake in a pack, tell us and we will send you a corrected version at no cost.</p>
 
     <h2>Contact</h2>
-    <p>Questions about these terms or an order: <a href="mailto:{CONTACT}">{CONTACT}</a>.</p>
+    <p>hskcheck.com is operated by {OPERATOR}. Questions about these terms or an order: <a href="mailto:{CONTACT}">{CONTACT}</a>.</p>
 
     <h2>Changes</h2>
     <p>If these terms change, the new version will be posted on this page with a new date.</p>
