@@ -18,6 +18,7 @@ import html
 import json
 
 import hsk4
+import hsk5
 import learn_th
 import measure_th
 import study
@@ -119,6 +120,8 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
     pages += [(f"{TH_URL}hsk-{n}-word-list/", f"คำศัพท์ HSK {n}") for n in levels]
     if hsk4.th_alternates(root):
         pages.append((hsk4.TH_URL, "คำศัพท์ HSK 4"))
+    if hsk5.th_alternates(root):
+        pages.append((hsk5.TH_URL, "คำศัพท์ HSK 5"))
     if (root / "data" / "hsk5.tsv").exists():
         pages.append((study.TH_URL, "แฟลชการ์ด"))
     if any((root / "data" / "stories").glob("*.json")):
@@ -160,6 +163,12 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
     hsk4_th = hsk4.read_thai(root, hsk4_rows)
     if hsk4_th:
         for row, m in zip(hsk4_rows, hsk4_th):
+            checker_th.setdefault(row[0], m)
+            if len(row[0]) >= 3 and row[0].endswith("儿"):
+                checker_th.setdefault(row[0][:-1], m)
+    hsk5_th, hsk5_rows = hsk5.thai_meanings(root)
+    if hsk5_th:
+        for row, m in zip(hsk5_rows, hsk5_th):
             checker_th.setdefault(row[0], m)
             if len(row[0]) >= 3 and row[0].endswith("儿"):
                 checker_th.setdefault(row[0][:-1], m)
@@ -224,6 +233,12 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
                               lower_words=[w for n in levels for w, _, _ in word_lists[n]])
     urls += hsk4_urls
 
+    # HSK 5 (only once data/th/hsk5_th.tsv is complete)
+    urls += hsk5.build_th(root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK, foot=FOOT,
+                          wl_css=wl_css, ws_css=base_css + (tpl / "worksheet.css").read_text(encoding="utf-8") + th_css,
+                          search_key=search_key, thai_key=thai_key,
+                          lower_words=[w for n in levels for w, _, _ in word_lists[n]] + [r[0] for r in hsk4_rows])
+
     # Graded reading (Thai glosses for HSK 1-4)
     thai_all = {n: meanings[n] for n in levels}
     if hsk4_th:
@@ -231,11 +246,13 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
     urls += reading.build_th(root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK, foot=FOOT,
                              base_css=base_css, th_css=th_css, thai=thai_all)
 
-    # Flashcards (HSK 1-4 with Thai meanings, HSK 5 in English)
+    # Flashcards (Thai meanings for every level that has them; HSK 5 stays in English until data/th/hsk5_th.tsv is complete)
     if (root / "data" / "hsk5.tsv").exists():
         thai = {n: meanings[n] for n in levels}
         if hsk4_th:
             thai[4] = hsk4_th
+        if hsk5_th:
+            thai[5] = hsk5_th
         urls += study.build_th(root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK, foot=FOOT,
                                css=base_css + (tpl / "checker.css").read_text(encoding="utf-8")
                                + (tpl / "study.css").read_text(encoding="utf-8") + th_css, thai=thai)
@@ -292,6 +309,7 @@ def alternates(root, levels):
     pairs.update(worksheets_th.alternates(root, have))
     pairs.update(measure_th.alternates(root))
     pairs.update(hsk4.th_alternates(root))
+    pairs.update(hsk5.th_alternates(root))
     if (root / "data" / "hsk5.tsv").exists():
         pairs.update(study.alternates(root))
     pairs.update(reading.alternates(root))

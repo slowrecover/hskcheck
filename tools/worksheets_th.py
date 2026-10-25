@@ -118,6 +118,10 @@ def links_html(current, hsk_levels):
         import hsk4
         if hsk4.th_alternates(_ROOT):
             items.append((hsk4.TH_WS_URL, "HSK 4"))
+    if 5 not in hsk_levels and (_ROOT / "data" / "th" / "hsk5_th.tsv").exists():
+        import hsk5
+        if hsk5.th_alternates(_ROOT):
+            items.append((hsk5.TH_WS_URL, "HSK 5"))
     items += [(f"{yct.TH_YCT_URL}yct-{n}-character-worksheets/", f"YCT {n}") for n in yct.LEVELS]
     items.append((TH_WS_URL, "ตัวอักษรอะไรก็ได้"))
     out = []

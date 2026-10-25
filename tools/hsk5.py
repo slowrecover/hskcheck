@@ -143,3 +143,131 @@ def build(root, pages, nav, render, base_css, tpl, site, search_key, worksheet_p
         site + WS_URL, base_css + (tpl / "worksheet.css").read_text(encoding="utf-8"), body), encoding="utf-8")
     urls.append(WS_URL)
     return urls
+
+
+# Thai ------------------------------------------------------------------------------------------------------------
+# Same pattern as tools/hsk4.py: data/th/hsk5_th.tsv (word<TAB>Thai) follows data/hsk5.tsv row for row. It may be
+# written in batches; the Thai HSK 5 pages are built only once it covers every word.
+
+TH_URL = "/th/hsk-5-word-list/"
+TH_WS_URL = "/th/hsk-5-character-worksheets/"
+TH_LEDE = ("คำศัพท์ใหม่ของ HSK 5 ทั้ง 1,600 คำ ตามหลักสูตร HSK 3.0 (HSK ใหม่) พร้อมพินอินและความหมายภาษาไทย "
+           "รวมกับ HSK 1–4 เป็น 3,600 คำ ค้นหาได้ด้วยตัวอักษรจีน พินอิน หรือภาษาไทย")
+TH_PROSE = [
+    "HSK 5 เพิ่มคำศัพท์อีก 1,600 คำจาก 2,000 คำของ HSK 1–4 รวมเป็น 3,600 คำ ระดับนี้ผู้เรียนอ่านข่าว ฟังการพูดที่ยาวขึ้น "
+    "และพูดคุยเรื่องงาน สังคม และความคิด คำนามธรรมอย่าง <span class=\"zh-inline\">趋势</span> (แนวโน้ม) "
+    "<span class=\"zh-inline\">措施</span> (มาตรการ) และ <span class=\"zh-inline\">本质</span> (แก่นแท้) จึงพบบ่อยขึ้น",
+    "คำในชีวิตสมัยใหม่ก็มีมาก เช่น <span class=\"zh-inline\">二维码</span> (คิวอาร์โค้ด) "
+    "<span class=\"zh-inline\">点赞</span> (กดไลก์) <span class=\"zh-inline\">直播</span> (ไลฟ์สด) และ "
+    "<span class=\"zh-inline\">充值</span> (เติมเงิน) ล้วนเป็นคำศัพท์ HSK 5 ในหลักสูตรปี 2025",
+    "หลักสูตรระบุ <span class=\"zh-inline\">处</span> <span class=\"zh-inline\">调</span> และ "
+    "<span class=\"zh-inline\">系</span> ไว้สองครั้งตามเสียงอ่าน และมีบางคำ เช่น <span class=\"zh-inline\">为</span> (wéi) "
+    "ที่ปรากฏซ้ำพร้อมการใช้งานใหม่ หน้านี้แสดงแต่ละคำเพียงครั้งเดียว ตารางจึงมี 1,595 แถวสำหรับ 1,600 รายการในหลักสูตร",
+]
+
+
+def read_thai(root, rows):
+    """Thai meanings from data/th/hsk5_th.tsv (word<TAB>Thai), in the order of data/hsk5.tsv.
+
+    The file may be incomplete while it is being written in batches: it must then be an exact prefix of the word list,
+    and the Thai pages are only built once every word has a meaning. Returns the list of meanings or None."""
+    path = root / "data" / "th" / "hsk5_th.tsv"
+    if not path.exists():
+        return None
+    th = []
+    for i, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
+        if line.strip():
+            parts = [p.strip() for p in line.split("\t")]
+            if len(parts) != 2 or not parts[1]:
+                raise SystemExit(f"data/th/hsk5_th.tsv line {i}: expected word<TAB>Thai meaning")
+            th.append(parts)
+    words = [r[0] for r in rows]
+    if [w for w, _ in th] != words[:len(th)]:
+        bad = next(i for i, (w, _) in enumerate(th) if i >= len(words) or w != words[i])
+        raise SystemExit(f"data/th/hsk5_th.tsv line {bad + 1}: {th[bad][0]} is out of order; expected "
+                         f"{words[bad] if bad < len(words) else 'end of file'}")
+    return [m for _, m in th] if len(th) == len(words) else None
+
+
+def thai_meanings(root):
+    """The complete Thai meanings and rows, or (None, rows) while the Thai file is unfinished."""
+    if not (root / "data" / "hsk5.tsv").exists():
+        return None, []
+    _, rows = read(root)
+    return read_thai(root, rows), rows
+
+
+def th_alternates(root):
+    thai, _ = thai_meanings(root)
+    if thai is None:
+        return {}
+    return {URL: TH_URL, WS_URL: TH_WS_URL}
+
+
+def build_th(*, root, tpl, site, render, nav, font_link, foot, wl_css, ws_css, search_key, thai_key, lower_words):
+    import re
+    import worksheets_th
+    thai, rows = thai_meanings(root)
+    if thai is None:
+        return []
+    urls = []
+    body = (tpl / "th" / "wordlist_body.html").read_text(encoding="utf-8")
+    swaps = [
+        ('<h2 id="cta-title">ตรวจข้อความเทียบกับ HSK __LEVEL__</h2>', '<h2 id="cta-title">ฝึกเขียนตัวอักษร HSK __LEVEL__</h2>'),
+        ('<a class="button" href="/th/#hsk__LEVEL__">เปิดเครื่องมือตรวจระดับ</a><a class="button ghost" href="/th/hsk-__LEVEL__-character-worksheets/">แบบฝึกเขียนตัวอักษร</a>',
+         '<a class="button" href="/th/hsk-__LEVEL__-character-worksheets/">แบบฝึกเขียนตัวอักษร</a><a class="button ghost" href="/th/hsk-4-word-list/">คำศัพท์ HSK 4</a>'),
+        ("และตรวจทานกับสำเนารายการที่เผยแพร่อย่างอิสระอีกสองแหล่ง",
+         "ตามการถอดความของโครงการเปิด hsk-syllabus-vocabulary-parser ซึ่งตรงกับรายการ HSK 1–4 ของเว็บไซต์นี้ทุกคำ"),
+    ]
+    for a, b in swaps:
+        if body.count(a) != 1:
+            raise SystemExit(f"hsk5 (th): template text not found: {a[:50]}")
+        body = body.replace(a, b)
+    body = re.sub(r'(<h2 id="cta-title">.*?</h2>\s*<p class="lede">).*?(</p>)',
+                  r"\1พิมพ์แบบฝึกคัดตัวอักษรจีนสำหรับตัวอักษรใหม่ของ HSK 5 ได้ฟรี มีลำดับขีด พินอิน และช่องให้เขียนตาม\2",
+                  body, count=1, flags=re.S)
+    trs = []
+    for i, ((word, pinyin, en), th) in enumerate(zip(rows, thai), 1):
+        key = html.escape(search_key(word, pinyin, en) + "|" + thai_key(th), quote=True)
+        trs.append(f'          <tr data-k="{key}"><td class="n">{i}</td><td class="hz">{html.escape(word)}</td>'
+                   f'<td class="py">{html.escape(pinyin)}</td><td class="en">{html.escape(th)}</td></tr>')
+    body = (body.replace("__NAV__", nav(TH_URL)).replace("__ROWS__", "\n".join(trs))
+            .replace("__PROSE__", "\n".join(f"    <p>{p}</p>" for p in TH_PROSE)).replace("__LEDE__", TH_LEDE)
+            .replace("__ROWCOUNT__", f"{len(rows):,}").replace("__COUNT__", f"{OFFICIAL:,}").replace("__LEVEL__", "5"))
+    target = root / TH_URL.strip("/")
+    target.mkdir(parents=True, exist_ok=True)
+    (target / "index.html").write_text(render(
+        f"คำศัพท์ HSK 5 (HSK 3.0) {OFFICIAL} คำ พร้อมคำแปลภาษาไทย",
+        f"คำศัพท์ HSK 5 ทั้ง {OFFICIAL:,} คำ ตามหลักสูตร HSK 3.0 (HSK ใหม่) ปี 2025 พร้อมพินอินและความหมายภาษาไทย ค้นหาได้ ฟรี",
+        site + TH_URL, wl_css, body, font_link, lang="th", foot=foot), encoding="utf-8")
+    urls.append(TH_URL)
+
+    chars = new_chars(rows, lower_words)
+    total = len(chars)
+    entries = list(zip(rows, thai))
+    trs = []
+    for i, c in enumerate(chars, 1):
+        (w, p, _), th = next(e for e in entries if c in e[0][0])
+        trs.append(f'<tr><td class="n">{i}</td><td class="hz">{html.escape(c)}</td>'
+                   f'<td class="w">{worksheets_th.word_cell(w, p, th)}</td></tr>')
+    body = worksheets_th.fill(
+        worksheets_th.thai_template(tpl), nav=nav(worksheets_th.TH_WS_URL), eyebrow="HSK ใหม่ · หลักสูตรปี 2025",
+        chips=["ระดับ 5", f"{total} ตัว"], h1="แบบฝึกเขียนตัวอักษร HSK 5",
+        lede=f"แบบฝึกเขียนตัวอักษรใหม่ของ HSK 5 (ไม่ซ้ำกับ HSK 1–4) ทั้ง {total} ตัว มีลำดับขีด พินอิน และช่องให้เขียนตาม "
+             "พิมพ์ได้ทั้งระดับหรือครั้งละ 30 ตัว",
+        links=worksheets_th.links_html(TH_WS_URL, [1, 2, 3, 4, 5]), chars="".join(chars), preset=0,
+        range_html=worksheets_th.range_select(total), sheet_title="ตัวอักษร HSK 5",
+        chartable=worksheets_th.char_table(f"ตัวอักษรใหม่ทั้งหมด {total} ตัวในคำศัพท์ HSK 5", trs),
+        about_title="เกี่ยวกับตัวอักษรชุดนี้",
+        prose=["หลักสูตร HSK 3.0 กำหนดเป็นคำศัพท์ ไม่ใช่ตัวอักษรเดี่ยว หน้านี้นำตัวอักษรทุกตัวในคำศัพท์ HSK 5 ที่ไม่เคยปรากฏในคำศัพท์ "
+               "HSK 1–4 มาแสดงตัวละครั้งเดียว ตามลำดับที่ปรากฏครั้งแรกในรายการคำศัพท์",
+               f'ใช้แบบฝึกนี้คู่กับ<a href="{TH_URL}">คำศัพท์ HSK 5</a>'],
+    )
+    target = root / TH_WS_URL.strip("/")
+    target.mkdir(parents=True, exist_ok=True)
+    (target / "index.html").write_text(render(
+        "แบบฝึกเขียนตัวอักษรจีน HSK 5 พิมพ์ได้ฟรี พร้อมลำดับขีด",
+        f"แบบฝึกคัดตัวอักษรจีน HSK 5 ({total} ตัว) ตามหลักสูตร HSK 3.0 พิมพ์ได้ฟรี มีลำดับขีด พินอิน ตัวจาง ๆ ให้เขียนตาม และตาราง 田",
+        site + TH_WS_URL, ws_css, body, font_link, lang="th", foot=foot), encoding="utf-8")
+    urls.append(TH_WS_URL)
+    return urls

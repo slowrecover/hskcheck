@@ -2,8 +2,8 @@
 
 Made from the English template (templates/upgrade_body.html) with its text swapped for Thai, so the two never
 drift apart: the build stops if an English string to be replaced is no longer found. Words of new HSK 1-4 show
-their Thai meaning (from data/th/hskN_th.tsv and data/th/hsk4_th.tsv); levels 5-9 have no Thai meanings yet and show
-the English one.
+their Thai meaning (from data/th/hskN_th.tsv and data/th/hsk4_th.tsv), and HSK 5 too once data/th/hsk5_th.tsv is
+complete; the other levels have no Thai meanings yet and show the English one.
 
 Called from tools/build_th.py; returns the URLs it wrote.
 """
