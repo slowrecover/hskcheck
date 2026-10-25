@@ -12,8 +12,8 @@ stopped (if fewer than 450 rows remain in the whole phase, finish them all):
 | File | Follows | Rows |
 |------|---------|------|
 | `data/vi/hsk1_vi.tsv` | `data/hsk1.tsv` | 300 |
-| `data/vi/hsk2_vi.tsv` | `data/hsk2.tsv` | 200 |
-| `data/vi/hsk3_vi.tsv` | `data/hsk3.tsv` | 500 |
+| `data/vi/hsk2_vi.tsv` | `data/hsk2.tsv` | 198 |
+| `data/vi/hsk3_vi.tsv` | `data/hsk3.tsv` | 499 |
 | `data/vi/hsk4_vi.tsv` | `data/hsk4.tsv` | 997 |
 | `data/vi/hsk5_vi.tsv` | `data/hsk5.tsv` | 1,595 |
 
