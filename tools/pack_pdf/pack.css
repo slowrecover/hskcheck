@@ -1,0 +1,100 @@
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: "Inter", "Noto Sans", "DejaVu Sans", "Noto Sans CJK SC", sans-serif; color: #1e2433; font-size: 10.5pt; line-height: 1.45; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { width: 210mm; height: 297mm; position: relative; page-break-after: always; overflow: hidden; }
+.page:last-child { page-break-after: auto; }
+.inner { padding: 16mm 14mm 18mm; }
+.foot { position: absolute; left: 14mm; right: 14mm; bottom: 9mm; display: flex; justify-content: space-between; font-size: 7.5pt; color: #6b7280; }
+.zh, .qz, .wz, .sz, .bank span, .iz, .cin, .ans p, .qb .qz { font-family: "Noto Sans CJK SC", sans-serif; }
+b.hl { color: #1f7a55; }
+.newc { color: #c8372d; }
+
+/* cover */
+.cover .topbar { height: 7px; background: #2d4a99; margin: 0 0 14mm; }
+.brand { color: #2d4a99; font-weight: 700; font-size: 10pt; margin-bottom: 18mm; }
+.kicker { letter-spacing: .14em; font-size: 7.5pt; color: #4b5563; margin-bottom: 4mm; }
+.cover-t { font-size: 40pt; line-height: 1.12; margin: 0; letter-spacing: -.02em; font-weight: 800; }
+.cover-t .arrow { color: #2d4a99; font-size: 28pt; }
+.cover-t .green { color: #1f7a55; }
+.cover-sub { font-size: 15pt; color: #4b5563; margin: 3mm 0 10mm; }
+.cover-lede { font-size: 11pt; max-width: 150mm; margin: 0 0 10mm; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5mm; margin-bottom: 8mm; }
+.stats div { background: #f1f3f7; border-radius: 4mm; padding: 5mm 5mm 4mm; }
+.stats b { display: block; font-size: 24pt; color: #2d4a99; line-height: 1.1; }
+.stats span { font-size: 9pt; color: #4b5563; }
+.bul { padding-left: 5mm; font-size: 9.5pt; }
+.bul li { margin: 1.5mm 0; }
+.bul.big { font-size: 10.5pt; } .bul.big li { margin: 3mm 0; }
+.cover-foot { position: absolute; left: 14mm; right: 14mm; bottom: 22mm; border-top: 1px solid #e3e6ec; padding-top: 3mm; font-size: 8pt; color: #374151; }
+
+h2.ph { font-size: 17pt; margin: 0 0 4mm; letter-spacing: -.01em; }
+h2.ph2 { font-size: 14pt; margin: 8mm 0 3mm; }
+.intro { color: #374151; margin: -1mm 0 4mm; font-size: 9.5pt; }
+.note { font-size: 9.5pt; color: #374151; }
+.steps li { margin: 2.5mm 0; }
+table.plan { width: 100%; border-collapse: collapse; font-size: 10pt; }
+table.plan th { text-align: left; font-size: 8.5pt; color: #6b7280; font-weight: 600; border-bottom: 1px solid #d1d5db; padding: 2mm 1mm; }
+table.plan td { border-bottom: 1px solid #e5e7eb; padding: 2.4mm 1mm; }
+.num { text-align: right; } .dn { color: #1f7a55; font-weight: 700; width: 20mm; }
+.box { display: inline-block; width: 7mm; height: 6mm; border: 1.2px solid #4b5563; border-radius: 1.2mm; }
+td.tick { width: 14mm; }
+
+/* word pages */
+.dayhead { border-left: 4px solid #1f7a55; padding-left: 4mm; margin-bottom: 4mm; }
+.dayhead .dk { color: #1f7a55; font-weight: 700; letter-spacing: .1em; font-size: 8pt; }
+.dayhead h2 { margin: .5mm 0; font-size: 17pt; }
+.dayhead .dm { font-size: 9pt; color: #4b5563; }
+.dayhead.small { margin-bottom: 3mm; }
+.wrow { display: grid; grid-template-columns: 57mm 1fr; gap: 3mm; padding: 2.6mm 0; border-bottom: 1px solid #e3e6ec; }
+.wz { font-size: 21pt; line-height: 1.1; }
+.wp { color: #2d4a99; font-weight: 700; font-size: 9pt; margin-top: .8mm; }
+.wm { font-size: 8.5pt; color: #374151; }
+.sz { font-size: 12pt; }
+.sp { color: #2d4a99; font-size: 8.5pt; }
+.se { font-size: 8.5pt; color: #374151; }
+
+/* writing pages */
+.crow { display: grid; grid-template-columns: 27mm 1fr; gap: 3mm; padding: 3mm 0 3.5mm; border-bottom: 1px solid #e3e6ec; }
+.bigcell { position: relative; width: 25mm; height: 25mm; border: 1px solid #8a94a6; display: flex; align-items: center; justify-content: center; }
+.cell, .step { position: relative; display: inline-flex; align-items: center; justify-content: center; border: 1px solid #8a94a6; margin: 0 -1px -1px 0; }
+.cell { width: 15.2mm; height: 15.2mm; }
+.step { width: 8.6mm; height: 8.6mm; margin: 0 1mm 1mm 0; }
+svg.g { position: absolute; inset: 0; width: 100%; height: 100%; }
+svg.g line { stroke: #c9d0dc; stroke-width: .6; stroke-dasharray: 2 2; vector-effect: non-scaling-stroke; }
+.cell svg:not(.g), .step svg:not(.g), .bigcell svg:not(.g) { position: relative; }
+.cp { text-align: center; color: #2d4a99; font-weight: 700; margin-top: 1mm; }
+.cn { text-align: center; font-size: 7.5pt; color: #4b5563; }
+.cin { font-size: 7.5pt; color: #374151; margin-bottom: 1mm; }
+.steps { display: flex; flex-wrap: wrap; margin-bottom: 1.5mm; }
+.trace { display: flex; }
+
+/* quiz */
+h3.qh { font-size: 11pt; margin: 5mm 0 2.5mm; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 8mm; }
+.qa { display: flex; align-items: center; gap: 4mm; height: 9mm; }
+.qa .qz { font-size: 13pt; flex: 1; }
+.qn { color: #6b7280; font-size: 8.5pt; width: 6mm; display: inline-block; }
+.qm { height: 7.2mm; font-size: 9.5pt; } .qm b { color: #2d4a99; display: inline-block; width: 6mm; }
+.bank { background: #f1f3f7; border-radius: 2mm; padding: 3mm 5mm; margin: 0 0 3mm; font-size: 12.5pt; display: flex; gap: 7mm; flex-wrap: wrap; }
+.qb { margin: 2.2mm 0; } .qb .qz { font-size: 12pt; }
+.qe { font-size: 7.8pt; color: #4b5563; padding-left: 6mm; }
+.qc { display: flex; align-items: flex-end; gap: 2mm; height: 10mm; }
+.qc .qz { font-size: 13pt; }
+.line { flex: 1; border-bottom: 1px solid #4b5563; height: 6mm; }
+.line.short { display: inline-block; width: 18mm; flex: none; }
+.fq { display: grid; grid-template-columns: 6mm 30mm 1fr 1fr 1fr; align-items: baseline; gap: 2mm; padding: 2.6mm 0; border-bottom: 1px solid #eef0f4; font-size: 9pt; }
+.fq .qz { font-size: 13pt; } .fo b { color: #2d4a99; }
+.score { margin-top: 8mm; font-size: 12pt; font-weight: 700; }
+
+/* answers & index */
+.ans { margin-bottom: 4mm; } .ans h3 { font-size: 11pt; margin: 0 0 1mm; color: #1f7a55; }
+.ans p { margin: .8mm 0; font-size: 9.5pt; }
+.ixc { gap: 6mm; }
+.ix { display: grid; grid-template-columns: 17mm 22mm 1fr 6mm; gap: 1.5mm; font-size: 7.6pt; padding: .55mm 0; border-bottom: 1px solid #f0f1f4; align-items: baseline; }
+.iz { font-size: 10pt; } .ip { color: #2d4a99; } .im { color: #374151; } .id { text-align: right; color: #1f7a55; font-weight: 700; }
+.notes h3 { font-size: 11pt; margin: 8mm 0 2mm; }
+.nl { border-bottom: 1px solid #c9ced8; height: 8mm; }
+.small { font-size: 8pt; color: #4b5563; margin-top: 6mm; }
+.known { display: grid; grid-template-columns: repeat(5, 1fr); gap: .6mm 3mm; font-size: 7.6pt; }
+.known .iz { font-size: 10.5pt; }
