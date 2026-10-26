@@ -33,6 +33,8 @@ def allowed_yct(level):
     """The YCT lists are cumulative: data/yct/yctN.tsv already holds every word of YCT 1..N."""
     words = {l.split("\t")[0] for l in (DATA / "yct" / f"yct{level}.tsv").read_text(encoding="utf-8").splitlines() if l.strip()}
     for w in list(words):
+        if "…" in w:  # pattern words such as 不但……而且…… count as their parts
+            words |= {p for p in w.split("…") if p}
         if len(w) >= 2 and w.endswith("儿"):
             words.add(w[:-1])
     return words

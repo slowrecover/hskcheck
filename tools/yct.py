@@ -330,6 +330,24 @@ def alternates(root):
     return pairs
 
 
+def th_workbook_box(n=None):
+    """Thai box linking the paid YCT workbooks and their free lesson 1 (see PACK_YCT_TH.md)."""
+    base = "/th/upgrade-packs/"
+    if n is None:
+        return ('  <section class="sheet" aria-label="สมุดแบบฝึก YCT">\n'
+                '    <p><b>สมุดแบบฝึกคำศัพท์ YCT สำหรับเด็ก</b> ระดับ 1–4 ทุกคำมีประโยคตัวอย่างแปลไทย แบบฝึกเขียน '
+                'และแบบทดสอบ พิมพ์ได้ ทุกระดับมีบทที่ 1 ให้ดาวน์โหลดฟรี</p>\n'
+                f'    <div class="cta"><a class="button" href="{base}yct-1-4-workbook-bundle/">ดูชุดรวม YCT 1–4</a>'
+                + "".join(f'<a class="button ghost" href="{base}yct-{k}-workbook/">YCT {k}</a>' for k in LEVELS) + '</div>\n'
+                '  </section>\n')
+    wb = f"{base}yct-{n}-workbook/"
+    return ('  <section class="sheet" aria-label="สมุดแบบฝึก YCT">\n'
+            f'    <p><b>สมุดแบบฝึกคำศัพท์ YCT {n}</b> ทุกคำมีประโยคตัวอย่างแปลไทย แบบฝึกเขียน และแบบทดสอบ พิมพ์ได้</p>\n'
+            f'    <div class="cta"><a class="button" href="{wb}yct-{n}-lesson-1-free.pdf">ดาวน์โหลดบทที่ 1 ฟรี (PDF)</a>'
+            f'<a class="button ghost" href="{wb}">ดูสมุดแบบฝึกฉบับเต็ม</a></div>\n'
+            '  </section>\n')
+
+
 def build_th(*, root, tpl, site, css, render, nav, font_link, foot, search_key, thai_key, ws_css=None):
     """Thai word list pages at /th/yct/. The Thai worksheet pages are built by tools/worksheets_th.py."""
     if not has_thai(root):
@@ -363,6 +381,8 @@ def build_th(*, root, tpl, site, css, render, nav, font_link, foot, search_key, 
                 .replace("__ROWCOUNT__", str(len(rows)))
                 .replace("__COUNT__", str(OFFICIAL[n]))
                 .replace("__LEVEL__", str(n)))
+        assert body.count("  </header>\n") == 1
+        body = body.replace("  </header>\n", "  </header>\n\n" + th_workbook_box(n), 1)
         out = render(
             f"คำศัพท์ YCT {n} ครบ {OFFICIAL[n]} คำ พร้อมพินอินและคำแปลไทย",
             f"คำศัพท์ YCT ระดับ {n} ทั้ง {OFFICIAL[n]} คำ พร้อมพินอินและความหมายภาษาไทย ค้นหาได้ ฟรี "
@@ -392,6 +412,8 @@ def build_th(*, root, tpl, site, css, render, nav, font_link, foot, search_key, 
                     f'<a href="{TH_YCT_URL}yct-{n}-character-worksheets/">แบบฝึกเขียน {new_chars[n]} ตัว</a></td></tr>')
     body = ((tpl / "th" / "yct_index_body.html").read_text(encoding="utf-8")
             .replace("__NAV__", nav(TH_YCT_URL)).replace("__ROWS__", "\n".join(rows)))
+    assert body.count("  </header>\n") == 1
+    body = body.replace("  </header>\n", "  </header>\n\n" + th_workbook_box(), 1)
     target = root / TH_YCT_URL.strip("/")
     target.mkdir(parents=True, exist_ok=True)
     (target / "index.html").write_text(render(
