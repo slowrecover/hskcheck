@@ -1,0 +1,113 @@
+{
+  "slug": "zhe-particle",
+  "published": "2026-10-26",
+  "title": "Cách dùng 着 (zhe) trong tiếng Trung: ngữ pháp HSK 2 có ví dụ",
+  "description": "Cách dùng 着 (zhe) để nói trạng thái đang kéo dài: động từ + 着, làm việc theo một cách nào đó, tả cảnh, phân biệt 着 và 在, câu phủ định, ví dụ HSK 2.",
+  "h1": "Cách dùng 着 (zhe) để nói trạng thái đang kéo dài",
+  "lede": "Đặt 着 (zhe) ngay sau động từ để cho biết một trạng thái vẫn đang kéo dài: cửa đang mở, cô ấy đang cầm điện thoại, anh ấy đang mặc áo đỏ. Đây là một điểm ngữ pháp quan trọng của HSK 2.",
+  "sections": [
+    {
+      "h2": "Động từ + 着: trạng thái kéo dài",
+      "paras": [
+        "Chủ ngữ + động từ + 着 (+ tân ngữ).",
+        "着 đứng ngay sau động từ, trước tân ngữ. Nó không tả bản thân hành động mà tả trạng thái do hành động để lại và vẫn còn đó: 开 là mở hoặc bật, còn 开着 nghĩa là đang mở hoặc đang bật. Cuối câu cũng hay có thêm 呢."
+      ],
+      "examples": [
+        "Cửa đang mở.",
+        "Ti vi vẫn còn đang bật.",
+        "Cô ấy đang cầm một chiếc điện thoại trên tay.",
+        "Anh ấy đang mặc một chiếc áo màu đỏ."
+      ]
+    },
+    {
+      "h2": "Làm việc gì đó theo một cách nào đó",
+      "paras": [
+        "Động từ 1 + 着 + động từ 2. Động từ thứ nhất có 着 cho biết hành động chính được làm như thế nào hoặc trong trạng thái nào: mỉm cười nói, ngồi xem, đi bộ đến. Hành động chính là động từ thứ hai, nên 着 gắn vào động từ thứ nhất."
+      ],
+      "examples": [
+        "Anh ấy mỉm cười nói: \"Không sao đâu.\"",
+        "Bà nội thích ngồi xem ti vi.",
+        "Chúng ta đi bộ đến đó đi, không xa đâu."
+      ]
+    },
+    {
+      "h2": "Tả cảnh: ở đâu có gì",
+      "paras": [
+        "Nơi chốn + động từ + 着 + người hoặc vật. Đây là cách thường dùng để nói ở một nơi có gì và đang ở trạng thái nào, giống \"ở cửa có một người đang đứng\" trong tiếng Việt. Nơi chốn đứng đầu câu, người hoặc vật đứng sau động từ."
+      ],
+      "examples": [
+        "Ở cửa có một người đang đứng.",
+        "Trong lớp học có rất nhiều học sinh đang ngồi.",
+        "Trên quyển vở có viết tên tôi."
+      ]
+    },
+    {
+      "h2": "着 hay 在?",
+      "paras": [
+        "在 đứng trước động từ, cho biết hành động đang diễn ra lúc này: 他在穿衣服 nghĩa là anh ấy đang mặc quần áo vào. 着 đứng sau động từ, cho biết kết quả của hành động vẫn còn đó: 他穿着新衣服 nghĩa là trên người anh ấy là quần áo mới. Tiếng Việt nói cả hai là \"đang mặc\", nên cần chú ý. Khi chỉ muốn nói ai đó đang làm gì lúc này, hãy dùng 在, không dùng 着.",
+        "Một vài hành động như trời mưa có thể dùng 着 cho việc đang diễn ra, thường kèm 呢: 外面下着雨呢. Cũng lưu ý 着 đọc là zháo trong một số từ, ví dụ 睡着 (shuìzháo, ngủ thiếp đi)."
+      ],
+      "examples": [
+        "Anh ấy đang mặc quần áo.",
+        "Anh ấy đang mặc một chiếc áo mới.",
+        "Bên ngoài trời đang mưa."
+      ]
+    },
+    {
+      "h2": "Phủ định, câu hỏi và lỗi hay gặp",
+      "paras": [
+        "Để nói trạng thái đó không có, dùng 没有 trước động từ và giữ 着: 电视没有开着. Không dùng 不 ở đây: muốn nói \"cửa không mở\" thì 门不开着 là sai. Để hỏi, thêm 吗 vào cuối câu hoặc hỏi bằng 什么.",
+        "Lỗi hay gặp nhất là đặt 着 sai chỗ. 着 đứng ngay sau động từ và trước tân ngữ, nên nói 他穿着红色的衣服, không nói 他穿红色的衣服着. Khi có hai động từ, 着 gắn vào động từ thứ nhất: 笑着说, không nói 笑说着."
+      ],
+      "examples": [
+        "Ti vi không bật.",
+        "Cửa có đang mở không?",
+        "Bạn đang cầm gì trong tay vậy?"
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 着 (zhe) HSK 2 có đáp án, in miễn phí",
+    "description": "Bài tập 着 (zhe) HSK 2 in miễn phí: 20 câu (着, 在 hay 没有, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 着, 在 hoặc 没有",
+        "instructions": "Điền 着, 在 hoặc 没有 vào chỗ trống. Phần nghĩa tiếng Việt cho biết câu có nghĩa gì.",
+        "items": [
+          "Cô ấy đang cầm một quyển sách trên tay.",
+          "Tôi đang nấu cơm, bạn đợi một chút nhé.",
+          "Ti vi không bật.",
+          "Anh ấy thích đứng đọc sách.",
+          "Bạn đang xem gì vậy?",
+          "Cửa đang mở, bạn vào đi.",
+          "Trong tay anh ấy không cầm gì cả.",
+          "Bọn trẻ đang mặc quần áo.",
+          "Trong lớp học có rất nhiều học sinh đang ngồi."
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng.",
+        "items": [
+          "Ti vi vẫn còn đang bật.",
+          "Cô ấy đang mặc một chiếc áo màu đỏ.",
+          "Ở cửa có rất nhiều người đang đứng.",
+          "Chúng ta ngồi xuống nói chuyện đi.",
+          "Ti vi không bật.",
+          "Chúng ta đi bộ đến trường đi."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Cô ấy đang mặc một chiếc áo mới.",
+          "Cửa không mở.",
+          "Anh ấy đang cầm một chiếc điện thoại.",
+          "Ông nội thích ngồi đọc sách.",
+          "Anh ấy mỉm cười nói: \"Xin chào!\""
+        ]
+      }
+    ]
+  }
+}

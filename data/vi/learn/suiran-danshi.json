@@ -1,0 +1,100 @@
+{
+  "slug": "suiran-danshi",
+  "published": "2026-10-26",
+  "title": "虽然……但是 (tuy... nhưng) trong tiếng Trung: ngữ pháp HSK 2",
+  "description": "Cách dùng 虽然……但是 (suīrán… dànshì): mẫu câu, vị trí của 虽然, thêm 还是, lỗi hay gặp và 12 câu ví dụ HSK 2.",
+  "h1": "Cách nói \"tuy... nhưng\" với 虽然……但是",
+  "lede": "虽然 (suīrán) nghĩa là \"tuy\", \"mặc dù\", còn 但是 (dànshì) nghĩa là \"nhưng\". Trong tiếng Trung, hai từ này thường đi thành cặp: 虽然 nêu một sự thật, còn 但是 nêu điều có thể khiến người nghe không ngờ tới vì sự thật đó.",
+  "sections": [
+    {
+      "h2": "Mẫu câu",
+      "paras": [
+        "虽然 + sự thật, 但是 + kết quả không ngờ tới.",
+        "Tiếng Anh chỉ dùng \"although\" hoặc \"but\", không dùng cả hai trong một câu. Tiếng Trung thì giống \"tuy... nhưng\" trong tiếng Việt: dùng cả hai là bình thường và tự nhiên. 虽然 mở đầu vế thứ nhất, 但是 mở đầu vế thứ hai."
+      ],
+      "examples": [
+        "Tuy bộ quần áo này đắt nhưng rất đẹp.",
+        "Tuy tiếng Hán không dễ học nhưng rất thú vị.",
+        "Tuy anh ấy là người Trung Quốc nhưng anh ấy không biết nấu món Trung Quốc."
+      ]
+    },
+    {
+      "h2": "Vị trí của 虽然 và 但是",
+      "paras": [
+        "虽然 có thể đứng trước hoặc sau chủ ngữ của vế thứ nhất: 虽然他很忙 và 他虽然很忙 đều đúng. Khi cả hai vế nói về cùng một người, không cần nhắc lại chủ ngữ sau 但是.",
+        "但是 thì khác: nó luôn đứng ngay đầu vế thứ hai, trước chủ ngữ. Phủ định với 不 và 没有 trong mỗi vế vẫn dùng như bình thường."
+      ],
+      "examples": [
+        "Tuy anh ấy bận nhưng ngày nào cũng học tiếng Hán.",
+        "Anh ấy tuy bận nhưng ngày nào cũng học tiếng Hán.",
+        "Tôi tuy mệt nhưng không muốn ngủ."
+      ]
+    },
+    {
+      "h2": "但是 đứng một mình, và thêm 还是",
+      "paras": [
+        "但是 có thể dùng mà không cần 虽然, giống \"nhưng\" trong tiếng Việt. Còn 虽然 thì hiếm khi đứng một mình: vế thứ hai thường có 但是, 还是 hoặc cả hai.",
+        "还是 ở đây nghĩa là \"vẫn\". Nó đứng sau chủ ngữ của vế thứ hai, trước động từ."
+      ],
+      "examples": [
+        "Nhà hàng này không lớn nhưng đồ ăn rất ngon.",
+        "Tuy thời tiết không đẹp nhưng chúng tôi vẫn đi.",
+        "Tuy bác sĩ bảo anh ấy phải nghỉ ngơi nhiều hơn, anh ấy vẫn đi làm."
+      ]
+    },
+    {
+      "h2": "Lỗi hay gặp",
+      "paras": [
+        "Lỗi hay gặp nhất là đặt 但是 sau chủ ngữ, như 虽然他很忙，他但是每天都来. 但是 phải đứng đầu vế: 虽然他很忙，但是他每天都来.",
+        "Một lỗi khác là nhầm hai cặp 虽然……但是 (tuy... nhưng) và 因为……所以 (vì... nên). 虽然 đi với 但是, còn 因为 đi với 所以. 虽然……所以 và 因为……但是 đều sai."
+      ],
+      "examples": [
+        "Vì đắt quá nên tôi không mua.",
+        "Tuy đắt nhưng tôi đã mua.",
+        "Tuy anh ấy bận nhưng ngày nào anh ấy cũng đến."
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 虽然……但是 HSK 2 có đáp án, in miễn phí",
+    "description": "Bài tập 虽然……但是 HSK 2 in miễn phí: 18 câu (虽然, 但是, 因为 hay 所以, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 虽然, 但是, 因为 hoặc 所以",
+        "instructions": "Điền 虽然, 但是, 因为 hoặc 所以 vào chỗ trống. Phần nghĩa tiếng Việt cho biết câu có nghĩa gì.",
+        "items": [
+          "Tuy trời lạnh nhưng bọn trẻ vẫn đang chơi ở ngoài.",
+          "Tuy món này rất ngon nhưng đắt quá.",
+          "Vì trời mưa nên chúng tôi không ra ngoài.",
+          "Vì anh ấy bị ốm nên hôm nay không đến lớp.",
+          "Tuy tôi đã học tiếng Hán hai năm nhưng nói chưa giỏi lắm.",
+          "Tuy cô ấy mới hai mươi tuổi nhưng đã là bác sĩ rồi.",
+          "Tuy anh ấy mệt nhưng vẫn đang làm việc.",
+          "Vì ngày mai có bài thi nên hôm nay tôi không xem ti vi nữa."
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng có 虽然 và 但是.",
+        "items": [
+          "Tuy đã rất muộn rồi nhưng anh ấy vẫn đang làm việc.",
+          "Tuy chiếc điện thoại này đắt nhưng tôi vẫn muốn mua.",
+          "Tuy anh ấy không biết nói tiếng Hán nhưng nghe hiểu được.",
+          "Tuy anh trai tôi cao nhưng tôi không cao.",
+          "Tuy bên ngoài lạnh nhưng trong phòng rất nóng."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Tuy anh ấy bận nhưng ngày nào anh ấy cũng tập thể dục.",
+          "Tuy nhà hàng này xa nhưng tuần nào chúng tôi cũng đến.",
+          "Tuy anh ấy là giáo viên nhưng anh ấy không thích đọc sách.",
+          "Tuy tôi không thích ăn cá nhưng tôi vẫn ăn một chút.",
+          "Tuy cô ấy rất muốn đi Trung Quốc nhưng cô ấy không có tiền."
+        ]
+      }
+    ]
+  }
+}

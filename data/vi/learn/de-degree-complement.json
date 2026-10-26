@@ -1,0 +1,103 @@
+{
+  "slug": "de-degree-complement",
+  "published": "2026-10-26",
+  "title": "Bổ ngữ trạng thái với 得 (de) trong tiếng Trung: ngữ pháp HSK 2",
+  "description": "Cách dùng 得 (de) để nói ai đó làm việc gì giỏi hay kém, nhanh hay chậm: động từ + 得 + tính từ, câu có tân ngữ, phủ định, câu hỏi, phân biệt 得 và 的.",
+  "h1": "Cách dùng 得 (de) để nói ai đó làm việc gì như thế nào",
+  "lede": "得 (de) đứng ngay sau động từ và dẫn ra lời miêu tả hành động được làm như thế nào: tốt hay kém, nhanh hay chậm, sớm hay muộn. 他说得很好 nghĩa là \"anh ấy nói rất hay\". Phần đứng sau 得 gọi là bổ ngữ trạng thái. Đây là một điểm ngữ pháp quan trọng của HSK 2.",
+  "sections": [
+    {
+      "h2": "Mẫu câu",
+      "paras": [
+        "Chủ ngữ + động từ + 得 + 很 + tính từ.",
+        "Đặt 得 ngay sau động từ, rồi đến tính từ miêu tả hành động. Giống như khi tính từ làm vị ngữ, tính từ ở đây thường có 很 hoặc một từ khác như 非常 hay 太……了 đi kèm. Nếu không có, câu có thể mang ý so sánh: 他跑得快 gợi ý anh ấy chạy nhanh hơn người khác. 得 đọc thanh nhẹ."
+      ],
+      "examples": [
+        "Anh ấy nói rất hay.",
+        "Cô ấy chạy rất nhanh.",
+        "Hôm nay bạn đến sớm thế.",
+        "Hôm qua tôi đi ngủ rất muộn."
+      ]
+    },
+    {
+      "h2": "Có tân ngữ: lặp lại động từ",
+      "paras": [
+        "得 phải đứng ngay sau động từ, nên giữa chúng không có chỗ cho tân ngữ. Lỗi người học hay mắc nhất là 他说汉语得很好. Có hai cách nói đúng: lặp lại động từ (động từ + tân ngữ + động từ + 得 + tính từ), hoặc đưa tân ngữ lên trước động từ và bỏ động từ thứ nhất.",
+        "Cả 他说汉语说得很好 và 他汉语说得很好 đều đúng và rất hay dùng."
+      ],
+      "examples": [
+        "Anh ấy nói tiếng Hán rất giỏi.",
+        "Tiếng Hán của anh ấy rất tốt.",
+        "Mẹ tôi nấu ăn cực kỳ ngon.",
+        "Cô ấy viết chữ rất đẹp."
+      ]
+    },
+    {
+      "h2": "Phủ định và câu hỏi",
+      "paras": [
+        "Để nói ai đó làm việc gì không tốt, đặt 不 sau 得, trước tính từ: 我唱得不好. Đặt 不 trước động từ (我不唱得好) là sai.",
+        "Để hỏi, thêm 吗 vào cuối câu, dùng dạng tính từ + 不 + tính từ sau 得, hoặc hỏi bằng 怎么样 (như thế nào?)."
+      ],
+      "examples": [
+        "Tôi hát không hay.",
+        "Anh ấy chạy không nhanh.",
+        "Bạn ngủ có ngon không?",
+        "Cô ấy nói có nhanh không?",
+        "Anh ấy bơi thế nào?"
+      ]
+    },
+    {
+      "h2": "得 hay 的?",
+      "paras": [
+        "得 và 的 đọc giống nhau nhưng có chức năng khác nhau. 的 đứng trước danh từ và miêu tả người hoặc vật. 得 đứng sau động từ và miêu tả hành động. So sánh 一个很好的老师 (một giáo viên rất giỏi) với 教得很好 (dạy rất giỏi)."
+      ],
+      "examples": [
+        "Cô ấy là một giáo viên rất giỏi.",
+        "Cô ấy dạy rất giỏi."
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 得 (de) HSK 2 có đáp án, in miễn phí",
+    "description": "Bài tập 得 (de) HSK 2 in miễn phí: 19 câu (得 hay 的, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 得 hoặc 的",
+        "instructions": "Điền 得 hoặc 的 vào chỗ trống. Phần nghĩa tiếng Việt cho biết câu có nghĩa gì.",
+        "items": [
+          "Anh ấy chạy rất nhanh.",
+          "Đây là cơm mẹ tôi nấu.",
+          "Cô ấy hát rất hay.",
+          "Anh ấy là một bác sĩ rất giỏi.",
+          "Tối qua bạn ngủ có ngon không?",
+          "Tôi thích quần áo màu đỏ.",
+          "Họ đến muộn quá.",
+          "Anh ấy nói tiếng Hán cực kỳ giỏi."
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng có 得.",
+        "items": [
+          "Anh ấy nói rất nhanh.",
+          "Cô ấy viết chữ rất đẹp.",
+          "Tôi hát không hay.",
+          "Anh ấy bơi thế nào?",
+          "Hôm nay bạn đến sớm thế.",
+          "Bố tôi nấu ăn rất ngon."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Anh ấy nói tiếng Hán rất giỏi.",
+          "Anh ấy chạy không nhanh.",
+          "Hôm qua tôi đi ngủ rất muộn.",
+          "Bạn hát thế nào?",
+          "Cô ấy viết chữ rất đẹp."
+        ]
+      }
+    ]
+  }
+}
