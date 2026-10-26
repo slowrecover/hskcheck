@@ -1,0 +1,100 @@
+{
+  "slug": "li-distance",
+  "published": "2026-10-26",
+  "title": "离 (lí) trong tiếng Trung: nói xa gần, ngữ pháp HSK 2",
+  "description": "Cách dùng 离 (lí): A 离 B 很远 / 很近, hỏi 远吗 và 多远, 离 hay 从, đếm ngược với 离…还有, kèm 14 câu ví dụ HSK 2.",
+  "h1": "Cách dùng 离 để nói một nơi cách bao xa",
+  "lede": "离 (lí) dùng khi nói về khoảng cách: nơi này cách nơi kia xa hay gần. Nghĩa của nó giống \"cách\" trong tiếng Việt. Đây là từ có trong những câu nói hằng ngày như \"nhà tôi gần trường\" hay \"ga tàu có xa đây không?\".",
+  "sections": [
+    {
+      "h2": "Mẫu câu",
+      "paras": [
+        "A + 离 + B + 远 / 近.",
+        "Đặt hai nơi ở hai bên 离, rồi kết thúc câu bằng 远 (xa) hoặc 近 (gần), giống tiếng Việt \"A cách B rất xa\". Như các tính từ khác, trước 远 và 近 thường có 很, và không cần 是. Để phủ định, đặt 不 trước tính từ: 不远, 不近, hoặc 不太远 (không xa lắm)."
+      ],
+      "examples": [
+        "Nhà tôi rất gần trường.",
+        "Sân bay cách đây rất xa.",
+        "Bệnh viện cách nhà tôi không xa.",
+        "Nhà hàng ở rất gần đây, chúng ta đi bộ đến đó nhé."
+      ]
+    },
+    {
+      "h2": "Hỏi xa hay gần",
+      "paras": [
+        "Để hỏi một nơi có xa không, thêm 吗 ở cuối câu, hoặc dùng 远不远 (chữ 不 đọc nhẹ, thanh nhẹ). Để hỏi bao xa, dùng 多远. Trong khẩu ngữ, người ta thường trả lời bằng thời gian đi, như 走路五分钟 (đi bộ năm phút), chứ ít khi nói khoảng cách."
+      ],
+      "examples": [
+        "Nhà bạn có xa công ty không?",
+        "Bến xe có xa đây không?",
+        "Siêu thị cách nhà bạn bao xa?",
+        "Không xa lắm, đi bộ năm phút."
+      ]
+    },
+    {
+      "h2": "离 hay 从?",
+      "paras": [
+        "Tiếng Việt có \"cách\" và \"từ\", tiếng Trung cũng phân biệt rõ như vậy. 离 nói khoảng cách giữa hai nơi, không có gì di chuyển, giống \"cách\". 从 là điểm xuất phát của một chuyến đi, thường đi với 到: 从 A 到 B (từ A đến B). Vì vậy 我家从学校很远 là sai; phải nói 我家离学校很远.",
+        "Lỗi hay gặp khác là trật tự từ. Tiếng Việt hay nói \"nhà tôi rất gần trường\", với \"gần\" đứng trước nơi chốn. Trong tiếng Trung, 离 và nơi chốn luôn đứng trước, 远 hoặc 近 đứng cuối: 我家离学校很近, không nói 我家很近离学校."
+      ],
+      "examples": [
+        "Trường chúng tôi rất gần ga tàu điện ngầm.",
+        "Từ nhà tôi đến trường mất hai mươi phút.",
+        "Nhà anh ấy cách đây rất xa, nên ngày nào anh ấy cũng lái xe đi làm."
+      ]
+    },
+    {
+      "h2": "Đếm ngược với 离…还有",
+      "paras": [
+        "离 cũng có thể đo thời gian: còn bao lâu nữa thì một việc xảy ra. Mẫu câu là 离 + sự việc + 还有 + khoảng thời gian, giống \"còn... nữa là đến...\" trong tiếng Việt. Ở đây cũng dùng 离, không dùng 从."
+      ],
+      "examples": [
+        "Còn mười phút nữa là vào học.",
+        "Còn ba ngày nữa là đến kỳ thi.",
+        "Bây giờ còn một tiếng nữa mới tan làm."
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 离 (lí) HSK 2 có đáp án, in miễn phí",
+    "description": "Bài tập 离 HSK 2 in miễn phí: 18 câu (chọn 离 hay 从, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 离 hoặc 从",
+        "instructions": "Điền 离 hoặc 从 vào chỗ trống. Phần nghĩa tiếng Việt cho biết câu có nghĩa gì.",
+        "items": [
+          "Nhà tôi rất gần trường.",
+          "Tôi đến từ Trung Quốc.",
+          "Sân bay cách đây rất xa.",
+          "Từ đây đến bến xe mất mười phút.",
+          "Nhà bạn có xa công ty không?",
+          "Còn hai ngày nữa là đến kỳ thi.",
+          "Siêu thị cách đây không xa.",
+          "Bạn đến từ đâu?"
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng có 离.",
+        "items": [
+          "Nhà tôi rất gần trường.",
+          "Sân bay có xa đây không?",
+          "Còn năm phút nữa là vào học.",
+          "Bến xe cách nhà bạn bao xa?",
+          "Nhà anh ấy cách công ty không xa lắm."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Nhà tôi cách trường rất xa.",
+          "Siêu thị rất gần nhà tôi.",
+          "Bệnh viện cách đây không xa.",
+          "Còn ba ngày nữa là đến kỳ thi.",
+          "Bến xe có xa đây không?"
+        ]
+      }
+    ]
+  }
+}

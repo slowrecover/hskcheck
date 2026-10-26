@@ -1,0 +1,103 @@
+{
+  "slug": "yijing-le",
+  "published": "2026-10-26",
+  "title": "已经 (yǐjīng) \"đã... rồi\" trong tiếng Trung: ngữ pháp HSK 2",
+  "description": "Cách nói \"đã... rồi\" với 已经……了 (yǐjīng... le): trật tự từ, tuổi và giờ, \"chưa\" với 还没有, câu hỏi, kèm ví dụ HSK 2.",
+  "h1": "Cách nói \"đã... rồi\" với 已经……了",
+  "lede": "已经 (yǐjīng) nghĩa là \"đã\", \"rồi\". Nó gần như luôn đi với 了 ở cuối câu: 已经 + động từ + 了, giống \"đã... rồi\" trong tiếng Việt. Cả cụm cho biết một việc đã xảy ra, hoặc một tình trạng đã đạt tới, tính đến lúc này. Đây là một điểm ngữ pháp quan trọng của HSK 2.",
+  "sections": [
+    {
+      "h2": "Mẫu câu",
+      "paras": [
+        "Chủ ngữ + 已经 + động từ + 了.",
+        "已经 là phó từ, nên đứng sau chủ ngữ và ngay trước động từ, giống \"đã\" trong tiếng Việt. 了 ở cuối câu cho biết hành động đã xảy ra, giống \"rồi\". Bạn cũng có thể chỉ nói 我吃饭了, nhưng 已经 nhấn mạnh rằng việc đó đã xong tính đến lúc này, thường là sớm hơn người kia nghĩ."
+      ],
+      "examples": [
+        "Tôi đã ăn cơm rồi.",
+        "Anh ấy đã về nhà rồi.",
+        "Phim đã bắt đầu rồi."
+      ]
+    },
+    {
+      "h2": "Tính từ, giờ giấc và tuổi",
+      "paras": [
+        "已经……了 cũng dùng được với tính từ, giờ, tuổi và khoảng thời gian. Nó cho biết đã đạt tới một mốc nào đó. Khi nói giờ hoặc con số mà không có chủ ngữ, câu có thể bắt đầu bằng 已经.",
+        "Với khoảng thời gian, như 两年, có thể dùng 了 cả sau động từ và ở cuối câu: hành động bắt đầu từ trước và đến giờ vẫn đang tiếp tục."
+      ],
+      "examples": [
+        "Trời đã muộn rồi.",
+        "Đã mười giờ rồi, chúng ta về nhà thôi.",
+        "Con trai tôi đã sáu tuổi rồi.",
+        "Tôi đã học tiếng Trung được hai năm rồi."
+      ]
+    },
+    {
+      "h2": "Lỗi hay gặp: trật tự từ và thiếu 了",
+      "paras": [
+        "Trong tiếng Anh, \"already\" có thể đứng cuối câu. Trong tiếng Trung, 已经 không bao giờ đứng cuối câu: nói 我们已经到了, không nói 我们到了已经. Nó cũng không đứng trước chủ ngữ, nên 已经他回家了 là sai. Cứ nhớ 已经 đứng đúng chỗ của \"đã\" trong tiếng Việt.",
+        "Lỗi hay gặp khác là quên 了. 我已经吃饭 nghe như câu chưa nói xong đối với người Trung Quốc. Hãy giữ 了 ở cuối câu."
+      ],
+      "examples": [
+        "Chúng tôi đến nơi rồi.",
+        "Tôi biết rồi."
+      ]
+    },
+    {
+      "h2": "Chưa, không... nữa, và câu hỏi",
+      "paras": [
+        "Ngược lại với 已经……了 là 还没有 + động từ, nghĩa là \"chưa\". Không dùng 已经 trong câu này, và bỏ 了: nói 我还没有吃饭, không nói 我已经没有吃饭了. Với 不, 已经不……了 nghĩa là \"không... nữa\".",
+        "Để hỏi một việc đã xảy ra chưa, thêm 吗 vào cuối câu. Trả lời \"rồi\" bằng 已经 + động từ + 了, trả lời \"chưa\" bằng 还没有."
+      ],
+      "examples": [
+        "Tôi chưa ăn cơm.",
+        "Bạn đã mua vé rồi à?",
+        "Anh ấy đi rồi à?",
+        "Tôi không uống cà phê nữa."
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 已经……了 HSK 2 có đáp án, in miễn phí",
+    "description": "Bài tập 已经……了 (đã... rồi) HSK 2 in miễn phí: 20 câu (已经 hay 还没有, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 已经 hoặc 还没有",
+        "instructions": "Điền 已经 hoặc 还没有 vào chỗ trống. Phần nghĩa tiếng Việt cho biết câu có nghĩa gì.",
+        "items": [
+          "Tôi đã ăn rồi, các bạn ăn đi.",
+          "Anh ấy chưa dậy, vẫn đang ngủ.",
+          "Phim đã bắt đầu rồi, mau vào đi.",
+          "Mẹ chưa về, chúng ta đợi mẹ một chút nhé.",
+          "Đã mười hai giờ rồi, mau đi ngủ đi.",
+          "Cuốn sách này tôi chưa đọc xong.",
+          "Anh ấy đã về đến nhà rồi.",
+          "Tôi chưa mua vé tàu, ngày mai đi mua.",
+          "Cơm nấu xong rồi, mau lại ăn đi."
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng.",
+        "items": [
+          "Anh ấy đi rồi.",
+          "Đã chín giờ rồi.",
+          "Chúng tôi đã đến sân bay rồi.",
+          "Em gái tôi đã hai mươi tuổi rồi.",
+          "Anh ấy vẫn chưa về nhà.",
+          "Anh ấy không làm việc ở đây nữa."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Anh ấy đã dậy rồi.",
+          "Cô ấy đã tan làm rồi.",
+          "Chúng tôi đến nơi rồi.",
+          "Anh ấy vẫn chưa đến.",
+          "Anh ấy vẫn chưa đi ngủ."
+        ]
+      }
+    ]
+  }
+}

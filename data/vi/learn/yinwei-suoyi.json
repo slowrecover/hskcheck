@@ -1,0 +1,111 @@
+{
+  "slug": "yinwei-suoyi",
+  "published": "2026-10-26",
+  "title": "因为……所以 (vì... nên) trong tiếng Trung: ngữ pháp HSK 2",
+  "description": "Cách dùng 因为 (vì) và 所以 (nên): trật tự câu, dùng cả hai hay một từ, vị trí chủ ngữ, trả lời câu hỏi 为什么, kèm ví dụ HSK 2.",
+  "h1": "Cách dùng 因为……所以 (vì... nên)",
+  "lede": "因为 (yīnwèi) nghĩa là \"vì\", \"bởi vì\" và dẫn ra nguyên nhân. 所以 (suǒyǐ) nghĩa là \"nên\", \"vì vậy\" và dẫn ra kết quả. Trong tiếng Trung, hai từ này rất hay đi cùng nhau trong một câu: nguyên nhân trước, kết quả sau.",
+  "sections": [
+    {
+      "h2": "Mẫu câu",
+      "paras": [
+        "因为 + nguyên nhân，所以 + kết quả.",
+        "Tiếng Anh chỉ dùng \"because\" hoặc \"so\", không dùng cả hai trong một câu. Tiếng Trung thì giống \"vì... nên\" trong tiếng Việt: dùng 因为 và 所以 cùng nhau là hoàn toàn bình thường và rất rõ nghĩa. Nguyên nhân nói trước, sau đó là dấu phẩy, rồi đến kết quả."
+      ],
+      "examples": [
+        "Vì trời mưa rồi nên chúng tôi không đi nữa.",
+        "Vì anh ấy bị ốm nên hôm nay không đến lớp.",
+        "Vì tôi muốn sang Trung Quốc làm việc nên tôi đang học tiếng Hán."
+      ]
+    },
+    {
+      "h2": "Chỉ dùng một trong hai từ",
+      "paras": [
+        "Không phải lúc nào cũng cần cả hai từ. Trong khẩu ngữ, người ta thường chỉ dùng 所以: nói nguyên nhân trước, không có từ nào đứng đầu; hoặc chỉ dùng 因为.",
+        "Vế có 因为 cũng có thể đứng sau kết quả, giống \"vì\" trong câu \"Tôi không đi vì bận\". Khi đặt theo thứ tự này, không thêm 所以."
+      ],
+      "examples": [
+        "Hôm nay tôi rất mệt nên muốn đi ngủ sớm một chút.",
+        "Tôi không gọi điện cho bạn vì tôi bận quá.",
+        "Hôm nay anh ấy không đến nữa vì anh ấy phải làm việc."
+      ]
+    },
+    {
+      "h2": "Vị trí của chủ ngữ",
+      "paras": [
+        "因为 có thể đứng trước hoặc sau chủ ngữ: 因为我太忙 và 我因为太忙 đều đúng. 所以 thì khác: nó luôn đứng đầu vế của mình, trước chủ ngữ. Nói 所以我没有去, không bao giờ nói 我所以没有去. Điểm này giống \"nên\" trong tiếng Việt: \"nên tôi không đi\", không nói \"tôi nên không đi\".",
+        "Nếu cả hai vế cùng nói về một người, chỉ cần nói chủ ngữ một lần. Phủ định với 不 và 没有 nằm trong vế của nó, như trong câu bình thường."
+      ],
+      "examples": [
+        "Tôi vì bận quá nên không ăn trưa.",
+        "Vì thời tiết rất đẹp nên chúng tôi đều muốn ra ngoài chơi."
+      ]
+    },
+    {
+      "h2": "Lỗi hay gặp nhất",
+      "paras": [
+        "Lỗi hay gặp nhất là đảo lộn nguyên nhân và kết quả: đặt 所以 trước nguyên nhân, hoặc đặt 因为 trước kết quả. Trước khi chọn, hãy tự hỏi vế nào giải thích \"tại sao\". Vế đó dùng 因为. Vế nói điều xảy ra sau đó dùng 所以.",
+        "Hai câu dưới đây có cùng nghĩa nhưng theo hai thứ tự khác nhau. Hãy để ý: 因为 luôn đi với nguyên nhân là 路很远."
+      ],
+      "examples": [
+        "Vì đường rất xa nên chúng tôi đi taxi.",
+        "Chúng tôi đi taxi vì đường rất xa."
+      ]
+    },
+    {
+      "h2": "Hỏi tại sao: 为什么",
+      "paras": [
+        "Để hỏi \"tại sao\", dùng 为什么 (wèishénme), thường đặt sau chủ ngữ và trước động từ. Trả lời bằng một vế 因为 đứng một mình; đây là câu trả lời ngắn bình thường, giống \"Vì...\" trong tiếng Việt. Không mở đầu câu trả lời bằng 所以."
+      ],
+      "examples": [
+        "Tại sao bạn học tiếng Hán?",
+        "Vì tôi thích phim Trung Quốc.",
+        "Tại sao anh ấy không đến?",
+        "Vì hôm nay anh ấy phải làm việc."
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 因为……所以 HSK 2 có đáp án, in miễn phí",
+    "description": "Bài tập 因为……所以 HSK 2 in miễn phí: 19 câu (chọn 因为, 所以 hay 为什么, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 因为, 所以 hoặc 为什么",
+        "instructions": "Điền 因为, 所以 hoặc 为什么 vào chỗ trống. Phần nghĩa tiếng Việt cho biết câu có nghĩa gì.",
+        "items": [
+          "Vì hôm nay trời lạnh nên tôi mặc rất nhiều quần áo.",
+          "Vì tôi không có tiền nên không mua được chiếc điện thoại này.",
+          "Tại sao bạn không thích ăn cơm?",
+          "Hôm nay tôi không đi làm vì tôi bị ốm.",
+          "Ngoài trời mưa rồi, nên chúng ta ở nhà xem ti vi nhé.",
+          "Tại sao hôm qua bạn không đến?",
+          "Đồ ăn ở nhà hàng này rất ngon nên tôi hay đến đây.",
+          "Vì ngày mai phải thi nên tối nay anh ấy không xem ti vi nữa."
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng. Dùng hết tất cả các từ.",
+        "items": [
+          "Vì đắt quá nên tôi không mua.",
+          "Tại sao anh ấy không vui?",
+          "Vì tôi bị ốm nên không đi học.",
+          "Vì quả táo này rất ngon nên tôi muốn mua thêm một quả.",
+          "Tôi không muốn ra ngoài vì tôi rất mệt.",
+          "Vì cô ấy là người Trung Quốc nên cô ấy nói tiếng Hán rất giỏi."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Vì hôm nay trời mưa nên tôi không ra ngoài nữa.",
+          "Vì anh ấy bận nên không đến.",
+          "Tôi mệt nên tôi muốn ngủ.",
+          "Tôi không đi học vì tôi bị ốm.",
+          "Tại sao anh ấy không đến? Vì anh ấy mệt quá."
+        ]
+      }
+    ]
+  }
+}

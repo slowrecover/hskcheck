@@ -1,0 +1,101 @@
+{
+  "slug": "gen-yiqi",
+  "published": "2026-10-26",
+  "title": "跟……一起 (gēn yìqǐ) \"cùng với\" trong tiếng Trung: ngữ pháp HSK 2",
+  "description": "Cách nói \"cùng với ai\" bằng 跟……一起: trật tự từ, lỗi hay gặp nhất, câu phủ định, câu hỏi và 12 câu ví dụ HSK 2.",
+  "h1": "Cách dùng 跟……一起 (cùng với)",
+  "lede": "Để nói bạn làm việc gì cùng với ai, tiếng Trung dùng 跟 (gēn) + người + 一起 (yìqǐ) + động từ. Điểm mấu chốt là cả phần \"cùng với ai\" đứng trước động từ, không đứng cuối câu như \"đi chợ với bạn\" trong tiếng Việt.",
+  "sections": [
+    {
+      "h2": "Mẫu câu",
+      "paras": [
+        "Chủ ngữ + 跟 + người + 一起 + động từ (+ tân ngữ).",
+        "跟 nghĩa là \"với\" và dẫn ra người cùng làm. 一起 nghĩa là \"cùng nhau\", đứng ngay sau người đó, trước động từ. Từ chỉ thời gian như 每天 hay 昨天 đặt ở đầu câu hoặc ngay sau chủ ngữ."
+      ],
+      "examples": [
+        "Tôi đi cửa hàng với bạn.",
+        "Ngày nào cô ấy cũng ăn sáng với mẹ.",
+        "Hôm qua tôi đi xem phim với các bạn cùng lớp."
+      ]
+    },
+    {
+      "h2": "Đứng trước động từ, không đứng cuối câu",
+      "paras": [
+        "Lỗi hay gặp nhất là nói theo trật tự tiếng Việt, đặt \"với bạn\" hay \"cùng nhau\" ở cuối câu: 我去商店跟朋友一起 và 我们吃饭一起 đều sai. Trong tiếng Trung, 跟 + người + 一起 luôn đứng trước động từ, giống cách nói \"tôi cùng bạn đi cửa hàng\".",
+        "Những từ như 想, 要 và 会 đứng trước 跟, nên trật tự là chủ ngữ + 想 + 跟 + người + 一起 + động từ."
+      ],
+      "examples": [
+        "Tôi muốn đi cùng bạn.",
+        "Anh ấy đi máy bay sang Trung Quốc cùng chúng tôi.",
+        "Tôi đi nhà hàng ăn cơm với bạn bè."
+      ]
+    },
+    {
+      "h2": "一起 dùng một mình, và 和",
+      "paras": [
+        "Nếu chủ ngữ đã bao gồm tất cả mọi người, như 我们 hay 你们, thì không cần 跟: chỉ cần đặt 一起 trước động từ. 我们一起去吧 là cách nói tự nhiên của \"chúng ta cùng đi nhé\".",
+        "和 (hé) có thể thay 跟 trong mẫu câu này mà nghĩa không đổi; trong khẩu ngữ, 跟 phổ biến hơn một chút. Lưu ý 我和哥哥 cũng có thể chỉ đơn giản là \"tôi và anh trai\"."
+      ],
+      "examples": [
+        "Chúng ta cùng đi nhé.",
+        "Tôi và anh trai cùng học tiếng Hán."
+      ]
+    },
+    {
+      "h2": "Câu phủ định và câu hỏi",
+      "paras": [
+        "Để nói không làm hoặc đã không làm việc gì cùng ai, đặt 不 hoặc 没有 trước 跟, không đặt trước động từ: nói 我不跟他一起去, không nói 我跟他一起不去. Chú ý thanh điệu: 不 đứng trước 跟 (thanh 1) vẫn đọc là bù, còn 一 trong 一起 đọc là yì vì 起 mang thanh 3.",
+        "Để hỏi ai đó làm việc gì với ai, đặt 谁 sau 跟. Để mời ai đó, dùng 想 hoặc 要 với 吗, hoặc kết thúc lời rủ bằng 吧."
+      ],
+      "examples": [
+        "Tôi không đi với anh ấy.",
+        "Hôm qua tôi không ăn cơm với họ.",
+        "Bạn đi với ai?",
+        "Bạn có muốn ăn cơm với chúng tôi không?"
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 跟……一起 HSK 2 có đáp án, in miễn phí",
+    "description": "Bài tập 跟……一起 HSK 2 in miễn phí: 19 câu (chọn 跟, 一起 hay 谁, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 跟, 一起 hoặc 谁",
+        "instructions": "Điền 跟, 一起 hoặc 谁 vào chỗ trống. Phần nghĩa tiếng Việt cho biết câu có nghĩa gì.",
+        "items": [
+          "Tôi đi bệnh viện với chị gái.",
+          "Chúng ta cùng đi ăn cơm nhé.",
+          "Bạn học cùng với ai?",
+          "Ngày nào cô ấy cũng đi bộ đến trường cùng chị gái.",
+          "Ngày mai bạn có muốn đi xem phim với chúng tôi không?",
+          "Bạn đã đi cửa hàng với ai?",
+          "Tôi không muốn chơi với anh ấy.",
+          "Bố không về nhà cùng chúng tôi."
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng.",
+        "items": [
+          "Tôi đi với bạn.",
+          "Anh ấy chơi bóng rổ với anh trai.",
+          "Tôi không đi với họ.",
+          "Chúng ta cùng ăn cơm nhé.",
+          "Tôi muốn học cùng bạn.",
+          "Hôm qua tôi đi xem phim với một người bạn."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Tôi đi cửa hàng với mẹ.",
+          "Chúng ta cùng ăn cơm nhé.",
+          "Tôi không đi với họ.",
+          "Tôi đi bệnh viện với mẹ.",
+          "Bạn có muốn ăn cơm với chúng tôi không?"
+        ]
+      }
+    ]
+  }
+}
