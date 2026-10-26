@@ -1,0 +1,113 @@
+{
+  "slug": "de-possessive",
+  "published": "2026-10-26",
+  "title": "Cách dùng 的 (de) trong tiếng Trung: ngữ pháp HSK 1 có ví dụ",
+  "description": "Cách dùng 的 (de): của tôi, của bạn, của ai, khi nào bỏ 的, dùng 的 để miêu tả danh từ, \"của tôi\" và \"cái to\", kèm ví dụ HSK 1.",
+  "h1": "Cách dùng 的 (de) để chỉ sở hữu và miêu tả",
+  "lede": "的 (de) nối một từ hoặc cụm từ với danh từ đứng sau nó. Nó giống chữ \"của\" trong \"xe của thầy giáo\", và còn dùng để gắn phần miêu tả vào danh từ. Đây là một trong những chữ thông dụng nhất trong tiếng Trung và là điểm ngữ pháp cốt lõi của HSK 1.",
+  "sections": [
+    {
+      "h2": "Sở hữu: của tôi, của bạn, của ai",
+      "paras": [
+        "Người sở hữu + 的 + vật.",
+        "Đặt 的 sau một người hoặc một đại từ để cho biết vật thuộc về họ. 我的 là \"của tôi\", 你的 là \"của bạn\", 他的 là \"của anh ấy\" và 老师的 là \"của thầy cô\". Chú ý thứ tự ngược với tiếng Việt: người sở hữu đứng trước, vật đứng sau, nên \"điện thoại của tôi\" là 我的手机. Muốn hỏi \"của ai?\", dùng 谁的. 的 luôn đọc nhẹ, không mang thanh điệu."
+      ],
+      "examples": [
+        "Đây là điện thoại của tôi.",
+        "Đây là xe của anh trai tôi.",
+        "Mẹ của bạn tôi là giáo viên.",
+        "Đây là sách của ai?"
+      ]
+    },
+    {
+      "h2": "Khi nào có thể bỏ 的",
+      "paras": [
+        "Sau đại từ như 我, 你, 他 hay 我们, 的 thường được bỏ trước người trong gia đình, người thân thiết và nơi mình thuộc về, như trường hay công ty của mình. Người Trung Quốc nói 我妈妈, ít khi nói 我的妈妈, dù 我的妈妈 cũng không sai. Tiếng Việt cũng vậy: ta nói \"mẹ tôi\" nhiều hơn \"mẹ của tôi\".",
+        "Các trường hợp khác thì giữ 的. 我的手机 là đúng; 我手机 có thể nghe thấy khi nói chuyện thân mật, nhưng là người học thì dùng 的 sẽ an toàn hơn."
+      ],
+      "examples": [
+        "Mẹ tôi là bác sĩ.",
+        "Bạn gái anh ấy rất xinh.",
+        "Trường chúng tôi rất rộng."
+      ]
+    },
+    {
+      "h2": "Miêu tả danh từ",
+      "paras": [
+        "Phần miêu tả + 的 + danh từ.",
+        "的 còn nối phần miêu tả với danh từ. Phần miêu tả luôn đứng trước danh từ, ngược với tiếng Việt: \"táo tôi mua\" là 我买的苹果, dịch từng chữ là \"tôi mua 的 táo\".",
+        "Tính từ một âm tiết thường đi thẳng với danh từ, không cần 的: 新手机, 好朋友. Khi trước tính từ có 很, hoặc phần miêu tả dài hơn, thì cần 的."
+      ],
+      "examples": [
+        "Tôi muốn mua một chiếc điện thoại mới.",
+        "Anh ấy là một giáo viên rất giỏi.",
+        "Táo tôi mua rất ngon.",
+        "Bộ phim hôm qua bạn xem thế nào?",
+        "Tôi thích ăn cơm mẹ nấu."
+      ]
+    },
+    {
+      "h2": "Bỏ danh từ: \"của tôi\" và \"cái to\"",
+      "paras": [
+        "Nếu ai cũng biết bạn đang nói đến vật gì, bạn có thể bỏ danh từ và kết thúc bằng 的. Khi đó 我的 nghĩa là \"của tôi\", 谁的 nghĩa là \"của ai\", và 大的 nghĩa là \"cái to\"."
+      ],
+      "examples": [
+        "Quyển sách này là của tôi.",
+        "Chiếc điện thoại này là của ai?",
+        "Tôi lấy cái to."
+      ]
+    },
+    {
+      "h2": "Lỗi hay gặp nhất",
+      "paras": [
+        "Người học hay quên 的 sau 很 + tính từ. 很好老师 là sai; hãy nói 很好的老师. Không có 很 thì 好老师 vẫn đúng.",
+        "Lỗi còn lại là đặt phần miêu tả sau danh từ như trong tiếng Việt. Người Việt rất dễ mắc lỗi này, vì tiếng Việt nói \"quần áo bạn mua\", còn tiếng Trung phải nói 你买的衣服. Trong tiếng Trung, mọi thứ miêu tả danh từ, dù là người sở hữu, tính từ hay cả một cụm từ, đều đứng trước, rồi đến 的, rồi mới đến danh từ."
+      ],
+      "examples": []
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 的 (de) HSK 1 có đáp án, in miễn phí",
+    "description": "Bài tập 的 (de) HSK 1 in miễn phí: 20 câu (chọn 的 hay 是, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 的 hay 是",
+        "instructions": "Điền 的 hoặc 是 vào chỗ trống. Phần nghĩa tiếng Việt cho biết câu có nghĩa gì.",
+        "items": [
+          "Đây là máy tính của bạn tôi.",
+          "Giáo viên của tôi rất tốt.",
+          "Kia là điện thoại của ai?",
+          "Anh ấy là bạn học của tôi.",
+          "Cô ấy là một bác sĩ rất giỏi.",
+          "Cái cốc này là của bạn à?",
+          "Quyển sách hôm qua bạn mua ở đâu?",
+          "Tôi lấy cái nhỏ."
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng.",
+        "items": [
+          "Đây là sách của thầy giáo.",
+          "Món mẹ nấu rất ngon.",
+          "Anh ấy là một người bạn rất tốt của tôi.",
+          "Bộ phim hôm qua chúng tôi xem rất hay.",
+          "Chiếc máy tính kia là của tôi.",
+          "Bố của bạn học tôi là bác sĩ."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Đây là một cửa hàng rất lớn.",
+          "Tôi thích quần áo bạn mua.",
+          "Kia là máy tính của ai?",
+          "Chiếc điện thoại này là của tôi.",
+          "Anh ấy có một người bạn gái rất xinh.",
+          "Quần áo hôm qua tôi mua rất đẹp."
+        ]
+      }
+    ]
+  }
+}

@@ -1,5 +1,5 @@
-"""Grammar practice online: an interactive version of every grammar worksheet, at /learn/<slug>/practice/ (English)
-and /th/learn/<slug>/practice/ (Thai, for the pages that have a Thai translation).
+"""Grammar practice online: an interactive version of every grammar worksheet, at /learn/<slug>/practice/ (English),
+/th/learn/<slug>/practice/ (Thai) and /vi/learn/<slug>/practice/ (Vietnamese), for the pages that have a translation.
 
 The page (templates/grammar_practice_body.html, CSS in templates/grammar_practice.css on top of the practice test's
 templates/practice.css) loads one small JSON file and goes through the worksheet's exercises one item at a time,
@@ -12,7 +12,8 @@ An item that cannot be asked with exactly one right option is shown with a "Show
 The best score per page stays in the learner's browser (localStorage); nothing is sent anywhere.
 
 Data files read:
-  data/learn/<slug>.json, data/th/learn/<slug>.json   the worksheets (Chinese, answers, English and Thai meanings)
+  data/learn/<slug>.json, data/th/learn/<slug>.json, data/vi/learn/<slug>.json
+                                     the worksheets (Chinese, answers, English, Thai and Vietnamese meanings)
   data/practice/grammar_choose.tsv   slug, choose sentence with ＿＿, options left out (comma separated): options that
                                      would also fit the gap and the meaning, so they are not offered for that item
   data/practice/grammar_order.tsv    slug, first listed answer of an order item, another order of the same words that
@@ -26,6 +27,8 @@ sentence uses a word above the page's level (tools/check_vocab.py).
 Outputs:
   learn/<slug>/practice/index.html, learn/<slug>/practice/items.json          English
   th/learn/<slug>/practice/index.html, th/learn/<slug>/practice/items.json    Thai
+  vi/learn/<slug>/practice/index.html, vi/learn/<slug>/practice/items.json    Vietnamese (build_vi, called from
+                                                                              tools/build_vi.py)
 
 items.json: {"items": [item, ...]} in worksheet order, each with "t" (c = choose, o = order, f = fix), "x" (exercise
 number) and "m" (the meaning in the page's language):
@@ -33,7 +36,7 @@ number) and "m" (the meaning in the page's language):
   order  {"w": words, "r": accepted answers, listed answers first}
   fix    {"s": sentence with the mistake, "r": correct versions, "o": other wrong versions (empty: show-answer item)}
 
-The Thai page is the English template with its text swapped for Thai; the build stops if a string is not found.
+The Thai and Vietnamese pages are the English template with its text swapped; the build stops if a string is not found.
 """
 import collections
 import html
@@ -43,6 +46,7 @@ import sys
 
 import learn
 import learn_th
+import learn_vi
 
 BLANK = "＿＿"
 PUNCT = re.compile(r"[，。：！？、“”\s]")
@@ -116,6 +120,59 @@ TH_SWAPS = [
      '<a href="/th/learn/">ไวยากรณ์ทั้งหมด</a> · <a href="/th/hsk-practice-test/">แบบทดสอบ HSK</a>'),
 ]
 
+UI_VI = {
+    "q": "Câu", "of": "/",
+    "askChoose": "Chọn từ điền vào chỗ trống.", "askOrder": "Chạm vào các từ theo đúng thứ tự.",
+    "askFix": "Câu nào đúng?", "askReveal": "Hãy tự nghĩ đáp án trước, rồi bấm xem đáp án.",
+    "check": "Kiểm tra", "undo": "Hoàn tác", "clear": "Xếp lại từ đầu", "show": "Xem đáp án",
+    "right": "Đúng rồi!", "wrong": "Chưa đúng.", "answer": "Đáp án", "also": "Cũng đúng", "mistake": "Câu sai",
+    "notScored": "Chỗ này điền được hơn một từ, nên câu này không tính điểm.",
+    "listen": "Nghe", "next": "Câu tiếp theo", "finish": "Xem điểm",
+    "scoreHead": "Điểm của bạn", "bestNew": "Điểm cao nhất mới!", "bestOld": "Điểm cao nhất của bạn: {b} / {n}",
+    "msg4": "Xuất sắc. Bạn đã nắm vững điểm ngữ pháp này.", "msg3": "Làm tốt lắm. Xem các đáp án bên dưới rồi làm lại nhé.",
+    "msg2": "Cố lên. Đọc lại phần giải thích rồi làm lại.",
+    "msg1": "Điểm ngữ pháp này vẫn còn mới với bạn. Hãy đọc phần giải thích có ví dụ trước.",
+    "missedHead": "Câu cần xem lại", "noMissed": "Bạn trả lời đúng tất cả các câu.",
+    "again": "Làm lại", "read": "Đọc lại phần giải thích", "sheet": "In bài tập", "loading": "Đang tải bài tập…",
+    "loadFail": "Không tải được bài tập. Hãy kiểm tra kết nối mạng rồi thử lại.",
+}
+KINDS_VI = {"choose": "điền vào chỗ trống", "order": "sắp xếp từ thành câu", "fix": "chọn câu đúng"}
+
+VI_SWAPS = [
+    ('<span>HSK grammar practice</span>', '<span>Luyện ngữ pháp HSK</span>'),
+    ('</span>Practise Online</h1>', '</span>Làm bài online</h1>'),
+    ('<p class="lede">Practise __NAME__ with __COUNT__ exercises that use only HSK __LEVEL__ words: __KINDS__. You see '
+     'the answer straight away and your score at the end. Need the rules first? Read the '
+     '<a href="__URL__">explanation with examples</a>.</p>',
+     '<p class="lede">Luyện __NAME__ với __COUNT__ câu bài tập chỉ dùng từ vựng HSK __LEVEL__: __KINDS__. Bạn thấy '
+     'đáp án ngay sau mỗi câu và điểm số khi làm xong. Muốn xem lại quy tắc trước? Đọc '
+     '<a href="__URL__">bài giải thích có ví dụ</a>.</p>'),
+    ('<h2 id="ex-title" class="visually-hidden">Exercises</h2>', '<h2 id="ex-title" class="visually-hidden">Bài tập</h2>'),
+    ('<p class="empty" id="loading">Loading the exercises…</p>', '<p class="empty" id="loading">Đang tải bài tập…</p>'),
+    ('This browser is not letting the page save, so your best score will not be kept.',
+     'Trình duyệt này không cho trang lưu dữ liệu, nên điểm cao nhất sẽ không được giữ lại.'),
+    ('<h2 id="guide-title">How this practice works</h2>', '<h2 id="guide-title">Cách làm bài</h2>'),
+    ('<h3>Where do the exercises come from?</h3>', '<h3>Bài tập lấy từ đâu?</h3>'),
+    ('<p>They are the exercises of the <a href="__URL__worksheet/">printable worksheet</a> for this grammar point, '
+     'in a different order each time. Every sentence uses only HSK __LEVEL__ words, and the English under each '
+     'sentence tells you what it should mean.</p>',
+     '<p>Đây là các câu của <a href="__URL__worksheet/">bài tập in được</a> cho điểm ngữ pháp này, mỗi lần làm '
+     'được xếp theo một thứ tự khác. Mọi câu chỉ dùng từ vựng HSK __LEVEL__, và phần nghĩa tiếng Việt dưới mỗi câu '
+     'cho biết câu đó cần có nghĩa gì.</p>'),
+    ('<h3>How do I answer?</h3>', '<h3>Trả lời thế nào?</h3>'),
+    ('<p>Tap an answer, or press 1–4 on a keyboard. To put words in order, tap them one by one (or press their '
+     'numbers), then check. Where more than one order is right, every one of them counts.</p>',
+     '<p>Chạm vào một đáp án, hoặc bấm phím 1–4 trên bàn phím. Với câu sắp xếp từ, chạm lần lượt từng từ (hoặc bấm '
+     'số của từ đó), rồi bấm Kiểm tra. Nếu có nhiều cách sắp xếp đúng, cách nào cũng được tính là đúng.</p>'),
+    ('<h3>Where is my score kept?</h3>', '<h3>Điểm của tôi được lưu ở đâu?</h3>'),
+    ('<p>Your best score for this page is kept in this browser on this device. Your answers are not sent anywhere.</p>',
+     '<p>Điểm cao nhất của trang này được lưu trong trình duyệt trên thiết bị này. Câu trả lời của bạn không được gửi '
+     'đi đâu cả.</p>'),
+    ('<h2>More grammar practice</h2>', '<h2>Luyện thêm ngữ pháp</h2>'),
+    ('<a href="/learn/">All grammar points</a> · <a href="/hsk-practice-test/">HSK practice test</a>',
+     '<a href="/vi/learn/">Tất cả bài ngữ pháp</a> · <a href="/vi/hsk-practice-test/">Thi thử HSK</a>'),
+]
+
 
 def _strip(s):
     return PUNCT.sub("", s)
@@ -168,6 +225,7 @@ def _items(root):
     used = set()
     vocab = {n: allowed_words(n) for n in (1, 2, 3)}
     th_pages = {p["slug"]: p for p in learn_th.load_pages(root)}
+    vi_pages = {p["slug"]: p for p in learn_vi.load_pages(root)}
     out = {}
     for p in learn.load_pages():
         w = p.get("worksheet")
@@ -177,6 +235,7 @@ def _items(root):
         words = vocab[p["level"]]
         max_len = max(len(x) for x in words)
         th = th_pages.get(slug)
+        vi = vi_pages.get(slug)
 
         def level_ok(sentence, where):
             tokens, bad = check(sentence, words, max_len)
@@ -186,7 +245,8 @@ def _items(root):
         items = []
         for k, ex in enumerate(w["exercises"]):
             for j, it in enumerate(ex["items"]):
-                m = {"en": it["en"], "th": th["worksheet"]["exercises"][k]["items"][j]["en"] if th else None}
+                m = {"en": it["en"], "th": th["worksheet"]["exercises"][k]["items"][j]["en"] if th else None,
+                     "vi": vi["worksheet"]["exercises"][k]["items"][j]["en"] if vi else None}
                 if ex["type"] == "choose":
                     opts = list(ex["options"])
                     hit = leave_out.get((slug, it["zh"]))
@@ -267,6 +327,14 @@ def _name_th(p):
     if not t.startswith("แบบฝึกหัด") or not t.endswith(suffix):
         raise SystemExit(f"grammar practice: Thai worksheet title of {p['slug']} is not 'แบบฝึกหัด… HSK N พิมพ์ได้ พร้อมเฉลย'")
     return t[len("แบบฝึกหัด"):-len(suffix)]
+
+
+def _name_vi(p):
+    t = p["worksheet"]["title"]
+    prefix, suffix = "Bài tập ", f" HSK {p['level']} có đáp án, in miễn phí"
+    if not t.startswith(prefix) or not t.endswith(suffix):
+        raise SystemExit(f"grammar practice: Vietnamese worksheet title of {p['slug']} is not '{learn_vi.ws_title('…', p['level'])}'")
+    return t[len(prefix):-len(suffix)]
 
 
 def _more(pages, p, base, label):
@@ -382,4 +450,49 @@ def alternates(root):
         if en_path.endswith("/worksheet/"):
             base_en, base_th = en_path[:-len("worksheet/")], th_path[:-len("worksheet/")]
             pairs[f"{base_en}practice/"] = f"{base_th}practice/"
+    return pairs
+
+
+def build_vi(*, root, tpl, site, write, nav, base_css, vi_css):
+    """Write /vi/learn/<slug>/practice/ for every Vietnamese grammar page with a worksheet. write(url, title,
+    description, css, body, head_extra) is build_vi's writer. Returns the URLs written."""
+    items = _items(root)
+    pages = [p for p in learn_vi.load_pages(root) if p["slug"] in items and p.get("worksheet")]
+    css = (base_css + (tpl / "checker.css").read_text(encoding="utf-8") + (tpl / "practice.css").read_text(encoding="utf-8")
+           + (tpl / "grammar_practice.css").read_text(encoding="utf-8") + vi_css)
+    tpl_text = (tpl / "grammar_practice_body.html").read_text(encoding="utf-8")
+    for a, b in VI_SWAPS:
+        if tpl_text.count(a) != 1:
+            raise SystemExit(f"grammar practice: English text not found for the Vietnamese page: {a[:60]}")
+        tpl_text = tpl_text.replace(a, b)
+    urls = []
+    for p in pages:
+        url = f"{learn_vi.VI_LEARN_URL}{p['slug']}/"
+        its = items[p["slug"]]
+        if any(it["m"]["vi"] is None for it in its):
+            raise SystemExit(f"grammar practice: missing Vietnamese meaning on {p['slug']}")
+        name = _name_vi(p)
+        kinds = _join([KINDS_VI[e["type"]] for e in p["worksheet"]["exercises"]], ", ", " và ")
+        title = f"Bài tập {name} online HSK {p['level']}, có đáp án ngay"
+        desc = (f"Luyện {name} online miễn phí: {len(its)} câu HSK {p['level']} ({kinds}), có đáp án ngay và chấm "
+                "điểm. Không cần đăng ký.")
+        _check_meta(title, desc, "vi/" + p["slug"])
+        more = _more(pages, p, learn_vi.VI_LEARN_URL, lambda q: learn.zh_spans(q["h1"]))
+        body = _page(tpl_text, nav_html=nav(learn_vi.VI_LEARN_URL), p=p, name=name, kinds=kinds, url=url,
+                     ui=UI_VI, more=more, count=len(its))
+        folder = root / url.strip("/") / "practice"
+        folder.mkdir(parents=True, exist_ok=True)
+        (folder / "items.json").write_text(_json(its, "vi"), encoding="utf-8")
+        write(f"{url}practice/", title, desc, css, body,
+              f'<script type="application/ld+json">{_ld(title, f"{site}{url}practice/", desc, "vi", p["level"], site + url)}</script>')
+        urls.append(f"{url}practice/")
+    return urls
+
+
+def alternates_vi(root):
+    """English path -> Vietnamese path for the practice pages that exist in both languages."""
+    pairs = {}
+    for en_path, vi_path in learn_vi.alternates(root).items():
+        if en_path.endswith("/worksheet/"):
+            pairs[f"{en_path[:-len('worksheet/')]}practice/"] = f"{vi_path[:-len('worksheet/')]}practice/"
     return pairs

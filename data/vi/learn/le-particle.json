@@ -1,0 +1,114 @@
+{
+  "slug": "le-particle",
+  "published": "2026-10-26",
+  "title": "Cách dùng 了 (le) trong tiếng Trung: ngữ pháp HSK 1 có ví dụ",
+  "description": "Cách dùng 了 (le): 了 sau động từ chỉ việc đã xong, 了 cuối câu chỉ sự thay đổi, phủ định với 没有, câu hỏi và ví dụ HSK 1.",
+  "h1": "Cách dùng 了 (le) trong tiếng Trung",
+  "lede": "了 (le) là một từ nhỏ có hai chức năng chính. Đứng sau động từ, nó cho biết hành động đã hoàn thành. Đứng cuối câu, nó cho biết sự việc đã thay đổi hoặc có tình huống mới. Đây là một trong những điểm ngữ pháp đầu tiên của HSK 1.",
+  "sections": [
+    {
+      "h2": "了 sau động từ: hành động đã hoàn thành",
+      "paras": [
+        "Chủ ngữ + động từ + 了 + tân ngữ.",
+        "Đặt 了 ngay sau động từ để nói hành động đã xảy ra và đã xong. Cách này tự nhiên nhất khi trước tân ngữ có số lượng hoặc từ miêu tả, như 三本书 hay 很多东西. Nếu tân ngữ chỉ là một từ ngắn, như 我买了书, câu thường nghe như chưa nói hết, như thể còn điều gì nói tiếp."
+      ],
+      "examples": [
+        "Tôi đã mua ba quyển sách.",
+        "Cô ấy đã mua rất nhiều đồ.",
+        "Chúng tôi đã xem một bộ phim."
+      ]
+    },
+    {
+      "h2": "了 cuối câu: sự việc đã thay đổi",
+      "paras": [
+        "Khi 了 đứng cuối câu, nó báo cho người nghe biết đây là tình huống mới: trời bắt đầu mưa, bây giờ đã tám giờ, bạn đã đổi ý. 了 này cũng có thể đứng sau tính từ, như 天冷了, hoặc sau câu phủ định với 不, như 我不想去了. Người Việt thường liên tưởng 了 này với chữ \"rồi\". Hai từ khá gần nhau, nhưng không phải lúc nào cũng thay được cho nhau.",
+        "Với động từ và tân ngữ đơn giản như 吃饭 hay 睡觉, đặt 了 ở cuối câu là cách tự nhiên để nói việc đó đã xảy ra."
+      ],
+      "examples": [
+        "Trời mưa rồi.",
+        "Trời lạnh rồi.",
+        "Năm nay cậu ấy mười tuổi rồi.",
+        "Tám giờ rồi, chúng ta đi học thôi.",
+        "Tôi không muốn đi nữa.",
+        "Anh ấy đi ngủ rồi."
+      ]
+    },
+    {
+      "h2": "Hai chữ 了: kéo dài đến bây giờ",
+      "paras": [
+        "Khi câu có một khoảng thời gian, bạn có thể dùng 了 ở cả hai vị trí. Câu có nghĩa là hành động bắt đầu trong quá khứ và vẫn tiếp diễn đến bây giờ."
+      ],
+      "examples": [
+        "Tôi đã học tiếng Trung được một năm rồi.",
+        "Tôi đã sống ở đây được ba năm rồi."
+      ]
+    },
+    {
+      "h2": "Câu phủ định và câu hỏi",
+      "paras": [
+        "Để nói hành động không xảy ra, dùng 没有 trước động từ và bỏ 了. Lỗi rất hay gặp là vẫn giữ 了 và nói 他没有来了 thay vì 他没有来. Muốn nói \"chưa\", dùng 还没有.",
+        "Để hỏi việc gì đó đã xảy ra chưa, thêm 吗 sau 了, hoặc kết thúc câu hỏi bằng 了没有. Trả lời \"rồi\" bằng động từ và 了, trả lời \"chưa\" bằng 还没有."
+      ],
+      "examples": [
+        "Anh ấy không đến.",
+        "Tôi vẫn chưa ăn cơm.",
+        "Bạn ăn cơm chưa?",
+        "Anh ấy về nhà chưa?"
+      ]
+    },
+    {
+      "h2": "了 không phải thì quá khứ",
+      "paras": [
+        "Người học thường thêm 了 vào mọi việc đã xảy ra trong quá khứ. Tiếng Trung không cần như vậy. Khi kể sự việc trước đây như thế nào, hoặc việc bạn thường làm, chỉ cần một từ chỉ thời gian như 昨天 hay 去年 là đủ, giống như tiếng Việt nói \"Hôm qua tôi rất bận\" mà không cần thêm \"đã\" hay \"rồi\"."
+      ],
+      "examples": [
+        "Hôm qua tôi rất bận.",
+        "Năm ngoái tôi làm việc ở Trung Quốc."
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 了 (le) HSK 1 có đáp án, in miễn phí",
+    "description": "Bài tập 了 (le) HSK 1 in miễn phí: 20 câu (chọn 了 hay 没有, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 了 hay 没有",
+        "instructions": "Điền 了 hoặc 没有 vào chỗ trống. Phần nghĩa tiếng Việt cho biết câu có nghĩa gì.",
+        "items": [
+          "Trời mưa rồi.",
+          "Anh ấy vẫn chưa đến.",
+          "Bạn ăn cơm chưa?",
+          "Tôi đã uống rất nhiều nước.",
+          "Hôm qua tôi không xem ti vi.",
+          "Năm nay anh ấy hai mươi tuổi rồi.",
+          "Trời nóng rồi.",
+          "Cô ấy không đến lớp.",
+          "Tôi không muốn ăn nữa.",
+          "Mẹ vẫn chưa về nhà."
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng.",
+        "items": [
+          "Tôi đã mua hai quyển sách.",
+          "Anh ấy đã ăn rất nhiều cơm.",
+          "Bạn dậy chưa?",
+          "Anh ấy vẫn chưa đến.",
+          "Anh ấy làm việc ở đây được hai năm rồi."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Hôm qua anh ấy không đến.",
+          "Tôi không đọc quyển sách đó.",
+          "Năm ngoái tôi rất bận.",
+          "Tôi đã mua ba quả táo.",
+          "Bạn ăn cơm chưa?"
+        ]
+      }
+    ]
+  }
+}

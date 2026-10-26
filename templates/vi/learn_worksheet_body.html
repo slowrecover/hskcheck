@@ -1,0 +1,45 @@
+<div class="wrap">
+  <header class="no-print">
+    __NAV__
+    <div class="eyebrow"><span>Bài tập ngữ pháp</span><span class="chip">HSK __LEVEL__</span></div>
+    <h1><span class="zh">__ZH__</span>Bài tập in được</h1>
+    <p class="lede">Bài tập gồm __COUNT__ câu, chỉ dùng từ vựng HSK __LEVEL__, đáp án in ở trang riêng. In và photo miễn phí cho lớp học. Muốn xem lại quy tắc trước? Đọc <a href="__URL__">bài giải thích có ví dụ</a>. Muốn làm trên màn hình? <a href="__URL__practice/">Làm bài online</a>, có đáp án ngay.</p>
+  </header>
+
+  <section class="sheet ws-controls no-print" aria-label="Cài đặt bài tập">
+    <div class="ws-checks">
+      <label><input type="checkbox" id="opt-en" checked> Nghĩa tiếng Việt</label>
+      <label><input type="checkbox" id="opt-key" checked> Đáp án (in ở trang 2)</label>
+    </div>
+    <div><button type="button" class="button" id="print">In bài tập</button></div>
+  </section>
+
+  <div class="ws-preview">
+    <article class="ws-paper" id="paper">
+      <div class="ws-head">
+        <div class="ws-title"><span lang="zh-Hans">__ZH__</span> · Ngữ pháp HSK __LEVEL__</div>
+        <div class="ws-name">Họ tên <span class="ws-fill"></span> Ngày <span class="ws-fill short"></span></div>
+      </div>
+__EXERCISES__
+      <div class="ws-foot">Bài tập miễn phí từ __SITE_URL__</div>
+      <div class="ws-key">
+        <div class="ws-head"><div class="ws-title"><span lang="zh-Hans">__ZH__</span> · Đáp án</div></div>
+__KEY__
+      </div>
+    </article>
+  </div>
+</div>
+<script>
+(function () {
+  var paper = document.getElementById("paper");
+  function sync(id, cls) {
+    var box = document.getElementById(id);
+    var apply = function () { paper.classList.toggle(cls, !box.checked); };
+    box.addEventListener("change", apply);
+    apply();
+  }
+  sync("opt-en", "no-en");
+  sync("opt-key", "no-key");
+  document.getElementById("print").addEventListener("click", function () { window.print(); });
+})();
+</script>

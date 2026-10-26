@@ -33,18 +33,19 @@ TH_LEARN_URL = "/th/learn/"
 REQUIRED = ("slug", "published", "title", "description", "h1", "lede", "sections")
 
 
-def slugs(root):
-    folder = root / "data" / "th" / "learn"
+def slugs(root, lang="th"):
+    folder = root / "data" / lang / "learn"
     return sorted(p.stem for p in folder.glob("*.json")) if folder.exists() else []
 
 
-def load_pages(root):
-    """Merged pages: the English page with every English text field replaced by its Thai translation."""
+def load_pages(root, lang="th"):
+    """Merged pages: the English page with every English text field replaced by its Thai translation (or by the
+    translation in data/<lang>/learn/, in the same format: tools/learn_vi.py uses this for Vietnamese)."""
     english = {p["slug"]: p for p in learn.load_pages()}
     pages = []
-    for slug in slugs(root):
-        name = f"data/th/learn/{slug}.json"
-        t = json.loads((root / "data" / "th" / "learn" / f"{slug}.json").read_text(encoding="utf-8"))
+    for slug in slugs(root, lang):
+        name = f"data/{lang}/learn/{slug}.json"
+        t = json.loads((root / "data" / lang / "learn" / f"{slug}.json").read_text(encoding="utf-8"))
         missing = [k for k in REQUIRED if not t.get(k)]
         if missing:
             raise SystemExit(f"{name}: missing {missing}")
@@ -66,8 +67,8 @@ def load_pages(root):
             if len(ts.get("examples", [])) != len(exs) or not all(ts.get("examples", [])):
                 raise SystemExit(f"{name}: section {i} needs {len(exs)} example translations")
             s["h2"], s["paras"] = ts["h2"], ts.get("paras", [])
-            for ex, th in zip(exs, ts.get("examples", [])):
-                ex["en"] = th
+            for ex, tr in zip(exs, ts.get("examples", [])):
+                ex["en"] = tr
         if en.get("worksheet"):
             tw = t.get("worksheet")
             if not tw or not all(tw.get(k) for k in ("title", "description", "exercises")):
@@ -83,8 +84,8 @@ def load_pages(root):
                 if len(te.get("items", [])) != len(ex["items"]) or not all(te.get("items", [])):
                     raise SystemExit(f"{name}: worksheet exercise {i} needs {len(ex['items'])} item translations")
                 ex["h2"], ex["instructions"] = te["h2"], te["instructions"]
-                for it, th in zip(ex["items"], te["items"]):
-                    it["en"] = th
+                for it, tr in zip(ex["items"], te["items"]):
+                    it["en"] = tr
         elif t.get("worksheet"):
             raise SystemExit(f"{name}: has a worksheet but the English page does not")
         pages.append(p)

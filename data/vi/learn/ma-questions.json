@@ -1,0 +1,106 @@
+{
+  "slug": "ma-questions",
+  "published": "2026-10-26",
+  "title": "Câu hỏi với 吗 (ma) trong tiếng Trung: ngữ pháp HSK 1",
+  "description": "Cách dùng 吗 (ma): biến câu trần thuật thành câu hỏi có/không, cách trả lời khi không có từ \"có\", lỗi hay gặp với 吗, kèm ví dụ HSK 1.",
+  "h1": "Đặt câu hỏi có/không với 吗 (ma)",
+  "lede": "吗 (ma) là cách đặt câu hỏi dễ nhất trong tiếng Trung. Thêm 吗 vào cuối một câu trần thuật là câu đó trở thành câu hỏi có/không. Các từ khác trong câu giữ nguyên vị trí. Đây là một trong những điểm ngữ pháp đầu tiên của HSK 1.",
+  "sections": [
+    {
+      "h2": "Cấu trúc",
+      "paras": [
+        "Câu trần thuật + 吗？",
+        "Giống tiếng Việt, tiếng Trung không đảo trật tự từ khi đặt câu hỏi. Lấy một câu bình thường như 你是学生 (bạn là học sinh), thêm 吗 vào cuối là thành \"Bạn có phải là học sinh không?\". 吗 có vai trò gần giống \"không\" hoặc \"à\" ở cuối câu hỏi tiếng Việt, và được đọc nhẹ, không mang thanh điệu."
+      ],
+      "examples": [
+        "Bạn có phải là học sinh không?",
+        "Bạn có thích uống trà không?",
+        "Hôm nay anh ấy có đến không?",
+        "Đây có phải điện thoại của bạn không?",
+        "Anh ấy về nhà chưa?"
+      ]
+    },
+    {
+      "h2": "Cách trả lời",
+      "paras": [
+        "Tiếng Trung không có một từ chung cho \"có\" hay \"không\". Để trả lời, hãy lặp lại động từ hoặc tính từ chính trong câu hỏi: 有 hoặc 没有, 会 hoặc 不会, 想 hoặc 不想. Với câu hỏi có 是, trả lời 是 hoặc 不是. Cách này khá giống tiếng Việt: hỏi \"Bạn biết không?\" thì đáp \"Biết\" hoặc \"Không biết\".",
+        "Với tính từ, câu hỏi thường bỏ 很, còn câu trả lời lại có 很: hỏi 你忙吗？ thì đáp 我很忙. Nếu ai đó kể điều bất ngờ, chỉ cần nói 是吗？, nghĩa là \"Thật à?\"."
+      ],
+      "examples": [
+        "Bạn có bạn người Trung Quốc không? Có, tôi có hai người.",
+        "Bạn biết nói tiếng Trung không? Biết, tôi nói được một chút.",
+        "Bạn có quen anh ấy không? Không quen.",
+        "Đây có phải sách của bạn không? Không phải, là của anh ấy.",
+        "Bạn có bận không? Tôi rất bận.",
+        "Hôm nay có lạnh không? Không lạnh lắm."
+      ]
+    },
+    {
+      "h2": "Lỗi hay gặp nhất: dùng 吗 với từ để hỏi",
+      "paras": [
+        "Chỉ dùng 吗 khi câu trả lời là có hoặc không. Nếu câu hỏi đã có từ để hỏi như 什么, 谁, 哪儿 hay 几 thì nó đã là câu hỏi rồi, nên đừng thêm 吗. 你叫什么名字吗？ là sai; hãy nói 你叫什么名字？.",
+        "Câu hỏi dạng \"động từ + 不 + động từ\", như 去不去, cũng vậy. Nó hỏi cùng một điều như 吗, nên chỉ dùng một trong hai, không bao giờ dùng cả hai."
+      ],
+      "examples": [
+        "Bạn tên là gì?",
+        "Anh ấy ở đâu?",
+        "Bạn có đi không?",
+        "Bạn có phải là giáo viên không?"
+      ]
+    },
+    {
+      "h2": "Câu hỏi phủ định",
+      "paras": [
+        "Bạn cũng có thể thêm 吗 vào câu phủ định. Câu hỏi kiểu này thường mang chút ngạc nhiên, giống \"Bạn không đi à?\" trong tiếng Việt.",
+        "Khi trả lời, người Trung Quốc đồng ý hoặc không đồng ý với điều người kia vừa nói, nên 对 nghĩa là \"đúng, tôi không đi\". Tiếng Việt cũng trả lời như vậy (\"Ừ, tôi không đi\"), nên người Việt ít nhầm chỗ này hơn người nói tiếng Anh."
+      ],
+      "examples": [
+        "Ngày mai bạn không đến à?",
+        "Bạn không đi à? Ừ, tôi không đi.",
+        "Bạn chưa ăn cơm à?"
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 吗 (ma) HSK 1 có đáp án, in miễn phí",
+    "description": "Bài tập câu hỏi với 吗 HSK 1 in miễn phí: 18 câu (chọn 吗 hay từ để hỏi, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 吗 hay từ để hỏi",
+        "instructions": "Điền 吗, 什么, 谁 hoặc 哪儿 vào chỗ trống. Phần nghĩa tiếng Việt cho biết câu hỏi có nghĩa gì.",
+        "items": [
+          "Bạn có phải là học sinh không?",
+          "Anh ấy là ai?",
+          "Bạn đi đâu?",
+          "Bạn muốn ăn gì?",
+          "Bạn có biết nấu ăn không?",
+          "Họ có ở nhà không?",
+          "Kia là cái gì?",
+          "Điện thoại của bạn ở đâu?"
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu hỏi đúng.",
+        "items": [
+          "Bạn có muốn uống nước không?",
+          "Ngày mai bạn có đến trường không?",
+          "Hôm nay bạn có bận không?",
+          "Cô ấy có phải là giáo viên của bạn không?",
+          "Bạn có anh trai không?"
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Anh ấy là ai?",
+          "Bây giờ là mấy giờ?",
+          "Bạn có uống trà không?",
+          "Bạn có phải là người Trung Quốc không?",
+          "Đây là cái gì?"
+        ]
+      }
+    ]
+  }
+}

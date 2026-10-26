@@ -11,10 +11,11 @@ Each page is the English template with its text swapped for Vietnamese (the buil
 and each tool's JSON files are written by the same code and with the same checks as the English and Thai ones, with
 the Vietnamese meanings of data/vi/ in place of the English.
 
-Two things wait for the Vietnamese grammar pages (VI.md step 3): the gap sentences of the practice test and the daily
-quiz, and the grammar example sentences of the listening practice. Until a grammar page has a Vietnamese file
-(data/vi/learn/<slug>.json), its sentences are not used here, so these pages never show a sentence without a
-Vietnamese meaning. The listening practice uses the story sentences of data/practice/listening_stories.tsv, with
+Grammar sentences join with the Vietnamese grammar pages (VI.md step 3): the gap sentences of the practice test and
+the daily quiz (data/practice/gaps.tsv, checked by tools/practice.py) and the grammar example sentences of the
+listening practice are used only for the grammar pages that have a Vietnamese file (data/vi/learn/<slug>.json, see
+tools/learn_vi.py), with the Vietnamese of that file, so these pages never show a sentence without a Vietnamese
+meaning. The text of the pages names the levels that have gap sentences. The listening practice uses the story sentences of data/practice/listening_stories.tsv, with
 their Vietnamese in data/vi/practice/listening_stories_vi.tsv (slug, sentence, Vietnamese; same order, checked).
 
 The practice test keeps two words apart as wrong options when the English and Thai pages do (their meanings overlap
@@ -26,6 +27,7 @@ import re
 import unicodedata
 
 import daily
+import learn_vi
 import listening
 import pinyin_practice
 import practice
@@ -147,10 +149,18 @@ PRACTICE_UI = {
 }
 
 
-def practice_swaps(has_gaps):
+def hsk_range(levels):
+    """[1] -> HSK 1, [1, 2, 3] -> HSK 1–3 (the levels that have gap sentences)."""
+    levels = sorted(levels)
+    return f"HSK {levels[0]}" if len(levels) == 1 else f"HSK {levels[0]}–{levels[-1]}"
+
+
+def practice_swaps(gap_levels):
+    has_gaps = bool(gap_levels)
     what = ("nghĩa của từ, pinyin, nghe và ngữ pháp" if has_gaps else "nghĩa của từ, pinyin và nghe")
-    inside = ("Bạn chọn nghĩa của một từ, chọn từ theo nghĩa, chọn pinyin đúng và nghe rồi chọn từ vừa nghe; ở HSK 1–3 "
-              f'còn có câu điền từ vào chỗ trống lấy từ các <a href="{V}learn/">bài ngữ pháp</a>.' if has_gaps else
+    inside = ("Bạn chọn nghĩa của một từ, chọn từ theo nghĩa, chọn pinyin đúng và nghe rồi chọn từ vừa nghe; ở "
+              f'{hsk_range(gap_levels) if has_gaps else ""} còn có câu điền từ vào chỗ trống lấy từ các '
+              f'<a href="{V}learn/">bài ngữ pháp</a>.' if has_gaps else
               "Bạn chọn nghĩa của một từ, chọn từ theo nghĩa, chọn pinyin đúng và nghe rồi chọn từ vừa nghe.")
     return [
         EYEBROW,
@@ -223,9 +233,11 @@ DAILY_UI = {
 }
 
 
-def daily_swaps(has_gaps):
-    what = ("nghĩa của một từ, từ có nghĩa cho trước, pinyin đúng, một từ bạn nghe được, và ở HSK 1–3 có câu điền từ "
-            f'vào chỗ trống lấy từ các <a href="{V}learn/">bài ngữ pháp</a>' if has_gaps else
+def daily_swaps(gap_levels):
+    has_gaps = bool(gap_levels)
+    what = ("nghĩa của một từ, từ có nghĩa cho trước, pinyin đúng, một từ bạn nghe được, và ở "
+            f'{hsk_range(gap_levels) if has_gaps else ""} có câu điền từ vào chỗ trống lấy từ các '
+            f'<a href="{V}learn/">bài ngữ pháp</a>' if has_gaps else
             "nghĩa của một từ, từ có nghĩa cho trước, pinyin đúng và một từ bạn nghe được")
     return [
         EYEBROW,
@@ -366,8 +378,8 @@ def listen_swaps(has_grammar):
          'miss can go straight into the <a href="/hsk-flashcards/">flashcards</a>. For a mixed test of meanings, pinyin and '
          'grammar, try the <a href="/hsk-practice-test/">HSK practice test</a>.</p>',
          '<p>Điểm cao nhất của từng cấp được lưu trong trình duyệt trên thiết bị này, không gửi đi đâu cả. Những từ nghe sai '
-         f'có thể thêm ngay vào <a href="{STUDY_URL}">flashcard</a>. Muốn kiểm tra tổng hợp nghĩa, pinyin và nghe, hãy '
-         f'làm <a href="{PRACTICE_URL}">bài thi thử HSK</a>.</p>'),
+         f'có thể thêm ngay vào <a href="{STUDY_URL}">flashcard</a>. Muốn kiểm tra tổng hợp nghĩa, pinyin và '
+         f'{"ngữ pháp" if has_grammar else "nghe"}, hãy làm <a href="{PRACTICE_URL}">bài thi thử HSK</a>.</p>'),
         ('<p><b>Words and sentences.</b> HSK 3.0 (New HSK) vocabulary, 2025 syllabus, the same lists as the '
          '<a href="/hsk-1-word-list/">word list pages</a>. Sentences come from this site\'s grammar pages and stories, with '
          'pinyin checked against the word lists. Audio uses your device\'s Chinese voice.</p>',
@@ -657,6 +669,75 @@ def _story_sentences(root):
     return out
 
 
+def _vi_pages(root):
+    return {p["slug"]: p for p in learn_vi.load_pages(root)}
+
+
+def _vi_gaps(root, gaps):
+    """{level: [[before, after, answer, options, Vietnamese, answer pinyin, sentence pinyin, slug], ...]}: the checked gap
+    sentences of tools/practice.py whose grammar page has a Vietnamese file, with the Vietnamese of that file."""
+    pages = _vi_pages(root)
+    out = {}
+    for n, items in gaps.items():
+        for x in items:
+            p = pages.get(x["slug"])
+            if not p:
+                continue
+            kind, a, b = x["loc"]
+            if kind == "w":
+                it = p["worksheet"]["exercises"][a]["items"][b]
+                if it["zh"] != x["before"] + practice.BLANK + x["after"]:
+                    raise SystemExit(f"vi_tools: gap sentence not found on data/vi/learn/{x['slug']}.json")
+            else:
+                it = p["sections"][a]["examples"][b]
+                if it["zh"] != x["before"] + x["answer"] + x["after"]:
+                    raise SystemExit(f"vi_tools: gap sentence not found on data/vi/learn/{x['slug']}.json")
+            vi = it["en"]  # learn_vi merges the Vietnamese into the "en" field of the English page
+            if HAN.search(vi):
+                raise SystemExit(f"vi_tools: Chinese characters in the Vietnamese of a gap sentence on {x['slug']}")
+            out.setdefault(n, []).append(
+                [x["before"], x["after"], x["answer"], x["options"], vi, x["apy"], x["spy"], x["slug"]])
+    return out
+
+
+def _grammar_sentences(root):
+    """{level: [[sentence, pinyin, Vietnamese, "g", slug, Vietnamese heading], ...]}: the example sentences of the
+    Vietnamese grammar pages that the listening practice can use (the same rule as tools/listening.py, whose build
+    checks their words and pinyin)."""
+    out = {}
+    for slug, p in sorted(_vi_pages(root).items()):
+        n = p["level"]
+        if n not in listening.SENTENCE_LEVELS:
+            continue
+        for s in p["sections"]:
+            for e in s.get("examples", []):
+                if not listening.SENTENCE_OK.match(e["zh"]) or len(listening.HAN.findall(e["zh"])) > listening.MAX_HAN:
+                    continue
+                if HAN.search(e["en"]):
+                    raise SystemExit(f"vi_tools: Chinese characters in the Vietnamese of an example on {slug}")
+                out.setdefault(n, []).append([e["zh"], e["py"], e["en"], "g", slug, p["h1"]])
+    return out
+
+
+def _sentences(root):
+    """Grammar sentences first, then story sentences (as on the English page); one of each set of sentences that sound
+    the same, tones aside: the first."""
+    out = {}
+    for src in (_grammar_sentences(root), _story_sentences(root)):
+        for n, items in src.items():
+            for x in items:
+                out.setdefault(n, []).append(x)
+    for n in out:
+        seen, keep = set(), []
+        for x in out[n]:
+            k = listening._key(x[1])
+            if k not in seen:
+                seen.add(k)
+                keep.append(x)
+        out[n] = keep
+    return out
+
+
 def _json(path, obj):
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(obj, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
@@ -696,8 +777,10 @@ def build(*, root, tpl, write, nav, base_css, vi_css, data):
     write(STUDY_URL, "Flashcard HSK 1–5: học từ vựng HSK mỗi ngày, có nghĩa tiếng Việt", desc,
           base_css + _css(tpl, "checker.css", "study.css") + vi_css, body, _ld("Flashcard HSK", STUDY_URL, desc))
 
-    # Practice test (gap sentences wait for the Vietnamese grammar pages: see the docstring)
-    levels, _gaps = practice._level_data(root)
+    # Practice test (gap sentences only from the grammar pages that have a Vietnamese file: see the docstring)
+    levels, gaps = practice._level_data(root)
+    vgaps = _vi_gaps(root, gaps)
+    gap_levels = [n for n in LEVELS if vgaps.get(n)]
     for n in LEVELS:
         rows = levels[n]["words"]
         conf = vi_conflicts([r[2] for r in rows], meanings[n])
@@ -705,25 +788,27 @@ def build(*, root, tpl, write, nav, base_css, vi_css, data):
         words = [[w, p, meanings[n][i], wp, audio, sorted(set(c) | set(conf[i]))]
                  for i, (w, p, m, wp, audio, c) in enumerate(rows)]
         practice._check_level(n, words)
-        _json(root / PRACTICE_URL.strip("/") / f"hsk{n}.json", {"w": words, "g": []})
-    body = _swap(practice._body(tpl, nav(PRACTICE_URL), PRACTICE_UI, PRACTICE_URL), practice_swaps(False),
+        _json(root / PRACTICE_URL.strip("/") / f"hsk{n}.json", {"w": words, "g": vgaps.get(n, [])})
+    body = _swap(practice._body(tpl, nav(PRACTICE_URL), PRACTICE_UI, PRACTICE_URL), practice_swaps(gap_levels),
                  "templates/practice_body.html")
-    desc = ("Thi thử HSK online miễn phí cho HSK 1–5 (HSK 3.0): 20 câu về nghĩa, pinyin và nghe, có nghĩa tiếng Việt và "
+    parts = "nghĩa, pinyin, nghe và ngữ pháp" if gap_levels else "nghĩa, pinyin và nghe"
+    desc = (f"Thi thử HSK online miễn phí cho HSK 1–5 (HSK 3.0): 20 câu về {parts}, có nghĩa tiếng Việt và "
             "đáp án sau mỗi câu.")
     write(PRACTICE_URL, "Thi thử HSK online miễn phí: trắc nghiệm HSK 1–5 có đáp án", desc,
           base_css + _css(tpl, "checker.css", "practice.css") + vi_css, body, _ld("Thi thử HSK", PRACTICE_URL, desc))
 
     # Daily quiz (loads the practice test's files)
-    daily._check_data(root, PRACTICE_URL, need_gaps=False)
-    body = _swap(daily._body(tpl, nav(DAILY_URL), DAILY_UI, PRACTICE_URL), daily_swaps(False), "templates/daily_body.html")
-    desc = ("Mỗi ngày một bài trắc nghiệm HSK 10 câu mới cho HSK 1–5 (HSK 3.0): nghĩa, pinyin và nghe, có đáp án. Giữ "
+    daily._check_data(root, PRACTICE_URL, need_gaps=False)  # levels with gaps need at least two grammar pages
+    body = _swap(daily._body(tpl, nav(DAILY_URL), DAILY_UI, PRACTICE_URL), daily_swaps(gap_levels),
+                 "templates/daily_body.html")
+    desc = (f"Mỗi ngày một bài trắc nghiệm HSK 10 câu mới cho HSK 1–5 (HSK 3.0): {parts}, có đáp án. Giữ "
             "chuỗi ngày học. Miễn phí.")
     write(DAILY_URL, "Trắc nghiệm HSK mỗi ngày: 10 câu miễn phí cho HSK 1–5", desc,
           base_css + daily._css(tpl) + vi_css, body, _ld("Trắc nghiệm HSK mỗi ngày", DAILY_URL, desc))
 
     # Listening (words of every level; story sentences at HSK 1-4)
     listening._data(root)  # checks every sentence of the English page, story lines included
-    sents = _story_sentences(root)
+    sents = _sentences(root)
     for n in LEVELS:
         words = [[w, p, meanings[n][i]] for i, (w, p, m, _wp, audio, _c) in enumerate(levels[n]["words"]) if audio]
         if len(words) < 50:
@@ -734,7 +819,8 @@ def build(*, root, tpl, write, nav, base_css, vi_css, data):
         if n in listening.SENTENCE_LEVELS and not s:
             raise SystemExit(f"vi_tools: listening HSK {n} has no sentences")
         _json(root / LISTEN_URL.strip("/") / f"hsk{n}.json", {"w": words, "s": s})
-    body = _swap(listening._body(tpl, nav(LISTEN_URL), LISTEN_UI, LISTEN_URL), listen_swaps(False),
+    has_grammar = any(x[3] == "g" for n in sents for x in sents[n])
+    body = _swap(listening._body(tpl, nav(LISTEN_URL), LISTEN_UI, LISTEN_URL), listen_swaps(has_grammar),
                  "templates/listening_body.html")
     desc = ("Luyện nghe tiếng Trung miễn phí cho HSK 1–5 (HSK 3.0): nghe từ hoặc câu ngắn rồi chọn đáp án. Nghe chậm, "
             "chế độ chỉ pinyin, nghĩa tiếng Việt.")

@@ -1,0 +1,113 @@
+{
+  "slug": "bu-vs-meiyou",
+  "published": "2026-10-26",
+  "title": "不 và 没有 trong tiếng Trung: ngữ pháp HSK 1 có ví dụ",
+  "description": "Khi nào dùng 不 (bù), khi nào dùng 没有 (méiyǒu): thói quen và dự định, quá khứ, \"chưa\", 有, câu hỏi, lỗi hay gặp và ví dụ HSK 1.",
+  "h1": "不 và 没有: dùng từ phủ định nào?",
+  "lede": "Tiếng Trung có hai cách thông dụng để nói \"không\". 不 (bù) dùng cho thói quen, dự định, mong muốn và tính chất của sự việc. 没有 (méiyǒu) dùng cho việc đã không xảy ra hoặc chưa xảy ra, và là cách duy nhất để nói \"không có\".",
+  "sections": [
+    {
+      "h2": "Quy tắc cơ bản",
+      "paras": [
+        "Dùng 不 cho việc bạn thường làm hay không làm, và cho việc bạn sẽ làm hay không làm. Dùng 没有 khi hành động đã không xảy ra trong quá khứ, hoặc đến giờ vẫn chưa xảy ra. Có thể nhớ nôm na: 不 gần với \"không\", còn 没有 gần với \"đã không\", \"chưa\" và \"không có\".",
+        "Cả hai đều đứng ngay trước động từ. So sánh 我不去学校 (tôi không đi học) với 我没有去学校 (tôi đã không đi học)."
+      ],
+      "examples": [
+        "Tôi không uống trà.",
+        "Ngày mai tôi không đi học.",
+        "Hôm qua tôi không đi học."
+      ]
+    },
+    {
+      "h2": "不 với 是, tính từ và \"biết, muốn\"",
+      "paras": [
+        "Luôn dùng 不 với 是, và thường dùng 不 với tính từ như 冷 hay 忙, với các từ như 会, 想, 认识 và 知道. Kể cả khi nói về quá khứ: 昨天不冷 nghĩa là \"hôm qua trời không lạnh\".",
+        "不 thường đọc là bù, nhưng đổi thành bú khi đứng trước âm tiết thanh 4: 不是 bú shì, 不去 bú qù, 不会 bú huì."
+      ],
+      "examples": [
+        "Anh ấy không phải là giáo viên.",
+        "Hôm nay trời không lạnh.",
+        "Tôi không biết lái xe.",
+        "Hôm qua không phải thứ Hai."
+      ]
+    },
+    {
+      "h2": "没有: \"đã không\" và \"chưa\"",
+      "paras": [
+        "没有 cho biết việc gì đó đã không xảy ra. Có 还 ở trước thì nghĩa là \"vẫn chưa\". Khi nói, 没有 trước động từ thường được rút gọn thành 没.",
+        "Lỗi hay gặp nhất là dùng 不 cho quá khứ: muốn nói \"hôm qua tôi không đi học\" thì 我昨天不去学校 là sai; câu này nghe như bạn đã quyết định không đi. Lỗi khác là thêm 了 vào động từ sau 没有. 没有 đã cho biết hành động không xảy ra, nên hãy nói 我没有吃饭, không nói 我没有吃饭了."
+      ],
+      "examples": [
+        "Hôm qua anh ấy không đến.",
+        "Tôi vẫn chưa ăn cơm.",
+        "Hôm qua tôi rất bận, không xem ti vi."
+      ]
+    },
+    {
+      "h2": "有 chỉ đi với 没有",
+      "paras": [
+        "Động từ 有 (có) không bao giờ đi với 不. \"Tôi không có\" luôn là 我没有, không bao giờ là 我不有, dù nói về quá khứ, hiện tại hay tương lai."
+      ],
+      "examples": [
+        "Tôi không có thời gian.",
+        "Anh ấy không có anh trai."
+      ]
+    },
+    {
+      "h2": "Câu hỏi và câu trả lời ngắn",
+      "paras": [
+        "Bạn có thể đặt câu hỏi bằng cách để dạng khẳng định và dạng phủ định cạnh nhau. Trong cấu trúc này, 不 đọc nhẹ, không mang thanh điệu. Để hỏi việc gì đó đã xảy ra chưa, đặt 没有 ở cuối câu, sau 了.",
+        "Để trả lời \"không\", lặp lại dạng phủ định với động từ: 不去 (không, tôi không đi), 没有 (không, tôi đã không làm / tôi không có), hoặc 还没有 (chưa)."
+      ],
+      "examples": [
+        "Ngày mai bạn có đi học không?",
+        "Bạn ăn cơm chưa?",
+        "Bạn có tên tiếng Trung không?"
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 不 và 没有 HSK 1 có đáp án, in miễn phí",
+    "description": "Bài tập 不 và 没有 HSK 1 in miễn phí: 20 câu (chọn từ phủ định, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 不 hay 没有",
+        "instructions": "Điền 不 hoặc 没有 vào chỗ trống. Phần nghĩa tiếng Việt cho biết câu có nghĩa gì.",
+        "items": [
+          "Hôm qua tôi không đi học.",
+          "Anh ấy không phải là người Trung Quốc.",
+          "Tôi không có máy tính.",
+          "Ngày mai tôi không đi cửa hàng.",
+          "Tôi vẫn chưa ăn cơm.",
+          "Hôm nay trời không lạnh.",
+          "Chữ này tôi không biết.",
+          "Tuần trước anh ấy không đến lớp.",
+          "Tôi không thích uống trà.",
+          "Bạn đã xem bộ phim đó chưa? Tôi vẫn chưa xem."
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng.",
+        "items": [
+          "Ngày mai tôi không đi bệnh viện.",
+          "Tôi không có tiền.",
+          "Anh ấy vẫn chưa dậy.",
+          "Hôm nay cô ấy không bận.",
+          "Hôm qua chúng tôi không xem ti vi."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Tôi không có anh trai.",
+          "Hôm qua anh ấy không đến.",
+          "Tôi chưa ăn cơm.",
+          "Anh ấy không phải là học sinh.",
+          "Tôi không biết nói tiếng Trung."
+        ]
+      }
+    ]
+  }
+}

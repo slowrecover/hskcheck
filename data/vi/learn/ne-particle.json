@@ -1,0 +1,114 @@
+{
+  "slug": "ne-particle",
+  "published": "2026-10-26",
+  "title": "Cách dùng 呢 (ne) trong tiếng Trung: ngữ pháp HSK 1 có ví dụ",
+  "description": "Cách dùng 呢 (ne): \"còn bạn?\", \"... đâu rồi?\", câu hỏi nhẹ nhàng hơn, việc đang diễn ra và lỗi nhầm 呢 với 吗. Ví dụ HSK 1.",
+  "h1": "Cách dùng 呢 (ne)",
+  "lede": "呢 (ne) là một từ nhỏ đứng cuối câu, có vài cách dùng hằng ngày: hỏi \"còn bạn?\", hỏi ai hoặc cái gì đang ở đâu, làm câu hỏi nghe nhẹ nhàng hơn, và cho biết việc gì đang diễn ra. Đây là điểm ngữ pháp HSK 1; 呢 được đọc nhẹ, không mang thanh điệu.",
+  "sections": [
+    {
+      "h2": "\"Còn bạn?\": danh từ + 呢",
+      "paras": [
+        "Nói điều gì đó về bản thân, rồi thêm một người hoặc một vật + 呢 để hỏi cùng điều đó về họ. Không cần lặp lại phần còn lại của câu hỏi, vì 呢 có nghĩa là \"còn ... thì sao?\".",
+        "Đây là cách dễ nhất để tiếp tục cuộc trò chuyện: 我很好，你呢？ là câu đáp quen thuộc cho 你好吗？."
+      ],
+      "examples": [
+        "Tôi khỏe, còn bạn?",
+        "Tôi là giáo viên, còn bạn?",
+        "Tôi muốn uống trà, còn bạn?",
+        "Cái này tám tệ, còn cái kia?"
+      ]
+    },
+    {
+      "h2": "\"... đâu rồi?\": chỉ dùng 呢",
+      "paras": [
+        "Nếu mở đầu chỉ bằng một người hoặc một vật + 呢, trước đó không nói gì, thì câu thường có nghĩa là \"... đâu rồi?\". Người ta nói câu này suốt khi thấy thiếu ai hoặc thiếu cái gì."
+      ],
+      "examples": [
+        "Điện thoại của tôi đâu rồi?",
+        "Bố bạn đâu rồi?",
+        "Sách của tôi đâu rồi? Ở trên bàn."
+      ]
+    },
+    {
+      "h2": "Câu hỏi có từ để hỏi nghe nhẹ nhàng hơn",
+      "paras": [
+        "Bạn có thể thêm 呢 vào cuối câu hỏi đã có từ để hỏi như 什么, 哪儿 hay 怎么. Nghĩa không đổi, nhưng câu hỏi nghe nhẹ nhàng và tự nhiên hơn, gần giống thêm \"nhỉ\" hoặc \"thế\" trong tiếng Việt. Bỏ 呢 đi thì câu hỏi vẫn đúng."
+      ],
+      "examples": [
+        "Bạn đang làm gì thế?",
+        "Chúng ta đi đâu ăn cơm nhỉ?",
+        "Sao anh ấy vẫn chưa đến nhỉ?"
+      ]
+    },
+    {
+      "h2": "Việc đang diễn ra: 在 + động từ + 呢",
+      "paras": [
+        "呢 ở cuối câu trần thuật có thể cho biết hành động đang diễn ra ngay lúc này. Nó rất hay đi với 在 hoặc 正在 trước động từ: 他在睡觉呢 nghĩa là \"Anh ấy đang ngủ (lúc này)\".",
+        "Để nói việc gì đó không đang diễn ra, đặt 没有 trước 在."
+      ],
+      "examples": [
+        "Anh ấy đang ngủ.",
+        "Mẹ đang nấu cơm.",
+        "Họ đang xem ti vi.",
+        "Bên ngoài đang mưa.",
+        "Anh ấy không ngủ, anh ấy đang đọc sách."
+      ]
+    },
+    {
+      "h2": "Lỗi hay gặp nhất: dùng 呢 thay cho 吗",
+      "paras": [
+        "呢 không biến câu trần thuật thành câu hỏi có/không. Đó là việc của 吗. 你是中国人呢？ là sai; hãy nói 你是中国人吗？.",
+        "Cách nhớ đơn giản: dùng 吗 khi câu trả lời là có hoặc không, và dùng 呢 cho \"còn bạn?\", \"... đâu rồi?\" hoặc đi cùng từ để hỏi."
+      ],
+      "examples": [
+        "Bạn có phải là người Trung Quốc không?",
+        "Ngày mai tôi đến trường, còn bạn?"
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 呢 (ne) HSK 1 có đáp án, in miễn phí",
+    "description": "Bài tập 呢 (ne) HSK 1 in miễn phí: 20 câu (chọn 呢 hay 吗, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 呢 hay 吗",
+        "instructions": "Điền 呢 hoặc 吗 vào chỗ trống. Phần nghĩa tiếng Việt cho biết câu có nghĩa gì.",
+        "items": [
+          "Tôi là học sinh, còn bạn?",
+          "Bạn có thích ăn cơm không?",
+          "Cốc của tôi đâu rồi?",
+          "Anh ấy đang xem ti vi.",
+          "Hôm nay bạn có bận không?",
+          "Bạn tên là gì?",
+          "Bố đang gọi điện thoại.",
+          "Hôm nay tôi không đi, còn bạn?",
+          "Anh ấy có phải là bạn của bạn không?",
+          "Mấy giờ chúng ta đi nhỉ?"
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng.",
+        "items": [
+          "Họ đang ăn cơm.",
+          "Mẹ bạn đâu rồi?",
+          "Bạn đang làm gì thế?",
+          "Tôi đang học tiếng Trung.",
+          "Ngày mai chúng ta đi đâu nhỉ?"
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Bạn có phải là giáo viên không?",
+          "Bạn có muốn đi cửa hàng không?",
+          "Tôi rất bận, còn bạn?",
+          "Bạn đi đâu thế?",
+          "Máy tính của tôi đâu rồi?"
+        ]
+      }
+    ]
+  }
+}

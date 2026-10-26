@@ -6,6 +6,8 @@ Outputs:
   vi/chinese-character-worksheets/      the worksheet maker in Vietnamese
   vi/hsk-N-character-worksheets/        preset to the characters of HSK N (1-3: strokes/hskN.json; 4-5: new characters)
   vi/about/index.html                   about the site
+  vi/learn/, vi/learn/<slug>/           grammar pages and their worksheets, from data/vi/learn/ (tools/learn_vi.py)
+  vi/learn/<slug>/practice/             grammar practice online (tools/grammar_practice.py)
   vi/hsk-flashcards/ and the practice tools (test, daily quiz, listening, pinyin and tones, tracing): see
                                         tools/vi_tools.py
 
@@ -24,8 +26,10 @@ import json
 import pathlib
 import re
 
+import grammar_practice
 import hsk4
 import hsk5
+import learn_vi
 import vi_tools
 import worksheets_th
 
@@ -246,6 +250,8 @@ def alternates(root):
     pairs.update({f"/hsk-{n}-character-worksheets/": f"{VI_URL}hsk-{n}-character-worksheets/" for n in ws_levels(root)})
     pairs["/about/"] = VI_ABOUT_URL
     pairs.update(vi_tools.alternates())
+    pairs.update(learn_vi.alternates(root))
+    pairs.update(grammar_practice.alternates_vi(root))
     return pairs
 
 
@@ -311,6 +317,8 @@ def build(*, root, tpl, site, base_css, render, word_lists, read_words, search_k
     pages += vi_tools.NAV
     pages.append((VI_WS_URL, "Phiếu tập viết"))
     pages += vi_tools.NAV_AFTER_WS
+    if learn_vi.slugs(root):
+        pages.append((learn_vi.VI_LEARN_URL, "Ngữ pháp"))
 
     def nav(current):
         links = []
@@ -443,6 +451,10 @@ def build(*, root, tpl, site, base_css, render, word_lists, read_words, search_k
 
     # Flashcards and practice tools
     urls += vi_tools.build(root=root, tpl=tpl, write=write, nav=nav, base_css=base_css, vi_css=vi_css, data=data)
+
+    # Grammar pages, their worksheets and grammar practice online
+    learn_vi.build(root=root, tpl=tpl, site=site, write=write, nav=nav, base_css=base_css, vi_css=vi_css)
+    grammar_practice.build_vi(root=root, tpl=tpl, site=site, write=write, nav=nav, base_css=base_css, vi_css=vi_css)
 
     # About
     body = (tpl / "vi" / "about_body.html").read_text(encoding="utf-8").replace("__NAV__", nav(VI_ABOUT_URL))

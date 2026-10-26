@@ -397,7 +397,8 @@ def _readings(root):
 
 
 def _gaps(root):
-    """The checked gap sentences, by level: dicts with the parts, options, en/th meanings and pinyin."""
+    """The checked gap sentences, by level: dicts with the parts, options, en/th meanings and pinyin, and where the
+    sentence is on its page ("loc": ("w", exercise, item) or ("e", section, example)) for the other languages."""
     sys.path.insert(0, str(root / "tools"))
     from check_vocab import allowed_words, check
     pages = {}
@@ -443,12 +444,14 @@ def _gaps(root):
             if len(hit) != 1 or hit[0][0]["answer"] != answer:
                 raise SystemExit(f"{where}: no worksheet item {gapped} with answer {answer} on {slug}")
             en, th_text, spy = hit[0][0]["en"], hit[0][1], ""
+            loc = ("w", k_ex, next(j for j, it in enumerate(ex["items"]) if it["zh"] == gapped))
         else:
             hit = []
             for si, s in enumerate(p["sections"]):
                 for ei, e in enumerate(s.get("examples", [])):
                     if e["zh"] == full:
                         hit.append((e, th["sections"][si]["examples"][ei]))
+                        loc = ("e", si, ei)
             if len(hit) != 1:
                 raise SystemExit(f"{where}: no example sentence {full} on {slug}")
             words = vocab[p["level"]]
@@ -479,7 +482,8 @@ def _gaps(root):
             raise SystemExit(f"{where}: no pinyin for {answer}; add it to ANSWER_PINYIN in tools/practice.py")
         before, after = gapped.split(BLANK)
         out[p["level"]].append({"before": before, "after": after, "answer": answer, "options": options,
-                                "en": en, "th": th_text, "apy": apy, "spy": spy, "slug": slug})
+                                "en": en, "th": th_text, "apy": apy, "spy": spy, "slug": slug,
+                                "loc": loc})
     return out
 
 
