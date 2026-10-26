@@ -64,9 +64,8 @@ UI_EN = {
     "miss": "Not quite. Follow the shape of the stroke from start to end.",
     "short": "Draw the whole stroke, from where it starts to where it ends.",
     "hinted": "Here is the next stroke. Now draw it.",
-    "doneClean": "Well written: no mistakes.", "doneHelp": "Done, with {m} mistakes and {h} hints.",
-    "doneMist": "Done, with {m} mistakes.", "doneHint": "Done, with {h} hints.", "doneOne": "Done, with 1 mistake.",
-    "doneOneHint": "Done, with 1 hint.",
+    "doneClean": "Well written: no mistakes.", "doneWith": "Done, with {x}.", "and": " and ",
+    "mist1": "1 mistake", "mistN": "{n} mistakes", "hint1": "1 hint", "hintN": "{n} hints",
     "hint": "Hint", "play": "Stroke order", "restart": "Start again", "next": "Next character", "finish": "See my score",
     "scoreHead": "Your score", "scoreSub": "characters written without a mistake or a hint",
     "bestNew": "New best for this set!", "bestOld": "Your best for this set: {b} / {t}",
@@ -95,9 +94,8 @@ UI_TH = {
     "miss": "ยังไม่ถูก ลากตามรูปของขีดตั้งแต่ต้นจนจบ",
     "short": "ลากให้ครบทั้งขีด ตั้งแต่จุดเริ่มจนถึงจุดจบ",
     "hinted": "นี่คือขีดถัดไป ลองเขียนตามเลย",
-    "doneClean": "เขียนได้สวย ไม่ผิดเลย", "doneHelp": "เสร็จแล้ว ผิด {m} ครั้ง ใช้ตัวช่วย {h} ครั้ง",
-    "doneMist": "เสร็จแล้ว ผิด {m} ครั้ง", "doneHint": "เสร็จแล้ว ใช้ตัวช่วย {h} ครั้ง", "doneOne": "เสร็จแล้ว ผิด 1 ครั้ง",
-    "doneOneHint": "เสร็จแล้ว ใช้ตัวช่วย 1 ครั้ง",
+    "doneClean": "เขียนได้สวย ไม่ผิดเลย", "doneWith": "เสร็จแล้ว {x}", "and": " ",
+    "mist1": "ผิด 1 ครั้ง", "mistN": "ผิด {n} ครั้ง", "hint1": "ใช้ตัวช่วย 1 ครั้ง", "hintN": "ใช้ตัวช่วย {n} ครั้ง",
     "hint": "ตัวช่วย", "play": "ดูลำดับขีด", "restart": "เริ่มใหม่", "next": "ตัวต่อไป", "finish": "ดูคะแนน",
     "scoreHead": "คะแนนของคุณ", "scoreSub": "ตัวที่เขียนได้โดยไม่ผิดและไม่ใช้ตัวช่วย",
     "bestNew": "คะแนนสูงสุดใหม่ของชุดนี้!", "bestOld": "คะแนนสูงสุดของคุณในชุดนี้: {b} / {t}",
@@ -172,10 +170,10 @@ TH_SWAPS = [
      'แต่ละตัวแสดงพร้อมคำแรกที่มีตัวนั้น เลือก "ตัวอักษรอะไรก็ได้" เพื่อเขียนตัวอักษรที่ต้องการเอง '
      'เช่น ชื่อของคุณ หรือคำศัพท์ใหม่ของบทเรียน</p>'),
     ('<h3>Where is my score kept?</h3>', '<h3>คะแนนเก็บไว้ที่ไหน?</h3>'),
-    ('<p>A character counts when you write it without a mistake and without a hint. Your best for each set is kept in '
+    ('<p>A character counts when you write it without a mistake and without a hint (playing the stroke order counts as a hint). Your best for each set is kept in '
      'this browser on this device, and nothing is sent anywhere. To write on paper as well, print the same characters '
      'from the <a href="/chinese-character-worksheets/">worksheet maker</a>.</p>',
-     '<p>ตัวอักษรที่นับคะแนนคือตัวที่เขียนได้โดยไม่ผิดและไม่ใช้ตัวช่วย คะแนนสูงสุดของแต่ละชุดเก็บไว้ในเบราว์เซอร์ของอุปกรณ์นี้ '
+     '<p>ตัวอักษรที่นับคะแนนคือตัวที่เขียนได้โดยไม่ผิดและไม่ใช้ตัวช่วย (การกดดูลำดับขีดก็นับเป็นตัวช่วย) คะแนนสูงสุดของแต่ละชุดเก็บไว้ในเบราว์เซอร์ของอุปกรณ์นี้ '
      'และไม่มีข้อมูลใดถูกส่งไปที่ไหน ถ้าอยากฝึกเขียนบนกระดาษด้วย พิมพ์ตัวอักษรชุดเดียวกันได้จาก'
      '<a href="/th/chinese-character-worksheets/">หน้าสร้างแบบฝึกเขียน</a></p>'),
     ('<p><b>Stroke data.</b> Stroke outlines, centre lines and pinyin come from '

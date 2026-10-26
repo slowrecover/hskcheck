@@ -395,7 +395,7 @@ table.words-table th, table.counts th { letter-spacing: 0; }
       </div>
       <div>
         <h3>คะแนนเก็บไว้ที่ไหน?</h3>
-        <p>ตัวอักษรที่นับคะแนนคือตัวที่เขียนได้โดยไม่ผิดและไม่ใช้ตัวช่วย คะแนนสูงสุดของแต่ละชุดเก็บไว้ในเบราว์เซอร์ของอุปกรณ์นี้ และไม่มีข้อมูลใดถูกส่งไปที่ไหน ถ้าอยากฝึกเขียนบนกระดาษด้วย พิมพ์ตัวอักษรชุดเดียวกันได้จาก<a href="/th/chinese-character-worksheets/">หน้าสร้างแบบฝึกเขียน</a></p>
+        <p>ตัวอักษรที่นับคะแนนคือตัวที่เขียนได้โดยไม่ผิดและไม่ใช้ตัวช่วย (การกดดูลำดับขีดก็นับเป็นตัวช่วย) คะแนนสูงสุดของแต่ละชุดเก็บไว้ในเบราว์เซอร์ของอุปกรณ์นี้ และไม่มีข้อมูลใดถูกส่งไปที่ไหน ถ้าอยากฝึกเขียนบนกระดาษด้วย พิมพ์ตัวอักษรชุดเดียวกันได้จาก<a href="/th/chinese-character-worksheets/">หน้าสร้างแบบฝึกเขียน</a></p>
       </div>
     </div>
   </section>
@@ -407,7 +407,7 @@ table.words-table th, table.counts th { letter-spacing: 0; }
 
 <script>
 (function () {
-const UI = {"set": "ตัวที่ {a}–{b}", "best": "สูงสุด {b}/{t}", "of": "จาก", "char": "ตัวที่", "stroke": "ขีดที่", "strokes": "ขีด", "start": "เริ่มเขียน", "loading": "กำลังโหลด…", "loadFail": "โหลดข้อมูลลำดับขีดไม่สำเร็จ ตรวจสอบอินเทอร์เน็ตแล้วลองใหม่อีกครั้ง", "noData": "ไม่มีข้อมูลลำดับขีดของ: {c}", "typeSome": "พิมพ์ตัวอักษรจีนในช่องด้านบน", "customCount": "{n} ตัว แบ่งเป็นชุดละ 10 ตัว", "askTrace": "เขียนทับตัวอักษรสีเทาทีละขีด ตามลำดับขีด", "askMemory": "เขียนตัวอักษรเองโดยไม่ดูตัวอย่าง ทีละขีด ตามลำดับขีด", "first": "เริ่มจากขีดแรก", "good": "ดีมาก ขีดต่อไป", "dir": "ตำแหน่งถูกแล้ว แต่ต้องเริ่มจากอีกปลายหนึ่งของขีด", "order": "ขีดนี้ต้องเขียนทีหลัง ลองหาขีดที่มาก่อน", "miss": "ยังไม่ถูก ลากตามรูปของขีดตั้งแต่ต้นจนจบ", "short": "ลากให้ครบทั้งขีด ตั้งแต่จุดเริ่มจนถึงจุดจบ", "hinted": "นี่คือขีดถัดไป ลองเขียนตามเลย", "doneClean": "เขียนได้สวย ไม่ผิดเลย", "doneHelp": "เสร็จแล้ว ผิด {m} ครั้ง ใช้ตัวช่วย {h} ครั้ง", "doneMist": "เสร็จแล้ว ผิด {m} ครั้ง", "doneHint": "เสร็จแล้ว ใช้ตัวช่วย {h} ครั้ง", "doneOne": "เสร็จแล้ว ผิด 1 ครั้ง", "doneOneHint": "เสร็จแล้ว ใช้ตัวช่วย 1 ครั้ง", "hint": "ตัวช่วย", "play": "ดูลำดับขีด", "restart": "เริ่มใหม่", "next": "ตัวต่อไป", "finish": "ดูคะแนน", "scoreHead": "คะแนนของคุณ", "scoreSub": "ตัวที่เขียนได้โดยไม่ผิดและไม่ใช้ตัวช่วย", "bestNew": "คะแนนสูงสุดใหม่ของชุดนี้!", "bestOld": "คะแนนสูงสุดของคุณในชุดนี้: {b} / {t}", "msg4": "ยอดเยี่ยม ลำดับขีดของคุณแม่นมาก ไปชุดถัดไปได้เลย", "msg3": "ทำได้ดี เขียนตัวอักษรด้านล่างอีกครั้ง แล้วไปต่อ", "msg2": "สู้ต่อไป ดูลำดับขีดของตัวอักษรด้านล่าง แล้วลองเขียนอีกครั้ง", "msg1": "ลำดับขีดต้องอาศัยการฝึก ใช้ตัวช่วยได้เลย แล้วลองชุดนี้อีกครั้ง", "missedHead": "ตัวอักษรที่ควรฝึกอีก", "noMissed": "คุณเขียนได้ทุกตัวโดยไม่ต้องใช้ตัวช่วย", "redo": "ฝึกตัวเหล่านี้อีกครั้ง", "again": "ฝึกชุดนี้อีกครั้ง", "nextSet": "ชุดถัดไป: {s}", "nextLevel": "ระดับถัดไป: HSK {m}", "print": "พิมพ์แบบฝึกเขียนของตัวอักษรเหล่านี้", "wsBase": "/th/chinese-character-worksheets/", "box": "ช่องเขียนตัวอักษร {c}", "levelSet": "HSK {n} · {s}", "anySet": "ตัวอักษรของคุณ · {s}"};
+const UI = {"set": "ตัวที่ {a}–{b}", "best": "สูงสุด {b}/{t}", "of": "จาก", "char": "ตัวที่", "stroke": "ขีดที่", "strokes": "ขีด", "start": "เริ่มเขียน", "loading": "กำลังโหลด…", "loadFail": "โหลดข้อมูลลำดับขีดไม่สำเร็จ ตรวจสอบอินเทอร์เน็ตแล้วลองใหม่อีกครั้ง", "noData": "ไม่มีข้อมูลลำดับขีดของ: {c}", "typeSome": "พิมพ์ตัวอักษรจีนในช่องด้านบน", "customCount": "{n} ตัว แบ่งเป็นชุดละ 10 ตัว", "askTrace": "เขียนทับตัวอักษรสีเทาทีละขีด ตามลำดับขีด", "askMemory": "เขียนตัวอักษรเองโดยไม่ดูตัวอย่าง ทีละขีด ตามลำดับขีด", "first": "เริ่มจากขีดแรก", "good": "ดีมาก ขีดต่อไป", "dir": "ตำแหน่งถูกแล้ว แต่ต้องเริ่มจากอีกปลายหนึ่งของขีด", "order": "ขีดนี้ต้องเขียนทีหลัง ลองหาขีดที่มาก่อน", "already": "ขีดนี้เขียนไปแล้ว ลองหาขีดถัดไป", "miss": "ยังไม่ถูก ลากตามรูปของขีดตั้งแต่ต้นจนจบ", "short": "ลากให้ครบทั้งขีด ตั้งแต่จุดเริ่มจนถึงจุดจบ", "hinted": "นี่คือขีดถัดไป ลองเขียนตามเลย", "doneClean": "เขียนได้สวย ไม่ผิดเลย", "doneWith": "เสร็จแล้ว {x}", "and": " ", "mist1": "ผิด 1 ครั้ง", "mistN": "ผิด {n} ครั้ง", "hint1": "ใช้ตัวช่วย 1 ครั้ง", "hintN": "ใช้ตัวช่วย {n} ครั้ง", "hint": "ตัวช่วย", "play": "ดูลำดับขีด", "restart": "เริ่มใหม่", "next": "ตัวต่อไป", "finish": "ดูคะแนน", "scoreHead": "คะแนนของคุณ", "scoreSub": "ตัวที่เขียนได้โดยไม่ผิดและไม่ใช้ตัวช่วย", "bestNew": "คะแนนสูงสุดใหม่ของชุดนี้!", "bestOld": "คะแนนสูงสุดของคุณในชุดนี้: {b} / {t}", "msg4": "ยอดเยี่ยม ลำดับขีดของคุณแม่นมาก ไปชุดถัดไปได้เลย", "msg3": "ทำได้ดี เขียนตัวอักษรด้านล่างอีกครั้ง แล้วไปต่อ", "msg2": "สู้ต่อไป ดูลำดับขีดของตัวอักษรด้านล่าง แล้วลองเขียนอีกครั้ง", "msg1": "ลำดับขีดต้องอาศัยการฝึก ใช้ตัวช่วยได้เลย แล้วลองชุดนี้อีกครั้ง", "missedHead": "ตัวอักษรที่ควรฝึกอีก", "noMissed": "คุณเขียนได้ทุกตัวโดยไม่ต้องใช้ตัวช่วย", "redo": "ฝึกตัวเหล่านี้อีกครั้ง", "again": "ฝึกชุดนี้อีกครั้ง", "nextSet": "ชุดถัดไป: {s}", "nextLevel": "ระดับถัดไป: HSK {m}", "print": "พิมพ์แบบฝึกเขียนของตัวอักษรเหล่านี้", "wsBase": "/th/chinese-character-worksheets/", "box": "ช่องเขียนตัวอักษร {c}", "levelSet": "HSK {n} · {s}", "anySet": "ตัวอักษรของคุณ · {s}"};
 const DATA_BASE = "/th/chinese-character-tracing/";      // this page's level lists: hskN.json
 const STROKE_BASE = "/chinese-character-tracing/s/";  // outlines and centre lines of the HSK sets, shared by both languages
 const KEY = "hskcheck-tracing-v1";
@@ -534,17 +534,21 @@ const shapeTol = (len) => Math.min(200, 120 + 0.1 * len);   // mean distance fro
 const endTol = (len) => Math.min(250, 170 + 0.1 * len);     // how near the start and the end must be
 
 // Is the drawn line the next stroke? "ok", "dir" (right stroke, other way round), "order" (a later stroke),
+// "already" (a stroke that is already written),
 // "short" (too little of it), "miss", or "tap" (too small to count).
-function judge(user, med, k) {
+function judge(user, flat, k) {
+  const med = flat.map(pts);
   const ulen = plen(user);
   if (ulen < 25) return "tap";
   const U = resample(user, N);
   const fit = (j) => { const R = resample(med[j], N); const len = plen(med[j]); return { f: meanDist(U, R), r: meanDist(U, R.slice().reverse()), len }; };
   const cur = fit(k), M = med[k];
   const t = shapeTol(cur.len), e = endTol(cur.len);
-  for (let j = k + 1; j < med.length; j++) {
+  // a stroke that fits another one clearly better: a later one comes later, an earlier one is already written
+  for (let j = 0; j < med.length; j++) {
+    if (j === k) continue;
     const o = fit(j);
-    if (o.f <= shapeTol(o.len) && o.f < cur.f * 0.75 && o.f < cur.r * 0.75) return "order";
+    if (o.f <= shapeTol(o.len) && o.f < cur.f * 0.75 && o.f < cur.r * 0.75) return j > k ? "order" : "already";
   }
   const s0 = dist(user[0], M[0]), s1 = dist(user[user.length - 1], M[M.length - 1]);
   const r0 = dist(user[0], M[M.length - 1]), r1 = dist(user[user.length - 1], M[0]);
@@ -665,10 +669,10 @@ function finishChar() {
   layers.svg.classList.add("complete");
   setCountLine();
   const m = cur.mistakes, h = cur.hints;
-  let text = UI.doneClean;
-  if (m && h) text = fmt(UI.doneHelp, { m, h });
-  else if (m) text = m === 1 ? UI.doneOne : fmt(UI.doneMist, { m });
-  else if (h) text = h === 1 ? UI.doneOneHint : fmt(UI.doneHint, { h });
+  const parts = [];
+  if (m) parts.push(m === 1 ? UI.mist1 : fmt(UI.mistN, { n: m }));
+  if (h) parts.push(h === 1 ? UI.hint1 : fmt(UI.hintN, { n: h }));
+  const text = parts.length ? fmt(UI.doneWith, { x: parts.join(UI.and) }) : UI.doneClean;
   setMsg(text, m || h ? "" : "ok");
   if (!cur.recorded) { results.push({ item: cur.item, clean: !m && !h }); cur.recorded = true; }
   const nb = $("next-btn");

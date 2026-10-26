@@ -60,7 +60,7 @@
       </div>
       <div>
         <h3>Where is my score kept?</h3>
-        <p>A character counts when you write it without a mistake and without a hint. Your best for each set is kept in this browser on this device, and nothing is sent anywhere. To write on paper as well, print the same characters from the <a href="/chinese-character-worksheets/">worksheet maker</a>.</p>
+        <p>A character counts when you write it without a mistake and without a hint (playing the stroke order counts as a hint). Your best for each set is kept in this browser on this device, and nothing is sent anywhere. To write on paper as well, print the same characters from the <a href="/chinese-character-worksheets/">worksheet maker</a>.</p>
       </div>
     </div>
   </section>
@@ -334,10 +334,10 @@ function finishChar() {
   layers.svg.classList.add("complete");
   setCountLine();
   const m = cur.mistakes, h = cur.hints;
-  let text = UI.doneClean;
-  if (m && h) text = fmt(UI.doneHelp, { m, h });
-  else if (m) text = m === 1 ? UI.doneOne : fmt(UI.doneMist, { m });
-  else if (h) text = h === 1 ? UI.doneOneHint : fmt(UI.doneHint, { h });
+  const parts = [];
+  if (m) parts.push(m === 1 ? UI.mist1 : fmt(UI.mistN, { n: m }));
+  if (h) parts.push(h === 1 ? UI.hint1 : fmt(UI.hintN, { n: h }));
+  const text = parts.length ? fmt(UI.doneWith, { x: parts.join(UI.and) }) : UI.doneClean;
   setMsg(text, m || h ? "" : "ok");
   if (!cur.recorded) { results.push({ item: cur.item, clean: !m && !h }); cur.recorded = true; }
   const nb = $("next-btn");
