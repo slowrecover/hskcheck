@@ -109,6 +109,8 @@ TH_SWAPS = [
      '<a id="quiz-link" href="/th/daily-hsk-quiz/">คำถามใหม่ 10 ข้อทุกวัน: ควิซ HSK ประจำวัน →</a>'),
     ('<a id="listen-link" href="/chinese-listening-practice/">Train your ear: Chinese listening practice →</a>',
      '<a id="listen-link" href="/th/chinese-listening-practice/">ฝึกหูให้คุ้นเสียง: ฝึกฟังภาษาจีน →</a>'),
+    ('<a id="pinyin-link" href="/pinyin-tone-practice/">Get the tones right: pinyin and tone practice →</a>',
+     '<a id="pinyin-link" href="/th/pinyin-tone-practice/">ออกเสียงวรรณยุกต์ให้แม่น: ฝึกพินอินและวรรณยุกต์ →</a>'),
     ('<h2 id="guide-title">About this practice test</h2>', '<h2 id="guide-title">เกี่ยวกับแบบทดสอบนี้</h2>'),
     ('<h3>What is in the test?</h3>', '<h3>แบบทดสอบมีอะไรบ้าง?</h3>'),
     ('<p>Twenty questions drawn at random from the words of the level you choose, so every test is different. You '

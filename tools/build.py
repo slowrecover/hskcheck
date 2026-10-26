@@ -12,6 +12,7 @@ Outputs (written at the repository root):
   hsk-practice-test/              the HSK practice test (see tools/practice.py)
   daily-hsk-quiz/                 the daily HSK quiz (see tools/daily.py)
   chinese-listening-practice/     Chinese listening practice (see tools/listening.py)
+  pinyin-tone-practice/           pinyin and tone practice (see tools/pinyin_practice.py)
   learn/<slug>/practice/          grammar practice online for every grammar worksheet (see tools/grammar_practice.py)
   sitemap.xml                     every page above
 
@@ -31,6 +32,7 @@ import handwriting
 import grammar_practice
 import learn
 import listening
+import pinyin_practice
 import tones
 import hsk4
 import hsk5
@@ -395,6 +397,7 @@ def main():
         pages.append((practice.URL, "Practice Test"))
         pages.append((daily.URL, "Daily Quiz"))
         pages.append((listening.URL, "Listening"))
+        pages.append((pinyin_practice.URL, "Pinyin & Tones"))
     if any((DATA / "stories").glob("*.json")):
         pages.append((reading.URL, "Reading"))
     pages.append(("/chinese-character-worksheets/", "Writing Sheets"))
@@ -599,6 +602,7 @@ def main():
         extra_urls += practice.build(ROOT, pages, nav, render, base_css, TPL, SITE)
         extra_urls += daily.build(ROOT, pages, nav, render, base_css, TPL, SITE)
         extra_urls += listening.build(ROOT, pages, nav, render, base_css, TPL, SITE)
+        extra_urls += pinyin_practice.build(ROOT, pages, nav, render, base_css, TPL, SITE)
 
     # HSK 5 word list and worksheets
     extra_urls += hsk5.build(ROOT, pages, nav, render, base_css, TPL, SITE, search_key, worksheet_page,

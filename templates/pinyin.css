@@ -1,0 +1,31 @@
+/* Pinyin and tone practice: the practice test's question layout (practice.css) plus the pinyin box and tone options. */
+.lp-sets { display: grid; gap: 10px; margin-top: 14px; }
+.lp-set[hidden] { display: none; }
+.lp-set .lp-btn { min-height: 44px; }
+.lp-set .lp-btn:disabled { opacity: .45; cursor: default; }
+#novoice-note { margin-top: 10px; }
+.py-bare { font-size: 18px; color: var(--muted); letter-spacing: .02em; }
+.py-form { display: grid; gap: 10px; min-width: 0; }
+.py-in { width: 100%; min-width: 0; box-sizing: border-box; font: 400 22px var(--f-ui); padding: 12px 14px; min-height: 52px;
+  color: var(--ink); background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--radius); }
+.py-in:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+.py-form.ok .py-in { border-color: var(--ok); }
+.py-form.no .py-in { border-color: var(--bad); }
+.py-keys { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.py-key { min-height: 44px; font: 500 18px var(--f-num); color: var(--ink); background: var(--paper); border: 1px solid var(--rule);
+  border-radius: 8px; cursor: pointer; }
+.py-key:hover:not(:disabled) { border-color: var(--accent); }
+.py-key:disabled { opacity: .45; cursor: default; }
+.py-hint { margin: 0; font-size: 13px; color: var(--muted); }
+.py-hint.warn { color: var(--warn); font-weight: 500; }
+.pt-opt .t.py-pat { display: grid; gap: 2px; }
+.py-pat .n { font: 500 22px var(--f-num); letter-spacing: .04em; }
+.py-pat .m { font-size: 15px; font-weight: 400; color: var(--muted); }
+.py-pat-a { font: 500 18px var(--f-num); }
+.py-num { font-size: 13px; color: var(--muted); font-family: var(--f-num); margin-left: 4px; }
+.lp-missed li { grid-template-columns: auto 1fr; column-gap: 10px; }
+.lp-missed li > span:not(.py-gap) { grid-column: 2; }
+.py-gap { grid-row: 1 / span 3; width: 0; }
+.lp-again { grid-row: 1 / span 3; align-self: center; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--rule);
+  background: var(--sheet); color: var(--accent); font-size: 15px; cursor: pointer; }
+.lp-again:hover { border-color: var(--accent); }

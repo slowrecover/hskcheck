@@ -1,0 +1,828 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pinyin and Tone Practice: Free HSK 1–5 Pinyin Quiz</title>
+<meta name="description" content="Free pinyin and tone practice for HSK 1–5 (HSK 3.0): type a word&#x27;s pinyin with tone numbers or marks, or see or hear a word and choose its tones. No sign-up.">
+<link rel="canonical" href="https://hskcheck.com/pinyin-tone-practice/">
+<meta property="og:title" content="Pinyin and Tone Practice: Free HSK 1–5 Pinyin Quiz">
+<meta property="og:description" content="Free pinyin and tone practice for HSK 1–5 (HSK 3.0): type a word&#x27;s pinyin with tone numbers or marks, or see or hear a word and choose its tones. No sign-up.">
+<meta property="og:url" content="https://hskcheck.com/pinyin-tone-practice/">
+<meta property="og:type" content="website">
+<link rel="alternate" hreflang="en" href="https://hskcheck.com/pinyin-tone-practice/">
+<link rel="alternate" hreflang="th" href="https://hskcheck.com/th/pinyin-tone-practice/">
+<link rel="alternate" hreflang="x-default" href="https://hskcheck.com/pinyin-tone-practice/">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#2A4A9A">
+<link rel="icon" type="image/png" sizes="48x48" href="/icons/favicon-48.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="hskcheck">
+<script>document.documentElement.classList.add("js");document.addEventListener("click", e => { const b = e.target.closest(".nav-toggle"); if (!b) return; const open = b.parentNode.classList.toggle("open"); b.setAttribute("aria-expanded", String(open)); });if ("serviceWorker" in navigator) addEventListener("load", () => navigator.serviceWorker.register("/sw.js").catch(() => {}));</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Pinyin and Tone Practice", "url": "https://hskcheck.com/pinyin-tone-practice/", "inLanguage": "en", "applicationCategory": "EducationalApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Free pinyin and tone practice for HSK 1–5 (HSK 3.0): type a word's pinyin with tone numbers or marks, or see or hear a word and choose its tones. No sign-up."}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6894573398022493"
+     crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@600&display=swap">
+<style>
+:root {
+  --paper: #F3F5F8;
+  --sheet: #FFFFFF;
+  --ink: #1A2130;
+  --muted: #586274;
+  --rule: #DCE1E9;
+  --accent: #2A4A9A;
+  --accent-ink: #FFFFFF;
+  --l1: #1F7A5C; --l1-bg: #E2F2EB;
+  --l2: #2A68AE; --l2-bg: #E3EDF8;
+  --l3: #7A4CAE; --l3-bg: #EEE6F8;
+  --l4: #8A5A12; --l4-bg: #F5EBDB;
+  --l5: #0E6E78; --l5-bg: #DDF0F1;
+  --over: #C0392B; --over-bg: #FCE5E1;
+  --ok: #1F7A5C; --warn: #A15C00; --bad: #C0392B;
+  --f-ui: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --f-num: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --f-zh: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --f-zh-display: "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --radius: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0F131A; --sheet: #171C25; --ink: #E6EAF1; --muted: #9AA4B6; --rule: #2A3242;
+    --accent: #93ACEB; --accent-ink: #0F131A;
+    --l1: #63CDA2; --l1-bg: #15302A; --l2: #82B4EE; --l2-bg: #172A40; --l3: #BB9EEA; --l3-bg: #2A2142;
+    --l4: #D7AE6A; --l4-bg: #33270F;
+    --l5: #6CC9D1; --l5-bg: #12302F;
+    --over: #F28B78; --over-bg: #3D1F1A; --ok: #63CDA2; --warn: #E9B060; --bad: #F28B78;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0F131A; --sheet: #171C25; --ink: #E6EAF1; --muted: #9AA4B6; --rule: #2A3242;
+  --accent: #93ACEB; --accent-ink: #0F131A;
+  --l1: #63CDA2; --l1-bg: #15302A; --l2: #82B4EE; --l2-bg: #172A40; --l3: #BB9EEA; --l3-bg: #2A2142;
+    --l4: #D7AE6A; --l4-bg: #33270F;
+    --l5: #6CC9D1; --l5-bg: #12302F;
+  --over: #F28B78; --over-bg: #3D1F1A; --ok: #63CDA2; --warn: #E9B060; --bad: #F28B78;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: var(--f-ui); font-size: 16px; line-height: 1.55;
+  padding-inline: 16px; padding-block: 28px 48px;
+}
+.wrap { max-width: 760px; margin: 0 auto; display: grid; gap: 22px; }
+header { display: grid; gap: 8px; }
+.eyebrow { display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+  font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+.chip { border: 1px solid var(--rule); border-radius: 999px; padding: 1px 8px; letter-spacing: .04em; }
+h1 { margin: 0; font-size: clamp(28px, 6vw, 40px); line-height: 1.12; font-weight: 600; text-wrap: balance; letter-spacing: -.01em; }
+h1 .zh { font-family: var(--f-zh-display); font-weight: 600; color: var(--accent); margin-right: .25em; }
+.lede { margin: 0; color: var(--muted); max-width: 60ch; }
+
+.sheet { background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--radius); padding: 18px; display: grid; gap: 14px; min-width: 0; }
+a { color: var(--accent); text-underline-offset: 3px; }
+.zh-inline { font-family: var(--f-zh); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.site-nav { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; font-weight: 500; }
+.site-nav a { text-decoration: none; color: var(--muted); padding-block: 2px; border-bottom: 2px solid transparent; }
+.site-nav a:hover { color: var(--ink); }
+.site-nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
+h2 { margin: 0; font-size: 15px; font-weight: 600; letter-spacing: .01em; }
+.table-wrap { overflow-x: auto; }
+table.counts { border-collapse: collapse; font-size: 14px; min-width: 320px; }
+table.counts th, table.counts td { text-align: left; padding: 7px 14px 7px 0; border-bottom: 1px solid var(--rule); }
+table.counts th { font-weight: 600; color: var(--muted); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+table.counts td.num { font-family: var(--f-num); font-variant-numeric: tabular-nums; }
+.notes { font-size: 13px; color: var(--muted); display: grid; gap: 6px; max-width: 70ch; }
+.notes p { margin: 0; }
+.notes b { color: var(--ink); font-weight: 600; }
+.site-foot { max-width: 760px; margin: 28px auto 0; font-size: 13px; color: var(--muted); }
+.site-foot a { color: var(--muted); }
+.policy { gap: 10px; }
+.policy h2 { margin-top: 8px; }
+.policy p { margin: 0; max-width: 70ch; }
+
+/* Phones: the long site menu folds behind a Menu button, and a bar at the bottom holds the daily tools. */
+.nav-toggle { display: none; }
+.nav-links { display: contents; }
+.tab-bar { display: none; }
+@media (max-width: 640px) {
+  .js .nav-toggle { display: inline-flex; align-items: center; gap: 6px; font: 500 14px var(--f-ui); color: var(--ink);
+    background: var(--sheet); border: 1px solid var(--rule); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+  .js .nav-toggle::after { content: "▾"; font-size: 11px; color: var(--muted); }
+  .js .site-nav.open .nav-toggle::after { content: "▴"; }
+  .js .nav-links { display: none; }
+  .js .site-nav.open .nav-links { display: flex; flex-wrap: wrap; gap: 10px 18px; width: 100%; padding: 6px 2px 2px; }
+  .js .site-nav.open .nav-links a { padding-block: 4px; }
+  body { padding-bottom: calc(84px + env(safe-area-inset-bottom)); }
+  .tab-bar { display: grid; grid-template-columns: repeat(3, 1fr); position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
+    background: var(--sheet); border-top: 1px solid var(--rule); padding: 6px 8px calc(6px + env(safe-area-inset-bottom)); }
+  .tab-bar a { display: grid; justify-items: center; gap: 2px; padding: 6px 4px; text-decoration: none; color: var(--muted);
+    font: 500 12px var(--f-ui); border-radius: 10px; min-height: 48px; }
+  .tab-bar a[aria-current="page"] { color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); }
+  .tab-bar svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+}
+@media print { .tab-bar, .nav-toggle { display: none !important; } }
+/* Checker page: input sheet on top, graded result sheet below, red-pen marks for words above the chosen level. */
+label.field { font-weight: 600; font-size: 14px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+label.field span.hint { font-weight: 400; color: var(--muted); font-size: 13px; }
+textarea {
+  width: 100%; min-height: 150px; resize: vertical; padding: 12px 14px;
+  font-family: var(--f-zh); font-size: 18px; line-height: 1.8; color: var(--ink);
+  background: var(--paper); border: 1px solid var(--rule); border-radius: 8px;
+}
+.controls { display: flex; gap: 12px 18px; align-items: center; flex-wrap: wrap; justify-content: space-between; }
+.levels { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.levels .lbl { font-size: 14px; font-weight: 600; margin-right: 4px; }
+.lv-btn {
+  font: 500 14px var(--f-ui); padding: 7px 14px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--rule); background: var(--sheet); color: var(--ink);
+}
+.lv-btn[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.ghost { font: 500 14px var(--f-ui); background: none; border: none; color: var(--accent); cursor: pointer; padding: 6px 2px; text-decoration: underline; text-underline-offset: 3px; }
+
+.verdict { display: grid; gap: 10px; }
+.verdict-top { display: flex; gap: 12px 20px; align-items: baseline; flex-wrap: wrap; }
+.big { font-family: var(--f-num); font-size: clamp(34px, 9vw, 46px); font-weight: 500; line-height: 1; font-variant-numeric: tabular-nums; }
+.verdict-text { display: grid; gap: 2px; min-width: 0; }
+.verdict-text strong { font-size: 17px; }
+.verdict-text span { color: var(--muted); font-size: 14px; }
+.state-ok { color: var(--ok); } .state-warn { color: var(--warn); } .state-bad { color: var(--bad); }
+
+.bar { display: flex; height: 12px; border-radius: 6px; overflow: hidden; background: var(--rule); }
+.bar i { display: block; height: 100%; }
+.bar .b1 { background: var(--l1); } .bar .b2 { background: var(--l2); } .bar .b3 { background: var(--l3); } .bar .b4 { background: var(--l4); } .bar .b5 { background: var(--l5); } .bar .bx { background: var(--over); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; font-variant-numeric: tabular-nums; }
+.legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+
+.graded { font-family: var(--f-zh); font-size: 20px; line-height: 2.1; word-break: break-all; }
+.graded .w { border-bottom: 2px solid transparent; padding: 0 1px; border-radius: 2px; }
+.graded .w1 { border-bottom-color: color-mix(in srgb, var(--l1) 45%, transparent); }
+.graded .w2 { border-bottom-color: color-mix(in srgb, var(--l2) 45%, transparent); }
+.graded .w3 { border-bottom-color: color-mix(in srgb, var(--l3) 45%, transparent); }
+.graded .w4 { border-bottom-color: color-mix(in srgb, var(--l4) 45%, transparent); }
+.graded .w5 { border-bottom-color: color-mix(in srgb, var(--l5) 45%, transparent); }
+.graded .above { background: var(--over-bg); color: var(--over); border-bottom: 2px solid var(--over); font-weight: 500; }
+.empty { color: var(--muted); font-size: 15px; margin: 0; }
+
+.words { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.words li { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 8px 10px; border: 1px solid var(--rule); border-radius: 8px; min-width: 0; }
+.words .zh { font-family: var(--f-zh); font-size: 19px; overflow-wrap: anywhere; }
+.tag { font: 500 12px var(--f-num); padding: 2px 7px; border-radius: 999px; white-space: nowrap; }
+.tag.t2 { background: var(--l2-bg); color: var(--l2); }
+.tag.t3 { background: var(--l3-bg); color: var(--l3); }
+.tag.t4 { background: var(--l4-bg); color: var(--l4); }
+.tag.t5 { background: var(--l5-bg); color: var(--l5); }
+.tag.tx { background: var(--over-bg); color: var(--over); }
+.guide { display: grid; gap: 18px; max-width: 68ch; }
+.guide h2 { font-size: 20px; letter-spacing: -.005em; text-wrap: balance; }
+.guide h3 { margin: 0 0 4px; font-size: 16px; font-weight: 600; }
+.guide p { margin: 0; color: var(--ink); }
+.guide .qa { display: grid; gap: 14px; }
+.guide .zh-inline { font-family: var(--f-zh); }
+@media (prefers-reduced-motion: no-preference) { .bar i { transition: width .25s ease; } }
+.start-banner { display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; align-items: center; margin-top: 6px;
+  padding: 12px 16px; border-radius: var(--radius); text-decoration: none; color: var(--ink);
+  background: color-mix(in srgb, var(--accent) 9%, var(--sheet)); border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--rule)); }
+.start-banner .sb-head { font-weight: 600; }
+.start-banner .sb-text { grid-column: 1; font-size: 14px; color: var(--muted); }
+.start-banner .sb-go { grid-column: 2; grid-row: 1 / span 2; font-weight: 600; color: var(--accent); white-space: nowrap; }
+/* HSK practice test: one question at a time, four big answer buttons, sized for a phone held in one hand. */
+#test-area { display: grid; gap: 12px; min-width: 0; }
+.pt-levels .lv-btn { display: inline-grid; justify-items: center; gap: 0; min-height: 44px; }
+.lv-best { font: 400 11px var(--f-num); color: var(--muted); }
+.lv-btn[aria-pressed="true"] .lv-best { color: var(--accent-ink); opacity: .85; }
+.pt-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.pt-count { white-space: nowrap; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; font-family: var(--f-num); }
+.pt-bar { height: 6px; border-radius: 3px; background: var(--rule); overflow: hidden; }
+.pt-bar i { display: block; height: 100%; width: 0; background: var(--accent); }
+@media (prefers-reduced-motion: no-preference) { .pt-bar i { transition: width .25s ease; } }
+
+.pt-ask { margin: 0; font-weight: 600; font-size: 16px; }
+.pt-prompt { display: grid; justify-items: center; align-content: center; gap: 6px; min-height: 120px; padding: 18px 12px;
+  text-align: center; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--paper); min-width: 0; }
+.pt-hz { font-family: var(--f-zh); font-size: clamp(44px, 14vw, 68px); line-height: 1.15; overflow-wrap: anywhere; }
+.pt-mean { font-size: 20px; max-width: 34ch; text-wrap: balance; overflow-wrap: anywhere; }
+.pt-sent { font-family: var(--f-zh); font-size: clamp(21px, 5.6vw, 26px); line-height: 1.6; overflow-wrap: anywhere; }
+.pt-gap { display: inline-block; min-width: 2.4em; border-bottom: 2px solid var(--accent); margin: 0 .1em; color: var(--accent); }
+.pt-tr { color: var(--muted); font-size: 15px; max-width: 40ch; }
+.pt-play { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+
+.pt-opts { display: grid; grid-template-columns: 1fr; gap: 10px; }
+@media (min-width: 560px) { .pt-opts { grid-template-columns: 1fr 1fr; } }
+.pt-opt { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 56px; padding: 10px 14px; text-align: left;
+  font: 500 17px var(--f-ui); color: var(--ink); background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--radius);
+  cursor: pointer; min-width: 0; }
+.pt-opt:hover:not(:disabled) { border-color: var(--accent); }
+.pt-opt .k { flex: none; display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 50%;
+  font: 500 13px var(--f-num); color: var(--muted); border: 1px solid var(--rule); }
+.pt-opt .t { min-width: 0; overflow-wrap: anywhere; }
+.pt-opt .t.zh { font-family: var(--f-zh); font-size: 24px; font-weight: 400; }
+.pt-opt .t.py { font-size: 20px; font-weight: 400; }
+.pt-opt:disabled { cursor: default; }
+.pt-opt.ok { border-color: var(--ok); background: color-mix(in srgb, var(--ok) 12%, var(--sheet)); }
+.pt-opt.ok .k { border-color: var(--ok); color: var(--ok); }
+.pt-opt.no { border-color: var(--bad); background: color-mix(in srgb, var(--bad) 10%, var(--sheet)); }
+.pt-opt.no .k { border-color: var(--bad); color: var(--bad); }
+.pt-opt.dim { opacity: .55; }
+
+.pt-fb { display: grid; gap: 4px; padding: 12px 14px; border-radius: var(--radius); border: 1px solid var(--rule); }
+.pt-fb.ok { border-color: color-mix(in srgb, var(--ok) 45%, var(--rule)); }
+.pt-fb.no { border-color: color-mix(in srgb, var(--bad) 45%, var(--rule)); }
+.pt-fb p { margin: 0; }
+.pt-fb .v { font-weight: 600; }
+.pt-fb.ok .v { color: var(--ok); }
+.pt-fb.no .v { color: var(--bad); }
+.pt-fb .a-zh { font-family: var(--f-zh); font-size: 20px; }
+.pt-fb .a-py, .pt-fb .a-en { color: var(--muted); }
+.pt-fb a { font-size: 14px; }
+
+.button { font: 500 16px var(--f-ui); padding: 14px 18px; border-radius: 999px; border: 1px solid var(--accent);
+  background: var(--accent); color: var(--accent-ink); cursor: pointer; min-height: 48px; text-decoration: none;
+  display: inline-flex; align-items: center; justify-content: center; text-align: center; }
+.button.ghost-btn { background: transparent; color: var(--accent); }
+.button.small { font-size: 14px; padding: 8px 14px; min-height: 40px; }
+.pt-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.pt-actions .button { flex: 1 1 200px; }
+
+.pt-start { display: grid; gap: 12px; justify-items: center; text-align: center; padding: 18px 4px; }
+.pt-start p { margin: 0; color: var(--muted); }
+.pt-score { display: grid; gap: 6px; justify-items: center; text-align: center; padding: 8px 0; }
+.pt-score .big { font-family: var(--f-num); font-size: clamp(40px, 12vw, 56px); line-height: 1; font-variant-numeric: tabular-nums; }
+.pt-score p { margin: 0; }
+.pt-score .sub { color: var(--muted); }
+.pt-missed { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.pt-missed li { display: grid; gap: 1px; padding: 8px 12px; border: 1px solid var(--rule); border-radius: 8px; min-width: 0; }
+.pt-missed .m-zh { font-family: var(--f-zh); font-size: 19px; overflow-wrap: anywhere; }
+.pt-missed .m-py { font-size: 14px; }
+.pt-missed .m-en { font-size: 14px; color: var(--muted); overflow-wrap: anywhere; }
+.pt-note { margin: 0; font-size: 13px; color: var(--warn); }
+.pt-added { margin: 0; font-size: 14px; color: var(--ok); }
+.study-link { margin: 0; }
+/* Pinyin and tone practice: the practice test's question layout (practice.css) plus the pinyin box and tone options. */
+.lp-sets { display: grid; gap: 10px; margin-top: 14px; }
+.lp-set[hidden] { display: none; }
+.lp-set .lp-btn { min-height: 44px; }
+.lp-set .lp-btn:disabled { opacity: .45; cursor: default; }
+#novoice-note { margin-top: 10px; }
+.py-bare { font-size: 18px; color: var(--muted); letter-spacing: .02em; }
+.py-form { display: grid; gap: 10px; min-width: 0; }
+.py-in { width: 100%; min-width: 0; box-sizing: border-box; font: 400 22px var(--f-ui); padding: 12px 14px; min-height: 52px;
+  color: var(--ink); background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--radius); }
+.py-in:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+.py-form.ok .py-in { border-color: var(--ok); }
+.py-form.no .py-in { border-color: var(--bad); }
+.py-keys { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.py-key { min-height: 44px; font: 500 18px var(--f-num); color: var(--ink); background: var(--paper); border: 1px solid var(--rule);
+  border-radius: 8px; cursor: pointer; }
+.py-key:hover:not(:disabled) { border-color: var(--accent); }
+.py-key:disabled { opacity: .45; cursor: default; }
+.py-hint { margin: 0; font-size: 13px; color: var(--muted); }
+.py-hint.warn { color: var(--warn); font-weight: 500; }
+.pt-opt .t.py-pat { display: grid; gap: 2px; }
+.py-pat .n { font: 500 22px var(--f-num); letter-spacing: .04em; }
+.py-pat .m { font-size: 15px; font-weight: 400; color: var(--muted); }
+.py-pat-a { font: 500 18px var(--f-num); }
+.py-num { font-size: 13px; color: var(--muted); font-family: var(--f-num); margin-left: 4px; }
+.lp-missed li { grid-template-columns: auto 1fr; column-gap: 10px; }
+.lp-missed li > span:not(.py-gap) { grid-column: 2; }
+.py-gap { grid-row: 1 / span 3; width: 0; }
+.lp-again { grid-row: 1 / span 3; align-self: center; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--rule);
+  background: var(--sheet); color: var(--accent); font-size: 15px; cursor: pointer; }
+.lp-again:hover { border-color: var(--accent); }
+
+</style>
+<script data-goatcounter="https://hskcheck.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <nav class="site-nav" aria-label="Site"><button type="button" class="nav-toggle" aria-expanded="false">Menu</button><div class="nav-links"><a href="/">Level Checker</a><a href="/hsk-1-word-list/">HSK 1 Words</a><a href="/hsk-2-word-list/">HSK 2 Words</a><a href="/hsk-3-word-list/">HSK 3 Words</a><a href="/hsk-4-word-list/">HSK 4 Words</a><a href="/hsk-5-word-list/">HSK 5 Words</a><a href="/hsk-flashcards/">Flashcards</a><a href="/hsk-practice-test/">Practice Test</a><a href="/daily-hsk-quiz/">Daily Quiz</a><a href="/chinese-listening-practice/">Listening</a><a href="/pinyin-tone-practice/" aria-current="page">Pinyin & Tones</a><a href="/reading/">Reading</a><a href="/chinese-character-worksheets/">Writing Sheets</a><a href="/hsk-handwriting-characters/">Handwriting</a><a href="/mandarin-tone-changes/">Tone Changes</a><a href="/chinese-measure-words/">Measure Words</a><a href="/old-hsk-to-new-hsk/">Old → New HSK</a><a href="/learn/">Grammar</a><a href="/yct/">YCT</a><a href="/chinese-new-year-greetings/">New Year 2027</a><a href="/th/">ภาษาไทย</a></div></nav>
+    <div class="eyebrow"><span>New HSK · 2025 syllabus</span><span class="chip">Levels 1–5</span><span class="chip">Free</span></div>
+    <h1><span class="zh">拼音</span>Pinyin and Tone Practice</h1>
+    <p class="lede">Type the pinyin of the words of your HSK level, or see or hear a word and choose its tones. Every answer shows the right pinyin, so you learn the tones as you go.</p>
+  </header>
+
+  <section class="sheet" aria-labelledby="pick-title">
+    <h2 id="pick-title" class="visually-hidden">Choose a level</h2>
+    <div class="levels pt-levels" role="group" aria-label="Level">
+      <span class="lbl">Level</span>
+      <button type="button" class="lv-btn" data-level="1" aria-pressed="false">HSK 1<span class="lv-best" id="best1"></span></button>
+      <button type="button" class="lv-btn" data-level="2" aria-pressed="false">HSK 2<span class="lv-best" id="best2"></span></button>
+      <button type="button" class="lv-btn" data-level="3" aria-pressed="false">HSK 3<span class="lv-best" id="best3"></span></button>
+      <button type="button" class="lv-btn" data-level="4" aria-pressed="false">HSK 4<span class="lv-best" id="best4"></span></button>
+      <button type="button" class="lv-btn" data-level="5" aria-pressed="false">HSK 5<span class="lv-best" id="best5"></span></button>
+    </div>
+    <div class="lp-sets">
+      <div class="levels lp-set" role="group" aria-label="Practice">
+        <span class="lbl">Practice</span>
+        <button type="button" class="lv-btn lp-btn" data-mode="type" aria-pressed="false">Type the pinyin</button>
+        <button type="button" class="lv-btn lp-btn" data-mode="tones" aria-pressed="false">Choose the tones</button>
+      </div>
+      <div class="levels lp-set" role="group" aria-label="Tones from" id="how-set">
+        <span class="lbl">Word</span>
+        <button type="button" class="lv-btn lp-btn" data-hear="0" aria-pressed="false">See it</button>
+        <button type="button" class="lv-btn lp-btn" data-hear="1" aria-pressed="false">Hear it</button>
+      </div>
+    </div>
+    <p class="pt-note" id="novoice-note" hidden>Your device has no Chinese voice, so the words can only be seen, not heard. Most phones and computers can add one for free in their text-to-speech or language settings.</p>
+  </section>
+
+  <section class="sheet" aria-labelledby="test-title" id="test-sheet">
+    <h2 id="test-title" class="visually-hidden">Practice</h2>
+    <div id="test-area" aria-live="polite">
+      <p class="empty" id="loading">Loading…</p>
+    </div>
+    <p class="pt-note" id="storage-note" hidden>This browser is not letting the page save, so your best scores and settings will not be kept.</p>
+  </section>
+
+  <section class="guide" aria-labelledby="guide-title">
+    <h2 id="guide-title">About pinyin and tone practice</h2>
+    <div class="qa">
+      <div>
+        <h3>How do I type the tones?</h3>
+        <p>Put a number after each syllable: 1 for the first tone (mā), 2 for the second (má), 3 for the third (mǎ), 4 for the fourth (mà), and 5 or nothing for the neutral tone, so 你好 is ni3hao3 and 朋友 is peng2you5 or peng2you. Tone marks work too, if your keyboard has them. Type ü as v (女 is nv3) or u:. Spaces, apostrophes and capital letters do not matter. On a phone, the buttons under the box add the numbers and ü.</p>
+      </div>
+      <div>
+        <h3>Which pinyin counts as right?</h3>
+        <p>The readings of the HSK 3.0 word list, the same as on the <a href="/hsk-1-word-list/">word list pages</a>. Pinyin writes each syllable with its own tone, so 你好 is nǐ hǎo even though it is said ní hǎo. The one exception is 一 and 不: the word lists write their changed tones (一起 yìqǐ, 不客气 bú kèqi), and the original tones (yīqǐ, bù kèqi) are accepted too.</p>
+      </div>
+      <div>
+        <h3>What do the tone numbers mean?</h3>
+        <p>In "Choose the tones", 3-3 means two third tones, like 你好 nǐ hǎo, and 5 is the neutral tone, like the second syllable of 朋友 péngyou. The answer is the tones as written. When you hear a word, words whose tones change in speech (a third tone before a third tone, 一 and 不) are left out, so what you hear is what is written. Read more about <a href="/mandarin-tone-changes/">tone changes</a>.</p>
+      </div>
+      <div>
+        <h3>Where is my score kept?</h3>
+        <p>Your best score for each level and mode is kept in this browser on this device, and nothing is sent anywhere. Words you miss can go straight into the <a href="/hsk-flashcards/">flashcards</a>. To train your ear with whole sentences, try the <a href="/chinese-listening-practice/">listening practice</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="notes">
+    <p><b>Words and tones.</b> HSK 3.0 (New HSK) vocabulary, 2025 syllabus, the same lists as the <a href="/hsk-1-word-list/">word list pages</a>. Tones checked against <a href="https://github.com/drkameleon/complete-hsk-vocabulary">complete-hsk-vocabulary</a> (MIT). Audio uses your device's Chinese voice.</p>
+  </footer>
+</div>
+
+<script>
+const UI = {"q": "Question", "of": "of", "best": "Best", "start": "Start: HSK {n}", "subType": "10 words: type the pinyin with its tones.", "subSee": "10 words: choose the tones of each word.", "subHear": "10 words: listen and choose the tones. Turn your sound on.", "askType": "Type the pinyin of this word, with tones.", "askSee": "Which tones does this word have?", "askHear": "Listen. Which tones do you hear?", "hint": "Tone numbers (ni3hao3) or tone marks (nǐhǎo). Type ü as v. Neutral tone: 5 or no number.", "inputLabel": "Pinyin", "check": "Check", "dunno": "Show the answer", "play": "Play again", "slow": "Slow", "listen": "Listen", "right": "Right!", "wrong": "Not quite.", "noTones": "Add the tones: a number after each syllable (ni3hao3) or tone marks (nǐhǎo).", "badChars": "Type the pinyin in Latin letters, with tone numbers or tone marks.", "tonesWrong": "The syllables are right, but not all the tones.", "spoken": "That is how it is said, but pinyin writes the original tones. See tone changes.", "toneLink": "/mandarin-tone-changes/", "yourAnswer": "You typed", "neutral": "5 = neutral tone", "next": "Next question", "finish": "See my score", "scoreHead": "Your score", "bestNew": "New best score for HSK {n}!", "bestOld": "Your best for HSK {n} ({what}): {b} / {t}", "wType": "typing pinyin", "wSee": "choosing tones", "wHear": "hearing tones", "msg4": "Excellent. Your pinyin for HSK {n} is solid: try the next level.", "msg3": "Good work. Look at the words below again, then try another round.", "msg2": "Keep going. Say the words below out loud with their tones, and learn them with the flashcards.", "msg1": "Tones take time. Say each word below out loud with its tones, then try again.", "missedHead": "Words to review", "noMissed": "You got every question right.", "add": "Add the missed words to my HSK {n} flashcards", "added": "Added. They come first in your next flashcard session.", "cardsBase": "/hsk-flashcards/", "again": "Another round", "nextLevel": "Next level: HSK {m}", "testLink": "Take the HSK {n} practice test", "testBase": "/hsk-practice-test/", "loading": "Loading…", "loadFail": "The words could not be loaded. Check your connection and try again."};
+const DATA_BASE = "/pinyin-tone-practice/";
+const KEY = "hskcheck-pinyin-v1";
+const CARDS_KEY = "hskcheck-flashcards-v1";  // the flashcards page's progress, so missed words can be added to it
+const TOTAL = 10;
+
+let saveOk = true;
+function loadState() {
+  try { const s = JSON.parse(localStorage.getItem(KEY) || "null"); if (s && s.best) return s; } catch (e) { saveOk = false; }
+  return { best: {}, level: 0, mode: "type", hear: 0 };
+}
+const state = loadState();
+if (["type", "tones"].indexOf(state.mode) < 0) state.mode = "type";
+state.hear = state.hear ? 1 : 0;
+function save() {
+  try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { saveOk = false; }
+  document.getElementById("storage-note").hidden = saveOk;
+}
+function today() { const d = new Date(); return Math.floor((d.getTime() - d.getTimezoneOffset() * 60000) / 86400000); }
+function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+function fmt(s, v) { return s.replace(/\{(\w+)\}/g, (m, k) => (k in v ? v[k] : m)); }
+function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+function range(n) { return Array.from({ length: n }, (_, i) => i); }
+
+// --- pinyin ----------------------------------------------------------------------------------------------------------
+// A reading "ni3 hao3" -> [["ni", 3], ["hao", 3]]; tone 5 = neutral.
+function syl(r) { return r.split(" ").map(s => { const m = s.match(/^([a-zü]+)([1-5])$/); return [m[1], +m[2]]; }); }
+const MARK = ["", "̄", "́", "̌", "̀", ""];
+// One syllable with its tone mark, placed the usual way: a, then e, then the o of ou, else the last vowel.
+function mark(base, t) {
+  if (!MARK[t]) return base;
+  let i = base.indexOf("a");
+  if (i < 0) i = base.indexOf("e");
+  if (i < 0) i = base.indexOf("ou");
+  if (i < 0) i = Math.max(base.lastIndexOf("i"), base.lastIndexOf("o"), base.lastIndexOf("u"), base.lastIndexOf("ü"));
+  if (i < 0) return base;
+  return (base.slice(0, i + 1) + MARK[t] + base.slice(i + 1)).normalize("NFC");
+}
+// What was typed -> letters (ü kept) and tone signs: a tone mark on a letter, or a number after a letter.
+const TONE_OF = { "̄": 1, "́": 2, "̌": 3, "̆": 3, "̀": 4 };
+function parseInput(s) {
+  const t = s.normalize("NFD").toLowerCase();
+  let letters = "";
+  const tones = [];
+  for (let i = 0; i < t.length; i++) {
+    const c = t[i];
+    if (c >= "a" && c <= "z") {
+      if (c === "v") letters += "ü";
+      else if (c === "u" && t[i + 1] === ":") { letters += "ü"; i++; }
+      else letters += c;
+    } else if (c === "̈") {
+      if (!letters.endsWith("u")) return null;
+      letters = letters.slice(0, -1) + "ü";
+    } else if (c in TONE_OF) {
+      if (!letters) return null;
+      tones.push({ at: letters.length - 1, t: TONE_OF[c], num: false });
+    } else if (/[0-5]/.test(c)) {
+      tones.push({ at: letters.length, t: c === "0" ? 5 : +c, num: true });
+    } else if (!/[\s'’‘\-·.,]/.test(c)) {
+      return null;
+    }
+  }
+  return letters ? { letters, tones } : null;
+}
+// The written tones as they are said: a third tone before a third tone becomes a second tone.
+function spokenTones(ts) { return ts.map((t, k) => (t === 3 && ts[k + 1] === 3 ? 2 : t)); }
+// Compare what was typed with one reading: "ok", "spoken" (tones as said, not as written), "tones", "notones" or "letters".
+function gradeOne(inp, sy) {
+  if (inp.letters !== sy.map(x => x[0]).join("")) return "letters";
+  const starts = [], ends = [];
+  let a = 0;
+  sy.forEach(x => { starts.push(a); a += x[0].length; ends.push(a); });
+  const got = sy.map(() => []);
+  let misplaced = false;
+  for (const tk of inp.tones) {
+    let k = -1;
+    if (tk.num) k = ends.indexOf(tk.at);
+    else for (let j = 0; j < sy.length; j++) if (tk.at >= starts[j] && tk.at < ends[j]) k = j;
+    if (k < 0) misplaced = true; else got[k].push(tk);
+  }
+  // erhua: nar3 for nǎr puts the number after the r
+  for (let k = 1; k < sy.length; k++) {
+    if (sy[k][0] === "r" && got[k].length && !got[k - 1].length && got[k].every(x => x.num)) { got[k - 1] = got[k]; got[k] = []; }
+  }
+  const typed = got.map(g => (g.length === 0 ? 0 : g.length > 1 ? -1 : g[0].t));
+  const exp = sy.map(x => x[1]);
+  if (!misplaced && typed.every(t => t === 0) && exp.some(t => t !== 5)) return "notones";
+  const same = ts => !misplaced && ts.every((t, k) => (t === 5 ? typed[k] === 0 || typed[k] === 5 : typed[k] === t));
+  if (same(exp)) return "ok";
+  if (same(spokenTones(exp))) return "spoken";
+  return "tones";
+}
+const RANK = { ok: 5, spoken: 4, tones: 3, notones: 2, letters: 1 };
+function grade(text, readings) {
+  const inp = parseInput(text);
+  if (!inp) return "bad";
+  let best = "letters";
+  for (const r of readings) { const g = gradeOne(inp, syl(r)); if (RANK[g] > RANK[best]) best = g; }
+  return best;
+}
+// Two tone patterns that sound the same in speech (2-3 and 3-3).
+function soundAlike(p, a) {
+  return p.every((t, k) => t === a[k] || (((t === 2 && a[k] === 3) || (t === 3 && a[k] === 2)) && p[k + 1] === 3 && a[k + 1] === 3));
+}
+// Four tone patterns for a word: the right one and three that are certainly wrong. A neutral tone is never changed
+// or made, so no wrong pattern is another reading of the word, and none sounds like the right one.
+function toneOptions(sy) {
+  const a = sy.map(x => x[1]);
+  let cands = [[]];
+  a.forEach(t => {
+    const choices = t === 5 ? [5] : [1, 2, 3, 4];
+    cands = cands.flatMap(c => choices.map(x => c.concat(x)));
+  });
+  cands = cands.filter(p => !soundAlike(p, a));
+  const diff = p => p.filter((t, k) => t !== a[k]).length;
+  const scored = shuffle(cands).map(p => [Math.min(diff(p), 3) + Math.random() * 1.2, p]).sort((x, y) => x[0] - y[0]);
+  const wrong = [];
+  for (const [, p] of scored) {
+    if (wrong.length === 3) break;
+    if (wrong.some(w => soundAlike(p, w) || soundAlike(w, p))) continue;
+    wrong.push(p);
+  }
+  if (wrong.length < 3) return null;
+  return shuffle([{ ok: true, p: a }].concat(wrong.map(p => ({ ok: false, p }))));
+}
+function patternText(p) { return p.join("-"); }
+function patternPinyin(sy, p) { return sy.map((x, k) => mark(x[0], p[k])).join(" "); }
+function toneless(sy) { return sy.map(x => x[0]).join(" "); }
+
+// --- voice -----------------------------------------------------------------------------------------------------------
+// A Mandarin voice: zh-CN first, then other Mandarin voices; never Cantonese (zh-HK, yue).
+function voice() {
+  if (!("speechSynthesis" in window)) return null;
+  const vs = speechSynthesis.getVoices(), l = v => String(v.lang || "").replace(/_/g, "-").toLowerCase();
+  const mandarin = vs.filter(v => /^(zh|cmn)(-|$)/.test(l(v)) && !/(hk|mo|yue)/.test(l(v)));
+  return mandarin.find(v => /^(zh|cmn)-(cn|hans)/.test(l(v))) || mandarin[0] || null;
+}
+function speak(text, rate) {
+  const v = voice(); if (!v) return;
+  const u = new SpeechSynthesisUtterance(text); u.voice = v; u.lang = v.lang; u.rate = rate || 0.8;
+  speechSynthesis.cancel(); speechSynthesis.speak(u);
+}
+
+// --- the round -------------------------------------------------------------------------------------------------------
+const cache = {};
+let level = 1, words = [], roundKey = "", roundWhat = "";
+let test = [], pos = 0, score = 0, missed = [], answered = false, phase = "start", hasVoice = null;
+const area = document.getElementById("test-area");
+
+async function loadLevel(n) {
+  if (!cache[n]) {
+    const r = await fetch(DATA_BASE + "hsk" + n + ".json");
+    if (!r.ok) throw new Error(r.status);
+    cache[n] = await r.json();
+  }
+  return cache[n];
+}
+
+function hearing() { return state.mode === "tones" && state.hear === 1 && hasVoice === true; }
+function modeKey() { return state.mode === "type" ? "type" : hearing() ? "hear" : "see"; }
+function bestKey(n) { return n + ":" + modeKey(); }
+function whatText() { const k = modeKey(); return k === "type" ? UI.wType : k === "hear" ? UI.wHear : UI.wSee; }
+function showBests() {
+  for (let n = 1; n <= 5; n++) {
+    const b = state.best[bestKey(n)];
+    document.getElementById("best" + n).textContent = b ? UI.best + " " + b[0] + "/" + b[1] : "";
+  }
+}
+function showSettings() {
+  document.querySelectorAll("[data-mode]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.mode === state.mode)));
+  document.getElementById("how-set").hidden = state.mode !== "tones";
+  document.querySelectorAll("[data-hear]").forEach(b => {
+    b.setAttribute("aria-pressed", String(+b.dataset.hear === (hearing() ? 1 : 0)));
+    if (b.dataset.hear === "1") b.disabled = hasVoice === false;
+  });
+  document.getElementById("novoice-note").hidden = !(state.mode === "tones" && hasVoice === false);
+}
+
+function makeTest() {
+  const k = modeKey();
+  const pool = range(words.length).filter(i => (k === "type" ? true : k === "see" ? !!words[i][4] : !!words[i][5]));
+  const qs = [], seen = new Set();
+  for (const i of shuffle(pool)) {
+    if (qs.length === TOTAL) break;
+    if (seen.has(words[i][0])) continue;
+    if (k === "type") { qs.push({ i, type: "type" }); seen.add(words[i][0]); continue; }
+    const sy = syl(words[i][4]), opts = toneOptions(sy);
+    if (!opts || opts.filter(o => o.ok).length !== 1) continue;
+    qs.push({ i, type: k, sy, opts }); seen.add(words[i][0]);
+  }
+  return qs;
+}
+
+function showStart() {
+  phase = "start";
+  const k = modeKey();
+  area.innerHTML = '<div class="pt-start"><p>' + esc(k === "type" ? UI.subType : k === "hear" ? UI.subHear : UI.subSee) + '</p>' +
+    '<button type="button" class="button" id="start-btn">' + esc(fmt(UI.start, { n: level })) + '</button></div>';
+  document.getElementById("start-btn").addEventListener("click", start);
+}
+
+function start() {
+  test = makeTest(); pos = 0; score = 0; missed = []; phase = "test"; roundKey = bestKey(level); roundWhat = whatText();
+  showQuestion();
+}
+
+function play(rate) { speak(words[test[pos].i][0], rate); }
+function canListen(i) { return hasVoice === true && !!words[i][6]; }
+
+function qHead(ask) {
+  return '<div class="pt-top"><p class="pt-ask">' + esc(ask) + '</p><span class="pt-count">' +
+    esc(UI.q + " " + (pos + 1) + " " + UI.of + " " + test.length) + '</span></div>' +
+    '<div class="pt-bar" aria-hidden="true"><i style="width:' + (pos / test.length * 100) + '%"></i></div>';
+}
+
+function showQuestion() {
+  const q = test[pos], w = words[q.i];
+  answered = false;
+  let html;
+  if (q.type === "type") {
+    html = qHead(UI.askType) +
+      '<div class="pt-prompt"><span class="pt-hz" lang="zh-Hans">' + esc(w[0]) + '</span><span class="pt-tr">' + esc(w[2]) + '</span></div>' +
+      '<form class="py-form" id="py-form" autocomplete="off">' +
+        '<label class="visually-hidden" for="py-in">' + esc(UI.inputLabel) + '</label>' +
+        '<input id="py-in" class="py-in" type="text" inputmode="text" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" lang="en">' +
+        '<div class="py-keys" aria-hidden="true">' + ["1", "2", "3", "4", "ü"].map(x =>
+          '<button type="button" class="py-key" tabindex="-1" data-ins="' + x + '">' + x + '</button>').join("") + '</div>' +
+        '<p class="py-hint" id="py-hint">' + esc(UI.hint) + '</p>' +
+        '<div class="pt-actions"><button type="submit" class="button">' + esc(UI.check) + '</button>' +
+        '<button type="button" class="button ghost-btn" id="dunno-btn">' + esc(UI.dunno) + '</button></div>' +
+      '</form><div id="fb"></div>';
+  } else {
+    const prompt = q.type === "hear"
+      ? '<div class="pt-play"><button type="button" class="button" id="play-btn">' + esc(UI.play) + '</button>' +
+        '<button type="button" class="button ghost-btn" id="slow-btn">' + esc(UI.slow) + '</button></div>' +
+        '<span class="py-bare">' + esc(toneless(q.sy)) + '</span>'
+      : '<span class="pt-hz" lang="zh-Hans">' + esc(w[0]) + '</span><span class="py-bare">' + esc(toneless(q.sy)) + '</span>' +
+        '<span class="pt-tr">' + esc(w[2]) + '</span>';
+    html = qHead(q.type === "hear" ? UI.askHear : UI.askSee) +
+      '<div class="pt-prompt">' + prompt + '</div>' +
+      '<div class="pt-opts py-opts" role="group">' + q.opts.map((o, k) =>
+        '<button type="button" class="pt-opt" data-k="' + k + '"><span class="k" aria-hidden="true">' + (k + 1) + '</span>' +
+        '<span class="t py-pat"><span class="n">' + esc(patternText(o.p)) + '</span><span class="m">' + esc(patternPinyin(q.sy, o.p)) + '</span></span></button>').join("") +
+      '</div><p class="py-hint">' + esc(UI.neutral) + '</p><div id="fb"></div>';
+  }
+  area.innerHTML = html;
+  if (q.type === "type") {
+    const inp = document.getElementById("py-in");
+    document.getElementById("py-form").addEventListener("submit", e => { e.preventDefault(); check(); });
+    document.getElementById("dunno-btn").addEventListener("click", () => reveal(""));
+    area.querySelectorAll(".py-key").forEach(b => {
+      b.addEventListener("mousedown", e => e.preventDefault());  // keep the keyboard open on phones
+      b.addEventListener("click", () => {
+        if (answered) return;
+        const s = inp.selectionStart == null ? inp.value.length : inp.selectionStart, e = inp.selectionEnd == null ? s : inp.selectionEnd;
+        inp.value = inp.value.slice(0, s) + b.dataset.ins + inp.value.slice(e);
+        inp.focus(); inp.setSelectionRange(s + 1, s + 1);
+      });
+    });
+    inp.focus({ preventScroll: true });
+  } else {
+    area.querySelectorAll(".pt-opt").forEach(b => b.addEventListener("click", () => choose(+b.dataset.k)));
+    if (q.type === "hear") {
+      document.getElementById("play-btn").addEventListener("click", () => play());
+      document.getElementById("slow-btn").addEventListener("click", () => play(0.5));
+      play();
+    }
+  }
+  const sheet = document.getElementById("test-sheet");
+  if (sheet.getBoundingClientRect().top < 0) sheet.scrollIntoView({ block: "start" });
+}
+
+function answerHtml(q, extra) {
+  const w = words[q.i];
+  return '<p class="a-zh" lang="zh-Hans">' + esc(w[0]) + '</p><p class="a-py">' + esc(w[1]) +
+    ' <span class="py-num">' + esc(w[3].join(" / ")) + '</span></p>' +
+    '<p class="a-en">' + esc(w[2]) + '</p>' + (extra || "") +
+    (canListen(q.i) ? '<p><button type="button" class="button small ghost-btn" id="listen-btn">▶ ' + esc(UI.listen) + '</button></p>' : '');
+}
+
+function feedback(ok, msg, q, extra) {
+  const last = pos === test.length - 1;
+  document.getElementById("fb").innerHTML = '<div class="pt-fb ' + (ok ? "ok" : "no") + '"><p class="v">' + esc(ok ? UI.right : UI.wrong) + '</p>' +
+    (msg || "") + answerHtml(q, extra) + '</div><div class="pt-actions" style="margin-top:12px"><button type="button" class="button" id="next-btn">' +
+    esc(last ? UI.finish : UI.next) + '</button></div>';
+  const lb = document.getElementById("listen-btn");
+  if (lb) lb.addEventListener("click", () => speak(words[q.i][0]));
+  const nb = document.getElementById("next-btn");
+  nb.addEventListener("click", next);
+  nb.focus({ preventScroll: true });
+  const r = nb.getBoundingClientRect();
+  if (r.bottom > innerHeight) nb.scrollIntoView({ block: "end", behavior: "smooth" });
+}
+
+function check() {
+  if (answered || phase !== "test") return;
+  const q = test[pos], inp = document.getElementById("py-in"), text = inp.value.trim(), hint = document.getElementById("py-hint");
+  if (!text) { inp.focus(); return; }
+  const g = grade(text, words[q.i][3]);
+  if (g === "bad" || g === "notones") {  // not marked wrong: ask again
+    hint.textContent = g === "bad" ? UI.badChars : UI.noTones;
+    hint.classList.add("warn");
+    inp.focus();
+    return;
+  }
+  reveal(text, g);
+}
+
+function reveal(text, g) {
+  if (answered || phase !== "test") return;
+  answered = true;
+  const q = test[pos], ok = g === "ok";
+  if (ok) score++; else missed.push(q);
+  const form = document.getElementById("py-form");
+  form.querySelectorAll("input, button").forEach(x => { x.disabled = true; });
+  form.querySelectorAll(".pt-actions, .py-keys, .py-hint").forEach(x => { x.style.display = "none"; });
+  form.classList.add(ok ? "ok" : "no");
+  let msg = "";
+  if (g === "tones") msg = '<p>' + esc(UI.tonesWrong) + '</p>';
+  else if (g === "spoken") msg = '<p><a href="' + UI.toneLink + '">' + esc(UI.spoken) + '</a></p>';
+  const extra = text && !ok ? '<p class="a-en">' + esc(UI.yourAnswer) + ': ' + esc(text) + '</p>' : "";
+  feedback(ok, msg, q, extra);
+}
+
+function choose(k) {
+  if (answered || phase !== "test") return;
+  answered = true;
+  const q = test[pos], ok = q.opts[k].ok;
+  if (ok) score++; else missed.push(q);
+  area.querySelectorAll(".pt-opt").forEach((b, j) => {
+    b.disabled = true;
+    if (q.opts[j].ok) b.classList.add("ok");
+    else if (j === k) b.classList.add("no");
+    else b.classList.add("dim");
+  });
+  feedback(ok, '<p class="py-pat-a">' + esc(patternText(q.sy.map(x => x[1]))) + '</p>', q);
+}
+
+function next() {
+  if (!answered) return;
+  if (pos < test.length - 1) { pos++; showQuestion(); } else finish();
+}
+
+function finish() {
+  phase = "done";
+  if ("speechSynthesis" in window) speechSynthesis.cancel();
+  const key = roundKey, prev = state.best[key];
+  const isBest = !prev || score / test.length > prev[0] / prev[1];
+  if (isBest) { state.best[key] = [score, test.length]; save(); showBests(); }
+  const p = score / test.length;
+  const msg = p >= 0.9 ? UI.msg4 : p >= 0.7 ? UI.msg3 : p >= 0.4 ? UI.msg2 : UI.msg1;
+  const toAdd = [...new Set(missed.map(q => words[q.i][0]))];
+  const items = missed.map((q, k) => {
+    const x = words[q.i];
+    return '<li>' + (canListen(q.i) ? '<button type="button" class="lp-again" data-m="' + k + '" aria-label="' + esc(UI.listen) + '">▶</button>' : '<span class="py-gap"></span>') +
+      '<span class="m-zh" lang="zh-Hans">' + esc(x[0]) + '</span><span class="m-py">' + esc(x[1]) + '</span><span class="m-en">' + esc(x[2]) + '</span></li>';
+  }).join("");
+  area.innerHTML =
+    '<div class="pt-score"><p class="sub">' + esc(UI.scoreHead) + ' · HSK ' + level + '</p><p class="big">' + score + ' / ' + test.length + '</p>' +
+      '<p>' + esc(fmt(msg, { n: level })) + '</p><p class="sub">' + esc(isBest ? fmt(UI.bestNew, { n: level })
+        : fmt(UI.bestOld, { n: level, what: roundWhat, b: prev[0], t: prev[1] })) + '</p></div>' +
+    '<h3 class="pt-ask">' + esc(UI.missedHead) + '</h3>' +
+    (missed.length ? '<ul class="pt-missed lp-missed">' + items + '</ul>' : '<p class="empty">' + esc(UI.noMissed) + '</p>') +
+    (toAdd.length ? '<div class="pt-actions"><button type="button" class="button ghost-btn" id="add-btn">' + esc(fmt(UI.add, { n: level })) + '</button></div>' +
+      '<p class="pt-added" id="added" hidden>' + esc(UI.added) + '</p>' : '') +
+    '<div class="pt-actions"><button type="button" class="button" id="again-btn">' + esc(UI.again) + '</button>' +
+      (level < 5 ? '<button type="button" class="button ghost-btn" id="next-level-btn">' + esc(fmt(UI.nextLevel, { m: level + 1 })) + '</button>' : '') + '</div>' +
+    '<p class="study-link"><a href="' + UI.testBase + '#hsk' + level + '">' + esc(fmt(UI.testLink, { n: level })) + ' →</a></p>';
+  area.querySelectorAll(".lp-again").forEach(b => b.addEventListener("click", () => speak(words[missed[+b.dataset.m].i][0])));
+  document.getElementById("again-btn").addEventListener("click", start);
+  const nl = document.getElementById("next-level-btn");
+  if (nl) nl.addEventListener("click", () => setLevel(level + 1, true));
+  const ab = document.getElementById("add-btn");
+  if (ab) ab.addEventListener("click", () => { addToCards(toAdd); ab.disabled = true; document.getElementById("added").hidden = false; });
+  const sheet = document.getElementById("test-sheet");
+  if (sheet.getBoundingClientRect().top < 0) sheet.scrollIntoView({ block: "start" });
+}
+
+// Missed words go to the front of the flashcards' new words, or come back for review today if already started.
+function addToCards(list) {
+  let s = null;
+  try { s = JSON.parse(localStorage.getItem(CARDS_KEY) || "null"); } catch (e) {}
+  if (!s || !s.lv) s = { lv: {}, intro: {}, streak: { last: -1, n: 0 }, set: { newPerDay: 10, pinyin: false, level: level } };
+  s.set = s.set || { newPerDay: 10, pinyin: false };
+  s.boost = s.boost || {};
+  const boost = s.boost[level] || [], st = s.lv[level] || (s.lv[level] = {}), t = today();
+  list.forEach(w => { if (st[w]) st[w] = [0, t]; else if (boost.indexOf(w) < 0) boost.push(w); });
+  s.boost[level] = boost; s.set.level = level; s.set.chosen = true;
+  try { localStorage.setItem(CARDS_KEY, JSON.stringify(s)); } catch (e) {}
+}
+
+async function setLevel(n, autostart) {
+  level = n; state.level = n; save();
+  if (location.hash !== "#hsk" + n) history.replaceState(null, "", "#hsk" + n);
+  document.querySelectorAll(".pt-levels .lv-btn").forEach(b => b.setAttribute("aria-pressed", String(+b.dataset.level === n)));
+  if ("speechSynthesis" in window) speechSynthesis.cancel();
+  area.innerHTML = '<p class="empty">' + esc(UI.loading) + '</p>';
+  phase = "loading";
+  let d;
+  try { d = await loadLevel(n); } catch (e) { area.innerHTML = '<p class="empty">' + esc(UI.loadFail) + '</p>'; return; }
+  if (level !== n) return;
+  words = d.w;
+  await voiceReady;
+  showSettings(); showBests();
+  if (autostart) start(); else showStart();
+}
+
+function changeSetting() {
+  showSettings(); showBests(); save();
+  if (phase !== "loading") { if ("speechSynthesis" in window) speechSynthesis.cancel(); showStart(); }
+}
+document.querySelectorAll(".pt-levels .lv-btn").forEach(b => b.addEventListener("click", () => setLevel(+b.dataset.level)));
+document.querySelectorAll("[data-mode]").forEach(b => b.addEventListener("click", () => {
+  if (state.mode === b.dataset.mode) return;
+  state.mode = b.dataset.mode; changeSetting();
+}));
+document.querySelectorAll("[data-hear]").forEach(b => b.addEventListener("click", () => {
+  if (b.disabled || state.hear === +b.dataset.hear) return;
+  state.hear = +b.dataset.hear; changeSetting();
+}));
+document.addEventListener("keydown", e => {
+  if (e.altKey || e.ctrlKey || e.metaKey || phase !== "test") return;
+  const q = test[pos], inField = e.target.closest && e.target.closest("input, textarea");
+  if (!q) return;
+  if (!answered && q.type !== "type" && /^[1-4]$/.test(e.key)) { e.preventDefault(); choose(+e.key - 1); }
+  else if (!answered && q.type === "hear" && (e.key === "r" || e.key === "R")) { e.preventDefault(); play(); }
+  else if (answered && e.key === "Enter" && !inField && !(e.target.closest && e.target.closest("button, a"))) { e.preventDefault(); next(); }
+});
+addEventListener("hashchange", () => {
+  const m = location.hash.match(/^#hsk([1-5])$/);
+  if (m && +m[1] !== level) setLevel(+m[1]);
+});
+
+// Voices often load a moment after the page: wait for them (at most 2 seconds) before saying there is none.
+const voiceReady = new Promise(resolve => {
+  if (!("speechSynthesis" in window)) { hasVoice = false; resolve(); return; }
+  const check = () => { if (voice()) { hasVoice = true; resolve(); return true; } return false; };
+  if (check()) return;
+  speechSynthesis.addEventListener && speechSynthesis.addEventListener("voiceschanged", check);
+  setTimeout(() => { if (!check()) { hasVoice = false; resolve(); } }, 2000);
+});
+if ("speechSynthesis" in window && speechSynthesis.addEventListener) speechSynthesis.addEventListener("voiceschanged", () => {
+  if (hasVoice === false && voice()) { hasVoice = true; showSettings(); showBests(); if (phase === "start") showStart(); }
+});
+
+showBests();
+showSettings();
+document.getElementById("storage-note").hidden = saveOk;
+const hashLevel = (location.hash.match(/^#hsk([1-5])$/) || [])[1];
+setLevel(hashLevel ? +hashLevel : Math.min(5, Math.max(1, +state.level || 1)));
+</script>
+
+<footer class="site-foot">hskcheck.com · <a href="/about/">About</a> · <a href="/upgrade-packs/">Printable packs</a> · <a href="/terms/">Terms</a> · <a href="/privacy/">Privacy Policy</a></footer>
+<nav class="tab-bar" aria-label="Main"><a href="/hsk-flashcards/"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="14" height="14" rx="2"/><path d="M7 3h12a2 2 0 0 1 2 2v12"/></svg><span>Flashcards</span></a><a href="/reading/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5C5.5 4 8.5 4 12 6c3.5-2 6.5-2 9-.5V19c-2.5-1.5-5.5-1.5-9 .5-3.5-2-6.5-2-9-.5z"/><path d="M12 6v13.5"/></svg><span>Reading</span></a><a href="/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span>Checker</span></a></nav>
+</body>
+</html>
