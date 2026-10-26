@@ -1,0 +1,108 @@
+{
+  "slug": "ji-vs-duoshao",
+  "published": "2026-10-26",
+  "title": "Phân biệt 几 và 多少 trong tiếng Trung: ngữ pháp HSK 1",
+  "description": "Khi nào dùng 几 (jǐ), khi nào dùng 多少 (duōshao) để hỏi \"mấy\", \"bao nhiêu\" trong tiếng Trung: lượng từ, giờ, ngày tháng, giá tiền và ví dụ HSK 1.",
+  "h1": "几 và 多少: hỏi \"mấy\" và \"bao nhiêu\"",
+  "lede": "Tiếng Trung có hai cách hỏi số lượng. 几 (jǐ) dùng cho số nhỏ và luôn cần lượng từ đi sau. 多少 (duōshao) dùng cho bất kỳ số nào, lớn hay nhỏ, và còn dùng để hỏi giá tiền và số điện thoại. Có thể nhớ đơn giản: 几 gần giống \"mấy\", còn 多少 gần giống \"bao nhiêu\" trong tiếng Việt.",
+  "sections": [
+    {
+      "h2": "几: số nhỏ",
+      "paras": [
+        "几 + lượng từ + danh từ.",
+        "Dùng 几 khi bạn đoán câu trả lời là một số nhỏ, thường dưới mười: số người trong gia đình, số con, số đồ muốn mua. Sau 几 luôn phải có lượng từ, ví dụ 个, 本 hoặc 口. Khi trả lời, chỉ cần thay 几 bằng con số. Cuối câu không có 吗, vì bản thân 几 đã làm cho câu thành câu hỏi."
+      ],
+      "examples": [
+        "Nhà bạn có mấy người?",
+        "Nhà tôi có ba người.",
+        "Bạn có mấy đứa con?",
+        "Bạn lấy mấy cái?"
+      ]
+    },
+    {
+      "h2": "多少: số bao nhiêu cũng được",
+      "paras": [
+        "多少 + (lượng từ) + danh từ.",
+        "Dùng 多少 khi con số có thể lớn, hoặc khi bạn hoàn toàn không biết câu trả lời là bao nhiêu. Với 多少, lượng từ có cũng được, không có cũng được: 多少学生 và 多少个学生 đều đúng. 多少 cũng là từ dùng để hỏi giá tiền và hỏi các con số như số điện thoại."
+      ],
+      "examples": [
+        "Trường các bạn có bao nhiêu học sinh?",
+        "Bạn biết bao nhiêu chữ Hán?",
+        "Bạn đã mua bao nhiêu quả táo?",
+        "Cái này bao nhiêu tiền?",
+        "Số điện thoại di động của bạn là bao nhiêu?"
+      ]
+    },
+    {
+      "h2": "Giờ, ngày tháng và tuổi dùng 几",
+      "paras": [
+        "Một số câu hỏi hằng ngày luôn dùng 几, vì câu trả lời là số nhỏ: hỏi giờ (几点), thứ trong tuần (星期几), tháng và ngày (几月几号) và tuổi của trẻ em (几岁).",
+        "几岁 dùng để hỏi tuổi trẻ em. Muốn hỏi tuổi người lớn, hãy nói 你多大了."
+      ],
+      "examples": [
+        "Bây giờ là mấy giờ?",
+        "Mấy giờ bạn tan làm?",
+        "Hôm nay là thứ mấy?",
+        "Hôm nay là ngày mấy tháng mấy?",
+        "Con gái bạn mấy tuổi rồi?",
+        "Bạn bao nhiêu tuổi rồi?"
+      ]
+    },
+    {
+      "h2": "Lỗi hay gặp nhất, và 几 với nghĩa \"vài\"",
+      "paras": [
+        "Lỗi hay gặp nhất là quên lượng từ sau 几. 你有几书 là sai; phải nói 你有几本书. Tiếng Việt cũng có lượng từ (mấy quyển sách), nên rất dễ nhớ: sau 几 luôn có lượng từ. Nếu không chắc nên dùng lượng từ nào, dùng 多少 sẽ an toàn hơn, vì không có lượng từ vẫn đúng.",
+        "Trong câu không phải câu hỏi, 几 + lượng từ nghĩa là \"vài\" hoặc \"mấy\"."
+      ],
+      "examples": [
+        "Bạn có mấy quyển sách?",
+        "Tôi có vài người bạn Trung Quốc.",
+        "Hôm qua tôi đã mua vài quyển sách."
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 几 và 多少 HSK 1 có đáp án, in miễn phí",
+    "description": "Bài tập 几 và 多少 HSK 1 in miễn phí: 20 câu (chọn 几 hay 多少, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 几 hay 多少",
+        "instructions": "Điền 几 hoặc 多少 vào chỗ trống. Phần nghĩa tiếng Việt cho biết câu có nghĩa gì.",
+        "items": [
+          "Ngày mai mấy giờ bạn dậy?",
+          "Quyển sách này bao nhiêu tiền?",
+          "Trường các bạn có bao nhiêu giáo viên?",
+          "Ngày mai là thứ mấy?",
+          "Tôi có vài người bạn ở Trung Quốc.",
+          "Số điện thoại của bạn là bao nhiêu?",
+          "Tháng mấy bạn đi Trung Quốc?",
+          "Bệnh viện đó có bao nhiêu bác sĩ?",
+          "Hôm qua tôi đã đọc vài quyển sách.",
+          "Bạn biết viết bao nhiêu chữ Hán?"
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng.",
+        "items": [
+          "Bạn có mấy anh trai?",
+          "Quả táo đó bao nhiêu tiền?",
+          "Mấy giờ bạn đi ngủ?",
+          "Công ty các bạn có bao nhiêu người?",
+          "Tôi đã mua vài quyển sách tiếng Trung."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Bạn đã mua mấy quả táo?",
+          "Mấy giờ các bạn tan học?",
+          "Hôm qua là thứ mấy?",
+          "Quyển sách đó bao nhiêu tiền?",
+          "Mấy giờ bạn đến trường?"
+        ]
+      }
+    ]
+  }
+}

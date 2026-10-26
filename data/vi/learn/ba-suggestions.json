@@ -1,0 +1,112 @@
+{
+  "slug": "ba-suggestions",
+  "published": "2026-10-26",
+  "title": "Cách dùng 吧 (ba) trong tiếng Trung: ngữ pháp HSK 1 có ví dụ",
+  "description": "Cách dùng 吧 (ba) trong tiếng Trung: rủ \"chúng ta... đi\", đề nghị nhẹ nhàng, đoán \"..., đúng không?\", 好吧 và lỗi nhầm 吧 với 吗. Ví dụ HSK 1.",
+  "h1": "Cách dùng 吧 (ba)",
+  "lede": "吧 (ba) là một từ nhỏ đứng cuối câu. Nó biến câu thành lời rủ (\"chúng ta... đi\"), làm cho lời nhờ hay lời khuyên nghe nhẹ nhàng hơn, hoặc cho thấy bạn khá chắc về điều gì đó và muốn người kia xác nhận, giống \"nhé\", \"đi\" hay \"đúng không\" trong tiếng Việt. Đây là điểm ngữ pháp HSK 1 và được đọc thanh nhẹ.",
+  "sections": [
+    {
+      "h2": "Rủ \"chúng ta... đi\": 我们 + động từ + 吧",
+      "paras": [
+        "Đặt 吧 ở cuối câu có 我们 để rủ cùng làm việc gì đó. 我们去吃饭 chỉ là câu kể (\"chúng ta đi ăn cơm\"); 我们去吃饭吧 là lời rủ (\"chúng ta đi ăn cơm đi\").",
+        "Muốn đề nghị không làm việc gì đó, đặt 不 trước động từ, thường thêm 了 để cho thấy kế hoạch đã thay đổi."
+      ],
+      "examples": [
+        "Chúng ta đi ăn cơm đi.",
+        "Chúng ta đi taxi nhé.",
+        "Tám giờ rồi, chúng ta dậy thôi.",
+        "Hôm nay lạnh quá, chúng ta không đi nữa nhé."
+      ]
+    },
+    {
+      "h2": "Lời nhờ và lời khuyên nhẹ nhàng: 你 + động từ + 吧",
+      "paras": [
+        "Với 你, 吧 biến một mệnh lệnh thành lời đề nghị hoặc lời mời thân thiện. 你坐 nghe như ra lệnh; 你坐吧 nghe như \"mời bạn ngồi\". Cách nói này rất hay dùng khi mời ai đó hoặc khuyên ai đó."
+      ],
+      "examples": [
+        "Mời bạn ngồi.",
+        "Bạn nghỉ một chút đi.",
+        "Trời mưa rồi, bạn lái xe đi thì hơn."
+      ]
+    },
+    {
+      "h2": "Đoán: \"..., đúng không?\"",
+      "paras": [
+        "吧 ở cuối câu hỏi cho thấy bạn nghĩ mình đã biết câu trả lời và chờ người kia xác nhận. Nó giống \"..., đúng không?\", \"..., phải không nhỉ?\" hoặc \"chắc là...\" trong tiếng Việt.",
+        "Trong câu kể, 吧 cũng có thể làm cho lời đoán nghe ít chắc chắn hơn, giống \"chắc là\"."
+      ],
+      "examples": [
+        "Chắc bạn là giáo viên nhỉ?",
+        "Đây là sách của bạn, đúng không?",
+        "Bạn không phải người Trung Quốc, đúng không?",
+        "Chắc ngày mai trời sẽ mưa."
+      ]
+    },
+    {
+      "h2": "好吧: \"thôi được\"",
+      "paras": [
+        "好吧 nghĩa là \"được\" hoặc \"thôi được\". Nó dùng để đồng ý, thường là sau khi hơi lưỡng lự, nên có thể nghe kém hào hứng hơn một chữ 好 đơn giản."
+      ],
+      "examples": [
+        "Thôi được, mai chúng ta đi."
+      ]
+    },
+    {
+      "h2": "Lỗi hay gặp nhất: 吧 và 吗",
+      "paras": [
+        "Cả 吗 và 吧 đều có thể đứng cuối câu hỏi có/không, nhưng chúng không giống nhau. Dùng 吗 khi bạn thật sự không biết câu trả lời. Chỉ dùng 吧 khi bạn nghĩ câu trả lời là \"có\" và muốn kiểm tra lại. Không bao giờ dùng 吗 và 吧 cùng nhau.",
+        "Ngoài ra, đừng thêm 吧 vào câu hỏi đã có từ để hỏi như 什么 hoặc 哪儿. 你想吃什么吧？ là sai; hãy nói 你想吃什么？. Và nhớ rằng 吧 (ba) đọc thanh nhẹ, khác với 八 (bā) hay 把 (bǎ)."
+      ],
+      "examples": [
+        "Bạn có phải là học sinh không? (Tôi không biết.)",
+        "Bạn là học sinh, đúng không? (Tôi đoán là vậy.)",
+        "Bạn muốn ăn gì?"
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 吧 (ba) HSK 1 có đáp án, in miễn phí",
+    "description": "Bài tập 吧 (ba) HSK 1 in miễn phí: 20 câu (chọn 吧 hay 吗, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 吧 hay 吗",
+        "instructions": "Điền 吧 hoặc 吗 vào chỗ trống. Phần nghĩa tiếng Việt cho biết câu có nghĩa gì.",
+        "items": [
+          "Chúng ta đi cửa hàng nhé.",
+          "Bạn có thích uống trà không? (Tôi không biết.)",
+          "Bạn là giáo viên tiếng Trung, đúng không? (Tôi đoán là vậy.)",
+          "Mời bạn ngồi.",
+          "Ngày mai bạn có đến trường không? (Tôi không biết.)",
+          "Muộn quá rồi, chúng ta về nhà thôi.",
+          "Anh ấy là anh trai bạn, đúng không? (Tôi đoán là vậy.)",
+          "Bạn có biết nói tiếng Trung không? (Tôi không biết.)",
+          "Thôi được, chúng ta đi taxi.",
+          "Bạn ốm rồi, về nhà nghỉ đi."
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng.",
+        "items": [
+          "Chúng ta uống trà nhé.",
+          "Bạn là bác sĩ, đúng không?",
+          "Mai chúng ta đi nhé.",
+          "Bạn xem thử đi.",
+          "Chúng ta không xem nữa nhé."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Bạn tên là gì?",
+          "Bạn là người Trung Quốc, đúng không?",
+          "Chúng ta đến trường đi.",
+          "Bạn đi đâu?",
+          "Mấy giờ bạn dậy?"
+        ]
+      }
+    ]
+  }
+}
