@@ -265,7 +265,7 @@ TH_PACKS = [
         "price": "$2.99",
         "price_thb": "ประมาณ 100 บาท",
         "pages": 60,
-        "checkout": "",  # Creem checkout link of the Thai product; empty shows "coming soon"
+        "checkout": "https://www.creem.io/payment/prod_5JCsd550YCeXi0s97jsTKF",  # Creem checkout link of the Thai product
         "title": "ชุดอัปเกรด HSK 1 เก่า → HSK 1 ใหม่ PDF ภาษาไทย พิมพ์ได้",
         "description": ("เคยเรียน HSK 1 แบบเก่า? เรียนคำศัพท์ HSK 1 ใหม่อีก 155 คำ พร้อมประโยคตัวอย่างแปลไทย "
                         "ฝึกเขียนตัวอักษรใหม่ 74 ตัว แบบทดสอบและเฉลย PDF พิมพ์ได้ $2.99"),
