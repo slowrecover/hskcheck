@@ -37,6 +37,8 @@ UI = [
     ("checked> Stroke order</label>", "checked> ลำดับขีด</label>"),
     ("checked> Pinyin</label>", "checked> พินอิน</label>"),
     (">Print or save as PDF</button>", ">พิมพ์หรือบันทึกเป็น PDF</button>"),
+    ('href="/chinese-character-tracing/" data-base="/chinese-character-tracing/">Trace these characters online, stroke by stroke</a>',
+     'href="/th/chinese-character-tracing/" data-base="/th/chinese-character-tracing/">ฝึกเขียนตัวอักษรชุดนี้ออนไลน์ทีละขีด</a>'),
     ('aria-label="Worksheet preview"', 'aria-label="ตัวอย่างแบบฝึกเขียน"'),
     ("Name ______________________ &nbsp; Date ____________", "ชื่อ ______________________ &nbsp; วันที่ ____________"),
     ("Free worksheets and the HSK level checker at hskcheck.com", "แบบฝึกเขียนตัวอักษรจีนฟรีที่ hskcheck.com/th/"),

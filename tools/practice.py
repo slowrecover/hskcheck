@@ -375,6 +375,8 @@ def _readings(root):
     """Every reading of every character, from the stroke data (Make Me a Hanzi + HSK words) and the word lists."""
     out = {}
     for f in sorted(glob.glob(str(root / "strokes" / "**" / "*.json"), recursive=True)):
+        if f.startswith(str(root / "strokes" / "m") + "/"):
+            continue  # stroke centre lines for the tracing page: no readings
         for c, v in json.loads(open(f, encoding="utf-8").read()).items():
             out.setdefault(c, set()).update(unicodedata.normalize("NFC", p) for p in v.get("p", []))
     for n in LEVELS:

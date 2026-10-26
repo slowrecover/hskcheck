@@ -1,0 +1,53 @@
+/* Character tracing: the practice test's layout (practice.css) plus a square tian grid to write on. */
+.tr-field { display: grid; gap: 6px; margin-top: 14px; min-width: 0; }
+.tr-field[hidden] { display: none; }
+.tr-field label { font-size: 14px; font-weight: 600; }
+.tr-field select { font: 400 16px var(--f-ui); color: var(--ink); background: var(--sheet); border: 1px solid var(--rule);
+  border-radius: 8px; padding: 10px 12px; min-height: 44px; max-width: 100%; }
+.tr-field textarea { min-height: 0; font-size: 22px; line-height: 1.5; }
+.lp-sets { display: grid; gap: 10px; margin-top: 14px; }
+.lp-set .lp-btn { min-height: 44px; }
+
+.tr-info { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 4px 14px; text-align: center; min-width: 0; }
+.tr-hz { font-size: 34px; line-height: 1.1; }
+.tr-py { font-size: 22px; }
+.tr-word { font-size: 16px; color: var(--muted); }
+.tr-word .zh { font-family: var(--f-zh); font-size: 19px; color: var(--ink); }
+.tr-mean { flex-basis: 100%; font-size: 15px; color: var(--muted); overflow-wrap: anywhere; }
+.tr-blank { display: inline-block; width: .9em; height: .9em; vertical-align: -.08em; margin: 0 .05em; border: 1.5px dashed var(--muted); border-radius: 3px; }
+.zh { font-family: var(--f-zh); }
+
+.tr-board { width: min(100%, 420px); margin: 0 auto; }
+.tr-svg { display: block; width: 100%; height: auto; aspect-ratio: 1; touch-action: none; user-select: none; -webkit-user-select: none;
+  -webkit-touch-callout: none; cursor: crosshair; background: var(--sheet); border-radius: 12px; }
+.tr-frame { fill: none; stroke: color-mix(in srgb, var(--bad) 55%, var(--rule)); stroke-width: 6; }
+.tr-guide { stroke: color-mix(in srgb, var(--bad) 40%, var(--rule)); stroke-width: 4; stroke-dasharray: 18 14; }
+.tr-ghost path { fill: color-mix(in srgb, var(--ink) 13%, transparent); }
+.tr-ghost.hide { display: none; }
+.tr-done path { fill: var(--ink); }
+.tr-done path.new { fill: var(--accent); }
+.tr-svg.complete .tr-done path { fill: var(--ok); }
+.tr-svg.playing .tr-done, .tr-svg.playing .tr-ghost { opacity: .25; }
+.tr-svg.playing .tr-ghost.hide { display: block; }
+.tr-anim polyline { fill: none; stroke-width: 150; stroke-linecap: round; stroke-linejoin: round; }
+.tr-hint { stroke: color-mix(in srgb, var(--accent) 70%, transparent); }
+.tr-demo { stroke: var(--ink); }
+.tr-anim .out { opacity: 0; }
+.tr-ink { fill: none; stroke: var(--accent); stroke-width: 34; stroke-linecap: round; stroke-linejoin: round; pointer-events: none; }
+.tr-ink.bad { stroke: color-mix(in srgb, var(--bad) 70%, transparent); }
+.tr-ink.out { opacity: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .tr-done path { transition: fill .35s ease; }
+  .tr-ink.out, .tr-anim .out { transition: opacity .6s ease; }
+}
+
+.tr-stroke { margin: 0; text-align: center; font: 400 13px var(--f-num); color: var(--muted); font-variant-numeric: tabular-nums; }
+.tr-msg { margin: 0; min-height: 3em; text-align: center; font-size: 16px; }
+.tr-msg.ok { color: var(--ok); font-weight: 500; }
+.tr-msg.warn { color: var(--warn); font-weight: 500; }
+.tr-tools { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.tr-tools[hidden] { display: none; }
+.tr-tools .button { flex: 1 1 100px; max-width: 180px; }
+.tr-preview { margin: 0; font-size: 30px; line-height: 1.5; color: var(--ink) !important; letter-spacing: .08em; overflow-wrap: anywhere; }
+.tr-h { margin: 6px 0 0; font-size: 15px; }
+.pt-actions[hidden] { display: none; }

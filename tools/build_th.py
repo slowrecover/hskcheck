@@ -12,6 +12,7 @@ Outputs:
   th/daily-hsk-quiz/               Thai daily HSK quiz (see tools/daily.py)
   th/chinese-listening-practice/   Thai Chinese listening practice (see tools/listening.py)
   th/pinyin-tone-practice/         Thai pinyin and tone practice (see tools/pinyin_practice.py)
+  th/chinese-character-tracing/    Thai character tracing (see tools/tracing.py)
   th/learn/<slug>/practice/        Thai grammar practice online (see tools/grammar_practice.py)
   th/upgrade-packs/                Thai printable pack pages (see tools/packs.py)
 
@@ -34,6 +35,7 @@ import pinyin_practice
 import packs
 import practice
 import study
+import tracing
 import reading
 import upgrade_th
 import worksheets_th
@@ -141,6 +143,7 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
         pages.append((daily.TH_URL, "ควิซประจำวัน"))
         pages.append((listening.TH_URL, "ฝึกฟัง"))
         pages.append((pinyin_practice.TH_URL, "พินอินและวรรณยุกต์"))
+        pages.append((tracing.TH_URL, "เขียนตามลำดับขีด"))
     if any((root / "data" / "stories").glob("*.json")):
         pages.append((reading.TH_URL, "อ่าน"))
     pages.append((worksheets_th.TH_WS_URL, "แบบฝึกเขียน"))
@@ -293,6 +296,8 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
                                    base_css=base_css, th_css=th_css)
         urls += pinyin_practice.build_th(root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK,
                                          foot=FOOT, base_css=base_css, th_css=th_css)
+        urls += tracing.build_th(root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK,
+                                 foot=FOOT, base_css=base_css, th_css=th_css)
 
     # Character worksheets
     urls += worksheets_th.build(root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK, foot=FOOT,
@@ -363,6 +368,7 @@ def alternates(root, levels):
         pairs.update(daily.alternates(root))
         pairs.update(listening.alternates(root))
         pairs.update(pinyin_practice.alternates(root))
+        pairs.update(tracing.alternates(root))
     pairs.update(reading.alternates(root))
     pairs.update(upgrade_th.alternates(root))
     pairs.update(packs.th_alternates())

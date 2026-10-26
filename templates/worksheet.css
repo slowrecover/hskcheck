@@ -27,6 +27,7 @@ fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
 .actions { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; }
 .button { font: 500 15px var(--f-ui); padding: 10px 18px; border-radius: 999px; border: 0; background: var(--accent); color: var(--accent-ink); cursor: pointer; }
 .status { font-size: 13px; color: var(--muted); }
+.trace-link { font-size: 14px; font-weight: 500; }
 
 /* The paper is always white with dark ink, in light and dark mode alike, because it is what gets printed. */
 .preview { overflow-x: auto; margin-inline: -16px; padding-inline: 16px; }

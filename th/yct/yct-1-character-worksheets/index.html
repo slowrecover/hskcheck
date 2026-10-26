@@ -156,6 +156,7 @@ fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
 .actions { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; }
 .button { font: 500 15px var(--f-ui); padding: 10px 18px; border-radius: 999px; border: 0; background: var(--accent); color: var(--accent-ink); cursor: pointer; }
 .status { font-size: 13px; color: var(--muted); }
+.trace-link { font-size: 14px; font-weight: 500; }
 
 /* The paper is always white with dark ink, in light and dark mode alike, because it is what gets printed. */
 .preview { overflow-x: auto; margin-inline: -16px; padding-inline: 16px; }
@@ -222,7 +223,7 @@ table.words-table th, table.counts th { letter-spacing: 0; }
 <body>
 <div class="wrap">
   <header class="no-print">
-    <nav class="site-nav" aria-label="เมนูเว็บไซต์"><button type="button" class="nav-toggle" aria-expanded="false">เมนู</button><div class="nav-links"><a href="/th/">ตรวจระดับคำศัพท์</a><a href="/th/hsk-1-word-list/">คำศัพท์ HSK 1</a><a href="/th/hsk-2-word-list/">คำศัพท์ HSK 2</a><a href="/th/hsk-3-word-list/">คำศัพท์ HSK 3</a><a href="/th/hsk-4-word-list/">คำศัพท์ HSK 4</a><a href="/th/hsk-5-word-list/">คำศัพท์ HSK 5</a><a href="/th/hsk-flashcards/">แฟลชการ์ด</a><a href="/th/hsk-practice-test/">แบบทดสอบ HSK</a><a href="/th/daily-hsk-quiz/">ควิซประจำวัน</a><a href="/th/chinese-listening-practice/">ฝึกฟัง</a><a href="/th/pinyin-tone-practice/">พินอินและวรรณยุกต์</a><a href="/th/reading/">อ่าน</a><a href="/th/chinese-character-worksheets/">แบบฝึกเขียน</a><a href="/th/chinese-measure-words/">ลักษณนาม</a><a href="/th/old-hsk-to-new-hsk/">HSK เก่า → ใหม่</a><a href="/th/learn/">ไวยากรณ์</a><a href="/th/yct/" aria-current="page">YCT</a><a href="/" hreflang="en" lang="en">English</a></div></nav>
+    <nav class="site-nav" aria-label="เมนูเว็บไซต์"><button type="button" class="nav-toggle" aria-expanded="false">เมนู</button><div class="nav-links"><a href="/th/">ตรวจระดับคำศัพท์</a><a href="/th/hsk-1-word-list/">คำศัพท์ HSK 1</a><a href="/th/hsk-2-word-list/">คำศัพท์ HSK 2</a><a href="/th/hsk-3-word-list/">คำศัพท์ HSK 3</a><a href="/th/hsk-4-word-list/">คำศัพท์ HSK 4</a><a href="/th/hsk-5-word-list/">คำศัพท์ HSK 5</a><a href="/th/hsk-flashcards/">แฟลชการ์ด</a><a href="/th/hsk-practice-test/">แบบทดสอบ HSK</a><a href="/th/daily-hsk-quiz/">ควิซประจำวัน</a><a href="/th/chinese-listening-practice/">ฝึกฟัง</a><a href="/th/pinyin-tone-practice/">พินอินและวรรณยุกต์</a><a href="/th/chinese-character-tracing/">เขียนตามลำดับขีด</a><a href="/th/reading/">อ่าน</a><a href="/th/chinese-character-worksheets/">แบบฝึกเขียน</a><a href="/th/chinese-measure-words/">ลักษณนาม</a><a href="/th/old-hsk-to-new-hsk/">HSK เก่า → ใหม่</a><a href="/th/learn/">ไวยากรณ์</a><a href="/th/yct/" aria-current="page">YCT</a><a href="/" hreflang="en" lang="en">English</a></div></nav>
     <div class="eyebrow"><span>YCT · การสอบภาษาจีนสำหรับนักเรียน</span><span class="chip">ระดับ 1</span><span class="chip">98 ตัว</span></div>
     <h1>แบบฝึกเขียนตัวอักษร YCT 1</h1>
     <p class="lede">แบบฝึกเขียนตัวอักษรในคำศัพท์ YCT 1 ทั้ง 98 ตัว มีลำดับขีด พินอิน และช่องให้เขียนตาม พิมพ์ได้ทั้งระดับหรือครั้งละ 30 ตัว เหมาะสำหรับครูและผู้ปกครอง</p>
@@ -265,6 +266,7 @@ table.words-table th, table.counts th { letter-spacing: 0; }
     <div class="actions">
       <button type="button" class="button" id="print-btn">พิมพ์หรือบันทึกเป็น PDF</button>
       <span class="status" id="status" role="status" aria-live="polite"></span>
+      <a class="trace-link" id="trace-link" href="/th/chinese-character-tracing/" data-base="/th/chinese-character-tracing/">ฝึกเขียนตัวอักษรชุดนี้ออนไลน์ทีละขีด</a>
     </div>
   </section>
 
@@ -529,6 +531,8 @@ table.words-table th, table.counts th { letter-spacing: 0; }
   async function render() {
     const mine = ++token;
     const chars = hanzi(charsEl.value);
+    const trace = $("trace-link");
+    trace.href = trace.dataset.base + (chars.length ? "#c=" + encodeURIComponent(chars.slice(0, 300).join("")) : "");
     status.textContent = chars.length ? "กำลังโหลด…" : "";
     try { await ensure(chars); } catch (e) { status.textContent = "โหลดข้อมูลลำดับขีดไม่สำเร็จ ตรวจสอบอินเทอร์เน็ตแล้วลองใหม่อีกครั้ง"; return; }
     if (mine !== token) return;
