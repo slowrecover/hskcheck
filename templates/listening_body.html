@@ -1,0 +1,420 @@
+<div class="wrap">
+  <header>
+    __NAV__
+    <div class="eyebrow"><span>New HSK · 2025 syllabus</span><span class="chip">Levels 1–5</span><span class="chip">Free</span></div>
+    <h1><span class="zh">听力</span>Chinese Listening Practice</h1>
+    <p class="lede">Hear a word or a short sentence from your HSK level and choose what was said. Replay it as often as you like, slow it down, or hide the characters and listen with pinyin only.</p>
+  </header>
+
+  <section class="sheet" aria-labelledby="pick-title">
+    <h2 id="pick-title" class="visually-hidden">Choose a level</h2>
+    <div class="levels pt-levels" role="group" aria-label="Level">
+      <span class="lbl">Level</span>
+      <button type="button" class="lv-btn" data-level="1" aria-pressed="false">HSK 1<span class="lv-best" id="best1"></span></button>
+      <button type="button" class="lv-btn" data-level="2" aria-pressed="false">HSK 2<span class="lv-best" id="best2"></span></button>
+      <button type="button" class="lv-btn" data-level="3" aria-pressed="false">HSK 3<span class="lv-best" id="best3"></span></button>
+      <button type="button" class="lv-btn" data-level="4" aria-pressed="false">HSK 4<span class="lv-best" id="best4"></span></button>
+      <button type="button" class="lv-btn" data-level="5" aria-pressed="false">HSK 5<span class="lv-best" id="best5"></span></button>
+    </div>
+    <div class="lp-sets">
+      <div class="levels lp-set" role="group" aria-label="What to hear" id="kind-set">
+      <span class="lbl">Hear</span>
+        <button type="button" class="lv-btn lp-btn" data-kind="mix" aria-pressed="false">Words and sentences</button>
+        <button type="button" class="lv-btn lp-btn" data-kind="words" aria-pressed="false">Words</button>
+        <button type="button" class="lv-btn lp-btn" data-kind="sent" aria-pressed="false">Sentences</button>
+      </div>
+      <div class="levels lp-set" role="group" aria-label="Answers in">
+      <span class="lbl">Answers</span>
+        <button type="button" class="lv-btn lp-btn" data-py="0" aria-pressed="false">Characters and pinyin</button>
+        <button type="button" class="lv-btn lp-btn" data-py="1" aria-pressed="false">Pinyin only</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="sheet" aria-labelledby="test-title" id="test-sheet">
+    <h2 id="test-title" class="visually-hidden">Listening</h2>
+    <div id="test-area" aria-live="polite">
+      <p class="empty" id="loading">Loading…</p>
+    </div>
+    <div class="lp-novoice" id="novoice" hidden>
+      <p class="v">Your device has no Chinese voice</p>
+      <p>This page uses the Mandarin Chinese voice of your phone or computer to read the words, and none was found. Most phones and computers can add one for free in their text-to-speech or language settings; then reload this page. Until then, you can practise the same words without sound:</p>
+      <div class="pt-actions"><a class="button" href="/hsk-practice-test/" id="novoice-link">HSK practice test</a></div>
+    </div>
+    <p class="pt-note" id="storage-note" hidden>This browser is not letting the page save, so your best scores and settings will not be kept.</p>
+  </section>
+
+  <section class="guide" aria-labelledby="guide-title">
+    <h2 id="guide-title">About listening practice</h2>
+    <div class="qa">
+      <div>
+        <h3>What will I hear?</h3>
+        <p>Words from the HSK 3.0 list of your level and, at HSK 1–4, short sentences from the example sentences of the <a href="/learn/">grammar pages</a> and from the <a href="/reading/">graded stories</a>. Every sentence uses only words of its level. The four answers never sound alike, so there is always one right answer.</p>
+      </div>
+      <div>
+        <h3>How should I practise?</h3>
+        <p>Listen first, before you read the answers. If you are not sure, press Slow and listen again. When the characters start to feel easy, switch to pinyin only: then you have to recognise the sounds, not the characters, which is closer to what the listening paper of the exam asks.</p>
+      </div>
+      <div>
+        <h3>Why does the voice sound different on my phone?</h3>
+        <p>The words are read by the Chinese voice built into your device, so the voice depends on your phone or computer. Words that a voice can easily misread on their own, such as single characters with two readings, are left out. For written and spoken tones, see <a href="/mandarin-tone-changes/">tone changes</a>.</p>
+      </div>
+      <div>
+        <h3>Where is my score kept?</h3>
+        <p>Your best score for each level is kept in this browser on this device, and nothing is sent anywhere. Words you miss can go straight into the <a href="/hsk-flashcards/">flashcards</a>. For a mixed test of meanings, pinyin and grammar, try the <a href="/hsk-practice-test/">HSK practice test</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="notes">
+    <p><b>Words and sentences.</b> HSK 3.0 (New HSK) vocabulary, 2025 syllabus, the same lists as the <a href="/hsk-1-word-list/">word list pages</a>. Sentences come from this site's grammar pages and stories, with pinyin checked against the word lists. Audio uses your device's Chinese voice.</p>
+  </footer>
+</div>
+
+<script>
+const UI = __UI_JSON__;
+const DATA_BASE = "__DATA_BASE__";
+const KEY = "hskcheck-listening-v1";
+const CARDS_KEY = "hskcheck-flashcards-v1";  // the flashcards page's progress, so missed words can be added to it
+const TOTAL = 10, MIX_SENT = 4;
+
+let saveOk = true;
+function loadState() {
+  try { const s = JSON.parse(localStorage.getItem(KEY) || "null"); if (s && s.best) return s; } catch (e) { saveOk = false; }
+  return { best: {}, level: 0, kind: "mix", py: 0 };
+}
+const state = loadState();
+if (["mix", "words", "sent"].indexOf(state.kind) < 0) state.kind = "mix";
+state.py = state.py ? 1 : 0;
+function save() {
+  try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { saveOk = false; }
+  document.getElementById("storage-note").hidden = saveOk;
+}
+function today() { const d = new Date(); return Math.floor((d.getTime() - d.getTimezoneOffset() * 60000) / 86400000); }
+function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+function fmt(s, v) { return s.replace(/\{(\w+)\}/g, (m, k) => (k in v ? v[k] : m)); }
+function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+function range(n) { return Array.from({ length: n }, (_, i) => i); }
+// What a word or sentence sounds like, tones aside: letters only, and a final 儿 (-r) dropped.
+function bare(p) { return p.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z]/g, ""); }
+function sound(p) { return bare(p).replace(/(er|r)$/, ""); }
+function readings(p) { return p.split(/[;\/]/).map(sound); }
+function syllables(p) { return p.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().split(/[^a-z]+/).filter(Boolean); }
+
+// A Mandarin voice: zh-CN first, then other Mandarin voices; never Cantonese (zh-HK, yue).
+let voiceList = [];
+function voice() {
+  if (!("speechSynthesis" in window)) return null;
+  const vs = speechSynthesis.getVoices(), l = v => String(v.lang || "").replace(/_/g, "-").toLowerCase();
+  const mandarin = vs.filter(v => /^(zh|cmn)(-|$)/.test(l(v)) && !/(hk|mo|yue)/.test(l(v)));
+  return mandarin.find(v => /^(zh|cmn)-(cn|hans)/.test(l(v))) || mandarin[0] || null;
+}
+function speak(text, rate) {
+  const v = voice(); if (!v) return;
+  const u = new SpeechSynthesisUtterance(text); u.voice = v; u.lang = v.lang; u.rate = rate || 0.85;
+  speechSynthesis.cancel(); speechSynthesis.speak(u);
+}
+
+const cache = {};
+let level = 1, words = [], sents = [], roundKey = "";
+let test = [], pos = 0, score = 0, missed = [], answered = false, phase = "start", hasVoice = null;
+const area = document.getElementById("test-area");
+
+async function loadLevel(n) {
+  if (!cache[n]) {
+    const r = await fetch(DATA_BASE + "hsk" + n + ".json");
+    if (!r.ok) throw new Error(r.status);
+    cache[n] = await r.json();
+  }
+  return cache[n];
+}
+
+function kindFor(n) { return n === 5 ? "words" : state.kind; }
+function bestKey(n) { return n + ":" + kindFor(n) + ":" + state.py; }
+function showBests() {
+  for (let n = 1; n <= 5; n++) {
+    const b = state.best[bestKey(n)];
+    document.getElementById("best" + n).textContent = b ? UI.best + " " + b[0] + "/" + b[1] : "";
+  }
+}
+function showSettings() {
+  document.querySelectorAll("[data-kind]").forEach(b => {
+    b.setAttribute("aria-pressed", String(b.dataset.kind === kindFor(level)));
+    b.disabled = level === 5 && b.dataset.kind !== "words";
+  });
+  document.querySelectorAll("[data-py]").forEach(b => b.setAttribute("aria-pressed", String(+b.dataset.py === state.py)));
+}
+
+// A wrong word j for word i: a different word that never sounds like it (no shared reading, tones aside).
+function wordsClash(i, j) {
+  if (i === j || words[i][0] === words[j][0]) return true;
+  const ra = readings(words[i][1]), rb = readings(words[j][1]);
+  return ra.some(x => rb.indexOf(x) >= 0);
+}
+// A wrong sentence: different syllables, tones aside.
+function sentsClash(i, j) { return i === j || sound(sents[i][1]) === sound(sents[j][1]) || sents[i][0] === sents[j][0]; }
+
+// Wrong options that sound a little alike make the best practice: same length, a shared syllable or the same page.
+function pickWrong(i, list, clash, likeness) {
+  const scored = range(list.length).filter(j => !clash(i, j)).map(j => [likeness(i, j) + Math.random() * 1.5, j]);
+  scored.sort((a, b) => b[0] - a[0]);
+  const out = [];
+  for (const [, j] of scored) {
+    if (out.length === 3) break;
+    if (out.some(o => clash(o, j))) continue;
+    out.push(j);
+  }
+  return out.length === 3 ? out : null;
+}
+function shared(a, b) { const sa = syllables(a); return syllables(b).some(x => sa.indexOf(x) >= 0); }
+function wordLike(i, j) {
+  const a = words[i], b = words[j];
+  return (a[0].length === b[0].length ? 1 : 0) + (shared(a[1], b[1]) ? 1 : 0);
+}
+function sentLike(i, j) {
+  const a = sents[i], b = sents[j];
+  const d = Math.abs(a[0].length - b[0].length);
+  return (d <= 2 ? 1 : d <= 5 ? 0.5 : 0) + (a[4] === b[4] ? 1 : 0) + (shared(a[1], b[1]) ? 0.5 : 0);
+}
+
+function wordQuestion(i) {
+  const wrong = pickWrong(i, words, wordsClash, wordLike);
+  if (!wrong) return null;
+  const opts = [{ j: i, ok: true }].concat(wrong.map(j => ({ j, ok: false })));
+  return { type: "w", i, opts: shuffle(opts).map(o => ({ ok: o.ok, zh: words[o.j][0], py: words[o.j][1] })) };
+}
+function sentQuestion(i) {
+  const wrong = pickWrong(i, sents, sentsClash, sentLike);
+  if (!wrong) return null;
+  const opts = [{ j: i, ok: true }].concat(wrong.map(j => ({ j, ok: false })));
+  return { type: "s", i, opts: shuffle(opts).map(o => ({ ok: o.ok, zh: sents[o.j][0], py: sents[o.j][1] })) };
+}
+// Exactly one right option, and no two options that look or sound the same.
+function valid(q) {
+  if (!q || q.opts.length !== 4 || q.opts.filter(o => o.ok).length !== 1) return false;
+  const zh = q.opts.map(o => o.zh), snd = q.opts.map(o => sound(o.py));
+  return new Set(zh).size === 4 && new Set(snd).size === 4;
+}
+
+function makeTest() {
+  const kind = kindFor(level);
+  const nSent = !sents.length ? 0 : kind === "sent" ? Math.min(TOTAL, sents.length) : kind === "mix" ? MIX_SENT : 0;
+  const nWord = kind === "sent" && sents.length ? 0 : TOTAL - nSent;
+  const qs = [];
+  for (const i of shuffle(range(sents.length))) {
+    if (qs.length >= nSent) break;
+    const q = sentQuestion(i);
+    if (valid(q)) qs.push(q);
+  }
+  let need = nWord;
+  for (const i of shuffle(range(words.length))) {
+    if (!need) break;
+    const q = wordQuestion(i);
+    if (valid(q)) { qs.push(q); need--; }
+  }
+  return shuffle(qs);
+}
+
+function whatText() {
+  const k = kindFor(level);
+  return k === "words" || !sents.length ? UI.wWords : k === "sent" ? UI.wSent : UI.wMix;
+}
+
+function showStart() {
+  phase = "start";
+  if (hasVoice === false) { area.innerHTML = ""; document.getElementById("novoice").hidden = false; return; }
+  document.getElementById("novoice").hidden = true;
+  area.innerHTML = '<div class="pt-start"><p>' + esc(fmt(UI.startSub, { what: whatText() })) + '</p>' +
+    (level === 5 ? '<p>' + esc(UI.noSent) + '</p>' : '') +
+    '<button type="button" class="button" id="start-btn">' + esc(fmt(UI.start, { n: level })) + '</button></div>';
+  document.getElementById("start-btn").addEventListener("click", start);
+}
+
+function start() {
+  if (!voice()) { hasVoice = false; showStart(); return; }
+  test = makeTest(); pos = 0; score = 0; missed = []; phase = "test"; roundKey = bestKey(level);
+  showQuestion();
+}
+
+function textOf(q) { return q.type === "s" ? sents[q.i][0] : words[q.i][0]; }
+function play(rate) { speak(textOf(test[pos]), rate); }
+
+function optHtml(o) {
+  return state.py ? '<span class="t lp-py">' + esc(o.py) + '</span>'
+    : '<span class="t lp-both"><span class="zh" lang="zh-Hans">' + esc(o.zh) + '</span><span class="py">' + esc(o.py) + '</span></span>';
+}
+
+function showQuestion() {
+  const q = test[pos];
+  answered = false;
+  const sheet = document.getElementById("test-sheet");
+  area.innerHTML =
+    '<div class="pt-top"><p class="pt-ask">' + esc(UI.ask) + '</p><span class="pt-count">' +
+      esc(UI.q + " " + (pos + 1) + " " + UI.of + " " + test.length) + '</span></div>' +
+    '<div class="pt-bar" aria-hidden="true"><i style="width:' + (pos / test.length * 100) + '%"></i></div>' +
+    '<div class="pt-prompt lp-prompt"><div class="pt-play"><button type="button" class="button" id="play-btn">' + esc(UI.play) +
+      '</button><button type="button" class="button ghost-btn" id="slow-btn">' + esc(UI.slow) + '</button></div></div>' +
+    '<div class="pt-opts' + (q.type === "s" ? ' lp-sents' : '') + '" role="group">' + q.opts.map((o, k) =>
+      '<button type="button" class="pt-opt" data-k="' + k + '"><span class="k" aria-hidden="true">' + (k + 1) + '</span>' + optHtml(o) + '</button>').join("") +
+    '</div><div id="fb"></div>';
+  area.querySelectorAll(".pt-opt").forEach(b => b.addEventListener("click", () => choose(+b.dataset.k)));
+  document.getElementById("play-btn").addEventListener("click", () => play());
+  document.getElementById("slow-btn").addEventListener("click", () => play(q.type === "s" ? 0.6 : 0.55));
+  play();
+  const r = sheet.getBoundingClientRect();
+  if (r.top < 0) sheet.scrollIntoView({ block: "start" });
+}
+
+function answerHtml(q) {
+  if (q.type === "s") {
+    const s = sents[q.i];
+    const href = (s[3] === "g" ? UI.learnBase : UI.readBase) + s[4] + "/";
+    return '<p class="a-zh" lang="zh-Hans">' + esc(s[0]) + '</p><p class="a-py">' + esc(s[1]) + '</p><p class="a-en">' + esc(s[2]) + '</p>' +
+      '<p><a href="' + href + '">' + esc((s[3] === "g" ? UI.fromG : UI.fromS) + ": " + s[5]) + ' →</a></p>';
+  }
+  const w = words[q.i];
+  return '<p class="a-zh" lang="zh-Hans">' + esc(w[0]) + '</p><p class="a-py">' + esc(w[1]) + '</p><p class="a-en">' + esc(w[2]) + '</p>';
+}
+
+function choose(k) {
+  if (answered || phase !== "test") return;
+  answered = true;
+  const q = test[pos], ok = q.opts[k].ok;
+  if (ok) score++; else missed.push(q);
+  area.querySelectorAll(".pt-opt").forEach((b, j) => {
+    b.disabled = true;
+    if (q.opts[j].ok) b.classList.add("ok");
+    else if (j === k) b.classList.add("no");
+    else b.classList.add("dim");
+  });
+  const last = pos === test.length - 1;
+  document.getElementById("fb").innerHTML = '<div class="pt-fb ' + (ok ? "ok" : "no") + '"><p class="v">' + esc(ok ? UI.right : UI.wrong) + '</p>' +
+    answerHtml(q) + '</div><div class="pt-actions" style="margin-top:12px"><button type="button" class="button" id="next-btn">' +
+    esc(last ? UI.finish : UI.next) + '</button></div>';
+  const nb = document.getElementById("next-btn");
+  nb.addEventListener("click", next);
+  nb.focus({ preventScroll: true });
+  const r = nb.getBoundingClientRect();
+  if (r.bottom > innerHeight) nb.scrollIntoView({ block: "end", behavior: "smooth" });
+}
+
+function next() {
+  if (!answered) return;
+  if (pos < test.length - 1) { pos++; showQuestion(); } else finish();
+}
+
+function finish() {
+  phase = "done";
+  if ("speechSynthesis" in window) speechSynthesis.cancel();
+  const key = roundKey, prev = state.best[key];
+  const isBest = !prev || score / test.length > prev[0] / prev[1];
+  if (isBest) { state.best[key] = [score, test.length]; save(); showBests(); }
+  const p = score / test.length;
+  const msg = p >= 0.9 ? UI.msg4 : p >= 0.7 ? UI.msg3 : p >= 0.4 ? UI.msg2 : UI.msg1;
+  const toAdd = [...new Set(missed.filter(q => q.type === "w").map(q => words[q.i][0]))];
+  const items = missed.map((q, k) => {
+    const x = q.type === "s" ? sents[q.i] : words[q.i];
+    return '<li><button type="button" class="lp-again" data-m="' + k + '" aria-label="' + esc(UI.play) + '">▶</button>' +
+      '<span class="m-zh" lang="zh-Hans">' + esc(x[0]) + '</span><span class="m-py">' + esc(x[1]) + '</span><span class="m-en">' + esc(x[2]) + '</span></li>';
+  }).join("");
+  area.innerHTML =
+    '<div class="pt-score"><p class="sub">' + esc(UI.scoreHead) + ' · HSK ' + level + '</p><p class="big">' + score + ' / ' + test.length + '</p>' +
+      '<p>' + esc(fmt(msg, { n: level })) + '</p><p class="sub">' + esc(isBest ? fmt(UI.bestNew, { n: level })
+        : fmt(UI.bestOld, { n: level, what: whatText(), b: prev[0], t: prev[1] })) + '</p></div>' +
+    '<h3 class="pt-ask">' + esc(UI.missedHead) + '</h3>' +
+    (missed.length ? '<ul class="pt-missed lp-missed">' + items + '</ul>' : '<p class="empty">' + esc(UI.noMissed) + '</p>') +
+    (toAdd.length ? '<div class="pt-actions"><button type="button" class="button ghost-btn" id="add-btn">' + esc(fmt(UI.add, { n: level })) + '</button></div>' +
+      '<p class="pt-added" id="added" hidden>' + esc(UI.added) + '</p>' : '') +
+    '<div class="pt-actions"><button type="button" class="button" id="again-btn">' + esc(UI.again) + '</button>' +
+      (level < 5 ? '<button type="button" class="button ghost-btn" id="next-level-btn">' + esc(fmt(UI.nextLevel, { m: level + 1 })) + '</button>' : '') + '</div>' +
+    '<p class="study-link"><a href="' + UI.testBase + '#hsk' + level + '">' + esc(fmt(UI.testLink, { n: level })) + ' →</a></p>';
+  area.querySelectorAll(".lp-again").forEach(b => b.addEventListener("click", () => speak(textOf(missed[+b.dataset.m]))));
+  document.getElementById("again-btn").addEventListener("click", start);
+  const nl = document.getElementById("next-level-btn");
+  if (nl) nl.addEventListener("click", () => setLevel(level + 1, true));
+  const ab = document.getElementById("add-btn");
+  if (ab) ab.addEventListener("click", () => { addToCards(toAdd); ab.disabled = true; document.getElementById("added").hidden = false; });
+  const sheet = document.getElementById("test-sheet");
+  if (sheet.getBoundingClientRect().top < 0) sheet.scrollIntoView({ block: "start" });
+}
+
+// Missed words go to the front of the flashcards' new words, or come back for review today if already started.
+function addToCards(list) {
+  let s = null;
+  try { s = JSON.parse(localStorage.getItem(CARDS_KEY) || "null"); } catch (e) {}
+  if (!s || !s.lv) s = { lv: {}, intro: {}, streak: { last: -1, n: 0 }, set: { newPerDay: 10, pinyin: false, level: level } };
+  s.set = s.set || { newPerDay: 10, pinyin: false };
+  s.boost = s.boost || {};
+  const boost = s.boost[level] || [], st = s.lv[level] || (s.lv[level] = {}), t = today();
+  list.forEach(w => { if (st[w]) st[w] = [0, t]; else if (boost.indexOf(w) < 0) boost.push(w); });
+  s.boost[level] = boost; s.set.level = level; s.set.chosen = true;
+  try { localStorage.setItem(CARDS_KEY, JSON.stringify(s)); } catch (e) {}
+}
+
+async function setLevel(n, autostart) {
+  level = n; state.level = n; save();
+  if (location.hash !== "#hsk" + n) history.replaceState(null, "", "#hsk" + n);
+  document.getElementById("novoice-link").hash = "hsk" + n;
+  document.querySelectorAll(".pt-levels .lv-btn").forEach(b => b.setAttribute("aria-pressed", String(+b.dataset.level === n)));
+  showSettings();
+  if ("speechSynthesis" in window) speechSynthesis.cancel();
+  area.innerHTML = '<p class="empty">' + esc(UI.loading) + '</p>';
+  phase = "loading";
+  let d;
+  try { d = await loadLevel(n); } catch (e) { area.innerHTML = '<p class="empty">' + esc(UI.loadFail) + '</p>'; return; }
+  if (level !== n) return;
+  words = d.w; sents = d.s;
+  await voiceReady;
+  if (autostart && hasVoice) start(); else showStart();
+}
+
+function changeSetting() {
+  showSettings(); showBests(); save();
+  if (phase !== "loading" && phase !== "test") showStart();
+  else if (phase === "test" && !answered) { test[pos] && showQuestion(); }
+}
+document.querySelectorAll(".pt-levels .lv-btn").forEach(b => b.addEventListener("click", () => setLevel(+b.dataset.level)));
+document.querySelectorAll("[data-kind]").forEach(b => b.addEventListener("click", () => {
+  if (b.disabled || state.kind === b.dataset.kind) return;
+  state.kind = b.dataset.kind;
+  if (phase === "test") phase = "start";  // a new kind of round starts afresh
+  changeSetting();
+}));
+document.querySelectorAll("[data-py]").forEach(b => b.addEventListener("click", () => {
+  state.py = +b.dataset.py;
+  changeSetting();
+}));
+document.addEventListener("keydown", e => {
+  if (e.altKey || e.ctrlKey || e.metaKey || phase !== "test") return;
+  if (!answered && /^[1-4]$/.test(e.key)) {
+    const k = +e.key - 1;
+    if (test[pos] && k < test[pos].opts.length) { e.preventDefault(); choose(k); }
+  } else if ((e.key === "r" || e.key === "R") && !(e.target.closest && e.target.closest("input, textarea"))) {
+    e.preventDefault(); play();
+  } else if (answered && e.key === "Enter" && !(e.target.closest && e.target.closest("button, a"))) {
+    e.preventDefault(); next();
+  }
+});
+addEventListener("hashchange", () => {
+  const m = location.hash.match(/^#hsk([1-5])$/);
+  if (m && +m[1] !== level) setLevel(+m[1]);
+});
+
+// Voices often load a moment after the page: wait for them (at most 2 seconds) before saying there is none.
+const voiceReady = new Promise(resolve => {
+  if (!("speechSynthesis" in window)) { hasVoice = false; resolve(); return; }
+  const check = () => { if (voice()) { hasVoice = true; resolve(); return true; } return false; };
+  if (check()) return;
+  speechSynthesis.addEventListener && speechSynthesis.addEventListener("voiceschanged", check);
+  setTimeout(() => { if (!check()) { hasVoice = false; resolve(); } }, 2000);
+});
+if ("speechSynthesis" in window && speechSynthesis.addEventListener) speechSynthesis.addEventListener("voiceschanged", () => {
+  if (hasVoice === false && voice()) { hasVoice = true; if (phase === "start") showStart(); }
+});
+
+showBests();
+showSettings();
+document.getElementById("storage-note").hidden = saveOk;
+const hashLevel = (location.hash.match(/^#hsk([1-5])$/) || [])[1];
+setLevel(hashLevel ? +hashLevel : Math.min(5, Math.max(1, +state.level || 1)));
+</script>

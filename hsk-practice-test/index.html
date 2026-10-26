@@ -272,7 +272,7 @@ textarea {
 <body>
 <div class="wrap">
   <header>
-    <nav class="site-nav" aria-label="Site"><button type="button" class="nav-toggle" aria-expanded="false">Menu</button><div class="nav-links"><a href="/">Level Checker</a><a href="/hsk-1-word-list/">HSK 1 Words</a><a href="/hsk-2-word-list/">HSK 2 Words</a><a href="/hsk-3-word-list/">HSK 3 Words</a><a href="/hsk-4-word-list/">HSK 4 Words</a><a href="/hsk-5-word-list/">HSK 5 Words</a><a href="/hsk-flashcards/">Flashcards</a><a href="/hsk-practice-test/" aria-current="page">Practice Test</a><a href="/daily-hsk-quiz/">Daily Quiz</a><a href="/reading/">Reading</a><a href="/chinese-character-worksheets/">Writing Sheets</a><a href="/hsk-handwriting-characters/">Handwriting</a><a href="/mandarin-tone-changes/">Tone Changes</a><a href="/chinese-measure-words/">Measure Words</a><a href="/old-hsk-to-new-hsk/">Old → New HSK</a><a href="/learn/">Grammar</a><a href="/yct/">YCT</a><a href="/chinese-new-year-greetings/">New Year 2027</a><a href="/th/">ภาษาไทย</a></div></nav>
+    <nav class="site-nav" aria-label="Site"><button type="button" class="nav-toggle" aria-expanded="false">Menu</button><div class="nav-links"><a href="/">Level Checker</a><a href="/hsk-1-word-list/">HSK 1 Words</a><a href="/hsk-2-word-list/">HSK 2 Words</a><a href="/hsk-3-word-list/">HSK 3 Words</a><a href="/hsk-4-word-list/">HSK 4 Words</a><a href="/hsk-5-word-list/">HSK 5 Words</a><a href="/hsk-flashcards/">Flashcards</a><a href="/hsk-practice-test/" aria-current="page">Practice Test</a><a href="/daily-hsk-quiz/">Daily Quiz</a><a href="/chinese-listening-practice/">Listening</a><a href="/reading/">Reading</a><a href="/chinese-character-worksheets/">Writing Sheets</a><a href="/hsk-handwriting-characters/">Handwriting</a><a href="/mandarin-tone-changes/">Tone Changes</a><a href="/chinese-measure-words/">Measure Words</a><a href="/old-hsk-to-new-hsk/">Old → New HSK</a><a href="/learn/">Grammar</a><a href="/yct/">YCT</a><a href="/chinese-new-year-greetings/">New Year 2027</a><a href="/th/">ภาษาไทย</a></div></nav>
     <div class="eyebrow"><span>New HSK · 2025 syllabus</span><span class="chip">Levels 1–5</span><span class="chip">Free</span></div>
     <h1><span class="zh">测试</span>HSK Practice Test</h1>
     <p class="lede">Choose your level and answer 20 questions on the HSK 3.0 words: meanings, pinyin, listening and grammar. You see the right answer after every question, and the words you missed at the end.</p>
@@ -297,6 +297,7 @@ textarea {
     </div>
     <p class="pt-note" id="storage-note" hidden>This browser is not letting the page save, so your best scores will not be kept.</p>
     <p class="study-link"><a id="quiz-link" href="/daily-hsk-quiz/">Ten new questions every day: the daily HSK quiz →</a></p>
+    <p class="study-link"><a id="listen-link" href="/chinese-listening-practice/">Train your ear: Chinese listening practice →</a></p>
   </section>
 
   <section class="guide" aria-labelledby="guide-title">
@@ -608,6 +609,7 @@ async function setLevel(n, autostart) {
   level = n; state.level = n; save();
   if (location.hash !== "#hsk" + n) history.replaceState(null, "", "#hsk" + n);
   document.getElementById("quiz-link").hash = "hsk" + n;
+  document.getElementById("listen-link").hash = "hsk" + n;
   document.querySelectorAll(".lv-btn").forEach(b => b.setAttribute("aria-pressed", String(+b.dataset.level === n)));
   area.innerHTML = '<p class="empty">' + esc(UI.loading) + '</p>';
   phase = "loading";

@@ -1,0 +1,22 @@
+/* Chinese listening practice: the practice test's question layout (practice.css) plus settings, options with pinyin. */
+.lp-sets { display: grid; gap: 10px; margin-top: 14px; }
+.lp-set .lp-btn { min-height: 44px; }
+.lp-set .lp-btn:disabled { opacity: .45; cursor: default; }
+.lp-prompt { min-height: 96px; }
+.lp-prompt .button { min-width: 132px; }
+.pt-opt .t.lp-both { display: grid; gap: 2px; }
+.pt-opt .lp-both .zh { font-family: var(--f-zh); font-size: 24px; font-weight: 400; line-height: 1.3; }
+.pt-opt .lp-both .py { font-size: 15px; font-weight: 400; color: var(--muted); }
+.pt-opt .t.lp-py { font-size: 20px; font-weight: 400; }
+.lp-sents .pt-opt .lp-both .zh { font-size: 20px; }
+.lp-sents .pt-opt .t.lp-py { font-size: 17px; }
+@media (min-width: 560px) { .pt-opts.lp-sents { grid-template-columns: 1fr; } }
+.lp-missed li { grid-template-columns: auto 1fr; column-gap: 10px; }
+.lp-missed li > span { grid-column: 2; }
+.lp-again { grid-row: 1 / span 3; align-self: center; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--rule);
+  background: var(--sheet); color: var(--accent); font-size: 15px; cursor: pointer; }
+.lp-again:hover { border-color: var(--accent); }
+.lp-novoice { display: grid; gap: 8px; padding: 14px; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--paper); }
+.lp-novoice[hidden] { display: none; }
+.lp-novoice p { margin: 0; }
+.lp-novoice .v { font-weight: 600; }

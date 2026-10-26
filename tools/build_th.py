@@ -10,6 +10,7 @@ Outputs:
   th/old-hsk-to-new-hsk/           Thai old HSK -> new HSK page (see tools/upgrade_th.py)
   th/hsk-practice-test/            Thai HSK practice test (see tools/practice.py)
   th/daily-hsk-quiz/               Thai daily HSK quiz (see tools/daily.py)
+  th/chinese-listening-practice/   Thai Chinese listening practice (see tools/listening.py)
   th/learn/<slug>/practice/        Thai grammar practice online (see tools/grammar_practice.py)
   th/upgrade-packs/                Thai printable pack pages (see tools/packs.py)
 
@@ -26,6 +27,7 @@ import grammar_practice
 import hsk4
 import hsk5
 import learn_th
+import listening
 import measure_th
 import packs
 import practice
@@ -135,6 +137,7 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
         pages.append((study.TH_URL, "แฟลชการ์ด"))
         pages.append((practice.TH_URL, "แบบทดสอบ HSK"))
         pages.append((daily.TH_URL, "ควิซประจำวัน"))
+        pages.append((listening.TH_URL, "ฝึกฟัง"))
     if any((root / "data" / "stories").glob("*.json")):
         pages.append((reading.TH_URL, "อ่าน"))
     pages.append((worksheets_th.TH_WS_URL, "แบบฝึกเขียน"))
@@ -272,6 +275,8 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
                                   + (tpl / "practice.css").read_text(encoding="utf-8") + th_css)
         urls += daily.build_th(root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK, foot=FOOT,
                                base_css=base_css, th_css=th_css)
+        urls += listening.build_th(root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK, foot=FOOT,
+                                   base_css=base_css, th_css=th_css)
 
     # Character worksheets
     urls += worksheets_th.build(root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK, foot=FOOT,
@@ -340,6 +345,7 @@ def alternates(root, levels):
         pairs.update(study.alternates(root))
         pairs.update(practice.alternates(root))
         pairs.update(daily.alternates(root))
+        pairs.update(listening.alternates(root))
     pairs.update(reading.alternates(root))
     pairs.update(upgrade_th.alternates(root))
     pairs.update(packs.th_alternates())
