@@ -1,0 +1,112 @@
+{
+  "slug": "zui-superlative",
+  "published": "2026-10-26",
+  "title": "Cách dùng 最 (zuì) \"nhất\" trong tiếng Trung, ngữ pháp HSK 2",
+  "description": "Cách dùng 最 (zuì) để nói \"nhất\": trật tự từ, 最 với 喜欢, 最好的朋友, câu hỏi, lỗi hay gặp và 14 câu ví dụ HSK 2.",
+  "h1": "Cách dùng 最 (zuì): \"nhất\"",
+  "lede": "最 (zuì) có nghĩa là \"nhất\". Đặt nó trước một tính từ hoặc một động từ như 喜欢, bạn sẽ có nghĩa \"... nhất\": 最高 là \"cao nhất\", 最喜欢 là \"thích nhất\". Đây là một từ quan trọng của HSK 2.",
+  "sections": [
+    {
+      "h2": "最 + tính từ",
+      "paras": [
+        "Chủ ngữ + 最 + tính từ.",
+        "Tiếng Việt nói \"cao nhất\", với \"nhất\" đứng sau tính từ; tiếng Trung thì ngược lại, 最 luôn đứng ngay trước tính từ. Không cần 是, và không được thêm 很 hay 非常: 他最高 là đúng, 他最很高 là sai. Nhóm được so sánh thường đứng đầu câu, ví dụ 我们家 (trong nhà tôi) hoặc 三个人里 (trong ba người)."
+      ],
+      "examples": [
+        "Cái này rẻ nhất.",
+        "Trong nhà tôi, anh trai tôi cao nhất.",
+        "Món ăn của nhà hàng này ngon nhất."
+      ]
+    },
+    {
+      "h2": "最 + 喜欢, 想, 爱",
+      "paras": [
+        "最 cũng đứng trước các động từ chỉ sự yêu thích và mong muốn như 喜欢, 想 và 爱. 我最喜欢 nghĩa là \"tôi thích nhất\".",
+        "Lỗi hay gặp nhất là theo trật tự tiếng Việt \"thích nhất trà\" rồi đặt 最 sau động từ: 我喜欢最茶. 最 phải đứng trước động từ: 我最喜欢茶."
+      ],
+      "examples": [
+        "Tôi thích uống trà nhất.",
+        "Bạn muốn đi đâu nhất?",
+        "Tôi thích ăn cơm nhất."
+      ]
+    },
+    {
+      "h2": "最 + tính từ + 的 + danh từ",
+      "paras": [
+        "Để nói \"người bạn thân nhất\" hay \"căn phòng lớn nhất\", dùng 最 + tính từ + 的 + danh từ. Phải có 的: nói 最好的朋友, không nói 最好朋友. 最 không bao giờ đứng ngay trước danh từ.",
+        "Nếu muốn dùng 是, hãy kết thúc câu bằng 的: 他是最高的. 他是最高 một mình nghe như câu chưa nói hết; 他最高 đơn giản hơn."
+      ],
+      "examples": [
+        "Cô ấy là bạn thân nhất của tôi.",
+        "Đây là phòng học lớn nhất trường chúng tôi."
+      ]
+    },
+    {
+      "h2": "Câu hỏi và phủ định",
+      "paras": [
+        "Để hỏi cái nào nhất, dùng 谁 (ai) hoặc 哪个 (cái nào) trước 最. Câu trả lời giữ nguyên trật tự từ: 你们班谁最高？ 我们班王明最高。",
+        "最不 + động từ hoặc tính từ nghĩa là \"không... nhất\", \"kém... nhất\": 我最不喜欢 là \"tôi không thích... nhất\"."
+      ],
+      "examples": [
+        "Lớp bạn ai cao nhất?",
+        "Trong ba cái này, cái nào tốt nhất?",
+        "Tôi không thích nhất là những ngày mưa."
+      ]
+    },
+    {
+      "h2": "Những từ thông dụng có 最",
+      "paras": [
+        "Có ba từ thông dụng bắt đầu bằng 最. 最近 nghĩa là \"dạo này\", \"gần đây\"; 最后 nghĩa là \"cuối cùng\"; còn 最好 đứng trước động từ nghĩa là \"tốt nhất là nên\". Giống các từ chỉ thời gian khác, 最近 và 最后 đứng đầu câu hoặc ngay sau chủ ngữ."
+      ],
+      "examples": [
+        "Dạo này tôi rất bận.",
+        "Cuối cùng chúng tôi đi taxi về nhà.",
+        "Tốt nhất là bạn nên đi bệnh viện khám xem."
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 最 (zuì) HSK 2 có đáp án, in miễn phí",
+    "description": "Bài tập 最 (zuì) HSK 2 in miễn phí: 20 câu (chọn 最 hay 很, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 最 hoặc 很",
+        "instructions": "Điền 最 hoặc 很 vào chỗ trống. Phần nghĩa tiếng Việt cho biết câu có nghĩa gì.",
+        "items": [
+          "Trong ba chúng tôi, anh ấy cao nhất.",
+          "Hôm nay trời rất đẹp.",
+          "Đây là bài hát tôi thích nhất.",
+          "Lớp bạn ai cao nhất?",
+          "Bộ quần áo này rất đẹp, nên tôi đã mua.",
+          "Anh ấy là bạn thân nhất của tôi.",
+          "Cô ấy nói tiếng Hán rất giỏi.",
+          "Ở chỗ chúng tôi, tháng Một lạnh nhất.",
+          "Tôi rất bận, không có thời gian."
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng có 最.",
+        "items": [
+          "Tôi thích uống trà nhất.",
+          "Anh ấy là bạn thân nhất của tôi.",
+          "Lớp bạn ai cao nhất?",
+          "Món này rẻ nhất.",
+          "Bạn muốn đi đâu nhất?",
+          "Cá là món tôi không thích ăn nhất."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Tôi thích táo nhất.",
+          "Cái này ngon nhất.",
+          "Cô ấy là bạn thân nhất của tôi.",
+          "Trong nhà tôi, mẹ tôi bận nhất.",
+          "Tôi thấy món này ngon nhất."
+        ]
+      }
+    ]
+  }
+}

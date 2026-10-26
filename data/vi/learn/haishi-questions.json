@@ -1,0 +1,103 @@
+{
+  "slug": "haishi-questions",
+  "published": "2026-10-26",
+  "title": "还是 (háishi) trong tiếng Trung: câu hỏi \"hay\", ngữ pháp HSK 2",
+  "description": "Cách hỏi \"A hay B?\" bằng 还是 (háishi): trật tự từ, lặp lại động từ, vì sao không thêm 吗, kèm câu ví dụ HSK 2.",
+  "h1": "Cách đặt câu hỏi lựa chọn với 还是",
+  "lede": "还是 (háishi) có nghĩa là \"hay\" trong câu hỏi lựa chọn. Bạn đặt nó giữa hai lựa chọn, và người nghe trả lời bằng cách chọn một: 你喝茶还是咖啡？ \"Bạn uống trà hay cà phê?\" Đây là một mẫu câu hỏi quan trọng của HSK 2.",
+  "sections": [
+    {
+      "h2": "Mẫu câu",
+      "paras": [
+        "A + 还是 + B？",
+        "Đặt 还是 giữa hai thứ người nghe có thể chọn, giống chữ \"hay\" trong tiếng Việt. Trật tự từ giữ nguyên như câu bình thường; bạn chỉ thay một từ bằng \"A 还是 B\". Chỉ cần dấu hỏi là đủ: bản thân câu đã là câu hỏi."
+      ],
+      "examples": [
+        "Bạn uống trà hay cà phê?",
+        "Bạn là giáo viên hay học sinh?",
+        "Bạn muốn cái to hay cái nhỏ?",
+        "Cái này là của bạn hay của anh ấy?"
+      ]
+    },
+    {
+      "h2": "Chọn giữa hành động, thời gian và cách thức",
+      "paras": [
+        "Khi lựa chọn là giữa hai hành động, hãy nói cả cụm động từ ở hai bên 还是. Khi lựa chọn là thời gian hay cách làm, động từ thường đứng sau mỗi lựa chọn: 你今天去还是明天去？",
+        "Bạn cũng có thể đặt 是 trước lựa chọn thứ nhất, như 你是坐飞机去还是坐火车去？ Câu hỏi nghe cẩn thận hơn một chút, nhưng nghĩa không đổi."
+      ],
+      "examples": [
+        "Chúng ta đi xem phim hay ở nhà xem tivi?",
+        "Bạn đi hôm nay hay ngày mai?",
+        "Bạn đi máy bay hay đi tàu hỏa?",
+        "Chúng ta đi taxi hay đi bộ?"
+      ]
+    },
+    {
+      "h2": "Lỗi hay gặp nhất: thêm 吗",
+      "paras": [
+        "Câu có 还是 đã là câu hỏi, nên không bao giờ thêm 吗. 你喝茶还是咖啡吗？ là sai; phải nói 你喝茶还是咖啡？. Bạn có thể thêm 呢 ở cuối cho câu hỏi nhẹ nhàng hơn, nhưng không dùng 吗.",
+        "Để trả lời, chỉ cần chọn một trong hai và nói thành một câu ngắn: 你喜欢猫还是狗？ thì trả lời 我喜欢狗。 Không trả lời bằng 是 hay 对."
+      ],
+      "examples": [
+        "Bạn thích mèo hay chó?",
+        "Tôi thích chó.",
+        "Thế bạn muốn ăn cơm hay mì?",
+        "Anh ấy là anh trai hay em trai của bạn?"
+      ]
+    },
+    {
+      "h2": "还是 trong câu trần thuật",
+      "paras": [
+        "还是 cũng có thể nằm trong một câu trần thuật khi câu đó chứa một câu hỏi, ví dụ sau 不知道 (không biết) hoặc 问 (hỏi).",
+        "Trong câu trần thuật thông thường như \"tôi uống trà hoặc cà phê, cái nào cũng được\", tiếng Trung dùng một từ khác cho \"hoặc\": 或者, bạn sẽ học ở HSK 3. Bạn cũng sẽ gặp 还是 với nghĩa \"vẫn\", như 他还是很忙 (anh ấy vẫn rất bận). Đó là một cách dùng khác, không nói đến ở đây."
+      ],
+      "examples": [
+        "Tôi không biết anh ấy là giáo viên hay học sinh.",
+        "Bạn hỏi anh ấy xem hôm nay đến hay ngày mai đến."
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 还是 HSK 2 có đáp án, in miễn phí",
+    "description": "Bài tập câu hỏi lựa chọn 还是 HSK 2 in miễn phí: 19 câu (还是 hay 吗, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 还是 hoặc 吗",
+        "instructions": "Điền 还是 hoặc 吗 vào chỗ trống. Phần nghĩa tiếng Việt cho biết câu hỏi có nghĩa gì.",
+        "items": [
+          "Bạn có uống cà phê không?",
+          "Bạn uống cà phê hay sữa?",
+          "Anh ấy là bạn của bạn à?",
+          "Các bạn đi thứ Bảy hay Chủ nhật?",
+          "Cuốn sách này là của bạn à?",
+          "Bạn thích bơi hay chạy bộ?",
+          "Ngày mai bạn có rảnh không?",
+          "Bạn muốn ăn sủi cảo hay mì?"
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu hỏi hoặc câu đúng có 还是.",
+        "items": [
+          "Bạn là giáo viên hay học sinh?",
+          "Bạn đi hôm nay hay ngày mai?",
+          "Chúng ta đi taxi hay đi bộ?",
+          "Bạn thích mèo hay chó?",
+          "Thế bạn muốn cái to hay cái nhỏ?",
+          "Tôi không biết anh ấy đến hôm nay hay ngày mai."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu hỏi có một lỗi sai. Hãy viết lại câu hỏi đúng.",
+        "items": [
+          "Bạn uống trà hay cà phê?",
+          "Anh ấy là bác sĩ hay giáo viên?",
+          "Các bạn đi tàu hỏa hay đi máy bay?",
+          "Bạn muốn ăn cơm hay mì?",
+          "Bạn muốn đi hôm nay hay ngày mai?"
+        ]
+      }
+    ]
+  }
+}

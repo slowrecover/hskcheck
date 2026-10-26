@@ -1,0 +1,102 @@
+{
+  "slug": "bei-passive",
+  "published": "2026-10-26",
+  "title": "Câu bị động với 被 (bèi) trong tiếng Trung, ngữ pháp HSK 3",
+  "description": "Cách dùng 被 (bèi) để đặt câu bị động: trật tự từ, lược người làm, vì sao động từ cần thành phần phía sau, phủ định với 没有, kèm ví dụ HSK 3.",
+  "h1": "Cách dùng 被 trong câu bị động",
+  "lede": "被 (bèi) tạo câu bị động: người hoặc vật chịu tác động đứng đầu câu, người gây ra hành động đứng sau 被. Nó giống chữ \"bị\" trong tiếng Việt, chủ yếu dùng cho chuyện không may hoặc bất ngờ, và là một điểm ngữ pháp quan trọng của HSK 3.",
+  "sections": [
+    {
+      "h2": "Mẫu câu",
+      "paras": [
+        "Đối tượng chịu tác động + 被 + người làm + động từ + thành phần khác.",
+        "Bắt đầu bằng thứ chịu tác động, rồi đến 被, rồi người làm, rồi động từ, đúng như trật tự của \"bị\" trong tiếng Việt: \"điện thoại của tôi bị em trai làm hỏng\". 我的手机被弟弟用坏了 kể cùng một chuyện với 弟弟把我的手机用坏了, nhưng bắt đầu từ chiếc điện thoại và điều đã xảy ra với nó, chứ không bắt đầu từ em trai."
+      ],
+      "examples": [
+        "Điện thoại của tôi bị em trai làm hỏng rồi.",
+        "Bánh ngọt bị em gái ăn mất rồi.",
+        "Chuyện này bị thầy giáo biết rồi."
+      ]
+    },
+    {
+      "h2": "Lược bỏ người làm",
+      "paras": [
+        "Nếu bạn không biết hoặc không cần nói ai làm, đặt động từ ngay sau 被. Để nói \"có người\", \"ai đó\", dùng 被人."
+      ],
+      "examples": [
+        "Ví tiền của tôi bị người ta lấy mất rồi.",
+        "Cuốn sách đó đã bị mượn đi rồi.",
+        "Xe đạp của anh ấy bị người ta lấy đi mất rồi."
+      ]
+    },
+    {
+      "h2": "Sau động từ phải có thành phần khác",
+      "paras": [
+        "Giống câu chữ 把, động từ trong câu có 被 không thể đứng một mình. Sau nó phải có kết quả như 坏 hoặc 完, phương hướng như 走 hoặc 回家, hoặc ít nhất là 了. 我的手机被弟弟用 không phải là một câu hoàn chỉnh.",
+        "Đừng dùng 被 cho mọi câu bị động như trong tiếng Anh. 被 chủ yếu dùng cho việc xảy ra với ai hay cái gì mà xấu, không mong muốn hoặc bất ngờ, giống \"bị\" hơn là \"được\". Khi rõ ràng chủ ngữ không thể tự làm hành động, tiếng Trung thường bỏ 被: nói 作业做完了, không nói 作业被做完了."
+      ],
+      "examples": [
+        "Anh ấy bị mẹ gọi về nhà rồi.",
+        "Cá bị mèo ăn mất rồi.",
+        "Bài tập làm xong rồi."
+      ]
+    },
+    {
+      "h2": "Phủ định, câu hỏi và 让",
+      "paras": [
+        "Để nói việc gì không xảy ra, đặt 没有 trước 被, không đặt trước động từ, và bỏ 了. Để nhắc ai cẩn thận, đặt 别 trước 被. Để hỏi ai đã làm, đặt 谁 sau 被.",
+        "Trong khẩu ngữ, 让 có thể thay cho 被, nhưng khi đó bắt buộc phải nói ai làm."
+      ],
+      "examples": [
+        "Máy tính của tôi không bị anh ấy làm hỏng.",
+        "Đừng để anh ấy nhìn thấy.",
+        "Điện thoại của bạn bị ai lấy mất?",
+        "Bánh ngọt của tôi bị em trai ăn mất rồi."
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập câu bị động 被 HSK 3 có đáp án, in miễn phí",
+    "description": "Bài tập câu bị động 被 (bèi) HSK 3 in miễn phí: 20 câu (被 hay 把, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 被 hoặc 把",
+        "instructions": "Điền 被 hoặc 把 vào chỗ trống. Phần nghĩa tiếng Việt cho biết câu có nghĩa gì.",
+        "items": [
+          "Điện thoại của tôi bị em trai lấy mất.",
+          "Em trai lấy mất điện thoại của tôi.",
+          "Bạn đóng cửa lại đi.",
+          "Bánh mì của tôi bị em gái ăn mất.",
+          "Anh ấy bị thầy giáo gọi lên văn phòng.",
+          "Xin hãy để những đồ này ở cửa.",
+          "Cuốn sách đó đã có người mượn rồi.",
+          "Mẹ đã giặt sạch quần áo."
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng có 被.",
+        "items": [
+          "Cá của tôi bị mèo ăn mất rồi.",
+          "Tiền của anh ấy bị người ta lấy mất rồi.",
+          "Bọn trẻ không ăn hết cái bánh ngọt đó.",
+          "Sách của bạn bị ai lấy mất?",
+          "Chúng tôi bị thầy giáo nhìn thấy rồi.",
+          "Ô của tôi bị bạn mượn mất rồi."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Cốc của tôi bị em trai lấy đi rồi.",
+          "Táo bị em gái ăn mất rồi.",
+          "Tiền của tôi không bị em trai lấy.",
+          "Sách của tôi bị anh ấy mượn mất rồi.",
+          "Tôi bị thầy giáo nhìn thấy rồi.",
+          "Hoa quả của tôi bị em trai ăn mất rồi."
+        ]
+      }
+    ]
+  }
+}

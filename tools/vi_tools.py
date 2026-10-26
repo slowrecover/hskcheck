@@ -675,7 +675,9 @@ def _vi_pages(root):
 
 def _vi_gaps(root, gaps):
     """{level: [[before, after, answer, options, Vietnamese, answer pinyin, sentence pinyin, slug], ...]}: the checked gap
-    sentences of tools/practice.py whose grammar page has a Vietnamese file, with the Vietnamese of that file."""
+    sentences of tools/practice.py whose grammar page has a Vietnamese file, with the Vietnamese of that file. A level
+    gets gap sentences only once they come from at least two Vietnamese grammar pages (the rule of daily._check_data):
+    until then its questions are meanings, pinyin and listening only."""
     pages = _vi_pages(root)
     out = {}
     for n, items in gaps.items():
@@ -697,7 +699,7 @@ def _vi_gaps(root, gaps):
                 raise SystemExit(f"vi_tools: Chinese characters in the Vietnamese of a gap sentence on {x['slug']}")
             out.setdefault(n, []).append(
                 [x["before"], x["after"], x["answer"], x["options"], vi, x["apy"], x["spy"], x["slug"]])
-    return out
+    return {n: items for n, items in out.items() if len({g[7] for g in items}) >= 2}
 
 
 def _grammar_sentences(root):
