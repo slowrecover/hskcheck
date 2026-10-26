@@ -61,6 +61,8 @@ TH_SWAPS = [
     ('<p class="empty" id="loading">Loading words…</p>', '<p class="empty" id="loading">กำลังโหลดคำศัพท์…</p>'),
     ('<a id="test-link" href="/hsk-practice-test/">Test yourself: take the HSK practice test →</a>',
      '<a id="test-link" href="/th/hsk-practice-test/">ทดสอบตัวเอง: ทำแบบทดสอบ HSK →</a>'),
+    ('<a id="quiz-link" href="/daily-hsk-quiz/">Ten questions a day: today\'s HSK quiz →</a>',
+     '<a id="quiz-link" href="/th/daily-hsk-quiz/">วันละ 10 ข้อ: ทำควิซ HSK ของวันนี้ →</a>'),
     ('<h2 id="set-title">Settings</h2>', '<h2 id="set-title">ตั้งค่า</h2>'),
     ('<label class="fc-set">New words a day', '<label class="fc-set">คำใหม่ต่อวัน'),
     ('<input type="checkbox" id="show-pinyin"> Show pinyin on the front</label>',

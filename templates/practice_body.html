@@ -24,6 +24,7 @@
       <p class="empty" id="loading">Loading the test…</p>
     </div>
     <p class="pt-note" id="storage-note" hidden>This browser is not letting the page save, so your best scores will not be kept.</p>
+    <p class="study-link"><a id="quiz-link" href="/daily-hsk-quiz/">Ten new questions every day: the daily HSK quiz →</a></p>
   </section>
 
   <section class="guide" aria-labelledby="guide-title">
@@ -334,6 +335,7 @@ function addToCards(list) {
 async function setLevel(n, autostart) {
   level = n; state.level = n; save();
   if (location.hash !== "#hsk" + n) history.replaceState(null, "", "#hsk" + n);
+  document.getElementById("quiz-link").hash = "hsk" + n;
   document.querySelectorAll(".lv-btn").forEach(b => b.setAttribute("aria-pressed", String(+b.dataset.level === n)));
   area.innerHTML = '<p class="empty">' + esc(UI.loading) + '</p>';
   phase = "loading";

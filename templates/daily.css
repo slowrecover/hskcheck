@@ -1,0 +1,18 @@
+/* Daily HSK quiz: the practice test's question layout (practice.css) plus the streak and the last 7 days. */
+.dq-stats { display: grid; gap: 10px; margin-top: 14px; }
+.dq-streak { margin: 0; font-weight: 600; }
+.dq-week { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
+.dq-week li { display: grid; justify-items: center; gap: 2px; padding: 6px 2px; border: 1px solid var(--rule); border-radius: 8px;
+  min-width: 0; text-align: center; }
+.dq-week .d { font-size: 12px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 100%; }
+.dq-week .s { font: 500 14px var(--f-num); font-variant-numeric: tabular-nums; color: var(--muted); white-space: nowrap; }
+.dq-week li.on { border-color: color-mix(in srgb, var(--ok) 45%, var(--rule)); background: color-mix(in srgb, var(--ok) 10%, var(--sheet)); }
+.dq-week li.on .s { color: var(--ok); }
+.dq-week li.other .s { color: var(--ok); }
+.dq-week li.today { outline: 2px solid var(--accent); outline-offset: -1px; }
+@media (max-width: 380px) { .dq-week .s { font-size: 12px; } .dq-week { gap: 4px; } }
+.dq-date { font-weight: 600; color: var(--ink) !important; }
+.dq-tomorrow { display: grid; gap: 8px; padding: 14px; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--paper); }
+.dq-tomorrow p { margin: 0; }
+.dq-tomorrow .v { font-weight: 600; }
+.dq-tomorrow p:not(.v) { color: var(--muted); }

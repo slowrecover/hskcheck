@@ -105,6 +105,8 @@ TH_SWAPS = [
     ('<p class="empty" id="loading">Loading the test…</p>', '<p class="empty" id="loading">กำลังโหลดแบบทดสอบ…</p>'),
     ('This browser is not letting the page save, so your best scores will not be kept.',
      'เบราว์เซอร์นี้ไม่อนุญาตให้บันทึกข้อมูล คะแนนสูงสุดจึงจะไม่ถูกเก็บไว้'),
+    ('<a id="quiz-link" href="/daily-hsk-quiz/">Ten new questions every day: the daily HSK quiz →</a>',
+     '<a id="quiz-link" href="/th/daily-hsk-quiz/">คำถามใหม่ 10 ข้อทุกวัน: ควิซ HSK ประจำวัน →</a>'),
     ('<h2 id="guide-title">About this practice test</h2>', '<h2 id="guide-title">เกี่ยวกับแบบทดสอบนี้</h2>'),
     ('<h3>What is in the test?</h3>', '<h3>แบบทดสอบมีอะไรบ้าง?</h3>'),
     ('<p>Twenty questions drawn at random from the words of the level you choose, so every test is different. You '

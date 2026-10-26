@@ -1,0 +1,435 @@
+<div class="wrap">
+  <header>
+    __NAV__
+    <div class="eyebrow"><span>New HSK · 2025 syllabus</span><span class="chip">Levels 1–5</span><span class="chip">Free</span></div>
+    <h1><span class="zh">每日</span>Daily HSK Quiz</h1>
+    <p class="lede">Ten questions a day for your level, new every day and the same for every learner. Answer them in two minutes, keep your streak going, and come back tomorrow.</p>
+  </header>
+
+  <section class="sheet" aria-labelledby="pick-title">
+    <h2 id="pick-title" class="visually-hidden">Choose a level</h2>
+    <div class="levels pt-levels" role="group" aria-label="Level">
+      <span class="lbl">Level</span>
+      <button type="button" class="lv-btn" data-level="1" aria-pressed="false">HSK 1<span class="lv-best" id="mark1"></span></button>
+      <button type="button" class="lv-btn" data-level="2" aria-pressed="false">HSK 2<span class="lv-best" id="mark2"></span></button>
+      <button type="button" class="lv-btn" data-level="3" aria-pressed="false">HSK 3<span class="lv-best" id="mark3"></span></button>
+      <button type="button" class="lv-btn" data-level="4" aria-pressed="false">HSK 4<span class="lv-best" id="mark4"></span></button>
+      <button type="button" class="lv-btn" data-level="5" aria-pressed="false">HSK 5<span class="lv-best" id="mark5"></span></button>
+    </div>
+    <div class="dq-stats">
+      <p class="dq-streak" id="streak"></p>
+      <ol class="dq-week" id="week" aria-label="The last 7 days"></ol>
+    </div>
+  </section>
+
+  <section class="sheet" aria-labelledby="quiz-title" id="test-sheet">
+    <h2 id="quiz-title" class="visually-hidden">Today's quiz</h2>
+    <div id="test-area" aria-live="polite">
+      <p class="empty" id="loading">Loading today's quiz…</p>
+    </div>
+    <p class="pt-note" id="storage-note" hidden>This browser is not letting the page save, so your streak and results will not be kept.</p>
+  </section>
+
+  <section class="guide" aria-labelledby="guide-title">
+    <h2 id="guide-title">About the daily quiz</h2>
+    <div class="qa">
+      <div>
+        <h3>What is in the quiz?</h3>
+        <p>Ten questions on the HSK 3.0 words of your level: the meaning of a word, the word for a meaning, the right pinyin, a word you hear, and at HSK 1–3 a gap to fill in a sentence from the <a href="/learn/">grammar pages</a>. You see the answer after every question.</p>
+      </div>
+      <div>
+        <h3>Why is it the same for everyone?</h3>
+        <p>The questions are picked from the date, so everyone at the same level gets the same quiz on the same day, and a new one at midnight. Compare your score with a classmate, or do it together with your teacher.</p>
+      </div>
+      <div>
+        <h3>How does the streak work?</h3>
+        <p>Finish a quiz at any level and the day counts. Your streak is the number of days in a row you have finished one, and the week shows your score at the level you have chosen. It is all kept in this browser on this device; nothing is sent anywhere.</p>
+      </div>
+      <div>
+        <h3>Want more practice?</h3>
+        <p>Take a longer <a href="/hsk-practice-test/">HSK practice test</a> of 20 questions as often as you like, or learn new words every day with the <a href="/hsk-flashcards/">flashcards</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="notes">
+    <p><b>Words.</b> HSK 3.0 (New HSK) vocabulary, 2025 syllabus, the same lists as the <a href="/hsk-1-word-list/">word list pages</a> and the practice test. Listening questions use your device's Chinese voice; without one, you choose the word for its meaning instead.</p>
+  </footer>
+</div>
+
+<script>
+const UI = __UI_JSON__;
+const DATA_BASE = "__DATA_BASE__";
+const KEY = "hskcheck-daily-v1";
+const CARDS_KEY = "hskcheck-flashcards-v1";  // the flashcards page's progress, so missed words can be added to it
+const TOTAL = 10;
+// The kinds of question each day, in a fixed order so the quiz is the same on every device.
+const PLAN_GAP = ["gap", "gap", "listen", "listen", "pinyin", "pinyin", "word", "word", "meaning", "meaning"];
+const PLAN = ["listen", "listen", "pinyin", "pinyin", "pinyin", "word", "word", "meaning", "meaning", "meaning"];
+
+let saveOk = true;
+function loadState() {
+  try { const s = JSON.parse(localStorage.getItem(KEY) || "null"); if (s && s.days) return s; } catch (e) { saveOk = false; }
+  return { days: {}, level: 0, cur: null };
+}
+const state = loadState();
+function save() {
+  try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { saveOk = false; }
+  document.getElementById("storage-note").hidden = saveOk;
+}
+function today() { const d = new Date(); return Math.floor((d.getTime() - d.getTimezoneOffset() * 60000) / 86400000); }
+function dateOf(day) { return new Date(day * 86400000 + 12 * 3600000); }  // noon UTC of that day: right weekday everywhere
+function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+function fmt(s, v) { return s.replace(/\{(\w+)\}/g, (m, k) => (k in v ? v[k] : m)); }
+function range(n) { return Array.from({ length: n }, (_, i) => i); }
+function bare(p) { return p.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z]/g, ""); }
+function readings(p) { return p.split(";").map(bare); }
+
+// Seeded random numbers: the same date and level give the same quiz everywhere.
+function hash(str) { let h = 2166136261; for (let i = 0; i < str.length; i++) { h ^= str.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+function rng(seed) {
+  let a = hash(seed);
+  return () => { a = (a + 0x6D2B79F5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+}
+function shuffle(a, r) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+
+function voice() {
+  if (!("speechSynthesis" in window)) return null;
+  return speechSynthesis.getVoices().find(v => /^zh(-|_)?(CN|Hans)?/i.test(v.lang)) || null;
+}
+function speak(text, rate) {
+  const v = voice(); if (!v) return;
+  const u = new SpeechSynthesisUtterance(text); u.voice = v; u.lang = v.lang; u.rate = rate || 0.85;
+  speechSynthesis.cancel(); speechSynthesis.speak(u);
+}
+
+const cache = {};
+let level = 1, words = [], gaps = [], wordIndex = {};
+let day = today(), quiz = [], pos = 0, results = "", answered = false, phase = "start";
+const area = document.getElementById("test-area");
+
+async function loadLevel(n) {
+  if (!cache[n]) {
+    const r = await fetch(DATA_BASE + "hsk" + n + ".json");
+    if (!r.ok) throw new Error(r.status);
+    cache[n] = await r.json();
+  }
+  return cache[n];
+}
+
+// A wrong option j for word i: no shared character, meaning or pinyin (ignoring tones).
+function canBeWrong(i, j) {
+  if (i === j) return false;
+  const a = words[i], b = words[j];
+  if (a[5].indexOf(j) >= 0 || a[2] === b[2]) return false;
+  for (const c of a[0]) if (b[0].indexOf(c) >= 0) return false;
+  const ra = readings(a[1]), rb = readings(b[1]);
+  return !ra.some(x => rb.indexOf(x) >= 0);
+}
+function wrongWords(i, k, show, r) {
+  const out = [], seen = new Set([show(i)]);
+  for (const j of shuffle(range(words.length), r)) {
+    if (out.length === k) break;
+    if (!canBeWrong(i, j) || seen.has(show(j))) continue;
+    if (out.some(o => !canBeWrong(o, j))) continue;  // wrong options are not the same word either
+    out.push(j); seen.add(show(j));
+  }
+  return out.length === k ? out : null;
+}
+
+function vocabQuestion(type, i, r) {
+  const w = words[i];
+  let opts;
+  if (type === "pinyin") {
+    if (w[3].length < 3) return null;
+    opts = [{ t: w[1], ok: true }].concat(shuffle(w[3].slice(), r).slice(0, 3).map(t => ({ t, ok: false })));
+  } else {
+    if (type === "listen" && !w[4]) return null;
+    const show = type === "meaning" ? (j => words[j][2]) : (j => words[j][0]);
+    const wrong = wrongWords(i, 3, show, r);
+    if (!wrong) return null;
+    opts = [{ t: show(i), ok: true }].concat(wrong.map(j => ({ t: show(j), ok: false })));
+  }
+  return { type, i, opts: shuffle(opts, r), cls: type === "meaning" ? "" : type === "pinyin" ? "py" : "zh" };
+}
+function valid(q) {
+  if (!q) return false;
+  const texts = q.opts.map(o => o.t);
+  return q.opts.filter(o => o.ok).length === 1 && new Set(texts).size === texts.length && texts.length >= 2;
+}
+
+// Today's ten questions for level n: words in a seeded order, each question with its own seeded options.
+function makeQuiz(n, d) {
+  const seed = "hskcheck-daily:" + d + ":" + n;
+  const pick = rng(seed), order = shuffle(range(words.length), pick);
+  const plan = gaps.length ? PLAN_GAP : PLAN;
+  const qs = [], used = new Set(), usedSlugs = new Set();
+  let at = 0;
+  plan.forEach((type, slot) => {
+    const r = rng(seed + ":" + slot);
+    if (type === "gap") {
+      const gOrder = shuffle(range(gaps.length), r);
+      const k = gOrder.find(x => !usedSlugs.has(gaps[x][7]));
+      if (k === undefined) return;
+      usedSlugs.add(gaps[k][7]);
+      const g = gaps[k];
+      qs.push({ type: "gap", g: k, opts: shuffle(g[3].map(t => ({ t, ok: t === g[2] })), r), cls: "zh" });
+      return;
+    }
+    for (let tries = 0; tries < words.length; tries++, at++) {
+      const i = order[at % words.length];
+      if (used.has(i)) continue;
+      const q = vocabQuestion(type, i, r);
+      if (!valid(q)) continue;
+      used.add(i); qs.push(q); at++;
+      return;
+    }
+  });
+  return shuffle(qs.filter(valid), rng(seed + ":order")).slice(0, TOTAL);
+}
+
+// --- streak and the last 7 days ----------------------------------------------------------------------------------
+function doneOn(d) { return state.days[d] && Object.keys(state.days[d]).length > 0; }
+function streak() {
+  let d = doneOn(day) ? day : day - 1, n = 0;
+  while (doneOn(d)) { n++; d--; }
+  return n;
+}
+function dayName(d) { return UI.days[dateOf(d).getUTCDay()]; }
+function longDate(d) {
+  try { return dateOf(d).toLocaleDateString(UI.locale, { weekday: "long", day: "numeric", month: "long", timeZone: "UTC" }); } catch (e) { return ""; }
+}
+function showStats() {
+  const s = streak();
+  document.getElementById("streak").innerHTML = s ? esc(fmt(s === 1 ? UI.streak1 : UI.streakN, { n: s }))
+    : esc(UI.streak0);
+  const cells = [];
+  for (let d = day - 6; d <= day; d++) {
+    const r = state.days[d] && state.days[d][level];
+    const other = !r && doneOn(d);
+    const val = r ? r[0] + "/" + r[1] : other ? "✓" : "–";
+    const label = dayName(d) + ": " + (r ? fmt(UI.weekScore, { s: r[0], t: r[1], n: level }) : other ? UI.weekOther : UI.weekNone);
+    cells.push('<li class="' + (r ? "on" : other ? "other" : "") + (d === day ? " today" : "") + '" title="' + esc(label) + '">' +
+      '<span class="d" aria-hidden="true">' + esc(dayName(d)) + '</span><span class="s" aria-hidden="true">' + esc(val) + '</span>' +
+      '<span class="visually-hidden">' + esc(label) + '</span></li>');
+  }
+  document.getElementById("week").innerHTML = cells.join("");
+  for (let n = 1; n <= 5; n++) {
+    const r = state.days[day] && state.days[day][n];
+    document.getElementById("mark" + n).textContent = r ? "✓ " + r[0] + "/" + r[1] : "";
+  }
+}
+function prune() {
+  for (const d of Object.keys(state.days)) if (+d < day - 60) delete state.days[d];
+}
+
+// --- the quiz -----------------------------------------------------------------------------------------------------
+function inProgress() {
+  const c = state.cur;
+  return c && c.d === day && c.lv === level && typeof c.r === "string" && c.r.length < TOTAL ? c : null;
+}
+
+function showStart() {
+  phase = "start";
+  const done = state.days[day] && state.days[day][level];
+  if (done) { quiz = makeQuiz(level, day); results = done[2] || ""; showDone(false); return; }
+  const c = inProgress();
+  area.innerHTML = '<div class="pt-start"><p class="dq-date">' + esc(longDate(day)) + '</p>' +
+    '<p>' + esc(fmt(UI.startSub, { n: level })) + '</p>' +
+    '<button type="button" class="button" id="start-btn">' +
+      esc(c && c.r.length ? fmt(UI.resume, { k: c.r.length + 1, t: TOTAL }) : fmt(UI.start, { n: level })) + '</button></div>';
+  document.getElementById("start-btn").addEventListener("click", start);
+}
+
+function start() {
+  quiz = makeQuiz(level, day);
+  const c = inProgress();
+  results = c ? c.r.slice(0, quiz.length - 1) : "";
+  pos = results.length; phase = "test";
+  state.cur = { d: day, lv: level, r: results }; save();
+  showQuestion();
+}
+
+function promptHtml(q, listen) {
+  if (q.type === "gap") {
+    const g = gaps[q.g];
+    return '<div class="pt-prompt"><div class="pt-sent" lang="zh-Hans">' + esc(g[0]) + '<span class="pt-gap">　</span>' + esc(g[1]) +
+      '</div><div class="pt-tr">' + esc(g[4]) + '</div></div>';
+  }
+  const w = words[q.i];
+  if (q.type === "word" || (q.type === "listen" && !listen)) return '<div class="pt-prompt"><div class="pt-mean">' + esc(w[2]) + '</div></div>';
+  if (q.type === "listen") return '<div class="pt-prompt"><div class="pt-play"><button type="button" class="button small" id="play-btn">' +
+    esc(UI.play) + '</button><button type="button" class="button small ghost-btn" id="slow-btn">' + esc(UI.slow) + '</button></div></div>';
+  return '<div class="pt-prompt"><div class="pt-hz" lang="zh-Hans">' + esc(w[0]) + '</div></div>';
+}
+const ASK = { meaning: "askMeaning", word: "askWord", pinyin: "askPinyin", listen: "askListen", gap: "askGap" };
+
+function showQuestion() {
+  const q = quiz[pos];
+  // Without a Chinese voice a listening question shows the meaning instead: same word, same options.
+  const listen = q.type === "listen" && !!voice();
+  answered = false;
+  const sheet = document.getElementById("test-sheet");
+  area.innerHTML =
+    '<div class="pt-top"><p class="pt-ask">' + esc(UI[ASK[q.type === "listen" && !listen ? "word" : q.type]]) + '</p><span class="pt-count">' +
+      esc(UI.q + " " + (pos + 1) + " " + UI.of + " " + quiz.length) + '</span></div>' +
+    '<div class="pt-bar" aria-hidden="true"><i style="width:' + (pos / quiz.length * 100) + '%"></i></div>' +
+    promptHtml(q, listen) +
+    '<div class="pt-opts" role="group">' + q.opts.map((o, k) =>
+      '<button type="button" class="pt-opt" data-k="' + k + '"><span class="k" aria-hidden="true">' + (k + 1) + '</span>' +
+      '<span class="t ' + q.cls + '"' + (q.cls === "zh" ? ' lang="zh-Hans"' : '') + '>' + esc(o.t) + '</span></button>').join("") +
+    '</div><div id="fb"></div>';
+  area.querySelectorAll(".pt-opt").forEach(b => b.addEventListener("click", () => choose(+b.dataset.k)));
+  if (listen) {
+    const w = words[q.i][0];
+    document.getElementById("play-btn").addEventListener("click", () => speak(w));
+    document.getElementById("slow-btn").addEventListener("click", () => speak(w, 0.55));
+    speak(w);
+  }
+  const r = sheet.getBoundingClientRect();
+  if (r.top < 0) sheet.scrollIntoView({ block: "start" });
+}
+
+function answerHtml(q) {
+  if (q.type === "gap") {
+    const g = gaps[q.g];
+    return '<p class="a-zh" lang="zh-Hans">' + esc(g[0]) + '<b>' + esc(g[2]) + '</b>' + esc(g[1]) + '</p>' +
+      (g[6] ? '<p class="a-py">' + esc(g[6]) + '</p>' : '') + '<p class="a-en">' + esc(g[4]) + '</p>' +
+      '<p class="a-py"><span lang="zh-Hans">' + esc(g[2]) + '</span> ' + esc(g[5]) + '</p>' +
+      '<p><a href="' + UI.learnBase + g[7] + '/">' + esc(UI.grammar) + '</a></p>';
+  }
+  const w = words[q.i];
+  return '<p class="a-zh" lang="zh-Hans">' + esc(w[0]) + '</p><p class="a-py">' + esc(w[1]) + '</p><p class="a-en">' + esc(w[2]) + '</p>';
+}
+
+function choose(k) {
+  if (answered || phase !== "test") return;
+  answered = true;
+  const q = quiz[pos], ok = q.opts[k].ok;
+  results += ok ? "1" : "0";
+  area.querySelectorAll(".pt-opt").forEach((b, j) => {
+    b.disabled = true;
+    if (q.opts[j].ok) b.classList.add("ok");
+    else if (j === k) b.classList.add("no");
+    else b.classList.add("dim");
+  });
+  const last = pos === quiz.length - 1;
+  if (last) record(); else { state.cur = { d: day, lv: level, r: results }; save(); }
+  document.getElementById("fb").innerHTML = '<div class="pt-fb ' + (ok ? "ok" : "no") + '"><p class="v">' + esc(ok ? UI.right : UI.wrong) + '</p>' +
+    answerHtml(q) + '</div><div class="pt-actions" style="margin-top:12px"><button type="button" class="button" id="next-btn">' +
+    esc(last ? UI.finish : UI.next) + '</button></div>';
+  const nb = document.getElementById("next-btn");
+  nb.addEventListener("click", next);
+  nb.focus({ preventScroll: true });
+  const r = nb.getBoundingClientRect();
+  if (r.bottom > innerHeight) nb.scrollIntoView({ block: "end", behavior: "smooth" });
+}
+
+// The result is kept as soon as the last question is answered, so it counts even if the page is closed then.
+function record() {
+  const score = results.split("").filter(x => x === "1").length;
+  state.days[day] = state.days[day] || {};
+  state.days[day][level] = [score, quiz.length, results];
+  state.cur = null;
+  prune(); save(); showStats();
+}
+
+function next() {
+  if (!answered) return;
+  if (pos < quiz.length - 1) { pos++; showQuestion(); } else showDone(true);
+}
+
+function missedWord(q) {
+  if (q.type === "gap") { const a = gaps[q.g][2]; return a in wordIndex ? a : null; }
+  return words[q.i][0];
+}
+
+function showDone(fresh) {
+  phase = "done";
+  const r = state.days[day] && state.days[day][level];
+  const score = r ? r[0] : results.split("").filter(x => x === "1").length, total = r ? r[1] : quiz.length;
+  // The words missed today, found again from today's quiz (only if it still lines up with what was answered).
+  const missed = results.length === quiz.length ? quiz.filter((q, k) => results[k] === "0") : [];
+  const p = score / total;
+  const msg = p >= 0.9 ? UI.msg4 : p >= 0.7 ? UI.msg3 : p >= 0.4 ? UI.msg2 : UI.msg1;
+  const toAdd = [...new Set(missed.map(missedWord).filter(Boolean))];
+  const items = missed.map(q => {
+    if (q.type === "gap") {
+      const g = gaps[q.g];
+      return '<li><span class="m-zh" lang="zh-Hans">' + esc(g[0] + g[2] + g[1]) + '</span><span class="m-py">' + esc(g[6] || (g[2] + " " + g[5])) +
+        '</span><span class="m-en">' + esc(g[4]) + '</span></li>';
+    }
+    const w = words[q.i];
+    return '<li><span class="m-zh" lang="zh-Hans">' + esc(w[0]) + '</span><span class="m-py">' + esc(w[1]) + '</span><span class="m-en">' + esc(w[2]) + '</span></li>';
+  }).join("");
+  const s = streak();
+  area.innerHTML =
+    '<div class="pt-score"><p class="sub">' + esc(fmt(UI.scoreHead, { n: level })) + '</p><p class="big">' + score + ' / ' + total + '</p>' +
+      '<p>' + esc(fmt(msg, { n: level })) + '</p>' +
+      (s ? '<p class="sub">' + esc(fmt(s === 1 ? UI.streak1 : UI.streakN, { n: s })) + '</p>' : '') + '</div>' +
+    (results.length === quiz.length ? '<h3 class="pt-ask">' + esc(UI.missedHead) + '</h3>' +
+      (missed.length ? '<ul class="pt-missed">' + items + '</ul>' : '<p class="empty">' + esc(UI.noMissed) + '</p>') : '') +
+    (toAdd.length ? '<div class="pt-actions"><button type="button" class="button ghost-btn" id="add-btn">' + esc(fmt(UI.add, { n: level })) + '</button></div>' +
+      '<p class="pt-added" id="added" hidden>' + esc(UI.added) + '</p>' : '') +
+    '<div class="dq-tomorrow"><p class="v">' + esc(UI.tomorrow) + '</p><p>' + esc(UI.tomorrowSub) + '</p>' +
+      '<div class="pt-actions"><a class="button" href="' + UI.testBase + '#hsk' + level + '">' + esc(fmt(UI.testLink, { n: level })) + '</a>' +
+      '<a class="button ghost-btn" href="' + UI.cardsBase + '#hsk' + level + '">' + esc(fmt(UI.cardsLink, { n: level })) + '</a></div></div>';
+  const ab = document.getElementById("add-btn");
+  if (ab) ab.addEventListener("click", () => { addToCards(toAdd); ab.disabled = true; document.getElementById("added").hidden = false; });
+  const sheet = document.getElementById("test-sheet");
+  if (fresh && sheet.getBoundingClientRect().top < 0) sheet.scrollIntoView({ block: "start" });
+}
+
+// Missed words go to the front of the flashcards' new words, or come back for review today if already started.
+function addToCards(list) {
+  let s = null;
+  try { s = JSON.parse(localStorage.getItem(CARDS_KEY) || "null"); } catch (e) {}
+  if (!s || !s.lv) s = { lv: {}, intro: {}, streak: { last: -1, n: 0 }, set: { newPerDay: 10, pinyin: false, level: level } };
+  s.set = s.set || { newPerDay: 10, pinyin: false };
+  s.boost = s.boost || {};
+  const boost = s.boost[level] || [], st = s.lv[level] || (s.lv[level] = {}), t = today();
+  list.forEach(w => { if (st[w]) st[w] = [0, t]; else if (boost.indexOf(w) < 0) boost.push(w); });
+  s.boost[level] = boost; s.set.level = level; s.set.chosen = true;
+  try { localStorage.setItem(CARDS_KEY, JSON.stringify(s)); } catch (e) {}
+}
+
+async function setLevel(n) {
+  level = n; state.level = n; save();
+  if (location.hash !== "#hsk" + n) history.replaceState(null, "", "#hsk" + n);
+  document.querySelectorAll(".lv-btn").forEach(b => b.setAttribute("aria-pressed", String(+b.dataset.level === n)));
+  showStats();
+  area.innerHTML = '<p class="empty">' + esc(UI.loading) + '</p>';
+  phase = "loading";
+  let d;
+  try { d = await loadLevel(n); } catch (e) { area.innerHTML = '<p class="empty">' + esc(UI.loadFail) + '</p>'; return; }
+  if (level !== n) return;
+  words = d.w; gaps = d.g; wordIndex = {};
+  words.forEach((w, i) => { wordIndex[w[0]] = i; });
+  showStart();
+}
+
+document.querySelectorAll(".lv-btn").forEach(b => b.addEventListener("click", () => setLevel(+b.dataset.level)));
+document.addEventListener("keydown", e => {
+  if (e.altKey || e.ctrlKey || e.metaKey || phase !== "test") return;
+  if (!answered && /^[1-4]$/.test(e.key)) {
+    const k = +e.key - 1;
+    if (quiz[pos] && k < quiz[pos].opts.length) { e.preventDefault(); choose(k); }
+  } else if (answered && e.key === "Enter" && !(e.target.closest && e.target.closest("button, a"))) {
+    e.preventDefault(); next();
+  }
+});
+addEventListener("hashchange", () => {
+  const m = location.hash.match(/^#hsk([1-5])$/);
+  if (m && +m[1] !== level) setLevel(+m[1]);
+});
+// A new day while the page is open: a new quiz (only between quizzes, never in the middle of one).
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible" && today() !== day && phase !== "test" && phase !== "loading") {
+    day = today(); showStats(); showStart();
+  }
+});
+
+document.getElementById("storage-note").hidden = saveOk;
+const hashLevel = (location.hash.match(/^#hsk([1-5])$/) || [])[1];
+setLevel(hashLevel ? +hashLevel : Math.min(5, Math.max(1, +state.level || 1)));
+</script>
