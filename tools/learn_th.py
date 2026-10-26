@@ -114,7 +114,8 @@ def worksheet_cta(p, url):
     return ('<section class="sheet learn">\n    <h2>แบบฝึกหัดพิมพ์ได้</h2>\n'
             f'    <p>ฝึกไวยากรณ์ข้อนี้บนกระดาษ: แบบฝึกหัด {n} ข้อ ใช้เฉพาะคำศัพท์ HSK {p["level"]} '
             'พร้อมเฉลยแยกหน้า พิมพ์และถ่ายเอกสารแจกในชั้นเรียนได้ฟรี</p>\n'
-            f'    <div class="cta"><a class="button" href="{url}worksheet/">เปิดแบบฝึกหัด</a></div>\n  </section>\n')
+            f'    <div class="cta"><a class="button" href="{url}worksheet/">เปิดแบบฝึกหัด</a>'
+            f'<a class="button ghost" href="{url}practice/">ฝึกทำออนไลน์</a></div>\n  </section>\n')
 
 
 def build(*, root, tpl, site, css, ws_css, render, nav, font_link, foot):

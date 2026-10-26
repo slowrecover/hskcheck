@@ -10,6 +10,7 @@ Outputs (written at the repository root):
   hsk-handwriting-characters/     which characters must be written by hand (see tools/handwriting.py)
   mandarin-tone-changes/          written vs spoken tones (see tools/tones.py; data in tones/words.json)
   hsk-practice-test/              the HSK practice test (see tools/practice.py)
+  learn/<slug>/practice/          grammar practice online for every grammar worksheet (see tools/grammar_practice.py)
   sitemap.xml                     every page above
 
 Run from anywhere:  python3 tools/build.py
@@ -24,6 +25,7 @@ import unicodedata
 import build_th
 import cny
 import handwriting
+import grammar_practice
 import learn
 import tones
 import hsk4
@@ -599,6 +601,7 @@ def main():
 
     # Grammar explainers
     extra_urls += learn.build(pages, nav, render, base_css, TPL, SITE)
+    extra_urls += grammar_practice.build(ROOT, pages, nav, render, base_css, TPL, SITE)
 
     # Printable packs and the Terms of Service
     extra_urls += packs.build(ROOT, pages, nav, render, base_css, SITE)

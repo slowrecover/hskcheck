@@ -9,6 +9,7 @@ Outputs:
   th/chinese-measure-words/        Thai measure word finder (see tools/measure_th.py)
   th/old-hsk-to-new-hsk/           Thai old HSK -> new HSK page (see tools/upgrade_th.py)
   th/hsk-practice-test/            Thai HSK practice test (see tools/practice.py)
+  th/learn/<slug>/practice/        Thai grammar practice online (see tools/grammar_practice.py)
   th/upgrade-packs/                Thai printable pack pages (see tools/packs.py)
 
 data/th/hskN_th.tsv has two columns, word and Thai meaning, in the same order as data/hskN.tsv.
@@ -19,6 +20,7 @@ Called from tools/build.py; returns the URLs it wrote so they go into sitemap.xm
 import html
 import json
 
+import grammar_practice
 import hsk4
 import hsk5
 import learn_th
@@ -307,6 +309,11 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
         css=base_css + (tpl / "learn.css").read_text(encoding="utf-8") + th_css,
         ws_css=base_css + (tpl / "learn_worksheet.css").read_text(encoding="utf-8") + th_css,
     )
+    urls += grammar_practice.build_th(
+        root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK, foot=FOOT,
+        css=base_css + (tpl / "checker.css").read_text(encoding="utf-8")
+        + (tpl / "practice.css").read_text(encoding="utf-8") + th_css,
+    )
     return urls
 
 
@@ -318,6 +325,7 @@ def alternates(root, levels):
     pairs = {"/": TH_URL}
     pairs.update({f"/hsk-{n}-word-list/": f"{TH_URL}hsk-{n}-word-list/" for n in have})
     pairs.update(learn_th.alternates(root))
+    pairs.update(grammar_practice.alternates(root))
     pairs.update(yct.alternates(root))
     pairs.update(worksheets_th.alternates(root, have))
     pairs.update(measure_th.alternates(root))

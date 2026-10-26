@@ -183,7 +183,8 @@ def worksheet_cta(p, url):
     return ('<section class="sheet learn">\n    <h2>Printable worksheet</h2>\n'
             f'    <p>Practise this grammar point on paper: {n} exercises using only HSK {p["level"]} words, '
             'with an answer key on a separate page. Free to print and copy for your class.</p>\n'
-            f'    <div class="cta"><a class="button" href="{url}worksheet/">Open the worksheet</a></div>\n  </section>\n')
+            f'    <div class="cta"><a class="button" href="{url}worksheet/">Open the worksheet</a>'
+            f'<a class="button ghost" href="{url}practice/">Practise online</a></div>\n  </section>\n')
 
 
 def write_worksheet(p, url, tpl, css, nav, pages_nav, render, site):

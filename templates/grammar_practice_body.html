@@ -1,0 +1,305 @@
+<div class="wrap">
+  <header>
+    __NAV__
+    <div class="eyebrow"><span>HSK grammar practice</span><span class="chip">HSK __LEVEL__</span></div>
+    <h1><span class="zh">__ZH__</span>Practise Online</h1>
+    <p class="lede">Practise __NAME__ with __COUNT__ exercises that use only HSK __LEVEL__ words: __KINDS__. You see the answer straight away and your score at the end. Need the rules first? Read the <a href="__URL__">explanation with examples</a>.</p>
+  </header>
+
+  <section class="sheet" aria-labelledby="ex-title" id="test-sheet">
+    <h2 id="ex-title" class="visually-hidden">Exercises</h2>
+    <div id="test-area" aria-live="polite">
+      <p class="empty" id="loading">Loading the exercises…</p>
+    </div>
+    <p class="pt-note" id="storage-note" hidden>This browser is not letting the page save, so your best score will not be kept.</p>
+  </section>
+
+  <section class="guide" aria-labelledby="guide-title">
+    <h2 id="guide-title">How this practice works</h2>
+    <div class="qa">
+      <div>
+        <h3>Where do the exercises come from?</h3>
+        <p>They are the exercises of the <a href="__URL__worksheet/">printable worksheet</a> for this grammar point, in a different order each time. Every sentence uses only HSK __LEVEL__ words, and the English under each sentence tells you what it should mean.</p>
+      </div>
+      <div>
+        <h3>How do I answer?</h3>
+        <p>Tap an answer, or press 1–4 on a keyboard. To put words in order, tap them one by one (or press their numbers), then check. Where more than one order is right, every one of them counts.</p>
+      </div>
+      <div>
+        <h3>Where is my score kept?</h3>
+        <p>Your best score for this page is kept in this browser on this device. Your answers are not sent anywhere.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sheet gp-more">
+    <h2>More grammar practice</h2>
+    __MORE__
+    <p><a href="/learn/">All grammar points</a> · <a href="/hsk-practice-test/">HSK practice test</a></p>
+  </section>
+</div>
+
+<script>
+const UI = __UI_JSON__;
+const DATA = "__DATA__";
+const SLUG = "__SLUG__";
+const PAGE = "__URL__";
+const KEY = "hskcheck-grammar-practice-v1";
+
+let saveOk = true;
+function loadState() {
+  try { const s = JSON.parse(localStorage.getItem(KEY) || "null"); if (s && s.best) return s; } catch (e) { saveOk = false; }
+  return { best: {} };
+}
+const state = loadState();
+function save() {
+  try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { saveOk = false; }
+  document.getElementById("storage-note").hidden = saveOk;
+}
+function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+function fmt(s, v) { return s.replace(/\{(\w+)\}/g, (m, k) => (k in v ? v[k] : m)); }
+function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+function bare(s) { return s.replace(/[，。：！？、“”\s]/g, ""); }
+
+function voice() {
+  if (!("speechSynthesis" in window)) return null;
+  return speechSynthesis.getVoices().find(v => /^zh(-|_)?(CN|Hans)?/i.test(v.lang)) || null;
+}
+function speak(text) {
+  const v = voice(); if (!v) return;
+  const u = new SpeechSynthesisUtterance(text); u.voice = v; u.lang = v.lang; u.rate = 0.85;
+  speechSynthesis.cancel(); speechSynthesis.speak(u);
+}
+
+const area = document.getElementById("test-area");
+let items = [], run = [], pos = 0, score = 0, scored = 0, missed = [], answered = false, phase = "loading";
+let q = null;  // the question on screen
+
+// A question: kind (choose / order / fix / reveal), the item, and for choose and fix the options with the right one.
+function makeQuestion(it) {
+  if (it.t === "c") {
+    if (it.o.length < 2) return { kind: "reveal", it };
+    return { kind: "choose", it, opts: shuffle(it.o.map(t => ({ t, ok: t === it.r }))) };
+  }
+  if (it.t === "f") {
+    if (!it.o.length) return { kind: "reveal", it };
+    const opts = [{ t: it.s, ok: false }, { t: it.r[0], ok: true }].concat(it.o.map(t => ({ t, ok: false })));
+    return { kind: "fix", it, opts: shuffle(opts) };
+  }
+  const right = new Set(it.r.map(bare));
+  let tiles = it.w.map((t, i) => ({ t, i }));
+  for (let n = 0; n < 30; n++) { shuffle(tiles); if (!right.has(bare(tiles.map(x => x.t).join("")))) break; }
+  return { kind: "order", it, tiles, placed: [] };
+}
+
+function start() {
+  const groups = {};
+  items.forEach(it => { (groups[it.x] = groups[it.x] || []).push(it); });
+  run = [];
+  Object.keys(groups).map(Number).sort((a, b) => a - b).forEach(x => { run = run.concat(shuffle(groups[x].slice())); });
+  pos = 0; score = 0; scored = 0; missed = []; phase = "test";
+  show();
+}
+
+function fullChoose(it, mark) {
+  return esc(it.b) + (mark ? "<b>" + esc(it.r) + "</b>" : esc(it.r)) + esc(it.a);
+}
+const ASK = { choose: "askChoose", order: "askOrder", fix: "askFix", reveal: "askReveal" };
+
+function show() {
+  q = makeQuestion(run[pos]);
+  answered = false;
+  const it = q.it;
+  let prompt = "", body = "";
+  if (q.kind === "choose" || (q.kind === "reveal" && it.t === "c")) {
+    prompt = '<div class="pt-prompt"><div class="pt-sent" lang="zh-Hans">' + esc(it.b) + '<span class="pt-gap">　</span>' + esc(it.a) +
+      '</div><div class="pt-tr">' + esc(it.m) + '</div></div>';
+  } else if (q.kind === "reveal") {
+    prompt = '<div class="pt-prompt"><div class="pt-sent" lang="zh-Hans">' + esc(it.s) + '</div><div class="pt-tr">' + esc(it.m) + '</div></div>';
+  } else {
+    prompt = '<div class="pt-prompt gp-mean"><div class="pt-mean">' + esc(it.m) + '</div></div>';
+  }
+  if (q.kind === "choose" || q.kind === "fix") {
+    body = '<div class="pt-opts' + (q.kind === "fix" ? ' gp-sents' : '') + '" role="group">' + q.opts.map((o, k) =>
+      '<button type="button" class="pt-opt" data-k="' + k + '"><span class="k" aria-hidden="true">' + (k + 1) + '</span>' +
+      '<span class="t zh" lang="zh-Hans">' + esc(o.t) + '</span></button>').join("") + '</div>';
+  } else if (q.kind === "order") {
+    body = '<div class="gp-line" id="line" aria-label="' + esc(UI.answer) + '"></div>' +
+      '<div class="gp-pool" id="pool" role="group"></div>' +
+      '<div class="pt-actions gp-tools"><button type="button" class="button" id="check-btn" disabled>' + esc(UI.check) + '</button>' +
+      '<button type="button" class="button ghost-btn" id="undo-btn" disabled>' + esc(UI.undo) + '</button></div>';
+  } else {
+    body = '<div class="pt-actions"><button type="button" class="button" id="show-btn">' + esc(UI.show) + '</button></div>';
+  }
+  area.innerHTML =
+    '<div class="pt-top"><p class="pt-ask">' + esc(UI[ASK[q.kind]]) + '</p><span class="pt-count">' +
+      esc(UI.q + " " + (pos + 1) + " " + UI.of + " " + run.length) + '</span></div>' +
+    '<div class="pt-bar" aria-hidden="true"><i style="width:' + (pos / run.length * 100) + '%"></i></div>' +
+    prompt + body + '<div id="fb"></div>';
+  if (q.kind === "choose" || q.kind === "fix") {
+    area.querySelectorAll(".pt-opt").forEach(b => b.addEventListener("click", () => choose(+b.dataset.k)));
+  } else if (q.kind === "order") {
+    drawTiles();
+    document.getElementById("check-btn").addEventListener("click", checkOrder);
+    document.getElementById("undo-btn").addEventListener("click", undo);
+  } else {
+    document.getElementById("show-btn").addEventListener("click", reveal);
+  }
+  const sheet = document.getElementById("test-sheet");
+  if (sheet.getBoundingClientRect().top < 0) sheet.scrollIntoView({ block: "start" });
+}
+
+function drawTiles() {
+  const line = document.getElementById("line"), pool = document.getElementById("pool");
+  line.innerHTML = q.placed.map((ti, k) =>
+    '<button type="button" class="gp-tile placed" data-k="' + k + '"' + (answered ? " disabled" : "") + ' lang="zh-Hans">' + esc(q.tiles[ti].t) + '</button>').join("");
+  pool.innerHTML = q.tiles.map((x, ti) => {
+    const used = q.placed.indexOf(ti) >= 0;
+    return '<button type="button" class="gp-tile" data-ti="' + ti + '"' + (used || answered ? ' disabled' : '') + (used ? ' data-used="1"' : '') + '>' +
+      '<span class="k" aria-hidden="true">' + (ti + 1) + '</span><span class="t" lang="zh-Hans">' + esc(x.t) + '</span></button>';
+  }).join("");
+  line.querySelectorAll(".gp-tile").forEach(b => b.addEventListener("click", () => { if (!answered) { q.placed.splice(+b.dataset.k, 1); drawTiles(); } }));
+  pool.querySelectorAll(".gp-tile").forEach(b => b.addEventListener("click", () => place(+b.dataset.ti)));
+  if (!answered) {
+    document.getElementById("check-btn").disabled = q.placed.length !== q.tiles.length;
+    document.getElementById("undo-btn").disabled = !q.placed.length;
+  }
+}
+function place(ti) {
+  if (answered || q.kind !== "order" || ti >= q.tiles.length || q.placed.indexOf(ti) >= 0) return;
+  q.placed.push(ti); drawTiles();
+  if (q.placed.length === q.tiles.length) document.getElementById("check-btn").focus({ preventScroll: true });
+}
+function undo() { if (!answered && q.placed.length) { q.placed.pop(); drawTiles(); } }
+
+function listenBtn(text) {
+  return voice() ? '<p><button type="button" class="button small ghost-btn gp-listen" data-say="' + esc(text) + '">' + esc(UI.listen) + '</button></p>' : '';
+}
+function others(list, skip) {
+  const rest = list.filter(a => bare(a) !== bare(skip));
+  return rest.length ? '<p class="a-py">' + esc(UI.also) + ': <span lang="zh-Hans">' + rest.map(esc).join(" / ") + '</span></p>' : '';
+}
+
+function feedback(ok, html, neutral) {
+  answered = true;
+  const last = pos === run.length - 1;
+  document.getElementById("fb").innerHTML = '<div class="pt-fb ' + (neutral ? "" : ok ? "ok" : "no") + '">' +
+    (neutral ? '' : '<p class="v">' + esc(ok ? UI.right : UI.wrong) + '</p>') + html + '</div>' +
+    '<div class="pt-actions" style="margin-top:12px"><button type="button" class="button" id="next-btn">' + esc(last ? UI.finish : UI.next) + '</button></div>';
+  const lb = document.querySelector("#fb .gp-listen");
+  if (lb) lb.addEventListener("click", () => speak(lb.dataset.say));
+  const nb = document.getElementById("next-btn");
+  nb.addEventListener("click", next);
+  nb.focus({ preventScroll: true });
+  if (nb.getBoundingClientRect().bottom > innerHeight) nb.scrollIntoView({ block: "end", behavior: "smooth" });
+}
+
+function record(ok) {
+  scored++;
+  if (ok) score++; else missed.push(q.it);
+}
+
+function choose(k) {
+  if (answered || phase !== "test" || !q.opts || k >= q.opts.length) return;
+  const ok = q.opts[k].ok, it = q.it;
+  record(ok);
+  area.querySelectorAll(".pt-opt").forEach((b, j) => {
+    b.disabled = true;
+    b.classList.add(q.opts[j].ok ? "ok" : j === k ? "no" : "dim");
+  });
+  let html;
+  if (q.kind === "choose") {
+    const full = it.b + it.r + it.a;
+    html = '<p class="a-zh" lang="zh-Hans">' + fullChoose(it, true) + '</p><p class="a-en">' + esc(it.m) + '</p>' + listenBtn(full);
+  } else {
+    html = '<p class="a-zh" lang="zh-Hans">' + esc(it.r[0]) + '</p>' + others(it.r, it.r[0]) + '<p class="a-en">' + esc(it.m) + '</p>' +
+      '<p class="a-py">' + esc(UI.mistake) + ': <s lang="zh-Hans">' + esc(it.s) + '</s></p>' + listenBtn(it.r[0]);
+  }
+  feedback(ok, html);
+}
+
+function checkOrder() {
+  if (answered || q.kind !== "order" || q.placed.length !== q.tiles.length) return;
+  const it = q.it, said = bare(q.placed.map(ti => q.tiles[ti].t).join(""));
+  const hit = it.r.find(a => bare(a) === said);
+  const ok = !!hit;
+  record(ok);
+  answered = true;
+  drawTiles();
+  document.getElementById("line").classList.add(ok ? "ok" : "no");
+  document.getElementById("check-btn").disabled = true;
+  document.getElementById("undo-btn").disabled = true;
+  const main = hit || it.r[0];
+  feedback(ok, (ok ? '' : '<p class="a-py">' + esc(UI.answer) + ':</p>') + '<p class="a-zh" lang="zh-Hans">' + esc(main) + '</p>' +
+    others(it.r, main) + '<p class="a-en">' + esc(it.m) + '</p>' + listenBtn(main));
+}
+
+function reveal() {
+  if (answered || q.kind !== "reveal") return;
+  const it = q.it;
+  document.getElementById("show-btn").disabled = true;
+  if (it.t === "c") {
+    feedback(true, '<p class="a-zh" lang="zh-Hans">' + fullChoose(it, true) + '</p><p class="a-en">' + esc(it.m) + '</p>' +
+      '<p class="a-py">' + esc(UI.notScored) + '</p>' + listenBtn(it.b + it.r + it.a), true);
+  } else {
+    feedback(true, '<p class="a-zh" lang="zh-Hans">' + esc(it.r[0]) + '</p>' + others(it.r, it.r[0]) + '<p class="a-en">' + esc(it.m) + '</p>' +
+      listenBtn(it.r[0]), true);
+  }
+}
+
+function next() {
+  if (!answered) return;
+  if (pos < run.length - 1) { pos++; show(); } else finish();
+}
+
+function missedHtml(it) {
+  let zh;
+  if (it.t === "c") zh = fullChoose(it, false);
+  else zh = esc(it.r[0]);
+  return '<li><span class="m-zh" lang="zh-Hans">' + zh + '</span><span class="m-en">' + esc(it.m) + '</span></li>';
+}
+
+function finish() {
+  phase = "done";
+  const prev = state.best[SLUG];
+  const isBest = !prev || score / scored > prev[0] / prev[1] || (score / scored === prev[0] / prev[1] && scored > prev[1]);
+  if (isBest) { state.best[SLUG] = [score, scored]; save(); }
+  const p = scored ? score / scored : 1;
+  const msg = p >= 0.9 ? UI.msg4 : p >= 0.7 ? UI.msg3 : p >= 0.4 ? UI.msg2 : UI.msg1;
+  area.innerHTML =
+    '<div class="pt-score"><p class="sub">' + esc(UI.scoreHead) + '</p><p class="big">' + score + ' / ' + scored + '</p>' +
+      '<p>' + esc(msg) + '</p><p class="sub">' + esc(isBest ? UI.bestNew : fmt(UI.bestOld, { b: prev[0], n: prev[1] })) + '</p></div>' +
+    '<h3 class="pt-ask">' + esc(UI.missedHead) + '</h3>' +
+    (missed.length ? '<ul class="pt-missed">' + missed.map(missedHtml).join("") + '</ul>' : '<p class="empty">' + esc(UI.noMissed) + '</p>') +
+    '<div class="pt-actions"><button type="button" class="button" id="again-btn">' + esc(UI.again) + '</button></div>' +
+    '<p class="study-link"><a href="' + PAGE + '">' + esc(UI.read) + '</a> · <a href="' + PAGE + 'worksheet/">' + esc(UI.sheet) + '</a></p>';
+  document.getElementById("again-btn").addEventListener("click", start);
+  const sheet = document.getElementById("test-sheet");
+  if (sheet.getBoundingClientRect().top < 0) sheet.scrollIntoView({ block: "start" });
+}
+
+document.addEventListener("keydown", e => {
+  if (e.altKey || e.ctrlKey || e.metaKey || phase !== "test" || !q) return;
+  const onControl = e.target.closest && e.target.closest("button, a, input");
+  if (answered) {
+    if (e.key === "Enter" && !onControl) { e.preventDefault(); next(); }
+    return;
+  }
+  if ((q.kind === "choose" || q.kind === "fix") && /^[1-9]$/.test(e.key)) {
+    const k = +e.key - 1;
+    if (k < q.opts.length) { e.preventDefault(); choose(k); }
+  } else if (q.kind === "order") {
+    if (/^[1-9]$/.test(e.key)) { e.preventDefault(); place(+e.key - 1); }
+    else if (e.key === "Backspace") { e.preventDefault(); undo(); }
+    else if (e.key === "Enter" && !onControl) { e.preventDefault(); checkOrder(); }
+  } else if (q.kind === "reveal" && e.key === "Enter" && !onControl) {
+    e.preventDefault(); reveal();
+  }
+});
+
+document.getElementById("storage-note").hidden = saveOk;
+fetch(DATA).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(d => {
+  items = d.items;
+  start();
+}).catch(() => { area.innerHTML = '<p class="empty">' + esc(UI.loadFail) + '</p>'; });
+</script>

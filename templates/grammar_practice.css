@@ -1,0 +1,26 @@
+/* Grammar practice: builds on practice.css (one item at a time); adds sentence options and word tiles. */
+.gp-mean { min-height: 96px; }
+.gp-sents { grid-template-columns: 1fr; }
+@media (min-width: 560px) { .gp-sents { grid-template-columns: 1fr; } }
+.gp-sents .pt-opt .t.zh { font-size: 21px; line-height: 1.45; }
+
+.gp-line { display: flex; flex-wrap: wrap; gap: 8px; align-content: flex-start; min-height: 64px; padding: 10px;
+  border: 2px dashed var(--rule); border-radius: var(--radius); background: var(--paper); min-width: 0; }
+.gp-line.ok { border-style: solid; border-color: var(--ok); }
+.gp-line.no { border-style: solid; border-color: var(--bad); }
+.gp-pool { display: flex; flex-wrap: wrap; gap: 8px; min-width: 0; }
+.gp-tile { display: inline-flex; align-items: center; gap: 6px; min-height: 48px; max-width: 100%; padding: 6px 12px;
+  font: 400 22px var(--f-zh); color: var(--ink); background: var(--sheet); border: 1px solid var(--rule);
+  border-radius: 10px; cursor: pointer; overflow-wrap: anywhere; }
+.gp-tile:hover:not(:disabled) { border-color: var(--accent); }
+.gp-tile .k { font: 500 11px var(--f-num); color: var(--muted); }
+.gp-tile.placed { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, var(--sheet)); }
+.gp-tile[data-used] { visibility: hidden; }
+.gp-tile:disabled { cursor: default; }
+.gp-tools .button { flex: 1 1 140px; }
+.pt-fb s { color: var(--muted); }
+
+.gp-more .more { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.gp-more .more .zh-inline { font-weight: 500; margin-right: 4px; }
+.gp-more .more .lv { font-size: 12px; color: var(--muted); }
+.gp-more p { margin: 0; }
