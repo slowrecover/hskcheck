@@ -429,7 +429,7 @@ TH_PACKS = [
         "price": "$3.99",
         "price_thb": "ประมาณ 130 บาท",
         "pages": 190,
-        "checkout": "",  # Creem checkout link, once the owner creates the product
+        "checkout": "https://www.creem.io/payment/prod_6OKnuZHhNoRlzEb8ZsETHa",
         "title": "สมุดแบบฝึกคำศัพท์ YCT 4 สำหรับเด็ก PDF พิมพ์ได้ พร้อมคำแปลไทย",
         "description": ("คำศัพท์ YCT 4 298 คำ ใน 15 บทเรียน ประโยคตัวอย่างง่าย ๆ แปลไทย "
                         "ฝึกเขียนตัวอักษร 309 ตัว แบบทดสอบและเฉลย PDF สำหรับเด็ก"),
@@ -462,10 +462,10 @@ TH_PACKS = [
         "price": "$6.99",
         "price_thb": "ประมาณ 230 บาท",
         "pages": 416,
-        "checkout": "",  # Creem checkout link, once the owner creates the product
+        "checkout": "https://www.creem.io/payment/prod_5C5Bdu1aAmqKjhIcuiiVis",
         "class_price": "$9.99",
         "class_price_thb": "ประมาณ 330 บาท",
-        "class_checkout": "",  # Creem checkout link of the class licence, once the owner creates it
+        "class_checkout": "https://www.creem.io/payment/prod_4iSaJW9fshyEz9smsLTZFP",  # Creem checkout link of the class licence
         "title": "ชุดรวมสมุดแบบฝึก YCT 1–4 สำหรับเด็ก PDF พิมพ์ได้ พร้อมคำแปลไทย",
         "description": ("สมุดแบบฝึก YCT 1–4 ครบ 4 เล่ม คำศัพท์ 598 คำ 35 บทเรียน ประโยคตัวอย่างแปลไทย แบบฝึกเขียน "
                         "แบบทดสอบและเฉลย มีใบอนุญาตสำหรับห้องเรียน"),
