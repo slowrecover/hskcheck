@@ -48,8 +48,13 @@ show. The build must stop if a Vietnamese data file is out of order or a templat
    Vietnamese version of every practice tool in TOOLS.md.
 3. **Grammar pages** — five per run, in the order of `data/learn_queue.tsv`, as `data/vi/learn/<slug>.json` in the
    format of `tools/learn_th.py` (with the worksheet). Done when every English grammar page has a Vietnamese file.
+   The step-2 tools (`tools/vi_tools.py`) do not use grammar sentences yet, because none had Vietnamese: the first
+   run of this step also builds `/vi/learn/<slug>/practice/` (as `tools/grammar_practice.py` does for Thai) and adds
+   the gap sentences (practice test, daily quiz) and grammar example sentences (listening) of every grammar page that
+   has a Vietnamese file, with their Vietnamese meanings, and updates the text of those pages that says so.
 4. **The rest** — done when `/vi/chinese-measure-words/index.html` exists: measure word finder, old → new HSK,
-   YCT word lists and worksheets, graded reading with Vietnamese glosses.
+   YCT word lists and worksheets, graded reading with Vietnamese glosses. With the Vietnamese reading pages, point the
+   flashcards' story link and the listening practice's story links (`readBase` in `tools/vi_tools.py`) to them.
 
 When step 4 is done, the plan is complete.
 

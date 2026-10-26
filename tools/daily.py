@@ -127,8 +127,10 @@ TH_DESC = ("ควิซ HSK ชุดใหม่ทุกวัน วัน�
            "พร้อมเฉลยภาษาไทย เก็บสถิติวันต่อเนื่อง ฟรี ไม่ต้องสมัคร")
 
 
-def _check_data(root, base):
-    """The quiz loads the practice test's word files: stop if one is missing or has no words."""
+def _check_data(root, base, need_gaps=True):
+    """The quiz loads the practice test's word files: stop if one is missing or has no words. A level's gap sentences
+    must come from at least two grammar pages (need_gaps=False allows none at all, as on the Vietnamese page until its
+    grammar pages exist)."""
     for n in practice.LEVELS:
         path = root / base.strip("/") / f"hsk{n}.json"
         if not path.exists():
@@ -136,7 +138,8 @@ def _check_data(root, base):
         d = json.loads(path.read_text(encoding="utf-8"))
         if len(d.get("w", [])) < 50:
             raise SystemExit(f"daily: {path} has too few words for a daily quiz")
-        if n in practice.GAP_LEVELS and len({g[7] for g in d.get("g", [])}) < 2:
+        slugs = {g[7] for g in d.get("g", [])}
+        if n in practice.GAP_LEVELS and len(slugs) < 2 and (need_gaps or slugs):
             raise SystemExit(f"daily: {path} needs gap sentences from at least two grammar pages")
 
 

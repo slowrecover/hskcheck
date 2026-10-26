@@ -1,0 +1,890 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tập tô chữ Hán online theo thứ tự nét, HSK 1–5 miễn phí</title>
+<meta name="description" content="Tập tô chữ Hán từng nét trên ô chữ điền bằng ngón tay hoặc chuột, có gợi ý nét tiếp theo. Chọn chữ theo cấp HSK 1–5 hoặc tự gõ. Miễn phí.">
+<link rel="canonical" href="https://hskcheck.com/vi/chinese-character-tracing/">
+<meta property="og:title" content="Tập tô chữ Hán online theo thứ tự nét, HSK 1–5 miễn phí">
+<meta property="og:description" content="Tập tô chữ Hán từng nét trên ô chữ điền bằng ngón tay hoặc chuột, có gợi ý nét tiếp theo. Chọn chữ theo cấp HSK 1–5 hoặc tự gõ. Miễn phí.">
+<meta property="og:url" content="https://hskcheck.com/vi/chinese-character-tracing/">
+<meta property="og:type" content="website">
+<link rel="alternate" hreflang="en" href="https://hskcheck.com/chinese-character-tracing/">
+<link rel="alternate" hreflang="th" href="https://hskcheck.com/th/chinese-character-tracing/">
+<link rel="alternate" hreflang="vi" href="https://hskcheck.com/vi/chinese-character-tracing/">
+<link rel="alternate" hreflang="x-default" href="https://hskcheck.com/chinese-character-tracing/">
+<link rel="manifest" href="/vi/manifest.webmanifest">
+<meta name="theme-color" content="#2A4A9A">
+<link rel="icon" type="image/png" sizes="48x48" href="/icons/favicon-48.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="hskcheck">
+<script>document.documentElement.classList.add("js");document.addEventListener("click", e => { const b = e.target.closest(".nav-toggle"); if (!b) return; const open = b.parentNode.classList.toggle("open"); b.setAttribute("aria-expanded", String(open)); });if ("serviceWorker" in navigator) addEventListener("load", () => navigator.serviceWorker.register("/sw.js").catch(() => {}));</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Tập tô chữ Hán", "url": "/vi/chinese-character-tracing/", "inLanguage": "vi", "applicationCategory": "EducationalApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Tập tô chữ Hán từng nét trên ô chữ điền bằng ngón tay hoặc chuột, có gợi ý nét tiếp theo. Chọn chữ theo cấp HSK 1–5 hoặc tự gõ. Miễn phí."}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6894573398022493"
+     crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@600&display=swap">
+<style>
+:root {
+  --paper: #F3F5F8;
+  --sheet: #FFFFFF;
+  --ink: #1A2130;
+  --muted: #586274;
+  --rule: #DCE1E9;
+  --accent: #2A4A9A;
+  --accent-ink: #FFFFFF;
+  --l1: #1F7A5C; --l1-bg: #E2F2EB;
+  --l2: #2A68AE; --l2-bg: #E3EDF8;
+  --l3: #7A4CAE; --l3-bg: #EEE6F8;
+  --l4: #8A5A12; --l4-bg: #F5EBDB;
+  --l5: #0E6E78; --l5-bg: #DDF0F1;
+  --over: #C0392B; --over-bg: #FCE5E1;
+  --ok: #1F7A5C; --warn: #A15C00; --bad: #C0392B;
+  --f-ui: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --f-num: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --f-zh: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --f-zh-display: "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --radius: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0F131A; --sheet: #171C25; --ink: #E6EAF1; --muted: #9AA4B6; --rule: #2A3242;
+    --accent: #93ACEB; --accent-ink: #0F131A;
+    --l1: #63CDA2; --l1-bg: #15302A; --l2: #82B4EE; --l2-bg: #172A40; --l3: #BB9EEA; --l3-bg: #2A2142;
+    --l4: #D7AE6A; --l4-bg: #33270F;
+    --l5: #6CC9D1; --l5-bg: #12302F;
+    --over: #F28B78; --over-bg: #3D1F1A; --ok: #63CDA2; --warn: #E9B060; --bad: #F28B78;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0F131A; --sheet: #171C25; --ink: #E6EAF1; --muted: #9AA4B6; --rule: #2A3242;
+  --accent: #93ACEB; --accent-ink: #0F131A;
+  --l1: #63CDA2; --l1-bg: #15302A; --l2: #82B4EE; --l2-bg: #172A40; --l3: #BB9EEA; --l3-bg: #2A2142;
+    --l4: #D7AE6A; --l4-bg: #33270F;
+    --l5: #6CC9D1; --l5-bg: #12302F;
+  --over: #F28B78; --over-bg: #3D1F1A; --ok: #63CDA2; --warn: #E9B060; --bad: #F28B78;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: var(--f-ui); font-size: 16px; line-height: 1.55;
+  padding-inline: 16px; padding-block: 28px 48px;
+}
+.wrap { max-width: 760px; margin: 0 auto; display: grid; gap: 22px; }
+header { display: grid; gap: 8px; }
+.eyebrow { display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+  font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+.chip { border: 1px solid var(--rule); border-radius: 999px; padding: 1px 8px; letter-spacing: .04em; }
+h1 { margin: 0; font-size: clamp(28px, 6vw, 40px); line-height: 1.12; font-weight: 600; text-wrap: balance; letter-spacing: -.01em; }
+h1 .zh { font-family: var(--f-zh-display); font-weight: 600; color: var(--accent); margin-right: .25em; }
+.lede { margin: 0; color: var(--muted); max-width: 60ch; }
+
+.sheet { background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--radius); padding: 18px; display: grid; gap: 14px; min-width: 0; }
+a { color: var(--accent); text-underline-offset: 3px; }
+.zh-inline { font-family: var(--f-zh); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.site-nav { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; font-weight: 500; }
+.site-nav a { text-decoration: none; color: var(--muted); padding-block: 2px; border-bottom: 2px solid transparent; }
+.site-nav a:hover { color: var(--ink); }
+.site-nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
+.lang-switch { margin-left: auto; display: inline-flex; align-items: center; gap: 0 6px; font-size: 13px; color: var(--muted); white-space: nowrap; }
+.lang-switch .cur { color: var(--ink); font-weight: 600; padding-block: 2px; }
+.lang-switch .sep { color: var(--muted); }
+h2 { margin: 0; font-size: 15px; font-weight: 600; letter-spacing: .01em; }
+.table-wrap { overflow-x: auto; }
+table.counts { border-collapse: collapse; font-size: 14px; min-width: 320px; }
+table.counts th, table.counts td { text-align: left; padding: 7px 14px 7px 0; border-bottom: 1px solid var(--rule); }
+table.counts th { font-weight: 600; color: var(--muted); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+table.counts td.num { font-family: var(--f-num); font-variant-numeric: tabular-nums; }
+.notes { font-size: 13px; color: var(--muted); display: grid; gap: 6px; max-width: 70ch; }
+.notes p { margin: 0; }
+.notes b { color: var(--ink); font-weight: 600; }
+.site-foot { max-width: 760px; margin: 28px auto 0; font-size: 13px; color: var(--muted); }
+.site-foot a { color: var(--muted); }
+.policy { gap: 10px; }
+.policy h2 { margin-top: 8px; }
+.policy p { margin: 0; max-width: 70ch; }
+
+/* Phones: the long site menu folds behind a Menu button, and a bar at the bottom holds the daily tools. */
+.nav-toggle { display: none; }
+.nav-links { display: contents; }
+.tab-bar { display: none; }
+@media (max-width: 640px) {
+  .js .nav-toggle { display: inline-flex; align-items: center; gap: 6px; font: 500 14px var(--f-ui); color: var(--ink);
+    background: var(--sheet); border: 1px solid var(--rule); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+  .js .nav-toggle::after { content: "▾"; font-size: 11px; color: var(--muted); }
+  .js .site-nav.open .nav-toggle::after { content: "▴"; }
+  .js .nav-links { display: none; }
+  .js .site-nav.open .nav-links { display: flex; flex-wrap: wrap; gap: 10px 18px; width: 100%; padding: 6px 2px 2px; }
+  .js .site-nav.open .nav-links a { padding-block: 4px; }
+  body { padding-bottom: calc(84px + env(safe-area-inset-bottom)); }
+  .tab-bar { display: grid; grid-template-columns: repeat(3, 1fr); position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
+    background: var(--sheet); border-top: 1px solid var(--rule); padding: 6px 8px calc(6px + env(safe-area-inset-bottom)); }
+  .tab-bar a { display: grid; justify-items: center; gap: 2px; padding: 6px 4px; text-decoration: none; color: var(--muted);
+    font: 500 12px var(--f-ui); border-radius: 10px; min-height: 48px; }
+  .tab-bar a[aria-current="page"] { color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); }
+  .tab-bar svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+}
+@media print { .tab-bar, .nav-toggle { display: none !important; } }
+/* Checker page: input sheet on top, graded result sheet below, red-pen marks for words above the chosen level. */
+label.field { font-weight: 600; font-size: 14px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+label.field span.hint { font-weight: 400; color: var(--muted); font-size: 13px; }
+textarea {
+  width: 100%; min-height: 150px; resize: vertical; padding: 12px 14px;
+  font-family: var(--f-zh); font-size: 18px; line-height: 1.8; color: var(--ink);
+  background: var(--paper); border: 1px solid var(--rule); border-radius: 8px;
+}
+.controls { display: flex; gap: 12px 18px; align-items: center; flex-wrap: wrap; justify-content: space-between; }
+.levels { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.levels .lbl { font-size: 14px; font-weight: 600; margin-right: 4px; }
+.lv-btn {
+  font: 500 14px var(--f-ui); padding: 7px 14px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--rule); background: var(--sheet); color: var(--ink);
+}
+.lv-btn[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.ghost { font: 500 14px var(--f-ui); background: none; border: none; color: var(--accent); cursor: pointer; padding: 6px 2px; text-decoration: underline; text-underline-offset: 3px; }
+
+.verdict { display: grid; gap: 10px; }
+.verdict-top { display: flex; gap: 12px 20px; align-items: baseline; flex-wrap: wrap; }
+.big { font-family: var(--f-num); font-size: clamp(34px, 9vw, 46px); font-weight: 500; line-height: 1; font-variant-numeric: tabular-nums; }
+.verdict-text { display: grid; gap: 2px; min-width: 0; }
+.verdict-text strong { font-size: 17px; }
+.verdict-text span { color: var(--muted); font-size: 14px; }
+.state-ok { color: var(--ok); } .state-warn { color: var(--warn); } .state-bad { color: var(--bad); }
+
+.bar { display: flex; height: 12px; border-radius: 6px; overflow: hidden; background: var(--rule); }
+.bar i { display: block; height: 100%; }
+.bar .b1 { background: var(--l1); } .bar .b2 { background: var(--l2); } .bar .b3 { background: var(--l3); } .bar .b4 { background: var(--l4); } .bar .b5 { background: var(--l5); } .bar .bx { background: var(--over); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; font-variant-numeric: tabular-nums; }
+.legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+
+.graded { font-family: var(--f-zh); font-size: 20px; line-height: 2.1; word-break: break-all; }
+.graded .w { border-bottom: 2px solid transparent; padding: 0 1px; border-radius: 2px; }
+.graded .w1 { border-bottom-color: color-mix(in srgb, var(--l1) 45%, transparent); }
+.graded .w2 { border-bottom-color: color-mix(in srgb, var(--l2) 45%, transparent); }
+.graded .w3 { border-bottom-color: color-mix(in srgb, var(--l3) 45%, transparent); }
+.graded .w4 { border-bottom-color: color-mix(in srgb, var(--l4) 45%, transparent); }
+.graded .w5 { border-bottom-color: color-mix(in srgb, var(--l5) 45%, transparent); }
+.graded .above { background: var(--over-bg); color: var(--over); border-bottom: 2px solid var(--over); font-weight: 500; }
+.empty { color: var(--muted); font-size: 15px; margin: 0; }
+
+.words { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.words li { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 8px 10px; border: 1px solid var(--rule); border-radius: 8px; min-width: 0; }
+.words .zh { font-family: var(--f-zh); font-size: 19px; overflow-wrap: anywhere; }
+.tag { font: 500 12px var(--f-num); padding: 2px 7px; border-radius: 999px; white-space: nowrap; }
+.tag.t2 { background: var(--l2-bg); color: var(--l2); }
+.tag.t3 { background: var(--l3-bg); color: var(--l3); }
+.tag.t4 { background: var(--l4-bg); color: var(--l4); }
+.tag.t5 { background: var(--l5-bg); color: var(--l5); }
+.tag.tx { background: var(--over-bg); color: var(--over); }
+.guide { display: grid; gap: 18px; max-width: 68ch; }
+.guide h2 { font-size: 20px; letter-spacing: -.005em; text-wrap: balance; }
+.guide h3 { margin: 0 0 4px; font-size: 16px; font-weight: 600; }
+.guide p { margin: 0; color: var(--ink); }
+.guide .qa { display: grid; gap: 14px; }
+.guide .zh-inline { font-family: var(--f-zh); }
+@media (prefers-reduced-motion: no-preference) { .bar i { transition: width .25s ease; } }
+.start-banner { display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; align-items: center; margin-top: 6px;
+  padding: 12px 16px; border-radius: var(--radius); text-decoration: none; color: var(--ink);
+  background: color-mix(in srgb, var(--accent) 9%, var(--sheet)); border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--rule)); }
+.start-banner .sb-head { font-weight: 600; }
+.start-banner .sb-text { grid-column: 1; font-size: 14px; color: var(--muted); }
+.start-banner .sb-go { grid-column: 2; grid-row: 1 / span 2; font-weight: 600; color: var(--accent); white-space: nowrap; }
+/* HSK practice test: one question at a time, four big answer buttons, sized for a phone held in one hand. */
+#test-area { display: grid; gap: 12px; min-width: 0; }
+.pt-levels .lv-btn { display: inline-grid; justify-items: center; gap: 0; min-height: 44px; }
+.lv-best { font: 400 11px var(--f-num); color: var(--muted); }
+.lv-btn[aria-pressed="true"] .lv-best { color: var(--accent-ink); opacity: .85; }
+.pt-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.pt-count { white-space: nowrap; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; font-family: var(--f-num); }
+.pt-bar { height: 6px; border-radius: 3px; background: var(--rule); overflow: hidden; }
+.pt-bar i { display: block; height: 100%; width: 0; background: var(--accent); }
+@media (prefers-reduced-motion: no-preference) { .pt-bar i { transition: width .25s ease; } }
+
+.pt-ask { margin: 0; font-weight: 600; font-size: 16px; }
+.pt-prompt { display: grid; justify-items: center; align-content: center; gap: 6px; min-height: 120px; padding: 18px 12px;
+  text-align: center; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--paper); min-width: 0; }
+.pt-hz { font-family: var(--f-zh); font-size: clamp(44px, 14vw, 68px); line-height: 1.15; overflow-wrap: anywhere; }
+.pt-mean { font-size: 20px; max-width: 34ch; text-wrap: balance; overflow-wrap: anywhere; }
+.pt-sent { font-family: var(--f-zh); font-size: clamp(21px, 5.6vw, 26px); line-height: 1.6; overflow-wrap: anywhere; }
+.pt-gap { display: inline-block; min-width: 2.4em; border-bottom: 2px solid var(--accent); margin: 0 .1em; color: var(--accent); }
+.pt-tr { color: var(--muted); font-size: 15px; max-width: 40ch; }
+.pt-play { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+
+.pt-opts { display: grid; grid-template-columns: 1fr; gap: 10px; }
+@media (min-width: 560px) { .pt-opts { grid-template-columns: 1fr 1fr; } }
+.pt-opt { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 56px; padding: 10px 14px; text-align: left;
+  font: 500 17px var(--f-ui); color: var(--ink); background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--radius);
+  cursor: pointer; min-width: 0; }
+.pt-opt:hover:not(:disabled) { border-color: var(--accent); }
+.pt-opt .k { flex: none; display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 50%;
+  font: 500 13px var(--f-num); color: var(--muted); border: 1px solid var(--rule); }
+.pt-opt .t { min-width: 0; overflow-wrap: anywhere; }
+.pt-opt .t.zh { font-family: var(--f-zh); font-size: 24px; font-weight: 400; }
+.pt-opt .t.py { font-size: 20px; font-weight: 400; }
+.pt-opt:disabled { cursor: default; }
+.pt-opt.ok { border-color: var(--ok); background: color-mix(in srgb, var(--ok) 12%, var(--sheet)); }
+.pt-opt.ok .k { border-color: var(--ok); color: var(--ok); }
+.pt-opt.no { border-color: var(--bad); background: color-mix(in srgb, var(--bad) 10%, var(--sheet)); }
+.pt-opt.no .k { border-color: var(--bad); color: var(--bad); }
+.pt-opt.dim { opacity: .55; }
+
+.pt-fb { display: grid; gap: 4px; padding: 12px 14px; border-radius: var(--radius); border: 1px solid var(--rule); }
+.pt-fb.ok { border-color: color-mix(in srgb, var(--ok) 45%, var(--rule)); }
+.pt-fb.no { border-color: color-mix(in srgb, var(--bad) 45%, var(--rule)); }
+.pt-fb p { margin: 0; }
+.pt-fb .v { font-weight: 600; }
+.pt-fb.ok .v { color: var(--ok); }
+.pt-fb.no .v { color: var(--bad); }
+.pt-fb .a-zh { font-family: var(--f-zh); font-size: 20px; }
+.pt-fb .a-py, .pt-fb .a-en { color: var(--muted); }
+.pt-fb a { font-size: 14px; }
+
+.button { font: 500 16px var(--f-ui); padding: 14px 18px; border-radius: 999px; border: 1px solid var(--accent);
+  background: var(--accent); color: var(--accent-ink); cursor: pointer; min-height: 48px; text-decoration: none;
+  display: inline-flex; align-items: center; justify-content: center; text-align: center; }
+.button.ghost-btn { background: transparent; color: var(--accent); }
+.button.small { font-size: 14px; padding: 8px 14px; min-height: 40px; }
+.pt-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.pt-actions .button { flex: 1 1 200px; }
+
+.pt-start { display: grid; gap: 12px; justify-items: center; text-align: center; padding: 18px 4px; }
+.pt-start p { margin: 0; color: var(--muted); }
+.pt-score { display: grid; gap: 6px; justify-items: center; text-align: center; padding: 8px 0; }
+.pt-score .big { font-family: var(--f-num); font-size: clamp(40px, 12vw, 56px); line-height: 1; font-variant-numeric: tabular-nums; }
+.pt-score p { margin: 0; }
+.pt-score .sub { color: var(--muted); }
+.pt-missed { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.pt-missed li { display: grid; gap: 1px; padding: 8px 12px; border: 1px solid var(--rule); border-radius: 8px; min-width: 0; }
+.pt-missed .m-zh { font-family: var(--f-zh); font-size: 19px; overflow-wrap: anywhere; }
+.pt-missed .m-py { font-size: 14px; }
+.pt-missed .m-en { font-size: 14px; color: var(--muted); overflow-wrap: anywhere; }
+.pt-note { margin: 0; font-size: 13px; color: var(--warn); }
+.pt-added { margin: 0; font-size: 14px; color: var(--ok); }
+.study-link { margin: 0; }
+/* Character tracing: the practice test's layout (practice.css) plus a square tian grid board you draw on. */
+#tr-area { display: grid; gap: 12px; min-width: 0; }
+.tr-levels .lv-btn { min-height: 44px; }
+.tr-pick { display: grid; gap: 8px; margin-top: 14px; min-width: 0; }
+.tr-pick[hidden] { display: none; }
+.tr-field { display: grid; gap: 6px; min-width: 0; }
+.tr-field label { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+#tr-set { font: 400 15px var(--f-ui); padding: 10px; min-height: 44px; border: 1px solid var(--rule); border-radius: 8px;
+  background: var(--paper); color: var(--ink); width: 100%; max-width: 520px; min-width: 0; }
+#tr-mine { min-height: 64px; font-size: 22px; line-height: 1.5; }
+.tr-mine-row { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
+.tr-progress { margin: 0; font-size: 14px; color: var(--muted); }
+.tr-switches { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.tr-switch { font: 500 14px var(--f-ui); min-height: 44px; padding: 8px 14px 8px 38px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--rule); background: var(--sheet); color: var(--ink); position: relative; }
+.tr-switch::before { content: ""; position: absolute; left: 12px; top: 50%; width: 18px; height: 18px; margin-top: -9px;
+  border-radius: 5px; border: 1.5px solid var(--muted); box-sizing: border-box; }
+.tr-switch[aria-pressed="true"]::before { background: var(--accent); border-color: var(--accent);
+  box-shadow: inset 0 0 0 3px var(--sheet); }
+
+.tr-main { display: grid; gap: 14px; min-width: 0; }
+@media (min-width: 680px) { .tr-main { grid-template-columns: minmax(0, 420px) minmax(0, 1fr); align-items: start; } }
+.tr-board { width: 100%; max-width: 420px; margin: 0 auto; aspect-ratio: 1; }
+.tr-svg { display: block; width: 100%; height: 100%; touch-action: none; user-select: none; -webkit-user-select: none;
+  background: var(--sheet); border-radius: var(--radius); cursor: crosshair; }
+.tr-frame { fill: none; stroke: color-mix(in srgb, var(--bad) 55%, var(--rule)); stroke-width: 8; rx: 10; }
+.tr-guide { stroke: color-mix(in srgb, var(--bad) 40%, var(--rule)); stroke-width: 5; stroke-dasharray: 30 24; }
+.tr-ghost { fill: color-mix(in srgb, var(--ink) 11%, transparent); }
+.tr-done { fill: var(--ink); }
+.tr-done .new { animation: tr-in .3s ease-out; }
+@keyframes tr-in { from { fill: var(--accent); } to { fill: var(--ink); } }
+.tr-svg.complete .tr-done { fill: var(--ok); transition: fill .4s; }
+.tr-hint-fill { fill: color-mix(in srgb, var(--accent) 22%, transparent); }
+.tr-hint-line { fill: none; stroke: var(--accent); stroke-width: 9; stroke-dasharray: 26 18; stroke-linecap: round; opacity: .8; }
+.tr-arrowhead { fill: var(--accent); }
+.tr-hint-dot { fill: var(--accent); }
+.tr-anim-line { fill: none; stroke: var(--accent); stroke-width: 150; stroke-linecap: round; stroke-linejoin: round; opacity: .75; }
+.tr-line { fill: none; stroke: var(--accent); stroke-width: 34; stroke-linecap: round; stroke-linejoin: round; opacity: .85; }
+.tr-line.bad { stroke: var(--bad); }
+.tr-line.fade { opacity: 0; transition: opacity .7s ease-in; }
+@media (prefers-reduced-motion: reduce) { .tr-line.fade { transition-duration: .2s; } .tr-done .new { animation: none; } }
+
+.tr-side { display: grid; gap: 4px; align-content: start; text-align: center; min-width: 0; }
+@media (min-width: 680px) { .tr-side { text-align: left; padding-top: 8px; } }
+.tr-side p { margin: 0; }
+.tr-hz { font-family: var(--f-zh); font-size: 40px; line-height: 1.2; }
+.tr-py { font-size: 20px; color: var(--accent); }
+.tr-word { font-size: 17px; overflow-wrap: anywhere; }
+.tr-word .zh-inline { font-size: 20px; }
+.tr-mean { color: var(--muted); font-size: 15px; overflow-wrap: anywhere; }
+.tr-msg { margin-top: 8px !important; min-height: 3em; font-weight: 500; }
+.tr-actions .button { flex: 1 1 140px; }
+.tr-keys { margin: 0; font-size: 13px; color: var(--muted); }
+@media (hover: none) { .tr-keys { display: none; } }
+.tr-sum { grid-template-columns: repeat(auto-fill, minmax(min(100%, 136px), 1fr)); }
+.tr-sum li { grid-template-columns: auto minmax(0, 1fr); column-gap: 10px; align-items: center; padding: 6px 10px; }
+.tr-sum li .m-zh { grid-row: 1 / span 2; font-size: 30px; line-height: 1.2; }
+.tr-sum li .m-py, .tr-sum li .m-en { grid-column: 2; font-size: 13px; line-height: 1.35; }
+.tr-sum li.clean { border-color: color-mix(in srgb, var(--ok) 45%, var(--rule)); }
+.tr-sum li.skip { opacity: .6; }
+/* Vietnamese pages: a little more line height for stacked diacritics; meanings under the words in the checker list. */
+body { line-height: 1.6; }
+h1 { line-height: 1.2; letter-spacing: 0; }
+.eyebrow { letter-spacing: .03em; }
+table.words-table th, table.counts th { letter-spacing: .02em; }
+.words { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); }
+.words .wd { display: grid; gap: 2px; min-width: 0; }
+.words .vi-mean { font-size: 13px; color: var(--muted); line-height: 1.4; overflow-wrap: anywhere; }
+#blocks:empty::before { content: "Phiếu tập viết sẽ hiện ở đây."; }
+
+</style>
+<script data-goatcounter="https://hskcheck.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <nav class="site-nav" aria-label="Menu trang"><button type="button" class="nav-toggle" aria-expanded="false">Menu</button><div class="nav-links"><a href="/vi/">Kiểm tra cấp độ</a><a href="/vi/hsk-1-word-list/">Từ vựng HSK 1</a><a href="/vi/hsk-2-word-list/">Từ vựng HSK 2</a><a href="/vi/hsk-3-word-list/">Từ vựng HSK 3</a><a href="/vi/hsk-4-word-list/">Từ vựng HSK 4</a><a href="/vi/hsk-5-word-list/">Từ vựng HSK 5</a><a href="/vi/hsk-flashcards/">Flashcard</a><a href="/vi/hsk-practice-test/">Thi thử HSK</a><a href="/vi/daily-hsk-quiz/">Trắc nghiệm mỗi ngày</a><a href="/vi/chinese-listening-practice/">Luyện nghe</a><a href="/vi/pinyin-tone-practice/">Pinyin và thanh điệu</a><a href="/vi/chinese-character-worksheets/">Phiếu tập viết</a><a href="/vi/chinese-character-tracing/" aria-current="page">Tập tô chữ</a></div><span class="lang-switch" role="group" aria-label="Ngôn ngữ"><a href="/chinese-character-tracing/" hreflang="en" lang="en">English</a><span class="sep" aria-hidden="true">·</span><a href="/th/chinese-character-tracing/" hreflang="th" lang="th">ภาษาไทย</a><span class="sep" aria-hidden="true">·</span><span class="cur" lang="vi" aria-current="true">Tiếng Việt</span></span></nav>
+    <div class="eyebrow"><span>HSK mới · Đề cương 2025</span><span class="chip">Cấp 1–5</span><span class="chip">Miễn phí</span></div>
+    <h1><span class="zh">描红</span>Tập tô chữ Hán theo thứ tự nét</h1>
+    <p class="lede">Viết chữ Hán từng nét bằng ngón tay hoặc chuột. Mỗi nét được kiểm tra ngay khi bạn viết: điểm bắt đầu, hướng đi và đường nét. Chọn một cấp HSK hoặc tự gõ những chữ bạn muốn luyện.</p>
+  </header>
+
+  <section class="sheet" aria-labelledby="pick-title">
+    <h2 id="pick-title" class="visually-hidden">Chọn chữ</h2>
+    <div class="levels tr-levels" role="group" aria-label="Chữ">
+      <span class="lbl">Chữ</span>
+      <button type="button" class="lv-btn" data-level="1" aria-pressed="false">HSK 1</button>
+      <button type="button" class="lv-btn" data-level="2" aria-pressed="false">HSK 2</button>
+      <button type="button" class="lv-btn" data-level="3" aria-pressed="false">HSK 3</button>
+      <button type="button" class="lv-btn" data-level="4" aria-pressed="false">HSK 4</button>
+      <button type="button" class="lv-btn" data-level="5" aria-pressed="false">HSK 5</button>
+      <button type="button" class="lv-btn" data-level="0" aria-pressed="false">Chữ của tôi</button>
+    </div>
+    <div class="tr-pick" id="tr-level-pick" hidden>
+      <div class="tr-field">
+        <label for="tr-set">Bộ</label>
+        <select id="tr-set"></select>
+      </div>
+      <p class="tr-progress" id="tr-progress"></p>
+    </div>
+    <form class="tr-pick" id="tr-mine-pick" hidden>
+      <div class="tr-field">
+        <label for="tr-mine">Chữ cần tô</label>
+        <textarea id="tr-mine" rows="2" spellcheck="false" autocomplete="off" lang="zh-Hans">你好</textarea>
+      </div>
+      <div class="tr-mine-row">
+        <button type="submit" class="button small" id="tr-mine-go">Bắt đầu tô</button>
+        <span class="tr-progress" id="tr-mine-note" role="status"></span>
+      </div>
+    </form>
+    <div class="tr-switches" role="group" aria-label="Hiển thị">
+      <button type="button" class="tr-switch" id="sw-outline" aria-pressed="true">Hiện chữ mờ</button>
+      <button type="button" class="tr-switch" id="sw-hints" aria-pressed="true">Gợi ý nét tiếp theo</button>
+    </div>
+  </section>
+
+  <section class="sheet" aria-labelledby="board-title" id="board-sheet">
+    <h2 id="board-title" class="visually-hidden">Tập tô</h2>
+    <div id="tr-area">
+      <p class="empty" id="loading">Đang tải…</p>
+    </div>
+    <p class="tr-keys">Phím tắt: H xem nét tiếp theo, R viết lại chữ này, Enter sang chữ tiếp theo.</p>
+    <p class="pt-note" id="storage-note" hidden>Trình duyệt này không cho trang lưu dữ liệu, nên các chữ đã tô và cài đặt sẽ không được giữ lại.</p>
+  </section>
+
+  <section class="guide" aria-labelledby="guide-title">
+    <h2 id="guide-title">Về phần tập tô chữ</h2>
+    <div class="qa">
+      <div>
+        <h3>Tô chữ thế nào?</h3>
+        <p>Vẽ mỗi nét liền một lần, từ điểm đầu đến điểm cuối, không nhấc ngón tay. Dấu chấm cho biết nét tiếp theo bắt đầu ở đâu, mũi tên cho biết hướng đi. Nét đi đúng đường, đúng hướng sẽ chuyển sang màu đậm. Nếu chưa đúng, nét đó mờ dần và bạn thử lại; sau ba lần thử, trang sẽ cho bạn xem cách viết nét đó. Khi đã thuộc chữ, hãy tắt gợi ý, rồi tắt cả chữ mờ để viết theo trí nhớ.</p>
+      </div>
+      <div>
+        <h3>Vì sao thứ tự nét quan trọng?</h3>
+        <p>Thứ tự nét là cách viết chữ Hán bằng tay. Viết đúng thứ tự giúp viết nhanh hơn, đẹp hơn và dễ nhớ chữ hơn. Vài quy tắc đã đủ cho phần lớn các chữ: trên trước dưới sau (<span class="zh-inline">三</span>), trái trước phải sau (<span class="zh-inline">川</span>), ngang trước sổ sau (<span class="zh-inline">十</span>), phẩy trước mác sau (<span class="zh-inline">人</span>), giữa trước hai bên sau (<span class="zh-inline">小</span>), ngoài trước trong sau, đóng khung sau cùng (<span class="zh-inline">日</span>).</p>
+      </div>
+      <div>
+        <h3>Mỗi cấp gồm những chữ nào?</h3>
+        <p>Giống các bộ chữ của <a href="/vi/hsk-1-character-worksheets/">phiếu tập viết</a>: mọi chữ xuất hiện trong từ vựng của cấp HSK 3.0 đó, mỗi chữ một lần, theo thứ tự lần đầu xuất hiện trong danh sách từ. Chữ đã có ở cấp thấp hơn không được lặp lại. Mỗi chữ đi kèm từ đầu tiên của cấp có dùng chữ đó. Muốn tô chữ khác, hãy chọn "Chữ của tôi" rồi gõ hoặc dán bất kỳ đoạn văn tiếng Trung nào.</p>
+      </div>
+      <div>
+        <h3>Tiến độ của tôi có được lưu không?</h3>
+        <p>Các chữ đã tô và cài đặt được lưu trong trình duyệt trên thiết bị này, không gửi đi đâu cả. Viết trên giấy cũng rất có ích: in chính những chữ này thành <a href="/vi/chinese-character-worksheets/">phiếu tập viết</a>, và học các từ chứa chúng bằng <a href="/vi/hsk-flashcards/">flashcard</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="notes">
+    <p><b>Dữ liệu nét chữ.</b> Hình nét, đường tâm của nét và cách đọc chữ lấy từ <a href="https://github.com/skishore/makemeahanzi" hreflang="en">Make Me a Hanzi</a> (giấy phép Arphic Public License và GNU LGPL, xem <a href="/strokes/LICENSE.md" hreflang="en">giấy phép</a>). Thứ tự nét theo chuẩn chữ giản thể của Trung Quốc đại lục. Từ vựng: Từ vựng HSK 3.0 (HSK mới), đề cương 2025, giống các <a href="/vi/hsk-1-word-list/">trang danh sách từ</a>, có nghĩa tiếng Việt cho cả HSK 1–5.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+const UI = {"of": "/", "charN": "Chữ {i} / {n}", "strokeN": "Nét {i} / {n}", "set": "Chữ {a}–{b}", "traced": "Đã tô {d} / {n} chữ", "loading": "Đang tải…", "loadFail": "Không tải được dữ liệu nét chữ. Hãy kiểm tra kết nối mạng rồi thử lại.", "start": "Bắt đầu từ dấu chấm và đi theo mũi tên.", "startNoHint": "Hãy viết nét đầu tiên.", "goOn": "Tốt lắm. Giờ đến nét tiếp theo.", "goOnNoHint": "Tốt lắm. Giờ đến nét tiếp theo.", "wrong": "Chưa đúng. Bắt đầu từ dấu chấm và đi theo mũi tên.", "wrongAgain": "Xem nét này được viết thế nào, rồi thử lại.", "tooShort": "Hãy vẽ trọn cả nét trong một lần, không nhấc ngón tay.", "done": "Giỏi lắm!", "doneMistakes": "Xong, sai {m} lần.", "mistake": "", "mistakes": "", "showMe": "Xem cách viết", "restart": "Viết lại", "next": "Chữ tiếp theo", "skip": "Bỏ qua", "finish": "Xem kết quả", "boardLabel": "Ô tập tô chữ {c}. Vẽ từng nét bằng ngón tay hoặc chuột.", "sumHead": "Xong một bộ", "sumLine": "Bạn đã tô {t} / {n} chữ, trong đó {c} chữ không sai nét nào.", "skipped": "bỏ qua", "noMistake": "không sai", "again": "Tô lại bộ này", "nextSet": "10 chữ tiếp theo", "nextLevel": "Cấp tiếp theo: HSK {m}", "print": "In các chữ này thành phiếu tập viết", "printBase": "/vi/chinese-character-worksheets/", "mineEmpty": "Hãy gõ vài chữ Hán trước.", "mineNone": "Không có dữ liệu nét chữ cho: {c}", "mineCount": "{n} chữ, chia thành các bộ 10 chữ.", "mineSet": "Chữ của tôi"};
+const DATA_BASE = "/vi/chinese-character-tracing/";
+const STROKE_BASE = "/chinese-character-tracing/s/";
+const COUNTS = {"1":248,"2":123,"3":284,"4":441,"5":431};
+const KEY = "hskcheck-tracing-v1";
+const SET = 10, SHARDS = 128, NS = "http://www.w3.org/2000/svg";
+const $ = id => document.getElementById(id);
+const area = $("tr-area");
+const REDUCED = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+// --- saved state (this browser only) ---------------------------------------------------------------------------------
+let saveOk = true;
+function loadState() {
+  try { const s = JSON.parse(localStorage.getItem(KEY) || "null"); if (s && s.done) return s; } catch (e) { saveOk = false; }
+  return { level: 1, set: {}, done: {}, outline: 1, hints: 1, mine: "" };
+}
+const state = loadState();
+function save() {
+  try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { saveOk = false; }
+  $("storage-note").hidden = saveOk;
+}
+function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+function fmt(s, v) { return s.replace(/\{(\w+)\}/g, (m, k) => (k in v ? v[k] : m)); }
+function hanzi(text) {
+  const out = [], seen = new Set();
+  for (const c of Array.from(text || "")) if (/\p{Script=Han}/u.test(c) && !seen.has(c)) { seen.add(c); out.push(c); }
+  return out.slice(0, 400);
+}
+async function getJSON(url) { const r = await fetch(url); if (!r.ok) throw new Error(url + " " + r.status); return r.json(); }
+
+// --- data ----------------------------------------------------------------------------------------------------------
+const levelData = {}, strokeData = {}, charInfo = {};
+async function loadLevel(n) {
+  if (!levelData[n]) {
+    levelData[n] = (await getJSON(DATA_BASE + "hsk" + n + ".json")).c;
+    levelData[n].forEach(x => { if (!charInfo[x[0]]) charInfo[x[0]] = x; });
+  }
+  return levelData[n];
+}
+async function loadLevelSet(n, k) {
+  const d = await getJSON(STROKE_BASE + "hsk" + n + "-" + String(k + 1).padStart(2, "0") + ".json");
+  Object.assign(strokeData, d);
+}
+// Any characters: outlines and readings from /strokes/x/, centre lines from /strokes/m/, one shard per code point % 128.
+async function loadAny(chars) {
+  const shards = Array.from(new Set(chars.filter(c => !strokeData[c]).map(c => c.codePointAt(0) % SHARDS)));
+  await Promise.all(shards.map(async i => {
+    const h = i.toString(16).padStart(2, "0");
+    const [x, m] = await Promise.all([getJSON("/strokes/x/" + h + ".json"), getJSON("/strokes/m/" + h + ".json")]);
+    for (const c of chars) if (x[c] && m[c] && !strokeData[c]) strokeData[c] = { s: x[c].s, m: m[c], p: x[c].p };
+  }));
+}
+// Words and meanings for typed characters that are in an HSK set (loaded in the background, best effort).
+let infoAll = null;
+function loadAllInfo() {
+  if (!infoAll) infoAll = Promise.all([1, 2, 3, 4, 5].map(n => loadLevel(n).catch(() => null)));
+  return infoAll;
+}
+
+// --- geometry (Make Me a Hanzi units: a 1024 box, y up, the baseline of the box at -124) -------------------------------
+function pts(flat) { const o = []; for (let i = 0; i < flat.length; i += 2) o.push([flat[i], flat[i + 1]]); return o; }
+function dist(a, b) { return Math.hypot(a[0] - b[0], a[1] - b[1]); }
+function length(p) { let s = 0; for (let i = 1; i < p.length; i++) s += dist(p[i - 1], p[i]); return s; }
+function resample(p, n) {
+  const L = length(p);
+  if (p.length < 2 || L === 0) return Array.from({ length: n }, () => p[0].slice());
+  const out = [p[0].slice()], step = L / (n - 1);
+  let need = step, i = 1, prev = p[0];
+  while (out.length < n - 1 && i < p.length) {
+    const d = dist(prev, p[i]);
+    if (d >= need && d > 0) {
+      const t = need / d;
+      prev = [prev[0] + (p[i][0] - prev[0]) * t, prev[1] + (p[i][1] - prev[1]) * t];
+      out.push(prev); need = step;
+    } else { need -= d; prev = p[i]; i++; }
+  }
+  while (out.length < n) out.push(p[p.length - 1].slice());
+  return out;
+}
+const N = 24;
+// How well a drawn line fits one stroke's centre line: it must start near the start, end near the end, stay close
+// to the line all the way (points compared in order, so a stroke drawn backwards does not fit) and go the same way.
+function fit(user, med) {
+  const ml = length(med);
+  const T = Math.min(170, Math.max(95, 0.3 * ml + 60));
+  const U = resample(user, N), M = resample(med, N);
+  let d = 0;
+  for (let i = 0; i < N; i++) d += dist(U[i], M[i]);
+  d /= N;
+  const s = dist(U[0], M[0]), e = dist(U[N - 1], M[N - 1]);
+  const mv = [M[N - 1][0] - M[0][0], M[N - 1][1] - M[0][1]], uv = [U[N - 1][0] - U[0][0], U[N - 1][1] - U[0][1]];
+  const ml2 = Math.hypot(mv[0], mv[1]), ul2 = Math.hypot(uv[0], uv[1]);
+  const cos = ml2 > 40 && ul2 > 0 ? (mv[0] * uv[0] + mv[1] * uv[1]) / (ml2 * ul2) : 1;
+  // every part of the stroke (a corner too) must be passed near
+  let far = 0;
+  for (const q of M) { let best = Infinity; for (const u of U) best = Math.min(best, dist(q, u)); far = Math.max(far, best); }
+  const ok = d <= T && s <= 1.5 * T && e <= 1.4 * T && far <= 0.9 * T && cos >= 0.5 && length(user) >= 0.6 * ml;
+  return { ok, d };
+}
+// The drawn line is right for stroke k if it fits it, and does not fit another stroke of the character better
+// (an earlier stroke drawn again, or a later one drawn too soon).
+function judge(user, meds, k) {
+  if (length(user) < 30) return "short";
+  const r = fit(user, meds[k]);
+  if (!r.ok) return "no";
+  for (let j = 0; j < meds.length; j++) {
+    if (j === k) continue;
+    const o = fit(user, meds[j]);
+    if (o.ok && o.d < r.d) return "no";
+  }
+  return "ok";
+}
+
+// --- the board -----------------------------------------------------------------------------------------------------
+function el(tag, attrs, parent) {
+  const n = document.createElementNS(NS, tag);
+  for (const k in attrs) n.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(n);
+  return n;
+}
+function lineD(p) { return "M" + p.map(q => Math.round(q[0]) + " " + Math.round(q[1])).join("L"); }
+
+let wantReveal = false, mode = 0, level = 1, setIdx = 0, chars = [], pos = 0, results = [], cur = null, phase = "loading", token = 0;
+
+function infoHtml(c) {
+  const x = charInfo[c], d = strokeData[c];
+  const py = x ? x[1] : (d && d.p ? d.p.join(" / ") : "");
+  let h = '<p class="tr-py">' + esc(py) + '</p>';
+  if (x) h += '<p class="tr-word"><span class="zh-inline" lang="zh-Hans">' + esc(x[2]) + '</span> ' + esc(x[3]) +
+    '</p><p class="tr-mean">' + esc(x[4]) + '</p>';
+  return h;
+}
+
+function showChar() {
+  phase = "trace";
+  const c = chars[pos], d = strokeData[c];
+  const n = d.s.length;
+  cur = { c, n, k: 0, miss: 0, tries: 0, meds: d.m.map(pts), skipped: false };
+  area.innerHTML =
+    '<div class="pt-top"><p class="pt-ask">' + esc(fmt(UI.charN, { i: pos + 1, n: chars.length })) + '</p>' +
+    '<span class="pt-count" id="tr-stroke"></span></div>' +
+    '<div class="pt-bar" aria-hidden="true"><i style="width:' + (pos / chars.length * 100) + '%"></i></div>' +
+    '<div class="tr-main"><div class="tr-board" id="tr-board"></div>' +
+    '<div class="tr-side"><p class="tr-hz" lang="zh-Hans">' + esc(c) + '</p>' + infoHtml(c) +
+    '<p class="tr-msg" id="tr-msg" role="status" aria-live="polite"></p></div></div>' +
+    '<div class="pt-actions tr-actions">' +
+    '<button type="button" class="button ghost-btn" id="show-btn">' + esc(UI.showMe) + '</button>' +
+    '<button type="button" class="button ghost-btn" id="restart-btn">' + esc(UI.restart) + '</button>' +
+    '<button type="button" class="button ghost-btn" id="next-btn">' + esc(UI.skip) + '</button></div>';
+  buildBoard(d);
+  if (wantReveal) {
+    // after a tap on a level, a set or Start, bring the board into view (phones show the choices above it)
+    wantReveal = false;
+    const r = $("board-sheet").getBoundingClientRect();
+    if (r.top < 0 || r.top > innerHeight * 0.4) $("board-sheet").scrollIntoView({ block: "start", behavior: REDUCED ? "auto" : "smooth" });
+  }
+  $("show-btn").addEventListener("click", showMe);
+  $("restart-btn").addEventListener("click", restart);
+  $("next-btn").addEventListener("click", next);
+  update(state.hints ? UI.start : UI.startNoHint);
+}
+
+let svg, gGhost, gDone, gHint, gAnim, gInk, drawing = null;
+function buildBoard(d) {
+  const box = $("tr-board");
+  svg = el("svg", { viewBox: "0 0 1024 1024", class: "tr-svg", role: "img", "aria-label": fmt(UI.boardLabel, { c: cur.c }) });
+  el("rect", { x: 6, y: 6, width: 1012, height: 1012, class: "tr-frame" }, svg);
+  el("line", { x1: 512, y1: 6, x2: 512, y2: 1018, class: "tr-guide" }, svg);
+  el("line", { x1: 6, y1: 512, x2: 1018, y2: 512, class: "tr-guide" }, svg);
+  const defs = el("defs", {}, svg);
+  const mk = el("marker", { id: "tr-arrow", viewBox: "0 0 10 10", refX: 5, refY: 5, markerWidth: 4, markerHeight: 4, orient: "auto-start-reverse" }, defs);
+  el("path", { d: "M0 0L10 5L0 10z", class: "tr-arrowhead" }, mk);
+  const flip = { transform: "scale(1,-1) translate(0,-900)" };
+  gGhost = el("g", Object.assign({ class: "tr-ghost" }, flip), svg);
+  gDone = el("g", Object.assign({ class: "tr-done" }, flip), svg);
+  gHint = el("g", Object.assign({ class: "tr-hint" }, flip), svg);
+  gAnim = el("g", Object.assign({ class: "tr-anim" }, flip), svg);
+  gInk = el("g", { class: "tr-ink" }, svg);
+  d.s.forEach((p, i) => {
+    el("path", { d: p }, gGhost);
+    const cp = el("clipPath", { id: "tr-clip" + i }, defs);
+    el("path", { d: p, transform: "scale(1,-1) translate(0,-900)" }, cp);
+  });
+  box.appendChild(svg);
+  svg.addEventListener("pointerdown", down);
+  svg.addEventListener("pointermove", move);
+  svg.addEventListener("pointerup", up);
+  svg.addEventListener("pointercancel", cancel);
+  svg.addEventListener("lostpointercapture", e => { if (drawing && drawing.id === e.pointerId) up(e); });
+}
+
+function point(e) {
+  const r = svg.getBoundingClientRect();
+  return [(e.clientX - r.left) / r.width * 1024, (e.clientY - r.top) / r.height * 1024];
+}
+function down(e) {
+  if (phase !== "trace" || !cur || cur.k >= cur.n || (e.pointerType === "mouse" && e.button !== 0)) return;
+  e.preventDefault();
+  try { svg.setPointerCapture(e.pointerId); } catch (err) { /* still works without capture */ }
+  drawing = { id: e.pointerId, p: [point(e)], path: el("path", { class: "tr-line" }, gInk) };
+  drawing.path.setAttribute("d", lineD(drawing.p) + "l0 0");
+}
+function move(e) {
+  if (!drawing || drawing.id !== e.pointerId) return;
+  e.preventDefault();
+  const evs = e.getCoalescedEvents ? e.getCoalescedEvents() : [];
+  (evs.length ? evs : [e]).forEach(ev => drawing.p.push(point(ev)));
+  drawing.path.setAttribute("d", lineD(drawing.p));
+}
+function cancel(e) {
+  if (!drawing || drawing.id !== e.pointerId) return;
+  drawing.path.remove(); drawing = null;
+}
+function up(e) {
+  if (!drawing || drawing.id !== e.pointerId) return;
+  const dr = drawing; drawing = null;
+  // screen units (y down) -> stroke units (y up)
+  const user = dr.p.map(q => [q[0], 900 - q[1]]);
+  const v = judge(user, cur.meds, cur.k);
+  if (v === "ok") { dr.path.remove(); accept(); }
+  else if (v === "short") { fade(dr.path); say(UI.tooShort); }
+  else { fade(dr.path, true); miss(); }
+}
+function fade(path, bad) {
+  if (bad) path.classList.add("bad");
+  path.classList.add("fade");
+  setTimeout(() => path.remove(), REDUCED ? 250 : 700);
+}
+
+function strokePath(i, g, cls) { return el("path", { d: strokeData[cur.c].s[i], class: cls || "" }, g); }
+function accept() {
+  stopAnim();
+  strokePath(cur.k, gDone, REDUCED ? "" : "new");
+  cur.k++; cur.tries = 0;
+  if (cur.k >= cur.n) return finish();
+  update(UI.goOn);
+}
+function miss() {
+  cur.miss++; cur.tries++;
+  if (cur.tries >= 3) { cur.tries = 0; update(UI.wrongAgain, true); showMe(); }
+  else update(UI.wrong, true);
+}
+function say(t) { const m = $("tr-msg"); if (m) m.textContent = t; }
+// Redraw the hint (start dot and arrow on the next stroke) and the counter.
+function update(msg, forceHint) {
+  if (msg !== null) say(msg);
+  $("tr-stroke").textContent = fmt(UI.strokeN, { i: Math.min(cur.k + 1, cur.n), n: cur.n });
+  gGhost.style.display = state.outline ? "" : "none";
+  gHint.textContent = "";
+  if (cur.k >= cur.n || !(state.hints || forceHint)) return;
+  strokePath(cur.k, gHint, "tr-hint-fill");
+  const m = cur.meds[cur.k];
+  if (length(m) > 60) el("path", { d: lineD(m), class: "tr-hint-line", "marker-end": "url(#tr-arrow)" }, gHint);
+  el("circle", { cx: m[0][0], cy: m[0][1], r: 30, class: "tr-hint-dot" }, gHint);
+}
+let animTimer = 0;
+function stopAnim() { clearTimeout(animTimer); if (gAnim) gAnim.textContent = ""; }
+// "Show me": the next stroke is painted along its centre line, inside its outline.
+function showMe() {
+  if (phase !== "trace" || !cur || cur.k >= cur.n) return;
+  stopAnim();
+  update(null, true);
+  const k = cur.k, m = cur.meds[k];
+  const g = el("g", { "clip-path": "url(#tr-clip" + k + ")" }, gAnim);
+  const p = el("path", { d: lineD(m), class: "tr-anim-line" }, g);
+  if (REDUCED) { animTimer = setTimeout(stopAnim, 1600); return; }
+  const L = p.getTotalLength() + 120;
+  p.style.strokeDasharray = L + " " + L;
+  p.style.strokeDashoffset = L;
+  p.getBoundingClientRect();
+  p.style.transition = "stroke-dashoffset " + Math.max(0.5, Math.min(1.2, L / 900)) + "s linear";
+  p.style.strokeDashoffset = 0;
+  animTimer = setTimeout(stopAnim, 2600);
+}
+function restart() {
+  if (phase !== "trace" && phase !== "char-done") return;
+  results[pos] = undefined;
+  showChar();
+}
+function finish() {
+  phase = "char-done";
+  stopAnim();
+  gHint.textContent = "";
+  gGhost.style.display = "";
+  svg.classList.add("complete");
+  results[pos] = { c: cur.c, miss: cur.miss };
+  if (mode) {
+    const d = state.done[level] || "";
+    if (d.indexOf(cur.c) < 0) state.done[level] = d + cur.c;
+    save();
+  }
+  say(cur.miss ? fmt(UI.doneMistakes, { m: cur.miss, mw: cur.miss === 1 ? UI.mistake : UI.mistakes }) : UI.done);
+  $("tr-stroke").textContent = fmt(UI.strokeN, { i: cur.n, n: cur.n });
+  const b = $("next-btn");
+  b.textContent = pos + 1 < chars.length ? UI.next : UI.finish;
+  b.className = "button";
+  b.focus({ preventScroll: true });
+}
+function next() {
+  if (phase !== "trace" && phase !== "char-done") return;
+  stopAnim();
+  if (!results[pos]) results[pos] = { c: chars[pos], skipped: true };
+  pos++;
+  if (pos < chars.length) showChar(); else summary();
+}
+
+// --- end of a set --------------------------------------------------------------------------------------------------
+function summary() {
+  phase = "summary";
+  const done = results.filter(r => r && !r.skipped), clean = done.filter(r => !r.miss);
+  const items = results.map(r => {
+    const x = charInfo[r.c], d = strokeData[r.c];
+    const py = x ? x[1] : (d && d.p ? d.p.join(" / ") : "");
+    const how = r.skipped ? UI.skipped : r.miss ? fmt(UI.doneMistakes, { m: r.miss, mw: r.miss === 1 ? UI.mistake : UI.mistakes }) : UI.noMistake;
+    return '<li class="' + (r.skipped ? "skip" : r.miss ? "miss" : "clean") + '"><span class="m-zh" lang="zh-Hans">' + esc(r.c) +
+      '</span><span class="m-py">' + esc(py) + '</span><span class="m-en">' + esc(how) + '</span></li>';
+  }).join("");
+  const total = mode ? COUNTS[level] : 0, sets = Math.ceil((mode ? total : allMine.length) / SET);
+  let more = "";
+  if (setIdx + 1 < sets) more = '<button type="button" class="button ghost-btn" id="more-btn">' + esc(UI.nextSet) + '</button>';
+  else if (mode && level < 5) more = '<button type="button" class="button ghost-btn" id="level-btn">' + esc(fmt(UI.nextLevel, { m: level + 1 })) + '</button>';
+  area.innerHTML = '<div class="pt-score"><p class="sub">' + esc(UI.sumHead) + ' · ' + esc(setName()) + '</p>' +
+    '<p class="big">' + done.length + ' / ' + results.length + '</p>' +
+    '<p>' + esc(fmt(UI.sumLine, { t: done.length, n: results.length, c: clean.length })) + '</p></div>' +
+    '<ul class="pt-missed tr-sum">' + items + '</ul>' +
+    '<div class="pt-actions"><button type="button" class="button" id="again-btn">' + esc(UI.again) + '</button>' + more + '</div>' +
+    '<p class="study-link"><a href="' + UI.printBase + '#c=' + encodeURIComponent(chars.join("")) + '">' + esc(UI.print) + ' →</a></p>';
+  $("again-btn").addEventListener("click", () => { wantReveal = true; startSet(); });
+  if ($("more-btn")) $("more-btn").addEventListener("click", () => { wantReveal = true; setIdx++; if (mode) { state.set[level] = setIdx; save(); } fillSets(); startSet(); });
+  if ($("level-btn")) $("level-btn").addEventListener("click", () => { wantReveal = true; pickLevel(level + 1); });
+  $("again-btn").focus({ preventScroll: true });
+  if (mode) fillSets();
+}
+function setName() {
+  if (!mode) return UI.mineSet + " · " + fmt(UI.set, { a: setIdx * SET + 1, b: Math.min(allMine.length, (setIdx + 1) * SET) });
+  return "HSK " + level + " · " + fmt(UI.set, { a: setIdx * SET + 1, b: Math.min(COUNTS[level], (setIdx + 1) * SET) });
+}
+
+// --- choosing --------------------------------------------------------------------------------------------------------
+let allMine = [];
+function fillSets() {
+  const sel = $("tr-set"), list = levelData[level] || [], done = state.done[level] || "";
+  sel.textContent = "";
+  for (let k = 0; k * SET < COUNTS[level]; k++) {
+    const part = list.slice(k * SET, (k + 1) * SET).map(x => x[0]);
+    const all = part.length && part.every(c => done.indexOf(c) >= 0);
+    const o = document.createElement("option");
+    o.value = k;
+    o.textContent = fmt(UI.set, { a: k * SET + 1, b: Math.min(COUNTS[level], (k + 1) * SET) }) + (part.length ? " · " + part.join("") : "") + (all ? " ✓" : "");
+    sel.appendChild(o);
+  }
+  sel.value = setIdx;
+  const count = list.filter(x => done.indexOf(x[0]) >= 0).length;
+  $("tr-progress").textContent = fmt(UI.traced, { d: count, n: COUNTS[level] });
+}
+function showPicker() {
+  document.querySelectorAll(".tr-levels .lv-btn").forEach(b => b.setAttribute("aria-pressed", String(+b.dataset.level === (mode ? level : 0))));
+  $("tr-level-pick").hidden = !mode;
+  $("tr-mine-pick").hidden = !!mode;
+}
+async function pickLevel(n, k) {
+  mode = 1; level = n; state.level = n; save();
+  setIdx = Math.min(Math.max(0, k !== undefined ? k : (+state.set[n] || 0)), Math.ceil(COUNTS[n] / SET) - 1);
+  showPicker();
+  if (location.hash !== "#hsk" + n) history.replaceState(null, "", "#hsk" + n);
+  const mine = ++token;
+  area.innerHTML = '<p class="empty">' + esc(UI.loading) + '</p>';
+  phase = "loading";
+  try { await loadLevel(n); } catch (e) { if (mine === token) area.innerHTML = '<p class="empty">' + esc(UI.loadFail) + '</p>'; return; }
+  if (mine !== token) return;
+  fillSets();
+  startSet();
+}
+async function startSet() {
+  const mine = ++token;
+  results = []; pos = 0;
+  area.innerHTML = '<p class="empty">' + esc(UI.loading) + '</p>';
+  phase = "loading";
+  try {
+    if (mode) {
+      chars = levelData[level].slice(setIdx * SET, (setIdx + 1) * SET).map(x => x[0]);
+      if (chars.some(c => !strokeData[c])) await loadLevelSet(level, setIdx);
+    } else {
+      chars = allMine.slice(setIdx * SET, (setIdx + 1) * SET);
+      await loadAny(chars);
+    }
+  } catch (e) { if (mine === token) area.innerHTML = '<p class="empty">' + esc(UI.loadFail) + '</p>'; return; }
+  if (mine !== token) return;
+  chars = chars.filter(c => strokeData[c]);
+  if (!chars.length) { area.innerHTML = '<p class="empty">' + esc(UI.loadFail) + '</p>'; return; }
+  showChar();
+}
+async function pickMine(text, go) {
+  mode = 0; showPicker();
+  if (location.hash.startsWith("#hsk")) history.replaceState(null, "", location.pathname);
+  $("tr-mine").value = text;
+  const want = hanzi(text);
+  const note = $("tr-mine-note");
+  if (!want.length) { note.textContent = UI.mineEmpty; area.innerHTML = '<p class="empty">' + esc(UI.mineEmpty) + '</p>'; phase = "idle"; return; }
+  state.mine = want.join("");
+  if (go) state.level = 0;
+  save();
+  if (!go) { note.textContent = fmt(UI.mineCount, { n: want.length }); area.innerHTML = '<p class="empty">' + esc(note.textContent) + '</p>'; phase = "idle"; return; }
+  const mine = ++token;
+  area.innerHTML = '<p class="empty">' + esc(UI.loading) + '</p>';
+  phase = "loading";
+  try { await loadAny(want); } catch (e) { if (mine === token) area.innerHTML = '<p class="empty">' + esc(UI.loadFail) + '</p>'; return; }
+  if (mine !== token) return;
+  await Promise.race([loadAllInfo(), new Promise(r => setTimeout(r, 1500))]);
+  if (mine !== token) return;
+  allMine = want.filter(c => strokeData[c]);
+  const none = want.filter(c => !strokeData[c]);
+  note.textContent = (allMine.length ? fmt(UI.mineCount, { n: allMine.length }) : "") + (none.length ? " " + fmt(UI.mineNone, { c: none.join(" ") }) : "");
+  if (!allMine.length) { area.innerHTML = '<p class="empty">' + esc(note.textContent) + '</p>'; phase = "idle"; return; }
+  setIdx = 0;
+  startSet();
+}
+
+document.querySelectorAll(".tr-levels .lv-btn").forEach(b => b.addEventListener("click", () => {
+  const n = +b.dataset.level;
+  wantReveal = !!n;
+  if (n) pickLevel(n); else pickMine(state.mine || $("tr-mine").value, false);
+}));
+$("tr-set").addEventListener("change", e => { wantReveal = true; setIdx = +e.target.value; state.set[level] = setIdx; save(); startSet(); });
+$("tr-mine-pick").addEventListener("submit", e => { e.preventDefault(); wantReveal = true; pickMine($("tr-mine").value, true); });
+function switches() {
+  $("sw-outline").setAttribute("aria-pressed", String(!!state.outline));
+  $("sw-hints").setAttribute("aria-pressed", String(!!state.hints));
+}
+$("sw-outline").addEventListener("click", () => { state.outline = state.outline ? 0 : 1; save(); switches(); if (phase === "trace") update(null); });
+$("sw-hints").addEventListener("click", () => { state.hints = state.hints ? 0 : 1; save(); switches(); if (phase === "trace") update(null); });
+document.addEventListener("keydown", e => {
+  if (e.altKey || e.ctrlKey || e.metaKey || (e.target.closest && e.target.closest("input, textarea, select"))) return;
+  const onButton = e.target.closest && e.target.closest("button, a");
+  if (phase === "trace" && (e.key === "h" || e.key === "H")) { e.preventDefault(); showMe(); }
+  else if ((phase === "trace" || phase === "char-done") && (e.key === "r" || e.key === "R")) { e.preventDefault(); restart(); }
+  else if (phase === "char-done" && e.key === "Enter" && !onButton) { e.preventDefault(); next(); }
+});
+function fromHash() {
+  const h = location.hash;
+  const m = h.match(/^#hsk([1-5])$/);
+  if (m) { pickLevel(+m[1]); return true; }
+  if (h.startsWith("#c=")) {
+    let t = "";
+    try { t = decodeURIComponent(h.slice(3)); } catch (e) { t = ""; }
+    if (hanzi(t).length) { pickMine(hanzi(t).join(""), true); return true; }
+  }
+  return false;
+}
+addEventListener("hashchange", fromHash);
+
+switches();
+$("storage-note").hidden = saveOk;
+if (state.mine) $("tr-mine").value = state.mine;
+if (!fromHash()) {
+  if (state.level === 0 && state.mine) pickMine(state.mine, true);
+  else pickLevel(Math.min(5, Math.max(1, +state.level || 1)));
+}
+})();
+</script>
+
+<footer class="site-foot">hskcheck.com · <a href="/vi/about/">Giới thiệu</a> · <a href="/terms/" hreflang="en">Điều khoản sử dụng</a> · <a href="/privacy/" hreflang="en">Chính sách quyền riêng tư</a></footer>
+<nav class="tab-bar" aria-label="Thanh chính"><a href="/vi/hsk-flashcards/"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="14" height="14" rx="2"/><path d="M7 3h12a2 2 0 0 1 2 2v12"/></svg><span>Flashcard</span></a><a href="/vi/hsk-1-word-list/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5C5.5 4 8.5 4 12 6c3.5-2 6.5-2 9-.5V19c-2.5-1.5-5.5-1.5-9 .5-3.5-2-6.5-2-9-.5z"/><path d="M12 6v13.5"/></svg><span>Từ vựng</span></a><a href="/vi/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span>Kiểm tra</span></a></nav>
+</body>
+</html>

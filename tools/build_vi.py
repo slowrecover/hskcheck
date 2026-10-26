@@ -6,6 +6,8 @@ Outputs:
   vi/chinese-character-worksheets/      the worksheet maker in Vietnamese
   vi/hsk-N-character-worksheets/        preset to the characters of HSK N (1-3: strokes/hskN.json; 4-5: new characters)
   vi/about/index.html                   about the site
+  vi/hsk-flashcards/ and the practice tools (test, daily quiz, listening, pinyin and tones, tracing): see
+                                        tools/vi_tools.py
 
 data/vi/hskN_vi.tsv has two columns, word and Vietnamese meaning, in exactly the order of data/hskN.tsv. The build
 stops if a file is out of order or incomplete, or if a meaning holds a tab or a Chinese character. No Vietnamese page
@@ -24,6 +26,7 @@ import re
 
 import hsk4
 import hsk5
+import vi_tools
 import worksheets_th
 
 VI_URL = "/vi/"
@@ -37,15 +40,14 @@ FOOT = ('\n<footer class="site-foot">hskcheck.com · <a href="/vi/about/">Giới
         '<a href="/terms/" hreflang="en">Điều khoản sử dụng</a> · '
         '<a href="/privacy/" hreflang="en">Chính sách quyền riêng tư</a></footer>')
 
-# Bottom bar on phones (see build.tab_bar): word lists, writing sheets, checker.
-TABS = [("/vi/hsk-1-word-list/", "Từ vựng", "read"), (VI_WS_URL, "Tập viết", "write"), (VI_URL, "Kiểm tra", "check")]
+# Bottom bar on phones (see build.tab_bar): flashcards, word lists, checker.
+TABS = [(vi_tools.STUDY_URL, "Flashcard", "cards"), ("/vi/hsk-1-word-list/", "Từ vựng", "read"),
+        (VI_URL, "Kiểm tra", "check")]
 
 
 def tab_on(path, href):
-    if href == VI_URL:
-        return path == VI_URL
-    if href == VI_WS_URL:
-        return path.startswith("/vi/") and path.endswith("-character-worksheets/")
+    if href in (VI_URL, vi_tools.STUDY_URL):
+        return path == href
     return bool(re.fullmatch(r"/vi/hsk-\d-word-list/", path))
 
 
@@ -151,8 +153,7 @@ WS_UI = [
     ("checked> Pinyin</label>", "checked> Pinyin</label>"),
     (">Print or save as PDF</button>", ">In hoặc lưu thành PDF</button>"),
     ('href="/chinese-character-tracing/" data-base="/chinese-character-tracing/">Trace them on screen</a>',
-     'href="/chinese-character-tracing/" data-base="/chinese-character-tracing/" hreflang="en">'
-     'Tập tô trên màn hình (tiếng Anh)</a>'),
+     f'href="{vi_tools.TRACE_URL}" data-base="{vi_tools.TRACE_URL}">Tập tô trên màn hình</a>'),
     ('aria-label="Worksheet preview"', 'aria-label="Xem trước phiếu tập viết"'),
     ("Name ______________________ &nbsp; Date ____________", "Họ tên ______________________ &nbsp; Ngày ____________"),
     ("Free worksheets and the HSK level checker at hskcheck.com", "Phiếu tập viết chữ Hán miễn phí tại hskcheck.com/vi/"),
@@ -244,6 +245,7 @@ def alternates(root):
     pairs["/chinese-character-worksheets/"] = VI_WS_URL
     pairs.update({f"/hsk-{n}-character-worksheets/": f"{VI_URL}hsk-{n}-character-worksheets/" for n in ws_levels(root)})
     pairs["/about/"] = VI_ABOUT_URL
+    pairs.update(vi_tools.alternates())
     return pairs
 
 
@@ -306,7 +308,9 @@ def build(*, root, tpl, site, base_css, render, word_lists, read_words, search_k
 
     pages = [(VI_URL, "Kiểm tra cấp độ")]
     pages += [(f"{VI_URL}hsk-{n}-word-list/", f"Từ vựng HSK {n}") for n in LEVELS]
+    pages += vi_tools.NAV
     pages.append((VI_WS_URL, "Phiếu tập viết"))
+    pages += vi_tools.NAV_AFTER_WS
 
     def nav(current):
         links = []
@@ -436,6 +440,9 @@ def build(*, root, tpl, site, base_css, render, word_lists, read_words, search_k
         write(url, f"Phiếu tập viết chữ Hán HSK {n} miễn phí, có thứ tự nét",
               f"Phiếu tập viết {num(total)} chữ Hán HSK {n} theo đề cương HSK 3.0, in miễn phí: thứ tự nét, pinyin, "
               "chữ mờ để tô và ô chữ điền.", ws_css, body)
+
+    # Flashcards and practice tools
+    urls += vi_tools.build(root=root, tpl=tpl, write=write, nav=nav, base_css=base_css, vi_css=vi_css, data=data)
 
     # About
     body = (tpl / "vi" / "about_body.html").read_text(encoding="utf-8").replace("__NAV__", nav(VI_ABOUT_URL))

@@ -291,7 +291,8 @@ def tab_bar(url, lang):
 
 def render(title, description, url, css, body, head_extra="", lang="en", foot=None):
     page = (TPL / "layout.html").read_text(encoding="utf-8")
-    app = (f'<link rel="manifest" href="{"/th/manifest.webmanifest" if lang == "th" else "/manifest.webmanifest"}">\n'
+    manifest = {"th": "/th/manifest.webmanifest", "vi": "/vi/manifest.webmanifest"}.get(lang, "/manifest.webmanifest")
+    app = (f'<link rel="manifest" href="{manifest}">\n'
            '<meta name="theme-color" content="#2A4A9A">\n'
            '<link rel="icon" type="image/png" sizes="48x48" href="/icons/favicon-48.png">\n'
            '<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">\n'
