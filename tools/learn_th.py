@@ -119,6 +119,23 @@ def worksheet_cta(p, url):
             f'<a class="button ghost" href="{url}practice/">ฝึกทำออนไลน์</a></div>\n  </section>\n')
 
 
+HSK3_WB = "/th/upgrade-packs/hsk-3-vocabulary-workbook/"
+
+
+def workbook_box(level):
+    """The Thai HSK 3 vocabulary workbook and its free lesson 1 (see PACK_HSK3_TH.md); YCT workbooks for teachers."""
+    lead = ("<b>สมุดแบบฝึกคำศัพท์ HSK 3</b> คำศัพท์ทั้ง 499 คำใน 25 บทเรียน พร้อมประโยคตัวอย่างแปลไทย แบบฝึกเขียน "
+            "และแบบทดสอบ พิมพ์ได้" if level >= 3 else
+            "<b>เป้าหมายต่อไปคือ HSK 3?</b> สมุดแบบฝึกคำศัพท์ HSK 3 พาเรียนคำศัพท์ทั้ง 499 คำใน 25 บทเรียน "
+            "พร้อมประโยคตัวอย่างแปลไทย แบบฝึกเขียน และแบบทดสอบ พิมพ์ได้")
+    return ('  <section class="sheet learn" aria-label="สมุดแบบฝึกคำศัพท์ HSK 3">\n'
+            f'    <p>{lead}</p>\n'
+            f'    <div class="cta"><a class="button" href="{HSK3_WB}hsk3-lesson-1-free.pdf">ดาวน์โหลดบทที่ 1 ฟรี (PDF)</a>'
+            f'<a class="button ghost" href="{HSK3_WB}">ดูสมุดแบบฝึกฉบับเต็ม</a></div>\n'
+            '    <p>สอนภาษาจีนเด็ก? ดู<a href="/th/upgrade-packs/yct-1-4-workbook-bundle/">สมุดแบบฝึกคำศัพท์ YCT 1–4 สำหรับเด็ก</a></p>\n'
+            '  </section>\n\n')
+
+
 def build(*, root, tpl, site, css, ws_css, render, nav, font_link, foot):
     """Write /th/learn/, one page per Thai file and its worksheet. Returns the URLs written."""
     pages = load_pages(root)
@@ -144,7 +161,8 @@ def build(*, root, tpl, site, css, ws_css, render, nav, font_link, foot):
                 .replace("__LEDE__", learn.zh_spans(p["lede"]))
                 .replace("__SECTIONS__", "\n".join(learn.section_html(s) for s in p["sections"]))
                 .replace("__MORE__", f'<ul class="more">{more}</ul>' if more else "")
-                .replace("__WORKSHEET__", worksheet_cta(p, url)))
+                .replace("__WORKSHEET__", worksheet_cta(p, url))
+                .replace("__WORKBOOK__", workbook_box(lv)))
         ld = json.dumps({
             "@context": "https://schema.org", "@type": "Article", "headline": p["title"],
             "description": p["description"], "datePublished": p["published"],
