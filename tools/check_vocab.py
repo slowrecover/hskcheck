@@ -3,6 +3,7 @@
 Usage:
   python3 tools/check_vocab.py --level 1 "我想喝茶。" "我要一杯茶。"
   python3 tools/check_vocab.py --level 2 --file sentences.txt   (one sentence per line)
+  python3 tools/check_vocab.py --yct 2 "我有一个妹妹。"           (YCT 1-2 words only, data/yct/yct2.tsv)
 
 Splits each sentence with the same rule as the site: the split with the fewest
 unknown characters, then the fewest pieces. Exits with status 1 if any sentence
@@ -24,6 +25,15 @@ def allowed_words(level):
         words |= {w.strip() for w in raw.split(",") if w.strip()}
     for w in list(words):
         if len(w) >= 3 and w.endswith("儿"):
+            words.add(w[:-1])
+    return words
+
+
+def allowed_yct(level):
+    """The YCT lists are cumulative: data/yct/yctN.tsv already holds every word of YCT 1..N."""
+    words = {l.split("\t")[0] for l in (DATA / "yct" / f"yct{level}.tsv").read_text(encoding="utf-8").splitlines() if l.strip()}
+    for w in list(words):
+        if len(w) >= 2 and w.endswith("儿"):
             words.add(w[:-1])
     return words
 
@@ -64,21 +74,24 @@ def check(sentence, words, max_len):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--level", type=int, required=True, choices=[1, 2, 3])
+    g = ap.add_mutually_exclusive_group(required=True)
+    g.add_argument("--level", type=int, choices=[1, 2, 3], help="HSK 3.0 level")
+    g.add_argument("--yct", type=int, choices=[1, 2, 3, 4], help="YCT level")
     ap.add_argument("--file")
     ap.add_argument("sentences", nargs="*")
     args = ap.parse_args()
     sentences = list(args.sentences)
     if args.file:
         sentences += [l.strip() for l in open(args.file, encoding="utf-8") if l.strip()]
-    words = allowed_words(args.level)
+    words = allowed_yct(args.yct) if args.yct else allowed_words(args.level)
+    label = f"YCT {args.yct}" if args.yct else f"HSK {args.level}"
     max_len = max(len(w) for w in words)
     failed = 0
     for s in sentences:
         tokens, bad = check(s, words, max_len)
         failed += bool(bad)
         print(("OK  " if not bad else "OUT ") + s + "   " + " / ".join(tokens))
-    print(f"\n{len(sentences)} checked, {failed} above HSK {args.level}")
+    print(f"\n{len(sentences)} checked, {failed} above {label}")
     sys.exit(1 if failed else 0)
 
 
