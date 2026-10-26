@@ -9,6 +9,7 @@ Outputs:
   th/chinese-measure-words/        Thai measure word finder (see tools/measure_th.py)
   th/old-hsk-to-new-hsk/           Thai old HSK -> new HSK page (see tools/upgrade_th.py)
   th/hsk-practice-test/            Thai HSK practice test (see tools/practice.py)
+  th/upgrade-packs/                Thai printable pack pages (see tools/packs.py)
 
 data/th/hskN_th.tsv has two columns, word and Thai meaning, in the same order as data/hskN.tsv.
 The build stops if the words do not match exactly.
@@ -22,6 +23,7 @@ import hsk4
 import hsk5
 import learn_th
 import measure_th
+import packs
 import practice
 import study
 import reading
@@ -75,6 +77,7 @@ FONT_LINK = ('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?fam
              '&display=swap">')
 TH_ABOUT_URL = "/th/about/"
 FOOT = ('\n<footer class="site-foot">hskcheck.com · <a href="/th/about/">เกี่ยวกับเรา</a> · '
+        '<a href="/th/upgrade-packs/">ชุดแบบฝึกพิมพ์ได้</a> · '
         '<a href="/terms/" hreflang="en">ข้อกำหนดการใช้งาน</a> · '
         '<a href="/privacy/" hreflang="en">นโยบายความเป็นส่วนตัว</a></footer>')
 
@@ -278,6 +281,10 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
     urls += upgrade_th.build(root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK, foot=FOOT,
                              css=base_css + (tpl / "upgrade.css").read_text(encoding="utf-8") + th_css, thai_meanings=checker_th)
 
+    # Printable packs (Thai editions)
+    urls += packs.build_th(root=root, site=site, render=render, nav=nav, font_link=FONT_LINK, foot=FOOT,
+                           css=base_css + th_css)
+
     # YCT word lists
     urls += yct.build_th(root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK, foot=FOOT,
                          css=wl_css + (tpl / "yct.css").read_text(encoding="utf-8"),
@@ -321,5 +328,6 @@ def alternates(root, levels):
         pairs.update(practice.alternates(root))
     pairs.update(reading.alternates(root))
     pairs.update(upgrade_th.alternates(root))
+    pairs.update(packs.th_alternates())
     pairs["/about/"] = TH_ABOUT_URL
     return pairs

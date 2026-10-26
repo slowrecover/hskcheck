@@ -384,7 +384,7 @@ table.words-table td.lv { white-space: nowrap; text-align: right; padding-right:
     $("ws-cap").hidden = chars.length <= 400;
     $("summary").hidden = false;
     $("breakdown-wrap").hidden = false;
-    const cta = $("pack-cta");  // printable pack, only for the old HSK 1 -> new HSK 1 list (not on the Thai page)
+    const cta = $("pack-cta");  // printable pack, only for the old HSK 1 -> new HSK 1 list (the Thai page links the Thai edition)
     if (cta) cta.hidden = !(O === 1 && T === 1);
   }
 

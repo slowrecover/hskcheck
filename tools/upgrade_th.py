@@ -30,10 +30,13 @@ UI = [
     (">New HSK 4<", ">HSK ใหม่ 4<"), (">New HSK 5<", ">HSK ใหม่ 5<"), (">New HSK 6<", ">HSK ใหม่ 6<"),
     (">New HSK 7–9<", ">HSK ใหม่ 7–9<"),
     ('<h2 id="sum-title">What you still need</h2>', '<h2 id="sum-title">สิ่งที่คุณยังต้องเรียน</h2>'),
-    # The printable pack is in English only, so the Thai page leaves out its link.
-    ('\n    <p class="pack-cta" id="pack-cta" hidden><b>Want this list on paper?</b> The '
+    # The printable pack has a Thai edition (tools/packs.py TH_PACKS): link it in Thai.
+    ('<p class="pack-cta" id="pack-cta" hidden><b>Want this list on paper?</b> The '
      '<a href="/upgrade-packs/old-hsk-1-to-new-hsk-1/">Old HSK 1 → New HSK 1 Upgrade Pack</a> has the same words with '
-     'example sentences, writing practice for the new characters, and quizzes, ready to print. $3.99.</p>', ''),
+     'example sentences, writing practice for the new characters, and quizzes, ready to print. $3.99.</p>',
+     '<p class="pack-cta" id="pack-cta" hidden><b>อยากได้รายการนี้แบบพิมพ์ได้?</b> '
+     '<a href="/th/upgrade-packs/old-hsk-1-to-new-hsk-1/">ชุดอัปเกรด HSK 1 เก่า → HSK 1 ใหม่</a> มีคำศัพท์ชุดเดียวกัน '
+     'พร้อมประโยคตัวอย่างแปลไทย แบบฝึกเขียนตัวอักษรใหม่ และแบบทดสอบ พร้อมพิมพ์ $2.99</p>'),
     ('<p class="status" id="load-status">Loading word lists…</p>', '<p class="status" id="load-status">กำลังโหลดรายการคำศัพท์…</p>'),
     ("<span>words to learn</span>", "<span>คำที่ต้องเรียน</span>"),
     ("<span>new characters</span>", "<span>ตัวอักษรใหม่</span>"),

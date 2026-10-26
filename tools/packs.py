@@ -9,8 +9,10 @@ Outputs:
   /upgrade-packs/                     list of packs
   /upgrade-packs/<slug>/index.html    one page per pack
   /terms/index.html                   Terms of Service, with the refund policy
+  /th/upgrade-packs/...               Thai editions (TH_PACKS), built by build_th() from tools/build_th.py; each is
+                                      its own product with its own checkout link and preview images in its folder
 
-Called from tools/build.py; returns the URLs it wrote.
+Called from tools/build.py (English) and tools/build_th.py (Thai); each returns the URLs it wrote.
 """
 import html
 
@@ -249,4 +251,163 @@ def build(root, pages, nav, render, base_css, site):
         "Terms for using hskcheck.com and buying its printable packs, including payment, delivery and refunds.",
         site + TERMS_URL, base_css, terms_body(nav(pages, TERMS_URL))), encoding="utf-8")
     urls.append(TERMS_URL)
+    return urls
+
+
+# ---- Thai editions ------------------------------------------------------------------------------------------------
+TH_INDEX_URL = "/th/upgrade-packs/"
+
+TH_PACKS = [
+    {
+        "slug": "old-hsk-1-to-new-hsk-1",
+        "en_slug": "old-hsk-1-to-new-hsk-1",  # the English edition of the same pack (for hreflang)
+        "name": "ชุดอัปเกรด HSK 1 เก่า → HSK 1 ใหม่",
+        "price": "$2.99",
+        "price_thb": "ประมาณ 100 บาท",
+        "pages": 60,
+        "checkout": "",  # Creem checkout link of the Thai product; empty shows "coming soon"
+        "title": "ชุดอัปเกรด HSK 1 เก่า → HSK 1 ใหม่ PDF ภาษาไทย พิมพ์ได้",
+        "description": ("เคยเรียน HSK 1 แบบเก่า? เรียนคำศัพท์ HSK 1 ใหม่อีก 155 คำ พร้อมประโยคตัวอย่างแปลไทย "
+                        "ฝึกเขียนตัวอักษรใหม่ 74 ตัว แบบทดสอบและเฉลย PDF พิมพ์ได้ $2.99"),
+        "lede": ("เคยเรียน HSK 1 แบบเก่ามาแล้ว? HSK 1 ใหม่มีคำศัพท์ 300 คำ และ 155 คำในนั้นไม่มีใน HSK 1 เก่า "
+                 "ชุดแบบฝึกพิมพ์ได้นี้สอน 155 คำนั้นใน 10 บทเรียนสั้น ๆ พร้อมคำอธิบายภาษาไทยทั้งเล่ม"),
+        "inside": [
+            "คำศัพท์ทั้ง 155 คำ พร้อมพินอินและความหมายภาษาไทย ทุกคำมีประโยคตัวอย่างที่ใช้เฉพาะคำศัพท์ HSK 1 ใหม่ "
+            "พร้อมพินอินและคำแปลภาษาไทย",
+            "ลำดับขีดและช่องฝึกเขียนตามรอย สำหรับตัวอักษร 74 ตัวที่ไม่มีใน HSK 1 เก่า",
+            "แบบทดสอบท้ายทุกบท แบบทดสอบรวม 20 ข้อ และเฉลยทั้งหมด",
+            "แผนเรียน 10 วัน และดัชนีคำศัพท์",
+            "60 หน้า ขนาด A4",
+        ],
+        "previews": [
+            ("page-1.jpg", "หน้าปก"),
+            ("page-3.jpg", "ทุกคำมีประโยคตัวอย่าง พร้อมคำแปลภาษาไทย"),
+            ("page-5.jpg", "ฝึกเขียนตัวอักษรใหม่ทุกตัว"),
+            ("page-6.jpg", "แบบทดสอบท้ายทุกบท"),
+        ],
+        "free_url": "/th/old-hsk-to-new-hsk/#old=1&new=1",
+        "free_text": ("เครื่องมือ HSK เก่า → ใหม่ (ฟรี) แสดงคำศัพท์ 155 คำเดียวกันพร้อมพินอินและความหมายภาษาไทย "
+                      "ชุดแบบฝึกเพิ่มประโยคตัวอย่าง แบบฝึกเขียน และแบบทดสอบ จัดหน้าพร้อมพิมพ์"),
+    },
+]
+
+
+def th_url(p):
+    return f"{TH_INDEX_URL}{p['slug']}/"
+
+
+def th_buy_button(p):
+    if p["checkout"]:
+        return f'<a class="button" href="{E(p["checkout"])}">ซื้อในราคา {p["price"]}</a>'
+    return '<span class="button" aria-disabled="true">เปิดให้ซื้อเร็ว ๆ นี้</span>'
+
+
+def th_pack_body(p, nav_html):
+    inside = "".join(f"<li>{E(x)}</li>" for x in p["inside"])
+    figs = "".join(
+        f'<figure><img src="{th_url(p)}{f}" width="620" height="878" loading="lazy" alt="{E(cap)}"><figcaption>{E(cap)}</figcaption></figure>'
+        for f, cap in p["previews"])
+    return f"""<div class="wrap">
+  <header>
+    {nav_html}
+    <div class="eyebrow"><span>ชุดแบบฝึกพิมพ์ได้</span><span class="chip">PDF · {p['pages']} หน้า</span><span class="chip">{p['price']}</span></div>
+    <h1><span class="zh">补差</span>{E(p['name'])}</h1>
+    <p class="lede">{E(p['lede'])}</p>
+  </header>
+
+  <section class="sheet buy" aria-label="ราคา">
+    <div><div class="price">{p['price']}</div><div class="price-note">{E(p['price_thb'])} · จ่ายครั้งเดียว · ดาวน์โหลด PDF ได้ทันที</div></div>
+    <div>{th_buy_button(p)}</div>
+    <p class="hint">ชำระได้ด้วยบัตรเครดิตหรือบัตรเดบิต Apple Pay Google Pay หรือ Alipay
+    ถ้าชุดนี้ไม่มีประโยชน์กับคุณ อีเมลหาเราภายใน {REFUND_DAYS} วันเพื่อขอเงินคืนเต็มจำนวน
+    ดู<a href="{TERMS_URL}" hreflang="en">ข้อกำหนดการใช้งาน</a> (ภาษาอังกฤษ)</p>
+  </section>
+
+  <section class="sheet" aria-labelledby="inside-title">
+    <h2 id="inside-title">ในชุดนี้มีอะไรบ้าง</h2>
+    <ul class="inside">{inside}</ul>
+  </section>
+
+  <section class="sheet" aria-labelledby="look-title">
+    <h2 id="look-title">ตัวอย่างหน้าด้านใน</h2>
+    <div class="previews">{figs}</div>
+  </section>
+
+  <section class="sheet" aria-labelledby="free-title">
+    <h2 id="free-title">ลองเวอร์ชันฟรีก่อน</h2>
+    <p class="price-note">{E(p['free_text'])}</p>
+    <p><a class="button ghost" href="{p['free_url']}">เปิดเครื่องมือเทียบคำศัพท์ฟรี</a></p>
+  </section>
+
+  <section class="prose" aria-labelledby="faq-title">
+    <h2 id="faq-title">คำถามที่พบบ่อย</h2>
+    <div>
+      <h3>เป็นรายการคำศัพท์ทางการหรือไม่</h3>
+      <p>คำศัพท์อ้างอิงหลักสูตร HSK 3.0 ปี 2025 ชุดเดียวกับที่ใช้ทั้งเว็บไซต์ hskcheck.com ชุดแบบฝึกนี้จัดทำโดย hskcheck.com
+      ไม่มีส่วนเกี่ยวข้องและไม่ได้รับการรับรองจากผู้จัดสอบ HSK</p>
+    </div>
+    <div>
+      <h3>จะได้รับไฟล์อย่างไร</h3>
+      <p>ทันทีที่ชำระเงิน คุณจะได้ลิงก์ดาวน์โหลด และได้รับลิงก์ทางอีเมลด้วย การชำระเงินดำเนินการโดย Creem
+      ผู้จัดจำหน่ายออนไลน์ของเรา ซึ่งจะส่งใบเสร็จให้คุณ</p>
+    </div>
+    <div>
+      <h3>ใครเป็นผู้ดูแล hskcheck.com</h3>
+      <p>hskcheck.com และชุดแบบฝึกจัดทำและจำหน่ายโดย {OPERATOR} (บุคคลธรรมดา) ติดต่อ:
+      <a href="mailto:{CONTACT}">{CONTACT}</a></p>
+    </div>
+    <div>
+      <h3>ใช้กับนักเรียนทั้งห้องได้ไหม</h3>
+      <p>ชุดนี้สำหรับผู้เรียนหนึ่งคนใช้เรียนด้วยตนเอง ครูที่อยากใช้กับนักเรียนทั้งห้อง อีเมลมาที่
+      <a href="mailto:{CONTACT}">{CONTACT}</a></p>
+    </div>
+    <div>
+      <h3>พบข้อผิดพลาด</h3>
+      <p>บอกเราได้ที่ <a href="mailto:{CONTACT}">{CONTACT}</a> เราจะแก้ไขและส่งไฟล์ที่แก้แล้วให้คุณ</p>
+    </div>
+  </section>
+</div>"""
+
+
+def th_index_body(nav_html):
+    items = "".join(
+        f'<a class="pack-item" href="{th_url(p)}"><img src="{th_url(p)}{p["previews"][0][0]}" width="620" height="878" alt="" loading="lazy">'
+        f'<div><b>{E(p["name"])}</b><span>{E(p["lede"])} {p["price"]}</span></div></a>' for p in TH_PACKS)
+    return f"""<div class="wrap">
+  <header>
+    {nav_html}
+    <div class="eyebrow"><span>hskcheck.com</span></div>
+    <h1>ชุดแบบฝึกพิมพ์ได้</h1>
+    <p class="lede">สมุดแบบฝึกราคาประหยัดที่ใช้คู่กับเครื่องมือฟรีบนเว็บไซต์นี้ เนื้อหาอื่นทั้งหมดบน hskcheck.com ยังคงฟรี</p>
+  </header>
+  <section class="sheet"><div class="pack-list">{items}</div></section>
+</div>"""
+
+
+def th_alternates():
+    """English path -> Thai path for packs that have a Thai edition."""
+    pairs = {INDEX_URL: TH_INDEX_URL} if TH_PACKS else {}
+    pairs.update({f"{INDEX_URL}{p['en_slug']}/": th_url(p) for p in TH_PACKS})
+    return pairs
+
+
+def build_th(*, root, site, render, nav, font_link, foot, css):
+    css = css + CSS
+    urls = []
+    for p in TH_PACKS:
+        target = root / th_url(p).strip("/")
+        target.mkdir(parents=True, exist_ok=True)
+        for f, _ in p["previews"]:
+            if not (target / f).exists():
+                raise SystemExit(f"packs: missing preview image {target / f}")
+        (target / "index.html").write_text(render(
+            p["title"], p["description"], site + th_url(p), css, th_pack_body(p, nav(th_url(p))),
+            font_link, lang="th", foot=foot), encoding="utf-8")
+        urls.append(th_url(p))
+    if TH_PACKS:
+        (root / TH_INDEX_URL.strip("/") / "index.html").write_text(render(
+            "ชุดแบบฝึก HSK พิมพ์ได้ ภาษาไทย | hskcheck.com",
+            "สมุดแบบฝึก HSK ราคาประหยัด พิมพ์ได้ พร้อมคำอธิบายภาษาไทย ใช้คู่กับเครื่องมือฟรีบน hskcheck.com",
+            site + TH_INDEX_URL, css, th_index_body(nav(TH_INDEX_URL)), font_link, lang="th", foot=foot), encoding="utf-8")
+        urls.append(TH_INDEX_URL)
     return urls
