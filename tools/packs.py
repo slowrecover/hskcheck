@@ -297,7 +297,7 @@ TH_PACKS = [
         "price": "$3.99",
         "price_thb": "ประมาณ 130 บาท",
         "pages": 185,
-        "checkout": "",  # Creem checkout link of the Thai product, once the owner creates it
+        "checkout": "https://www.creem.io/payment/prod_5CAa6EdfOpq3pLAQVBgJGy",  # Creem checkout link of the Thai product
         "title": "คำศัพท์ HSK 3 ครบ 499 คำ สมุดแบบฝึก PDF พิมพ์ได้ พร้อมคำแปลไทย",
         "description": ("คำศัพท์ HSK 3 ครบ 499 คำ ใน 25 บทเรียน ทุกคำมีพินอิน ความหมายไทย ประโยคตัวอย่างแปลไทย "
                         "ฝึกเขียนตัวอักษรใหม่ 284 ตัว แบบทดสอบและเฉลย"),
