@@ -1,0 +1,107 @@
+{
+  "slug": "ye-and-dou",
+  "published": "2026-10-26",
+  "title": "也 và 都 trong tiếng Trung: ngữ pháp HSK 1 có ví dụ",
+  "description": "Vị trí của 也 (yě, cũng) và 都 (dōu, đều) trong câu tiếng Trung: trật tự từ, 也都, phủ định, câu hỏi, lỗi hay gặp và ví dụ HSK 1.",
+  "h1": "也 và 都: vị trí của \"cũng\" và \"đều\"",
+  "lede": "也 (yě) nghĩa là \"cũng\", còn 都 (dōu) nghĩa là \"đều\" hoặc \"cả hai\". Hai từ này theo cùng một quy tắc: đứng sau chủ ngữ, trước động từ hoặc tính từ. Chúng không bao giờ đứng ở đầu hay cuối câu.",
+  "sections": [
+    {
+      "h2": "也: cũng",
+      "paras": [
+        "Chủ ngữ + 也 + động từ hoặc tính từ.",
+        "Giống chữ \"cũng\" trong tiếng Việt, 也 luôn đứng sau chủ ngữ và trước động từ hoặc tính từ, và cũng đứng trước các từ như 很, 不 và 想. Kể cả khi \"cũng\" nói về tân ngữ, 也 vẫn đứng trước động từ: \"tôi thích đọc sách, cũng thích xem phim\" là 我喜欢看书，也喜欢看电影, với 也 đứng trước chữ 喜欢 thứ hai."
+      ],
+      "examples": [
+        "Tôi cũng là học sinh.",
+        "Tôi cũng rất bận.",
+        "Anh ấy cũng thích ăn cơm.",
+        "Tôi thích đọc sách, cũng thích xem phim."
+      ]
+    },
+    {
+      "h2": "都: đều, cả hai",
+      "paras": [
+        "Chủ ngữ số nhiều + 都 + động từ hoặc tính từ.",
+        "都 nhìn về những từ đứng trước nó và cho biết tất cả đều được tính: chúng tôi, những quyển sách này, mẹ và tôi. Khi chỉ có hai người hoặc hai vật, nó nghĩa là \"cả hai\". 都 rất hay đi sau từ chỉ thời gian như 天天 (hằng ngày); tiếng Việt nói \"ngày nào... cũng\"."
+      ],
+      "examples": [
+        "Chúng tôi đều là giáo viên.",
+        "Tôi và mẹ đều thích đọc sách.",
+        "Những quyển sách này đều rất hay.",
+        "Ngày nào tôi cũng dậy lúc bảy giờ."
+      ]
+    },
+    {
+      "h2": "Lỗi hay gặp nhất",
+      "paras": [
+        "Người học hay đặt 也 hoặc 都 theo vị trí của \"too\" trong tiếng Anh, hoặc của \"tất cả\" trong tiếng Việt. 也我是学生 và 我是学生也 đều sai; hãy nói 我也是学生. Tương tự, \"tất cả chúng tôi đều đi\" là 我们都去, không bao giờ là 都我们去.",
+        "Vì 都 chỉ nhìn về phía trước nó, những thứ nó bao gồm phải đứng trước nó. Tiếng Việt nói \"tôi thích cả hai cái này\", nhưng tiếng Trung phải đưa 这两个 lên trước: 这两个我都喜欢. Khi dùng 也 và 都 cùng nhau, 也 đứng trước: 也都, giống \"cũng đều\" trong tiếng Việt."
+      ],
+      "examples": [
+        "Cả hai cái này tôi đều thích.",
+        "Họ cũng đều là người Trung Quốc.",
+        "Tôi cũng vậy."
+      ]
+    },
+    {
+      "h2": "Câu phủ định và câu hỏi",
+      "paras": [
+        "Trong câu phủ định, 也 và 都 đứng trước 不 hoặc 没有. 也不 và 也没有 nghĩa là \"cũng không\". 都不 nghĩa là \"đều không\" (không ai, không cái nào), còn 不都 nghĩa là \"không phải tất cả đều\", nên đổi thứ tự là đổi nghĩa.",
+        "Muốn đặt câu hỏi, chỉ cần thêm 吗 vào cuối câu. Trật tự từ giữ nguyên."
+      ],
+      "examples": [
+        "Tôi cũng không biết.",
+        "Hôm qua tôi cũng không đi.",
+        "Họ đều không đi.",
+        "Họ không phải ai cũng là học sinh.",
+        "Các bạn đều đi cả à?",
+        "Bạn cũng muốn đi à?"
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 也 và 都 HSK 1 có đáp án, in miễn phí",
+    "description": "Bài tập 也 và 都 HSK 1 in miễn phí: 20 câu (chọn 也 hay 都, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 也 hay 都",
+        "instructions": "Điền 也 hoặc 都 vào chỗ trống. Phần nghĩa tiếng Việt cho biết câu có nghĩa gì.",
+        "items": [
+          "Tôi cũng thích uống trà.",
+          "Họ đều là học sinh.",
+          "Bố và mẹ tôi đều là bác sĩ.",
+          "Tôi cũng không muốn đi.",
+          "Những bộ quần áo này đều rất đẹp.",
+          "Anh ấy biết nói tiếng Trung, cũng biết viết chữ Hán.",
+          "Cô ấy rất bận, tôi cũng rất bận.",
+          "Hôm qua chúng tôi đều không đến lớp."
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng.",
+        "items": [
+          "Tôi cũng là người Trung Quốc.",
+          "Chúng tôi đều muốn đi.",
+          "Họ đều không đến.",
+          "Cô ấy cũng thích xem phim.",
+          "Chúng tôi cũng đều là giáo viên.",
+          "Hôm qua tôi cũng không đi."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai về 也 hoặc 都. Hãy viết lại câu đúng.",
+        "items": [
+          "Tôi cũng là giáo viên.",
+          "Tôi cũng thích uống trà.",
+          "Chúng tôi đều là người Trung Quốc.",
+          "Anh ấy cũng không biết nói tiếng Trung.",
+          "Họ cũng đều là học sinh.",
+          "Cả hai quyển sách này tôi đều thích."
+        ]
+      }
+    ]
+  }
+}

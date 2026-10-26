@@ -1,0 +1,117 @@
+{
+  "slug": "zai-location",
+  "published": "2026-10-26",
+  "title": "在 (zài) trong tiếng Trung: ngữ pháp HSK 1 có ví dụ",
+  "description": "Cách dùng 在 (zài): nói ai ở đâu, trên, trong, dưới, làm việc gì ở đâu, phủ định với 不在, phân biệt 在 và 有, có ví dụ HSK 1.",
+  "h1": "Cách dùng 在 (zài) để nói về nơi chốn",
+  "lede": "在 (zài) cho biết người hoặc vật ở đâu, và hành động diễn ra ở đâu. Nó giống chữ \"ở\" trong tiếng Việt, nhưng vị trí trong câu thường khác. Đây là điểm ngữ pháp cốt lõi của HSK 1.",
+  "sections": [
+    {
+      "h2": "Nói ai đang ở đâu",
+      "paras": [
+        "Người hoặc vật + 在 + nơi chốn.",
+        "Ở đây 在 là động từ chính của câu, nghĩa là \"ở\". Không cần dùng 是: nói 我在家 (tôi ở nhà), không nói 我是家. Muốn hỏi ai đó ở đâu, dùng 在哪儿."
+      ],
+      "examples": [
+        "Tôi ở nhà.",
+        "Bạn đang ở đâu?",
+        "Bố mẹ tôi ở Trung Quốc.",
+        "Anh ấy đang ở công ty."
+      ]
+    },
+    {
+      "h2": "Trên, trong và dưới",
+      "paras": [
+        "Tiếng Việt đặt \"trên, trong, dưới\" trước danh từ, còn tiếng Trung thì ngược lại: từ chỉ vị trí đứng sau danh từ. 桌子上 là \"trên bàn\", 房间里 là \"trong phòng\", 椅子下边 là \"dưới ghế\". Đồ vật thông thường như 桌子 phải có một từ chỉ vị trí như vậy thì mới dùng làm nơi chốn được.",
+        "Tên nước và tên thành phố tự nó đã là nơi chốn nên không thêm 里: nói 在中国, không nói 在中国里. Với 家 và 学校, có thể thêm 里 hoặc không. Từ chỉ vị trí có 边 có thể đứng một mình làm nơi chốn: 在外边 (ở bên ngoài), 在前边 (ở phía trước)."
+      ],
+      "examples": [
+        "Điện thoại của tôi ở trên bàn.",
+        "Máy tính của tôi ở trong phòng.",
+        "Sách của bạn ở dưới ghế.",
+        "Bạn tôi đang ở bên ngoài."
+      ]
+    },
+    {
+      "h2": "Làm việc gì ở đâu",
+      "paras": [
+        "Chủ ngữ + 在 + nơi chốn + động từ.",
+        "Muốn nói hành động diễn ra ở đâu, đặt 在 và nơi chốn trước động từ. Tiếng Việt nói \"tôi làm việc ở bệnh viện\", để nơi chốn ở cuối câu, nên người Việt rất hay nói sai thành 我工作在医院. Câu đúng là 我在医院工作. Từ chỉ thời gian như 晚上 hay 今天 thường đứng trước 在.",
+        "Khi 在 đứng ngay trước động từ mà không có nơi chốn đi sau, nó có nghĩa là hành động đang diễn ra. Đó là một cách dùng khác của 在."
+      ],
+      "examples": [
+        "Tôi làm việc ở bệnh viện.",
+        "Tôi đang học tiếng Trung ở Trung Quốc.",
+        "Buổi tối chúng tôi xem ti vi ở nhà.",
+        "Chúng ta ăn ở nhà hàng đi."
+      ]
+    },
+    {
+      "h2": "Câu phủ định và câu hỏi",
+      "paras": [
+        "Đặt 不 trước 在 để tạo câu phủ định. Ở đây 不 đổi sang thanh 2 vì 在 mang thanh 4: bú zài. Cách này dùng được cho cả hai kiểu câu: 他不在家 (anh ấy không có ở nhà) và 我不在学校吃饭 (tôi không ăn ở trường).",
+        "Với câu hỏi có/không, thêm 吗 vào cuối câu hoặc dùng 在不在. Trong 在不在, chữ 不 đọc nhẹ, không mang thanh điệu."
+      ],
+      "examples": [
+        "Anh ấy không có ở nhà.",
+        "Hôm nay tôi không ăn ở trường.",
+        "Mẹ bạn có ở nhà không?",
+        "Bố bạn có ở nhà không?"
+      ]
+    },
+    {
+      "h2": "在 hay 有?",
+      "paras": [
+        "Cả hai đều nói được về đồ vật ở một nơi nào đó, nhưng trật tự từ ngược nhau. Với 在, đồ vật đứng trước rồi mới nói nó ở đâu; đó thường là thứ cụ thể mà cả hai người đều biết. Với 有, nơi chốn đứng trước rồi nói ở đó có gì, thường là thứ mới nhắc đến và có số lượng, giống tiếng Việt \"trên bàn có một quyển sách\"."
+      ],
+      "examples": [
+        "Quyển sách đó ở trên bàn.",
+        "Trên bàn có một quyển sách."
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 在 (zài) HSK 1 có đáp án, in miễn phí",
+    "description": "Bài tập 在 (zài) HSK 1 in miễn phí: 20 câu (chọn 在 hay 有, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 在 hay 有",
+        "instructions": "Điền 在 hoặc 有 vào chỗ trống. Phần nghĩa tiếng Việt cho biết câu có nghĩa gì.",
+        "items": [
+          "Điện thoại của bạn ở trên ghế.",
+          "Trong phòng có ba người.",
+          "Thầy giáo đang ở bên ngoài.",
+          "Nhà tôi ở phía sau trường.",
+          "Trong trường có một cửa hàng.",
+          "Chúng tôi đang ăn ở nhà hàng.",
+          "Dưới ghế có một con mèo.",
+          "Bạn của bạn có ở nhà không?",
+          "Phía trước có một bệnh viện."
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng.",
+        "items": [
+          "Mẹ tôi làm việc ở bệnh viện.",
+          "Chúng tôi học tiếng Trung ở trường.",
+          "Con mèo ở dưới ghế.",
+          "Bây giờ tôi không ở Trung Quốc.",
+          "Bạn làm việc ở đâu?",
+          "Buổi tối tôi đọc sách ở nhà."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Tôi làm việc ở trường học.",
+          "Anh ấy đang ăn ở nhà hàng.",
+          "Mẹ tôi đang ở cửa hàng.",
+          "Điện thoại của thầy giáo ở trên bàn.",
+          "Họ đang ở Trung Quốc."
+        ]
+      }
+    ]
+  }
+}

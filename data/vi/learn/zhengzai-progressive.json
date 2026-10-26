@@ -1,0 +1,113 @@
+{
+  "slug": "zhengzai-progressive",
+  "published": "2026-10-26",
+  "title": "正在 (zhèngzài) và 在 trong tiếng Trung: ngữ pháp HSK 1",
+  "description": "Cách nói việc đang diễn ra bằng 在 và 正在: trật tự từ, thêm 呢, phủ định với 没有在, câu hỏi và ví dụ HSK 1.",
+  "h1": "Cách nói việc đang diễn ra với 在 và 正在",
+  "lede": "Đặt 在 (zài) hoặc 正在 (zhèngzài) trước động từ để nói một hành động đang diễn ra, giống chữ \"đang\" trong tiếng Việt. Động từ tiếng Trung không đổi hình thức, nên chỉ cần thêm từ nhỏ này. Đây là điểm ngữ pháp cốt lõi của HSK 1.",
+  "sections": [
+    {
+      "h2": "Cấu trúc",
+      "paras": [
+        "Chủ ngữ + 在 + động từ (+ tân ngữ).",
+        "在 đứng ngay trước động từ, đúng chỗ của chữ \"đang\" trong tiếng Việt. Khi nói chuyện hằng ngày, người ta thường thêm 呢 vào cuối câu. 呢 làm câu nghe mềm và tự nhiên hơn, không làm thay đổi nghĩa."
+      ],
+      "examples": [
+        "Bạn đang làm gì thế?",
+        "Tôi đang nấu cơm.",
+        "Họ đang ăn cơm.",
+        "Tôi đang đọc sách, anh ấy đang ngủ."
+      ]
+    },
+    {
+      "h2": "正在: ngay lúc này",
+      "paras": [
+        "正在 đứng cùng vị trí với 在, nhưng nhấn mạnh hơn vào \"ngay bây giờ, đúng lúc này\". Trong phần lớn các câu, dùng từ nào cũng được.",
+        "在 còn có thể nói về việc bạn đang làm trong một khoảng thời gian dài hơn, như mấy hôm nay hay năm nay. 正在 ít dùng như vậy, mà chủ yếu dùng cho chính thời điểm đang nói."
+      ],
+      "examples": [
+        "Anh ấy đang ngủ.",
+        "Mẹ đang gọi điện thoại.",
+        "Bây giờ tôi đang học trên lớp, tan học tôi sẽ gọi lại cho bạn.",
+        "Mấy hôm nay tôi đang học nấu món Trung Quốc."
+      ]
+    },
+    {
+      "h2": "Không chỉ dùng cho hiện tại",
+      "paras": [
+        "在 và 正在 không đánh dấu thì hiện tại. Chúng cho biết một hành động đang diễn ra vào một thời điểm nào đó, và thời điểm đó có thể ở quá khứ. Hãy nói rõ thời gian bằng từ chỉ thời gian, hoặc bằng ……的时候 (khi...)."
+      ],
+      "examples": [
+        "Tám giờ tối qua tôi đang xem ti vi.",
+        "Lúc bạn gọi điện cho tôi, tôi đang lái xe."
+      ]
+    },
+    {
+      "h2": "Câu phủ định và câu hỏi",
+      "paras": [
+        "Muốn nói lúc đó ai không làm việc gì, dùng 没有 trước 在: 他没有在睡觉. Khi nói, câu này thường rút gọn thành 没在. Lỗi hay gặp là dùng 不 ở đây: muốn nói \"lúc này tôi không xem ti vi\" thì 我不在看电视 là sai.",
+        "Với câu hỏi có/không, thêm 吗 vào cuối câu. Muốn hỏi ai đó đang làm gì, đặt 什么 sau động từ."
+      ],
+      "examples": [
+        "Tôi không ngủ.",
+        "Anh ấy không xem ti vi, anh ấy đang đọc sách.",
+        "Anh ấy đang làm việc à?",
+        "Bạn đang đọc sách gì thế?"
+      ]
+    },
+    {
+      "h2": "Những lỗi khác cần tránh",
+      "paras": [
+        "Chỉ dùng 在 với những hành động có thể đang diễn ra, như ăn, đọc hay làm việc. Động từ chỉ trạng thái như 是, 喜欢, 认识 và 知道 không đi với 在. Nói 我很喜欢他 (tôi rất thích anh ấy), không nói 我正在喜欢他.",
+        "Không thêm 了 vào câu có 在 hay 正在. 了 cho biết việc đã xảy ra, còn 在 cho biết việc vẫn đang diễn ra.",
+        "Đừng nhầm với cấu trúc 在 + nơi chốn + động từ, trong đó 在 nghĩa là \"ở\". Trong câu 爸爸在家看书呢, 在家 cho biết bố đọc sách ở đâu, còn 呢 cho biết bố đang đọc."
+      ],
+      "examples": [
+        "Bây giờ tôi đang lái xe, không nghe điện thoại được.",
+        "Bố đang đọc sách ở nhà."
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 在 / 正在 HSK 1 có đáp án, in miễn phí",
+    "description": "Bài tập 在 / 正在 HSK 1 in miễn phí: 18 câu (chọn từ đúng, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 在, 没有在 hay 不",
+        "instructions": "Điền 在, 没有在 hoặc 不 vào chỗ trống. Phần nghĩa tiếng Việt cho biết câu có nghĩa gì.",
+        "items": [
+          "Bạn đang viết gì thế?",
+          "Tôi không xem ti vi, tôi đang đọc sách.",
+          "Tôi không quen anh ấy.",
+          "Mẹ đang nấu cơm.",
+          "Anh ấy không ngủ, anh ấy đang xem ti vi.",
+          "Tôi không thích uống trà.",
+          "Tám giờ tối qua tôi đang đọc sách.",
+          "Họ đang ăn cơm à?"
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng.",
+        "items": [
+          "Họ đang xem ti vi.",
+          "Tôi đang gọi điện thoại.",
+          "Cô ấy không ngủ.",
+          "Chúng tôi đang học tiếng Trung.",
+          "Bạn đang xem gì thế?"
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Tôi không xem ti vi.",
+          "Anh ấy đang ăn cơm.",
+          "Tôi thích cô ấy.",
+          "Bạn đang làm gì thế?",
+          "Tôi không đọc sách."
+        ]
+      }
+    ]
+  }
+}

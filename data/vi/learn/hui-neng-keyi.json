@@ -1,0 +1,116 @@
+{
+  "slug": "hui-neng-keyi",
+  "published": "2026-10-26",
+  "title": "Phân biệt 会, 能 và 可以 trong tiếng Trung: ngữ pháp HSK 1",
+  "description": "会, 能 hay 可以? Ba cách nói \"biết, có thể, được\" trong tiếng Trung: kỹ năng, khả năng, xin phép, phủ định, câu hỏi, lỗi hay gặp và ví dụ HSK 1.",
+  "h1": "会, 能 và 可以: ba cách nói \"có thể\"",
+  "lede": "Tiếng Việt có \"biết\", \"có thể\" và \"được\", tiếng Trung cũng có ba từ: 会 (huì) cho kỹ năng đã học, gần với \"biết\"; 能 (néng) cho việc làm được trong hoàn cảnh cụ thể; và 可以 (kěyǐ) cho sự cho phép, gần với \"được\". Cả ba đều đứng ngay trước động từ và đều là từ HSK 1.",
+  "sections": [
+    {
+      "h2": "会: kỹ năng đã học",
+      "paras": [
+        "Chủ ngữ + 会 + động từ (+ tân ngữ).",
+        "Dùng 会 cho những việc phải học mới biết: nói một ngoại ngữ, lái xe, nấu ăn, viết chữ Hán. 我会说中文 nghĩa là bạn biết nói tiếng Trung. 不会 nghĩa là không biết làm vì chưa từng học."
+      ],
+      "examples": [
+        "Tôi biết nói tiếng Trung.",
+        "Anh ấy không biết lái xe.",
+        "Bạn có biết nấu ăn không?",
+        "Bạn có biết viết chữ này không?"
+      ]
+    },
+    {
+      "h2": "会: \"sẽ\" và \"có khả năng\"",
+      "paras": [
+        "会 còn có nghĩa thứ hai: cho biết việc gì đó có khả năng xảy ra, giống chữ \"sẽ\" trong tiếng Việt. Bạn sẽ nghe nghĩa này rất nhiều khi người ta nói về thời tiết hoặc đoán chuyện sắp tới. Khi đó 不会 nghĩa là \"sẽ không\"."
+      ],
+      "examples": [
+        "Ngày mai trời có mưa không?",
+        "Tối nay trời sẽ rất lạnh.",
+        "Hôm nay anh ấy sẽ không đến nữa."
+      ]
+    },
+    {
+      "h2": "能: làm được trong hoàn cảnh này",
+      "paras": [
+        "能 nói về việc bạn có làm được hay không vào một lúc nhất định: có rảnh không, đồ vật có hoạt động không, hay làm được bao nhiêu. Nó không nói về việc đã học hay chưa mà nói về hoàn cảnh.",
+        "Vì vậy, một người biết lái xe thì 会开车, nhưng hôm nay quá mệt thì 不能开车 (không lái xe được)."
+      ],
+      "examples": [
+        "Ngày mai tôi phải làm việc, không đi được.",
+        "Ngày mai bạn đến được không?",
+        "Điện thoại của tôi không gọi được nữa.",
+        "Một ngày anh ấy có thể đọc hai quyển sách."
+      ]
+    },
+    {
+      "h2": "可以: xin phép và cho phép",
+      "paras": [
+        "可以 là từ thường dùng để xin phép hoặc cho phép: \"tôi... được không?\", \"bạn có thể...\". 能 cũng hay được dùng trong câu hỏi kiểu 我能……吗.",
+        "Muốn nói việc gì không được phép, thường dùng 不能. 不可以 cũng đúng nhưng nghe cứng hơn, như một quy định hay lời bố mẹ dặn con. Khi được hỏi 可以吗, trả lời \"được\" ngắn gọn là 可以, còn \"không được\" thường là 不行."
+      ],
+      "examples": [
+        "Tôi ngồi đây được không?",
+        "Thưa thầy, em về nhà được không ạ?",
+        "Tôi xem sách của bạn một chút được không?",
+        "Ngày mai bạn có thể quay lại.",
+        "Không được ăn ở đây."
+      ]
+    },
+    {
+      "h2": "Phủ định, câu hỏi và lỗi hay gặp",
+      "paras": [
+        "Phủ định cả ba từ bằng cách đặt 不 trước: 不会 (bú huì), 不能, 不可以. Đặt câu hỏi có/không bằng 吗 ở cuối câu, hoặc dạng khẳng định + phủ định: 会不会, 能不能. Trả lời chỉ cần lặp lại từ đó: 会 hoặc 不会, 能 hoặc 不能.",
+        "Lỗi người học hay mắc nhất là dùng 可以 hoặc 能 cho kỹ năng. Người Việt quen nói \"tôi có thể nói tiếng Trung\" nên dễ dịch thành 我可以说中文. Nhưng với thứ phải học mới biết, như một ngoại ngữ, từ tự nhiên là 会. 我可以说中文 nghe như \"tôi được phép nói tiếng Trung\" hoặc \"nếu bạn muốn thì tôi nói tiếng Trung cũng được\", chứ không nói về việc bạn đã học."
+      ],
+      "examples": [
+        "Bạn có biết nói tiếng Trung không?",
+        "Bạn đến nhà tôi được không?"
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 会, 能 và 可以 HSK 1 có đáp án, in miễn phí",
+    "description": "Bài tập 会, 能 và 可以 HSK 1 in miễn phí: 20 câu (chọn từ đúng, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 会, 能 hay 可以",
+        "instructions": "Điền 会, 能 hoặc 可以 vào chỗ trống. Phần nghĩa tiếng Việt cho biết câu có nghĩa gì.",
+        "items": [
+          "Chiều nay trời có mưa không?",
+          "Hôm nay tôi rất bận, không đi xem phim được.",
+          "Bạn có biết hát bài hát tiếng Trung nào không?",
+          "Ngày mai tôi quay lại, được không?",
+          "Cái ti vi này không xem được nữa.",
+          "Bố tôi không biết nấu ăn, bố chưa bao giờ học.",
+          "Món này cũng được đấy.",
+          "Anh ấy bị ốm, hôm nay không đến lớp được.",
+          "Tôi nghĩ anh ấy sẽ không thích cái này.",
+          "Ngày mai anh ấy có đến không?"
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng.",
+        "items": [
+          "Tôi biết nói một chút tiếng Trung.",
+          "Chiều nay bạn đến được không?",
+          "Bây giờ tôi gọi điện thoại được không?",
+          "Ngày mai trời sẽ không lạnh lắm.",
+          "Trong giờ học không được xem điện thoại."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Bạn có biết nói tiếng Trung không? (Hỏi người đó đã học chưa.)",
+          "Ngày mai trời có mưa không?",
+          "Cô ấy không biết lái xe.",
+          "Bạn có biết viết chữ Hán không?",
+          "Thưa thầy, em uống một chút nước được không ạ?"
+        ]
+      }
+    ]
+  }
+}
