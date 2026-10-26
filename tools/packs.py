@@ -289,6 +289,39 @@ TH_PACKS = [
         "free_text": ("เครื่องมือ HSK เก่า → ใหม่ (ฟรี) แสดงคำศัพท์ 155 คำเดียวกันพร้อมพินอินและความหมายภาษาไทย "
                       "ชุดแบบฝึกเพิ่มประโยคตัวอย่าง แบบฝึกเขียน และแบบทดสอบ จัดหน้าพร้อมพิมพ์"),
     },
+    {
+        "slug": "hsk-3-vocabulary-workbook",
+        "en_slug": None,  # Thai only: no English edition
+        "zh": "词汇",
+        "name": "สมุดแบบฝึกคำศัพท์ HSK 3 (499 คำ)",
+        "price": "$3.99",
+        "price_thb": "ประมาณ 130 บาท",
+        "pages": 185,
+        "checkout": "",  # Creem checkout link of the Thai product, once the owner creates it
+        "title": "คำศัพท์ HSK 3 ครบ 499 คำ สมุดแบบฝึก PDF พิมพ์ได้ พร้อมคำแปลไทย",
+        "description": ("คำศัพท์ HSK 3 ครบ 499 คำ ใน 25 บทเรียน ทุกคำมีพินอิน ความหมายไทย ประโยคตัวอย่างแปลไทย "
+                        "ฝึกเขียนตัวอักษรใหม่ 284 ตัว แบบทดสอบและเฉลย"),
+        "lede": ("คำศัพท์ HSK 3 ใหม่ (หลักสูตรปี 2025) ครบทั้ง 499 คำ จัดเป็น 25 บทเรียนตามหัวข้อในชีวิตประจำวัน "
+                 "ทุกคำมีประโยคตัวอย่างพร้อมคำแปลภาษาไทย ฝึกเขียนตัวอักษรใหม่ และทำแบบทดสอบท้ายบท พิมพ์ใช้ได้ทันที"),
+        "inside": [
+            "คำศัพท์ HSK 3 ทั้ง 499 คำ พร้อมพินอินและความหมายภาษาไทย ทุกคำมีประโยคตัวอย่างที่ใช้เฉพาะคำศัพท์ HSK 1–3 "
+            "พร้อมพินอินและคำแปลภาษาไทย",
+            "ลำดับขีดและช่องฝึกเขียนตามรอย สำหรับตัวอักษร 284 ตัวที่ไม่มีในคำศัพท์ HSK 1–2",
+            "แบบทดสอบท้ายทุกบท (จับคู่ความหมาย เติมคำ เขียนพินอิน) แบบทดสอบรวม 30 ข้อ และเฉลยทั้งหมด",
+            "แผนเรียน 25 บท และดัชนีคำศัพท์เรียงตามพินอิน",
+            "185 หน้า ขนาด A4",
+        ],
+        "previews": [
+            ("page-1.jpg", "หน้าปก"),
+            ("page-4.jpg", "ทุกคำมีประโยคตัวอย่าง พร้อมคำแปลภาษาไทย"),
+            ("page-7.jpg", "ฝึกเขียนตัวอักษรใหม่ทุกตัว"),
+            ("page-9.jpg", "แบบทดสอบท้ายทุกบท"),
+        ],
+        "free_url": "/th/upgrade-packs/hsk-3-vocabulary-workbook/hsk3-lesson-1-free.pdf",
+        "free_button": "ดาวน์โหลดบทที่ 1 ฟรี",
+        "free_text": ("ดาวน์โหลดบทที่ 1 (ผู้คนและความสัมพันธ์ 20 คำ) ไปลองใช้ได้ฟรี เป็น PDF 9 หน้า "
+                      "มีหน้าคำศัพท์ แบบฝึกเขียน แบบทดสอบ และเฉลย แบบเดียวกับฉบับเต็ม"),
+    },
 ]
 
 
@@ -311,7 +344,7 @@ def th_pack_body(p, nav_html):
   <header>
     {nav_html}
     <div class="eyebrow"><span>ชุดแบบฝึกพิมพ์ได้</span><span class="chip">PDF · {p['pages']} หน้า</span><span class="chip">{p['price']}</span></div>
-    <h1><span class="zh">补差</span>{E(p['name'])}</h1>
+    <h1><span class="zh">{p.get('zh', '补差')}</span>{E(p['name'])}</h1>
     <p class="lede">{E(p['lede'])}</p>
   </header>
 
@@ -336,7 +369,7 @@ def th_pack_body(p, nav_html):
   <section class="sheet" aria-labelledby="free-title">
     <h2 id="free-title">ลองเวอร์ชันฟรีก่อน</h2>
     <p class="price-note">{E(p['free_text'])}</p>
-    <p><a class="button ghost" href="{p['free_url']}">เปิดเครื่องมือเทียบคำศัพท์ฟรี</a></p>
+    <p><a class="button ghost" href="{p['free_url']}">{E(p.get('free_button', 'เปิดเครื่องมือเทียบคำศัพท์ฟรี'))}</a></p>
   </section>
 
   <section class="prose" aria-labelledby="faq-title">
@@ -387,7 +420,7 @@ def th_index_body(nav_html):
 def th_alternates():
     """English path -> Thai path for packs that have a Thai edition."""
     pairs = {INDEX_URL: TH_INDEX_URL} if TH_PACKS else {}
-    pairs.update({f"{INDEX_URL}{p['en_slug']}/": th_url(p) for p in TH_PACKS})
+    pairs.update({f"{INDEX_URL}{p['en_slug']}/": th_url(p) for p in TH_PACKS if p.get("en_slug")})
     return pairs
 
 

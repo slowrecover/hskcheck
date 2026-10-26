@@ -230,6 +230,17 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
                 .replace("__ROWCOUNT__", str(len(word_lists[n])))
                 .replace("__COUNT__", str(official))
                 .replace("__LEVEL__", str(n)))
+        if n == 3:
+            # Link the Thai HSK 3 workbook and its free lesson 1 (see PACK_HSK3_TH.md).
+            wb = "/th/upgrade-packs/hsk-3-vocabulary-workbook/"
+            box = ('  <section class="sheet" aria-label="สมุดแบบฝึกคำศัพท์ HSK 3">\n'
+                   '    <p><b>สมุดแบบฝึกคำศัพท์ HSK 3</b> คำศัพท์ทั้ง 499 คำใน 25 บทเรียน พร้อมประโยคตัวอย่างแปลไทย '
+                   'แบบฝึกเขียน และแบบทดสอบ พิมพ์ได้</p>\n'
+                   f'    <div class="cta"><a class="button" href="{wb}hsk3-lesson-1-free.pdf">ดาวน์โหลดบทที่ 1 ฟรี (PDF)</a>'
+                   f'<a class="button ghost" href="{wb}">ดูสมุดแบบฝึกฉบับเต็ม</a></div>\n'
+                   '  </section>\n')
+            assert body.count("  </header>\n") == 1
+            body = body.replace("  </header>\n", "  </header>\n\n" + box, 1)
         out = render(
             f"คำศัพท์ HSK {n} (HSK 3.0) {official} คำ พร้อมคำแปลภาษาไทย",
             f"คำศัพท์ HSK {n} ทั้ง {official} คำ ตามหลักสูตร HSK 3.0 (HSK ใหม่) พร้อมพินอินและความหมายภาษาไทย ค้นหาได้ ฟรี",
