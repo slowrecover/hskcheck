@@ -31,6 +31,7 @@ The Thai page is the English template with its text swapped for Thai; the build 
 """
 import glob
 import json
+import pathlib
 import random
 import re
 import sys
@@ -375,6 +376,8 @@ def _readings(root):
     """Every reading of every character, from the stroke data (Make Me a Hanzi + HSK words) and the word lists."""
     out = {}
     for f in sorted(glob.glob(str(root / "strokes" / "**" / "*.json"), recursive=True)):
+        if pathlib.Path(f).parent.name == "m":
+            continue  # strokes/m/ holds stroke centre lines, no readings
         for c, v in json.loads(open(f, encoding="utf-8").read()).items():
             out.setdefault(c, set()).update(unicodedata.normalize("NFC", p) for p in v.get("p", []))
     for n in LEVELS:

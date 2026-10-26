@@ -155,6 +155,7 @@ fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
 .checks label { font-size: 14px; display: flex; gap: 6px; align-items: center; }
 .actions { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; }
 .button { font: 500 15px var(--f-ui); padding: 10px 18px; border-radius: 999px; border: 0; background: var(--accent); color: var(--accent-ink); cursor: pointer; }
+.button.alt { background: transparent; color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); text-decoration: none; }
 .status { font-size: 13px; color: var(--muted); }
 
 /* The paper is always white with dark ink, in light and dark mode alike, because it is what gets printed. */
@@ -222,7 +223,7 @@ table.words-table th, table.counts th { letter-spacing: 0; }
 <body>
 <div class="wrap">
   <header class="no-print">
-    <nav class="site-nav" aria-label="เมนูเว็บไซต์"><button type="button" class="nav-toggle" aria-expanded="false">เมนู</button><div class="nav-links"><a href="/th/">ตรวจระดับคำศัพท์</a><a href="/th/hsk-1-word-list/">คำศัพท์ HSK 1</a><a href="/th/hsk-2-word-list/">คำศัพท์ HSK 2</a><a href="/th/hsk-3-word-list/">คำศัพท์ HSK 3</a><a href="/th/hsk-4-word-list/">คำศัพท์ HSK 4</a><a href="/th/hsk-5-word-list/">คำศัพท์ HSK 5</a><a href="/th/hsk-flashcards/">แฟลชการ์ด</a><a href="/th/hsk-practice-test/">แบบทดสอบ HSK</a><a href="/th/daily-hsk-quiz/">ควิซประจำวัน</a><a href="/th/chinese-listening-practice/">ฝึกฟัง</a><a href="/th/pinyin-tone-practice/">พินอินและวรรณยุกต์</a><a href="/th/reading/">อ่าน</a><a href="/th/chinese-character-worksheets/" aria-current="page">แบบฝึกเขียน</a><a href="/th/chinese-measure-words/">ลักษณนาม</a><a href="/th/old-hsk-to-new-hsk/">HSK เก่า → ใหม่</a><a href="/th/learn/">ไวยากรณ์</a><a href="/th/yct/">YCT</a><a href="/" hreflang="en" lang="en">English</a></div></nav>
+    <nav class="site-nav" aria-label="เมนูเว็บไซต์"><button type="button" class="nav-toggle" aria-expanded="false">เมนู</button><div class="nav-links"><a href="/th/">ตรวจระดับคำศัพท์</a><a href="/th/hsk-1-word-list/">คำศัพท์ HSK 1</a><a href="/th/hsk-2-word-list/">คำศัพท์ HSK 2</a><a href="/th/hsk-3-word-list/">คำศัพท์ HSK 3</a><a href="/th/hsk-4-word-list/">คำศัพท์ HSK 4</a><a href="/th/hsk-5-word-list/">คำศัพท์ HSK 5</a><a href="/th/hsk-flashcards/">แฟลชการ์ด</a><a href="/th/hsk-practice-test/">แบบทดสอบ HSK</a><a href="/th/daily-hsk-quiz/">ควิซประจำวัน</a><a href="/th/chinese-listening-practice/">ฝึกฟัง</a><a href="/th/pinyin-tone-practice/">พินอินและวรรณยุกต์</a><a href="/th/reading/">อ่าน</a><a href="/th/chinese-character-worksheets/" aria-current="page">แบบฝึกเขียน</a><a href="/th/chinese-character-tracing/">เขียนตามรอย</a><a href="/th/chinese-measure-words/">ลักษณนาม</a><a href="/th/old-hsk-to-new-hsk/">HSK เก่า → ใหม่</a><a href="/th/learn/">ไวยากรณ์</a><a href="/th/yct/">YCT</a><a href="/" hreflang="en" lang="en">English</a></div></nav>
     <div class="eyebrow"><span>HSK ใหม่ · หลักสูตรปี 2025</span><span class="chip">ระดับ 5</span><span class="chip">431 ตัว</span></div>
     <h1>แบบฝึกเขียนตัวอักษร HSK 5</h1>
     <p class="lede">แบบฝึกเขียนตัวอักษรใหม่ของ HSK 5 (ไม่ซ้ำกับ HSK 1–4) ทั้ง 431 ตัว มีลำดับขีด พินอิน และช่องให้เขียนตาม พิมพ์ได้ทั้งระดับหรือครั้งละ 30 ตัว</p>
@@ -264,6 +265,7 @@ table.words-table th, table.counts th { letter-spacing: 0; }
     </div>
     <div class="actions">
       <button type="button" class="button" id="print-btn">พิมพ์หรือบันทึกเป็น PDF</button>
+      <a class="button alt" id="trace-link" href="/th/chinese-character-tracing/" data-base="/th/chinese-character-tracing/">ฝึกเขียนตามรอยบนจอ</a>
       <span class="status" id="status" role="status" aria-live="polite"></span>
     </div>
   </section>
@@ -873,6 +875,8 @@ table.words-table th, table.counts th { letter-spacing: 0; }
     const frag = document.createDocumentFragment();
     ok.forEach(c => { define(c); frag.appendChild(block(c, o)); });
     blocks.appendChild(frag);
+    const tl = $("trace-link");
+    tl.href = tl.dataset.base + (ok.length ? "#c=" + encodeURIComponent(ok.join("")) : "");
     const parts = [];
     parts.push(ok.length + " ตัว");
     if (missing.length) parts.push("ไม่มีข้อมูลลำดับขีดของ " + missing.join(" "));

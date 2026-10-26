@@ -13,6 +13,7 @@ Outputs (written at the repository root):
   daily-hsk-quiz/                 the daily HSK quiz (see tools/daily.py)
   chinese-listening-practice/     Chinese listening practice (see tools/listening.py)
   pinyin-tone-practice/           pinyin and tone practice (see tools/pinyin_practice.py)
+  chinese-character-tracing/      character tracing, stroke by stroke (see tools/tracing.py)
   learn/<slug>/practice/          grammar practice online for every grammar worksheet (see tools/grammar_practice.py)
   sitemap.xml                     every page above
 
@@ -34,6 +35,7 @@ import learn
 import listening
 import pinyin_practice
 import tones
+import tracing
 import hsk4
 import hsk5
 import packs
@@ -401,6 +403,7 @@ def main():
     if any((DATA / "stories").glob("*.json")):
         pages.append((reading.URL, "Reading"))
     pages.append(("/chinese-character-worksheets/", "Writing Sheets"))
+    pages.append((tracing.URL, "Tracing"))
     pages.append((handwriting.URL, "Handwriting"))
     pages.append((tones.URL, "Tone Changes"))
     pages.append((MW_URL, "Measure Words"))
@@ -584,6 +587,9 @@ def main():
 
     # Chinese New Year greetings
     extra_urls += cny.build(ROOT, pages, nav, render, base_css, TPL, SITE)
+
+    # Character tracing
+    extra_urls += tracing.build(ROOT, pages, nav, render, base_css, TPL, SITE)
 
     # Tone changes
     extra_urls += tones.build(ROOT, pages, nav, render, base_css, TPL, SITE)

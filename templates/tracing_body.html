@@ -1,0 +1,540 @@
+<div class="wrap">
+  <header>
+    __NAV__
+    <div class="eyebrow"><span>New HSK · 2025 syllabus</span><span class="chip">Levels 1–5</span><span class="chip">Free</span></div>
+    <h1><span class="zh">描红</span>Chinese Character Tracing</h1>
+    <p class="lede">Write Chinese characters stroke by stroke with your finger or a mouse. Each stroke is checked as you write it: where it starts, the way it goes and the path it follows. Pick an HSK level or type your own characters.</p>
+  </header>
+
+  <section class="sheet" aria-labelledby="pick-title">
+    <h2 id="pick-title" class="visually-hidden">Choose the characters</h2>
+    <div class="levels tr-levels" role="group" aria-label="Characters">
+      <span class="lbl">Characters</span>
+      <button type="button" class="lv-btn" data-level="1" aria-pressed="false">HSK 1</button>
+      <button type="button" class="lv-btn" data-level="2" aria-pressed="false">HSK 2</button>
+      <button type="button" class="lv-btn" data-level="3" aria-pressed="false">HSK 3</button>
+      <button type="button" class="lv-btn" data-level="4" aria-pressed="false">HSK 4</button>
+      <button type="button" class="lv-btn" data-level="5" aria-pressed="false">HSK 5</button>
+      <button type="button" class="lv-btn" data-level="0" aria-pressed="false">My characters</button>
+    </div>
+    <div class="tr-pick" id="tr-level-pick" hidden>
+      <div class="tr-field">
+        <label for="tr-set">Set</label>
+        <select id="tr-set"></select>
+      </div>
+      <p class="tr-progress" id="tr-progress"></p>
+    </div>
+    <form class="tr-pick" id="tr-mine-pick" hidden>
+      <div class="tr-field">
+        <label for="tr-mine">Characters to trace</label>
+        <textarea id="tr-mine" rows="2" spellcheck="false" autocomplete="off" lang="zh-Hans">你好</textarea>
+      </div>
+      <div class="tr-mine-row">
+        <button type="submit" class="button small" id="tr-mine-go">Start tracing</button>
+        <span class="tr-progress" id="tr-mine-note" role="status"></span>
+      </div>
+    </form>
+    <div class="tr-switches" role="group" aria-label="Show">
+      <button type="button" class="tr-switch" id="sw-outline" aria-pressed="true">Show the character</button>
+      <button type="button" class="tr-switch" id="sw-hints" aria-pressed="true">Show the next stroke</button>
+    </div>
+  </section>
+
+  <section class="sheet" aria-labelledby="board-title" id="board-sheet">
+    <h2 id="board-title" class="visually-hidden">Tracing</h2>
+    <div id="tr-area">
+      <p class="empty" id="loading">Loading…</p>
+    </div>
+    <p class="tr-keys">Keys: H shows the next stroke, R starts the character again, Enter goes to the next one.</p>
+    <p class="pt-note" id="storage-note" hidden>This browser is not letting the page save, so the characters you trace and your settings will not be kept.</p>
+  </section>
+
+  <section class="guide" aria-labelledby="guide-title">
+    <h2 id="guide-title">About character tracing</h2>
+    <div class="qa">
+      <div>
+        <h3>How do I trace a character?</h3>
+        <p>Draw each stroke in one go, from where it starts to where it ends, without lifting your finger. The dot shows where the next stroke starts and the arrow shows which way it goes. A stroke that follows the right path in the right direction turns dark. If it does not, it fades away and you try it again; after three tries the page shows you how the stroke is written. Turn the hints off when you know the character, and turn the grey character off to write it from memory.</p>
+      </div>
+      <div>
+        <h3>Why does stroke order matter?</h3>
+        <p>Stroke order is the way characters are written by hand. It makes them quicker to write, neater, and easier to remember. A few rules cover most characters: top before bottom (<span class="zh-inline">三</span>), left before right (<span class="zh-inline">川</span>), horizontal before vertical (<span class="zh-inline">十</span>), the stroke to the left before the stroke to the right (<span class="zh-inline">人</span>), the middle before the sides (<span class="zh-inline">小</span>), and the outside before the inside, closing the box last (<span class="zh-inline">日</span>).</p>
+      </div>
+      <div>
+        <h3>Which characters are in each level?</h3>
+        <p>The same sets as the <a href="/hsk-1-character-worksheets/">character worksheets</a>: every character used in the words of that HSK 3.0 level, once, in the order it first appears in the word list. Characters already used at a lower level are not repeated. Each character comes with the first word of the level that uses it. To trace anything else, choose My characters and type or paste any Chinese text.</p>
+      </div>
+      <div>
+        <h3>Is my progress kept?</h3>
+        <p>The characters you have traced, and your settings, are kept in this browser on this device, and nothing is sent anywhere. Writing on paper helps too: print the same characters as a <a href="/chinese-character-worksheets/">writing worksheet</a>, and learn the words they come from with the <a href="/hsk-flashcards/">flashcards</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="notes">
+    <p><b>Stroke data.</b> Stroke outlines, stroke centre lines and character readings come from <a href="https://github.com/skishore/makemeahanzi">Make Me a Hanzi</a> (Arphic Public License and GNU LGPL, see <a href="/strokes/LICENSE.md">licence</a>). Stroke order follows mainland China standards for simplified characters. Words: HSK 3.0 (New HSK) vocabulary, 2025 syllabus, the same lists as the <a href="/hsk-1-word-list/">word list pages</a>.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+const UI = __UI_JSON__;
+const DATA_BASE = "__DATA_BASE__";
+const STROKE_BASE = "__STROKE_BASE__";
+const COUNTS = __COUNTS_JSON__;
+const KEY = "hskcheck-tracing-v1";
+const SET = 10, SHARDS = 128, NS = "http://www.w3.org/2000/svg";
+const $ = id => document.getElementById(id);
+const area = $("tr-area");
+const REDUCED = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+// --- saved state (this browser only) ---------------------------------------------------------------------------------
+let saveOk = true;
+function loadState() {
+  try { const s = JSON.parse(localStorage.getItem(KEY) || "null"); if (s && s.done) return s; } catch (e) { saveOk = false; }
+  return { level: 1, set: {}, done: {}, outline: 1, hints: 1, mine: "" };
+}
+const state = loadState();
+function save() {
+  try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { saveOk = false; }
+  $("storage-note").hidden = saveOk;
+}
+function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+function fmt(s, v) { return s.replace(/\{(\w+)\}/g, (m, k) => (k in v ? v[k] : m)); }
+function hanzi(text) {
+  const out = [], seen = new Set();
+  for (const c of Array.from(text || "")) if (/\p{Script=Han}/u.test(c) && !seen.has(c)) { seen.add(c); out.push(c); }
+  return out.slice(0, 400);
+}
+async function getJSON(url) { const r = await fetch(url); if (!r.ok) throw new Error(url + " " + r.status); return r.json(); }
+
+// --- data ----------------------------------------------------------------------------------------------------------
+const levelData = {}, strokeData = {}, charInfo = {};
+async function loadLevel(n) {
+  if (!levelData[n]) {
+    levelData[n] = (await getJSON(DATA_BASE + "hsk" + n + ".json")).c;
+    levelData[n].forEach(x => { if (!charInfo[x[0]]) charInfo[x[0]] = x; });
+  }
+  return levelData[n];
+}
+async function loadLevelSet(n, k) {
+  const d = await getJSON(STROKE_BASE + "hsk" + n + "-" + String(k + 1).padStart(2, "0") + ".json");
+  Object.assign(strokeData, d);
+}
+// Any characters: outlines and readings from /strokes/x/, centre lines from /strokes/m/, one shard per code point % 128.
+async function loadAny(chars) {
+  const shards = Array.from(new Set(chars.filter(c => !strokeData[c]).map(c => c.codePointAt(0) % SHARDS)));
+  await Promise.all(shards.map(async i => {
+    const h = i.toString(16).padStart(2, "0");
+    const [x, m] = await Promise.all([getJSON("/strokes/x/" + h + ".json"), getJSON("/strokes/m/" + h + ".json")]);
+    for (const c of chars) if (x[c] && m[c] && !strokeData[c]) strokeData[c] = { s: x[c].s, m: m[c], p: x[c].p };
+  }));
+}
+// Words and meanings for typed characters that are in an HSK set (loaded in the background, best effort).
+let infoAll = null;
+function loadAllInfo() {
+  if (!infoAll) infoAll = Promise.all([1, 2, 3, 4, 5].map(n => loadLevel(n).catch(() => null)));
+  return infoAll;
+}
+
+// --- geometry (Make Me a Hanzi units: a 1024 box, y up, the baseline of the box at -124) -------------------------------
+function pts(flat) { const o = []; for (let i = 0; i < flat.length; i += 2) o.push([flat[i], flat[i + 1]]); return o; }
+function dist(a, b) { return Math.hypot(a[0] - b[0], a[1] - b[1]); }
+function length(p) { let s = 0; for (let i = 1; i < p.length; i++) s += dist(p[i - 1], p[i]); return s; }
+function resample(p, n) {
+  const L = length(p);
+  if (p.length < 2 || L === 0) return Array.from({ length: n }, () => p[0].slice());
+  const out = [p[0].slice()], step = L / (n - 1);
+  let need = step, i = 1, prev = p[0];
+  while (out.length < n - 1 && i < p.length) {
+    const d = dist(prev, p[i]);
+    if (d >= need && d > 0) {
+      const t = need / d;
+      prev = [prev[0] + (p[i][0] - prev[0]) * t, prev[1] + (p[i][1] - prev[1]) * t];
+      out.push(prev); need = step;
+    } else { need -= d; prev = p[i]; i++; }
+  }
+  while (out.length < n) out.push(p[p.length - 1].slice());
+  return out;
+}
+const N = 24;
+// How well a drawn line fits one stroke's centre line: it must start near the start, end near the end, stay close
+// to the line all the way (points compared in order, so a stroke drawn backwards does not fit) and go the same way.
+function fit(user, med) {
+  const ml = length(med);
+  const T = Math.min(170, Math.max(95, 0.3 * ml + 60));
+  const U = resample(user, N), M = resample(med, N);
+  let d = 0;
+  for (let i = 0; i < N; i++) d += dist(U[i], M[i]);
+  d /= N;
+  const s = dist(U[0], M[0]), e = dist(U[N - 1], M[N - 1]);
+  const mv = [M[N - 1][0] - M[0][0], M[N - 1][1] - M[0][1]], uv = [U[N - 1][0] - U[0][0], U[N - 1][1] - U[0][1]];
+  const ml2 = Math.hypot(mv[0], mv[1]), ul2 = Math.hypot(uv[0], uv[1]);
+  const cos = ml2 > 40 && ul2 > 0 ? (mv[0] * uv[0] + mv[1] * uv[1]) / (ml2 * ul2) : 1;
+  // every part of the stroke (a corner too) must be passed near
+  let far = 0;
+  for (const q of M) { let best = Infinity; for (const u of U) best = Math.min(best, dist(q, u)); far = Math.max(far, best); }
+  const ok = d <= T && s <= 1.5 * T && e <= 1.4 * T && far <= 0.9 * T && cos >= 0.5 && length(user) >= 0.6 * ml;
+  return { ok, d };
+}
+// The drawn line is right for stroke k if it fits it, and does not fit another stroke of the character better
+// (an earlier stroke drawn again, or a later one drawn too soon).
+function judge(user, meds, k) {
+  if (length(user) < 30) return "short";
+  const r = fit(user, meds[k]);
+  if (!r.ok) return "no";
+  for (let j = 0; j < meds.length; j++) {
+    if (j === k) continue;
+    const o = fit(user, meds[j]);
+    if (o.ok && o.d < r.d) return "no";
+  }
+  return "ok";
+}
+
+// --- the board -----------------------------------------------------------------------------------------------------
+function el(tag, attrs, parent) {
+  const n = document.createElementNS(NS, tag);
+  for (const k in attrs) n.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(n);
+  return n;
+}
+function lineD(p) { return "M" + p.map(q => Math.round(q[0]) + " " + Math.round(q[1])).join("L"); }
+
+let wantReveal = false, mode = 0, level = 1, setIdx = 0, chars = [], pos = 0, results = [], cur = null, phase = "loading", token = 0;
+
+function infoHtml(c) {
+  const x = charInfo[c], d = strokeData[c];
+  const py = x ? x[1] : (d && d.p ? d.p.join(" / ") : "");
+  let h = '<p class="tr-py">' + esc(py) + '</p>';
+  if (x) h += '<p class="tr-word"><span class="zh-inline" lang="zh-Hans">' + esc(x[2]) + '</span> ' + esc(x[3]) +
+    '</p><p class="tr-mean">' + esc(x[4]) + '</p>';
+  return h;
+}
+
+function showChar() {
+  phase = "trace";
+  const c = chars[pos], d = strokeData[c];
+  const n = d.s.length;
+  cur = { c, n, k: 0, miss: 0, tries: 0, meds: d.m.map(pts), skipped: false };
+  area.innerHTML =
+    '<div class="pt-top"><p class="pt-ask">' + esc(fmt(UI.charN, { i: pos + 1, n: chars.length })) + '</p>' +
+    '<span class="pt-count" id="tr-stroke"></span></div>' +
+    '<div class="pt-bar" aria-hidden="true"><i style="width:' + (pos / chars.length * 100) + '%"></i></div>' +
+    '<div class="tr-main"><div class="tr-board" id="tr-board"></div>' +
+    '<div class="tr-side"><p class="tr-hz" lang="zh-Hans">' + esc(c) + '</p>' + infoHtml(c) +
+    '<p class="tr-msg" id="tr-msg" role="status" aria-live="polite"></p></div></div>' +
+    '<div class="pt-actions tr-actions">' +
+    '<button type="button" class="button ghost-btn" id="show-btn">' + esc(UI.showMe) + '</button>' +
+    '<button type="button" class="button ghost-btn" id="restart-btn">' + esc(UI.restart) + '</button>' +
+    '<button type="button" class="button ghost-btn" id="next-btn">' + esc(UI.skip) + '</button></div>';
+  buildBoard(d);
+  if (wantReveal) {
+    // after a tap on a level, a set or Start, bring the board into view (phones show the choices above it)
+    wantReveal = false;
+    const r = $("board-sheet").getBoundingClientRect();
+    if (r.top < 0 || r.top > innerHeight * 0.4) $("board-sheet").scrollIntoView({ block: "start", behavior: REDUCED ? "auto" : "smooth" });
+  }
+  $("show-btn").addEventListener("click", showMe);
+  $("restart-btn").addEventListener("click", restart);
+  $("next-btn").addEventListener("click", next);
+  update(state.hints ? UI.start : UI.startNoHint);
+}
+
+let svg, gGhost, gDone, gHint, gAnim, gInk, drawing = null;
+function buildBoard(d) {
+  const box = $("tr-board");
+  svg = el("svg", { viewBox: "0 0 1024 1024", class: "tr-svg", role: "img", "aria-label": fmt(UI.boardLabel, { c: cur.c }) });
+  el("rect", { x: 6, y: 6, width: 1012, height: 1012, class: "tr-frame" }, svg);
+  el("line", { x1: 512, y1: 6, x2: 512, y2: 1018, class: "tr-guide" }, svg);
+  el("line", { x1: 6, y1: 512, x2: 1018, y2: 512, class: "tr-guide" }, svg);
+  const defs = el("defs", {}, svg);
+  const mk = el("marker", { id: "tr-arrow", viewBox: "0 0 10 10", refX: 5, refY: 5, markerWidth: 4, markerHeight: 4, orient: "auto-start-reverse" }, defs);
+  el("path", { d: "M0 0L10 5L0 10z", class: "tr-arrowhead" }, mk);
+  const flip = { transform: "scale(1,-1) translate(0,-900)" };
+  gGhost = el("g", Object.assign({ class: "tr-ghost" }, flip), svg);
+  gDone = el("g", Object.assign({ class: "tr-done" }, flip), svg);
+  gHint = el("g", Object.assign({ class: "tr-hint" }, flip), svg);
+  gAnim = el("g", Object.assign({ class: "tr-anim" }, flip), svg);
+  gInk = el("g", { class: "tr-ink" }, svg);
+  d.s.forEach((p, i) => {
+    el("path", { d: p }, gGhost);
+    const cp = el("clipPath", { id: "tr-clip" + i }, defs);
+    el("path", { d: p, transform: "scale(1,-1) translate(0,-900)" }, cp);
+  });
+  box.appendChild(svg);
+  svg.addEventListener("pointerdown", down);
+  svg.addEventListener("pointermove", move);
+  svg.addEventListener("pointerup", up);
+  svg.addEventListener("pointercancel", cancel);
+  svg.addEventListener("lostpointercapture", e => { if (drawing && drawing.id === e.pointerId) up(e); });
+}
+
+function point(e) {
+  const r = svg.getBoundingClientRect();
+  return [(e.clientX - r.left) / r.width * 1024, (e.clientY - r.top) / r.height * 1024];
+}
+function down(e) {
+  if (phase !== "trace" || !cur || cur.k >= cur.n || (e.pointerType === "mouse" && e.button !== 0)) return;
+  e.preventDefault();
+  try { svg.setPointerCapture(e.pointerId); } catch (err) { /* still works without capture */ }
+  drawing = { id: e.pointerId, p: [point(e)], path: el("path", { class: "tr-line" }, gInk) };
+  drawing.path.setAttribute("d", lineD(drawing.p) + "l0 0");
+}
+function move(e) {
+  if (!drawing || drawing.id !== e.pointerId) return;
+  e.preventDefault();
+  const evs = e.getCoalescedEvents ? e.getCoalescedEvents() : [];
+  (evs.length ? evs : [e]).forEach(ev => drawing.p.push(point(ev)));
+  drawing.path.setAttribute("d", lineD(drawing.p));
+}
+function cancel(e) {
+  if (!drawing || drawing.id !== e.pointerId) return;
+  drawing.path.remove(); drawing = null;
+}
+function up(e) {
+  if (!drawing || drawing.id !== e.pointerId) return;
+  const dr = drawing; drawing = null;
+  // screen units (y down) -> stroke units (y up)
+  const user = dr.p.map(q => [q[0], 900 - q[1]]);
+  const v = judge(user, cur.meds, cur.k);
+  if (v === "ok") { dr.path.remove(); accept(); }
+  else if (v === "short") { fade(dr.path); say(UI.tooShort); }
+  else { fade(dr.path, true); miss(); }
+}
+function fade(path, bad) {
+  if (bad) path.classList.add("bad");
+  path.classList.add("fade");
+  setTimeout(() => path.remove(), REDUCED ? 250 : 700);
+}
+
+function strokePath(i, g, cls) { return el("path", { d: strokeData[cur.c].s[i], class: cls || "" }, g); }
+function accept() {
+  stopAnim();
+  strokePath(cur.k, gDone, REDUCED ? "" : "new");
+  cur.k++; cur.tries = 0;
+  if (cur.k >= cur.n) return finish();
+  update(UI.goOn);
+}
+function miss() {
+  cur.miss++; cur.tries++;
+  if (cur.tries >= 3) { cur.tries = 0; update(UI.wrongAgain, true); showMe(); }
+  else update(UI.wrong, true);
+}
+function say(t) { const m = $("tr-msg"); if (m) m.textContent = t; }
+// Redraw the hint (start dot and arrow on the next stroke) and the counter.
+function update(msg, forceHint) {
+  if (msg !== null) say(msg);
+  $("tr-stroke").textContent = fmt(UI.strokeN, { i: Math.min(cur.k + 1, cur.n), n: cur.n });
+  gGhost.style.display = state.outline ? "" : "none";
+  gHint.textContent = "";
+  if (cur.k >= cur.n || !(state.hints || forceHint)) return;
+  strokePath(cur.k, gHint, "tr-hint-fill");
+  const m = cur.meds[cur.k];
+  if (length(m) > 60) el("path", { d: lineD(m), class: "tr-hint-line", "marker-end": "url(#tr-arrow)" }, gHint);
+  el("circle", { cx: m[0][0], cy: m[0][1], r: 30, class: "tr-hint-dot" }, gHint);
+}
+let animTimer = 0;
+function stopAnim() { clearTimeout(animTimer); if (gAnim) gAnim.textContent = ""; }
+// "Show me": the next stroke is painted along its centre line, inside its outline.
+function showMe() {
+  if (phase !== "trace" || !cur || cur.k >= cur.n) return;
+  stopAnim();
+  update(null, true);
+  const k = cur.k, m = cur.meds[k];
+  const g = el("g", { "clip-path": "url(#tr-clip" + k + ")" }, gAnim);
+  const p = el("path", { d: lineD(m), class: "tr-anim-line" }, g);
+  if (REDUCED) { animTimer = setTimeout(stopAnim, 1600); return; }
+  const L = p.getTotalLength() + 120;
+  p.style.strokeDasharray = L + " " + L;
+  p.style.strokeDashoffset = L;
+  p.getBoundingClientRect();
+  p.style.transition = "stroke-dashoffset " + Math.max(0.5, Math.min(1.2, L / 900)) + "s linear";
+  p.style.strokeDashoffset = 0;
+  animTimer = setTimeout(stopAnim, 2600);
+}
+function restart() {
+  if (phase !== "trace" && phase !== "char-done") return;
+  results[pos] = undefined;
+  showChar();
+}
+function finish() {
+  phase = "char-done";
+  stopAnim();
+  gHint.textContent = "";
+  gGhost.style.display = "";
+  svg.classList.add("complete");
+  results[pos] = { c: cur.c, miss: cur.miss };
+  if (mode) {
+    const d = state.done[level] || "";
+    if (d.indexOf(cur.c) < 0) state.done[level] = d + cur.c;
+    save();
+  }
+  say(cur.miss ? fmt(UI.doneMistakes, { m: cur.miss, mw: cur.miss === 1 ? UI.mistake : UI.mistakes }) : UI.done);
+  $("tr-stroke").textContent = fmt(UI.strokeN, { i: cur.n, n: cur.n });
+  const b = $("next-btn");
+  b.textContent = pos + 1 < chars.length ? UI.next : UI.finish;
+  b.className = "button";
+  b.focus({ preventScroll: true });
+}
+function next() {
+  if (phase !== "trace" && phase !== "char-done") return;
+  stopAnim();
+  if (!results[pos]) results[pos] = { c: chars[pos], skipped: true };
+  pos++;
+  if (pos < chars.length) showChar(); else summary();
+}
+
+// --- end of a set --------------------------------------------------------------------------------------------------
+function summary() {
+  phase = "summary";
+  const done = results.filter(r => r && !r.skipped), clean = done.filter(r => !r.miss);
+  const items = results.map(r => {
+    const x = charInfo[r.c], d = strokeData[r.c];
+    const py = x ? x[1] : (d && d.p ? d.p.join(" / ") : "");
+    const how = r.skipped ? UI.skipped : r.miss ? fmt(UI.doneMistakes, { m: r.miss, mw: r.miss === 1 ? UI.mistake : UI.mistakes }) : UI.noMistake;
+    return '<li class="' + (r.skipped ? "skip" : r.miss ? "miss" : "clean") + '"><span class="m-zh" lang="zh-Hans">' + esc(r.c) +
+      '</span><span class="m-py">' + esc(py) + '</span><span class="m-en">' + esc(how) + '</span></li>';
+  }).join("");
+  const total = mode ? COUNTS[level] : 0, sets = Math.ceil((mode ? total : allMine.length) / SET);
+  let more = "";
+  if (setIdx + 1 < sets) more = '<button type="button" class="button ghost-btn" id="more-btn">' + esc(UI.nextSet) + '</button>';
+  else if (mode && level < 5) more = '<button type="button" class="button ghost-btn" id="level-btn">' + esc(fmt(UI.nextLevel, { m: level + 1 })) + '</button>';
+  area.innerHTML = '<div class="pt-score"><p class="sub">' + esc(UI.sumHead) + ' · ' + esc(setName()) + '</p>' +
+    '<p class="big">' + done.length + ' / ' + results.length + '</p>' +
+    '<p>' + esc(fmt(UI.sumLine, { t: done.length, n: results.length, c: clean.length })) + '</p></div>' +
+    '<ul class="pt-missed tr-sum">' + items + '</ul>' +
+    '<div class="pt-actions"><button type="button" class="button" id="again-btn">' + esc(UI.again) + '</button>' + more + '</div>' +
+    '<p class="study-link"><a href="' + UI.printBase + '#c=' + encodeURIComponent(chars.join("")) + '">' + esc(UI.print) + ' →</a></p>';
+  $("again-btn").addEventListener("click", () => { wantReveal = true; startSet(); });
+  if ($("more-btn")) $("more-btn").addEventListener("click", () => { wantReveal = true; setIdx++; if (mode) { state.set[level] = setIdx; save(); } fillSets(); startSet(); });
+  if ($("level-btn")) $("level-btn").addEventListener("click", () => { wantReveal = true; pickLevel(level + 1); });
+  $("again-btn").focus({ preventScroll: true });
+  if (mode) fillSets();
+}
+function setName() {
+  if (!mode) return UI.mineSet + " · " + fmt(UI.set, { a: setIdx * SET + 1, b: Math.min(allMine.length, (setIdx + 1) * SET) });
+  return "HSK " + level + " · " + fmt(UI.set, { a: setIdx * SET + 1, b: Math.min(COUNTS[level], (setIdx + 1) * SET) });
+}
+
+// --- choosing --------------------------------------------------------------------------------------------------------
+let allMine = [];
+function fillSets() {
+  const sel = $("tr-set"), list = levelData[level] || [], done = state.done[level] || "";
+  sel.textContent = "";
+  for (let k = 0; k * SET < COUNTS[level]; k++) {
+    const part = list.slice(k * SET, (k + 1) * SET).map(x => x[0]);
+    const all = part.length && part.every(c => done.indexOf(c) >= 0);
+    const o = document.createElement("option");
+    o.value = k;
+    o.textContent = fmt(UI.set, { a: k * SET + 1, b: Math.min(COUNTS[level], (k + 1) * SET) }) + (part.length ? " · " + part.join("") : "") + (all ? " ✓" : "");
+    sel.appendChild(o);
+  }
+  sel.value = setIdx;
+  const count = list.filter(x => done.indexOf(x[0]) >= 0).length;
+  $("tr-progress").textContent = fmt(UI.traced, { d: count, n: COUNTS[level] });
+}
+function showPicker() {
+  document.querySelectorAll(".tr-levels .lv-btn").forEach(b => b.setAttribute("aria-pressed", String(+b.dataset.level === (mode ? level : 0))));
+  $("tr-level-pick").hidden = !mode;
+  $("tr-mine-pick").hidden = !!mode;
+}
+async function pickLevel(n, k) {
+  mode = 1; level = n; state.level = n; save();
+  setIdx = Math.min(Math.max(0, k !== undefined ? k : (+state.set[n] || 0)), Math.ceil(COUNTS[n] / SET) - 1);
+  showPicker();
+  if (location.hash !== "#hsk" + n) history.replaceState(null, "", "#hsk" + n);
+  const mine = ++token;
+  area.innerHTML = '<p class="empty">' + esc(UI.loading) + '</p>';
+  phase = "loading";
+  try { await loadLevel(n); } catch (e) { if (mine === token) area.innerHTML = '<p class="empty">' + esc(UI.loadFail) + '</p>'; return; }
+  if (mine !== token) return;
+  fillSets();
+  startSet();
+}
+async function startSet() {
+  const mine = ++token;
+  results = []; pos = 0;
+  area.innerHTML = '<p class="empty">' + esc(UI.loading) + '</p>';
+  phase = "loading";
+  try {
+    if (mode) {
+      chars = levelData[level].slice(setIdx * SET, (setIdx + 1) * SET).map(x => x[0]);
+      if (chars.some(c => !strokeData[c])) await loadLevelSet(level, setIdx);
+    } else {
+      chars = allMine.slice(setIdx * SET, (setIdx + 1) * SET);
+      await loadAny(chars);
+    }
+  } catch (e) { if (mine === token) area.innerHTML = '<p class="empty">' + esc(UI.loadFail) + '</p>'; return; }
+  if (mine !== token) return;
+  chars = chars.filter(c => strokeData[c]);
+  if (!chars.length) { area.innerHTML = '<p class="empty">' + esc(UI.loadFail) + '</p>'; return; }
+  showChar();
+}
+async function pickMine(text, go) {
+  mode = 0; showPicker();
+  if (location.hash.startsWith("#hsk")) history.replaceState(null, "", location.pathname);
+  $("tr-mine").value = text;
+  const want = hanzi(text);
+  const note = $("tr-mine-note");
+  if (!want.length) { note.textContent = UI.mineEmpty; area.innerHTML = '<p class="empty">' + esc(UI.mineEmpty) + '</p>'; phase = "idle"; return; }
+  state.mine = want.join("");
+  if (go) state.level = 0;
+  save();
+  if (!go) { note.textContent = fmt(UI.mineCount, { n: want.length }); area.innerHTML = '<p class="empty">' + esc(note.textContent) + '</p>'; phase = "idle"; return; }
+  const mine = ++token;
+  area.innerHTML = '<p class="empty">' + esc(UI.loading) + '</p>';
+  phase = "loading";
+  try { await loadAny(want); } catch (e) { if (mine === token) area.innerHTML = '<p class="empty">' + esc(UI.loadFail) + '</p>'; return; }
+  if (mine !== token) return;
+  await Promise.race([loadAllInfo(), new Promise(r => setTimeout(r, 1500))]);
+  if (mine !== token) return;
+  allMine = want.filter(c => strokeData[c]);
+  const none = want.filter(c => !strokeData[c]);
+  note.textContent = (allMine.length ? fmt(UI.mineCount, { n: allMine.length }) : "") + (none.length ? " " + fmt(UI.mineNone, { c: none.join(" ") }) : "");
+  if (!allMine.length) { area.innerHTML = '<p class="empty">' + esc(note.textContent) + '</p>'; phase = "idle"; return; }
+  setIdx = 0;
+  startSet();
+}
+
+document.querySelectorAll(".tr-levels .lv-btn").forEach(b => b.addEventListener("click", () => {
+  const n = +b.dataset.level;
+  wantReveal = !!n;
+  if (n) pickLevel(n); else pickMine(state.mine || $("tr-mine").value, false);
+}));
+$("tr-set").addEventListener("change", e => { wantReveal = true; setIdx = +e.target.value; state.set[level] = setIdx; save(); startSet(); });
+$("tr-mine-pick").addEventListener("submit", e => { e.preventDefault(); wantReveal = true; pickMine($("tr-mine").value, true); });
+function switches() {
+  $("sw-outline").setAttribute("aria-pressed", String(!!state.outline));
+  $("sw-hints").setAttribute("aria-pressed", String(!!state.hints));
+}
+$("sw-outline").addEventListener("click", () => { state.outline = state.outline ? 0 : 1; save(); switches(); if (phase === "trace") update(null); });
+$("sw-hints").addEventListener("click", () => { state.hints = state.hints ? 0 : 1; save(); switches(); if (phase === "trace") update(null); });
+document.addEventListener("keydown", e => {
+  if (e.altKey || e.ctrlKey || e.metaKey || (e.target.closest && e.target.closest("input, textarea, select"))) return;
+  const onButton = e.target.closest && e.target.closest("button, a");
+  if (phase === "trace" && (e.key === "h" || e.key === "H")) { e.preventDefault(); showMe(); }
+  else if ((phase === "trace" || phase === "char-done") && (e.key === "r" || e.key === "R")) { e.preventDefault(); restart(); }
+  else if (phase === "char-done" && e.key === "Enter" && !onButton) { e.preventDefault(); next(); }
+});
+function fromHash() {
+  const h = location.hash;
+  const m = h.match(/^#hsk([1-5])$/);
+  if (m) { pickLevel(+m[1]); return true; }
+  if (h.startsWith("#c=")) {
+    let t = "";
+    try { t = decodeURIComponent(h.slice(3)); } catch (e) { t = ""; }
+    if (hanzi(t).length) { pickMine(hanzi(t).join(""), true); return true; }
+  }
+  return false;
+}
+addEventListener("hashchange", fromHash);
+
+switches();
+$("storage-note").hidden = saveOk;
+if (state.mine) $("tr-mine").value = state.mine;
+if (!fromHash()) {
+  if (state.level === 0 && state.mine) pickMine(state.mine, true);
+  else pickLevel(Math.min(5, Math.max(1, +state.level || 1)));
+}
+})();
+</script>

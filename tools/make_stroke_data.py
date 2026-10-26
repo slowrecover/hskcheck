@@ -1,10 +1,14 @@
 """Turn the Make Me a Hanzi data into the stroke files the worksheet pages load.
 
 Usage:  python3 tools/make_stroke_data.py /path/to/makemeahanzi /path/to/complete-hsk-vocabulary/complete.min.json
+        python3 tools/make_stroke_data.py --medians /path/to/makemeahanzi
 
 Writes:
   strokes/hsk1.json, hsk2.json, hsk3.json   characters first used in that level's words, in syllabus order
   strokes/x/00.json ... 7f.json             every character in the data set, sharded by code point % 128
+  strokes/m/00.json ... 7f.json             (--medians) the centre line of every stroke, same shards, for the
+                                            character tracing page: "字": [[x0, y0, x1, y1, ...], ...], one list
+                                            per stroke in stroke order, drawn from start to end
 
 For HSK characters, "p" lists the readings the character has in the HSK 1-3 words (from data/hskN.tsv),
 in order of first use, with the tone changes of 一 and 不 undone and neutral-tone-only characters given
@@ -155,7 +159,30 @@ def main(src, cedict_path):
     print(f"{len(strokes)} characters in {SHARDS} shards")
 
 
+def medians(src):
+    """Write strokes/m/: the stroke medians of graphics.txt, checked against the outlines in strokes/x/."""
+    src = pathlib.Path(src)
+    shard_dir = OUT / "m"
+    shard_dir.mkdir(exist_ok=True)
+    shards = [{} for _ in range(SHARDS)]
+    for line in (src / "graphics.txt").read_text(encoding="utf-8").splitlines():
+        d = json.loads(line)
+        shards[ord(d["character"]) % SHARDS][d["character"]] = [[v for pt in m for v in pt] for m in d["medians"]]
+    for i, shard in enumerate(shards):
+        outlines = json.loads((OUT / "x" / f"{i:02x}.json").read_text(encoding="utf-8"))
+        if set(outlines) != set(shard):
+            raise SystemExit(f"strokes/x/{i:02x}.json does not have the same characters as graphics.txt")
+        for c, m in shard.items():
+            if len(m) != len(outlines[c]["s"]) or any(len(x) < 4 or len(x) % 2 for x in m):
+                raise SystemExit(f"medians of {c} do not match its {len(outlines[c]['s'])} strokes")
+        (shard_dir / f"{i:02x}.json").write_text(json.dumps(shard, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    print(f"medians of {sum(len(s) for s in shards)} characters in {SHARDS} shards")
+
+
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
+    if len(sys.argv) == 3 and sys.argv[1] == "--medians":
+        medians(sys.argv[2])
+    elif len(sys.argv) == 3:
+        main(sys.argv[1], sys.argv[2])
+    else:
         raise SystemExit(__doc__)
-    main(sys.argv[1], sys.argv[2])
