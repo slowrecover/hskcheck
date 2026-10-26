@@ -63,6 +63,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .site-nav a { text-decoration: none; color: var(--muted); padding-block: 2px; border-bottom: 2px solid transparent; }
 .site-nav a:hover { color: var(--ink); }
 .site-nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
+.lang-switch { margin-left: auto; display: inline-flex; align-items: center; gap: 0 6px; font-size: 13px; color: var(--muted); white-space: nowrap; }
+.lang-switch .cur { color: var(--ink); font-weight: 600; padding-block: 2px; }
+.lang-switch .sep { color: var(--muted); }
 h2 { margin: 0; font-size: 15px; font-weight: 600; letter-spacing: .01em; }
 .table-wrap { overflow-x: auto; }
 table.counts { border-collapse: collapse; font-size: 14px; min-width: 320px; }

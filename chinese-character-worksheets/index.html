@@ -12,6 +12,7 @@
 <meta property="og:type" content="website">
 <link rel="alternate" hreflang="en" href="https://hskcheck.com/chinese-character-worksheets/">
 <link rel="alternate" hreflang="th" href="https://hskcheck.com/th/chinese-character-worksheets/">
+<link rel="alternate" hreflang="vi" href="https://hskcheck.com/vi/chinese-character-worksheets/">
 <link rel="alternate" hreflang="x-default" href="https://hskcheck.com/chinese-character-worksheets/">
 <link rel="manifest" href="/manifest.webmanifest">
 <meta name="theme-color" content="#2A4A9A">
@@ -91,6 +92,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .site-nav a { text-decoration: none; color: var(--muted); padding-block: 2px; border-bottom: 2px solid transparent; }
 .site-nav a:hover { color: var(--ink); }
 .site-nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
+.lang-switch { margin-left: auto; display: inline-flex; align-items: center; gap: 0 6px; font-size: 13px; color: var(--muted); white-space: nowrap; }
+.lang-switch .cur { color: var(--ink); font-weight: 600; padding-block: 2px; }
+.lang-switch .sep { color: var(--muted); }
 h2 { margin: 0; font-size: 15px; font-weight: 600; letter-spacing: .01em; }
 .table-wrap { overflow-x: auto; }
 table.counts { border-collapse: collapse; font-size: 14px; min-width: 320px; }
@@ -214,7 +218,7 @@ fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
 <body>
 <div class="wrap">
   <header class="no-print">
-    <nav class="site-nav" aria-label="Site"><button type="button" class="nav-toggle" aria-expanded="false">Menu</button><div class="nav-links"><a href="/">Level Checker</a><a href="/hsk-1-word-list/">HSK 1 Words</a><a href="/hsk-2-word-list/">HSK 2 Words</a><a href="/hsk-3-word-list/">HSK 3 Words</a><a href="/hsk-4-word-list/">HSK 4 Words</a><a href="/hsk-5-word-list/">HSK 5 Words</a><a href="/hsk-flashcards/">Flashcards</a><a href="/hsk-practice-test/">Practice Test</a><a href="/daily-hsk-quiz/">Daily Quiz</a><a href="/chinese-listening-practice/">Listening</a><a href="/pinyin-tone-practice/">Pinyin & Tones</a><a href="/reading/">Reading</a><a href="/chinese-character-worksheets/" aria-current="page">Writing Sheets</a><a href="/chinese-character-tracing/">Tracing</a><a href="/hsk-handwriting-characters/">Handwriting</a><a href="/mandarin-tone-changes/">Tone Changes</a><a href="/chinese-measure-words/">Measure Words</a><a href="/old-hsk-to-new-hsk/">Old → New HSK</a><a href="/learn/">Grammar</a><a href="/yct/">YCT</a><a href="/chinese-new-year-greetings/">New Year 2027</a><a href="/th/">ภาษาไทย</a></div></nav>
+    <nav class="site-nav" aria-label="Site"><button type="button" class="nav-toggle" aria-expanded="false">Menu</button><div class="nav-links"><a href="/">Level Checker</a><a href="/hsk-1-word-list/">HSK 1 Words</a><a href="/hsk-2-word-list/">HSK 2 Words</a><a href="/hsk-3-word-list/">HSK 3 Words</a><a href="/hsk-4-word-list/">HSK 4 Words</a><a href="/hsk-5-word-list/">HSK 5 Words</a><a href="/hsk-flashcards/">Flashcards</a><a href="/hsk-practice-test/">Practice Test</a><a href="/daily-hsk-quiz/">Daily Quiz</a><a href="/chinese-listening-practice/">Listening</a><a href="/pinyin-tone-practice/">Pinyin & Tones</a><a href="/reading/">Reading</a><a href="/chinese-character-worksheets/" aria-current="page">Writing Sheets</a><a href="/chinese-character-tracing/">Tracing</a><a href="/hsk-handwriting-characters/">Handwriting</a><a href="/mandarin-tone-changes/">Tone Changes</a><a href="/chinese-measure-words/">Measure Words</a><a href="/old-hsk-to-new-hsk/">Old → New HSK</a><a href="/learn/">Grammar</a><a href="/yct/">YCT</a><a href="/chinese-new-year-greetings/">New Year 2027</a></div><span class="lang-switch" role="group" aria-label="Language"><span class="cur" lang="en" aria-current="true">English</span><span class="sep" aria-hidden="true">·</span><a href="/th/chinese-character-worksheets/" hreflang="th" lang="th">ภาษาไทย</a><span class="sep" aria-hidden="true">·</span><a href="/vi/chinese-character-worksheets/" hreflang="vi" lang="vi">Tiếng Việt</a></span></nav>
     <div class="eyebrow"><span>Free · printable</span></div>
     <h1><span class="zh">字帖</span>Chinese Character Worksheet Maker</h1>
     <p class="lede">Make a printable handwriting sheet for any Chinese characters: stroke order, a model character, tracing and empty practice boxes on a tian or mi grid. Or start from the characters of an HSK 3.0 level.</p>

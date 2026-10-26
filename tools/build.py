@@ -15,6 +15,7 @@ Outputs (written at the repository root):
   pinyin-tone-practice/           pinyin and tone practice (see tools/pinyin_practice.py)
   chinese-character-tracing/      character tracing, stroke by stroke (see tools/tracing.py)
   learn/<slug>/practice/          grammar practice online for every grammar worksheet (see tools/grammar_practice.py)
+  th/..., vi/...                  Thai and Vietnamese pages (see tools/build_th.py and tools/build_vi.py)
   sitemap.xml                     every page above
 
 Run from anywhere:  python3 tools/build.py
@@ -27,6 +28,7 @@ import re
 import unicodedata
 
 import build_th
+import build_vi
 import cny
 import daily
 import handwriting
@@ -188,7 +190,7 @@ def nav(pages, current):
         cur = ' aria-current="page"' if url == current else ""
         links.append(f'<a href="{url}"{cur}>{label}</a>')
     return ('<nav class="site-nav" aria-label="Site"><button type="button" class="nav-toggle" aria-expanded="false">'
-            'Menu</button><div class="nav-links">' + "".join(links) + "</div></nav>")
+            'Menu</button><div class="nav-links">' + "".join(links) + "</div>" + LANG_SWITCH + "</nav>")
 
 
 PRIVACY_URL = "/privacy/"
@@ -199,18 +201,62 @@ SITE_FOOT = (f'\n<footer class="site-foot">hskcheck.com · <a href="{ABOUT_URL}"
 
 
 ALTERNATES = build_th.alternates(ROOT, LEVELS)  # English path -> Thai path
+VI_ALTERNATES = build_vi.alternates(ROOT)  # English path -> Vietnamese path
+LANGS = [  # language, alternates (English path -> path in that language), home, name in that language
+    ("en", None, "/", "English"),
+    ("th", ALTERNATES, build_th.TH_URL, "ภาษาไทย"),
+    ("vi", VI_ALTERNATES, build_vi.VI_URL, "Tiếng Việt"),
+]
+LANG_SWITCH = "<!--lang-switch-->"  # placed by nav(); render() fills it in for the page's URL
+LANG_SWITCH_LABEL = {"en": "Language", "th": "ภาษา", "vi": "Ngôn ngữ"}
+
+
+def english_path(path):
+    """The English page a path belongs to (itself if it is English), or None."""
+    for _, alts, _, _ in LANGS[1:]:
+        if path in alts:
+            return path
+    for _, alts, _, _ in LANGS[1:]:
+        en = next((e for e, t in alts.items() if t == path), None)
+        if en:
+            return en
+    return None
+
+
+def page_versions(path):
+    """[(language, path)] for every language the page exists in, English first; empty if it has no translation."""
+    en = english_path(path)
+    if not en:
+        return []
+    out = [("en", en)] + [(lang, alts[en]) for lang, alts, _, _ in LANGS[1:] if en in alts]
+    return out if len(out) > 1 else []
 
 
 def hreflang_links(url):
     path = url[len(SITE):] if url.startswith(SITE) else url
-    en = path if path in ALTERNATES else next((e for e, t in ALTERNATES.items() if t == path), None)
-    if not en:
+    versions = page_versions(path)
+    if not versions:
         return ""
-    return "\n".join([
-        f'<link rel="alternate" hreflang="en" href="{SITE}{en}">',
-        f'<link rel="alternate" hreflang="th" href="{SITE}{ALTERNATES[en]}">',
-        f'<link rel="alternate" hreflang="x-default" href="{SITE}{en}">',
-    ])
+    return "\n".join([f'<link rel="alternate" hreflang="{lang}" href="{SITE}{p}">' for lang, p in versions]
+                     + [f'<link rel="alternate" hreflang="x-default" href="{SITE}{versions[0][1]}">'])
+
+
+def lang_switch(url, lang):
+    """English · ภาษาไทย · Tiếng Việt: links to this page in each language, or to that language's home page."""
+    path = url[len(SITE):] if url.startswith(SITE) else url
+    same = dict(page_versions(path))
+    items = []
+    for code, alts, home, name in LANGS:
+        if alts is not None and not alts:
+            continue  # no pages in that language yet
+        if code == lang:
+            items.append(f'<span class="cur" lang="{code}" aria-current="true">{name}</span>')
+        else:
+            items.append(f'<a href="{same.get(code, home)}" hreflang="{code}" lang="{code}">{name}</a>')
+    if len(items) < 2:
+        return ""
+    sep = '<span class="sep" aria-hidden="true">·</span>'
+    return f'<span class="lang-switch" role="group" aria-label="{LANG_SWITCH_LABEL.get(lang, "Language")}">' + sep.join(items) + "</span>"
 
 
 TAB_ICONS = {
@@ -218,9 +264,11 @@ TAB_ICONS = {
     "read": '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5C5.5 4 8.5 4 12 6c3.5-2 6.5-2 9-.5V19c-2.5-1.5-5.5-1.5-9 .5-3.5-2-6.5-2-9-.5z"/><path d="M12 6v13.5"/></svg>',
     "check": '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg>',
 }
+TAB_ICONS["write"] = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M14 6l4 4"/></svg>'
 TABS = {
     "en": [("/hsk-flashcards/", "Flashcards", "cards"), ("/reading/", "Reading", "read"), ("/", "Checker", "check")],
     "th": [("/th/hsk-flashcards/", "แฟลชการ์ด", "cards"), ("/th/reading/", "อ่าน", "read"), ("/th/", "ตรวจระดับ", "check")],
+    "vi": build_vi.TABS,
 }
 
 
@@ -229,13 +277,15 @@ def tab_bar(url, lang):
     path = url[len(SITE):] if url.startswith(SITE) else url
     items = []
     for href, label, icon in TABS.get(lang, TABS["en"]):
-        if icon == "read":
+        if lang == "vi":
+            on = build_vi.tab_on(path, href)
+        elif icon == "read":
             on = path.startswith(href)
         else:
             on = path == href
         cur = ' aria-current="page"' if on else ""
         items.append(f'<a href="{href}"{cur}>{TAB_ICONS[icon]}<span>{label}</span></a>')
-    label = "แถบหลัก" if lang == "th" else "Main"
+    label = {"th": "แถบหลัก", "vi": "Thanh chính"}.get(lang, "Main")
     return f'\n<nav class="tab-bar" aria-label="{label}">' + "".join(items) + "</nav>"
 
 
@@ -259,7 +309,8 @@ def render(title, description, url, css, body, head_extra="", lang="en", foot=No
         ("__URL__", url),
         ("__HEAD_EXTRA__", head_extra),
         ("__CSS__", css),
-        ("__BODY__", body + (SITE_FOOT if foot is None else foot) + tab_bar(url, lang)),
+        ("__BODY__", body.replace(LANG_SWITCH, lang_switch(url, lang)) + (SITE_FOOT if foot is None else foot)
+         + tab_bar(url, lang)),
     ):
         page = page.replace(key, value)
     return page
@@ -414,8 +465,6 @@ def main():
         pages.append((learn.LEARN_URL, "Grammar"))
     pages.append((yct.YCT_URL, "YCT"))
     pages.append((cny.URL, "New Year 2027"))
-    if ALTERNATES:
-        pages.append((build_th.TH_URL, "ภาษาไทย"))
     extra_urls = []
 
     # Level checker
@@ -654,6 +703,11 @@ def main():
                                  read_words=read_words,
                                  measure=dict(read_classifiers=read_classifiers, read_measure_words=read_measure_words,
                                               yi_before=yi_before, zh_spans=zh_spans, squash=_squash))
+
+    # Vietnamese pages
+    extra_urls += build_vi.build(root=ROOT, tpl=TPL, site=SITE, base_css=base_css, render=render,
+                                 word_lists=word_lists, read_words=read_words, search_key=search_key, squash=_squash,
+                                 checker_level_table=lambda: level_table(CHECKER_LEVELS))
 
     # Sitemap
     urls = "\n".join(

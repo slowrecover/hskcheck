@@ -1,0 +1,66 @@
+<div class="wrap">
+  <header>
+    __NAV__
+    <div class="eyebrow"><span>HSK mới · Đề cương 2025</span><span class="chip">Cấp __LEVEL__</span><span class="chip">__COUNT__ từ</span></div>
+    <h1>Từ vựng HSK __LEVEL__ có nghĩa tiếng Việt</h1>
+    <p class="lede">__LEDE__</p>
+  </header>
+
+  <section class="sheet" aria-label="Từ vựng HSK __LEVEL__">
+    <div class="tools-row">
+      <label class="visually-hidden" for="word-search">Tìm từ trong HSK __LEVEL__</label>
+      <input id="word-search" class="search" type="search" placeholder="Tìm: 学, xue hoặc học" autocomplete="off" spellcheck="false">
+      <span class="count" id="word-count">__ROWCOUNT__ từ</span>
+    </div>
+    <div class="table-wrap">
+      <table class="words-table">
+        <thead><tr><th scope="col">#</th><th scope="col">Từ</th><th scope="col">Pinyin</th><th scope="col">Nghĩa</th></tr></thead>
+        <tbody id="word-rows">
+__ROWS__
+        </tbody>
+      </table>
+    </div>
+    <p class="empty" id="no-match" hidden>Không tìm thấy từ phù hợp. Thử gõ một chữ Hán, hoặc pinyin không dấu.</p>
+  </section>
+
+  <section class="sheet" aria-labelledby="cta-title">
+    <h2 id="cta-title">Kiểm tra văn bản theo HSK __LEVEL__</h2>
+    <p class="lede">Dán đoạn văn tiếng Trung vào công cụ kiểm tra cấp độ: những từ vượt HSK __LEVEL__ được tô đỏ kèm nghĩa tiếng Việt.</p>
+    <div class="cta"><a class="button" href="/vi/#hsk__LEVEL__">Mở công cụ kiểm tra</a><a class="button ghost" href="/vi/hsk-__LEVEL__-character-worksheets/">In phiếu tập viết chữ</a></div>
+  </section>
+
+  <section class="prose" aria-labelledby="about-title">
+    <h2 id="about-title">Về HSK __LEVEL__</h2>
+__PROSE__
+  </section>
+
+  <footer class="notes">
+    __SOURCE__
+    <p><b>Pinyin.</b> Ghi theo cách đọc thực tế, kể cả biến điệu của <span class="zh-inline">一</span> và <span class="zh-inline">不</span>. Nghĩa tiếng Việt do hskcheck.com biên soạn, chỉ ghi các nghĩa thường dùng.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  const input = document.getElementById("word-search");
+  const rows = Array.from(document.querySelectorAll("#word-rows tr"));
+  const countEl = document.getElementById("word-count");
+  const none = document.getElementById("no-match");
+  const total = rows.length;
+  function norm(s) {
+    return s.toLowerCase().replace(/đ/g, "d").normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[\s'’-]/g, "");
+  }
+  function apply() {
+    const q = norm(input.value);
+    let shown = 0;
+    rows.forEach(r => {
+      const hit = !q || r.dataset.k.includes(q);
+      r.hidden = !hit;
+      if (hit) shown++;
+    });
+    countEl.textContent = q ? shown + "/" + total + " từ" : total + " từ";
+    none.hidden = shown > 0;
+  }
+  input.addEventListener("input", apply);
+})();
+</script>

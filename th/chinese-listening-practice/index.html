@@ -92,6 +92,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .site-nav a { text-decoration: none; color: var(--muted); padding-block: 2px; border-bottom: 2px solid transparent; }
 .site-nav a:hover { color: var(--ink); }
 .site-nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
+.lang-switch { margin-left: auto; display: inline-flex; align-items: center; gap: 0 6px; font-size: 13px; color: var(--muted); white-space: nowrap; }
+.lang-switch .cur { color: var(--ink); font-weight: 600; padding-block: 2px; }
+.lang-switch .sep { color: var(--muted); }
 h2 { margin: 0; font-size: 15px; font-weight: 600; letter-spacing: .01em; }
 .table-wrap { overflow-x: auto; }
 table.counts { border-collapse: collapse; font-size: 14px; min-width: 320px; }
@@ -304,7 +307,7 @@ table.words-table th, table.counts th { letter-spacing: 0; }
 <body>
 <div class="wrap">
   <header>
-    <nav class="site-nav" aria-label="เมนูเว็บไซต์"><button type="button" class="nav-toggle" aria-expanded="false">เมนู</button><div class="nav-links"><a href="/th/">ตรวจระดับคำศัพท์</a><a href="/th/hsk-1-word-list/">คำศัพท์ HSK 1</a><a href="/th/hsk-2-word-list/">คำศัพท์ HSK 2</a><a href="/th/hsk-3-word-list/">คำศัพท์ HSK 3</a><a href="/th/hsk-4-word-list/">คำศัพท์ HSK 4</a><a href="/th/hsk-5-word-list/">คำศัพท์ HSK 5</a><a href="/th/hsk-flashcards/">แฟลชการ์ด</a><a href="/th/hsk-practice-test/">แบบทดสอบ HSK</a><a href="/th/daily-hsk-quiz/">ควิซประจำวัน</a><a href="/th/chinese-listening-practice/" aria-current="page">ฝึกฟัง</a><a href="/th/pinyin-tone-practice/">พินอินและวรรณยุกต์</a><a href="/th/reading/">อ่าน</a><a href="/th/chinese-character-worksheets/">แบบฝึกเขียน</a><a href="/th/chinese-character-tracing/">เขียนตามรอย</a><a href="/th/chinese-measure-words/">ลักษณนาม</a><a href="/th/old-hsk-to-new-hsk/">HSK เก่า → ใหม่</a><a href="/th/learn/">ไวยากรณ์</a><a href="/th/yct/">YCT</a><a href="/" hreflang="en" lang="en">English</a></div></nav>
+    <nav class="site-nav" aria-label="เมนูเว็บไซต์"><button type="button" class="nav-toggle" aria-expanded="false">เมนู</button><div class="nav-links"><a href="/th/">ตรวจระดับคำศัพท์</a><a href="/th/hsk-1-word-list/">คำศัพท์ HSK 1</a><a href="/th/hsk-2-word-list/">คำศัพท์ HSK 2</a><a href="/th/hsk-3-word-list/">คำศัพท์ HSK 3</a><a href="/th/hsk-4-word-list/">คำศัพท์ HSK 4</a><a href="/th/hsk-5-word-list/">คำศัพท์ HSK 5</a><a href="/th/hsk-flashcards/">แฟลชการ์ด</a><a href="/th/hsk-practice-test/">แบบทดสอบ HSK</a><a href="/th/daily-hsk-quiz/">ควิซประจำวัน</a><a href="/th/chinese-listening-practice/" aria-current="page">ฝึกฟัง</a><a href="/th/pinyin-tone-practice/">พินอินและวรรณยุกต์</a><a href="/th/reading/">อ่าน</a><a href="/th/chinese-character-worksheets/">แบบฝึกเขียน</a><a href="/th/chinese-character-tracing/">เขียนตามรอย</a><a href="/th/chinese-measure-words/">ลักษณนาม</a><a href="/th/old-hsk-to-new-hsk/">HSK เก่า → ใหม่</a><a href="/th/learn/">ไวยากรณ์</a><a href="/th/yct/">YCT</a></div><span class="lang-switch" role="group" aria-label="ภาษา"><a href="/chinese-listening-practice/" hreflang="en" lang="en">English</a><span class="sep" aria-hidden="true">·</span><span class="cur" lang="th" aria-current="true">ภาษาไทย</span><span class="sep" aria-hidden="true">·</span><a href="/vi/" hreflang="vi" lang="vi">Tiếng Việt</a></span></nav>
     <div class="eyebrow"><span>HSK ใหม่ · หลักสูตรปี 2025</span><span class="chip">ระดับ 1–5</span><span class="chip">ฟรี</span></div>
     <h1><span class="zh">听力</span>ฝึกฟังภาษาจีน</h1>
     <p class="lede">ฟังคำศัพท์หรือประโยคสั้นตามระดับ HSK ของคุณ แล้วเลือกสิ่งที่ได้ยิน ฟังซ้ำได้ไม่จำกัด กดให้ช้าลงได้ หรือซ่อนตัวอักษรจีนแล้วฝึกฟังกับพินอินอย่างเดียว</p>

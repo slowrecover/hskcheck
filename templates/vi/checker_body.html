@@ -1,0 +1,226 @@
+<div class="wrap">
+  <header>
+    __NAV__
+    <div class="eyebrow"><span>HSK mới · Đề cương 2025</span><span class="chip">Cấp 1–5</span><span class="chip">Miễn phí</span></div>
+    <h1><span class="zh">超纲词</span>Kiểm tra từ vượt cấp HSK 3.0</h1>
+    <p class="lede">Dán bất kỳ đoạn văn tiếng Trung nào: những từ vượt cấp độ của bạn được tô đỏ kèm nghĩa tiếng Việt. Chỉ vài giây là biết đoạn văn có hợp với người học, bài giảng hay bài luyện thi hay không.</p>
+    <a class="start-banner" href="/vi/hsk-1-word-list/"><span class="sb-head">Đang học từ vựng HSK?</span><span class="sb-text">Danh sách từ HSK 1–5 có pinyin và nghĩa tiếng Việt, tra bằng chữ Hán, pinyin hoặc tiếng Việt. Miễn phí, không cần đăng ký.</span><span class="sb-go">Xem ngay →</span></a>
+  </header>
+
+  <section class="sheet" aria-labelledby="in-label">
+    <label class="field" id="in-label" for="text-input">Văn bản tiếng Trung <span class="hint" id="example-hint">Đã có sẵn đoạn văn mẫu, bạn cứ thay bằng văn bản của mình.</span></label>
+    <textarea id="text-input" spellcheck="false"></textarea>
+    <div class="controls">
+      <div class="levels" role="group" aria-label="Cấp độ người học">
+        <span class="lbl">Cấp độ người học</span>
+        <button type="button" class="lv-btn" data-level="1" aria-pressed="false">HSK 1</button>
+        <button type="button" class="lv-btn" data-level="2" aria-pressed="true">HSK 2</button>
+        <button type="button" class="lv-btn" data-level="3" aria-pressed="false">HSK 3</button>
+        <button type="button" class="lv-btn" data-level="4" aria-pressed="false">HSK 4</button>
+        <button type="button" class="lv-btn" data-level="5" aria-pressed="false">HSK 5</button>
+      </div>
+      <button type="button" class="ghost" id="clear-btn">Xóa văn bản</button>
+    </div>
+  </section>
+
+  <section class="sheet" aria-live="polite" aria-labelledby="res-title">
+    <h2 id="res-title">Kết quả cho <span id="res-level">HSK 2</span></h2>
+    <div class="verdict" id="verdict"></div>
+    <div class="graded" id="graded"></div>
+  </section>
+
+  <section class="sheet" aria-labelledby="list-title">
+    <h2 id="list-title">Từ vượt <span id="list-level">HSK 2</span> kèm nghĩa</h2>
+    <ul class="words" id="above-list"></ul>
+    <p class="empty" id="above-empty" hidden>Không có từ nào vượt cấp này. Đoạn văn phù hợp.</p>
+  </section>
+
+  <section class="guide" aria-labelledby="guide-title">
+    <h2 id="guide-title">Về HSK 3.0 và công cụ này</h2>
+    <div class="qa">
+      <div>
+        <h3>HSK 3.0 là gì?</h3>
+        <p>HSK 3.0, thường gọi là HSK mới, là phiên bản cải tiến của kỳ thi năng lực Hán ngữ. Kỳ thi có 9 cấp thay cho 6 cấp như trước, cùng danh sách từ vựng mới quy định người học ở mỗi cấp cần biết bao nhiêu từ.</p>
+      </div>
+      <div>
+        <h3>Mỗi cấp có bao nhiêu từ?</h3>
+        <p>Số từ trong đề cương 2025 được tính cộng dồn: mỗi cấp bao gồm toàn bộ từ của các cấp thấp hơn.</p>
+        <div class="table-wrap">
+          <table class="counts">
+            <thead><tr><th>Cấp</th><th>Số từ cộng dồn</th><th>Trong công cụ này</th></tr></thead>
+            <tbody>
+              <tr><td><a href="/vi/hsk-1-word-list/">HSK 1</a></td><td class="num">300</td><td>Đã có</td></tr>
+              <tr><td><a href="/vi/hsk-2-word-list/">HSK 2</a></td><td class="num">500</td><td>Đã có</td></tr>
+              <tr><td><a href="/vi/hsk-3-word-list/">HSK 3</a></td><td class="num">1.000</td><td>Đã có</td></tr>
+              <tr><td><a href="/vi/hsk-4-word-list/">HSK 4</a></td><td class="num">2.000</td><td>Đã có</td></tr>
+              <tr><td><a href="/vi/hsk-5-word-list/">HSK 5</a></td><td class="num">3.600</td><td>Đã có</td></tr>
+              <tr><td>HSK 6</td><td class="num">5.400</td><td>Sắp có</td></tr>
+              <tr><td>HSK 7–9</td><td class="num">11.000</td><td>Sắp có</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <h3>Công cụ này dành cho ai?</h3>
+        <p>Giáo viên dùng để kiểm tra bài đọc, phiếu bài tập hay đề luyện thi có vượt trình độ của học viên không. Người học dùng để xem bài báo hay sách đọc thêm nào mình đã đọc được, và nên học từ nào trước.</p>
+      </div>
+      <div>
+        <h3>Vì sao <span class="zh-inline">杯</span> trong <span class="zh-inline">一杯茶</span> bị đánh dấu, dù <span class="zh-inline">杯子</span> thuộc HSK 1?</h3>
+        <p>Đề cương liệt kê từ, không phải chữ. <span class="zh-inline">杯子</span> (cái cốc) là từ cấp 1, còn <span class="zh-inline">杯</span> đứng riêng làm lượng từ thì không có trong danh sách cấp 1–5. Công cụ bám sát danh sách từ nên đánh dấu chữ này.</p>
+      </div>
+      <div>
+        <h3>Văn bản của tôi có bị lưu lại không?</h3>
+        <p>Không. Mọi phép kiểm tra đều chạy trong trình duyệt của bạn; văn bản không được gửi tới máy chủ nào.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="notes">
+    <p><b>Danh sách từ.</b> Từ vựng HSK mới (HSK 3.0) theo đề cương 2025: cấp 1 (300 từ), cấp 2 (thêm 200 từ), cấp 3 (thêm 500 từ), cấp 4 (thêm 1.000 từ), cấp 5 (thêm 1.600 từ). Cấp 6–9 sẽ được bổ sung sau.</p>
+    <p><b>Tách từ.</b> Công cụ chọn cách tách từ để lại ít chữ không nhận ra nhất, chỉ dựa trên các danh sách này. Tên riêng và từ hiếm được ghi là “ngoài HSK 1–5”.</p>
+    <p><b>Ngưỡng đọc hiểu.</b> Nghiên cứu về đọc hiểu (Hu &amp; Nation, 2000) cho thấy người học đọc thoải mái khi biết khoảng 98% số từ trong bài; biết 95–98% thì đọc được nếu có hỗ trợ; dưới 95% thì khó đọc.</p>
+    <p><b>Nghĩa tiếng Việt.</b> Chỉ ghi các nghĩa thường dùng.</p>
+  </footer>
+</div>
+
+<script>
+const LEVELS = __LEVELS_JSON__;
+const MEANINGS = __MEANINGS_JSON__;
+const SAMPLE = "我是大学生，今年二十岁。我很喜欢喝咖啡，也喜欢跑步。周末我常常跟朋友去公园，有时候我们一起去博物馆。我觉得学习汉语很有意思，但是汉字有点儿难。";
+const MAXLEN = Object.keys(LEVELS).reduce((m, w) => Math.max(m, w.length), 1);
+const HAN = /[㐀-鿿豈-﫿]/;
+
+const input = document.getElementById("text-input");
+const hint = document.getElementById("example-hint");
+const verdictEl = document.getElementById("verdict");
+const gradedEl = document.getElementById("graded");
+const listEl = document.getElementById("above-list");
+const emptyEl = document.getElementById("above-empty");
+let target = 2;
+
+function store(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+function load(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+
+/* Split one run of Han characters: fewest unknown characters first, then fewest pieces. */
+function splitRun(run) {
+  const n = run.length;
+  const best = new Array(n + 1).fill(null);
+  best[0] = { unk: 0, cnt: 0, prev: -1, word: null };
+  for (let i = 0; i < n; i++) {
+    if (!best[i]) continue;
+    const base = best[i];
+    for (let len = Math.min(MAXLEN, n - i); len >= 1; len--) {
+      const piece = run.substr(i, len);
+      const known = Object.prototype.hasOwnProperty.call(LEVELS, piece);
+      if (!known && len > 1) continue;
+      const cand = { unk: base.unk + (known ? 0 : 1), cnt: base.cnt + 1, prev: i, word: piece, known };
+      const cur = best[i + len];
+      if (!cur || cand.unk < cur.unk || (cand.unk === cur.unk && cand.cnt < cur.cnt)) best[i + len] = cand;
+    }
+  }
+  const out = [];
+  for (let j = n; j > 0; j = best[j].prev) out.unshift({ text: best[j].word, level: best[j].known ? LEVELS[best[j].word] : 0 });
+  const merged = [];
+  for (const t of out) {
+    const last = merged[merged.length - 1];
+    if (t.level === 0 && last && last.level === 0) last.text += t.text; else merged.push({ ...t });
+  }
+  return merged;
+}
+
+function tokenize(text) {
+  const tokens = [];
+  let i = 0;
+  while (i < text.length) {
+    if (HAN.test(text[i])) {
+      let j = i; while (j < text.length && HAN.test(text[j])) j++;
+      for (const t of splitRun(text.slice(i, j))) tokens.push({ ...t, han: true });
+      i = j;
+    } else {
+      let j = i; while (j < text.length && !HAN.test(text[j])) j++;
+      tokens.push({ text: text.slice(i, j), han: false });
+      i = j;
+    }
+  }
+  return tokens;
+}
+
+function esc(s) { return s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+function mean(w) { return Object.prototype.hasOwnProperty.call(MEANINGS, w) ? MEANINGS[w] : ""; }
+
+function render() {
+  const text = input.value;
+  const tokens = tokenize(text);
+  const words = tokens.filter(t => t.han);
+  const counts = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 0: 0 };
+  words.forEach(w => counts[w.level]++);
+  const total = words.length;
+  const known = words.filter(w => w.level >= 1 && w.level <= target).length;
+
+  document.getElementById("res-level").textContent = "HSK " + target;
+  document.getElementById("list-level").textContent = "HSK " + target;
+
+  if (!total) {
+    verdictEl.innerHTML = '<p class="empty">Dán văn bản tiếng Trung vào ô ở trên để xem kết quả.</p>';
+    gradedEl.innerHTML = "";
+    listEl.innerHTML = ""; emptyEl.hidden = true;
+    return;
+  }
+
+  const pct = known / total * 100;
+  let state = "bad", head = "Quá nhiều từ chưa biết", sub = "Biết chưa tới 95% số từ. Hãy chọn đoạn văn dễ hơn, hoặc dạy trước những từ này.";
+  if (pct >= 98) { state = "ok"; head = "Đọc thoải mái"; sub = "Biết ít nhất 98% số từ ở cấp này."; }
+  else if (pct >= 95) { state = "warn"; head = "Đọc được nhưng cần hỗ trợ"; sub = "Biết 95–98% số từ. Chuẩn bị trước một danh sách từ ngắn sẽ giúp ích nhiều."; }
+  const shown = pct >= 99.95 ? "100" : pct.toFixed(1);
+  const w = n => (n / total * 100).toFixed(2) + "%";
+  verdictEl.innerHTML =
+    '<div class="verdict-top"><div class="big state-' + state + '">' + shown + '%</div>' +
+    '<div class="verdict-text"><strong class="state-' + state + '">' + head + '</strong><span>Biết ' + known + '/' + total + ' từ ở cấp HSK ' + target + ' · ' + sub + '</span></div></div>' +
+    '<div class="bar" aria-hidden="true"><i class="b1" style="width:' + w(counts[1]) + '"></i><i class="b2" style="width:' + w(counts[2]) + '"></i><i class="b3" style="width:' + w(counts[3]) + '"></i><i class="b4" style="width:' + w(counts[4]) + '"></i><i class="b5" style="width:' + w(counts[5]) + '"></i><i class="bx" style="width:' + w(counts[0]) + '"></i></div>' +
+    '<div class="legend"><span><i style="background:var(--l1)"></i>HSK 1 · ' + counts[1] + '</span><span><i style="background:var(--l2)"></i>HSK 2 · ' + counts[2] + '</span><span><i style="background:var(--l3)"></i>HSK 3 · ' + counts[3] + '</span><span><i style="background:var(--l4)"></i>HSK 4 · ' + counts[4] + '</span><span><i style="background:var(--l5)"></i>HSK 5 · ' + counts[5] + '</span><span><i style="background:var(--over)"></i>Ngoài HSK 1–5 · ' + counts[0] + '</span></div>';
+
+  gradedEl.innerHTML = tokens.map(t => {
+    if (!t.han) return esc(t.text).replace(/\n/g, "<br>");
+    const above = t.level === 0 || t.level > target;
+    const lv = t.level ? "HSK " + t.level : "Ngoài HSK 1–5";
+    const m = mean(t.text);
+    return '<span class="w ' + (above ? "above" : "w" + t.level) + '" title="' + esc(lv + (m ? " · " + m : "")) + '">' + esc(t.text) + "</span>";
+  }).join("");
+
+  const seen = new Map();
+  words.filter(t => t.level === 0 || t.level > target).forEach(t => {
+    const e = seen.get(t.text) || { text: t.text, level: t.level, n: 0 }; e.n++; seen.set(t.text, e);
+  });
+  const items = [...seen.values()].sort((a, b) => (a.level || 99) - (b.level || 99) || b.n - a.n);
+  listEl.innerHTML = items.map(e => {
+    const m = mean(e.text);
+    return '<li><span class="wd"><span class="zh">' + esc(e.text) + '</span>' + (m ? '<span class="vi-mean">' + esc(m) + '</span>' : '') +
+      '</span><span class="tag ' + (e.level ? "t" + e.level : "tx") + '">' + (e.level ? "HSK " + e.level : "ngoài 1–5") + (e.n > 1 ? " ×" + e.n : "") + "</span></li>";
+  }).join("");
+  emptyEl.hidden = items.length > 0;
+}
+
+function setLevel(n) {
+  target = n;
+  document.querySelectorAll(".lv-btn").forEach(b => b.setAttribute("aria-pressed", String(+b.dataset.level === n)));
+  store("hsk-level", String(n));
+  render();
+}
+
+let timer;
+input.addEventListener("input", () => {
+  hint.hidden = true;
+  clearTimeout(timer);
+  timer = setTimeout(() => { store("hsk-text", input.value); render(); }, 120);
+});
+document.querySelectorAll(".lv-btn").forEach(b => b.addEventListener("click", () => setLevel(+b.dataset.level)));
+document.getElementById("clear-btn").addEventListener("click", () => { input.value = ""; hint.hidden = true; store("hsk-text", ""); render(); input.focus(); });
+
+const savedText = load("hsk-text");
+const savedLevel = +load("hsk-level");
+if (savedText) { input.value = savedText; hint.hidden = true; } else { input.value = SAMPLE; }
+if (savedLevel >= 1 && savedLevel <= 5) target = savedLevel;
+const hashLevel = (location.hash.match(/^#hsk([1-5])$/) || [])[1];
+if (hashLevel) target = +hashLevel;
+setLevel(target);
+</script>

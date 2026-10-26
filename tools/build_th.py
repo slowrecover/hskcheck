@@ -155,16 +155,14 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
         pages.append((learn_th.TH_LEARN_URL, "ไวยากรณ์"))
     if yct.has_thai(root):
         pages.append((yct.TH_YCT_URL, "YCT"))
-    pages.append(("/", "English"))
 
     def nav(current):
         links = []
         for url, label in pages:
             cur = ' aria-current="page"' if url == current else ""
-            lang = ' hreflang="en" lang="en"' if url == "/" else ""
-            links.append(f'<a href="{url}"{cur}{lang}>{label}</a>')
+            links.append(f'<a href="{url}"{cur}>{label}</a>')
         return ('<nav class="site-nav" aria-label="เมนูเว็บไซต์"><button type="button" class="nav-toggle" aria-expanded="false">'
-                'เมนู</button><div class="nav-links">' + "".join(links) + "</div></nav>")
+                'เมนู</button><div class="nav-links">' + "".join(links) + "</div><!--lang-switch--></nav>")
 
     th_css = (tpl / "th" / "th.css").read_text(encoding="utf-8")
     urls = []
