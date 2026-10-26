@@ -330,7 +330,7 @@ TH_PACKS = [
         "price": "$1.99",
         "price_thb": "ประมาณ 65 บาท",
         "pages": 61,
-        "checkout": "",  # Creem checkout link, once the owner creates the product
+        "checkout": "https://www.creem.io/payment/prod_3QRviEwoMzHvtxC8YjQ2VW",
         "title": "สมุดแบบฝึกคำศัพท์ YCT 1 สำหรับเด็ก PDF พิมพ์ได้ พร้อมคำแปลไทย",
         "description": ("คำศัพท์ YCT 1 80 คำ ใน 5 บทเรียน ประโยคตัวอย่างง่าย ๆ แปลไทย "
                         "ฝึกเขียนตัวอักษร 98 ตัว แบบทดสอบและเฉลย PDF สำหรับเด็ก"),
@@ -363,7 +363,7 @@ TH_PACKS = [
         "price": "$1.99",
         "price_thb": "ประมาณ 65 บาท",
         "pages": 58,
-        "checkout": "",  # Creem checkout link, once the owner creates the product
+        "checkout": "https://www.creem.io/payment/prod_1Bjdcl3x4lUOWWArQcnBRR",
         "title": "สมุดแบบฝึกคำศัพท์ YCT 2 สำหรับเด็ก PDF พิมพ์ได้ พร้อมคำแปลไทย",
         "description": ("คำศัพท์ YCT 2 70 คำ ใน 5 บทเรียน ประโยคตัวอย่างง่าย ๆ แปลไทย "
                         "ฝึกเขียนตัวอักษร 87 ตัว แบบทดสอบและเฉลย PDF สำหรับเด็ก"),
@@ -396,7 +396,7 @@ TH_PACKS = [
         "price": "$2.99",
         "price_thb": "ประมาณ 100 บาท",
         "pages": 107,
-        "checkout": "",  # Creem checkout link, once the owner creates the product
+        "checkout": "https://www.creem.io/payment/prod_4vlkOEeoPvgFz4Q6xpeeDd",
         "title": "สมุดแบบฝึกคำศัพท์ YCT 3 สำหรับเด็ก PDF พิมพ์ได้ พร้อมคำแปลไทย",
         "description": ("คำศัพท์ YCT 3 150 คำ ใน 10 บทเรียน ประโยคตัวอย่างง่าย ๆ แปลไทย "
                         "ฝึกเขียนตัวอักษร 168 ตัว แบบทดสอบและเฉลย PDF สำหรับเด็ก"),
