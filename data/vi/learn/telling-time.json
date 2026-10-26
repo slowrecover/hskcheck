@@ -1,0 +1,105 @@
+{
+  "slug": "telling-time",
+  "published": "2026-10-26",
+  "title": "Cách nói giờ trong tiếng Trung: 点, 分 và 半 (HSK 1)",
+  "description": "Cách nói giờ trong tiếng Trung: hỏi 几点, dùng 点, 分 và 半, vì sao nói 两点 chứ không nói 二点, vị trí của giờ trong câu, ví dụ HSK 1.",
+  "h1": "Nói giờ trong tiếng Trung: 点, 分 và 半",
+  "lede": "Tiếng Trung nói giờ bằng số đếm và 点 (diǎn) cho giờ, 分 (fēn) cho phút, 半 (bàn) cho \"rưỡi\". Thời gian luôn đứng trước động từ, nên \"Tôi dậy lúc bảy giờ\" là 我七点起床.",
+  "sections": [
+    {
+      "h2": "Hỏi giờ và nói giờ chẵn",
+      "paras": [
+        "Để hỏi giờ, dùng 几点 (jǐ diǎn, \"mấy giờ\"). Khi trả lời, đặt số trước 点. Không cần 是: 现在两点 đơn giản là \"Bây giờ là hai giờ\".",
+        "Lỗi hay gặp nhất là nói 二点. Hai giờ luôn là 两点 (liǎng diǎn). Mười hai giờ vẫn là 十二点, vì 二 chỉ đổi thành 两 khi nó đứng một mình trước 点."
+      ],
+      "examples": [
+        "Bây giờ là mấy giờ?",
+        "Bây giờ là hai giờ.",
+        "Bây giờ là hai giờ, không phải mười hai giờ."
+      ]
+    },
+    {
+      "h2": "Phút và giờ rưỡi",
+      "paras": [
+        "Phút đứng sau giờ, giống tiếng Việt: giờ + 点 + số phút + 分. \"Rưỡi\" là 半, đặt sau 点: 八点半 là tám giờ rưỡi. 半 không bao giờ đứng trước giờ.",
+        "Khi số phút dưới mười, người ta hay thêm 零 (líng, \"không\"): 十点零五分 (mười giờ năm phút).Trong văn nói, khi số phút từ mười trở lên thì thường bỏ 分, nên 七点二十 là bảy giờ hai mươi. Bạn cũng có thể nghe 一刻 (yí kè, \"mười lăm phút\"), nhưng đây không phải từ HSK 1."
+      ],
+      "examples": [
+        "Bây giờ là tám giờ rưỡi.",
+        "Chúng tôi vào học lúc chín giờ mười phút.",
+        "Bây giờ là mười giờ năm phút.",
+        "Bảy giờ hai mươi tối anh ấy về đến nhà."
+      ]
+    },
+    {
+      "h2": "Thời gian đứng ở đâu trong câu",
+      "paras": [
+        "Thời gian đứng trước động từ, thường ngay sau chủ ngữ: 我早上七点起床. Tiếng Việt hay nói \"Tôi dậy lúc bảy giờ sáng\", thời gian ở cuối câu, nên người Việt rất dễ nói sai thành 我起床早上七点.",
+        "Tiếng Trung đặt buổi trước giờ, ngược với tiếng Việt: \"bảy giờ sáng\" là 早上七点, \"năm giờ chiều\" là 下午五点. Các từ chỉ buổi là 早上, 上午, 中午, 下午 và 晚上. Khi có cả ngày, đi từ lớn đến nhỏ: ngày, rồi buổi, rồi giờ, như 明天上午十一点."
+      ],
+      "examples": [
+        "Tôi dậy lúc bảy giờ sáng.",
+        "Mấy giờ bạn tan làm?",
+        "Tôi tan làm lúc năm giờ rưỡi chiều.",
+        "Mười một giờ sáng mai bạn có rảnh không?",
+        "Tàu hỏa đến lúc mười hai giờ."
+      ]
+    },
+    {
+      "h2": "Thời điểm hay khoảng thời gian: 点 hay 小时, 分 hay 分钟",
+      "paras": [
+        "点 và 分 chỉ một thời điểm: 两点 là \"hai giờ\" trên đồng hồ. Để nói việc gì kéo dài bao lâu, dùng 个小时 (ge xiǎoshí, tiếng đồng hồ) và 分钟 (fēnzhōng, phút): 两个小时 là hai tiếng, 二十分钟 là hai mươi phút. Trong tiếng Việt, \"hai giờ\" có thể chỉ thời điểm hoặc khoảng thời gian, còn tiếng Trung tách rõ hai ý này: khoảng thời gian dùng 小时, giống chữ \"tiếng\".",
+        "Khoảng thời gian đứng sau động từ, không đứng trước: 我学习了两个小时 là \"Tôi đã học hai tiếng\"."
+      ],
+      "examples": [
+        "Hôm nay tôi đã học hai tiếng.",
+        "Tối qua tôi ngủ tám tiếng.",
+        "Anh ấy xem ti vi hai mươi phút."
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập nói giờ HSK 1 có đáp án, in miễn phí",
+    "description": "Bài tập nói giờ tiếng Trung HSK 1 in miễn phí: 20 câu (点, 半, 小时 hay 分钟, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 点, 半, 小时 hoặc 分钟",
+        "instructions": "Điền 点, 半, 小时 hoặc 分钟 vào chỗ trống. Phần nghĩa tiếng Việt cho biết câu có nghĩa gì.",
+        "items": [
+          "Bây giờ là mấy giờ?",
+          "Chúng tôi tan học lúc ba giờ rưỡi.",
+          "Hôm nay tôi đọc sách một tiếng.",
+          "Tôi đã xem ti vi bốn mươi phút.",
+          "Tôi đi ngủ lúc mười giờ tối.",
+          "Bảy giờ rưỡi rồi, chúng ta đi ăn cơm đi.",
+          "Tàu hỏa đến lúc hai giờ.",
+          "Chúng tôi đã ngồi máy bay ba tiếng."
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng.",
+        "items": [
+          "Tôi dậy lúc sáu giờ sáng.",
+          "Buổi tối bạn đi ngủ lúc mấy giờ?",
+          "Ngày mai chúng tôi vào học lúc tám giờ rưỡi.",
+          "Bây giờ không phải là mười hai giờ.",
+          "Anh ấy về đến nhà lúc bốn giờ mười phút chiều.",
+          "Hôm qua tôi đã học một tiếng."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Bây giờ là hai giờ.",
+          "Tôi dậy lúc bảy giờ sáng.",
+          "Bây giờ là tám giờ rưỡi.",
+          "Chúng tôi vào học lúc chín giờ.",
+          "Tôi đã học hai tiếng.",
+          "Tôi tan làm lúc hai giờ rưỡi chiều."
+        ]
+      }
+    ]
+  }
+}

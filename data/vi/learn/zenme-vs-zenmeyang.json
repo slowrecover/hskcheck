@@ -1,0 +1,118 @@
+{
+  "slug": "zenme-vs-zenmeyang",
+  "published": "2026-10-26",
+  "title": "Phân biệt 怎么 và 怎么样 trong tiếng Trung: ngữ pháp HSK 1",
+  "description": "Khi nào dùng 怎么 (zěnme), khi nào dùng 怎么样 (zěnmeyàng): \"làm thế nào\", \"sao lại\", \"thế nào\", \"được không\", lỗi hay gặp và ví dụ HSK 1.",
+  "h1": "怎么 và 怎么样: \"làm thế nào\" và \"thế nào\"",
+  "lede": "怎么 (zěnme) và 怎么样 (zěnmeyàng) đều có thể dịch là \"thế nào\", nhưng đứng ở vị trí khác nhau. 怎么 đứng trước động từ, hỏi cách làm một việc, hoặc hỏi vì sao lại như vậy. 怎么样 thường đứng cuối câu, hỏi một thứ như thế nào, hoặc người khác thấy một ý kiến ra sao.",
+  "sections": [
+    {
+      "h2": "怎么 + động từ: làm thế nào",
+      "paras": [
+        "怎么 + động từ.",
+        "Đặt 怎么 ngay trước động từ để hỏi cách làm: đọc một chữ thế nào, nấu một món ăn thế nào, đi đến đâu đó bằng gì. Trong câu trả lời, cách làm cũng đứng ở chỗ đó, trước động từ: 你们怎么去？ 我们坐飞机去。 Không thêm 吗 ở cuối câu, vì 怎么 đã là từ để hỏi rồi."
+      ],
+      "examples": [
+        "Chữ này đọc thế nào?",
+        "Món này nấu thế nào?",
+        "Các bạn đi bằng gì?",
+        "Chúng tôi đi máy bay.",
+        "Tôi không biết nói thế nào."
+      ]
+    },
+    {
+      "h2": "怎么 nghĩa là \"sao lại\"",
+      "paras": [
+        "怎么 còn dùng để hỏi \"sao\", \"sao lại\" khi bạn ngạc nhiên hoặc hơi khó chịu. Sau nó thường là 不, 没有 hoặc 还: 你怎么不说话？ nghĩa là \"Sao bạn không nói gì?\". Sau này bạn sẽ học 为什么, từ thông thường để hỏi \"tại sao\".",
+        "你怎么了？ là câu hỏi rất hay dùng, nghĩa là \"Bạn sao thế?\" hay \"Có chuyện gì vậy?\" khi thấy ai đó có vẻ ốm, buồn hoặc không vui."
+      ],
+      "examples": [
+        "Sao bạn không nói gì?",
+        "Sao hôm nay anh ấy không đến?",
+        "Sao bạn biết?",
+        "Bạn sao thế?"
+      ]
+    },
+    {
+      "h2": "怎么样: thế nào, ra sao",
+      "paras": [
+        "Sự vật hoặc người + 怎么样？",
+        "Đặt 怎么样 sau thứ bạn muốn hỏi để hỏi nó như thế nào: công việc mới, một bộ phim, thời tiết, thầy cô giáo. Bạn cũng có thể nói 你觉得……怎么样？ (Bạn thấy... thế nào?). Trả lời bằng một tính từ, thường có 很 hoặc 太: 很好, 很好吃, 太贵了. 你怎么样？ đứng một mình nghĩa là \"Bạn dạo này thế nào?\"."
+      ],
+      "examples": [
+        "Công việc mới của bạn thế nào?",
+        "Cái áo này thế nào?",
+        "Đắt quá.",
+        "Bạn dạo này thế nào?",
+        "Tôi khỏe, còn bạn?"
+      ]
+    },
+    {
+      "h2": "……，怎么样？ để đưa ra gợi ý",
+      "paras": [
+        "Để gợi ý, nói ý của bạn trước rồi thêm 怎么样 ở cuối câu, giống \"được không?\" hay \"bạn thấy sao?\" trong tiếng Việt. Muốn đồng ý thì nói 好的 hoặc 好."
+      ],
+      "examples": [
+        "Ba giờ chúng ta đi, được không?",
+        "Chúng ta đi taxi đến bệnh viện, được không?",
+        "Được, ba giờ chúng ta đi."
+      ]
+    },
+    {
+      "h2": "Lỗi hay gặp",
+      "paras": [
+        "Lỗi hay gặp nhất là dùng nhầm hai từ, vì tiếng Việt nói \"thế nào\" ở cả hai chỗ. 怎么 không thể đứng cuối câu hỏi một thứ ra sao: nói 今天天气怎么样？, không nói 今天天气怎么？ Còn 怎么样 không thể mang nghĩa \"sao lại\": nói 你怎么不喝茶？, không nói 你怎么样不喝茶？ Quy tắc đơn giản: trước động từ dùng 怎么, cuối câu dùng 怎么样.",
+        "Thêm hai lỗi nữa: đặt 怎么 sau động từ (你去怎么医院 là sai, phải nói 你怎么去医院), và thêm 吗 vào câu đã có 怎么 hoặc 怎么样 (你的老师怎么样吗 là sai)."
+      ],
+      "examples": [
+        "Thời tiết hôm nay thế nào?",
+        "Sao bạn không uống trà?",
+        "Thầy giáo của bạn thế nào?"
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 怎么 và 怎么样 HSK 1 có đáp án, in miễn phí",
+    "description": "Bài tập 怎么 và 怎么样 HSK 1 in miễn phí: 20 câu (chọn từ, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 怎么 hoặc 怎么样",
+        "instructions": "Điền 怎么 hoặc 怎么样 vào chỗ trống. Phần nghĩa tiếng Việt cho biết câu có nghĩa gì.",
+        "items": [
+          "Thời tiết ngày mai thế nào?",
+          "Sao bạn không ăn cơm?",
+          "Thầy giáo mới của bạn thế nào?",
+          "Sao cô ấy vẫn chưa đi ngủ?",
+          "Ngày mai chúng ta đi cửa hàng, được không?",
+          "Sao bạn biết tên tôi?",
+          "Quyển sách này có hay không?",
+          "Sao hôm nay bạn không đi làm?",
+          "Sao các bạn đều không nói gì?"
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng.",
+        "items": [
+          "Bạn đến trường bằng gì?",
+          "Tên tiếng Trung của bạn viết thế nào?",
+          "Món ăn ở nhà hàng đó thế nào?",
+          "Sao bạn vẫn chưa đi ngủ?",
+          "Tối nay chúng ta đi ăn món Trung Quốc, được không?",
+          "Mẹ ơi, mẹ sao thế?"
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Quả táo này có ngon không?",
+          "Sao bạn không uống nước?",
+          "Bạn đến cửa hàng bằng gì?",
+          "Chiều nay chúng ta đi xem phim, được không?",
+          "Thầy giáo tiếng Hán của bạn thế nào?"
+        ]
+      }
+    ]
+  }
+}

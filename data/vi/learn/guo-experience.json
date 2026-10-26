@@ -1,0 +1,110 @@
+{
+  "slug": "guo-experience",
+  "published": "2026-10-26",
+  "title": "Cách dùng 过 (guo) trong tiếng Trung: ngữ pháp HSK 2 có ví dụ",
+  "description": "Cách dùng 过 (guo) để nói bạn đã từng làm gì: trật tự từ, phủ định với 没有, câu hỏi, phân biệt 过 và 了, và 13 câu ví dụ HSK 2.",
+  "h1": "Cách dùng 过 (guo) để nói về trải nghiệm",
+  "lede": "过 (guo) đứng sau động từ để nói bạn đã từng làm việc gì đó trong quá khứ: đã từng đến Trung Quốc, đã từng ăn sủi cảo, đã từng gặp ai đó. Đây là một điểm ngữ pháp quan trọng của HSK 2.",
+  "sections": [
+    {
+      "h2": "Mẫu câu",
+      "paras": [
+        "Chủ ngữ + động từ + 过 + tân ngữ.",
+        "Đặt 过 ngay sau động từ, đọc thanh nhẹ (guo). Câu cho biết việc này đã xảy ra ít nhất một lần trong đời, nhưng không nói chính xác lúc nào. Trong tiếng Việt, ý này thường là \"đã từng\" hoặc \"đã... rồi\". Chú ý: \"từng\" đứng trước động từ, còn 过 đứng sau."
+      ],
+      "examples": [
+        "Tôi đã từng đến Trung Quốc.",
+        "Tôi từng ăn sủi cảo rồi.",
+        "Cô ấy đã từng học tiếng Hán."
+      ]
+    },
+    {
+      "h2": "Phủ định: 没有 + động từ + 过",
+      "paras": [
+        "Để nói bạn chưa bao giờ làm việc gì, đặt 没有 trước động từ và giữ nguyên 过. Điều này khác với 了: trong câu phủ định thì bỏ 了.",
+        "Lỗi hay gặp nhất là dùng 不. 我不去过中国 là sai: 过 luôn phủ định bằng 没有, không bao giờ bằng 不."
+      ],
+      "examples": [
+        "Tôi chưa bao giờ đến Trung Quốc.",
+        "Anh ấy chưa từng xem bộ phim này.",
+        "Mẹ tôi chưa bao giờ uống cà phê."
+      ]
+    },
+    {
+      "h2": "Hỏi \"Bạn đã từng... chưa?\"",
+      "paras": [
+        "Thêm 吗 vào cuối câu, hoặc kết thúc câu hỏi bằng 没有, giống \"chưa?\" trong tiếng Việt. Để trả lời \"rồi\", nhắc lại động từ với 过, như 去过. Để trả lời \"chưa\", nói 没有, hoặc 没有 cùng động từ và 过, như 没有去过."
+      ],
+      "examples": [
+        "Bạn đã từng ăn món Trung Quốc chưa?",
+        "Bạn đã từng đi máy bay chưa?"
+      ]
+    },
+    {
+      "h2": "过 hay 了?",
+      "paras": [
+        "了 cho biết một hành động đã xảy ra hoặc một sự việc đã thay đổi. 过 nói về trải nghiệm. 他去中国了 nghĩa là anh ấy đã đi Trung Quốc và có lẽ bây giờ đang ở đó. 他去过中国 nghĩa là anh ấy đã từng đến đó và bây giờ không còn ở đó nữa.",
+        "Bạn có thể thêm từ chỉ thời gian hoặc số lần vào câu có 过 khi muốn nói rõ hơn về trải nghiệm đó."
+      ],
+      "examples": [
+        "Anh ấy đi Trung Quốc rồi (bây giờ đang ở đó).",
+        "Anh ấy đã từng đến Trung Quốc (giờ đã về).",
+        "Năm ngoái anh ấy đã đến Trung Quốc một lần."
+      ]
+    },
+    {
+      "h2": "过 đứng ngay sau động từ",
+      "paras": [
+        "过 không bao giờ đứng cuối câu sau tân ngữ. Nói 我学过汉语, không nói 我学汉语过. Với những từ gồm động từ và tân ngữ như 见面, 过 đứng giữa hai phần: 见过面."
+      ],
+      "examples": [
+        "Chúng tôi đã từng gặp nhau.",
+        "Chúng tôi vẫn chưa gặp nhau."
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 过 (guo) HSK 2 có đáp án, in miễn phí",
+    "description": "Bài tập 过 (guo) HSK 2 in miễn phí: 20 câu (过 hay 了, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 过 hoặc 了",
+        "instructions": "Điền 过 hoặc 了 vào chỗ trống. Phần nghĩa tiếng Việt cho biết câu có nghĩa gì.",
+        "items": [
+          "Bạn đã từng ăn sủi cảo chưa?",
+          "Tôi chưa bao giờ đến nhà anh ấy.",
+          "Trời mưa rồi, chúng ta về nhà đi.",
+          "Tôi đã từng gặp mẹ của anh ấy.",
+          "Anh ấy đã đi ngủ rồi.",
+          "Bạn đã từng xem bộ phim này chưa?",
+          "Trời nóng lên rồi.",
+          "Tôi chưa bao giờ đi máy bay.",
+          "Tôi mười tám tuổi rồi."
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng có 过.",
+        "items": [
+          "Tôi đã từng đi tàu hỏa.",
+          "Anh ấy chưa bao giờ học tiếng Hán.",
+          "Bạn đã từng uống trà Trung Quốc chưa?",
+          "Chúng tôi đã từng đến nhà hàng này.",
+          "Tôi chưa từng đọc quyển sách này.",
+          "Cô ấy đã từng làm việc ở Trung Quốc."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Tôi chưa bao giờ đến cửa hàng đó.",
+          "Anh ấy chưa bao giờ ăn sủi cảo.",
+          "Cô ấy chưa bao giờ uống cà phê.",
+          "Tôi đã từng học tiếng Hán.",
+          "Cô ấy chưa bao giờ đến nhà tôi."
+        ]
+      }
+    ]
+  }
+}

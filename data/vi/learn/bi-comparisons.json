@@ -1,0 +1,103 @@
+{
+  "slug": "bi-comparisons",
+  "published": "2026-10-26",
+  "title": "Câu so sánh với 比 (bǐ) trong tiếng Trung: ngữ pháp HSK 2",
+  "description": "Cách so sánh với 比 (bǐ): A 比 B + tính từ, vì sao không thêm 很, nói hơn bao nhiêu, phủ định với 没有, và 13 ví dụ HSK 2.",
+  "h1": "Cách so sánh hai thứ với 比",
+  "lede": "比 (bǐ) là cách thông dụng nhất để nói một thứ to hơn, lạnh hơn, rẻ hơn hay tốt hơn một thứ khác. Mẫu câu ngắn, nhưng có hai quy tắc người học hay quên: không có 很 trước tính từ, và không dùng 不 để phủ định.",
+  "sections": [
+    {
+      "h2": "Mẫu câu: A 比 B + tính từ",
+      "paras": [
+        "A + 比 + B + tính từ. Có thể hiểu là \"A, so với B, thì...\". Tính từ đứng cuối câu và không có từ nào cho \"hơn\": 我比他高 đã có nghĩa là \"Tôi cao hơn anh ấy\". Tiếng Việt nói \"A cao hơn B\", tính từ đứng trước B, nên người Việt hay nói sai thành 我高比他.",
+        "A và B nên là cùng một loại. Để so điện thoại của tôi với của bạn, nói 我的手机比你的新; chữ 的 ở cuối thay cho 手机, nên không cần nhắc lại."
+      ],
+      "examples": [
+        "Tôi cao hơn anh ấy.",
+        "Hôm nay lạnh hơn hôm qua.",
+        "Cái này rẻ hơn cái kia.",
+        "Điện thoại của tôi mới hơn của bạn."
+      ]
+    },
+    {
+      "h2": "Không có 很, nhưng có thể nói hơn bao nhiêu",
+      "paras": [
+        "Lỗi hay gặp nhất là thêm 很 hoặc 非常 trước tính từ, như 他比我很高. Trong câu có 比, tính từ đứng một mình: 他比我高.",
+        "Để nói hơn nhiều hay ít, thêm một thành phần sau tính từ, giống trật tự tiếng Việt: 一点儿 là \"hơn một chút\", 多了 hoặc 得多 là \"hơn nhiều\", hoặc một con số cụ thể như 三岁 (\"hơn ba tuổi\"). Để nói \"còn... hơn\", đặt 还 trước tính từ."
+      ],
+      "examples": [
+        "Anh ấy cao hơn tôi một chút.",
+        "Đi máy bay nhanh hơn đi tàu hỏa nhiều.",
+        "Phòng này to hơn phòng kia nhiều.",
+        "Anh trai tôi hơn tôi ba tuổi.",
+        "Hôm nay còn nóng hơn hôm qua."
+      ]
+    },
+    {
+      "h2": "Câu phủ định và câu hỏi",
+      "paras": [
+        "Để nói \"A không... bằng B\", dùng 没有 thay cho 比: A + 没有 + B + tính từ. Có thể thêm 那么 trước tính từ, nghĩa là \"... như thế\". Đừng nói 我比他不高.",
+        "Với câu hỏi có hay không, thêm 吗 vào cuối câu có 比."
+      ],
+      "examples": [
+        "Tôi không cao bằng anh ấy.",
+        "Hôm nay không nóng bằng hôm qua.",
+        "Bạn có lớn tuổi hơn anh ấy không?"
+      ]
+    },
+    {
+      "h2": "So sánh cách làm một việc",
+      "paras": [
+        "Để so sánh hành động, dùng động từ với 得 và đặt 比 trước động từ hoặc sau 得. Cả hai cách đều đúng và có nghĩa như nhau."
+      ],
+      "examples": [
+        "Anh ấy chạy nhanh hơn tôi.",
+        "Anh ấy chạy nhanh hơn tôi."
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập câu so sánh 比 HSK 2 có đáp án, in miễn phí",
+    "description": "Bài tập câu so sánh 比 HSK 2 in miễn phí: 20 câu (比 hay 没有, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 比 hoặc 没有",
+        "instructions": "Điền 比 hoặc 没有 vào chỗ trống. Phần nghĩa tiếng Việt cho biết câu có nghĩa gì.",
+        "items": [
+          "Tôi cao hơn anh ấy.",
+          "Cái này không ngon bằng cái kia.",
+          "Hôm nay lạnh hơn hôm qua một chút.",
+          "Phòng của tôi không to bằng phòng của bạn.",
+          "Đi tàu hỏa không nhanh bằng đi máy bay.",
+          "Tiếng Trung của anh ấy giỏi hơn tôi nhiều.",
+          "Cái áo này không đắt bằng cái kia.",
+          "Anh ấy chạy nhanh hơn tôi."
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng.",
+        "items": [
+          "Em trai tôi cao hơn tôi.",
+          "Cái này rẻ hơn cái kia một chút.",
+          "Hôm nay không lạnh bằng hôm qua.",
+          "Anh trai tôi hơn tôi ba tuổi.",
+          "Anh ấy chạy nhanh hơn tôi.",
+          "Đi máy bay nhanh hơn đi tàu hỏa nhiều."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Anh ấy cao hơn tôi.",
+          "Hôm nay nóng hơn hôm qua nhiều.",
+          "Tôi không cao bằng anh ấy.",
+          "Tôi hơn anh ấy hai tuổi.",
+          "Hôm nay không lạnh bằng hôm qua.",
+          "Anh ấy cao hơn tôi một chút."
+        ]
+      }
+    ]
+  }
+}

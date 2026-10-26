@@ -1,0 +1,101 @@
+{
+  "slug": "dates-in-chinese",
+  "published": "2026-10-26",
+  "title": "Cách nói ngày tháng trong tiếng Trung: 年, 月, 号, 星期 (HSK 1)",
+  "description": "Cách nói ngày tháng năm và thứ trong tuần bằng tiếng Trung: thứ tự từ lớn đến nhỏ, 二月 khác 两个月, 星期一 là thứ Hai, ví dụ HSK 1.",
+  "h1": "Ngày tháng: 年, 月, 号 và các thứ trong tuần",
+  "lede": "Ngày tháng trong tiếng Trung đi từ đơn vị lớn nhất đến nhỏ nhất: năm (年 nián), rồi tháng (月 yuè), rồi ngày (号 hào), rồi thứ (星期 xīngqī). Vì vậy ngày 17 tháng 10 năm 2026 là 2026年10月17号, ngược hẳn với tiếng Việt.",
+  "sections": [
+    {
+      "h2": "Lớn trước nhỏ sau: năm, tháng, ngày",
+      "paras": [
+        "Năm + 年, tháng + 月, ngày + 号. Thứ tự này không bao giờ đổi. Tiếng Việt nói \"ngày 17 tháng 10\", nên lỗi hay gặp nhất của người Việt là nói 十七号十月. Câu đúng là 十月十七号.",
+        "Năm được đọc từng chữ số một: 2026年 là èr líng èr liù nián, không đọc là \"hai nghìn không trăm hai mươi sáu\". Tháng chỉ là số từ 一 đến 十二 cộng 月, giống tiếng Việt: 一月 là tháng Một, 十二月 là tháng Mười Hai. Trong văn nói, ngày là 号; trong văn viết, trên giấy tờ và biển báo, bạn còn gặp 日 (rì)."
+      ],
+      "examples": [
+        "Hôm nay là ngày 17 tháng 10 năm 2026.",
+        "Bây giờ là năm 2026.",
+        "Tháng Chín năm ngoái anh ấy đã đi Trung Quốc."
+      ]
+    },
+    {
+      "h2": "二月 là tháng Hai, 两个月 là hai tháng",
+      "paras": [
+        "Tên tháng dùng số đếm, không có lượng từ: 二月 là tháng Hai. Để đếm số tháng, thêm 个 và dùng 两 cho số hai: 两个月 là \"hai tháng\". Tiếng Việt phân biệt \"tháng hai\" với \"hai tháng\" bằng trật tự từ; tiếng Trung phân biệt bằng 个 và 两. Hai cách này rất hay bị nhầm, nên đừng bao giờ nói 两月."
+      ],
+      "examples": [
+        "Bây giờ là tháng Hai, trời rất lạnh.",
+        "Anh ấy đã làm việc ở Trung Quốc hai tháng.",
+        "Tháng mấy bạn đi Trung Quốc?"
+      ]
+    },
+    {
+      "h2": "Các thứ trong tuần với 星期",
+      "paras": [
+        "Từ thứ Hai đến thứ Bảy là 星期 cộng một số. Cẩn thận: số trong tiếng Trung nhỏ hơn số trong tiếng Việt một đơn vị. 星期一 là thứ Hai, 星期二 là thứ Ba, 星期六 là thứ Bảy. Chủ nhật khác hẳn: 星期天 trong văn nói hoặc 星期日 trong văn viết, không bao giờ là 星期七. Để hỏi hôm nay thứ mấy, đặt 几 vào chỗ của số: 星期几.",
+        "\"Tuần sau\" và \"tuần trước\" dùng 下个 và 上个: 下个星期三 là thứ Tư tuần sau, 上个月 là tháng trước. Với năm thì dùng 去年, 今年 và 明年."
+      ],
+      "examples": [
+        "Hôm nay thứ mấy?",
+        "Hôm nay là thứ Bảy.",
+        "Chủ nhật tôi không đi học.",
+        "Thứ Tư tuần sau tôi đi bệnh viện."
+      ]
+    },
+    {
+      "h2": "Hỏi ngày, câu phủ định và trật tự từ",
+      "paras": [
+        "Để hỏi ngày, đặt 几 vào chỗ của số: 几月几号. Khi nói ngày thì không cần 是, nhưng trong câu phủ định thì phải có: 今天不是星期六, không nói 今天不星期六.",
+        "Khi nói việc gì xảy ra vào ngày nào, ngày tháng đứng trước động từ, trước hoặc sau chủ ngữ: 我们十月二十号回家 hoặc 十月二十号我们回家. Đặt ngày tháng ở cuối câu như tiếng Việt (\"về nhà vào ngày 20 tháng 10\") là sai."
+      ],
+      "examples": [
+        "Hôm nay là ngày bao nhiêu?",
+        "Ngày mai không phải ngày 10, mà là ngày 11.",
+        "Ngày 20 tháng 10 chúng tôi về nhà."
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập ngày tháng HSK 1 có đáp án, in miễn phí",
+    "description": "Bài tập nói ngày tháng tiếng Trung HSK 1 in miễn phí: 19 câu (年, 月, 号 và 星期, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 年, 月, 号 hoặc 星期",
+        "instructions": "Điền 年, 月, 号 hoặc 星期 vào chỗ trống. Phần nghĩa tiếng Việt cho biết câu có nghĩa gì.",
+        "items": [
+          "Hôm nay là ngày 17 tháng 10.",
+          "Năm 2024 tôi làm việc ở Trung Quốc.",
+          "Hôm nay thứ mấy?",
+          "Bây giờ là tháng Mười Hai, trời rất lạnh.",
+          "Thứ Hai tuần sau tôi đi bệnh viện.",
+          "Bạn về nhà vào ngày nào?",
+          "Tôi đã sống ở Trung Quốc hai tháng.",
+          "Ngày mai là ngày 12 tháng 11."
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng.",
+        "items": [
+          "Hôm nay là ngày 17 tháng 10.",
+          "Thứ Bảy chúng tôi đi cửa hàng.",
+          "Ngày mai là ngày bao nhiêu?",
+          "Chủ nhật bố tôi không đi làm.",
+          "Ngày mai không phải thứ Tư."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Hôm nay là ngày 17 tháng 10.",
+          "Bây giờ là tháng Hai.",
+          "Tôi đã học tiếng Trung hai tháng.",
+          "Thứ Bảy tôi về nhà.",
+          "Hôm nay là Chủ nhật.",
+          "Hôm nay không phải thứ Bảy."
+        ]
+      }
+    ]
+  }
+}
