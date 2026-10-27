@@ -1,0 +1,100 @@
+{
+  "slug": "ba-sentences",
+  "published": "2026-10-27",
+  "title": "Câu chữ 把 trong tiếng Trung: ngữ pháp HSK 3 kèm ví dụ",
+  "description": "Cách dùng 把 (bǎ) trong tiếng Trung: trật tự từ, vì sao sau động từ phải có thành phần khác, phủ định với 没有 và 别, kèm câu ví dụ HSK 3.",
+  "h1": "Cách dùng câu chữ 把",
+  "lede": "把 (bǎ) đưa tân ngữ lên trước động từ, để câu nói được điều gì đã xảy ra với nó: nó đi đâu, thành ra thế nào, hay hành động đã xong chưa. Đây là một trong những điểm ngữ pháp quan trọng nhất của HSK 3.",
+  "sections": [
+    {
+      "h2": "Cấu trúc",
+      "paras": [
+        "Chủ ngữ + 把 + tân ngữ + động từ + thành phần khác.",
+        "Trong câu thông thường, tân ngữ đứng sau động từ. Với 把, tân ngữ đứng trước động từ, và phần cuối câu cho biết kết quả. So sánh 我吃了苹果 (tôi đã ăn táo) với 我把苹果吃了 (tôi ăn quả táo đó rồi, giờ không còn nữa)."
+      ],
+      "examples": [
+        "Tôi đã ăn táo.",
+        "Tôi ăn quả táo đó rồi (giờ không còn nữa).",
+        "Tôi đã mở cửa ra."
+      ]
+    },
+    {
+      "h2": "Động từ không đứng một mình",
+      "paras": [
+        "Lỗi hay gặp nhất với 把 là kết thúc câu bằng một động từ trơn. 我把作业做 không phải là câu hoàn chỉnh. Sau động từ, hãy thêm kết quả như 完 hoặc 坏, phương hướng như 走, nơi chốn với 在, người nhận với 给, hoặc 一下.",
+        "Tân ngữ của 把 thường là một thứ cụ thể mà cả người nói và người nghe đều biết: cái cửa, quyển sách này, máy tính của tôi."
+      ],
+      "examples": [
+        "Anh ấy làm xong bài tập về nhà rồi.",
+        "Em gái tôi dùng hỏng máy tính của tôi rồi.",
+        "Anh ấy lái xe đi rồi.",
+        "Bạn giặt quần áo đi."
+      ]
+    },
+    {
+      "h2": "Đặt đồ ở đâu, đưa đồ cho ai",
+      "paras": [
+        "把 là cách nói tự nhiên khi bạn đặt thứ gì ở đâu (động từ + 在 + nơi chốn) hoặc đưa cho ai (động từ + 给 + người). Câu đề nghị thường bắt đầu bằng 请."
+      ],
+      "examples": [
+        "Xin hãy đặt điện thoại lên bàn.",
+        "Bạn đưa quyển sách này cho tôi đi.",
+        "Tôi đã kể chuyện này cho mẹ rồi."
+      ]
+    },
+    {
+      "h2": "Phủ định đặt trước 把",
+      "paras": [
+        "Muốn nói việc gì đó không xảy ra, đặt 没有 trước 把, không đặt trước động từ. Muốn bảo ai đừng làm, dùng 别 hoặc 不要, cũng đặt trước 把."
+      ],
+      "examples": [
+        "Tôi không mang tiền theo.",
+        "Đừng để đồ ở đây.",
+        "Bạn đừng kể chuyện này cho anh ấy."
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập câu chữ 把 HSK 3 có đáp án, in miễn phí",
+    "description": "Bài tập câu chữ 把 HSK 3 in miễn phí: 19 câu (chọn từ sau động từ, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 在, 给 hoặc 完",
+        "instructions": "Điền 在, 给 hoặc 完 sau động từ. Câu tiếng Việt cho biết nghĩa của câu.",
+        "items": [
+          "Tôi ăn cơm xong rồi.",
+          "Xin hãy viết tên của bạn vào đây.",
+          "Bạn trả chiếc điện thoại này cho anh ấy đi.",
+          "Anh ấy đọc xong quyển sách đó rồi.",
+          "Mẹ đặt hoa quả lên bàn rồi.",
+          "Tôi cho một người bạn mượn số tiền đó rồi.",
+          "Bạn giặt xong quần áo chưa?",
+          "Đừng để túi ở cửa."
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng có 把.",
+        "items": [
+          "Xin hãy đặt sách lên bàn.",
+          "Cô ấy không đóng cửa lại.",
+          "Đừng kể chuyện này cho mẹ.",
+          "Bố lái xe về nhà rồi.",
+          "Anh trai tặng máy tính của anh ấy cho tôi rồi.",
+          "Bạn dọn phòng một chút đi."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Tôi làm xong bài tập về nhà rồi.",
+          "Anh ấy không tắt đèn.",
+          "Bạn hãy cất điện thoại vào túi.",
+          "Bạn đừng lấy sách của tôi đi.",
+          "Anh ấy bật ti vi lên rồi."
+        ]
+      }
+    ]
+  }
+}

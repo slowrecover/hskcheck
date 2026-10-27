@@ -1,0 +1,86 @@
+{
+  "slug": "gang-vs-gangcai",
+  "published": "2026-10-27",
+  "title": "Phân biệt 刚 và 刚才 (vừa, vừa nãy) trong tiếng Trung, HSK 3",
+  "description": "Phân biệt 刚 (gāng) và 刚才 (gāngcái): hai cách nói \"vừa\" trong tiếng Trung, vị trí trong câu, dạng phủ định, lỗi hay gặp và ví dụ HSK 3.",
+  "h1": "Phân biệt 刚 và 刚才: hai cách nói \"vừa\"",
+  "lede": "刚 (gāng) và 刚才 (gāngcái) đều có thể dịch là \"vừa\", nhưng cách dùng khác nhau. 刚 là phó từ, đứng trước động từ, giống \"vừa, mới\". 刚才 là từ chỉ thời gian, nghĩa là \"vừa nãy\", \"lúc nãy\".",
+  "sections": [
+    {
+      "h2": "刚: \"vừa, mới\"",
+      "paras": [
+        "Chủ ngữ + 刚 + động từ.",
+        "刚 đứng sau chủ ngữ và ngay trước động từ. Nó cho biết việc gì đó mới xảy ra cách đây không lâu, và \"không lâu\" có thể là vài phút hoặc vài tháng, tùy cảm nhận của người nói. Không cần 了 ở cuối: 我刚到 đã là một câu hoàn chỉnh."
+      ],
+      "examples": [
+        "Tôi vừa đến.",
+        "Anh ấy vừa đi.",
+        "Tôi vừa ăn cơm xong.",
+        "Anh ấy mới đến Trung Quốc được hai tháng."
+      ]
+    },
+    {
+      "h2": "刚才: \"vừa nãy\"",
+      "paras": [
+        "刚才 là từ chỉ thời gian, giống 今天 hay 昨天. Nó có thể đứng đầu câu hoặc sau chủ ngữ, và chỉ có nghĩa là cách đây vài phút."
+      ],
+      "examples": [
+        "Vừa nãy có người gọi điện cho bạn.",
+        "Vừa nãy bạn đi đâu thế?",
+        "Người lúc nãy là ai vậy?"
+      ]
+    },
+    {
+      "h2": "Chỗ khác nhau",
+      "paras": [
+        "Vì 刚才 là từ chỉ thời gian nên nó làm được những việc 刚 không làm được. Chỉ 刚才 mới đứng đầu câu được: 刚我吃了饭 là sai. Chỉ 刚才 mới đứng trước danh từ được: 刚才的电话, không nói 刚的电话. Chỉ 刚才 mới đứng trước phủ định được: 刚才我没有听见, không bao giờ nói 刚没有.",
+        "Ngược lại, 刚 làm được những việc 刚才 không làm được. Nó đi được với một khoảng thời gian (刚来两个月), và đi với 就 để nói việc này xảy ra ngay sau việc kia: 我刚到家，就下雨了."
+      ],
+      "examples": [
+        "Xin lỗi, vừa nãy tôi không nghe thấy.",
+        "Tôi vừa về đến nhà thì trời mưa."
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 刚 và 刚才 HSK 3 có đáp án, in miễn phí",
+    "description": "Bài tập phân biệt 刚 và 刚才 HSK 3 in miễn phí: 17 câu (chọn 刚 hay 刚才, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 刚 hoặc 刚才",
+        "instructions": "Điền 刚 hoặc 刚才 vào chỗ trống. Hãy xem chỗ trống ở đâu và sau nó là gì.",
+        "items": [
+          "Vừa nãy có người tìm bạn.",
+          "Anh ấy mới đến Trung Quốc được ba tuần.",
+          "Câu hỏi vừa nãy bạn hiểu chưa?",
+          "Tôi vừa về đến nhà thì có người đến.",
+          "Xin lỗi, vừa nãy tôi không nghe thấy.",
+          "Chúng tôi mới quen nhau được hai tháng.",
+          "Vừa nãy bạn nói gì vậy?",
+          "Em gái tôi tháng trước mới bắt đầu đi làm.",
+          "Vừa nãy tôi đang họp nên không nghe điện thoại của bạn."
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng.",
+        "items": [
+          "Tôi vừa đến trường.",
+          "Vừa nãy ai đến vậy?",
+          "Anh ấy vừa tan làm về nhà.",
+          "Vừa nãy tôi không nhìn thấy anh ấy."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Tôi vừa ăn cơm.",
+          "Anh ấy mới đến Trung Quốc được một năm.",
+          "Cuộc điện thoại vừa nãy là ai gọi vậy?",
+          "Vừa nãy tôi không mang điện thoại."
+        ]
+      }
+    ]
+  }
+}

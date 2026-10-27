@@ -1,0 +1,94 @@
+{
+  "slug": "yiqian-yihou",
+  "published": "2026-10-27",
+  "title": "以前 và 以后 trong tiếng Trung: \"trước\" và \"sau\", HSK 3",
+  "description": "Cách dùng 以前 (yǐqián) và 以后 (yǐhòu): \"trước\", \"sau\", \"cách đây\" và \"sau này\" trong tiếng Trung, 以后 và 后来, lỗi hay gặp, ví dụ HSK 3.",
+  "h1": "Cách nói \"trước\" và \"sau\" với 以前 và 以后",
+  "lede": "以前 (yǐqián) nghĩa là \"trước\", 以后 (yǐhòu) nghĩa là \"sau\". Đứng một mình, chúng nghĩa là \"trước đây\" và \"sau này\". Đứng sau một hành động hoặc một thời điểm, chúng nghĩa là \"trước khi...\" và \"sau khi...\", nhưng trật tự từ ngược với tiếng Việt.",
+  "sections": [
+    {
+      "h2": "Đứng một mình: \"trước đây\" và \"sau này\"",
+      "paras": [
+        "以前 đứng một mình nghĩa là \"trước đây\", \"ngày trước\". 以后 đứng một mình nghĩa là \"sau này\", \"về sau\". Giống các từ chỉ thời gian khác, chúng đứng đầu câu hoặc ngay sau chủ ngữ."
+      ],
+      "examples": [
+        "Trước đây tôi không thích ăn cá.",
+        "Trước đây tôi là giáo viên.",
+        "Sau này tôi muốn sang Trung Quốc làm việc."
+      ]
+    },
+    {
+      "h2": "Hành động hoặc thời gian + 以前 / 以后",
+      "paras": [
+        "Hành động hoặc thời gian + 以前 / 以后.",
+        "Muốn nói \"trước khi ăn\" hay \"sau khi tan học\", hành động đứng trước, 以前 hoặc 以后 đứng sau: 吃饭以前, 下课以后. Lỗi hay gặp nhất là nói theo trật tự tiếng Việt thành 以前吃饭. Giờ giấc cũng vậy: 十点以后 là \"sau mười giờ\"."
+      ],
+      "examples": [
+        "Trước khi ăn phải rửa tay.",
+        "Tan học xong chúng ta đi chơi bóng rổ nhé.",
+        "Sau mười giờ tối đừng gọi điện cho tôi."
+      ]
+    },
+    {
+      "h2": "\"Cách đây\" và \"... nữa\"",
+      "paras": [
+        "Sau một khoảng thời gian, 以前 nghĩa là \"cách đây\", \"... trước\", còn 以后 nghĩa là \"... nữa\", \"... sau\". Trong khẩu ngữ bạn cũng sẽ nghe dạng ngắn 前 và 后: 三天前, 睡觉前."
+      ],
+      "examples": [
+        "Ba năm trước, tôi bắt đầu học tiếng Trung.",
+        "Hai tuần nữa anh ấy sẽ về.",
+        "Trước khi ngủ đừng uống cà phê."
+      ]
+    },
+    {
+      "h2": "以后 và 后来",
+      "paras": [
+        "Đứng một mình, 以后 hướng về tương lai. Khi kể chuyện quá khứ, muốn nói \"sau đó\", \"về sau\", tiếng Trung thường dùng 后来 (hòulái)."
+      ],
+      "examples": [
+        "Năm ngoái anh ấy có đến nhà tôi, về sau chúng tôi không gặp lại nhau nữa."
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 以前 và 以后 HSK 3 có đáp án, in miễn phí",
+    "description": "Bài tập 以前 và 以后 HSK 3 in miễn phí: 17 câu (chọn 以前 hay 以后, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 以前 hoặc 以后",
+        "instructions": "Điền 以前 hoặc 以后 vào chỗ trống. Câu tiếng Việt cho biết nghĩa của câu.",
+        "items": [
+          "Trước khi ăn, chúng ta rửa tay đã nhé.",
+          "Tan làm xong, tôi đi siêu thị mua đồ.",
+          "Trước đây tôi rất béo, bây giờ gầy rồi.",
+          "Năm năm trước, tôi đến thành phố này.",
+          "Một tháng nữa anh ấy về nước.",
+          "Trước khi ngủ đừng chơi điện thoại.",
+          "Thi xong, tôi muốn đi du lịch.",
+          "Sau này có câu hỏi gì thì bạn cứ gọi điện cho tôi.",
+          "Trước đây ở đây không có tàu điện ngầm.",
+          "Từ tám giờ trở đi tôi đều ở nhà, bạn đến đi."
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng.",
+        "items": [
+          "Trước khi ngủ tôi thường đọc sách.",
+          "Tan học xong chúng ta đi thư viện.",
+          "Một năm nữa tôi muốn đi Trung Quốc.",
+          "Trước đây chỗ này là một cửa hàng."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Hai năm trước tôi đã đến đây.",
+          "Trước khi ra ngoài, đừng quên tắt đèn.",
+          "Ba ngày nữa anh ấy về."
+        ]
+      }
+    ]
+  }
+}

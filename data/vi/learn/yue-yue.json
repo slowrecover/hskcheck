@@ -1,0 +1,94 @@
+{
+  "slug": "yue-yue",
+  "published": "2026-10-27",
+  "title": "越……越 trong tiếng Trung: \"càng... càng\", ngữ pháp HSK 3",
+  "description": "Cách dùng 越……越 (yuè... yuè) \"càng... càng\" và 越来越 \"ngày càng\" trong tiếng Trung: trật tự từ, lỗi hay gặp và ví dụ HSK 3.",
+  "h1": "Cách nói \"càng... càng\" với 越……越",
+  "lede": "越 (yuè) dùng thành cặp. 越 A 越 B nghĩa là \"càng A càng B\": một điều tăng lên thì điều kia cũng tăng theo. 越来越 nghĩa là \"ngày càng\", dùng cho điều gì đó thay đổi dần theo thời gian.",
+  "sections": [
+    {
+      "h2": "越 + động từ + 越 + tính từ",
+      "paras": [
+        "Chủ ngữ + 越 + động từ + 越 + tính từ.",
+        "Khi chỉ có một chủ ngữ, 越 thứ nhất đứng trước động từ, 越 thứ hai đứng trước kết quả. 雨越下越大 nghĩa là mưa càng lâu thì càng to. 越 luôn đứng sau chủ ngữ, không bao giờ đứng trước. Cấu trúc này rất giống \"càng... càng\" trong tiếng Việt."
+      ],
+      "examples": [
+        "Mưa càng lúc càng to.",
+        "Anh ấy càng nói càng nhanh.",
+        "Tiếng Trung càng học càng thú vị."
+      ]
+    },
+    {
+      "h2": "Hai chủ ngữ khác nhau",
+      "paras": [
+        "Chủ ngữ 1 + 越 + A, chủ ngữ 2 + 越 + B.",
+        "Mỗi vế có thể có chủ ngữ riêng. Đặt mỗi 越 sau chủ ngữ của vế đó."
+      ],
+      "examples": [
+        "Bạn càng nói, anh ấy càng không vui.",
+        "Đồ càng rẻ thì người mua càng nhiều."
+      ]
+    },
+    {
+      "h2": "越来越: \"ngày càng\"",
+      "paras": [
+        "Chủ ngữ + 越来越 + tính từ (+ 了).",
+        "越来越 cho biết một điều gì đó cứ thay đổi dần theo thời gian. Nó đứng trước tính từ, hoặc trước động từ chỉ cảm xúc như 喜欢. Cuối câu thường có 了, vì câu nói về một sự thay đổi."
+      ],
+      "examples": [
+        "Trời ngày càng lạnh rồi.",
+        "Tôi ngày càng thích thành phố này.",
+        "Người học tiếng Trung ngày càng nhiều."
+      ]
+    },
+    {
+      "h2": "Không dùng 很 sau 越",
+      "paras": [
+        "越 đã mang nghĩa \"hơn\" rồi, nên đừng thêm 很, 非常 hay 太 sau nó. 天气越来越很冷 là sai; phải nói 天气越来越冷了. Lỗi hay gặp khác là quên 越 thứ hai: 他越走慢 phải là 他越走越慢."
+      ],
+      "examples": [
+        "Tiếng Trung của anh ấy ngày càng giỏi."
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 越……越 HSK 3 có đáp án, in miễn phí",
+    "description": "Bài tập 越……越 HSK 3 in miễn phí: 16 câu (chọn 越 hay 越来越, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 越 hoặc 越来越",
+        "instructions": "Điền 越 hoặc 越来越 vào chỗ trống.",
+        "items": [
+          "Trời ngày càng nóng rồi.",
+          "Anh ấy càng chạy càng nhanh.",
+          "Tôi ngày càng thích công việc của mình.",
+          "Chữ này tôi càng viết càng đẹp.",
+          "Người đến Trung Quốc du lịch ngày càng nhiều.",
+          "Câu hỏi này tôi càng nghĩ càng không hiểu.",
+          "Em gái tôi ngày càng xinh.",
+          "Bộ phim này tôi càng xem càng thích."
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng.",
+        "items": [
+          "Tuyết càng rơi càng dày.",
+          "Sức khỏe của tôi ngày càng tốt.",
+          "Anh ấy càng nghĩ càng vui.",
+          "Đi càng sớm càng tốt."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Nhà cửa ngày càng đắt.",
+          "Anh ấy càng đi càng chậm.",
+          "Cô ấy càng hát càng hay.",
+          "Anh ấy càng uống càng muốn uống."
+        ]
+      }
+    ]
+  }
+}

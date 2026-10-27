@@ -1,0 +1,94 @@
+{
+  "slug": "dei-have-to",
+  "published": "2026-10-27",
+  "title": "得 (děi), 必须 và 应该: \"phải\" và \"nên\" trong tiếng Trung",
+  "description": "得 (děi), 必须 (bìxū) và 应该 (yīnggāi): cách nói \"phải\", \"bắt buộc\" và \"nên\" trong tiếng Trung, phủ định 不用 và 不应该, ví dụ HSK 3.",
+  "h1": "得, 必须 và 应该: \"phải\" và \"nên\"",
+  "lede": "Tiếng Trung có ba từ thông dụng để nói việc cần làm. 得 (děi) là \"phải\" trong khẩu ngữ hằng ngày. 必须 (bìxū) là \"bắt buộc phải\", thường dùng cho quy định. 应该 (yīnggāi) là \"nên\": việc đúng hoặc hợp lý cần làm.",
+  "sections": [
+    {
+      "h2": "得 (děi): \"phải\"",
+      "paras": [
+        "Chủ ngữ + 得 + động từ.",
+        "Chữ 得 này đọc là děi, không phải de. Đây là từ thường dùng trong hội thoại khi có việc cần làm, thường vì thời gian hoặc hoàn cảnh."
+      ],
+      "examples": [
+        "Muộn quá rồi, tôi phải đi đây.",
+        "Ngày mai có bài thi, hôm nay tôi phải ôn bài."
+      ]
+    },
+    {
+      "h2": "必须 (bìxū): \"bắt buộc phải\"",
+      "paras": [
+        "Chủ ngữ + 必须 + động từ.",
+        "必须 mạnh hơn 得 và nghe nghiêm túc hơn. Bạn thường gặp nó trong nội quy, hướng dẫn, và đây là từ nên dùng trong văn viết."
+      ],
+      "examples": [
+        "Trong giờ học bắt buộc phải tắt điện thoại.",
+        "Đi máy bay bắt buộc phải mang hộ chiếu."
+      ]
+    },
+    {
+      "h2": "应该 (yīnggāi): \"nên\"",
+      "paras": [
+        "Chủ ngữ + 应该 + động từ.",
+        "应该 dùng để khuyên hoặc nói điều đúng nên làm. Thêm 不 phía trước, 不应该 nghĩa là \"không nên\". 应该 còn có nghĩa \"chắc là\": 他应该到了 là \"chắc anh ấy đến rồi\"."
+      ],
+      "examples": [
+        "Bạn nên uống nhiều nước.",
+        "Bạn không nên đi ngủ muộn như vậy.",
+        "Chắc anh ấy đã về đến nhà rồi.",
+        "Tôi nên làm thế nào?"
+      ]
+    },
+    {
+      "h2": "\"Không phải\" là 不用",
+      "paras": [
+        "Lỗi hay gặp nhất là ở dạng phủ định. Muốn nói \"không phải\" hay \"không cần\", dùng 不用 cho cả 得 và 必须. 不得 không có nghĩa là \"không phải\", còn 不必须 là sai. Chú ý biến điệu: 不用 đọc là búyòng."
+      ],
+      "examples": [
+        "Ngày mai là thứ Bảy, bạn không phải đi làm."
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 得, 必须 và 应该 HSK 3 có đáp án, in miễn phí",
+    "description": "Bài tập 得 (děi), 必须 và 应该 HSK 3 in miễn phí: 16 câu (应该, 得 hay 不用, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 应该, 得 hoặc 不用",
+        "instructions": "Điền 应该, 得 hoặc 不用 vào chỗ trống. Câu tiếng Việt nói \"nên\", \"phải\" hay \"không cần\"?",
+        "items": [
+          "Bạn bị cảm rồi, nên nghỉ ngơi nhiều hơn.",
+          "Hôm nay là Chủ nhật, tôi không phải đi làm.",
+          "Chín giờ rồi, tôi phải đi đây.",
+          "Bạn không cần đưa tiền cho tôi, đây là quà tôi tặng bạn.",
+          "Bạn nên đi ngủ sớm hơn một chút.",
+          "Sáu giờ sáng mai tôi bay, tôi phải dậy lúc năm giờ.",
+          "Bên ngoài không lạnh, bạn không cần mặc nhiều thế.",
+          "Anh ấy xuất phát từ tám giờ, bây giờ chắc đã đến rồi.",
+          "Bài tập về nhà của tôi vẫn chưa làm xong, tối nay tôi phải làm xong."
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng.",
+        "items": [
+          "Bạn nên tập thể dục nhiều hơn.",
+          "Hôm nay bạn bắt buộc phải làm xong.",
+          "Ngày mai bạn không cần đến.",
+          "Bây giờ tôi phải đi bệnh viện."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Ngày mai không có tiết học, bạn không phải đến trường.",
+          "Bạn không cần đến.",
+          "Bạn không nên nói như vậy."
+        ]
+      }
+    ]
+  }
+}
