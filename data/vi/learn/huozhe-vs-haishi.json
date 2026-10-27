@@ -1,0 +1,96 @@
+{
+  "slug": "huozhe-vs-haishi",
+  "published": "2026-10-27",
+  "title": "Phân biệt 或者 và 还是 (hoặc, hay) trong tiếng Trung, HSK 3",
+  "description": "Phân biệt 或者 (huòzhě) và 还是 (háishi): dùng \"hay\" nào trong câu hỏi và câu trần thuật, 还是 sau 不知道, 还是……吧 \"tốt hơn là\", ví dụ HSK 3.",
+  "h1": "Phân biệt 或者 và 还是: hai cách nói \"hoặc, hay\"",
+  "lede": "Tiếng Việt có \"hay\" và \"hoặc\", tiếng Trung cũng có hai từ. 还是 (háishi) dùng trong câu hỏi, khi người nghe phải chọn. 或者 (huòzhě) dùng trong câu trần thuật, khi chọn bên nào cũng được.",
+  "sections": [
+    {
+      "h2": "还是: \"hay\" trong câu hỏi",
+      "paras": [
+        "A + 还是 + B？",
+        "Dùng 还是 khi bạn hỏi ai đó chọn một trong hai thứ. Câu đã là câu hỏi rồi, nên đừng thêm 吗 ở cuối."
+      ],
+      "examples": [
+        "Bạn muốn uống trà hay cà phê?",
+        "Chúng ta đi hôm nay hay ngày mai?",
+        "Bạn muốn ăn cơm hay ăn mì?"
+      ]
+    },
+    {
+      "h2": "或者: \"hoặc\" trong câu trần thuật",
+      "paras": [
+        "A + 或者 + B.",
+        "Dùng 或者 khi bạn không hỏi mà nói rằng chọn bên này hay bên kia đều được, hoặc bạn làm việc này hay việc kia. Lỗi hay gặp nhất là dùng 或者 trong câu hỏi lựa chọn: 你喝茶或者咖啡？ phải là 你喝茶还是咖啡？. Chú ý: \"hay\" trong tiếng Việt dùng được cho cả hai trường hợp, nên hãy xem câu có phải là câu hỏi không."
+      ],
+      "examples": [
+        "Trà hoặc cà phê, tôi uống gì cũng được.",
+        "Bạn có thể đi tàu điện ngầm hoặc đi taxi.",
+        "Cuối tuần tôi thường đọc sách hoặc xem phim.",
+        "Hôm nay hoặc ngày mai bạn gọi điện cho tôi nhé."
+      ]
+    },
+    {
+      "h2": "还是 sau 不知道",
+      "paras": [
+        "Một câu trần thuật có thể chứa một câu hỏi, ví dụ sau 不知道 (không biết) hoặc 问 (hỏi). Khi đó vẫn dùng 还是, vì vẫn có một lựa chọn cần đưa ra: \"... hay ...\"."
+      ],
+      "examples": [
+        "Tôi không biết anh ấy có đến hay không."
+      ]
+    },
+    {
+      "h2": "还是……吧: \"tốt hơn là\"",
+      "paras": [
+        "还是 còn một cách dùng phổ biến nữa, không liên quan đến \"hay\". Đặt trước động từ, với 吧 ở cuối câu, nó nghĩa là \"tốt hơn là\", \"thôi thì cứ...\", sau khi đã cân nhắc các lựa chọn."
+      ],
+      "examples": [
+        "Chúng ta đi taxi thì hơn."
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 或者 và 还是 HSK 3 có đáp án, in miễn phí",
+    "description": "Bài tập phân biệt 或者 và 还是 HSK 3 in miễn phí: 19 câu (chọn 或者 hay 还是, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 或者 hoặc 还是",
+        "instructions": "Điền 或者 hoặc 还是 vào chỗ trống. Đây là câu hỏi lựa chọn hay câu trần thuật?",
+        "items": [
+          "Bạn muốn uống nước hay uống trà?",
+          "Thứ Bảy hoặc Chủ nhật chúng ta đi xem phim nhé.",
+          "Chiếc điện thoại này là của bạn hay của anh trai bạn?",
+          "Bạn có thể hỏi thầy giáo hoặc hỏi bạn cùng lớp.",
+          "Chúng ta đi tàu hỏa hay đi máy bay?",
+          "Buổi tối tôi thường xem ti vi hoặc lên mạng.",
+          "Tôi không biết hôm nay nhà hàng này có mở cửa hay không.",
+          "Bạn có thể đến vào hôm nay hoặc ngày mai.",
+          "Bạn thích mùa hè hay mùa đông hơn?",
+          "Tôi định ngày mai hoặc ngày kia đi thăm anh ấy."
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng.",
+        "items": [
+          "Bạn ăn cơm hay ăn mì?",
+          "Chúng ta có thể đi bộ hoặc đi xe đạp đến đó.",
+          "Tôi không biết anh ấy có đi hay không.",
+          "Chúng ta ăn ở nhà thì hơn."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Bạn uống cà phê hay uống trà?",
+          "Cuối tuần tôi đọc sách hoặc xem ti vi.",
+          "Tôi không biết ngày mai có mưa hay không.",
+          "Bạn muốn đi công viên hay đi cửa hàng?",
+          "Bạn đi hay tôi đi?"
+        ]
+      }
+    ]
+  }
+}

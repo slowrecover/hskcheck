@@ -1,0 +1,84 @@
+{
+  "slug": "xian-ranhou",
+  "published": "2026-10-27",
+  "title": "先……然后 (trước... sau đó) trong tiếng Trung: ngữ pháp HSK 3",
+  "description": "Cách dùng 先……然后 (xiān... ránhòu) \"trước... sau đó\": vị trí của 先, 然后再, 最后, lỗi hay gặp nhất, kèm ví dụ HSK 3.",
+  "h1": "Cách nói \"trước... sau đó\" bằng 先……然后",
+  "lede": "先 (xiān) đánh dấu việc làm trước, còn 然后 (ránhòu) dẫn ra việc tiếp theo. Dùng cùng nhau, chúng sắp xếp hai hay nhiều hành động theo thứ tự, giống \"trước... sau đó\" trong tiếng Việt.",
+  "sections": [
+    {
+      "h2": "Cấu trúc",
+      "paras": [
+        "Chủ ngữ + 先 + hành động 1, 然后 + hành động 2.",
+        "先 là phó từ, nên nó đứng sau chủ ngữ và ngay trước động từ. 然后 mở đầu vế thứ hai của câu. Nếu cả hai việc do cùng một người làm thì không cần nhắc lại chủ ngữ."
+      ],
+      "examples": [
+        "Tôi đi ngân hàng trước, sau đó đi siêu thị.",
+        "Chúng ta ăn cơm trước, sau đó đi xem phim nhé.",
+        "Ngày nào anh ấy cũng chạy bộ trước, sau đó ăn sáng."
+      ]
+    },
+    {
+      "h2": "Đừng mở đầu câu bằng 先",
+      "paras": [
+        "Lỗi hay gặp nhất là đặt 先 trước chủ ngữ, giống kiểu nói \"Trước tiên, tôi...\": 先我去银行 là sai. Phải nói 我先去银行.",
+        "然后 thì ngược lại. Nó nối hai vế, nên nếu việc thứ hai có chủ ngữ mới thì chủ ngữ đó đứng sau 然后: 然后你说, không nói 你然后说."
+      ],
+      "examples": [
+        "Tôi nói trước, sau đó đến bạn nói.",
+        "Chúng ta làm gì trước?"
+      ]
+    },
+    {
+      "h2": "然后再, 先……再 và 最后",
+      "paras": [
+        "Bạn sẽ hay nghe 再 trước động từ thứ hai, sau 然后 hoặc đứng một mình: 先……再…… nghĩa giống 先……然后. Nếu có bước thứ ba, dùng 最后 (cuối cùng)."
+      ],
+      "examples": [
+        "Con rửa tay trước rồi hãy ăn.",
+        "Chúng ta nghỉ một chút rồi hãy đi.",
+        "Chúng ta đi cửa hàng trước, sau đó đi nhà hàng, cuối cùng về nhà."
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 先……然后 HSK 3 có đáp án, in miễn phí",
+    "description": "Bài tập 先……然后 HSK 3 in miễn phí: 16 câu (chọn 先 hay 然后, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 先 hoặc 然后",
+        "instructions": "Điền 先 hoặc 然后 vào chỗ trống.",
+        "items": [
+          "Tôi làm bài tập trước, sau đó xem ti vi.",
+          "Bạn suy nghĩ trước đã, sau đó hãy trả lời.",
+          "Chúng ta mua vé trước, sau đó đi vào.",
+          "Anh ấy đọc sách một lúc, sau đó đi ngủ.",
+          "Mời mọi người đọc trước, sau đó trả lời câu hỏi.",
+          "Chúng tôi đi tàu điện ngầm trước, sau đó đi bộ đến trường.",
+          "Buổi sáng tôi uống một chút nước trước, sau đó ăn sáng.",
+          "Chúng ta đi ăn trước, sau đó đi mua đồ nhé."
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng.",
+        "items": [
+          "Chúng ta ăn cơm trước, sau đó đi công viên.",
+          "Bạn nghỉ một chút trước, rồi hãy làm việc.",
+          "Bạn nói trước, sau đó đến tôi nói.",
+          "Rửa tay trước, sau đó nấu cơm, cuối cùng ăn cơm."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Chúng ta xem phim trước, sau đó ăn cơm.",
+          "Tôi tắm trước, sau đó đi ngủ.",
+          "Tôi ăn cơm trước, sau đó đi làm.",
+          "Con làm xong bài tập trước, sau đó hãy ra ngoài chơi."
+        ]
+      }
+    ]
+  }
+}

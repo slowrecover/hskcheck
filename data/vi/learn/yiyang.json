@@ -1,0 +1,90 @@
+{
+  "slug": "yiyang",
+  "published": "2026-10-27",
+  "title": "跟……一样 (giống như) trong tiếng Trung: ngữ pháp HSK 3",
+  "description": "Cách dùng 跟……一样 (gēn... yíyàng) \"giống với\" và \"... bằng\": trật tự từ, 不一样, dùng 没有 để nói \"không... bằng\", lỗi thường gặp, ví dụ HSK 3.",
+  "h1": "Cách nói \"giống với\" bằng 跟……一样",
+  "lede": "一样 (yíyàng) nghĩa là \"giống nhau\". Đặt 跟 (gēn) hoặc 和 (hé) trước vật thứ hai, A 跟 B 一样 nghĩa là A giống B. Thêm một tính từ phía sau để nói \"cao bằng\", \"nóng bằng\" và những ý tương tự.",
+  "sections": [
+    {
+      "h2": "A 跟 B 一样: \"giống với\"",
+      "paras": [
+        "A + 跟 + B + 一样.",
+        "Ở đây dùng 跟 hay 和 đều được, nghĩa như nhau. Muốn hỏi hai thứ có giống nhau không, thêm 吗 ở cuối câu. Trước danh từ, dùng 一样的: 一样的书包 là \"cặp sách giống nhau\". Khi đi với động từ, 跟……一样 nghĩa là \"giống như\": 我跟你一样，也喜欢喝茶 là \"Tôi cũng thích uống trà giống bạn\"."
+      ],
+      "examples": [
+        "Điện thoại của tôi giống của bạn.",
+        "Sách của bạn có giống của tôi không?",
+        "Tôi và em gái có cặp sách giống nhau.",
+        "Tôi cũng thích uống trà giống bạn."
+      ]
+    },
+    {
+      "h2": "A 跟 B 一样 + tính từ: \"... bằng\"",
+      "paras": [
+        "A + 跟 + B + 一样 + tính từ.",
+        "Tính từ luôn đứng sau 一样, không bao giờ đứng trước. Lỗi hay gặp nhất là nói theo trật tự tiếng Việt \"cao bằng\" thành 他跟我高一样; trật tự đúng là 他跟我一样高. Muốn nói ai đó làm việc gì giỏi đến mức nào, dùng động từ với 得 trước."
+      ],
+      "examples": [
+        "Cậu ấy cao bằng bố cậu ấy.",
+        "Hôm nay nóng y như hôm qua.",
+        "Chiếc áo này đắt bằng chiếc kia.",
+        "Anh ấy nói tiếng Trung giỏi như người Trung Quốc."
+      ]
+    },
+    {
+      "h2": "Câu phủ định: 不一样 và 没有",
+      "paras": [
+        "Muốn nói hai thứ khác nhau, đặt 不 ngay trước 一样: A 跟 B 不一样. Lỗi hay gặp là đặt 不 trước 跟. Chú ý pinyin: 不一样 đọc là bù yíyàng.",
+        "Để nói \"không cao bằng\" hay \"không đắt bằng\", tiếng Trung thường dùng 没有: A + 没有 + B + tính từ."
+      ],
+      "examples": [
+        "Hai chữ này khác nhau.",
+        "Tên của người Trung Quốc khác với tên của chúng ta.",
+        "Em trai không cao bằng anh trai."
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 跟……一样 HSK 3 có đáp án, in miễn phí",
+    "description": "Bài tập 跟……一样 HSK 3 in miễn phí: 18 câu (chọn 一样, 不一样 hay 比, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 一样, 不一样 hoặc 比",
+        "instructions": "Điền 一样, 不一样 hoặc 比 vào chỗ trống. Phần nghĩa tiếng Việt cho biết ý của câu.",
+        "items": [
+          "Cặp sách của tôi giống của bạn.",
+          "Anh ấy lớn hơn tôi hai tuổi.",
+          "Hai chiếc áo này khác màu nhau.",
+          "Phòng này rộng bằng phòng kia.",
+          "Món ăn miền Nam khác với món ăn miền Bắc.",
+          "Đi tàu điện ngầm rẻ hơn đi taxi.",
+          "Tôi cũng là học sinh giống bạn.",
+          "Điều bạn nói khác với điều anh ấy nói.",
+          "Em gái tôi cao hơn tôi."
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng.",
+        "items": [
+          "Chỗ này bây giờ khác với trước đây.",
+          "Anh ấy chạy nhanh bằng tôi.",
+          "Hai chữ này có giống nhau không?",
+          "Em gái không cao bằng chị gái.",
+          "Món này ngon như món kia."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Quyển sách này đắt bằng quyển kia.",
+          "Chiếc áo này khác màu với chiếc kia.",
+          "Tôi cao bằng anh ấy.",
+          "Anh ấy nói tiếng Trung giỏi như người Trung Quốc."
+        ]
+      }
+    ]
+  }
+}

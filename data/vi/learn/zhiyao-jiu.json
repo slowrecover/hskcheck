@@ -1,0 +1,86 @@
+{
+  "slug": "zhiyao-jiu",
+  "published": "2026-10-27",
+  "title": "只要……就 (chỉ cần... là) trong tiếng Trung: ngữ pháp HSK 3",
+  "description": "Cách dùng 只要……就 (zhǐyào... jiù) \"chỉ cần... là\": trật tự từ, vị trí của 就, phân biệt với 只有……才, lỗi thường gặp, ví dụ HSK 3.",
+  "h1": "Cách nói \"chỉ cần... là\" bằng 只要……就",
+  "lede": "只要 (zhǐyào) nghĩa là \"chỉ cần\". Nó nêu một điều kiện, chỉ cần có điều kiện đó là đủ, còn 就 (jiù) ở vế sau nêu kết quả.",
+  "sections": [
+    {
+      "h2": "Cấu trúc",
+      "paras": [
+        "只要 + điều kiện, (chủ ngữ) + 就 + kết quả.",
+        "只要 có thể đứng trước hoặc sau chủ ngữ của vế đầu: 只要你努力 và 你只要努力 đều đúng. Điều kiện luôn đứng trước. 就 đứng trước động từ ở vế sau, sau chủ ngữ nếu vế đó có chủ ngữ."
+      ],
+      "examples": [
+        "Chỉ cần bạn chăm chỉ là sẽ học tốt tiếng Trung.",
+        "Chỉ cần trời không mưa, chúng ta sẽ đi công viên.",
+        "Bạn chỉ cần luyện tập nhiều là sẽ nói rất tốt."
+      ]
+    },
+    {
+      "h2": "\"Chỉ cần làm... là được\"",
+      "paras": [
+        "只要 thường cho thấy điều kiện rất dễ: chỉ cần làm một việc là có kết quả. Nó cũng có thể nói về thói quen, khi đó gần với \"hễ... là\"."
+      ],
+      "examples": [
+        "Chỉ cần bạn gọi một cuộc điện thoại là anh ấy sẽ đến.",
+        "Chỉ cần bạn thích thì cứ mua đi.",
+        "Hễ có thời gian là tôi đi chạy bộ.",
+        "Chỉ cần bạn không nói, anh ấy sẽ không biết."
+      ]
+    },
+    {
+      "h2": "Phân biệt 只要……就 và 只有……才",
+      "paras": [
+        "只有 (zhǐyǒu) trông giống nhưng nghĩa là \"chỉ có... mới\": điều kiện là việc duy nhất phải xảy ra, không có cách nào khác. Nó đi với 才, không đi với 就. 只要 đi với 就, không đi với 才.",
+        "Dùng lẫn hai cặp này là lỗi hay gặp nhất. 只要你努力，才能学好 và 只有你去，我就去 đều sai."
+      ],
+      "examples": [
+        "Chỉ có luyện tập nhiều mới nói tốt tiếng Trung được.",
+        "Chỉ khi bạn đến thì tôi mới đi."
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 只要……就 HSK 3 có đáp án, in miễn phí",
+    "description": "Bài tập 只要……就 HSK 3 in miễn phí: 17 câu (chọn 只要 hay 只有, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 只要 hoặc 只有",
+        "instructions": "Điền 只要 hoặc 只有 vào chỗ trống. Hãy nhìn 就 hay 才 ở vế sau.",
+        "items": [
+          "Chỉ cần bạn đến là tôi vui rồi.",
+          "Chỉ khi làm xong bài tập, con mới được xem ti vi.",
+          "Chỉ cần thời tiết đẹp, chúng ta sẽ đi leo núi.",
+          "Chỉ có ôn bài mỗi ngày, bạn mới nhớ được những chữ này.",
+          "Hễ không bận là cô ấy đi thăm mẹ.",
+          "Chỉ khi anh ấy đồng ý, chúng ta mới đi được.",
+          "Chỉ cần bạn nói chậm một chút là tôi nghe hiểu được.",
+          "Chỉ đến cuối tuần anh ấy mới có thời gian."
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng.",
+        "items": [
+          "Chỉ cần bạn muốn đi thì cứ đi đi.",
+          "Chỉ cần trời không mưa, chúng ta sẽ đi.",
+          "Hễ có thời gian là tôi đọc sách.",
+          "Chỉ cần bạn nghiêm túc là sẽ thi tốt.",
+          "Chỉ khi anh ấy đến, chúng ta mới bắt đầu được."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Chỉ cần bạn học nghiêm túc là sẽ học tốt.",
+          "Chỉ cần thời tiết đẹp, chúng ta sẽ đi.",
+          "Chỉ có Chủ nhật anh ấy mới ở nhà.",
+          "Chỉ cần ngày mai không bận, tôi sẽ đến thăm bạn."
+        ]
+      }
+    ]
+  }
+}

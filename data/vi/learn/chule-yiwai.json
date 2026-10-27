@@ -1,0 +1,95 @@
+{
+  "slug": "chule-yiwai",
+  "published": "2026-10-27",
+  "title": "除了……以外 (ngoài... ra) trong tiếng Trung: ngữ pháp HSK 3",
+  "description": "Cách dùng 除了……以外 (chúle... yǐwài): \"trừ\" khi đi với 都, \"ngoài... ra còn\" khi đi với 还 và 也, trật tự từ, lỗi thường gặp, ví dụ HSK 3.",
+  "h1": "Cách nói \"trừ\" và \"ngoài... ra\" bằng 除了……以外",
+  "lede": "除了……以外 (chúle... yǐwài) tách một thứ ra khỏi những thứ còn lại. Nó nghĩa là \"trừ\" hay \"ngoài... ra còn\" là do từ đứng sau quyết định: 都 cho nghĩa \"trừ\", 还 hoặc 也 cho nghĩa \"ngoài... ra còn\", \"ngoài... ra cũng\".",
+  "sections": [
+    {
+      "h2": "Đi với 都: \"trừ\"",
+      "paras": [
+        "除了 + A + 以外，(chủ ngữ) + 都 + động từ.",
+        "Khi vế sau có 都 (đều), A là ngoại lệ duy nhất: mọi người hay mọi thứ khác đều được tính, chỉ trừ A. 以外 có thể bỏ, nên 除了这个字 và 除了这个字以外 nghĩa như nhau."
+      ],
+      "examples": [
+        "Trừ anh trai tôi ra, chúng tôi đều đi cả.",
+        "Trừ Chủ nhật, ngày nào anh ấy cũng làm việc.",
+        "Trừ chữ này ra, các chữ khác tôi đều biết."
+      ]
+    },
+    {
+      "h2": "Đi với 还 hoặc 也: \"ngoài... ra còn\"",
+      "paras": [
+        "除了 + A + 以外，(chủ ngữ) + 还 / 也 + động từ.",
+        "Khi vế sau có 还 hoặc 也, A vẫn được tính và còn thêm một thứ nữa. 还 thường thêm một việc khác mà cùng một người làm. 也 hay dùng khi một người khác cũng làm việc giống vậy."
+      ],
+      "examples": [
+        "Ngoài bơi ra, tôi còn thích chạy bộ.",
+        "Ngoài ăn cơm ra, chúng tôi còn đi xem phim.",
+        "Ngoài tôi ra, em gái tôi cũng đã từng đến Trung Quốc."
+      ]
+    },
+    {
+      "h2": "Trật tự từ và lỗi hay gặp nhất",
+      "paras": [
+        "Chủ ngữ có thể đứng trước 除了 hoặc sau cụm 除了: 我除了游泳以外 và 除了游泳以外，我 đều đúng. 都, 还 và 也 luôn đứng sau chủ ngữ, trước động từ, nên 除了他，都我们去了 là sai.",
+        "Lỗi hay gặp nhất là bỏ sót 都 hoặc 还, hoặc dùng nhầm từ. Chúng làm nghĩa thay đổi hoàn toàn: 除了他，我们都去了 nghĩa là anh ấy không đi, còn 除了他，我们也去了 nghĩa là anh ấy đi và chúng tôi cũng đi."
+      ],
+      "examples": [
+        "Trừ cái này ra, cái nào khác cũng được."
+      ]
+    },
+    {
+      "h2": "Câu phủ định và câu hỏi",
+      "paras": [
+        "Với 都不 hoặc 都没有, câu có nghĩa \"không ai ngoài...\" hoặc \"không gì ngoài...\". Muốn hỏi \"còn gì nữa?\" hay \"còn ai nữa?\", dùng 还 với từ để hỏi."
+      ],
+      "examples": [
+        "Ngoài anh ấy ra, không ai biết chuyện này.",
+        "Ngoài mì ra, bạn còn muốn ăn gì nữa?"
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 除了……以外 HSK 3 có đáp án, in miễn phí",
+    "description": "Bài tập 除了……以外 HSK 3 in miễn phí: 17 câu (chọn 都 hay 还, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 都 hoặc 还",
+        "instructions": "Điền 都 hoặc 还 vào chỗ trống. Phần nghĩa tiếng Việt là \"trừ\" hay \"ngoài... ra còn\"?",
+        "items": [
+          "Trừ bố ra, chúng tôi đều đã từng đến Trung Quốc.",
+          "Ngoài táo ra, tôi còn mua chuối.",
+          "Trừ thứ Bảy, ngày nào tôi cũng phải đi làm.",
+          "Ngoài hát ra, cô ấy còn thích nhảy.",
+          "Trừ chiếc áo này ra, những chiếc khác tôi đều không thích.",
+          "Ngoài dọn phòng ra, tôi còn giặt quần áo.",
+          "Trừ một câu ra, các câu khác anh ấy đều trả lời đúng.",
+          "Ngoài tiếng Trung ra, bạn còn học gì nữa?"
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng.",
+        "items": [
+          "Trừ những ngày mưa, ngày nào cô ấy cũng chạy bộ.",
+          "Ngoài gạo ra, tôi còn mua bánh mì.",
+          "Ngoài Trung Quốc ra, bạn còn đến những nơi nào nữa?",
+          "Ngoài tôi ra, không ai quen anh ấy."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Trừ em gái tôi ra, chúng tôi đều ăn cơm rồi.",
+          "Ngoài sữa ra, tôi còn mua trứng.",
+          "Trừ cuối tuần, ngày nào anh ấy cũng rất bận.",
+          "Ngoài trà ra, tôi còn thích uống cà phê.",
+          "Trừ mẹ ra, chúng tôi đều thích ăn cá."
+        ]
+      }
+    ]
+  }
+}
