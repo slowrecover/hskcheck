@@ -1,0 +1,100 @@
+{
+  "slug": "you-vs-zai",
+  "published": "2026-10-27",
+  "title": "Phân biệt 又 và 再 (lại, nữa) trong tiếng Trung, HSK 3",
+  "description": "Phân biệt 又 (yòu) và 再 (zài): \"lại\" cho quá khứ và tương lai, trật tự từ với 想 và 没有, 别再……了, lỗi thường gặp, kèm ví dụ HSK 3.",
+  "h1": "Phân biệt 又 và 再: hai cách nói \"lại\"",
+  "lede": "Tiếng Trung có hai từ để nói \"lại\", \"lần nữa\". 又 (yòu) dùng cho việc đã lặp lại rồi. 再 (zài) dùng cho việc chưa xảy ra: một dự định, một lời đề nghị hay lời khuyên.",
+  "sections": [
+    {
+      "h2": "又: việc đã lặp lại",
+      "paras": [
+        "Chủ ngữ + 又 + động từ + 了.",
+        "Dùng 又 khi việc lặp lại đã xảy ra. Câu thường kết thúc bằng 了. Nó hay mang giọng hơi ngạc nhiên hoặc bực mình, giống \"lại… nữa rồi!\" trong tiếng Việt. Lỗi hay gặp nhất là dùng 再 ở đây: 他昨天再来了 là sai, vì hôm qua là quá khứ."
+      ],
+      "examples": [
+        "Hôm qua anh ấy đến rồi, hôm nay lại đến nữa.",
+        "Điện thoại của tôi lại hỏng rồi.",
+        "Sao bạn lại đến muộn nữa vậy?"
+      ]
+    },
+    {
+      "h2": "再: việc sẽ lặp lại",
+      "paras": [
+        "Chủ ngữ + 再 + động từ.",
+        "Dùng 再 khi việc lặp lại còn ở tương lai. Bạn sẽ hay nghe nó trong lời nhờ, lời mời và đi với 一遍 hoặc 一次 (thêm một lần nữa)."
+      ],
+      "examples": [
+        "Bạn vui lòng nói lại một lần nữa.",
+        "Hoan nghênh các bạn sau này lại đến chơi.",
+        "Lần sau chúng ta lại đến nhé."
+      ]
+    },
+    {
+      "h2": "又 cho việc chắc chắn sẽ lặp lại",
+      "paras": [
+        "Có một trường hợp 又 nói về tương lai: việc chắc chắn sẽ quay lại, như một ngày trong tuần, kỳ nghỉ hay kỳ thi. 又 này thường đi với 是 hoặc 要, và câu kết thúc bằng 了."
+      ],
+      "examples": [
+        "Ngày mai lại là thứ Hai rồi.",
+        "Tuần sau lại sắp thi rồi."
+      ]
+    },
+    {
+      "h2": "Trật tự từ với 想, 没有 và 别",
+      "paras": [
+        "又 đứng trước các từ như 想, 要 và 没有: 他又没有来 nghĩa là \"anh ấy lại không đến\". 再 đứng sau 想, 要 và 能, ngay trước động từ chính: nói 我想再看一遍, không nói 我再想看一遍.",
+        "Để bảo ai đừng làm việc gì nữa, dùng 别再 + động từ + 了."
+      ],
+      "examples": [
+        "Hôm nay anh ấy lại không đến lớp.",
+        "Bộ phim này rất hay, tôi muốn xem lại lần nữa.",
+        "Đừng đến muộn nữa nhé."
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 又 và 再 HSK 3 có đáp án, in miễn phí",
+    "description": "Bài tập phân biệt 又 và 再 HSK 3 in miễn phí: 20 câu (chọn 又 hay 再, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 又 hoặc 再",
+        "instructions": "Điền 又 hoặc 再 vào chỗ trống. Phần nghĩa tiếng Việt cho biết việc lặp lại đã xảy ra hay chưa.",
+        "items": [
+          "Tuần trước anh ấy đã đến, hôm qua lại đến nữa.",
+          "Chữ này tôi nhìn không rõ, bạn viết lại một lần nữa nhé.",
+          "Sao bạn lại quên mang điện thoại nữa vậy?",
+          "Chỗ này đẹp quá, tôi muốn đến thêm một lần nữa.",
+          "Tháng sau lại sắp được nghỉ rồi.",
+          "Đừng uống nữa, bạn đã uống nhiều lắm rồi.",
+          "Hôm nay anh ấy lại không ăn sáng.",
+          "Lần sau chúng ta lại đến nhà hàng đó nhé.",
+          "Bên ngoài lại mưa rồi.",
+          "Ngày mai lại là thứ Hai rồi, tôi không muốn đi làm."
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng.",
+        "items": [
+          "Anh trai tôi lại bị ốm rồi.",
+          "Mời bạn thử lại một lần nữa.",
+          "Tôi muốn đi thêm một lần nữa.",
+          "Ngày mai lại là cuối tuần rồi.",
+          "Anh ấy lại không làm bài tập."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Hôm qua anh ấy lại đến.",
+          "Ngày mai tôi sẽ lại đến.",
+          "Tôi muốn ăn thêm một cái nữa.",
+          "Hôm qua máy tính của tôi lại hỏng rồi.",
+          "Hoan nghênh các bạn sang năm lại đến."
+        ]
+      }
+    ]
+  }
+}

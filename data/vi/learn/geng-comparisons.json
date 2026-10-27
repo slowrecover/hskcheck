@@ -1,0 +1,98 @@
+{
+  "slug": "geng-comparisons",
+  "published": "2026-10-27",
+  "title": "Cách dùng 更 (gèng, càng… hơn) trong tiếng Trung, HSK 3",
+  "description": "Cách dùng 更 (gèng) để nói \"càng… hơn\", \"hơn nữa\": 更 với tính từ, trong câu 比 và với 喜欢, phân biệt 更 và 最, lỗi thường gặp, kèm ví dụ HSK 3.",
+  "h1": "Cách nói \"càng… hơn\" với 更",
+  "lede": "更 (gèng) nghĩa là \"càng… hơn\", \"hơn nữa\". Đặt nó trước tính từ hoặc động từ như 喜欢 để nói một thứ còn hơn một thứ khác thêm một bậc.",
+  "sections": [
+    {
+      "h2": "更 + tính từ",
+      "paras": [
+        "Chủ ngữ + 更 + tính từ.",
+        "更 luôn đứng ngay trước tính từ. Nó thường có nghĩa là thứ thứ nhất đã có đặc điểm đó, còn thứ thứ hai có đặc điểm đó nhiều hơn nữa: hôm nay lạnh thì ngày mai còn lạnh hơn. Có thể dùng 更 mà không cần 比 khi đã rõ đang so sánh với cái gì."
+      ],
+      "examples": [
+        "Hôm nay rất lạnh, ngày mai sẽ còn lạnh hơn.",
+        "Bộ quần áo này rất rẻ, bộ kia còn rẻ hơn.",
+        "Luyện tập nhiều, tiếng Trung của bạn sẽ càng tốt hơn."
+      ]
+    },
+    {
+      "h2": "更 trong câu 比",
+      "paras": [
+        "A + 比 + B + 更 + tính từ.",
+        "Câu 比 bình thường (他比我高) đã là câu hoàn chỉnh. Thêm 更 thì nghĩa thành \"còn cao hơn\". Lỗi hay gặp nhất là dùng 很: 他比我很高 là sai. Bạn cũng sẽ nghe 还 ở cùng vị trí, với cùng nghĩa: 他比我还高."
+      ],
+      "examples": [
+        "Anh trai tôi rất cao, em trai tôi còn cao hơn anh ấy.",
+        "Căn phòng này còn rộng hơn căn phòng kia.",
+        "Anh ấy còn cao hơn cả tôi."
+      ]
+    },
+    {
+      "h2": "更喜欢: \"thích… hơn\"",
+      "paras": [
+        "更 cũng đứng trước các động từ chỉ sự yêu thích như 喜欢 và 想. 我更喜欢 là cách nói thông dụng của \"tôi thích… hơn\". Để hỏi ai thích cái nào hơn, dùng 你更喜欢 với 哪个 hoặc 还是."
+      ],
+      "examples": [
+        "Tôi thích uống cà phê, nhưng tôi còn thích uống trà hơn.",
+        "Bạn thích màu nào hơn?",
+        "Tôi thấy cách này tốt hơn."
+      ]
+    },
+    {
+      "h2": "Phân biệt 更 và 最",
+      "paras": [
+        "更 so sánh một thứ với một thứ khác: \"hơn\". 最 chọn ra một thứ trong cả nhóm: \"nhất\". Cả hai đều đứng trước tính từ hoặc động từ, không bao giờ đứng sau, và không dùng chung với 很: nói 我更喜欢, không nói 我更很喜欢."
+      ],
+      "examples": [
+        "Cậu ấy cao, anh trai cậu ấy cao hơn, bố cậu ấy cao nhất."
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 更 HSK 3 có đáp án, in miễn phí",
+    "description": "Bài tập 更 (gèng) HSK 3 in miễn phí: 20 câu (更, 最 hay 很, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 更, 最 hoặc 很",
+        "instructions": "Điền 更, 最 hoặc 很 vào chỗ trống. Phần nghĩa tiếng Việt cho biết câu có nghĩa gì.",
+        "items": [
+          "Cái túi này còn to hơn cái túi kia.",
+          "Cậu ấy là học sinh cao nhất lớp chúng tôi.",
+          "Tôi thấy tiếng Trung rất thú vị.",
+          "Hôm qua rất nóng, hôm nay còn nóng hơn.",
+          "Đây là món tôi thích nhất.",
+          "Đi tàu điện ngầm còn nhanh hơn đi taxi.",
+          "Đồ ở cửa hàng này rất rẻ.",
+          "Anh ấy nói tiếng Trung còn giỏi hơn tôi.",
+          "Táo và chuối, bạn thích cái nào hơn?",
+          "Tôi thích mùa hè, nhưng tôi còn thích mùa thu hơn."
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng.",
+        "items": [
+          "Buổi chiều sẽ còn nóng hơn.",
+          "Cuốn sách này còn thú vị hơn cuốn kia.",
+          "Tôi thích uống sữa hơn.",
+          "Cái này còn đắt hơn cái kia.",
+          "Em gái tôi còn cao hơn tôi."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Anh ấy còn cao hơn tôi.",
+          "Hôm nay còn nóng hơn hôm qua.",
+          "Món này còn ngon hơn món kia.",
+          "Tôi thích cái này hơn.",
+          "Bạn thích mèo hơn hay chó hơn?"
+        ]
+      }
+    ]
+  }
+}

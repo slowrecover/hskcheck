@@ -1,0 +1,109 @@
+{
+  "slug": "cai-vs-jiu",
+  "published": "2026-10-27",
+  "title": "Phân biệt 才 và 就 trong tiếng Trung, ngữ pháp HSK 3",
+  "description": "Phân biệt 才 (cái) và 就 (jiù): muộn hay sớm, chậm hay nhanh, 才 nghĩa là \"mới có\", 就 và 才 sau điều kiện, lỗi thường gặp, kèm ví dụ HSK 3.",
+  "h1": "Phân biệt 才 và 就: \"mới\" hay \"đã\"",
+  "lede": "才 (cái) và 就 (jiù) đều đứng trước động từ và cho biết người nói cảm thấy thế nào về thời điểm. 就 nói việc xảy ra sớm, nhanh hoặc dễ dàng; 才 nói việc xảy ra muộn, chậm hoặc khó khăn, giống \"mới\" trong tiếng Việt.",
+  "sections": [
+    {
+      "h2": "就 là sớm, 才 là muộn",
+      "paras": [
+        "Thời gian + 就 + động từ + 了. Thời gian + 才 + động từ.",
+        "Cả hai từ đứng sau từ chỉ thời gian và ngay trước động từ. 就 nói việc xảy ra sớm hơn mong đợi, giống \"đã\" trong \"sáu giờ đã dậy rồi\". 才 nói việc xảy ra muộn hơn mong đợi, giống \"mới\" trong \"mười giờ mới dậy\". Với việc đã xảy ra, câu có 就 thường kết thúc bằng 了, còn câu có 才 thì không."
+      ],
+      "examples": [
+        "Sáu giờ anh ấy đã dậy rồi.",
+        "Mười giờ anh ấy mới dậy.",
+        "Phim bắt đầu lúc bảy giờ, bảy rưỡi anh ấy mới đến."
+      ]
+    },
+    {
+      "h2": "Nhanh hay chậm, trẻ hay muộn",
+      "paras": [
+        "Cách dùng này cũng áp dụng cho khoảng thời gian và tuổi tác. Với 就, việc mất ít thời gian hơn mong đợi hoặc xảy ra khi còn trẻ. Với 才, việc mất nhiều thời gian hoặc đến muộn."
+      ],
+      "examples": [
+        "Tôi chỉ mất nửa tiếng đã làm xong rồi.",
+        "Anh ấy mất ba tiếng mới làm xong.",
+        "Anh ấy mới hai mươi hai tuổi đã kết hôn rồi.",
+        "Ba mươi tám tuổi cô ấy mới kết hôn."
+      ]
+    },
+    {
+      "h2": "才 nghĩa là \"mới có\", \"chỉ\"",
+      "paras": [
+        "Đứng ngay trước con số, 才 nghĩa là \"mới có\", \"chỉ\": người nói thấy con số đó nhỏ. Cách dùng này hay gặp với tuổi, giờ và giá tiền."
+      ],
+      "examples": [
+        "Cậu bé mới có tám tuổi.",
+        "Bây giờ mới có sáu giờ, bạn ngủ thêm một lát đi."
+      ]
+    },
+    {
+      "h2": "Sau một điều kiện",
+      "paras": [
+        "Sau một điều kiện, 就 nghĩa là \"thì\": nếu việc thứ nhất xảy ra thì việc thứ hai sẽ theo sau. 才 nghĩa là \"thì mới\": việc thứ hai chỉ xảy ra khi có việc thứ nhất."
+      ],
+      "examples": [
+        "Bạn đi thì tôi đi.",
+        "Bạn đi thì tôi mới đi."
+      ]
+    },
+    {
+      "h2": "Lỗi thường gặp",
+      "paras": [
+        "Lỗi hay gặp nhất là thêm 了 vào cuối câu có 才 nói về quá khứ. Nói 他十点才来, không nói 他十点才来了.",
+        "Không từ nào trong hai từ này đứng ở cuối câu được. Khi mang nghĩa \"muộn\" hay \"sớm\", hãy đặt chúng sau chủ ngữ và từ chỉ thời gian, ngay trước động từ."
+      ],
+      "examples": [
+        "Tối qua mười hai giờ tôi mới đi ngủ.",
+        "Tám giờ chúng tôi đã đến rồi."
+      ]
+    }
+  ],
+  "worksheet": {
+    "title": "Bài tập 才 và 就 HSK 3 có đáp án, in miễn phí",
+    "description": "Bài tập phân biệt 才 và 就 HSK 3 in miễn phí: 20 câu (chọn 才 hay 就, sắp xếp từ, sửa câu sai) kèm đáp án.",
+    "exercises": [
+      {
+        "h2": "Chọn 才 hoặc 就",
+        "instructions": "Điền 才 hoặc 就 vào chỗ trống. Phần nghĩa tiếng Việt cho biết câu có nghĩa gì.",
+        "items": [
+          "Tối qua một giờ anh ấy mới đi ngủ.",
+          "Sáng nay năm giờ tôi đã dậy rồi.",
+          "Cuốn sách này tôi chỉ mất hai ngày đã đọc xong.",
+          "Tôi đợi nửa tiếng, xe mới đến.",
+          "Em trai tôi mới có sáu tuổi, chưa biết viết nhiều chữ.",
+          "Bạn đi thì tôi đi.",
+          "Anh ấy học ba năm mới nói được một chút tiếng Trung.",
+          "Máy bay mười giờ cất cánh, chín giờ anh ấy đã đến sân bay rồi."
+        ]
+      },
+      {
+        "h2": "Sắp xếp từ thành câu",
+        "instructions": "Viết các từ thành một câu đúng.",
+        "items": [
+          "Mười giờ anh ấy mới đến.",
+          "Năm giờ cô ấy đã đi rồi.",
+          "Bây giờ tôi mới hiểu.",
+          "Chúng tôi chỉ mất mười phút đã đến nơi.",
+          "Món này mới có mười tệ.",
+          "Buổi chiều tôi mới về đến nhà."
+        ]
+      },
+      {
+        "h2": "Tìm và sửa lỗi sai",
+        "instructions": "Mỗi câu có một lỗi sai. Hãy viết lại câu đúng.",
+        "items": [
+          "Mười một giờ cô ấy mới đến.",
+          "Tôi chỉ mất hai mươi phút đã làm xong.",
+          "Hai giờ anh ấy mới ăn trưa.",
+          "Bảy giờ anh ấy đã dậy rồi.",
+          "Mẹ nói ba lần, anh ấy mới chịu dậy.",
+          "Anh ấy rất thông minh, chỉ một tiếng đã học được rồi."
+        ]
+      }
+    ]
+  }
+}
