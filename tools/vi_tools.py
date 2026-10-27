@@ -74,7 +74,7 @@ STUDY_UI = {
     "installBtn": "Thêm vào màn hình chính",
     "pickHead": "Bạn đang học HSK cấp mấy?",
     "pickSub": "Mới bắt đầu học tiếng Trung? Hãy chọn HSK 1. Bạn có thể đổi cấp bất cứ lúc nào.",
-    "storyHead": "Giờ hãy đọc một truyện ngắn HSK", "readBase": "/reading/", "titleKey": "en",
+    "storyHead": "Giờ hãy đọc một truyện ngắn HSK", "readBase": V + "reading/", "titleKey": "vi",
     "iosTip": "Trên iPhone: chạm nút Chia sẻ trong Safari, rồi chọn “Thêm vào MH chính”. Flashcard sẽ mở như một ứng dụng.",
 }
 
@@ -298,7 +298,7 @@ LISTEN_UI = {
     "startSub": "10 câu: {what}. Hãy bật âm thanh.", "wMix": "từ và câu ngắn", "wWords": "từ",
     "wSent": "câu ngắn", "ask": "Hãy nghe. Bạn nghe thấy gì?", "play": "Nghe lại", "slow": "Chậm",
     "playFirst": "Nghe", "right": "Đúng rồi!", "wrong": "Chưa đúng.", "next": "Câu tiếp theo", "finish": "Xem điểm",
-    "fromG": "Trích từ bài ngữ pháp", "fromS": "Trích từ truyện", "learnBase": V + "learn/", "readBase": "/reading/",
+    "fromG": "Trích từ bài ngữ pháp", "fromS": "Trích từ truyện", "learnBase": V + "learn/", "readBase": V + "reading/",
     "scoreHead": "Điểm của bạn", "bestNew": "Điểm cao nhất mới cho HSK {n}!",
     "bestOld": "Điểm cao nhất của bạn ở HSK {n} ({what}): {b} / {t}",
     "msg4": "Xuất sắc. Tai bạn đã quen với HSK {n}: hãy thử cấp tiếp theo.",
@@ -316,9 +316,9 @@ LISTEN_UI = {
 
 
 def listen_swaps(has_grammar):
-    src = (f'các câu ví dụ trong <a href="{V}learn/">bài ngữ pháp</a> và trong các <a href="/reading/" hreflang="en">truyện '
+    src = (f'các câu ví dụ trong <a href="{V}learn/">bài ngữ pháp</a> và trong các <a href="{V}reading/">truyện '
            'đọc theo cấp độ</a>' if has_grammar else
-           'các <a href="/reading/" hreflang="en">truyện đọc theo cấp độ</a> của trang')
+           f'các <a href="{V}reading/">truyện đọc theo cấp độ</a> của trang')
     return [
         EYEBROW,
         ('<h1><span class="zh">听力</span>Chinese Listening Practice</h1>',

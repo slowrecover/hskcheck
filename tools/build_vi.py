@@ -10,6 +10,8 @@ Outputs:
   vi/learn/<slug>/practice/             grammar practice online (tools/grammar_practice.py)
   vi/hsk-flashcards/ and the practice tools (test, daily quiz, listening, pinyin and tones, tracing): see
                                         tools/vi_tools.py
+  vi/reading/                           graded stories with Vietnamese glosses (tools/reading.py)
+  vi/chinese-measure-words/, vi/old-hsk-to-new-hsk/, vi/yct/...: see tools/rest_vi.py
 
 data/vi/hskN_vi.tsv has two columns, word and Vietnamese meaning, in exactly the order of data/hskN.tsv. The build
 stops if a file is out of order or incomplete, or if a meaning holds a tab or a Chinese character. No Vietnamese page
@@ -30,6 +32,8 @@ import grammar_practice
 import hsk4
 import hsk5
 import learn_vi
+import reading
+import rest_vi
 import vi_tools
 import worksheets_th
 
@@ -252,6 +256,7 @@ def alternates(root):
     pairs.update(vi_tools.alternates())
     pairs.update(learn_vi.alternates(root))
     pairs.update(grammar_practice.alternates_vi(root))
+    pairs.update(rest_vi.alternates(root))
     return pairs
 
 
@@ -269,12 +274,7 @@ def swap(body, pairs, what):
 
 
 def ws_links(current, levels):
-    items = [(f"{VI_URL}hsk-{n}-character-worksheets/", f"HSK {n}") for n in levels] + [(VI_WS_URL, "Chữ bất kỳ")]
-    out = []
-    for url, label in items:
-        cur = ' aria-current="page"' if url == current else ""
-        out.append(f'<a href="{url}"{cur}>{label}</a>')
-    return '<nav class="level-links" aria-label="Bộ chữ"><span>Bắt đầu từ:</span>' + "".join(out) + "</nav>"
+    return rest_vi.ws_links(current, levels)
 
 
 def range_select(total):
@@ -303,7 +303,8 @@ def level_chars(root, n, data):
     return (hsk4 if n == 4 else hsk5).new_chars(rows, lower)
 
 
-def build(*, root, tpl, site, base_css, render, word_lists, read_words, search_key, squash, checker_level_table):
+def build(*, root, tpl, site, base_css, render, word_lists, read_words, search_key, squash, checker_level_table,
+          measure):
     """Write the Vietnamese pages. Returns the URLs written."""
     data = load(root)
     if not data:
@@ -315,10 +316,17 @@ def build(*, root, tpl, site, base_css, render, word_lists, read_words, search_k
     pages = [(VI_URL, "Kiểm tra cấp độ")]
     pages += [(f"{VI_URL}hsk-{n}-word-list/", f"Từ vựng HSK {n}") for n in LEVELS]
     pages += vi_tools.NAV
+    rest = rest_vi.available(root)
+    if rest:
+        pages.append((reading.VI_URL, "Đọc truyện"))
     pages.append((VI_WS_URL, "Phiếu tập viết"))
     pages += vi_tools.NAV_AFTER_WS
+    if rest:
+        pages += rest_vi.NAV_TOOLS
     if learn_vi.slugs(root):
         pages.append((learn_vi.VI_LEARN_URL, "Ngữ pháp"))
+    if rest:
+        pages += rest_vi.NAV_YCT
 
     def nav(current):
         links = []
@@ -455,6 +463,24 @@ def build(*, root, tpl, site, base_css, render, word_lists, read_words, search_k
     # Grammar pages, their worksheets and grammar practice online
     learn_vi.build(root=root, tpl=tpl, site=site, write=write, nav=nav, base_css=base_css, vi_css=vi_css)
     grammar_practice.build_vi(root=root, tpl=tpl, site=site, write=write, nav=nav, base_css=base_css, vi_css=vi_css)
+
+    # Graded reading, measure words, old -> new HSK and YCT (tools/rest_vi.py)
+    if rest:
+        reading.build_vi(root=root, tpl=tpl, write=write, nav=nav, base_css=base_css, vi_css=vi_css,
+                         vi={n: [r[3] for r in data[n]] for n in LEVELS}, titles=vi_tools.STORY_TITLES)
+        key = lambda text: vi_key(text, squash)  # noqa: E731
+        rest_vi.build_measure(root=root, tpl=tpl, site=site, write=write, nav=nav,
+                              css=base_css + (tpl / "measure.css").read_text(encoding="utf-8") + vi_css,
+                              measure=dict(measure, squash=squash), level_table=checker_level_table,
+                              search_key=search_key, vi_key=key)
+        rest_vi.build_upgrade(root=root, tpl=tpl, site=site, write=write, nav=nav,
+                              css=base_css + (tpl / "upgrade.css").read_text(encoding="utf-8") + vi_css,
+                              meanings=meanings)
+        rest_vi.build_yct(root=root, tpl=tpl, site=site, write=write, nav=nav,
+                          wl_css=wl_css + (tpl / "yct.css").read_text(encoding="utf-8"), ws_css=ws_css,
+                          vocab_css=base_css + (tpl / "learn_worksheet.css").read_text(encoding="utf-8") + vi_css,
+                          ws_tpl=ws_tpl, hsk_levels=levels, range_select=range_select, char_table=char_table,
+                          search_key=search_key, vi_key=key)
 
     # About
     body = (tpl / "vi" / "about_body.html").read_text(encoding="utf-8").replace("__NAV__", nav(VI_ABOUT_URL))

@@ -708,7 +708,9 @@ def main():
     # Vietnamese pages
     extra_urls += build_vi.build(root=ROOT, tpl=TPL, site=SITE, base_css=base_css, render=render,
                                  word_lists=word_lists, read_words=read_words, search_key=search_key, squash=_squash,
-                                 checker_level_table=lambda: level_table(CHECKER_LEVELS))
+                                 checker_level_table=lambda: level_table(CHECKER_LEVELS),
+                                 measure=dict(read_classifiers=read_classifiers, read_measure_words=read_measure_words,
+                                              yi_before=yi_before, zh_spans=zh_spans))
 
     # Sitemap
     urls = "\n".join(

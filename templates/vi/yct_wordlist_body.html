@@ -1,0 +1,70 @@
+<div class="wrap">
+  <header>
+    __NAV__
+    <div class="eyebrow"><span>YCT · Kỳ thi tiếng Trung cho học sinh</span><span class="chip">Cấp __LEVEL__</span><span class="chip">__COUNT__ từ</span></div>
+    <h1>Từ vựng YCT __LEVEL__ có nghĩa tiếng Việt</h1>
+    <p class="lede">__LEDE__</p>
+  </header>
+
+  <section class="sheet" aria-label="Từ vựng YCT __LEVEL__">
+    <div class="tools-row">
+      <label class="visually-hidden" for="word-search">Tìm từ trong YCT __LEVEL__</label>
+      <input id="word-search" class="search" type="search" placeholder="Tìm: 猫, mao hoặc mèo" autocomplete="off" spellcheck="false">
+      __NEW_TOGGLE__
+      <span class="count" id="word-count">__ROWCOUNT__ từ</span>
+    </div>
+    <div class="table-wrap">
+      <table class="words-table">
+        <thead><tr><th scope="col">#</th><th scope="col">Từ</th><th scope="col">Pinyin</th><th scope="col">Nghĩa</th><th scope="col" title="Cấp YCT có từ này lần đầu">Cấp</th></tr></thead>
+        <tbody id="word-rows">
+__ROWS__
+        </tbody>
+      </table>
+    </div>
+    <p class="empty" id="no-match" hidden>Không tìm thấy từ phù hợp. Thử gõ một chữ Hán, pinyin không dấu hoặc một từ tiếng Việt đơn giản.</p>
+  </section>
+
+  <section class="sheet" aria-labelledby="cta-title">
+    <h2 id="cta-title">Luyện viết chữ Hán YCT __LEVEL__</h2>
+    <p class="lede">In miễn phí phiếu tập viết các chữ Hán trong từ vựng cấp này, có thứ tự nét, pinyin và ô chữ điền 田 để tô theo.</p>
+    <div class="cta"><a class="button" href="/vi/yct/yct-__LEVEL__-character-worksheets/">In phiếu tập viết</a><a class="button ghost" href="/vi/yct/yct-__LEVEL__-vocabulary-worksheets/">Phiếu bài tập từ vựng</a><a class="button ghost" href="/vi/yct/">Tất cả các cấp YCT</a></div>
+  </section>
+
+  <section class="prose" aria-labelledby="about-title">
+    <h2 id="about-title">Về YCT __LEVEL__</h2>
+__PROSE__
+  </section>
+
+  <footer class="notes">
+    <p><b>Nguồn.</b> Từ và pinyin theo đề cương YCT cấp __LEVEL__ chính thức (<span class="zh-inline">新中小学生汉语考试 YCT 大纲</span>), đã đối chiếu với một bản sao được công bố độc lập, xếp theo thứ tự chữ cái của pinyin.</p>
+    <p><b>Nghĩa.</b> Đề cương không có phần dịch nghĩa. Nghĩa tiếng Việt do hskcheck.com biên soạn, chỉ ghi các nghĩa thường dùng.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  const input = document.getElementById("word-search");
+  const onlyNew = document.getElementById("only-new");
+  const rows = Array.from(document.querySelectorAll("#word-rows tr"));
+  const countEl = document.getElementById("word-count");
+  const none = document.getElementById("no-match");
+  const total = rows.length;
+  function norm(s) {
+    return s.toLowerCase().replace(/đ/g, "d").normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[\s'’-]/g, "");
+  }
+  function apply() {
+    const q = norm(input.value);
+    const fresh = onlyNew && onlyNew.checked;
+    let shown = 0;
+    rows.forEach(r => {
+      const hit = (!q || r.dataset.k.includes(q)) && (!fresh || r.dataset.new === "1");
+      r.hidden = !hit;
+      if (hit) shown++;
+    });
+    countEl.textContent = (q || fresh) ? shown + "/" + total + " từ" : total + " từ";
+    none.hidden = shown > 0;
+  }
+  input.addEventListener("input", apply);
+  if (onlyNew) onlyNew.addEventListener("change", apply);
+})();
+</script>

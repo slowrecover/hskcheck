@@ -492,8 +492,9 @@ def pct(a, b):
 
 
 def compare_body(data, lang, nav_html, thai=None):
-    th = lang == "th"
-    T = (lambda en, t: t) if th else (lambda en, t: en)
+    """thai: the shown meanings of the YCT 4 rows in the page's language (Thai or Vietnamese); None for English."""
+    pick = {"en": 0, "th": 1, "vi": 2}[lang]
+    T = lambda *texts: texts[pick] if pick < len(texts) else texts[0]  # noqa: E731
     rows = []
     for n in LEVELS:
         d = data[n]
@@ -517,8 +518,9 @@ def compare_body(data, lang, nav_html, thai=None):
     none_html = "、".join(f'<span class="zh-inline">{html.escape(r[0])}</span>' for r in none)
     y4_upto3 = d4["h1"] + d4["h2"] + d4["h3"]
     y3 = data[3]
-    wl = (lambda n: f"{TH_YCT_URL}yct-{n}-word-list/") if th else (lambda n: f"{YCT_URL}yct-{n}-word-list/")
-    hskwl = (lambda n: f"/th/hsk-{n}-word-list/") if th else (lambda n: f"/hsk-{n}-word-list/")
+    prefix = {"en": "", "th": "/th", "vi": "/vi"}[lang]
+    wl = lambda n: f"{prefix}{YCT_URL}yct-{n}-word-list/"  # noqa: E731
+    hskwl = lambda n: f"{prefix}/hsk-{n}-word-list/"  # noqa: E731
     summary = T(
         f"Most YCT words are HSK 1–3 words: {pct(y3['h1'] + y3['h2'] + y3['h3'], y3['total'])} of YCT 3 and "
         f"{pct(y4_upto3, d4['total'])} of YCT 4. But YCT 4, the top level, covers only {sum(d4['covers'])} of the "
@@ -527,20 +529,24 @@ def compare_body(data, lang, nav_html, thai=None):
         f"คำศัพท์ YCT ส่วนใหญ่เป็นคำศัพท์ HSK 1–3 คือ {pct(y3['h1'] + y3['h2'] + y3['h3'], y3['total'])} ของ YCT 3 และ "
         f"{pct(y4_upto3, d4['total'])} ของ YCT 4 แต่ YCT 4 ซึ่งเป็นระดับสูงสุด ครอบคลุมคำศัพท์เพียง {sum(d4['covers'])} คำ "
         f"จาก {sum(d4['hsk_sizes'])} คำที่ไม่ซ้ำกันของ HSK 1–3 ในแง่คำศัพท์ YCT 1–2 ส่วนใหญ่เป็นคำศัพท์ HSK 1 YCT 3 เริ่มเข้าไปใน HSK 2 และ 3 "
-        "ส่วน YCT 4 กระจายอยู่ใน HSK 1–3 แต่ไม่ครอบคลุมระดับใดครบทั้งหมด")
+        "ส่วน YCT 4 กระจายอยู่ใน HSK 1–3 แต่ไม่ครอบคลุมระดับใดครบทั้งหมด",
+        f"Phần lớn từ YCT là từ HSK 1–3: {pct(y3['h1'] + y3['h2'] + y3['h3'], y3['total'])} từ của YCT 3 và "
+        f"{pct(y4_upto3, d4['total'])} từ của YCT 4. Nhưng YCT 4, cấp cao nhất, chỉ có {sum(d4['covers'])} trong số "
+        f"{sum(d4['hsk_sizes'])} từ khác nhau của HSK 1–3. Xét về từ vựng, YCT 1–2 chủ yếu là từ HSK 1, YCT 3 bắt đầu sang "
+        "HSK 2 và 3, còn YCT 4 trải khắp HSK 1–3 nhưng không bao trọn cấp nào.")
     return f"""<div class="wrap">
   <header>
     {nav_html}
-    <div class="eyebrow"><span>{T("YCT · HSK 3.0", "YCT · HSK 3.0")}</span><span class="chip">{T("Word list comparison", "เปรียบเทียบคำศัพท์")}</span></div>
-    <h1>{T("YCT vs HSK: Which HSK Level Is Each YCT Level?", "YCT เทียบกับ HSK: YCT แต่ละระดับเท่ากับ HSK ระดับไหน")}</h1>
+    <div class="eyebrow"><span>YCT · HSK 3.0</span><span class="chip">{T("Word list comparison", "เปรียบเทียบคำศัพท์", "So sánh danh sách từ")}</span></div>
+    <h1>{T("YCT vs HSK: Which HSK Level Is Each YCT Level?", "YCT เทียบกับ HSK: YCT แต่ละระดับเท่ากับ HSK ระดับไหน", "So sánh YCT và HSK: mỗi cấp YCT tương đương HSK cấp mấy?")}</h1>
     <p class="lede">{summary}</p>
   </header>
 
   <section class="sheet" aria-labelledby="t1">
-    <h2 id="t1">{T("Where the YCT words sit in HSK 3.0", "คำศัพท์ YCT อยู่ใน HSK 3.0 ระดับไหน")}</h2>
-    <p class="lede">{T("Each YCT word is counted at the lowest HSK 3.0 level that lists it.", "นับคำศัพท์ YCT แต่ละคำตามระดับ HSK 3.0 ที่ต่ำที่สุดที่มีคำนั้นอยู่")}</p>
+    <h2 id="t1">{T("Where the YCT words sit in HSK 3.0", "คำศัพท์ YCT อยู่ใน HSK 3.0 ระดับไหน", "Từ YCT nằm ở cấp nào của HSK 3.0")}</h2>
+    <p class="lede">{T("Each YCT word is counted at the lowest HSK 3.0 level that lists it.", "นับคำศัพท์ YCT แต่ละคำตามระดับ HSK 3.0 ที่ต่ำที่สุดที่มีคำนั้นอยู่", "Mỗi từ YCT được tính ở cấp HSK 3.0 thấp nhất có từ đó.")}</p>
     <div class="levels-wrap"><table class="levels">
-      <thead><tr><th scope="col">YCT</th><th scope="col">{T("Words", "คำ")}</th><th scope="col">HSK 1</th><th scope="col">HSK 2</th><th scope="col">HSK 3</th><th scope="col">HSK 4–6</th><th scope="col">{T("Not an HSK word", "ไม่ใช่คำใน HSK")}</th><th scope="col">{T("HSK 1–3", "HSK 1–3")}</th></tr></thead>
+      <thead><tr><th scope="col">YCT</th><th scope="col">{T("Words", "คำ", "Số từ")}</th><th scope="col">HSK 1</th><th scope="col">HSK 2</th><th scope="col">HSK 3</th><th scope="col">HSK 4–6</th><th scope="col">{T("Not an HSK word", "ไม่ใช่คำใน HSK", "Không phải từ HSK")}</th><th scope="col">HSK 1–3</th></tr></thead>
       <tbody>
 {chr(10).join(rows)}
       </tbody>
@@ -548,8 +554,8 @@ def compare_body(data, lang, nav_html, thai=None):
   </section>
 
   <section class="sheet" aria-labelledby="t2">
-    <h2 id="t2">{T("How much of HSK each YCT level covers", "YCT แต่ละระดับครอบคลุมคำศัพท์ HSK ได้แค่ไหน")}</h2>
-    <p class="lede">{T("The other way round: how many words of each HSK level are already in the YCT list.", "มองกลับกัน: คำศัพท์ของ HSK แต่ละระดับมีอยู่ในรายการ YCT แล้วกี่คำ")}</p>
+    <h2 id="t2">{T("How much of HSK each YCT level covers", "YCT แต่ละระดับครอบคลุมคำศัพท์ HSK ได้แค่ไหน", "Mỗi cấp YCT có bao nhiêu từ của HSK")}</h2>
+    <p class="lede">{T("The other way round: how many words of each HSK level are already in the YCT list.", "มองกลับกัน: คำศัพท์ของ HSK แต่ละระดับมีอยู่ในรายการ YCT แล้วกี่คำ", "Theo chiều ngược lại: mỗi cấp HSK có bao nhiêu từ đã nằm trong danh sách YCT.")}</p>
     <div class="levels-wrap"><table class="levels">
       <thead><tr><th scope="col">YCT</th><th scope="col">HSK 1</th><th scope="col">HSK 2</th><th scope="col">HSK 3</th><th scope="col">HSK 1–3</th></tr></thead>
       <tbody>
@@ -559,34 +565,38 @@ def compare_body(data, lang, nav_html, thai=None):
   </section>
 
   <section class="prose" aria-labelledby="t3">
-    <h2 id="t3">{T("What this means", "หมายความว่าอย่างไร")}</h2>
+    <h2 id="t3">{T("What this means", "หมายความว่าอย่างไร", "Điều này có nghĩa là gì")}</h2>
     <p>{T("A student who passes YCT 4 knows a good part of the HSK 1–3 vocabulary, but not all of it. Moving on to the HSK, the quickest path is to learn the HSK 1–3 words that are not in the YCT list, rather than starting HSK 1 from scratch.",
-          "นักเรียนที่สอบผ่าน YCT 4 รู้คำศัพท์ HSK 1–3 ไปมากพอสมควร แต่ไม่ครบทั้งหมด ถ้าจะต่อไปสอบ HSK วิธีที่เร็วที่สุดคือเรียนคำศัพท์ HSK 1–3 ส่วนที่ไม่อยู่ใน YCT แทนที่จะเริ่ม HSK 1 ใหม่ตั้งแต่ต้น")}</p>
+          "นักเรียนที่สอบผ่าน YCT 4 รู้คำศัพท์ HSK 1–3 ไปมากพอสมควร แต่ไม่ครบทั้งหมด ถ้าจะต่อไปสอบ HSK วิธีที่เร็วที่สุดคือเรียนคำศัพท์ HSK 1–3 ส่วนที่ไม่อยู่ใน YCT แทนที่จะเริ่ม HSK 1 ใหม่ตั้งแต่ต้น",
+          "Học sinh đã đỗ YCT 4 biết khá nhiều từ vựng HSK 1–3, nhưng chưa đủ hết. Khi chuyển sang HSK, cách nhanh nhất là học những từ HSK 1–3 không có trong danh sách YCT, thay vì học lại HSK 1 từ đầu.")}</p>
     <p>{T("The YCT is written for children, so its list includes words the HSK leaves for later, such as animals, sports and single-character colours like <span class=\"zh-inline\">红</span> and <span class=\"zh-inline\">黄</span>, and a few everyday phrases that the HSK does not list as separate words. Those are shown below.",
-          "YCT ออกแบบมาสำหรับเด็ก รายการคำศัพท์จึงมีคำที่ HSK เก็บไว้ในระดับสูงกว่า เช่น สัตว์ กีฬา และชื่อสีแบบตัวเดียวอย่าง <span class=\"zh-inline\">红</span> และ <span class=\"zh-inline\">黄</span> รวมถึงวลีในชีวิตประจำวันบางคำที่ HSK ไม่ได้นับเป็นคำแยก ดูรายการด้านล่าง")}</p>
+          "YCT ออกแบบมาสำหรับเด็ก รายการคำศัพท์จึงมีคำที่ HSK เก็บไว้ในระดับสูงกว่า เช่น สัตว์ กีฬา และชื่อสีแบบตัวเดียวอย่าง <span class=\"zh-inline\">红</span> และ <span class=\"zh-inline\">黄</span> รวมถึงวลีในชีวิตประจำวันบางคำที่ HSK ไม่ได้นับเป็นคำแยก ดูรายการด้านล่าง",
+          "YCT được soạn cho trẻ em, nên danh sách có những từ mà HSK để đến cấp cao hơn, như tên con vật, môn thể thao và tên màu một chữ như <span class=\"zh-inline\">红</span> và <span class=\"zh-inline\">黄</span>, cùng một vài cụm từ thường ngày mà HSK không tính là từ riêng. Các từ đó được liệt kê bên dưới.")}</p>
     <p>{T("This page compares word lists only. The YCT and the HSK are different exams with their own formats, and there is no official equivalence between their levels.",
-          "หน้านี้เปรียบเทียบเฉพาะรายการคำศัพท์ YCT และ HSK เป็นการสอบคนละแบบ มีรูปแบบข้อสอบของตัวเอง และไม่มีการเทียบระดับอย่างเป็นทางการระหว่างกัน")}</p>
+          "หน้านี้เปรียบเทียบเฉพาะรายการคำศัพท์ YCT และ HSK เป็นการสอบคนละแบบ มีรูปแบบข้อสอบของตัวเอง และไม่มีการเทียบระดับอย่างเป็นทางการระหว่างกัน",
+          "Trang này chỉ so sánh danh sách từ. YCT và HSK là hai kỳ thi khác nhau với dạng đề riêng, và không có quy định chính thức nào quy đổi cấp giữa hai kỳ thi.")}</p>
   </section>
 
   <section class="sheet" aria-labelledby="t4">
-    <h2 id="t4">{T(f"The {len(above)} YCT 4 words above HSK 3", f"คำศัพท์ YCT 4 จำนวน {len(above)} คำที่สูงกว่า HSK 3")}</h2>
+    <h2 id="t4">{T(f"The {len(above)} YCT 4 words above HSK 3", f"คำศัพท์ YCT 4 จำนวน {len(above)} คำที่สูงกว่า HSK 3", f"{len(above)} từ YCT 4 cao hơn HSK 3")}</h2>
     <div class="table-wrap"><table class="words-table">
-      <thead><tr><th scope="col">{T("Word", "คำ")}</th><th scope="col">{T("Pinyin", "พินอิน")}</th><th scope="col">{T("Meaning", "ความหมาย")}</th><th scope="col">HSK</th></tr></thead>
+      <thead><tr><th scope="col">{T("Word", "คำ", "Từ")}</th><th scope="col">{T("Pinyin", "พินอิน", "Pinyin")}</th><th scope="col">{T("Meaning", "ความหมาย", "Nghĩa")}</th><th scope="col">HSK</th></tr></thead>
       <tbody>
 {arows}
       </tbody>
     </table></div>
-    <p class="lede">{T(f"Not listed as separate words in HSK 3.0 ({len(none)}): ", f"ไม่ได้อยู่ใน HSK 3.0 ในฐานะคำแยก ({len(none)} คำ): ")}{none_html}</p>
+    <p class="lede">{T(f"Not listed as separate words in HSK 3.0 ({len(none)}): ", f"ไม่ได้อยู่ใน HSK 3.0 ในฐานะคำแยก ({len(none)} คำ): ", f"Không có trong HSK 3.0 dưới dạng từ riêng ({len(none)} từ): ")}{none_html}</p>
   </section>
 
   <section class="sheet" aria-labelledby="t5">
-    <h2 id="t5">{T("Word lists", "รายการคำศัพท์")}</h2>
+    <h2 id="t5">{T("Word lists", "รายการคำศัพท์", "Danh sách từ")}</h2>
     <div class="cta"><a class="button ghost" href="{wl(1)}">YCT 1</a><a class="button ghost" href="{wl(2)}">YCT 2</a><a class="button ghost" href="{wl(3)}">YCT 3</a><a class="button ghost" href="{wl(4)}">YCT 4</a><a class="button ghost" href="{hskwl(1)}">HSK 1</a><a class="button ghost" href="{hskwl(2)}">HSK 2</a><a class="button ghost" href="{hskwl(3)}">HSK 3</a></div>
   </section>
 
   <footer class="notes">
-    <p><b>{T("Method.", "วิธีนับ")}</b> {T("YCT words follow the official YCT syllabus. HSK levels follow the HSK 3.0 (2025) word lists: levels 1–3 from this site's cross-checked lists, levels 4–9 from complete-hsk-vocabulary. A word counts as an HSK word only if the HSK list has it as written (a final 儿 may be dropped); phrases such as 打篮球 are not split into parts. Paired patterns such as 一边……一边…… are counted at the level of their parts.",
-        "คำศัพท์ YCT เป็นไปตามหลักสูตร YCT อย่างเป็นทางการ ระดับ HSK เป็นไปตามรายการคำศัพท์ HSK 3.0 (2025) ระดับ 1–3 จากรายการที่เว็บไซต์นี้ตรวจทานแล้ว ระดับ 4–9 จาก complete-hsk-vocabulary คำหนึ่งจะนับเป็นคำ HSK ก็ต่อเมื่อรายการ HSK มีคำนั้นตรงตามที่เขียน (ตัด 儿 ท้ายคำได้) วลีอย่าง 打篮球 จะไม่ถูกแยกเป็นส่วน ๆ ส่วนรูปประโยคคู่อย่าง 一边……一边…… นับตามระดับของส่วนประกอบ")}</p>
+    <p><b>{T("Method.", "วิธีนับ", "Cách tính.")}</b> {T("YCT words follow the official YCT syllabus. HSK levels follow the HSK 3.0 (2025) word lists: levels 1–3 from this site's cross-checked lists, levels 4–9 from complete-hsk-vocabulary. A word counts as an HSK word only if the HSK list has it as written (a final 儿 may be dropped); phrases such as 打篮球 are not split into parts. Paired patterns such as 一边……一边…… are counted at the level of their parts.",
+        "คำศัพท์ YCT เป็นไปตามหลักสูตร YCT อย่างเป็นทางการ ระดับ HSK เป็นไปตามรายการคำศัพท์ HSK 3.0 (2025) ระดับ 1–3 จากรายการที่เว็บไซต์นี้ตรวจทานแล้ว ระดับ 4–9 จาก complete-hsk-vocabulary คำหนึ่งจะนับเป็นคำ HSK ก็ต่อเมื่อรายการ HSK มีคำนั้นตรงตามที่เขียน (ตัด 儿 ท้ายคำได้) วลีอย่าง 打篮球 จะไม่ถูกแยกเป็นส่วน ๆ ส่วนรูปประโยคคู่อย่าง 一边……一边…… นับตามระดับของส่วนประกอบ",
+        "Từ YCT theo đề cương YCT chính thức. Cấp HSK theo danh sách từ HSK 3.0 (2025): cấp 1–3 theo danh sách đã đối chiếu của trang này, cấp 4–9 theo complete-hsk-vocabulary. Một từ chỉ được tính là từ HSK khi danh sách HSK có đúng từ đó (có thể bỏ 儿 ở cuối); cụm từ như 打篮球 không bị tách ra. Cấu trúc đi cặp như 一边……一边…… được tính theo cấp của các phần.")}</p>
   </footer>
 </div>"""
 

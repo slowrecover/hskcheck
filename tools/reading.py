@@ -1,4 +1,5 @@
-"""Graded reading: short HSK stories at /reading/<slug>/ (English page) and /th/reading/<slug>/ (Thai page).
+"""Graded reading: short HSK stories at /reading/<slug>/ (English page), /th/reading/<slug>/ (Thai page) and
+/vi/reading/<slug>/ (Vietnamese page, built from tools/build_vi.py with the titles in vi_tools.STORY_TITLES).
 
 Each story is data/stories/<slug>.json:
   {
@@ -32,6 +33,8 @@ from check_vocab import allowed_words, split_run  # noqa: E402
 
 URL = "/reading/"
 TH_URL = "/th/reading/"
+VI_URL = "/vi/reading/"
+BASE = {"en": URL, "th": TH_URL, "vi": VI_URL}
 LEVELS = (1, 2, 3, 4, 5)
 SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 HAN = re.compile(r"[㐀-鿿豈-﫿]+")
@@ -76,6 +79,26 @@ UI = {
                 "ที่ทำงานในร้านชานมหน้าประตูโรงเรียน",
         "none": "เรื่องของระดับนี้กำลังจะมา",
         "flash": "/th/hsk-flashcards/", "home": "/th/",
+    },
+    "vi": {
+        "eyebrow": "Đọc theo cấp độ", "words": "chữ", "min": "phút đọc",
+        "listen": "Nghe", "stop": "Dừng", "tapHint": "Chạm vào từ bất kỳ để xem pinyin và nghĩa tiếng Việt.",
+        "qTitle": "Kiểm tra mức độ hiểu bài", "right": "Đúng rồi!", "wrong": "Chưa đúng. Thử lại nhé.",
+        "addTitle": "Học các từ trong truyện này",
+        "addText": "Thêm {n} từ HSK {lv} trong truyện này vào flashcard của bạn. Các từ này sẽ hiện trước trong lần học tới.",
+        "addBtn": "Thêm vào flashcard của tôi", "added": "Đã thêm. Mở flashcard để học các từ này.", "open": "Mở flashcard",
+        "more": "Truyện HSK {lv} khác", "all": "Tất cả truyện", "next": "Truyện tiếp theo",
+        "name": "tên riêng", "notInList": "không có trong danh sách HSK", "level": "HSK {lv}",
+        "indexTitle": "Đọc truyện tiếng Trung theo cấp HSK 1–5, có nghĩa tiếng Việt",
+        "indexDesc": "Truyện ngắn tiếng Trung miễn phí viết theo từng cấp HSK 3.0, không có từ vượt cấp. Chạm vào từ để xem "
+                     "pinyin và nghĩa tiếng Việt, rồi thêm từ mới vào flashcard.",
+        "indexH1": "Đọc theo cấp độ", "indexLede": "Truyện ngắn viết cho từng cấp HSK. Mọi từ đều được đối chiếu với danh "
+                                                  "sách từ HSK 3.0, nên không có từ nào vượt cấp của bạn. Chạm vào một từ "
+                                                  "để xem nghĩa.",
+        "cast": "Các truyện có chung nhân vật: 大卫 (Dàwèi), sinh viên người Anh sang học tiếng Trung, và 小雨 (Xiǎoyǔ), "
+                "cô gái làm ở quán trà sữa trước cổng trường anh.",
+        "none": "Truyện cho cấp này sẽ sớm có.",
+        "flash": "/vi/hsk-flashcards/", "home": "/vi/", "close": "Đóng",
     },
 }
 
@@ -153,7 +176,7 @@ def zh_inline(text):
 
 def story_page(story, lang, dic, nav_html, prev_next):
     ui = UI[lang]
-    base = TH_URL if lang == "th" else URL
+    base = BASE[lang]
     words, max_len = check(story)
     used = {}
     paras = []
@@ -174,7 +197,7 @@ def story_page(story, lang, dic, nav_html, prev_next):
         paras.append('<p class="st-p" lang="zh-Hans">' + "".join(bits) + "</p>")
     chars = sum(len(m) for p in story["paras"] for m in HAN.findall(p))
     minutes = max(1, round(chars / 120))
-    title_local = story["title_th"] if lang == "th" else story["title_en"]
+    title_local = story["title_" + lang]
     qs = []
     for i, q in enumerate(story["questions"]):
         opts = "".join(f'<button type="button" class="st-opt" data-q="{i}" data-ok="{1 if j == q["answer"] else 0}">'
@@ -183,7 +206,7 @@ def story_page(story, lang, dic, nav_html, prev_next):
                   f'<p class="st-fb" id="fb{i}" aria-live="polite"></p></li>')
     more = []
     for s in prev_next:
-        t = s["title_th"] if lang == "th" else s["title_en"]
+        t = s["title_" + lang]
         more.append(f'<li><a href="{base}{s["slug"]}/"><span class="zh-inline">{html.escape(s["title"])}</span> '
                     f'<span class="st-more-en">{html.escape(t)}</span></a></li>')
     more_html = (f'<section class="sheet" aria-labelledby="more-title"><h2 id="more-title">'
@@ -226,7 +249,7 @@ def story_page(story, lang, dic, nav_html, prev_next):
 </div>
 
 <div class="st-pop" id="pop" role="dialog" aria-live="polite" hidden>
-  <button type="button" class="st-pop-x" id="pop-x" aria-label="Close">×</button>
+  <button type="button" class="st-pop-x" id="pop-x" aria-label="{ui.get("close", "Close")}">×</button>
   <div class="st-pop-w" lang="zh-Hans" id="pop-w"></div><div class="st-pop-p" id="pop-p"></div>
   <div class="st-pop-m" id="pop-m"></div><div class="st-pop-l" id="pop-l"></div>
 </div>
@@ -299,7 +322,7 @@ if (addBtn) addBtn.addEventListener("click", () => {{
 
 def index_page(stories, lang, nav_html):
     ui = UI[lang]
-    base = TH_URL if lang == "th" else URL
+    base = BASE[lang]
     secs = []
     for n in LEVELS:
         items = [s for s in stories if s["level"] == n]
@@ -307,7 +330,7 @@ def index_page(stories, lang, nav_html):
             lis = "".join(
                 f'<li><a href="{base}{s["slug"]}/"><span class="st-ep">{s["episode"]}</span>'
                 f'<span class="zh-inline st-t">{html.escape(s["title"])}</span>'
-                f'<span class="st-more-en">{html.escape(s["title_th"] if lang == "th" else s["title_en"])}</span></a></li>'
+                f'<span class="st-more-en">{html.escape(s["title_" + lang])}</span></a></li>'
                 for s in sorted(items, key=lambda s: -s["episode"]))
             inner = f'<ul class="st-list">{lis}</ul>'
         else:
@@ -380,6 +403,41 @@ def build_th(*, root, tpl, site, render, nav, font_link, foot, base_css, th_css,
         render(ui["indexTitle"], ui["indexDesc"], site + TH_URL, css, index_page(stories, "th", nav(TH_URL)),
                font_link, lang="th", foot=foot), encoding="utf-8")
     return [TH_URL] + urls
+
+
+def build_vi(*, root, tpl, write, nav, base_css, vi_css, vi, titles):
+    """Vietnamese pages at /vi/reading/, with Vietnamese glosses for HSK 1-5 (vi: level -> meanings in the order of
+    data/hskN.tsv). titles: slug -> Vietnamese title; a story without one is left out of the Vietnamese pages.
+    Pages go through build_vi's write(), which records their URLs. Also writes vi/reading/index.json (the English one plus a "vi" title), read by the Vietnamese flashcards."""
+    stories = [dict(s, title_vi=titles[s["slug"]]) for s in load(root) if s["slug"] in titles]
+    if not stories:
+        return []
+    dic = dictionary(root, vi)
+    css = base_css + (tpl / "reading.css").read_text(encoding="utf-8") + vi_css
+    for s in stories:
+        same = [x for x in stories if x["level"] == s["level"] and x["slug"] != s["slug"]]
+        url = f"{VI_URL}{s['slug']}/"
+        body, _ = story_page(s, "vi", dic, nav(VI_URL), same[-6:])
+        write(url, f"Đọc tiếng Trung HSK {s['level']}: {s['title']} ({s['title_vi']})",
+              f"Truyện ngắn tiếng Trung HSK {s['level']}: {s['title']} ({s['title_vi']}). Mọi từ đều ở cấp HSK "
+              f"{s['level']} trở xuống; chạm vào từ để xem pinyin và nghĩa tiếng Việt.", css, body)
+    ui = UI["vi"]
+    write(VI_URL, ui["indexTitle"], ui["indexDesc"], css, index_page(stories, "vi", nav(VI_URL)))
+    latest = {n: [{"slug": s["slug"], "title": s["title"], "en": s["title_en"], "vi": s["title_vi"]}
+                  for s in sorted([x for x in stories if x["level"] == n], key=lambda x: -x["episode"])]
+              for n in LEVELS}
+    (root / VI_URL.strip("/") / "index.json").write_text(json.dumps(latest, ensure_ascii=False, separators=(",", ":")),
+                                                         encoding="utf-8")
+    return []  # write() records the URLs
+
+
+def alternates_vi(root, titles):
+    stories = [s for s in load(root) if s["slug"] in titles]
+    if not stories:
+        return {}
+    pairs = {URL: VI_URL}
+    pairs.update({f"{URL}{s['slug']}/": f"{VI_URL}{s['slug']}/" for s in stories})
+    return pairs
 
 
 def alternates(root):

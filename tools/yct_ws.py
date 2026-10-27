@@ -1,8 +1,8 @@
-"""Printable YCT vocabulary worksheets at /yct/yct-N-vocabulary-worksheets/ and /th/yct/yct-N-vocabulary-worksheets/.
+"""Printable YCT vocabulary worksheets at /yct/yct-N-vocabulary-worksheets/, /th/yct/... and /vi/yct/....
 
 Each level's new words (the words first listed at that level) are split into sets of about 20. Every set is one
 printable sheet with two matching exercises and an answer key on a separate page:
-  A  match each word to its meaning (English, or Thai on the Thai page)
+  A  match each word to its meaning (English, or Thai / Vietnamese on those pages)
   B  match each word to its pinyin
 Grammar words (particles and paired patterns) only go into exercise B, since their meaning can't be matched fairly.
 Within one exercise no two words share a pinyin, and no two meanings in exercise A share a word (so 一下儿 and 一点儿,
@@ -68,6 +68,30 @@ T = {
         "doc_desc": "แบบฝึกหัดคำศัพท์ YCT {n} พิมพ์ได้ฟรี {sets} แผ่น จับคู่คำศัพท์ใหม่ {words} คำกับความหมายภาษาไทยและพินอิน "
                     "พร้อมเฉลย สำหรับครู ผู้ปกครอง และนักเรียน",
     },
+    "vi": {
+        "eyebrow": "YCT · Kỳ thi tiếng Trung cho học sinh",
+        "h1": "Phiếu bài tập từ vựng YCT {n}",
+        "lede": "{sets} phiếu in được cho {words} từ mới của YCT {n}: nối mỗi từ với nghĩa và với pinyin của nó. "
+                "Mỗi phiếu có đáp án ở trang riêng. Miễn phí in và photo cho lớp học.",
+        "set": "Phiếu", "sets_label": "Chọn phiếu", "of": "từ",
+        "show_py": "Pinyin trong bài A", "show_key": "Đáp án (in ở trang 2)", "print": "In phiếu này",
+        "title": "Từ vựng YCT {n} · Phiếu {k}", "name": "Họ tên", "date": "Ngày",
+        "a": "Nối từ với nghĩa", "a_inst": "Viết chữ cái của nghĩa đúng vào ô.",
+        "b": "Nối từ với pinyin", "b_inst": "Viết chữ cái của pinyin đúng vào ô.",
+        "key": "Đáp án", "foot": "Phiếu bài tập miễn phí từ {site}",
+        "about": "Về các phiếu bài tập này",
+        "prose": [
+            "Danh sách từ YCT tính gộp, nên mỗi cấp lặp lại các từ của những cấp thấp hơn. Các phiếu này chỉ dùng những từ "
+            "mới ở YCT {n}, chia thành từng bộ khoảng 20 từ, theo thứ tự trong danh sách từ.",
+            "Bài A kiểm tra nghĩa, bài B kiểm tra pinyin. Các từ ngữ pháp như trợ từ chỉ có trong bài B. Trong mỗi bài, "
+            "không có hai từ trùng nghĩa hay trùng pinyin, nên luôn chỉ có một đáp án đúng.",
+            "Tắt “Pinyin trong bài A” để bài nối nghĩa trở thành bài kiểm tra đọc chữ Hán. Để luyện viết, hãy in "
+            '<a href="{ws}">phiếu tập viết chữ Hán YCT {n}</a>.',
+        ],
+        "doc_title": "Phiếu bài tập từ vựng YCT {n} in miễn phí, có đáp án",
+        "doc_desc": "{sets} phiếu bài tập từ vựng YCT {n} in miễn phí: nối {words} từ mới với nghĩa tiếng Việt và pinyin, "
+                    "có đáp án. Dành cho giáo viên, phụ huynh và học sinh.",
+    },
 }
 
 
@@ -87,15 +111,22 @@ STOP = {"to", "a", "an", "the", "of", "in", "on", "for", "and", "or", "be", "one
         "word", "words", "someone", "do", "make", "after", "verb", "up", "out", "is", "it", "at", "s"}
 
 
-def meaning_tokens(m):
-    """Words in a meaning, for spotting two meanings that could be confused (ผม is both "hair" and "I")."""
+VI_STOP = {"của", "và", "hoặc", "là", "một", "cái", "con", "sự", "được", "trong", "với", "khi", "các", "những", "lượng",
+           "từ", "trợ", "dùng"}
+
+
+def meaning_tokens(m, lang="en"):
+    """Words in a meaning, for spotting two meanings that could be confused (ผม is both "hair" and "I").
+    Vietnamese is compared by syllable, leaving out a few function syllables (của, và, cái, con...)."""
     m = m.lower()
     if re.search(r"[\u0e00-\u0e7f]", m):
         return {t for t in re.split(r"[\s;,()]+", m) if t}
+    if lang == "vi":
+        return {t for t in re.split(r"[\s;,()….]+", m) if t and t not in VI_STOP}
     return {t for t in re.findall(r"[a-z']+", m) if t not in STOP}
 
 
-def make_sets(words):
+def make_sets(words, lang="en"):
     """words: [(word, pinyin, meaning_en, meaning_shown)]. Returns [(A items, B items)] with no clashes inside an exercise.
 
     Words keep their list order as far as possible: each goes into the first set, from its own one onwards, where it fits
@@ -106,12 +137,12 @@ def make_sets(words):
 
     def fits_a(st, w):
         return (not grammar_word(w[0], w[2]) and norm_meaning(w[3]) not in st["mean"]
-                and not (meaning_tokens(w[3]) & st["tok"]))
+                and not (meaning_tokens(w[3], lang) & st["tok"]))
 
     def put_a(st, w):
         st["a"].append(w)
         st["mean"].add(norm_meaning(w[3]))
-        st["tok"] |= meaning_tokens(w[3])
+        st["tok"] |= meaning_tokens(w[3], lang)
 
     for i, w in enumerate(words):
         home = min(i // size, k - 1)
@@ -157,9 +188,9 @@ def exercise(letter, title, inst, items, answers_of, seed, zh_py=False):
 
 def page(n, lang, rows, first, thai, site, nav_html, ws_url, url):
     t = T[lang]
-    shown = thai if lang == "th" else [r[2] for r in rows]
+    shown = thai if lang in ("th", "vi") else [r[2] for r in rows]
     new = [(r[0], r[1], r[2], m) for r, m in zip(rows, shown) if first[r[0]] == n]
-    sets = make_sets(new)
+    sets = make_sets(new, lang)
     papers, options = [], []
     for k, (a, b) in enumerate(sets, 1):
         ex_a, key_a = exercise("A", t["a"], t["a_inst"], a, lambda w: w[3], f"yct{n}-{k}-a", zh_py=True)
