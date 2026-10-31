@@ -1,0 +1,3 @@
+# Published Thai-only usage guides. One slug per line; remaining drafts are released by the daily workflow.
+gei-how-to-use
+hai-how-to-use
