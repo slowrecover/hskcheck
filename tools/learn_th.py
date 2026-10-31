@@ -28,6 +28,7 @@ import html
 import json
 
 import learn
+import th_usage
 
 TH_LEARN_URL = "/th/learn/"
 REQUIRED = ("slug", "published", "title", "description", "h1", "lede", "sections")
@@ -189,6 +190,16 @@ def build(*, root, tpl, site, css, ws_css, render, nav, font_link, foot):
             f'{learn.zh_spans(p["h1"])}</a></li>' for p in items
         )
         groups.append(f'  <section class="sheet learn"><h2>HSK {lv}</h2><ul class="more">{lis}</ul></section>')
+    usage = th_usage.published_pages(root)
+    if usage:
+        links = "".join(
+            f'<li><a href="/th/learn/{p["slug"]}/">{html.escape(p["zh"])} — '
+            f'{html.escape(p["title"])}</a></li>' for p in usage
+        )
+        groups.append(
+            '<section class="sheet learn"><h2>คำจีนใช้ยังไง? อธิบายเป็นภาษาไทย</h2>'
+            f'<ul class="more">{links}</ul></section>'
+        )
     body = (tpl / "th" / "learn_index_body.html").read_text(encoding="utf-8")
     body = (body.replace("__NAV__", nav(TH_LEARN_URL))
             .replace("__COUNT__", str(len(pages)))
