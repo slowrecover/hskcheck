@@ -202,7 +202,7 @@ def build(*, root, tpl, site, css, ws_css, render, nav, font_link, foot):
         )
     body = (tpl / "th" / "learn_index_body.html").read_text(encoding="utf-8")
     body = (body.replace("__NAV__", nav(TH_LEARN_URL))
-            .replace("__COUNT__", str(len(pages)))
+            .replace("__COUNT__", str(len(pages) + len(usage)))
             .replace("__GROUPS__", "\n".join(groups)))
     target = root / TH_LEARN_URL.strip("/")
     target.mkdir(parents=True, exist_ok=True)
