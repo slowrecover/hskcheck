@@ -16,7 +16,7 @@ Audit date: 2026-10-30. Repository: [slowrecover/hskcheck](https://github.com/sl
 
 - https://hskcheck.com/th/learn/gei-how-to-use/ — `给 ใช้ยังไง?` (committed static page)
 - https://hskcheck.com/th/learn/hai-how-to-use/ — `还 ใช้ยังไง?` (committed static page)
-- Pending reviewed page for daily release: `/th/learn/dui-how-to-use/` — `对 ใช้ยังไง?` (not online yet)
+- Pending reviewed pages for daily release (not online yet): `/th/learn/dui-how-to-use/` (对), `/th/learn/shi-de-how-to-use/` (是……的), `/th/learn/he-gen-how-to-use/` (和 / 跟).
 
 ## Current Thai YCT vocabulary pages
 
