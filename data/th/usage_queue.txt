@@ -2,3 +2,5 @@
 gei-how-to-use
 hai-how-to-use
 dui-how-to-use
+shi-de-how-to-use
+he-gen-how-to-use
