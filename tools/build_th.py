@@ -29,6 +29,7 @@ import grammar_practice
 import hsk4
 import hsk5
 import learn_th
+import th_usage
 import listening
 import measure_th
 import pinyin_practice
@@ -339,6 +340,10 @@ def build(*, root, tpl, site, base_css, render, word_lists, level_table, search_
         root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK, foot=FOOT,
         css=base_css + (tpl / "learn.css").read_text(encoding="utf-8") + th_css,
         ws_css=base_css + (tpl / "learn_worksheet.css").read_text(encoding="utf-8") + th_css,
+    )
+    urls += th_usage.build(
+        root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK, foot=FOOT,
+        css=base_css + (tpl / "learn.css").read_text(encoding="utf-8") + th_css,
     )
     urls += grammar_practice.build_th(
         root=root, tpl=tpl, site=site, render=render, nav=nav, font_link=FONT_LINK, foot=FOOT,
