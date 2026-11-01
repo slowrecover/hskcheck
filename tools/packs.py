@@ -20,7 +20,7 @@ INDEX_URL = "/upgrade-packs/"
 TERMS_URL = "/terms/"
 TERMS_UPDATED = "2026-10-25"
 CONTACT = "willowbewater@gmail.com"
-OPERATOR = "OUYUN QIQIKE"  # legal name of the individual who runs the site; must match the Creem onboarding details
+OPERATOR = "Willow"  # public name shown on the site; the legal name stays in the Creem account, not on public pages
 REFUND_DAYS = 14
 
 PACKS = [
